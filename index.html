@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Bancfy | Tu App de Finanzas con IA y Kakebo - Alcanza la Claridad Financiera</title>
+    <meta name="description" content="Bancfy es la app definitiva para tu salud financiera. Usa el método Kakebo, IA, gamificación y educación para controlar tus gastos, ahorrar y alcanzar tus metas. ¡Únete a la lista de espera!">
+    <meta name="keywords" content="Bancfy, finanzas personales, app de presupuesto, método Kakebo, ahorrar dinero, salud financiera, inteligencia artificial, gamificación, bancbot, control de gastos, inversión, criptomonedas">
+    <meta name="author" content="Bancfy">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bancfy.com/">
+    <meta property="og:title" content="Bancfy | Tu App de Finanzas con IA y Kakebo">
+    <meta property="og:description" content="Toma el control de tu dinero con el método Kakebo, IA, gamificación y educación financiera.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0C2340/C8B273?text=Bancfy">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bancfy.com/">
+    <meta property="twitter:title" content="Bancfy | Tu App de Finanzas con IA y Kakebo">
+    <meta property="twitter:description" content="Toma el control de tu dinero con el método Kakebo, IA, gamificación y educación financiera.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/0C2340/C8B273?text=Bancfy">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/0C2340/C8B273?text=B" type="image/png">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        :root {
+            --navy: #0C2340;
+            --gold: #C8B273;
+            --gold-hover: #bda66b;
+            --light-gray: #F7F7F7;
+        }
+        .bg-navy { background-color: var(--navy); }
+        .text-navy { color: var(--navy); }
+        .bg-gold { background-color: var(--gold); }
+        .text-gold { color: var(--gold); }
+        .hover\:bg-gold-hover:hover { background-color: var(--gold-hover); }
+        .border-gold { border-color: var(--gold); }
+        .bg-light-gray { background-color: var(--light-gray); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        /* Estilo para el dropdown de idioma */
+        .group:hover .group-hover\:block { display: block; }
+    </style>
+</head>
+<body class="bg-white text-navy antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-navy flex items-center">
+                <svg class="w-8 h-8 mr-2 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1h4v1m-4 0H8v-1h4v1zm-4 4h16M4 12h16m-4 4h4v-1h-4v1zm-4 0h4v-1H8v1zm-4 0h4v-1H4v1zm0 0v1h16v-1H4z"></path></svg>
+                Bancfy
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#features" class="text-navy hover:text-gold transition-colors duration-300">Características</a>
+                <a href="#story" class="text-navy hover:text-gold transition-colors duration-300">Nuestra Historia</a>
+                <a href="#newsletter" class="text-navy hover:text-gold transition-colors duration-300">Newsletter</a>
+                <a href="#contact" class="text-navy hover:text-gold transition-colors duration-300">Contacto</a>
+                <!-- Language Selector -->
+                <div class="relative group">
+                    <button class="flex items-center text-navy hover:text-gold transition-colors duration-300">
+                        <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A11.953 11.953 0 0012 13.5c2.998 0 5.74 1.1 7.843 2.918m-15.686 0A8.959 8.959 0 003 12c0-.778.099-1.533.284-2.253m15.132 4.506A9 9 0 0112 21z" /></svg>
+                        <span>ES</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-40 right-0">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Español</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Català</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Euskara</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Galego</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">English</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Français</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Deutsch</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Schweizerdeutsch</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Italiano</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Português</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">日本語</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">한국어</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">中文</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">العربية</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
+                Únete a la Espera
+            </a>
+            <button class="md:hidden text-navy">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <!-- ========== HERO SECTION ========== -->
+        <section class="py-20 md:py-32 bg-light-gray">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-navy leading-tight mb-4 reveal">
+                    De la incertidumbre a la claridad financiera.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 reveal" style="transition-delay: 200ms;">
+                    Bancfy es la app que te enseña a dominar tu dinero con el método Kakebo, IA y gamificación. Prepárate para una nueva era de prosperidad.
+                </p>
+                <p class="font-semibold text-gold mb-8 reveal" style="transition-delay: 300ms;">Lanzamiento oficial: Noviembre 2025</p>
+                <div class="flex justify-center space-x-4 reveal" style="transition-delay: 400ms;">
+                    <a href="#newsletter" class="bg-gold text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
+                        Sé el primero en saberlo
+                    </a>
+                    <a href="#features" class="bg-white text-navy font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105">
+                        Descubre sus poderes
+                    </a>
+                </div>
+                <div class="mt-16 reveal" style="transition-delay: 600ms;">
+                    <img src="https://placehold.co/900x500/FFFFFF/0C2340?text=Bancfy+App+Mockup" 
+                         alt="Mockup de la aplicación Bancfy mostrando el panel de salud financiera" 
+                         class="mx-auto rounded-2xl shadow-2xl max-w-4xl w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FEATURES SECTION ========== -->
+        <section id="features" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">La app más completa para tu salud financiera.</h2>
+                    <p class="text-gray-600 mt-2 max-w-3xl mx-auto reveal" style="transition-delay: 200ms;">Hemos combinado métodos probados con tecnología de punta para darte un control sin precedentes.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature: Kakebo -->
+                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4">
+                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1">Método Kakebo Digital</h3><p class="text-gray-600">El arte japonés de ahorrar, simplificado. Registra, analiza y toma conciencia de cada gasto.</p></div>
+                    </div>
+                    <!-- Feature: Bancbot IA -->
+                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 100ms;">
+                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V8.25a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 8.25v7.5A2.25 2.25 0 006.75 18z" /></svg></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1">Bancbot, tu Coach IA</h3><p class="text-gray-600">Recibe consejos personalizados gracias al Machine Learning que aprende de tus hábitos.</p></div>
+                    </div>
+                    <!-- Feature: Gamificación -->
+                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 200ms;">
+                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9.75 9.75 0 100-13.5h9a9.75 9.75 0 100 13.5zM16.5 18.75a9.75 9.75 0 00-9-13.5" /></svg></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1">Gamificación Divertida</h3><p class="text-gray-600">Ahorrar es un juego. Gana trofeos y compite en retos individuales o sociales.</p></div>
+                    </div>
+                    <!-- Feature: Cuentas -->
+                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 300ms;">
+                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1">Todas tus Cuentas</h3><p class="text-gray-600">Corriente, ahorro, inversión, cripto y créditos. Todo en un solo lugar, ¡incluso compartidas!</p></div>
+                    </div>
+                    <!-- Feature: Educación -->
+                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 400ms;">
+                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5z" /></svg></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1">Educación Interactiva</h3><p class="text-gray-600">Aprende finanzas con mini-juegos y píldoras de conocimiento. ¡Desbloquea niveles!</p></div>
+                    </div>
+                    <!-- Feature: Radar -->
+                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 500ms;">
+                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25a8.964 8.964 0 014.971 1.572A8.965 8.965 0 0121 12a8.965 8.965 0 01-3.971 7.178A8.964 8.964 0 0112 21.75a8.964 8.964 0 01-7.178-3.971A8.965 8.965 0 013 12a8.965 8.965 0 013.971-7.178A8.964 8.964 0 0112 2.25z" /></svg></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1">Radar de Oportunidades</h3><p class="text-gray-600">Descubre el impacto real de los gastos hormiga y vampiro y cómo podrías haberlos invertido.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== APP SHOWCASE SECTION (NEW) ========== -->
+        <section id="app-showcase" class="py-20 bg-light-gray">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">Visualiza tu Éxito Financiero</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto reveal" style="transition-delay: 200ms;">Una interfaz limpia y poderosa diseñada para darte claridad, no más confusión.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <!-- Image 1 -->
+                    <div class="reveal" style="transition-delay: 400ms;">
+                        <img src="https://placehold.co/600x800/FFFFFF/0C2340?text=Tu+Imagen+PNG+1" 
+                             alt="Captura de pantalla de la app Bancfy mostrando metas de ahorro" 
+                             class="mx-auto rounded-2xl shadow-xl w-full max-w-sm">
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="reveal" style="transition-delay: 600ms;">
+                        <img src="https://placehold.co/600x800/0C2340/FFFFFF?text=Tu+Imagen+PNG+2" 
+                             alt="Captura de pantalla de la app Bancfy mostrando la sección de gamificación" 
+                             class="mx-auto rounded-2xl shadow-xl w-full max-w-sm">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== STORYTELLING SECTION ========== -->
+        <section id="story" class="py-20 bg-navy text-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-10 reveal">
+                        <span class="font-semibold text-gold">NUESTRA HISTORIA</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mt-2">De la incertidumbre a la claridad con Bancfy</h2>
+                    </div>
+                    <div class="text-gray-300 space-y-4 reveal" style="transition-delay: 200ms;">
+                        <p>En algún momento, todos nos hemos sentido abrumados por nuestras finanzas. Gastos imprevistos, decisiones impulsivas y la sensación de que el dinero se escurre entre los dedos. Yo también estuve allí.</p>
+                        <p class="font-semibold text-white">Durante años, luché con mis finanzas sin entender por qué no lograba ahorrar. Los "gastos vampiro" consumían mi presupuesto sin que me diera cuenta. Me sentía perdido, sin herramientas que me ayudaran de verdad.</p>
+                        <p>Fue entonces cuando decidí tomar el control. Así nació la idea de Bancfy: una herramienta que no solo gestiona el dinero, sino que educa, motiva y transforma tu relación con él.</p>
+                        <p>Bancfy es tu compañero en el viaje hacia la salud financiera. Lo que nos distingue es el enfoque integral: no se trata solo de controlar, sino de entender, aprender y tomar decisiones informadas. Es una herramienta diseñada para empoderarte.</p>
+                        <p class="text-lg font-bold text-center mt-6 text-gold">Hoy, te invito a dar el primer paso hacia una vida financiera más saludable y consciente. Únete a la comunidad Bancfy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== NEWSLETTER SECTION ========== -->
+        <section id="newsletter" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">La revolución financiera empieza en Noviembre 2025.</h2>
+                <p class="text-gray-600 mt-3 max-w-2xl mx-auto mb-8 reveal" style="transition-delay: 200ms;">
+                    No te quedes fuera. Apúntate a nuestra newsletter y sé el primero en recibir acceso anticipado, noticias exclusivas y consejos para preparar tu camino hacia la prosperidad.
+                </p>
+                <form class="max-w-lg mx-auto reveal" style="transition-delay: 400ms;">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Tu mejor correo electrónico" required class="w-full px-5 py-3 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors" />
+                        <button type="submit" class="bg-gold text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
+                            ¡Apúntame!
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT SECTION ========== -->
+        <section id="contact" class="py-20 bg-light-gray">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">¿Hablamos?</h2>
+                <p class="text-gray-600 mt-2 max-w-2xl mx-auto mb-8 reveal" style="transition-delay: 200ms;">
+                    Para colaboraciones, prensa o cualquier otra consulta, nuestro equipo está listo para escucharte.
+                </p>
+                <div class="reveal" style="transition-delay: 400ms;">
+                    <a href="mailto:info@bancfy.com" class="inline-block bg-gold text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
+                        info@bancfy.com
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-navy text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <p class="font-semibold">&copy; 2025 Bancfy. Todos los derechos reservados.</p>
+                    <p class="text-sm text-gray-400">Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <!-- Instagram Icon -->
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><span class="sr-only">Instagram</span><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.792 2.792c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.792 2.792c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.792-2.792c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427A4.902 4.902 0 016.08 4.525c.636-.247 1.363.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0-2a7 7 0 110 14 7 7 0 010-14zm4.5-1.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"></path></svg></a>
+                    <!-- TikTok Icon -->
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><span class="sr-only">TikTok</span><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.18-2.89-.7-4.12-1.62-1.23-.92-2.07-2.27-2.41-3.73-1.31.02-2.61.01-3.91.02v2.19c2.78.02 5.57.01 8.35.01v4.03c-2.78-.01-5.57-.02-8.35-.01v4.74c-1.31-.02-2.61-.01-3.91-.02v-4.74c-2.78.01-5.57.02-8.35.01v-4.03c2.78-.02 5.57-.01 8.35-.01v-2.19c-1.31.02-2.61.01-3.91.02V4.22c1.44.18 2.89.7 4.12 1.62 1.23.92 2.07 2.27 2.41 3.73 1.31-.02 2.61-.01 3.91-.02V.02z"></path></svg></a>
+                    <!-- YouTube Icon -->
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><span class="sr-only">YouTube</span><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM9.57 15.57l6.43-3.57-6.43-3.57v7.14Z" clip-rule="evenodd"></path></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script para la animación de aparición al hacer scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
