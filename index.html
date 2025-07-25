@@ -740,88 +740,152 @@ const supportedLangs = {
                 });
             });
 
-            // --- Modal Logic ---
+            // --- MODAL LOGIC (FIXED) ---
             const modal = document.getElementById('feedback-modal');
+            const modalContent = modal.querySelector('.modal-content');
             const modalTitle = document.getElementById('modal-title');
             const modalMessage = document.getElementById('modal-message');
             const modalCloseButton = document.getElementById('modal-close-button');
+
             function showModal(titleKey, messageKey) {
                 const lang = localStorage.getItem('bancfy_lang') || 'es';
-                modalTitle.textContent = translations[lang]?.[titleKey] || translations.es[titleKey];
-                modalMessage.textContent = translations[lang]?.[messageKey] || translations.es[messageKey];
+                const t = translations[lang] || translations.es;
+                modalTitle.textContent = t[titleKey] || titleKey;
+                modalMessage.textContent = t[messageKey] || messageKey;
+                modalCloseButton.textContent = t['modal_close'] || 'Cerrar';
+
                 modal.classList.remove('hidden');
                 setTimeout(() => {
-                    modal.classList.remove('opacity-0');
-                    modal.querySelector('.modal-content').style.opacity = '1';
-                    modal.querySelector('.modal-content').style.transform = 'scale(1)';
+                    modal.style.opacity = '1';
+                    modalContent.style.opacity = '1';
+                    modalContent.style.transform = 'scale(1)';
                 }, 10);
             }
+
             function hideModal() {
-                 modal.classList.add('opacity-0');
-                 modal.querySelector('.modal-content').style.opacity = '0';
-                 modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+                 modal.style.opacity = '0';
+                 modalContent.style.opacity = '0';
+                 modalContent.style.transform = 'scale(0.95)';
                  setTimeout(() => modal.classList.add('hidden'), 300);
             }
             modalCloseButton.addEventListener('click', hideModal);
             modal.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
 
-            // --- Contact Form & Newsletter Logic ---
+            // --- CONTACT FORM & NEWSLETTER LOGIC (IMPROVED) ---
             const contactForm = document.getElementById('contact-form');
-            const formspreeEndpoint = 'https://formspree.io/f/mblkoarn'; 
+            const newsletterForm = document.getElementById('newsletter-form');
+            const formspreeEndpoint = 'https://formspree.io/f/mblkoarn';
+
+            const setButtonFeedback = (button, state, originalHTML) => {
+                const lang = localStorage.getItem('bancfy_lang') || 'es';
+                const t = translations[lang] || translations.es;
+                
+                const feedbackText = {
+                    contact: { loading: t.form_sending, success: t.form_sent, error: t.form_error },
+                    newsletter: { loading: t.form_subscribing, success: t.form_subscribed, error: t.form_error }
+                };
+
+                const formType = button.form.id.includes('contact') ? 'contact' : 'newsletter';
+                const text = feedbackText[formType][state] || '';
+
+                button.disabled = true;
+                button.innerHTML = '';
+                
+                if(!button.dataset.originalClasses) {
+                    const originalClasses = Array.from(button.classList);
+                    button.dataset.originalClasses = JSON.stringify(originalClasses.filter(c => c.startsWith('bg-') || c.startsWith('hover:bg-') || c.startsWith('transform') || c.startsWith('hover:scale')));
+                }
+                button.classList.remove(...JSON.parse(button.dataset.originalClasses));
+                
+                button.classList.add('flex', 'items-center', 'justify-center', 'transition-all');
+
+                const icons = {
+                    loading: document.getElementById('icon-spinner').cloneNode(true),
+                    success: document.getElementById('icon-check').cloneNode(true),
+                    error: document.getElementById('icon-error').cloneNode(true)
+                };
+
+                const icon = icons[state];
+                if (icon) button.appendChild(icon);
+                
+                if (text) {
+                    const textSpan = document.createElement('span');
+                    textSpan.className = 'ml-2';
+                    textSpan.textContent = text;
+                    button.appendChild(textSpan);
+                }
+
+                if (state === 'success') button.classList.add('bg-green-500');
+                else if (state === 'error') button.classList.add('bg-red-500');
+                else button.classList.add('bg-gold', 'opacity-75');
+
+                if (state === 'success' || state === 'error') {
+                    setTimeout(() => {
+                        button.disabled = false;
+                        button.innerHTML = originalHTML;
+                        button.classList.remove('flex', 'items-center', 'justify-center', 'bg-green-500', 'bg-red-500', 'bg-gold', 'opacity-75', 'transition-all');
+                        button.classList.add(...JSON.parse(button.dataset.originalClasses));
+                    }, 2500);
+                }
+            };
+
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const form = e.target;
-                const data = new FormData(form);
                 const button = form.querySelector('button[type="submit"]');
-                const originalButtonText = button.innerHTML;
-                button.textContent = '...';
-                button.disabled = true;
+                const originalButtonHTML = button.innerHTML;
+                
+                setButtonFeedback(button, 'loading', originalButtonHTML);
 
                 fetch(formspreeEndpoint, {
-                    method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+                    method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }
                 }).then(response => {
                     if (response.ok) {
-                        showModal('modal_thank_you', 'modal_message_sent');
-                        form.reset();
+                        setButtonFeedback(button, 'success', originalButtonHTML);
+                        setTimeout(() => {
+                            showModal('modal_thank_you', 'modal_message_sent');
+                            form.reset();
+                        }, 500);
                     } else {
-                        showModal('modal_error', 'modal_message_error');
+                        throw new Error('Response not ok');
                     }
-                }).catch(error => {
-                    showModal('modal_error', 'modal_network_error');
-                }).finally(() => {
-                    button.innerHTML = originalButtonText;
-                    button.disabled = false;
+                }).catch(() => {
+                    setButtonFeedback(button, 'error', originalButtonHTML);
+                    setTimeout(() => showModal('modal_error', 'modal_message_error'), 500);
                 });
             });
 
-            const newsletterForm = document.getElementById('newsletter-form');
             newsletterForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const form = e.target;
-                const email = form.querySelector('input[name="email"]').value;
+                const emailInput = form.querySelector('input[name="email"]');
                 const button = form.querySelector('button[type="submit"]');
-                const originalButtonText = button.innerHTML;
-                if (!email) { 
-                    const lang = localStorage.getItem('bancfy_lang') || 'es';
-                    const errorMsg = lang === 'es' ? 'Por favor, introduce un correo electrónico.' : 'Please enter an email address.';
-                    showModal('modal_error', errorMsg); 
-                    return; 
+                const originalButtonHTML = button.innerHTML;
+
+                if (!emailInput.value || !emailInput.checkValidity()) {
+                    showModal('modal_error', 'modal_invalid_email');
+                    return;
                 }
-                if (typeof window.db === 'undefined') { console.error("Firebase not configured"); return; }
-                button.textContent = '...';
-                button.disabled = true;
+                if (typeof window.db === 'undefined') {
+                    showModal('modal_error', 'modal_network_error');
+                    return;
+                }
+                
+                setButtonFeedback(button, 'loading', originalButtonHTML);
+
                 const { collection, addDoc, serverTimestamp } = window.firestore;
                 addDoc(collection(window.db, "subscribers"), {
-                    email: email, subscribedAt: serverTimestamp()
+                    email: emailInput.value, subscribedAt: serverTimestamp()
                 }).then(() => {
-                    showModal('modal_welcome', 'modal_subscribed');
-                    form.reset();
+                    setButtonFeedback(button, 'success', originalButtonHTML);
+                    setTimeout(() => {
+                        showModal('modal_welcome', 'modal_subscribed');
+                        form.reset();
+                    }, 500);
                 }).catch((error) => {
                     console.error("Error adding document: ", error);
-                    showModal('modal_error', 'modal_subscribe_error');
-                }).finally(() => {
-                    button.innerHTML = originalButtonText;
-                    button.disabled = false;
+                    setButtonFeedback(button, 'error', originalButtonHTML);
+                    setTimeout(() => showModal('modal_error', 'modal_subscribe_error'), 500);
                 });
             });
         });
