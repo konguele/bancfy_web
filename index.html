@@ -44,6 +44,12 @@
             --gold-hover: #bda66b;
             --light-gray: #F7F7F7;
         }
+        html[dir="rtl"] .md\:text-left { text-align: right; }
+        html[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-right: 1rem; margin-left: 0; }
+        html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-right: 1.5rem; margin-left: 0; }
+        html[dir="rtl"] .mr-2 { margin-left: 0.5rem; margin-right: 0; }
+        html[dir="rtl"] .ml-1 { margin-right: 0.25rem; margin-left: 0; }
+        html[dir="rtl"] .right-0 { left: 0; right: auto; }
         .bg-navy { background-color: var(--navy); }
         .text-navy { color: var(--navy); }
         .bg-gold { background-color: var(--gold); }
@@ -117,10 +123,10 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-             <a href="#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features_mobile">Características</a>
-             <a href="#story" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_story_mobile">Nuestra Historia</a>
-             <a href="#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq_mobile">FAQ</a>
-             <a href="#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact_mobile">Contacto</a>
+             <a href="#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features">Características</a>
+             <a href="#story" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_story">Nuestra Historia</a>
+             <a href="#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq">FAQ</a>
+             <a href="#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact">Contacto</a>
         </div>
     </header>
 
@@ -232,7 +238,7 @@
                     </div>
                     <div class="text-gray-300 space-y-4 reveal" style="transition-delay: 200ms;">
                         <p data-translate-key="story_p1">En algún momento, todos nos hemos sentido abrumados por nuestras finanzas. Gastos imprevistos, decisiones impulsivas y la sensación de que el dinero se escurre entre los dedos. Yo también estuve allí.</p>
-                        <p data-translate-key="story_p2">Durante años, luché con mis finanzas sin entender por qué no lograba ahorrar. Los "gastos vampiro" consumían mi presupuesto sin que me diera cuenta. Me sentía perdido, sin herramientas que me ayudaran de verdad.</p>
+                        <p class="font-semibold text-white" data-translate-key="story_p2">Durante años, luché con mis finanzas sin entender por qué no lograba ahorrar. Los "gastos vampiro" consumían mi presupuesto sin que me diera cuenta. Me sentía perdido, sin herramientas que me ayudaran de verdad.</p>
                         <p data-translate-key="story_p3">Fue entonces cuando decidí tomar el control. Así nació la idea de Bancfy: una herramienta que no solo gestiona el dinero, sino que educa, motiva y transforma tu relación con él.</p>
                         <p data-translate-key="story_p4">Bancfy es tu compañero en el viaje hacia la salud financiera. Lo que nos distingue es el enfoque integral: no se trata solo de controlar, sino de entender, aprender y tomar decisiones informadas. Es una herramienta diseñada para empoderarte.</p>
                         <p class="text-lg font-bold text-center mt-6 text-gold" data-translate-key="story_p5">Hoy, te invito a dar el primer paso hacia una vida financiera más saludable y consciente. Únete a la comunidad Bancfy.</p>
@@ -399,7 +405,7 @@
         <div class="bg-white rounded-lg shadow-2xl p-8 max-w-sm w-full text-center modal-content opacity-0 transform scale-95">
             <h3 id="modal-title" class="text-2xl font-bold text-navy mb-4"></h3>
             <p id="modal-message" class="text-gray-600 mb-6"></p>
-            <button id="modal-close-button" class="bg-gold text-white font-bold py-2 px-6 rounded-lg hover:bg-gold-hover transition-colors">Cerrar</button>
+            <button id="modal-close-button" class="bg-gold text-white font-bold py-2 px-6 rounded-lg hover:bg-gold-hover transition-colors" data-translate-key="modal_close">Cerrar</button>
         </div>
     </div>
     
@@ -407,15 +413,15 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        // REMOVED for security: Your Firebase config object was here.
+        // Please replace with your actual Firebase config.
         const firebaseConfig = {
-            apiKey: "AIzaSyDMjE9AFpmtPKcvZDMx-okQoKpHcjUF-Uc",
-            authDomain: "bancfy.firebaseapp.com",
-            databaseURL: "https://bancfy-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "bancfy",
-            storageBucket: "bancfy.firebasestorage.app",
-            messagingSenderId: "151762707230",
-            appId: "1:151762707230:web:2143e1d92e6a90f2689f0f",
-            measurementId: "G-RS0WGCECK3"
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
         };
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
@@ -438,27 +444,17 @@
                     feature5_title: 'Educación Interactiva', feature5_desc: 'Aprende finanzas con mini-juegos y píldoras de conocimiento. ¡Desbloquea niveles!',
                     feature6_title: 'Radar de Oportunidades', feature6_desc: 'Descubre el impacto real de los gastos hormiga y vampiro y cómo podrías haberlos invertido.',
                     showcase_title: 'Visualiza tu Éxito Financiero', showcase_subtitle: 'Una interfaz limpia y poderosa diseñada para darte claridad, no más confusión.',
-                    story_tag: 'NUESTRA HISTORIA', story_title: 'De la incertidumbre a la claridad con Bancfy', 
-                    story_p1: 'En algún momento, todos nos hemos sentido abrumados por nuestras finanzas. Gastos imprevistos, decisiones impulsivas y la sensación de que el dinero se escurre entre los dedos. Yo también estuve allí.',
-                    story_p2: 'Durante años, luché con mis finanzas sin entender por qué no lograba ahorrar. Los "gastos vampiro" consumían mi presupuesto sin que me diera cuenta. Me sentía perdido, sin herramientas que me ayudaran de verdad.',
-                    story_p3: 'Fue entonces cuando decidí tomar el control. Así nació la idea de Bancfy: una herramienta que no solo gestiona el dinero, sino que educa, motiva y transforma tu relación con él.',
-                    story_p4: 'Bancfy es tu compañero en el viaje hacia la salud financiera. Lo que nos distingue es el enfoque integral: no se trata solo de controlar, sino de entender, aprender y tomar decisiones informadas. Es una herramienta diseñada para empoderarte.',
-                    story_p5: 'Hoy, te invito a dar el primer paso hacia una vida financiera más saludable y consciente. Únete a la comunidad Bancfy.',
+                    story_tag: 'NUESTRA HISTORIA', story_title: 'De la incertidumbre a la claridad con Bancfy', story_p1: 'En algún momento, todos nos hemos sentido abrumados por nuestras finanzas. Gastos imprevistos, decisiones impulsivas y la sensación de que el dinero se escurre entre los dedos. Yo también estuve allí.', story_p2: 'Durante años, luché con mis finanzas sin entender por qué no lograba ahorrar. Los "gastos vampiro" consumían mi presupuesto sin que me diera cuenta. Me sentía perdido, sin herramientas que me ayudaran de verdad.', story_p3: 'Fue entonces cuando decidí tomar el control. Así nació la idea de Bancfy: una herramienta que no solo gestiona el dinero, sino que educa, motiva y transforma tu relación con él.', story_p4: 'Bancfy es tu compañero en el viaje hacia la salud financiera. Lo que nos distingue es el enfoque integral: no se trata solo de controlar, sino de entender, aprender y tomar decisiones informadas. Es una herramienta diseñada para empoderarte.', story_p5: 'Hoy, te invito a dar el primer paso hacia una vida financiera más saludable y consciente. Únete a la comunidad Bancfy.',
                     faq_title: 'Preguntas Frecuentes', faq_subtitle: '¿Tienes dudas? Aquí resolvemos las más comunes.',
-                    faq1_q: '¿Qué es exactamente Bancfy?', faq1_a: 'Bancfy es tu coach financiero personal. Hemos transformado el método japonés Kakebo en una experiencia digital, intuitiva y gamificada. No solo te ayudamos a registrar tus gastos, sino a entenderlos y a tomar el control de tu dinero de una forma sencilla y motivadora.',
-                    faq2_q: '¿Es seguro usar mis datos en Bancfy?', faq2_a: 'Absolutamente. La seguridad es nuestro pilar fundamental. Toda tu información está protegida con cifrado de extremo a extremo y protocolos de seguridad de nivel bancario. Tu privacidad y tus datos son solo tuyos.',
-                    faq3_q: '¿Podré sincronizar en diferentes dispositivos?', faq3_a: '¡Por supuesto! Tu información se sincroniza en tiempo real en todos tus dispositivos. Además, hemos incluido la función de "cuentas compartidas", ideal para gestionar las finanzas en pareja, con tu familia o compañeros de piso.',
-                    faq4_q: '¿Tengo que conectar mi cuenta bancaria?', faq4_a: 'No es necesario. Creemos en el poder de registrar manualmente tus gastos para crear conciencia, como enseña el método Kakebo. Sin embargo, para darte flexibilidad, también te permitimos importar tus movimientos desde un fichero PDF, Excel o CSV de forma rápida y sencilla.',
-                    faq5_q: '¿Bancfy es gratis?', faq5_a: 'Sí, el corazón de Bancfy es y será siempre gratuito, dándote todas las herramientas que necesitas para tu día a día. Para aquellos que quieran llevar sus finanzas al siguiente nivel, ofreceremos opciones Premium complementarias con funciones avanzadas.',
-                    faq6_q: '¿Qué divisas y criptomonedas soporta?', faq6_a: 'Estamos preparados para un mundo global. Bancfy es compatible con más de 50 divisas tradicionales y más de 30 de las criptomonedas más importantes, para que tengas una visión completa de todos tus activos en un solo lugar.',
+                    faq1_q: '¿Qué es exactamente Bancfy?', faq1_a: 'Bancfy es tu coach financiero personal. Hemos transformado el método japonés Kakebo en una experiencia digital, intuitiva y gamificada. No solo te ayudamos a registrar tus gastos, sino a entenderlos y a tomar el control de tu dinero de una forma sencilla y motivadora.', faq2_q: '¿Es seguro usar mis datos en Bancfy?', faq2_a: 'Absolutamente. La seguridad es nuestro pilar fundamental. Toda tu información está protegida con cifrado de extremo a extremo y protocolos de seguridad de nivel bancario. Tu privacidad y tus datos son solo tuyos.', faq3_q: '¿Podré sincronizar en diferentes dispositivos?', faq3_a: '¡Por supuesto! Tu información se sincroniza en tiempo real en todos tus dispositivos. Además, hemos incluido la función de "cuentas compartidas", ideal para gestionar las finanzas en pareja, con tu familia o compañeros de piso.', faq4_q: '¿Tengo que conectar mi cuenta bancaria?', faq4_a: 'No es necesario. Creemos en el poder de registrar manualmente tus gastos para crear conciencia, como enseña el método Kakebo. Sin embargo, para darte flexibilidad, también te permitimos importar tus movimientos desde un fichero PDF, Excel o CSV de forma rápida y sencilla.', faq5_q: '¿Bancfy es gratis?', faq5_a: 'Sí, el corazón de Bancfy es y será siempre gratuito, dándote todas las herramientas que necesitas para tu día a día. Para aquellos que quieran llevar sus finanzas al siguiente nivel, ofreceremos opciones Premium complementarias con funciones avanzadas.', faq6_q: '¿Qué divisas y criptomonedas soporta?', faq6_a: 'Estamos preparados para un mundo global. Bancfy es compatible con más de 50 divisas tradicionales y más de 30 de las criptomonedas más importantes, para que tengas una visión completa de todos tus activos en un solo lugar.',
                     newsletter_title: 'La revolución financiera empieza en Noviembre 2025.', newsletter_subtitle: 'No te quedes fuera. Apúntate a nuestra newsletter y sé el primero en recibir acceso anticipado, noticias exclusivas y consejos para preparar tu camino hacia la prosperidad.', newsletter_placeholder: 'Tu mejor correo electrónico', newsletter_button: '¡Apúntame!',
                     contact_title: '¿Hablamos?', contact_subtitle: 'Para colaboraciones, prensa o cualquier otra consulta, nuestro equipo está listo para escucharte. Rellena el formulario o escríbenos a info@bancfy.com.', contact_name: 'Nombre', contact_email: 'Email', contact_subject: 'Asunto', contact_message: 'Mensaje', contact_button: 'Enviar Mensaje',
                     footer_copyright: '© 2025 Bancfy. Todos los derechos reservados.', footer_design: 'Diseñado con ♥ para tu bienestar financiero.',
-                    modal_thank_you: '¡Gracias!', modal_message_sent: 'Tu mensaje ha sido enviado con éxito.', modal_welcome: '¡Bienvenido/a!', modal_subscribed: 'Te has suscrito correctamente a nuestra newsletter.', modal_error: 'Error', modal_message_error: 'No se pudo enviar el mensaje. Inténtalo de nuevo.', modal_network_error: 'Oops! Hubo un problema de red. Revisa tu conexión.', modal_subscribe_error: 'No hemos podido procesar tu suscripción. Inténtalo más tarde.', modal_close: 'Cerrar'
+                    modal_close: 'Cerrar', modal_thank_you: '¡Gracias!', modal_message_sent: 'Tu mensaje ha sido enviado correctamente.', modal_welcome: '¡Bienvenido/a!', modal_subscribed: 'Te has suscrito a nuestra newsletter.', modal_error: 'Error', modal_message_error: 'No se pudo enviar el mensaje. Inténtalo de nuevo.', modal_network_error: 'Oops! Hubo un problema de red. Revisa tu conexión.', modal_subscribe_error: 'No hemos podido procesar tu suscripción. Inténtalo más tarde.'
                 },
                 en: {
                     nav_features: 'Features', nav_story: 'Our Story', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Join the Waitlist',
-                    hero_title: 'Welcome to the future of personal finance.', hero_subtitle: 'Bancfy is not just an app, it\'s your new financial ecosystem. We combine the wisdom of the Kakebo method with the power of AI to give you clarity and control you\'ve never imagined before.', hero_cta1: 'Join the revolution', hero_cta2: 'Learn more',
+                    hero_title: 'Welcome to the future of personal finance.', hero_subtitle: 'Bancfy isn\'t just an app; it\'s your new financial ecosystem. We combine the wisdom of the Kakebo method with the power of AI to give you clarity and control you\'ve never imagined.', hero_cta1: 'Join the revolution', hero_cta2: 'Discover more',
                     features_title: 'The most complete app for your financial health.', features_subtitle: 'We have combined proven methods with cutting-edge technology to give you unprecedented control.',
                     feature1_title: 'Digital Kakebo Method', feature1_desc: 'The Japanese art of saving, simplified. Record, analyze, and become aware of every expense.',
                     feature2_title: 'Bancbot, Your AI Coach', feature2_desc: 'Receive personalized advice thanks to Machine Learning that learns from your habits.',
@@ -467,23 +463,188 @@
                     feature5_title: 'Interactive Education', feature5_desc: 'Learn finance with mini-games and knowledge pills. Unlock new levels!',
                     feature6_title: 'Opportunity Radar', feature6_desc: 'Discover the real impact of "latte factor" and phantom expenses and how you could have invested them.',
                     showcase_title: 'Visualize Your Financial Success', showcase_subtitle: 'A clean and powerful interface designed to give you clarity, not more confusion.',
-                    story_tag: 'OUR STORY', story_title: 'From uncertainty to clarity with Bancfy', 
-                    story_p1: 'At some point, we have all felt overwhelmed by our finances. Unexpected expenses, impulsive decisions, and the feeling that money is slipping through our fingers. I was there too.',
-                    story_p2: 'For years, I struggled with my finances without understanding why I couldn\'t save. "Vampire expenses" consumed my budget without me realizing it. I felt lost, without tools that could truly help me.',
-                    story_p3: 'That\'s when I decided to take control. Thus, the idea of Bancfy was born: a tool that not only manages money, but also educates, motivates, and transforms your relationship with it.',
-                    story_p4: 'Bancfy is your companion on the journey to financial health. What sets us apart is the comprehensive approach: it\'s not just about controlling, but about understanding, learning, and making informed decisions. It is a tool designed to empower you.',
-                    story_p5: 'Today, I invite you to take the first step towards a healthier and more conscious financial life. Join the Bancfy community.',
+                    story_tag: 'OUR STORY', story_title: 'From uncertainty to clarity with Bancfy', story_p1: 'At some point, we have all felt overwhelmed by our finances. Unexpected expenses, impulsive decisions, and the feeling that money is slipping through our fingers. I was there too.', story_p2: 'For years, I struggled with my finances without understanding why I couldn\'t save. "Vampire expenses" consumed my budget without me realizing it. I felt lost, without tools that truly helped me.', story_p3: 'That\'s when I decided to take control. Thus, the idea of Bancfy was born: a tool that not only manages money but also educates, motivates, and transforms your relationship with it.', story_p4: 'Bancfy is your companion on the journey to financial health. What sets us apart is the comprehensive approach: it\'s not just about tracking, but about understanding, learning, and making informed decisions. It is a tool designed to empower you.', story_p5: 'Today, I invite you to take the first step towards a healthier and more conscious financial life. Join the Bancfy community.',
                     faq_title: 'Frequently Asked Questions', faq_subtitle: 'Have questions? We answer the most common ones here.',
-                    faq1_q: 'What exactly is Bancfy?', faq1_a: 'Bancfy is your personal financial coach. We have transformed the Japanese Kakebo method into a digital, intuitive, and gamified experience. We don\'t just help you track your expenses, but to understand them and take control of your money in a simple and motivating way.',
-                    faq2_q: 'Is it safe to use my data in Bancfy?', faq2_a: 'Absolutely. Security is our cornerstone. All your information is protected with end-to-end encryption and bank-grade security protocols. Your privacy and your data are yours alone.',
-                    faq3_q: 'Can I sync across different devices?', faq3_a: 'Of course! Your information is synchronized in real-time across all your devices. Plus, we\'ve included a "shared accounts" feature, perfect for managing finances with a partner, family, or roommates.',
-                    faq4_q: 'Do I have to connect my bank account?', faq4_a: 'It\'s not necessary. We believe in the power of manually tracking your expenses to build awareness, as taught by the Kakebo method. However, to give you flexibility, we also allow you to import your transactions from a PDF, Excel, or CSV file quickly and easily.',
-                    faq5_q: 'Is Bancfy free?', faq5_a: 'Yes, the heart of Bancfy is and always will be free, giving you all the tools you need for your day-to-day. For those who want to take their finances to the next level, we will offer complementary Premium options with advanced features.',
-                    faq6_q: 'What currencies and cryptocurrencies does it support?', faq6_a: 'We are prepared for a global world. Bancfy supports over 50 traditional currencies and more than 30 of the most important cryptocurrencies, so you can have a complete view of all your assets in one place.'
+                    faq1_q: 'What exactly is Bancfy?', faq1_a: 'Bancfy is your personal financial coach. We have transformed the Japanese Kakebo method into a digital, intuitive, and gamified experience. We don\'t just help you track your expenses, but to understand them and take control of your money in a simple and motivating way.', faq2_q: 'Is it safe to use my data in Bancfy?', faq2_a: 'Absolutely. Security is our cornerstone. All your information is protected with end-to-end encryption and bank-grade security protocols. Your privacy and your data are yours alone.', faq3_q: 'Can I sync across different devices?', faq3_a: 'Of course! Your information is synchronized in real-time across all your devices. Plus, we\'ve included a "shared accounts" feature, perfect for managing finances with a partner, family, or roommates.', faq4_q: 'Do I have to connect my bank account?', faq4_a: 'It\'s not necessary. We believe in the power of manually tracking your expenses to build awareness, as taught by the Kakebo method. However, to give you flexibility, we also allow you to import your transactions from a PDF, Excel, or CSV file quickly and easily.', faq5_q: 'Is Bancfy free?', faq5_a: 'Yes, the heart of Bancfy is and always will be free, giving you all the tools you need for your day-to-day. For those who want to take their finances to the next level, we will offer complementary Premium options with advanced features.', faq6_q: 'What currencies and cryptocurrencies does it support?', faq6_a: 'We are prepared for a global world. Bancfy supports over 50 traditional currencies and more than 30 of the most important cryptocurrencies, so you can have a complete view of all your assets in one place.',
+                    newsletter_title: 'The financial revolution begins in November 2025.', newsletter_subtitle: 'Don\'t be left out. Sign up for our newsletter and be the first to receive early access, exclusive news, and tips to prepare your path to prosperity.', newsletter_placeholder: 'Your best email address', newsletter_button: 'Sign me up!',
+                    contact_title: 'Let\'s Talk', contact_subtitle: 'For collaborations, press, or any other inquiry, our team is ready to listen. Fill out the form or write to us at info@bancfy.com.', contact_name: 'Name', contact_email: 'Email', contact_subject: 'Subject', contact_message: 'Message', contact_button: 'Send Message',
+                    footer_copyright: '© 2025 Bancfy. All rights reserved.', footer_design: 'Designed with ♥ for your financial well-being.',
+                    modal_close: 'Close', modal_thank_you: 'Thank you!', modal_message_sent: 'Your message has been sent successfully.', modal_welcome: 'Welcome!', modal_subscribed: 'You have subscribed to our newsletter.', modal_error: 'Error', modal_message_error: 'Could not send the message. Please try again.', modal_network_error: 'Oops! There was a network problem. Check your connection.', modal_subscribe_error: 'We could not process your subscription. Please try again later.'
+                },
+                ca: {
+                    nav_features: 'Característiques', nav_story: 'La Nostra Història', nav_faq: 'FAQ', nav_contact: 'Contacte', nav_join_waitlist: 'Uneix-te a l\'Espera',
+                    hero_title: 'Benvingut al futur de les finances personals.', hero_subtitle: 'Bancfy no és només una app, és el teu nou ecosistema financer. Combinem la saviesa del mètode Kakebo amb la potència de la IA per donar-te una claredat i un control que mai abans havies imaginat.', hero_cta1: 'Uneix-te a la revolució', hero_cta2: 'Descobreix-ne més',
+                    features_title: 'L\'app més completa per a la teva salut financera.', features_subtitle: 'Hem combinat mètodes provats amb tecnologia d\'avantguarda per donar-te un control sense precedents.',
+                    feature1_title: 'Mètode Kakebo Digital', feature1_desc: 'L\'art japonès d\'estalviar, simplificat. Registra, analitza i pren consciència de cada despesa.',
+                    feature2_title: 'Bancbot, el teu Coach IA', feature2_desc: 'Rep consells personalitzats gràcies al Machine Learning que aprèn dels teus hàbits.',
+                    feature3_title: 'Gamificació Divertida', feature3_desc: 'Estalviar és un joc. Guanya trofeus i competeix en reptes individuals o socials.',
+                    feature4_title: 'Tots els teus Comptes', feature4_desc: 'Corrent, estalvi, inversió, cripto i crèdits. Tot en un sol lloc, fins i tot compartides!',
+                    feature5_title: 'Educació Interactiva', feature5_desc: 'Aprèn finances amb minijocs i píndoles de coneixement. Desbloqueja nivells!',
+                    feature6_title: 'Radar d\'Oportunitats', feature6_desc: 'Descobreix l\'impacte real de les despeses formiga i vampir i com podries haver-les invertit.',
+                    showcase_title: 'Visualitza el teu Èxit Financer', showcase_subtitle: 'Una interfície neta i poderosa dissenyada per donar-te claredat, no més confusió.',
+                    story_tag: 'LA NOSTRA HISTÒRIA', story_title: 'De la incertesa a la claredat amb Bancfy', story_p1: 'En algun moment, tots ens hem sentit aclaparats per les nostres finances. Despeses imprevistes, decisions impulsives i la sensació que els diners s\'escorren entre els dits. Jo també hi vaig ser.', story_p2: 'Durant anys, vaig lluitar amb les meves finances sense entendre per què no aconseguia estalviar. Les "despeses vampir" consumien el meu pressupost sense que me n\'adonés. Em sentia perdut, sense eines que m\'ajudessin de veritat.', story_p3: 'Va ser llavors quan vaig decidir prendre el control. Així va néixer la idea de Bancfy: una eina que no només gestiona els diners, sinó que educa, motiva i transforma la teva relació amb ells.', story_p4: 'Bancfy és el teu company en el viatge cap a la salut financera. El que ens distingeix és l\'enfocament integral: no es tracta només de controlar, sinó d\'entendre, aprendre i prendre decisions informades. És una eina dissenyada per apoderar-te.', story_p5: 'Avui, et convido a fer el primer pas cap a una vida financera més saludable i conscient. Uneix-te a la comunitat Bancfy.',
+                    faq_title: 'Preguntes Freqüents', faq_subtitle: 'Tens dubtes? Aquí resolem les més comunes.',
+                    faq1_q: 'Què és exactament Bancfy?', faq1_a: 'Bancfy és el teu coach financer personal. Hem transformat el mètode japonès Kakebo en una experiència digital, intuïtiva i gamificada. No només t\'ajudem a registrar les teves despeses, sinó a entendre-les i a prendre el control dels teus diners d\'una manera senzilla i motivadora.', faq2_q: 'És segur utilitzar les meves dades a Bancfy?', faq2_a: 'Absolutament. La seguretat és el nostre pilar fonamental. Tota la teva informació està protegida amb xifratge d\'extrem a extrem i protocols de seguretat de nivell bancari. La teva privacitat i les teves dades són només teves.', faq3_q: 'Podré sincronitzar en diferents dispositius?', faq3_a: 'I tant! La teva informació se sincronitza en temps real a tots els teus dispositius. A més, hem inclòs la funció de "comptes compartits", ideal per gestionar les finances en parella, amb la teva família o companys de pis.', faq4_q: 'He de connectar el meu compte bancari?', faq4_a: 'No és necessari. Creiem en el poder de registrar manualment les teves despeses per crear consciència, com ensenya el mètode Kakebo. No obstant això, per donar-te flexibilitat, també et permetem importar els teus moviments des d\'un fitxer PDF, Excel o CSV de forma ràpida i senzilla.', faq5_q: 'Bancfy és gratuït?', faq5_a: 'Sí, el cor de Bancfy és i serà sempre gratuït, donant-te totes les eines que necessites per al teu dia a dia. Per a aquells que vulguin portar les seves finances al següent nivell, oferirem opcions Premium complementàries amb funcions avançades.', faq6_q: 'Quines divises i criptomonedes suporta?', faq6_a: 'Estem preparats per a un món global. Bancfy és compatible amb més de 50 divises tradicionals i més de 30 de les criptomonedes més importants, perquè tinguis una visió completa de tots els teus actius en un sol lloc.',
+                    newsletter_title: 'La revolució financera comença el Novembre de 2025.', newsletter_subtitle: 'No et quedis fora. Apunta\'t a la nostra newsletter i sigues el primer a rebre accés anticipat, notícies exclusives i consells per preparar el teu camí cap a la prosperitat.', newsletter_placeholder: 'El teu millor correu electrònic', newsletter_button: 'Apunta-m\'hi!',
+                    contact_title: 'Parlem?', contact_subtitle: 'Per a col·laboracions, premsa o qualsevol altra consulta, el nostre equip està a punt per escoltar-te. Emplena el formulari o escriu-nos a info@bancfy.com.', contact_name: 'Nom', contact_email: 'Correu electrònic', contact_subject: 'Assumpte', contact_message: 'Missatge', contact_button: 'Enviar Missatge',
+                    footer_copyright: '© 2025 Bancfy. Tots els drets reservats.', footer_design: 'Dissenyat amb ♥ per al teu benestar financer.',
+                    modal_close: 'Tancar', modal_thank_you: 'Gràcies!', modal_message_sent: 'El teu missatge s\'ha enviat correctament.', modal_welcome: 'Benvingut/da!', modal_subscribed: 'T\'has subscrit a la nostra newsletter.', modal_error: 'Error', modal_message_error: 'No s\'ha pogut enviar el missatge. Intenta-ho de nou.', modal_network_error: 'Ups! Hi ha hagut un problema de xarxa. Revisa la teva connexió.', modal_subscribe_error: 'No hem pogut processar la teva subscripció. Intenta-ho més tard.'
+                },
+                eu: {
+                    nav_features: 'Ezaugarriak', nav_story: 'Gure Istorioa', nav_faq: 'FAQ', nav_contact: 'Kontaktua', nav_join_waitlist: 'Sartu Itxaron Zerrendan',
+                    hero_title: 'Ongi etorri finantza pertsonalen etorkizunera.', hero_subtitle: 'Bancfy ez da soilik app bat, zure ekosistema finantzario berria da. Kakebo metodoaren jakinduria eta IAren indarra konbinatzen ditugu, inoiz imajinatu ez duzun argitasuna eta kontrola emateko.', hero_cta1: 'Batu iraultzara', hero_cta2: 'Ezagutu gehiago',
+                    features_title: 'Zure osasun finantzariorako app osatuena.', features_subtitle: 'Metodo frogatuak eta punta-puntako teknologia konbinatu ditugu aurrekaririk gabeko kontrola emateko.',
+                    feature1_title: 'Kakebo Metodo Digitala', feature1_desc: 'Aurrezteko arte japoniarra, sinplifikatua. Erregistratu, aztertu eta gastu bakoitzaz jabetu.',
+                    feature2_title: 'Bancbot, zure IA Entrenatzailea', feature2_desc: 'Jaso aholku pertsonalizatuak zure ohituretatik ikasten duen Machine Learning-ari esker.',
+                    feature3_title: 'Gamifikazio Dibertigarria', feature3_desc: 'Aurreztea joko bat da. Irabazi garaikurrak eta lehiatu erronka indibidual edo sozialetan.',
+                    feature4_title: 'Zure Kontu Guztiak', feature4_desc: 'Korrontea, aurrezkia, inbertsioa, kripto eta kredituak. Dena leku bakarrean, partekatuak barne!',
+                    feature5_title: 'Hezkuntza Interaktiboa', feature5_desc: 'Ikasi finantzak minijokoekin eta ezagutza pilulekin. Desblokeatu mailak!',
+                    feature6_title: 'Aukeren Radarra', feature6_desc: 'Ezagutu inurri eta banpiro gastuen benetako eragina eta nola inbertitu zenezakeen.',
+                    showcase_title: 'Ikusi zure Arrakasta Finantzarioa', showcase_subtitle: 'Interfaze garbi eta indartsua, argitasuna emateko diseinatua, ez nahasmen gehiago.',
+                    story_tag: 'GURE ISTORIOA', story_title: 'Ziurgabetasunetik argitasunera Bancfy-rekin', story_p1: 'Noizbait, denok sentitu gara gure finantzek gaindituta. Ustekabeko gastuak, erabaki inpultsiboak eta dirua hatz artean ihes egiten duen sentsazioa. Ni ere hor egon nintzen.', story_p2: 'Urteetan zehar, nire finantzekin borrokatu nuen zergatik ezin nuen aurreztu ulertu gabe. "Gastu banpiroek" nire aurrekontua kontsumitzen zuten konturatu gabe. Galduta sentitzen nintzen, benetan lagunduko zidan tresnarik gabe.', story_p3: 'Orduan erabaki nuen kontrola hartzea. Horrela jaio zen Bancfy-ren ideia: dirua kudeatzeaz gain, hezi, motibatu eta harekin duzun harremana eraldatzen duen tresna bat.', story_p4: 'Bancfy zure laguna da osasun finantzariorako bidaian. Bereizten gaituena ikuspegi integrala da: ez da soilik kontrolatzea, baizik eta ulertzea, ikastea eta erabaki informatuak hartzea. Ahaldunditzeko diseinatutako tresna bat da.', story_p5: 'Gaur, finantza-bizitza osasuntsuago eta kontzienteago baterako lehen urratsa ematera gonbidatzen zaitut. Batu Bancfy komunitatera.',
+                    faq_title: 'Ohiko Galderak', faq_subtitle: 'Zalantzak dituzu? Hemen ohikoenak argitzen ditugu.',
+                    faq1_q: 'Zer da zehazki Bancfy?', faq1_a: 'Bancfy zure finantza-entrenatzaile pertsonala da. Kakebo metodo japoniarra esperientzia digital, intuitibo eta gamifikatu bihurtu dugu. Zure gastuak erregistratzen laguntzeaz gain, ulertzen eta zure diruaren kontrola modu erraz eta motibagarrian hartzen laguntzen dizugu.', faq2_q: 'Segurua al da nire datuak Bancfy-n erabiltzea?', faq2_a: 'Guztiz. Segurtasuna gure oinarri nagusia da. Zure informazio guztia muturretik muturrerako zifratzearekin eta banku-mailako segurtasun-protokoloekin babestuta dago. Zure pribatutasuna eta zure datuak zurea bakarrik dira.', faq3_q: 'Gailu desberdinetan sinkronizatu ahal izango dut?', faq3_a: 'Noski! Zure informazioa denbora errealean sinkronizatzen da zure gailu guztietan. Gainera, "kontu partekatuak" funtzioa sartu dugu, bikotean, familian edo pisukideekin finantzak kudeatzeko aproposa.', faq4_q: 'Nire banku-kontua konektatu behar dut?', faq4_a: 'Ez da beharrezkoa. Zure gastuak eskuz erregistratzearen ahalmenean sinesten dugu kontzientzia sortzeko, Kakebo metodoak irakasten duen bezala. Hala ere, malgutasuna emateko, zure mugimenduak PDF, Excel edo CSV fitxategi batetik azkar eta erraz inportatzeko aukera ere ematen dizugu.', faq5_q: 'Bancfy doakoa da?', faq5_a: 'Bai, Bancfy-ren muina doakoa da eta beti izango da, zure egunerokorako behar dituzun tresna guztiak emanez. Beren finantzak hurrengo mailara eraman nahi dituztenentzat, Premium aukera osagarriak eskainiko ditugu funtzio aurreratuekin.', faq6_q: 'Zein dibisa eta kriptomoneta onartzen ditu?', faq6_a: 'Mundu global baterako prest gaude. Bancfy 50 dibisa tradizional baino gehiagorekin eta 30 kriptomoneta garrantzitsuenekin bateragarria da, zure aktibo guztien ikuspegi osoa leku bakarrean izan dezazun.',
+                    newsletter_title: 'Finantza iraultza 2025eko Azaroan hasiko da.', newsletter_subtitle: 'Ez geratu kanpoan. Eman izena gure newsletterrean eta izan lehena sarbide goiztiarra, albiste esklusiboak eta oparotasunerako bidea prestatzeko aholkuak jasotzen.', newsletter_placeholder: 'Zure posta elektroniko onena', newsletter_button: 'Eman izena!',
+                    contact_title: 'Hitz egingo dugu?', contact_subtitle: 'Lankidetzetarako, prentsarako edo beste edozein kontsultarako, gure taldea prest dago zuri entzuteko. Bete formularioa edo idatzi info@bancfy.com helbidera.', contact_name: 'Izena', contact_email: 'Posta elektronikoa', contact_subject: 'Gaia', contact_message: 'Mezua', contact_button: 'Mezua Bidali',
+                    footer_copyright: '© 2025 Bancfy. Eskubide guztiak erreserbatuta.', footer_design: 'Zure ongizate finantzariorako ♥-rekin diseinatua.',
+                    modal_close: 'Itxi', modal_thank_you: 'Eskerrik asko!', modal_message_sent: 'Zure mezua behar bezala bidali da.', modal_welcome: 'Ongi etorri!', modal_subscribed: 'Gure buletinera harpidetu zara.', modal_error: 'Errorea', modal_message_error: 'Ezin izan da mezua bidali. Saiatu berriro.', modal_network_error: 'Aupa! Sare-arazo bat egon da. Egiaztatu zure konexioa.', modal_subscribe_error: 'Ezin izan dugu zure harpidetza prozesatu. Saiatu beranduago.'
+                },
+                fr: {
+                    nav_features: 'Fonctionnalités', nav_story: 'Notre Histoire', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Rejoindre l\'attente',
+                    hero_title: 'Bienvenue dans le futur des finances personnelles.', hero_subtitle: 'Bancfy n\'est pas juste une application, c\'est votre nouvel écosystème financier. Nous combinons la sagesse de la méthode Kakebo avec la puissance de l\'IA pour vous offrir une clarté et un contrôle que vous n\'aviez jamais imaginés.', hero_cta1: 'Rejoignez la révolution', hero_cta2: 'En savoir plus',
+                    features_title: 'L\'application la plus complète pour votre santé financière.', features_subtitle: 'Nous avons combiné des méthodes éprouvées avec une technologie de pointe pour vous donner un contrôle sans précédent.',
+                    feature1_title: 'Méthode Kakebo Numérique', feature1_desc: 'L\'art japonais de l\'épargne, simplifié. Enregistrez, analysez et prenez conscience de chaque dépense.',
+                    feature2_title: 'Bancbot, votre Coach IA', feature2_desc: 'Recevez des conseils personnalisés grâce au Machine Learning qui apprend de vos habitudes.',
+                    feature3_title: 'Gamification Amusante', feature3_desc: 'Épargner est un jeu. Gagnez des trophées et participez à des défis individuels ou sociaux.',
+                    feature4_title: 'Tous vos Comptes', feature4_desc: 'Courant, épargne, investissement, crypto et crédits. Tout en un seul endroit, même les comptes partagés !',
+                    feature5_title: 'Éducation Interactive', feature5_desc: 'Apprenez la finance avec des mini-jeux et des capsules de connaissances. Débloquez des niveaux !',
+                    feature6_title: 'Radar d\'Opportunités', feature6_desc: 'Découvrez l\'impact réel des "dépenses café" et des dépenses fantômes et comment vous auriez pu les investir.',
+                    showcase_title: 'Visualisez votre Réussite Financière', showcase_subtitle: 'Une interface claire et puissante conçue pour vous apporter de la clarté, pas plus de confusion.',
+                    story_tag: 'NOTRE HISTOIRE', story_title: 'De l\'incertitude à la clarté avec Bancfy', story_p1: 'À un moment donné, nous nous sommes tous sentis dépassés par nos finances. Dépenses imprévues, décisions impulsives et le sentiment que l\'argent nous file entre les doigts. J\'y suis passé aussi.', story_p2: 'Pendant des années, j\'ai lutté avec mes finances sans comprendre pourquoi je n\'arrivais pas à épargner. Les "dépenses vampires" consommaient mon budget sans que je m\'en rende compte. Je me sentais perdu, sans outils pour m\'aider vraiment.', story_p3: 'C\'est alors que j\'ai décidé de prendre le contrôle. C\'est ainsi qu\'est née l\'idée de Bancfy : un outil qui non seulement gère l\'argent, mais qui éduque, motive et transforme votre relation avec lui.', story_p4: 'Bancfy est votre compagnon sur le chemin de la santé financière. Ce qui nous distingue, c\'est l\'approche globale : il ne s\'agit pas seulement de contrôler, mais de comprendre, d\'apprendre et de prendre des décisions éclairées. C\'est un outil conçu pour vous autonomiser.', story_p5: 'Aujourd\'hui, je vous invite à faire le premier pas vers une vie financière plus saine et plus consciente. Rejoignez la communauté Bancfy.',
+                    faq_title: 'Questions Fréquemment Posées', faq_subtitle: 'Vous avez des doutes ? Nous répondons ici aux plus courants.',
+                    faq1_q: 'Qu\'est-ce que Bancfy exactement ?', faq1_a: 'Bancfy est votre coach financier personnel. Nous avons transformé la méthode japonaise Kakebo en une expérience numérique, intuitive et ludique. Nous ne vous aidons pas seulement à enregistrer vos dépenses, mais à les comprendre et à prendre le contrôle de votre argent de manière simple et motivante.', faq2_q: 'Est-il sûr d\'utiliser mes données dans Bancfy ?', faq2_a: 'Absolument. La sécurité est notre pierre angulaire. Toutes vos informations sont protégées par un cryptage de bout en bout et des protocoles de sécurité de niveau bancaire. Votre vie privée et vos données n\'appartiennent qu\'à vous.', faq3_q: 'Pourrai-je synchroniser sur différents appareils ?', faq3_a: 'Bien sûr ! Vos informations sont synchronisées en temps réel sur tous vos appareils. De plus, nous avons inclus la fonction "comptes partagés", idéale pour gérer les finances en couple, en famille ou avec des colocataires.', faq4_q: 'Dois-je connecter mon compte bancaire ?', faq4_a: 'Ce n\'est pas nécessaire. Nous croyons au pouvoir d\'enregistrer manuellement vos dépenses pour créer une prise de conscience, comme l\'enseigne la méthode Kakebo. Cependant, pour vous offrir de la flexibilité, nous vous permettons également d\'importer vos transactions à partir d\'un fichier PDF, Excel ou CSV de manière rapide et simple.', faq5_q: 'Bancfy est-il gratuit ?', faq5_a: 'Oui, le cœur de Bancfy est et sera toujours gratuit, vous offrant tous les outils dont vous avez besoin au quotidien. Pour ceux qui veulent passer à la vitesse supérieure, nous proposerons des options Premium complémentaires avec des fonctionnalités avancées.', faq6_q: 'Quelles devises et cryptomonnaies sont prises en charge ?', faq6_a: 'Nous sommes prêts pour un monde global. Bancfy est compatible avec plus de 50 devises traditionnelles et plus de 30 des plus importantes cryptomonnaies, afin que vous ayez une vue complète de tous vos actifs en un seul endroit.',
+                    newsletter_title: 'La révolution financière commence en Novembre 2025.', newsletter_subtitle: 'Ne restez pas à l\'écart. Inscrivez-vous à notre newsletter et soyez le premier à recevoir un accès anticipé, des nouvelles exclusives et des conseils pour préparer votre chemin vers la prospérité.', newsletter_placeholder: 'Votre meilleure adresse e-mail', newsletter_button: 'Inscrivez-moi !',
+                    contact_title: 'Parlons-en', contact_subtitle: 'Pour des collaborations, la presse ou toute autre demande, notre équipe est prête à vous écouter. Remplissez le formulaire ou écrivez-nous à info@bancfy.com.', contact_name: 'Nom', contact_email: 'E-mail', contact_subject: 'Sujet', contact_message: 'Message', contact_button: 'Envoyer le Message',
+                    footer_copyright: '© 2025 Bancfy. Tous droits réservés.', footer_design: 'Conçu avec ♥ pour votre bien-être financier.',
+                    modal_close: 'Fermer', modal_thank_you: 'Merci !', modal_message_sent: 'Votre message a été envoyé avec succès.', modal_welcome: 'Bienvenue !', modal_subscribed: 'Vous vous êtes abonné à notre newsletter.', modal_error: 'Erreur', modal_message_error: 'Impossible d\'envoyer le message. Veuillez réessayer.', modal_network_error: 'Oups ! Un problème de réseau est survenu. Vérifiez votre connexion.', modal_subscribe_error: 'Nous n\'avons pas pu traiter votre abonnement. Veuillez réessayer plus tard.'
+                },
+                it: {
+                    nav_features: 'Caratteristiche', nav_story: 'La Nostra Storia', nav_faq: 'FAQ', nav_contact: 'Contatti', nav_join_waitlist: 'Unisciti all\'Attesa',
+                    hero_title: 'Benvenuto nel futuro della finanza personale.', hero_subtitle: 'Bancfy non è solo un\'app, è il tuo nuovo ecosistema finanziario. Uniamo la saggezza del metodo Kakebo con la potenza dell\'IA per darti una chiarezza e un controllo che non avevi mai immaginato.', hero_cta1: 'Unisciti alla rivoluzione', hero_cta2: 'Scopri di più',
+                    features_title: 'L\'app più completa per la tua salute finanziaria.', features_subtitle: 'Abbiamo combinato metodi collaudati con tecnologia all\'avanguardia per darti un controllo senza precedenti.',
+                    feature1_title: 'Metodo Kakebo Digitale', feature1_desc: 'L\'arte giapponese del risparmio, semplificata. Registra, analizza e prendi coscienza di ogni spesa.',
+                    feature2_title: 'Bancbot, il tuo Coach IA', feature2_desc: 'Ricevi consigli personalizzati grazie al Machine Learning che impara dalle tue abitudini.',
+                    feature3_title: 'Gamification Divertente', feature3_desc: 'Risparmiare è un gioco. Vinci trofei e competi in sfide individuali o sociali.',
+                    feature4_title: 'Tutti i tuoi Conti', feature4_desc: 'Corrente, risparmio, investimento, cripto e crediti. Tutto in un unico posto, anche condivisi!',
+                    feature5_title: 'Educazione Interattiva', feature5_desc: 'Impara la finanza con mini-giochi e pillole di conoscenza. Sblocca livelli!',
+                    feature6_title: 'Radar delle Opportunità', feature6_desc: 'Scopri l\'impatto reale delle spese "caffè" e delle spese fantasma e come avresti potuto investirle.',
+                    showcase_title: 'Visualizza il tuo Successo Finanziario', showcase_subtitle: 'Un\'interfaccia pulita e potente progettata per darti chiarezza, non più confusione.',
+                    story_tag: 'LA NOSTRA STORIA', story_title: 'Dall\'incertezza alla chiarezza con Bancfy', story_p1: 'A un certo punto, tutti ci siamo sentiti sopraffatti dalle nostre finanze. Spese impreviste, decisioni impulsive e la sensazione che i soldi scivolino via tra le dita. Ci sono passato anch\'io.', story_p2: 'Per anni, ho lottato con le mie finanze senza capire perché non riuscissi a risparmiare. Le "spese vampiro" consumavano il mio budget senza che me ne accorgessi. Mi sentivo perso, senza strumenti che mi aiutassero davvero.', story_p3: 'Fu allora che decisi di prendere il controllo. Così nacque l\'idea di Bancfy: uno strumento che non solo gestisce il denaro, ma educa, motiva e trasforma la tua relazione con esso.', story_p4: 'Bancfy è il tuo compagno nel viaggio verso la salute finanziaria. Ciò che ci distingue è l\'approccio completo: non si tratta solo di controllare, ma di capire, imparare e prendere decisioni informate. È uno strumento progettato per darti potere.', story_p5: 'Oggi, ti invito a fare il primo passo verso una vita finanziaria più sana e consapevole. Unisciti alla comunità di Bancfy.',
+                    faq_title: 'Domande Frequenti', faq_subtitle: 'Hai dubbi? Qui rispondiamo alle più comuni.',
+                    faq1_q: 'Cos\'è esattamente Bancfy?', faq1_a: 'Bancfy è il tuo coach finanziario personale. Abbiamo trasformato il metodo giapponese Kakebo in un\'esperienza digitale, intuitiva e ludica. Non solo ti aiutiamo a registrare le tue spese, ma a capirle e a prendere il controllo del tuo denaro in modo semplice e motivante.', faq2_q: 'È sicuro usare i miei dati in Bancfy?', faq2_a: 'Assolutamente. La sicurezza è il nostro pilastro fondamentale. Tutte le tue informazioni sono protette con crittografia end-to-end e protocolli di sicurezza di livello bancario. La tua privacy e i tuoi dati sono solo tuoi.', faq3_q: 'Potrò sincronizzare su diversi dispositivi?', faq3_a: 'Certo! Le tue informazioni si sincronizzano in tempo reale su tutti i tuoi dispositivi. Inoltre, abbiamo incluso la funzione "conti condivisi", ideale per gestire le finanze in coppia, con la famiglia o con i coinquilini.', faq4_q: 'Devo collegare il mio conto bancario?', faq4_a: 'Non è necessario. Crediamo nel potere di registrare manualmente le tue spese per creare consapevolezza, come insegna il metodo Kakebo. Tuttavia, per darti flessibilità, ti permettiamo anche di importare i tuoi movimenti da un file PDF, Excel o CSV in modo rapido e semplice.', faq5_q: 'Bancfy è gratuito?', faq5_a: 'Sì, il cuore di Bancfy è e sarà sempre gratuito, dandoti tutti gli strumenti di cui hai bisogno per la tua vita quotidiana. Per coloro che vogliono portare le proprie finanze al livello successivo, offriremo opzioni Premium complementari con funzioni avanzate.', faq6_q: 'Quali valute e criptovalute supporta?', faq6_a: 'Siamo pronti per un mondo globale. Bancfy supporta oltre 50 valute tradizionali e più di 30 delle più importanti criptovalute, in modo che tu possa avere una visione completa di tutti i tuoi asset in un unico posto.',
+                    newsletter_title: 'La rivoluzione finanziaria inizia a Novembre 2025.', newsletter_subtitle: 'Non restare fuori. Iscriviti alla nostra newsletter e sii il primo a ricevere accesso anticipato, notizie esclusive e consigli per preparare il tuo cammino verso la prosperità.', newsletter_placeholder: 'La tua migliore email', newsletter_button: 'Iscrivimi!',
+                    contact_title: 'Parliamone', contact_subtitle: 'Per collaborazioni, stampa o qualsiasi altra richiesta, il nostro team è pronto ad ascoltarti. Compila il modulo o scrivici a info@bancfy.com.', contact_name: 'Nome', contact_email: 'Email', contact_subject: 'Oggetto', contact_message: 'Messaggio', contact_button: 'Invia Messaggio',
+                    footer_copyright: '© 2025 Bancfy. Tutti i diritti riservati.', footer_design: 'Progettato con ♥ per il tuo benessere finanziario.',
+                    modal_close: 'Chiudi', modal_thank_you: 'Grazie!', modal_message_sent: 'Il tuo messaggio è stato inviato correttamente.', modal_welcome: 'Benvenuto/a!', modal_subscribed: 'Ti sei iscritto alla nostra newsletter.', modal_error: 'Errore', modal_message_error: 'Impossibile inviare il messaggio. Riprova.', modal_network_error: 'Oops! C\'è stato un problema di rete. Controlla la tua connessione.', modal_subscribe_error: 'Non siamo riusciti a elaborare la tua iscrizione. Riprova più tardi.'
+                },
+                de: {
+                    nav_features: 'Funktionen', nav_story: 'Unsere Geschichte', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Auf die Warteliste',
+                    hero_title: 'Willkommen in der Zukunft der persönlichen Finanzen.', hero_subtitle: 'Bancfy ist nicht nur eine App, es ist dein neues finanzielles Ökosystem. Wir kombinieren die Weisheit der Kakebo-Methode mit der Kraft der KI, um dir eine Klarheit und Kontrolle zu geben, die du dir nie vorgestellt hast.', hero_cta1: 'Tritt der Revolution bei', hero_cta2: 'Mehr entdecken',
+                    features_title: 'Die umfassendste App für deine finanzielle Gesundheit.', features_subtitle: 'Wir haben bewährte Methoden mit modernster Technologie kombiniert, um dir eine beispiellose Kontrolle zu geben.',
+                    feature1_title: 'Digitale Kakebo-Methode', feature1_desc: 'Die japanische Kunst des Sparens, vereinfacht. Erfasse, analysiere und werde dir jeder Ausgabe bewusst.',
+                    feature2_title: 'Bancbot, dein KI-Coach', feature2_desc: 'Erhalte personalisierte Ratschläge dank maschinellem Lernen, das aus deinen Gewohnheiten lernt.',
+                    feature3_title: 'Unterhaltsame Gamification', feature3_desc: 'Sparen ist ein Spiel. Gewinne Trophäen und trete in Einzel- oder Gruppenwettbewerben an.',
+                    feature4_title: 'Alle deine Konten', feature4_desc: 'Giro, Sparen, Investition, Krypto und Kredite. Alles an einem Ort, sogar geteilte Konten!',
+                    feature5_title: 'Interaktive Bildung', feature5_desc: 'Lerne Finanzen mit Minispielen und Wissenshäppchen. Schalte Level frei!',
+                    feature6_title: 'Chancen-Radar', feature6_desc: 'Entdecke die wahre Auswirkung von "Latte-Faktor"- und Phantomausgaben und wie du sie hättest investieren können.',
+                    showcase_title: 'Visualisiere deinen finanziellen Erfolg', showcase_subtitle: 'Eine saubere und leistungsstarke Benutzeroberfläche, die dir Klarheit verschafft, keine Verwirrung mehr.',
+                    story_tag: 'UNSERE GESCHICHTE', story_title: 'Von der Unsicherheit zur Klarheit mit Bancfy', story_p1: 'Irgendwann haben wir uns alle von unseren Finanzen überfordert gefühlt. Unerwartete Ausgaben, impulsive Entscheidungen und das Gefühl, dass das Geld durch die Finger rinnt. Ich war auch dort.', story_p2: 'Jahrelang kämpfte ich mit meinen Finanzen, ohne zu verstehen, warum ich nicht sparen konnte. "Vampir-Ausgaben" verzehrten mein Budget, ohne dass ich es merkte. Ich fühlte mich verloren, ohne Werkzeuge, die mir wirklich halfen.', story_p3: 'Dann beschloss ich, die Kontrolle zu übernehmen. So entstand die Idee von Bancfy: ein Werkzeug, das nicht nur Geld verwaltet, sondern auch bildet, motiviert und deine Beziehung dazu verändert.', story_p4: 'Bancfy ist dein Begleiter auf dem Weg zur finanziellen Gesundheit. Was uns auszeichnet, ist der ganzheitliche Ansatz: Es geht nicht nur darum zu kontrollieren, sondern zu verstehen, zu lernen und fundierte Entscheidungen zu treffen. Es ist ein Werkzeug, das dich befähigen soll.', story_p5: 'Heute lade ich dich ein, den ersten Schritt in ein gesünderes und bewussteres Finanzleben zu machen. Tritt der Bancfy-Community bei.',
+                    faq_title: 'Häufig gestellte Fragen', faq_subtitle: 'Hast du Zweifel? Hier lösen wir die häufigsten.',
+                    faq1_q: 'Was genau ist Bancfy?', faq1_a: 'Bancfy ist dein persönlicher Finanzcoach. Wir haben die japanische Kakebo-Methode in ein digitales, intuitives und spielerisches Erlebnis verwandelt. Wir helfen dir nicht nur, deine Ausgaben zu erfassen, sondern sie zu verstehen und die Kontrolle über dein Geld auf einfache und motivierende Weise zu übernehmen.', faq2_q: 'Ist es sicher, meine Daten in Bancfy zu verwenden?', faq2_a: 'Absolut. Sicherheit ist unser Grundpfeiler. Alle deine Informationen sind mit Ende-zu-Ende-Verschlüsselung und Sicherheitsprotokollen auf Bankenniveau geschützt. Deine Privatsphäre und deine Daten gehören nur dir.', faq3_q: 'Kann ich auf verschiedenen Geräten synchronisieren?', faq3_a: 'Natürlich! Deine Informationen werden in Echtzeit auf all deinen Geräten synchronisiert. Außerdem haben wir die Funktion "geteilte Konten" hinzugefügt, ideal für die Verwaltung der Finanzen als Paar, mit deiner Familie oder Mitbewohnern.', faq4_q: 'Muss ich mein Bankkonto verbinden?', faq4_a: 'Das ist nicht notwendig. Wir glauben an die Kraft, deine Ausgaben manuell zu erfassen, um Bewusstsein zu schaffen, wie es die Kakebo-Methode lehrt. Um dir jedoch Flexibilität zu geben, ermöglichen wir dir auch, deine Transaktionen schnell und einfach aus einer PDF-, Excel- oder CSV-Datei zu importieren.', faq5_q: 'Ist Bancfy kostenlos?', faq5_a: 'Ja, das Herz von Bancfy ist und wird immer kostenlos sein und dir alle Werkzeuge geben, die du für deinen Alltag brauchst. Für diejenigen, die ihre Finanzen auf die nächste Stufe heben möchten, werden wir ergänzende Premium-Optionen mit erweiterten Funktionen anbieten.', faq6_q: 'Welche Währungen und Kryptowährungen werden unterstützt?', faq6_a: 'Wir sind auf eine globale Welt vorbereitet. Bancfy ist mit über 50 traditionellen Währungen und mehr als 30 der wichtigsten Kryptowährungen kompatibel, damit du einen vollständigen Überblick über all deine Vermögenswerte an einem Ort hast.',
+                    newsletter_title: 'Die Finanzrevolution beginnt im November 2025.', newsletter_subtitle: 'Bleib nicht außen vor. Melde dich für unseren Newsletter an und erhalte als Erster frühzeitigen Zugang, exklusive Neuigkeiten und Tipps, um deinen Weg zum Wohlstand vorzubereiten.', newsletter_placeholder: 'Deine beste E-Mail-Adresse', newsletter_button: 'Melde mich an!',
+                    contact_title: 'Lass uns reden', contact_subtitle: 'Für Kooperationen, Presse oder andere Anfragen steht unser Team bereit, dir zuzuhören. Fülle das Formular aus oder schreibe uns an info@bancfy.com.', contact_name: 'Name', contact_email: 'E-Mail', contact_subject: 'Betreff', contact_message: 'Nachricht', contact_button: 'Nachricht senden',
+                    footer_copyright: '© 2025 Bancfy. Alle Rechte vorbehalten.', footer_design: 'Mit ♥ für dein finanzielles Wohlbefinden gestaltet.',
+                    modal_close: 'Schließen', modal_thank_you: 'Danke!', modal_message_sent: 'Deine Nachricht wurde erfolgreich gesendet.', modal_welcome: 'Willkommen!', modal_subscribed: 'Du hast unseren Newsletter abonniert.', modal_error: 'Fehler', modal_message_error: 'Nachricht konnte nicht gesendet werden. Bitte versuche es erneut.', modal_network_error: 'Ups! Es gab ein Netzwerkproblem. Überprüfe deine Verbindung.', modal_subscribe_error: 'Wir konnten dein Abonnement nicht bearbeiten. Bitte versuche es später noch einmal.'
+                },
+                ja: {
+                    nav_features: '特徴', nav_story: '私たちの物語', nav_faq: 'FAQ', nav_contact: 'お問い合わせ', nav_join_waitlist: 'ウェイティングリストに参加',
+                    hero_title: '個人の資産管理の未来へようこそ。', hero_subtitle: 'Bancfyは単なるアプリではなく、あなたの新しい金融エコシステムです。家計簿の知恵とAIの力を組み合わせ、これまでに想像もできなかったほどの明確さと管理能力を提供します。', hero_cta1: '革命に参加する', hero_cta2: 'もっと詳しく',
+                    features_title: 'あなたの金融健全性のための最も完全なアプリ。', features_subtitle: '実績のある方法と最先端技術を組み合わせ、前例のない管理能力を提供します。',
+                    feature1_title: 'デジタル家計簿メソッド', feature1_desc: '日本の節約術をシンプルに。すべての支出を記録、分析し、意識します。',
+                    feature2_title: 'あなたのAIコーチ、Bancbot', feature2_desc: 'あなたの習慣から学習する機械学習のおかげで、パーソナライズされたアドバイスを受け取れます。',
+                    feature3_title: '楽しいゲーミフィケーション', feature3_desc: '節約はゲームです。トロフィーを獲得し、個人または社会的なチャレンジで競いましょう。',
+                    feature4_title: 'すべての口座を一つに', feature4_desc: '当座、貯蓄、投資、暗号資産、ローン。共有口座も含め、すべてを一つの場所で！',
+                    feature5_title: 'インタラクティブな教育', feature5_desc: 'ミニゲームや知識のピルで金融を学びましょう。新しいレベルをアンロック！',
+                    feature6_title: '機会レーダー', feature6_desc: '「ラテマネー」や幽霊支出の真の影響と、それをどう投資できたかを発見しましょう。',
+                    showcase_title: 'あなたの経済的成功を視覚化', showcase_subtitle: '混乱ではなく、明確さを提供するために設計された、クリーンで強力なインターフェース。',
+                    story_tag: '私たちの物語', story_title: '不確実性から明確さへ、Bancfyと共に', story_p1: '誰もが一度は自分の財政に圧倒されたことがあるでしょう。予期せぬ出費、衝動的な決断、そしてお金が指の間からすり抜けていく感覚。私もそうでした。', story_p2: '何年もの間、なぜ貯金できないのか理解できないまま、私は自分の財政と格闘しました。「吸血鬼支出」が気づかないうちに私の予算を食いつぶしていました。本当に助けになるツールもなく、途方に暮れていました。', story_p3: 'その時、私はコントロールを取り戻すことを決意しました。こうしてBancfyのアイデアが生まれました。お金を管理するだけでなく、教育し、動機付け、お金との関係を変革するツールです。', story_p4: 'Bancfyは、金融の健全性への旅のあなたの伴侶です。私たちを際立たせているのは、包括的なアプローチです。追跡するだけでなく、理解し、学び、情報に基づいた決定を下すことです。あなたを力づけるために設計されたツールです。', story_p5: '今日、より健康的で意識的な金融生活への第一歩を踏み出すことをお勧めします。Bancfyコミュニティに参加してください。',
+                    faq_title: 'よくある質問', faq_subtitle: '疑問がありますか？ここで最も一般的なものにお答えします。',
+                    faq1_q: 'Bancfyとは具体的に何ですか？', faq1_a: 'Bancfyはあなたのパーソナル金融コーチです。日本の家計簿メソッドを、デジタルで直感的、そしてゲーム化された体験に変えました。支出を記録するだけでなく、それを理解し、簡単でやる気の出る方法でお金の管理を取り戻すお手伝いをします。', faq2_q: 'Bancfyで私のデータを使用するのは安全ですか？', faq2_a: 'もちろんです。セキュリティは私たちの基盤です。すべての情報はエンドツーエンドの暗号化と銀行レベルのセキュリティプロトコルで保護されています。あなたのプライバシーとデータはあなただけのものです。', faq3_q: '異なるデバイス間で同期できますか？', faq3_a: 'はい、できます！あなたの情報はすべてのデバイスでリアルタイムに同期されます。さらに、「共有口座」機能も搭載しており、パートナーや家族、ルームメイトとの家計管理に最適です。', faq4_q: '銀行口座を接続する必要がありますか？', faq4_a: 'その必要はありません。家計簿メソッドが教えるように、意識を高めるために手動で支出を記録することの力を信じています。しかし、柔軟性を提供するために、PDF、Excel、またはCSVファイルから取引を迅速かつ簡単にインポートすることもできます。', faq5_q: 'Bancfyは無料ですか？', faq5_a: 'はい、Bancfyの中核は常に無料で、日々の生活に必要なすべてのツールを提供します。財政を次のレベルに引き上げたい方のために、高度な機能を備えた補完的なプレミアムオプションを提供します。', faq6_q: 'どの通貨と暗号通貨をサポートしていますか？', faq6_a: '私たちはグローバルな世界に対応しています。Bancfyは50以上の従来の通貨と30以上の主要な暗号通貨をサポートしており、すべての資産を一つの場所で完全に把握できます。',
+                    newsletter_title: '金融革命は2025年11月に始まります。', newsletter_subtitle: '乗り遅れないでください。ニュースレターに登録して、早期アクセス、限定ニュース、そして繁栄への道を準備するためのヒントをいち早く手に入れましょう。', newsletter_placeholder: 'あなたの最高のメールアドレス', newsletter_button: '登録する！',
+                    contact_title: 'お話ししましょう', contact_subtitle: 'コラボレーション、プレス、その他のお問い合わせについては、私たちのチームがいつでもお聞きします。フォームに記入するか、info@bancfy.comまでご連絡ください。', contact_name: '名前', contact_email: 'メールアドレス', contact_subject: '件名', contact_message: 'メッセージ', contact_button: 'メッセージを送信',
+                    footer_copyright: '© 2025 Bancfy. 無断複写・転載を禁じます。', footer_design: 'あなたの金融の幸福のために♥を込めて設計されました。',
+                    modal_close: '閉じる', modal_thank_you: 'ありがとうございます！', modal_message_sent: 'メッセージは正常に送信されました。', modal_welcome: 'ようこそ！', modal_subscribed: 'ニュースレターに登録しました。', modal_error: 'エラー', modal_message_error: 'メッセージを送信できませんでした。もう一度お試しください。', modal_network_error: 'おっと！ネットワークに問題が発生しました。接続を確認してください。', modal_subscribe_error: '登録を処理できませんでした。後でもう一度お試しください。'
+                },
+                ko: {
+                    nav_features: '기능', nav_story: '우리의 이야기', nav_faq: 'FAQ', nav_contact: '문의하기', nav_join_waitlist: '대기자 명단 참여',
+                    hero_title: '개인 금융의 미래에 오신 것을 환영합니다.', hero_subtitle: 'Bancfy는 단순한 앱이 아니라 새로운 금융 생태계입니다. 카케이보 방법의 지혜와 AI의 힘을 결합하여 상상하지 못했던 명확성과 통제력을 제공합니다.', hero_cta1: '혁명에 동참하세요', hero_cta2: '더 알아보기',
+                    features_title: '금융 건강을 위한 가장 완벽한 앱.', features_subtitle: '검증된 방법과 최첨단 기술을 결합하여 전례 없는 통제력을 제공합니다.',
+                    feature1_title: '디지털 카케이보 방식', feature1_desc: '일본의 절약 기술을 단순화했습니다. 모든 지출을 기록, 분석하고 인식하세요.',
+                    feature2_title: '당신의 AI 코치, Bancbot', feature2_desc: '당신의 습관에서 배우는 머신러닝 덕분에 맞춤형 조언을 받으세요.',
+                    feature3_title: '재미있는 게임화', feature3_desc: '절약은 게임입니다. 트로피를 획득하고 개인 또는 사회적 챌린지에서 경쟁하세요.',
+                    feature4_title: '모든 계정을 한 곳에', feature4_desc: '입출금, 저축, 투자, 암호화폐, 대출. 공유 계정까지 모든 것을 한 곳에서!',
+                    feature5_title: '인터랙티브 교육', feature5_desc: '미니 게임과 지식 알약으로 금융을 배우세요. 새로운 레벨을 잠금 해제하세요!',
+                    feature6_title: '기회 레이더', feature6_desc: '"라떼 요인"과 유령 지출의 실제 영향을 발견하고 어떻게 투자할 수 있었는지 알아보세요.',
+                    showcase_title: '금융 성공 시각화', showcase_subtitle: '더 이상의 혼란이 아닌 명확성을 제공하도록 설계된 깨끗하고 강력한 인터페이스.',
+                    story_tag: '우리의 이야기', story_title: '불확실성에서 명확성으로, Bancfy와 함께', story_p1: '어느 시점에서 우리 모두는 재정 문제로 압도당한 적이 있습니다. 예상치 못한 지출, 충동적인 결정, 그리고 돈이 손가락 사이로 빠져나가는 느낌. 저도 그랬습니다.', story_p2: '몇 년 동안 저는 왜 저축을 할 수 없는지 이해하지 못한 채 재정 문제와 씨름했습니다. "뱀파이어 지출"이 저도 모르게 제 예산을 잠식하고 있었습니다. 정말로 도움이 되는 도구 없이 길을 잃은 기분이었습니다.', story_p3: '그때 저는 통제권을 되찾기로 결심했습니다. 그렇게 Bancfy의 아이디어가 탄생했습니다. 돈을 관리할 뿐만 아니라 교육하고, 동기를 부여하며, 돈과의 관계를 변화시키는 도구입니다.', story_p4: 'Bancfy는 금융 건강으로 가는 여정의 동반자입니다. 우리를 차별화하는 것은 포괄적인 접근 방식입니다. 추적하는 것뿐만 아니라 이해하고, 배우고, 정보에 입각한 결정을 내리는 것입니다. 당신에게 힘을 실어주기 위해 설계된 도구입니다.', story_p5: '오늘, 더 건강하고 의식적인 금융 생활을 향한 첫걸음을 내딛으시길 바랍니다. Bancfy 커뮤니티에 가입하세요.',
+                    faq_title: '자주 묻는 질문', faq_subtitle: '궁금한 점이 있으신가요? 가장 일반적인 질문에 대해 여기서 답변해 드립니다.',
+                    faq1_q: 'Bancfy는 정확히 무엇인가요?', faq1_a: 'Bancfy는 개인 금융 코치입니다. 일본의 카케이보 방법을 디지털, 직관적, 게임화된 경험으로 변환했습니다. 지출을 추적하는 데 도움을 줄 뿐만 아니라, 그것을 이해하고 간단하고 동기 부여가 되는 방식으로 돈을 통제할 수 있도록 돕습니다.', faq2_q: 'Bancfy에서 제 데이터를 사용하는 것이 안전한가요?', faq2_a: '물론입니다. 보안은 우리의 핵심입니다. 모든 정보는 종단 간 암호화 및 은행 수준의 보안 프로토콜로 보호됩니다. 귀하의 개인 정보와 데이터는 오직 귀하의 것입니다.', faq3_q: '다른 기기에서 동기화할 수 있나요?', faq3_a: '네, 가능합니다! 정보는 모든 기기에서 실시간으로 동기화됩니다. 또한 파트너, 가족 또는 룸메이트와 재정을 관리하기에 이상적인 "공유 계정" 기능을 포함했습니다.', faq4_q: '은행 계좌를 연결해야 하나요?', faq4_a: '그럴 필요 없습니다. 우리는 카케이보 방법이 가르치는 것처럼 인식을 높이기 위해 수동으로 지출을 기록하는 힘을 믿습니다. 그러나 유연성을 제공하기 위해 PDF, Excel 또는 CSV 파일에서 거래를 빠르고 쉽게 가져올 수도 있습니다.', faq5_q: 'Bancfy는 무료인가요?', faq5_a: '네, Bancfy의 핵심은 항상 무료이며 일상 생활에 필요한 모든 도구를 제공합니다. 재정을 다음 단계로 끌어올리고 싶은 분들을 위해 고급 기능이 포함된 보완적인 프리미엄 옵션을 제공할 것입니다.', faq6_q: '어떤 통화와 암호화폐를 지원하나요?', faq6_a: '우리는 글로벌 세계에 대비하고 있습니다. Bancfy는 50개 이상의 전통적인 통화와 30개 이상의 가장 중요한 암호화폐를 지원하므로 모든 자산을 한 곳에서 완벽하게 볼 수 있습니다.',
+                    newsletter_title: '금융 혁명은 2025년 11월에 시작됩니다.', newsletter_subtitle: '뒤처지지 마세요. 뉴스레터에 가입하여 조기 액세스, 독점 뉴스 및 번영으로 가는 길을 준비하기 위한 팁을 가장 먼저 받아보세요.', newsletter_placeholder: '최고의 이메일 주소', newsletter_button: '가입하기!',
+                    contact_title: '이야기 나눠요', contact_subtitle: '협업, 언론 또는 기타 문의 사항이 있으시면 저희 팀이 귀 기울일 준비가 되어 있습니다. 양식을 작성하거나 info@bancfy.com으로 이메일을 보내주세요.', contact_name: '이름', contact_email: '이메일', contact_subject: '제목', contact_message: '메시지', contact_button: '메시지 보내기',
+                    footer_copyright: '© 2025 Bancfy. 모든 권리 보유.', footer_design: '당신의 금융 복지를 위해 ♥로 디자인되었습니다.',
+                    modal_close: '닫기', modal_thank_you: '감사합니다!', modal_message_sent: '메시지가 성공적으로 전송되었습니다.', modal_welcome: '환영합니다!', modal_subscribed: '뉴스레터에 구독하셨습니다.', modal_error: '오류', modal_message_error: '메시지를 보낼 수 없습니다. 다시 시도하십시오.', modal_network_error: 'おっと！ネットワークに問題が発生しました。接続を確認してください。', modal_subscribe_error: '구독을 처리할 수 없습니다. 나중에 다시 시도하십시오.'
+                },
+                zh: {
+                    nav_features: '功能', nav_story: '我们的故事', nav_faq: '常见问题', nav_contact: '联系我们', nav_join_waitlist: '加入等候名单',
+                    hero_title: '欢迎来到个人理财的未来。', hero_subtitle: 'Bancfy 不仅仅是一个应用程序，它是您的新金融生态系统。我们将 Kakebo 方法的智慧与人工智能的力量相结合，为您带来前所未有的清晰度和控制力。', hero_cta1: '加入革命', hero_cta2: '发现更多',
+                    features_title: '为您财务健康最完整的应用程序。', features_subtitle: '我们将经过验证的方法与尖端技术相结合，为您提供前所未有的控制。',
+                    feature1_title: '数字 Kakebo 方法', feature1_desc: '日本的储蓄艺术，简化了。记录、分析并意识到每一笔开支。',
+                    feature2_title: 'Bancbot，您的 AI 教练', feature2_desc: '借助从您的习惯中学习的机器学习，接收个性化建议。',
+                    feature3_title: '有趣的游戏化', feature3_desc: '储蓄是一场游戏。赢得奖杯并在个人或社交挑战中竞争。',
+                    feature4_title: '您的所有账户', feature4_desc: '支票、储蓄、投资、加密货币和贷款。一切尽在一个地方，甚至可以共享账户！',
+                    feature5_title: '互动教育', feature5_desc: '通过迷你游戏和知识胶囊学习金融。解锁新关卡！',
+                    feature6_title: '机会雷达', feature6_desc: '发现“拿铁因素”和幽灵支出的真正影响，以及您本可以如何投资它们。',
+                    showcase_title: '可视化您的财务成功', showcase_subtitle: '一个干净而强大的界面，旨在为您提供清晰度，而不是更多的困惑。',
+                    story_tag: '我们的故事', story_title: '从不确定到清晰，与 Bancfy 一起', story_p1: '在某个时刻，我们都曾被自己的财务状况所淹没。意外的开支、冲动的决定，以及金钱从指间溜走的感觉。我也曾经历过。', story_p2: '多年来，我一直在与我的财务作斗争，却不明白为什么我存不下钱。“吸血鬼支出”在我不知不觉中消耗了我的预算。我感到迷茫，没有真正能帮助我的工具。', story_p3: '就在那时，我决定掌握控制权。Bancfy 的想法由此诞生：一个不仅管理金钱，而且教育、激励和改变您与金钱关系的工具。', story_p4: 'Bancfy 是您迈向财务健康之旅的伴侣。我们的与众不同之处在于全面的方法：不仅仅是跟踪，而是理解、学习和做出明智的决定。它是一个旨在赋予您力量的工具。', story_p5: '今天，我邀请您迈出迈向更健康、更有意识的财务生活的第一步。加入 Bancfy 社区。',
+                    faq_title: '常见问题', faq_subtitle: '有疑问吗？我们在这里解答最常见的问题。',
+                    faq1_q: 'Bancfy 到底是什么？', faq1_a: 'Bancfy 是您的个人财务教练。我们将日本的 Kakebo 方法转变为一种数字化的、直观的、游戏化的体验。我们不仅帮助您跟踪支出，还帮助您理解它们，并以简单而激励的方式掌控您的资金。', faq2_q: '在 Bancfy 中使用我的数据安全吗？', faq2_a: '绝对安全。安全是我们的基石。您的所有信息都受到端到端加密和银行级安全协议的保护。您的隐私和数据只属于您自己。', faq3_q: '我可以在不同设备上同步吗？', faq3_a: '当然可以！您的信息会在您所有设备上实时同步。此外，我们还加入了“共享账户”功能，非常适合与伴侣、家人或室友一起管理财务。', faq4_q: '我必须连接我的银行账户吗？', faq4_a: '没有必要。我们相信手动跟踪支出的力量，以建立意识，正如 Kakebo 方法所教导的那样。但是，为了给您灵活性，我们也允许您从 PDF、Excel 或 CSV 文件中快速轻松地导入您的交易。', faq5_q: 'Bancfy 是免费的吗？', faq5_a: '是的，Bancfy 的核心是并且将永远是免费的，为您提供日常生活所需的所有工具。对于那些希望将财务提升到新水平的人，我们将提供带有高级功能的补充高级选项。', faq6_q: '它支持哪些货币和加密货币？', faq6_a: '我们为全球化的世界做好了准备。Bancfy 支持 50 多种传统货币和 30 多种最重要的加密货币，因此您可以在一个地方全面了解您的所有资产。',
+                    newsletter_title: '金融革命将于 2025 年 11 月开始。', newsletter_subtitle: '不要错过。订阅我们的时事通讯，成为第一个获得早期访问、独家新闻和为您的繁荣之路做准备的技巧的人。', newsletter_placeholder: '您最好的电子邮件地址', newsletter_button: '订阅我！',
+                    contact_title: '我们谈谈', contact_subtitle: '对于合作、媒体或任何其他查询，我们的团队随时准备倾听。填写表格或写信给我们 info@bancfy.com。', contact_name: '姓名', contact_email: '电子邮件', contact_subject: '主题', contact_message: '信息', contact_button: '发送信息',
+                    footer_copyright: '© 2025 Bancfy。版权所有。', footer_design: '用 ♥ 为您的财务福祉而设计。',
+                    modal_close: '关闭', modal_thank_you: '谢谢！', modal_message_sent: '您的消息已成功发送。', modal_welcome: '欢迎！', modal_subscribed: '您已订阅我们的时事通讯。', modal_error: '错误', modal_message_error: '无法发送消息。请重试。', modal_network_error: '哎呀！出现网络问题。请检查您的连接。', modal_subscribe_error: '我们无法处理您的订阅。请稍后再试。'
+                },
+                ar: {
+                    nav_features: 'الميزات', nav_story: 'قصتنا', nav_faq: 'الأسئلة الشائعة', nav_contact: 'اتصل بنا', nav_join_waitlist: 'انضم إلى قائمة الانتظار',
+                    hero_title: 'مرحبًا بك في مستقبل التمويل الشخصي.', hero_subtitle: 'Bancfy ليس مجرد تطبيق، بل هو نظامك المالي الجديد. نحن نجمع بين حكمة طريقة Kakebo وقوة الذكاء الاصطناعي لنمنحك وضوحًا وتحكمًا لم تتخيله من قبل.', hero_cta1: 'انضم إلى الثورة', hero_cta2: 'اكتشف المزيد',
+                    features_title: 'التطبيق الأكثر اكتمالاً لصحتك المالية.', features_subtitle: 'لقد قمنا بدمج الأساليب المثبتة مع أحدث التقنيات لنمنحك تحكمًا غير مسبوق.',
+                    feature1_title: 'طريقة Kakebo الرقمية', feature1_desc: 'فن التوفير الياباني، مبسط. سجل وحلل وكن على دراية بكل نفقاتك.',
+                    feature2_title: 'Bancbot، مدربك بالذكاء الاصطناعي', feature2_desc: 'احصل على نصائح مخصصة بفضل التعلم الآلي الذي يتعلم من عاداتك.',
+                    feature3_title: 'التلعيب الممتع', feature3_desc: 'التوفير لعبة. اربح الجوائز وتنافس في تحديات فردية أو اجتماعية.',
+                    feature4_title: 'جميع حساباتك', feature4_desc: 'الحساب الجاري، التوفير، الاستثمار، العملات المشفرة، والقروض. كل شيء في مكان واحد، حتى الحسابات المشتركة!',
+                    feature5_title: 'التعليم التفاعلي', feature5_desc: 'تعلم المالية مع الألعاب المصغرة وحبوب المعرفة. افتح مستويات جديدة!',
+                    feature6_title: 'رادار الفرص', feature6_desc: 'اكتشف التأثير الحقيقي لـ "عامل اللاتيه" والنفقات الشبحية وكيف كان بإمكانك استثمارها.',
+                    showcase_title: 'تصور نجاحك المالي', showcase_subtitle: 'واجهة نظيفة وقوية مصممة لتمنحك الوضوح، لا مزيد من الارتباك.',
+                    story_tag: 'قصتنا', story_title: 'من عدم اليقين إلى الوضوح مع Bancfy', story_p1: 'في مرحلة ما، شعرنا جميعًا بالإرهاق من شؤوننا المالية. نفقات غير متوقعة، قرارات متهورة، والشعور بأن المال يتسرب من بين أصابعنا. لقد كنت هناك أيضًا.', story_p2: 'لسنوات، كافحت مع أموالي دون أن أفهم لماذا لم أتمكن من الادخار. كانت "النفقات الشبحية" تستهلك ميزانيتي دون أن أدرك ذلك. شعرت بالضياع، بدون أدوات تساعدني حقًا.', story_p3: 'عندها قررت أن أسيطر على الوضع. وهكذا ولدت فكرة Bancfy: أداة لا تدير الأموال فحسب، بل تعلم وتحفز وتحول علاقتك بها.', story_p4: 'Bancfy هو رفيقك في رحلتك نحو الصحة المالية. ما يميزنا هو النهج الشامل: لا يتعلق الأمر بالتحكم فقط، بل بالفهم والتعلم واتخاذ قرارات مستنيرة. إنها أداة مصممة لتمكينك.', story_p5: 'اليوم، أدعوك لاتخاذ الخطوة الأولى نحو حياة مالية أكثر صحة ووعيًا. انضم إلى مجتمع Bancfy.',
+                    faq_title: 'الأسئلة الشائعة', faq_subtitle: 'هل لديك شكوك؟ هنا نحل الأكثر شيوعًا.',
+                    faq1_q: 'ما هو Bancfy بالضبط؟', faq1_a: 'Bancfy هو مدربك المالي الشخصي. لقد قمنا بتحويل طريقة Kakebo اليابانية إلى تجربة رقمية وبديهية وممتعة. نحن لا نساعدك فقط على تسجيل نفقاتك، بل على فهمها والسيطرة على أموالك بطريقة بسيطة ومحفزة.', faq2_q: 'هل من الآمن استخدام بياناتي في Bancfy؟', faq2_a: 'بالتأكيد. الأمان هو ركيزتنا الأساسية. جميع معلوماتك محمية بتشفير من طرف إلى طرف وبروتوكولات أمان على مستوى البنوك. خصوصيتك وبياناتك ملكك وحدك.', faq3_q: 'هل سأتمكن من المزامنة عبر أجهزة مختلفة؟', faq3_a: 'بالطبع! تتم مزامنة معلوماتك في الوقت الفعلي عبر جميع أجهزتك. بالإضافة إلى ذلك، قمنا بتضمين ميزة "الحسابات المشتركة"، وهي مثالية لإدارة الشؤون المالية مع شريك أو عائلة أو زملاء السكن.', faq4_q: 'هل يجب علي ربط حسابي المصرفي؟', faq4_a: 'ليس ضروريا. نحن نؤمن بقوة تسجيل نفقاتك يدويًا لخلق الوعي، كما تعلم طريقة Kakebo. ومع ذلك، لمنحك المرونة، نسمح لك أيضًا باستيراد معاملاتك من ملف PDF أو Excel أو CSV بسرعة وسهولة.', faq5_q: 'هل Bancfy مجاني؟', faq5_a: 'نعم، قلب Bancfy مجاني وسيظل دائمًا كذلك، مما يمنحك جميع الأدوات التي تحتاجها في حياتك اليومية. بالنسبة لأولئك الذين يرغبون في الارتقاء بأموالهم إلى المستوى التالي، سنوفر خيارات Premium تكميلية مع ميزات متقدمة.', faq6_q: 'ما هي العملات والعملات المشفرة التي يدعمها؟', faq6_a: 'نحن مستعدون لعالم عالمي. يدعم Bancfy أكثر من 50 عملة تقليدية وأكثر من 30 من أهم العملات المشفرة، بحيث يكون لديك رؤية كاملة لجميع أصولك في مكان واحد.',
+                    newsletter_title: 'الثورة المالية تبدأ في نوفمبر 2025.', newsletter_subtitle: 'لا تبقى خارجاً. اشترك في نشرتنا الإخبارية وكن أول من يحصل على وصول مبكر وأخبار حصرية ونصائح لإعداد طريقك نحو الازدهار.', newsletter_placeholder: 'أفضل بريد إلكتروني لديك', newsletter_button: 'سجلني!',
+                    contact_title: 'هل نتحدث؟', contact_subtitle: 'للتعاون أو الصحافة أو أي استفسار آخر، فريقنا مستعد للاستماع إليك. املأ النموذج أو اكتب لنا على info@bancfy.com.', contact_name: 'الاسم', contact_email: 'البريد الإلكتروني', contact_subject: 'الموضوع', contact_message: 'الرسالة', contact_button: 'إرسال رسالة',
+                    footer_copyright: '© 2025 Bancfy. جميع الحقوق محفوظة.', footer_design: 'صُمم بـ ♥ من أجل رفاهيتك المالية.',
+                    modal_close: 'إغلاق', modal_thank_you: 'شكرًا لك!', modal_message_sent: 'تم إرسال رسالتك بنجاح.', modal_welcome: 'أهلاً بك!', modal_subscribed: 'لقد اشتركت في نشرتنا الإخبارية.', modal_error: 'خطأ', modal_message_error: 'تعذر إرسال الرسالة. الرجاء المحاولة مرة أخرى.', modal_network_error: 'عفوًا! حدثت مشكلة في الشبكة. تحقق من اتصالك.', modal_subscribe_error: 'لم نتمكن من معالجة اشتراكك. الرجاء المحاولة لاحقًا.'
                 }
             };
 
-            const supportedLangs = {
+const supportedLangs = {
                 'es': { name: 'Español', flag: 'es' },
                 'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg' },
                 'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg' },
@@ -500,12 +661,16 @@
             };
 
             function translatePage(lang) {
-                const targetLang = translations[lang] ? lang : 'es'; // Fallback to Spanish if lang not found
+                // Fallback to Spanish if the selected language or a specific key is not found
+                const targetLang = translations[lang] ? lang : 'es'; 
                 document.querySelectorAll('[data-translate-key]').forEach(el => {
                     const key = el.getAttribute('data-translate-key');
-                    const translation = translations[targetLang]?.[key] || translations['en']?.[key] || el.innerHTML;
+                    // Use target language, fallback to Spanish, then to the original text content
+                    const translation = translations[targetLang]?.[key] || translations['es']?.[key] || el.textContent;
                     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        if(el.placeholder) el.placeholder = translation;
+                        if(el.type !== 'submit') {
+                           el.placeholder = translation;
+                        }
                     } else {
                         el.innerHTML = translation;
                     }
@@ -516,11 +681,7 @@
 
             function setLanguage(lang) {
                 const langInfo = supportedLangs[lang] || supportedLangs['es'];
-                const currentFlagImg = document.getElementById('current-lang-flag');
-                
-                const flagSrc = langInfo.flagUrl ? langInfo.flagUrl : `https://flagcdn.com/w40/${langInfo.flag}.png`;
-                currentFlagImg.src = flagSrc;
-
+                document.getElementById('current-lang-flag').src = `https://flagcdn.com/w20/${langInfo.flag}.png`;
                 document.getElementById('current-lang-code').textContent = lang.split('-')[0].toUpperCase();
                 translatePage(lang);
                 localStorage.setItem('bancfy_lang', lang);
@@ -533,15 +694,12 @@
                 link.href = '#';
                 link.classList.add('flex', 'items-center', 'px-4', 'py-2', 'text-sm', 'text-gray-700', 'hover:bg-light-gray');
                 link.dataset.lang = code;
-
-                const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w40/${langData.flag}.png`;
-                
-                link.innerHTML = `<img src="${flagSrc}" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
-                
+                link.innerHTML = `<img src="https://flagcdn.com/w20/${langData.flag}.png" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     setLanguage(code);
-                    langDropdown.parentElement.blur(); // Close dropdown on click
+                    // This is a trick to close the dropdown on mobile after selection
+                    document.getElementById('lang-selector-btn').blur();
                 });
                 langDropdown.appendChild(link);
             }
@@ -561,6 +719,12 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            // Close mobile menu when a link is clicked
+            mobileMenu.addEventListener('click', (e) => {
+                if(e.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
 
             // --- Scroll Reveal Animation ---
             const observer = new IntersectionObserver((entries) => {
@@ -585,16 +749,15 @@
                 const lang = localStorage.getItem('bancfy_lang') || 'es';
                 modalTitle.textContent = translations[lang]?.[titleKey] || translations.es[titleKey];
                 modalMessage.textContent = translations[lang]?.[messageKey] || translations.es[messageKey];
-                modalCloseButton.textContent = translations[lang]?.['modal_close'] || translations.es['modal_close'];
                 modal.classList.remove('hidden');
                 setTimeout(() => {
-                    modal.querySelector('.modal-backdrop').style.opacity = '1';
+                    modal.classList.remove('opacity-0');
                     modal.querySelector('.modal-content').style.opacity = '1';
                     modal.querySelector('.modal-content').style.transform = 'scale(1)';
                 }, 10);
             }
             function hideModal() {
-                 modal.querySelector('.modal-backdrop').style.opacity = '0';
+                 modal.classList.add('opacity-0');
                  modal.querySelector('.modal-content').style.opacity = '0';
                  modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
                  setTimeout(() => modal.classList.add('hidden'), 300);
@@ -638,7 +801,12 @@
                 const email = form.querySelector('input[name="email"]').value;
                 const button = form.querySelector('button[type="submit"]');
                 const originalButtonText = button.innerHTML;
-                if (!email) { showModal('modal_error', 'Por favor, introduce un correo electrónico.'); return; }
+                if (!email) { 
+                    const lang = localStorage.getItem('bancfy_lang') || 'es';
+                    const errorMsg = lang === 'es' ? 'Por favor, introduce un correo electrónico.' : 'Please enter an email address.';
+                    showModal('modal_error', errorMsg); 
+                    return; 
+                }
                 if (typeof window.db === 'undefined') { console.error("Firebase not configured"); return; }
                 button.textContent = '...';
                 button.disabled = true;
