@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Bancfy | Tu App de Finanzas con IA y Kakebo - Alcanza la Claridad Financiera</title>
+    <title>Bancfy | El Futuro de las Finanzas Personales con IA y Kakebo</title>
     <meta name="description" content="Bancfy es la app definitiva para tu salud financiera. Usa el método Kakebo, IA, gamificación y educación para controlar tus gastos, ahorrar y alcanzar tus metas. ¡Únete a la lista de espera!">
     <meta name="keywords" content="Bancfy, finanzas personales, app de presupuesto, método Kakebo, ahorrar dinero, salud financiera, inteligencia artificial, gamificación, bancbot, control de gastos, inversión, criptomonedas">
     <meta name="author" content="Bancfy">
@@ -16,28 +16,28 @@
     <meta property="og:url" content="https://www.bancfy.com/">
     <meta property="og:title" content="Bancfy | Tu App de Finanzas con IA y Kakebo">
     <meta property="og:description" content="Toma el control de tu dinero con el método Kakebo, IA, gamificación y educación financiera.">
-    <meta property="og:image" content="https://placehold.co/1200x630/0C2340/C8B273?text=Bancfy">
+    <meta property="og:image" content="imagenes/ChatGPT Image 25 jul 2025, 19_53_12.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.bancfy.com/">
     <meta property="twitter:title" content="Bancfy | Tu App de Finanzas con IA y Kakebo">
     <meta property="twitter:description" content="Toma el control de tu dinero con el método Kakebo, IA, gamificación y educación financiera.">
-    <meta property="twitter:image" content="https://placehold.co/1200x630/0C2340/C8B273?text=Bancfy">
+    <meta property="twitter:image" content="imagenes/ChatGPT Image 25 jul 2025, 19_53_12.jpg">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Urbanist -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" href="https://placehold.co/32x32/0C2340/C8B273?text=B" type="image/png">
+    <link rel="icon" href="imagenes/logo.jpg" type="image/jpeg">
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Urbanist', sans-serif; }
         :root {
             --navy: #0C2340;
             --gold: #C8B273;
@@ -50,6 +50,7 @@
         .text-gold { color: var(--gold); }
         .hover\:bg-gold-hover:hover { background-color: var(--gold-hover); }
         .border-gold { border-color: var(--gold); }
+        .ring-gold:focus { ring-color: var(--gold); }
         .bg-light-gray { background-color: var(--light-gray); }
         .reveal {
             opacity: 0;
@@ -57,8 +58,27 @@
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .reveal.visible { opacity: 1; transform: translateY(0); }
-        /* Estilo para el dropdown de idioma */
         .group:hover .group-hover\:block { display: block; }
+        .modal-backdrop { transition: opacity 0.3s ease-in-out; }
+        .modal-content { transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Adjust as needed */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+        .faq-arrow {
+            transition: transform 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-white text-navy antialiased">
@@ -66,73 +86,74 @@
     <!-- ========== HEADER ========== -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-navy flex items-center">
-                <svg class="w-8 h-8 mr-2 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1h4v1m-4 0H8v-1h4v1zm-4 4h16M4 12h16m-4 4h4v-1h-4v1zm-4 0h4v-1H8v1zm-4 0h4v-1H4v1zm0 0v1h16v-1H4z"></path></svg>
+            <a href="#" class="text-2xl font-bold text-navy flex items-center gap-3">
+                <!-- LOGO IMAGE -->
+                <img src="images/logo.png" alt="Logo de Bancfy" class="w-10 h-10 rounded-full">
                 Bancfy
             </a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#features" class="text-navy hover:text-gold transition-colors duration-300">Características</a>
-                <a href="#story" class="text-navy hover:text-gold transition-colors duration-300">Nuestra Historia</a>
-                <a href="#newsletter" class="text-navy hover:text-gold transition-colors duration-300">Newsletter</a>
-                <a href="#contact" class="text-navy hover:text-gold transition-colors duration-300">Contacto</a>
+                <a href="#features" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_features">Características</a>
+                <a href="#story" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_story">Nuestra Historia</a>
+                <a href="#faq" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_faq">FAQ</a>
+                <a href="#contact" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_contact">Contacto</a>
                 <!-- Language Selector -->
                 <div class="relative group">
-                    <button class="flex items-center text-navy hover:text-gold transition-colors duration-300">
-                        <svg class="w-5 h-5 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A11.953 11.953 0 0012 13.5c2.998 0 5.74 1.1 7.843 2.918m-15.686 0A8.959 8.959 0 003 12c0-.778.099-1.533.284-2.253m15.132 4.506A9 9 0 0112 21z" /></svg>
-                        <span>ES</span>
+                    <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
+                        <img id="current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera de España" class="w-5 h-auto mr-2 rounded-sm">
+                        <span id="current-lang-code">ES</span>
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-40 right-0">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Español</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Català</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Euskara</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Galego</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">English</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Français</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Deutsch</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Schweizerdeutsch</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Italiano</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">Português</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">日本語</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">한국어</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">中文</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-light-gray">العربية</a>
+                    <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
+                        <!-- Languages will be injected by JS -->
                     </div>
                 </div>
             </div>
-            <a href="#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
+            <a href="#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="nav_join_waitlist">
                 Únete a la Espera
             </a>
-            <button class="md:hidden text-navy">
+            <button id="mobile-menu-button" class="md:hidden text-navy">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+             <a href="#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features_mobile">Características</a>
+             <a href="#story" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_story_mobile">Nuestra Historia</a>
+             <a href="#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq_mobile">FAQ</a>
+             <a href="#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact_mobile">Contacto</a>
+        </div>
     </header>
 
     <!-- ========== MAIN CONTENT ========== -->
     <main>
-        <!-- ========== HERO SECTION ========== -->
-        <section class="py-20 md:py-32 bg-light-gray">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-navy leading-tight mb-4 reveal">
-                    De la incertidumbre a la claridad financiera.
-                </h1>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6 reveal" style="transition-delay: 200ms;">
-                    Bancfy es la app que te enseña a dominar tu dinero con el método Kakebo, IA y gamificación. Prepárate para una nueva era de prosperidad.
-                </p>
-                <p class="font-semibold text-gold mb-8 reveal" style="transition-delay: 300ms;">Lanzamiento oficial: Noviembre 2025</p>
-                <div class="flex justify-center space-x-4 reveal" style="transition-delay: 400ms;">
-                    <a href="#newsletter" class="bg-gold text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
-                        Sé el primero en saberlo
-                    </a>
-                    <a href="#features" class="bg-white text-navy font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105">
-                        Descubre sus poderes
-                    </a>
-                </div>
-                <div class="mt-16 reveal" style="transition-delay: 600ms;">
-                    <img src="https://placehold.co/900x500/FFFFFF/0C2340?text=Bancfy+App+Mockup" 
-                         alt="Mockup de la aplicación Bancfy mostrando el panel de salud financiera" 
-                         class="mx-auto rounded-2xl shadow-2xl max-w-4xl w-full">
+        <!-- ========== HERO SECTION (NEW) ========== -->
+        <section class="bg-light-gray overflow-hidden">
+            <div class="container mx-auto px-6 py-20 md:py-28">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Text Column -->
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-navy leading-tight mb-4 reveal" data-translate-key="hero_title">
+                            Bienvenido al futuro de las finanzas personales.
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-600 max-w-xl mx-auto md:mx-0 mb-8 reveal" style="transition-delay: 200ms;" data-translate-key="hero_subtitle">
+                            Bancfy no es solo una app, es tu nuevo ecosistema financiero. Combinamos la sabiduría del método Kakebo con la potencia de la IA para darte una claridad y un control que nunca antes habías imaginado.
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 reveal" style="transition-delay: 400ms;">
+                            <a href="#newsletter" class="bg-gold text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105 w-full sm:w-auto" data-translate-key="hero_cta1">
+                                Únete a la revolución
+                            </a>
+                            <a href="#features" class="bg-white text-navy font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto" data-translate-key="hero_cta2">
+                                Descubre más
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Image Column -->
+                    <div class="relative flex justify-center items-center reveal" style="transition-delay: 300ms;">
+                         <div class="absolute w-full h-full bg-navy/10 rounded-full blur-3xl -z-10"></div>
+                         <img src="images/cabecera.png" 
+                             alt="Vista de la aplicación Bancfy en un smartphone" 
+                             class="rounded-3xl shadow-2xl max-w-sm w-full transform transition-transform duration-500 hover:scale-105 z-10">
+                    </div>
                 </div>
             </div>
         </section>
@@ -141,61 +162,59 @@
         <section id="features" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">La app más completa para tu salud financiera.</h2>
-                    <p class="text-gray-600 mt-2 max-w-3xl mx-auto reveal" style="transition-delay: 200ms;">Hemos combinado métodos probados con tecnología de punta para darte un control sin precedentes.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal" data-translate-key="features_title">La app más completa para tu salud financiera.</h2>
+                    <p class="text-gray-600 mt-2 max-w-3xl mx-auto reveal" style="transition-delay: 200ms;" data-translate-key="features_subtitle">Hemos combinado métodos probados con tecnología de punta para darte un control sin precedentes.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Feature: Kakebo -->
                     <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4">
                         <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">Método Kakebo Digital</h3><p class="text-gray-600">El arte japonés de ahorrar, simplificado. Registra, analiza y toma conciencia de cada gasto.</p></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1" data-translate-key="feature1_title">Método Kakebo Digital</h3><p class="text-gray-600" data-translate-key="feature1_desc">El arte japonés de ahorrar, simplificado. Registra, analiza y toma conciencia de cada gasto.</p></div>
                     </div>
                     <!-- Feature: Bancbot IA -->
                     <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 100ms;">
                         <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V8.25a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 8.25v7.5A2.25 2.25 0 006.75 18z" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">Bancbot, tu Coach IA</h3><p class="text-gray-600">Recibe consejos personalizados gracias al Machine Learning que aprende de tus hábitos.</p></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1" data-translate-key="feature2_title">Bancbot, tu Coach IA</h3><p class="text-gray-600" data-translate-key="feature2_desc">Recibe consejos personalizados gracias al Machine Learning que aprende de tus hábitos.</p></div>
                     </div>
                     <!-- Feature: Gamificación -->
                     <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 200ms;">
                         <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9.75 9.75 0 100-13.5h9a9.75 9.75 0 100 13.5zM16.5 18.75a9.75 9.75 0 00-9-13.5" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">Gamificación Divertida</h3><p class="text-gray-600">Ahorrar es un juego. Gana trofeos y compite en retos individuales o sociales.</p></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1" data-translate-key="feature3_title">Gamificación Divertida</h3><p class="text-gray-600" data-translate-key="feature3_desc">Ahorrar es un juego. Gana trofeos y compite en retos individuales o sociales.</p></div>
                     </div>
                     <!-- Feature: Cuentas -->
                     <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 300ms;">
                         <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">Todas tus Cuentas</h3><p class="text-gray-600">Corriente, ahorro, inversión, cripto y créditos. Todo en un solo lugar, ¡incluso compartidas!</p></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1" data-translate-key="feature4_title">Todas tus Cuentas</h3><p class="text-gray-600" data-translate-key="feature4_desc">Corriente, ahorro, inversión, cripto y créditos. Todo en un solo lugar, ¡incluso compartidas!</p></div>
                     </div>
                     <!-- Feature: Educación -->
                     <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 400ms;">
                         <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5z" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">Educación Interactiva</h3><p class="text-gray-600">Aprende finanzas con mini-juegos y píldoras de conocimiento. ¡Desbloquea niveles!</p></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1" data-translate-key="feature5_title">Educación Interactiva</h3><p class="text-gray-600" data-translate-key="feature5_desc">Aprende finanzas con mini-juegos y píldoras de conocimiento. ¡Desbloquea niveles!</p></div>
                     </div>
                     <!-- Feature: Radar -->
                     <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 500ms;">
                         <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25a8.964 8.964 0 014.971 1.572A8.965 8.965 0 0121 12a8.965 8.965 0 01-3.971 7.178A8.964 8.964 0 0112 21.75a8.964 8.964 0 01-7.178-3.971A8.965 8.965 0 013 12a8.965 8.965 0 013.971-7.178A8.964 8.964 0 0112 2.25z" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">Radar de Oportunidades</h3><p class="text-gray-600">Descubre el impacto real de los gastos hormiga y vampiro y cómo podrías haberlos invertido.</p></div>
+                        <div><h3 class="text-xl font-semibold text-navy mb-1" data-translate-key="feature6_title">Radar de Oportunidades</h3><p class="text-gray-600" data-translate-key="feature6_desc">Descubre el impacto real de los gastos hormiga y vampiro y cómo podrías haberlos invertido.</p></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== APP SHOWCASE SECTION (NEW) ========== -->
+        <!-- ========== APP SHOWCASE SECTION (RESTORED) ========== -->
         <section id="app-showcase" class="py-20 bg-light-gray">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">Visualiza tu Éxito Financiero</h2>
-                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto reveal" style="transition-delay: 200ms;">Una interfaz limpia y poderosa diseñada para darte claridad, no más confusión.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal" data-translate-key="showcase_title">Visualiza tu Éxito Financiero</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto reveal" style="transition-delay: 200ms;" data-translate-key="showcase_subtitle">Una interfaz limpia y poderosa diseñada para darte claridad, no más confusión.</p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-                    <!-- Image 1 -->
                     <div class="reveal" style="transition-delay: 400ms;">
-                        <img src="https://placehold.co/600x800/FFFFFF/0C2340?text=Tu+Imagen+PNG+1" 
+                        <img src="images/imagen1.png" 
                              alt="Captura de pantalla de la app Bancfy mostrando metas de ahorro" 
                              class="mx-auto rounded-2xl shadow-xl w-full max-w-sm">
                     </div>
-                    <!-- Image 2 -->
                     <div class="reveal" style="transition-delay: 600ms;">
-                        <img src="https://placehold.co/600x800/0C2340/FFFFFF?text=Tu+Imagen+PNG+2" 
+                        <img src="images/imagen2.png" 
                              alt="Captura de pantalla de la app Bancfy mostrando la sección de gamificación" 
                              class="mx-auto rounded-2xl shadow-xl w-full max-w-sm">
                     </div>
@@ -208,31 +227,104 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto">
                     <div class="text-center mb-10 reveal">
-                        <span class="font-semibold text-gold">NUESTRA HISTORIA</span>
-                        <h2 class="text-3xl md:text-4xl font-bold mt-2">De la incertidumbre a la claridad con Bancfy</h2>
+                        <span class="font-semibold text-gold" data-translate-key="story_tag">NUESTRA HISTORIA</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mt-2" data-translate-key="story_title">De la incertidumbre a la claridad con Bancfy</h2>
                     </div>
                     <div class="text-gray-300 space-y-4 reveal" style="transition-delay: 200ms;">
-                        <p>En algún momento, todos nos hemos sentido abrumados por nuestras finanzas. Gastos imprevistos, decisiones impulsivas y la sensación de que el dinero se escurre entre los dedos. Yo también estuve allí.</p>
-                        <p class="font-semibold text-white">Durante años, luché con mis finanzas sin entender por qué no lograba ahorrar. Los "gastos vampiro" consumían mi presupuesto sin que me diera cuenta. Me sentía perdido, sin herramientas que me ayudaran de verdad.</p>
-                        <p>Fue entonces cuando decidí tomar el control. Así nació la idea de Bancfy: una herramienta que no solo gestiona el dinero, sino que educa, motiva y transforma tu relación con él.</p>
-                        <p>Bancfy es tu compañero en el viaje hacia la salud financiera. Lo que nos distingue es el enfoque integral: no se trata solo de controlar, sino de entender, aprender y tomar decisiones informadas. Es una herramienta diseñada para empoderarte.</p>
-                        <p class="text-lg font-bold text-center mt-6 text-gold">Hoy, te invito a dar el primer paso hacia una vida financiera más saludable y consciente. Únete a la comunidad Bancfy.</p>
+                        <p data-translate-key="story_p1">En algún momento, todos nos hemos sentido abrumados por nuestras finanzas. Gastos imprevistos, decisiones impulsivas y la sensación de que el dinero se escurre entre los dedos. Yo también estuve allí.</p>
+                        <p class="font-semibold text-white" data-translate-key="story_p2">Durante años, luché con mis finanzas sin entender por qué no lograba ahorrar. Los "gastos vampiro" consumían mi presupuesto sin que me diera cuenta. Me sentía perdido, sin herramientas que me ayudaran de verdad.</p>
+                        <p data-translate-key="story_p3">Fue entonces cuando decidí tomar el control. Así nació la idea de Bancfy: una herramienta que no solo gestiona el dinero, sino que educa, motiva y transforma tu relación con él.</p>
+                        <p data-translate-key="story_p4">Bancfy es tu compañero en el viaje hacia la salud financiera. Lo que nos distingue es el enfoque integral: no se trata solo de controlar, sino de entender, aprender y tomar decisiones informadas. Es una herramienta diseñada para empoderarte.</p>
+                        <p class="text-lg font-bold text-center mt-6 text-gold" data-translate-key="story_p5">Hoy, te invito a dar el primer paso hacia una vida financiera más saludable y consciente. Únete a la comunidad Bancfy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ========== FAQ SECTION (UPDATED) ========== -->
+        <section id="faq" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal" data-translate-key="faq_title">Preguntas Frecuentes</h2>
+                    <p class="text-gray-600 mt-2 max-w-3xl mx-auto reveal" style="transition-delay: 200ms;" data-translate-key="faq_subtitle">¿Tienes dudas? Aquí resolvemos las más comunes.</p>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
+                            <span data-translate-key="faq1_q">¿Qué es exactamente Bancfy?</span>
+                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer text-gray-600">
+                            <p data-translate-key="faq1_a">Bancfy es tu coach financiero personal. Hemos transformado el método japonés Kakebo en una experiencia digital, intuitiva y gamificada. No solo te ayudamos a registrar tus gastos, sino a entenderlos y a tomar el control de tu dinero de una forma sencilla y motivadora.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
+                            <span data-translate-key="faq2_q">¿Es seguro usar mis datos en Bancfy?</span>
+                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer text-gray-600">
+                            <p data-translate-key="faq2_a">Absolutamente. La seguridad es nuestro pilar fundamental. Toda tu información está protegida con cifrado de extremo a extremo y protocolos de seguridad de nivel bancario. Tu privacidad y tus datos son solo tuyos.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
+                            <span data-translate-key="faq3_q">¿Podré sincronizar en diferentes dispositivos?</span>
+                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer text-gray-600">
+                           <p data-translate-key="faq3_a">¡Por supuesto! Tu información se sincroniza en tiempo real en todos tus dispositivos. Además, hemos incluido la función de "cuentas compartidas", ideal para gestionar las finanzas en pareja, con tu familia o compañeros de piso.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
+                            <span data-translate-key="faq4_q">¿Tengo que conectar mi cuenta bancaria?</span>
+                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer text-gray-600">
+                           <p data-translate-key="faq4_a">No es necesario. Creemos en el poder de registrar manualmente tus gastos para crear conciencia, como enseña el método Kakebo. Sin embargo, para darte flexibilidad, también te permitimos importar tus movimientos desde un fichero PDF, Excel o CSV de forma rápida y sencilla.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
+                            <span data-translate-key="faq5_q">¿Bancfy es gratis?</span>
+                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer text-gray-600">
+                           <p data-translate-key="faq5_a">Sí, el corazón de Bancfy es y será siempre gratuito, dándote todas las herramientas que necesitas para tu día a día. Para aquellos que quieran llevar sus finanzas al siguiente nivel, ofreceremos opciones Premium complementarias con funciones avanzadas.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
+                            <span data-translate-key="faq6_q">¿Qué divisas y criptomonedas soporta?</span>
+                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer text-gray-600">
+                           <p data-translate-key="faq6_a">Estamos preparados para un mundo global. Bancfy es compatible con más de 50 divisas tradicionales y más de 30 de las criptomonedas más importantes, para que tengas una visión completa de todos tus activos en un solo lugar.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+
         <!-- ========== NEWSLETTER SECTION ========== -->
-        <section id="newsletter" class="py-20">
+        <section id="newsletter" class="py-20 bg-light-gray">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">La revolución financiera empieza en Noviembre 2025.</h2>
-                <p class="text-gray-600 mt-3 max-w-2xl mx-auto mb-8 reveal" style="transition-delay: 200ms;">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy reveal" data-translate-key="newsletter_title">La revolución financiera empieza en Noviembre 2025.</h2>
+                <p class="text-gray-600 mt-3 max-w-2xl mx-auto mb-8 reveal" style="transition-delay: 200ms;" data-translate-key="newsletter_subtitle">
                     No te quedes fuera. Apúntate a nuestra newsletter y sé el primero en recibir acceso anticipado, noticias exclusivas y consejos para preparar tu camino hacia la prosperidad.
                 </p>
-                <form class="max-w-lg mx-auto reveal" style="transition-delay: 400ms;">
+                <form id="newsletter-form" class="max-w-lg mx-auto reveal" style="transition-delay: 400ms;" novalidate>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <input type="email" placeholder="Tu mejor correo electrónico" required class="w-full px-5 py-3 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors" />
-                        <button type="submit" class="bg-gold text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
+                        <input type="email" name="email" data-translate-key="newsletter_placeholder" placeholder="Tu mejor correo electrónico" required class="w-full px-5 py-3 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors" />
+                        <button type="submit" class="bg-gold text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="newsletter_button">
                             ¡Apúntame!
                         </button>
                     </div>
@@ -241,54 +333,296 @@
         </section>
 
         <!-- ========== CONTACT SECTION ========== -->
-        <section id="contact" class="py-20 bg-light-gray">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">¿Hablamos?</h2>
-                <p class="text-gray-600 mt-2 max-w-2xl mx-auto mb-8 reveal" style="transition-delay: 200ms;">
-                    Para colaboraciones, prensa o cualquier otra consulta, nuestro equipo está listo para escucharte.
-                </p>
-                <div class="reveal" style="transition-delay: 400ms;">
-                    <a href="mailto:info@bancfy.com" class="inline-block bg-gold text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
-                        info@bancfy.com
-                    </a>
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal" data-translate-key="contact_title">¿Hablamos?</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto mb-8 reveal" style="transition-delay: 200ms;" data-translate-key="contact_subtitle">
+                        Para colaboraciones, prensa o cualquier otra consulta, nuestro equipo está listo para escucharte. Rellena el formulario o escríbenos a <a href="mailto:info@bancfy.com" class="text-gold font-semibold hover:underline">info@bancfy.com</a>.
+                    </p>
                 </div>
+                <form id="contact-form" class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg reveal" style="transition-delay: 400ms;" novalidate>
+                    <div class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-1" data-translate-key="contact_name">Nombre</label>
+                            <input type="text" name="name" id="name" required class="w-full px-4 py-2 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-1" data-translate-key="contact_email">Email</label>
+                            <input type="email" name="email" id="email" required class="w-full px-4 py-2 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-semibold text-gray-700 mb-1" data-translate-key="contact_subject">Asunto</label>
+                            <input type="text" name="subject" id="subject" required class="w-full px-4 py-2 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-1" data-translate-key="contact_message">Mensaje</label>
+                            <textarea name="message" id="message" rows="4" required class="w-full px-4 py-2 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-gold text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="contact_button">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- ========== FOOTER (UPDATED) ========== -->
     <footer class="bg-navy text-white">
         <div class="container mx-auto px-6 py-8">
-            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div class="mb-4 md:mb-0">
-                    <p class="font-semibold">&copy; 2025 Bancfy. Todos los derechos reservados.</p>
-                    <p class="text-sm text-gray-400">Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.</p>
+                    <p class="font-semibold" data-translate-key="footer_copyright">&copy; 2025 Bancfy. Todos los derechos reservados.</p>
+                    <p class="text-sm text-gray-400" data-translate-key="footer_design">Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.</p>
                 </div>
-                <div class="flex space-x-6">
-                    <!-- Instagram Icon -->
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><span class="sr-only">Instagram</span><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.792 2.792c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.792 2.792c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.792-2.792c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427A4.902 4.902 0 016.08 4.525c.636-.247 1.363.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0-2a7 7 0 110 14 7 7 0 010-14zm4.5-1.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"></path></svg></a>
-                    <!-- TikTok Icon -->
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><span class="sr-only">TikTok</span><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.18-2.89-.7-4.12-1.62-1.23-.92-2.07-2.27-2.41-3.73-1.31.02-2.61.01-3.91.02v2.19c2.78.02 5.57.01 8.35.01v4.03c-2.78-.01-5.57-.02-8.35-.01v4.74c-1.31-.02-2.61-.01-3.91-.02v-4.74c-2.78.01-5.57.02-8.35.01v-4.03c2.78-.02 5.57-.01 8.35-.01v-2.19c-1.31.02-2.61.01-3.91.02V4.22c1.44.18 2.89.7 4.12 1.62 1.23.92 2.07 2.27 2.41 3.73 1.31-.02 2.61-.01 3.91-.02V.02z"></path></svg></a>
-                    <!-- YouTube Icon -->
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><span class="sr-only">YouTube</span><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814a2.506 2.506 0 0 1-1.768 1.768c-1.594.42-7.812.42-7.812.42s-6.218 0-7.812-.42a2.506 2.506 0 0 1-1.768-1.768C2 15.22 2 12 2 12s0-3.22.42-4.814a2.506 2.506 0 0 1 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418ZM9.57 15.57l6.43-3.57-6.43-3.57v7.14Z" clip-rule="evenodd"></path></svg></a>
+                <!-- SOCIAL ICONS -->
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- ========== MODAL FOR FEEDBACK ========== -->
+    <div id="feedback-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden modal-backdrop">
+        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-sm w-full text-center modal-content opacity-0 transform scale-95">
+            <h3 id="modal-title" class="text-2xl font-bold text-navy mb-4"></h3>
+            <p id="modal-message" class="text-gray-600 mb-6"></p>
+            <button id="modal-close-button" class="bg-gold text-white font-bold py-2 px-6 rounded-lg hover:bg-gold-hover transition-colors">Cerrar</button>
+        </div>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyDMjE9AFpmtPKcvZDMx-okQoKpHcjUF-Uc",
+            authDomain: "bancfy.firebaseapp.com",
+            databaseURL: "https://bancfy-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "bancfy",
+            storageBucket: "bancfy.firebasestorage.app",
+            messagingSenderId: "151762707230",
+            appId: "1:151762707230:web:2143e1d92e6a90f2689f0f",
+            measurementId: "G-RS0WGCECK3"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        window.db = db;
+        window.firestore = { collection, addDoc, serverTimestamp };
+    </script>
+
     <script>
-        // Script para la animación de aparición al hacer scroll
         document.addEventListener('DOMContentLoaded', () => {
-            const revealElements = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+            // --- TRANSLATION LOGIC ---
+            const translations = {
+                es: {
+                    nav_features: 'Características', nav_story: 'Nuestra Historia', nav_faq: 'FAQ', nav_contact: 'Contacto', nav_join_waitlist: 'Únete a la Espera',
+                    hero_title: 'Bienvenido al futuro de las finanzas personales.', hero_subtitle: 'Bancfy no es solo una app, es tu nuevo ecosistema financiero. Combinamos la sabiduría del método Kakebo con la potencia de la IA para darte una claridad y un control que nunca antes habías imaginado.', hero_cta1: 'Únete a la revolución', hero_cta2: 'Descubre más',
+                    features_title: 'La app más completa para tu salud financiera.', features_subtitle: 'Hemos combinado métodos probados con tecnología de punta para darte un control sin precedentes.',
+                    feature1_title: 'Método Kakebo Digital', feature1_desc: 'El arte japonés de ahorrar, simplificado. Registra, analiza y toma conciencia de cada gasto.',
+                    feature2_title: 'Bancbot, tu Coach IA', feature2_desc: 'Recibe consejos personalizados gracias al Machine Learning que aprende de tus hábitos.',
+                    feature3_title: 'Gamificación Divertida', feature3_desc: 'Ahorrar es un juego. Gana trofeos y compite en retos individuales o sociales.',
+                    feature4_title: 'Todas tus Cuentas', feature4_desc: 'Corriente, ahorro, inversión, cripto y créditos. Todo en un solo lugar, ¡incluso compartidas!',
+                    feature5_title: 'Educación Interactiva', feature5_desc: 'Aprende finanzas con mini-juegos y píldoras de conocimiento. ¡Desbloquea niveles!',
+                    feature6_title: 'Radar de Oportunidades', feature6_desc: 'Descubre el impacto real de los gastos hormiga y vampiro y cómo podrías haberlos invertido.',
+                    showcase_title: 'Visualiza tu Éxito Financiero', showcase_subtitle: 'Una interfaz limpia y poderosa diseñada para darte claridad, no más confusión.',
+                    story_tag: 'NUESTRA HISTORIA', story_title: 'De la incertidumbre a la claridad con Bancfy', story_p1: 'En algún momento, todos nos hemos sentido abrumados por nuestras finanzas...',
+                    faq_title: 'Preguntas Frecuentes', faq_subtitle: '¿Tienes dudas? Aquí resolvemos las más comunes.',
+                    faq1_q: '¿Qué es exactamente Bancfy?', faq1_a: 'Bancfy es tu coach financiero personal...',
+                    newsletter_title: 'La revolución financiera empieza en Noviembre 2025.', newsletter_subtitle: 'No te quedes fuera. Apúntate...', newsletter_placeholder: 'Tu mejor correo electrónico', newsletter_button: '¡Apúntame!',
+                    contact_title: '¿Hablamos?', contact_subtitle: 'Para colaboraciones, prensa o cualquier otra consulta...', contact_name: 'Nombre', contact_email: 'Email', contact_subject: 'Asunto', contact_message: 'Mensaje', contact_button: 'Enviar Mensaje',
+                    footer_copyright: '© 2025 Bancfy. Todos los derechos reservados.', footer_design: 'Diseñado con ♥ para tu bienestar financiero.',
+                    modal_thank_you: '¡Gracias!', modal_message_sent: 'Tu mensaje ha sido enviado...', modal_welcome: '¡Bienvenido/a!', modal_subscribed: 'Te has suscrito...', modal_error: 'Error', modal_message_error: 'No se pudo enviar el mensaje...', modal_network_error: 'Oops! Hubo un problema de red...', modal_subscribe_error: 'No hemos podido procesar tu suscripción...', modal_close: 'Cerrar'
+                },
+                en: {
+                    // English translations for new/updated keys
+                    feature1_title: 'Digital Kakebo Method', feature1_desc: 'The Japanese art of saving, simplified. Record, analyze, and become aware of every expense.',
+                    feature2_title: 'Bancbot, Your AI Coach', feature2_desc: 'Receive personalized advice thanks to Machine Learning that learns from your habits.',
+                    feature3_title: 'Fun Gamification', feature3_desc: 'Saving is a game. Earn trophies and compete in individual or social challenges.',
+                    feature4_title: 'All Your Accounts', feature4_desc: 'Checking, savings, investment, crypto, and loans. Everything in one place, even shared accounts!',
+                    feature5_title: 'Interactive Education', feature5_desc: 'Learn finance with mini-games and knowledge pills. Unlock new levels!',
+                    feature6_title: 'Opportunity Radar', feature6_desc: 'Discover the real impact of "latte factor" and phantom expenses and how you could have invested them.',
+                    faq1_q: 'What exactly is Bancfy?', faq1_a: 'Bancfy is your personal financial coach. We have transformed the Japanese Kakebo method into a digital, intuitive, and gamified experience. We don\'t just help you track your expenses, but to understand them and take control of your money in a simple and motivating way.',
+                    faq2_q: 'Is it safe to use my data in Bancfy?', faq2_a: 'Absolutely. Security is our cornerstone. All your information is protected with end-to-end encryption and bank-grade security protocols. Your privacy and your data are yours alone.',
+                    faq3_q: 'Can I sync across different devices?', faq3_a: 'Of course! Your information is synchronized in real-time across all your devices. Plus, we\'ve included a "shared accounts" feature, perfect for managing finances with a partner, family, or roommates.',
+                    faq4_q: 'Do I have to connect my bank account?', faq4_a: 'It\'s not necessary. We believe in the power of manually tracking your expenses to build awareness, as taught by the Kakebo method. However, to give you flexibility, we also allow you to import your transactions from a PDF, Excel, or CSV file quickly and easily.',
+                    faq5_q: 'Is Bancfy free?', faq5_a: 'Yes, the heart of Bancfy is and always will be free, giving you all the tools you need for your day-to-day. For those who want to take their finances to the next level, we will offer complementary Premium options with advanced features.',
+                    faq6_q: 'What currencies and cryptocurrencies does it support?', faq6_a: 'We are prepared for a global world. Bancfy supports over 50 traditional currencies and more than 30 of the most important cryptocurrencies, so you can have a complete view of all your assets in one place.'
+                }
+            };
+
+            const supportedLangs = {
+                'es': { name: 'Español', flag: 'es' }, 'ca': { name: 'Català', flag: 'es-ca' }, 'eu': { name: 'Euskara', flag: 'es-eu' },
+                'en': { name: 'English', flag: 'gb' }, 'de': { name: 'Deutsch', flag: 'de' }, 'de-ch': { name: 'Deutsch (CH)', flag: 'ch' },
+                'fr': { name: 'Français', flag: 'fr' }, 'it': { name: 'Italiano', flag: 'it' }, 'pt': { name: 'Português', flag: 'pt' },
+                'ja': { name: '日本語', flag: 'jp' }, 'ko': { name: '한국어', flag: 'kr' }, 'zh': { name: '中文', flag: 'cn' }, 'ar': { name: 'العربية', flag: 'ae' }
+            };
+
+            function translatePage(lang) {
+                const targetLang = translations[lang] ? lang : 'es'; // Fallback to Spanish if lang not found
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.getAttribute('data-translate-key');
+                    // Use target language, fallback to English, then to the original text content
+                    const translation = translations[targetLang]?.[key] || translations['en']?.[key] || el.textContent;
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translation;
+                    } else {
+                        el.innerHTML = translation;
                     }
                 });
+                document.documentElement.lang = targetLang;
+                document.documentElement.dir = targetLang === 'ar' ? 'rtl' : 'ltr';
+            }
+
+            function setLanguage(lang) {
+                const langInfo = supportedLangs[lang] || supportedLangs['es'];
+                document.getElementById('current-lang-flag').src = `https://flagcdn.com/w20/${langInfo.flag}.png`;
+                document.getElementById('current-lang-code').textContent = lang.split('-')[0].toUpperCase();
+                translatePage(lang);
+                localStorage.setItem('bancfy_lang', lang);
+            }
+
+            // Populate language dropdown
+            const langDropdown = document.getElementById('lang-dropdown');
+            for (const [code, langData] of Object.entries(supportedLangs)) {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.classList.add('flex', 'items-center', 'px-4', 'py-2', 'text-sm', 'text-gray-700', 'hover:bg-light-gray');
+                link.dataset.lang = code;
+                link.innerHTML = `<img src="https://flagcdn.com/w20/${langData.flag}.png" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(code);
+                    langDropdown.parentElement.blur(); // Close dropdown on click
+                });
+                langDropdown.appendChild(link);
+            }
+
+            // Detect browser language or get from localStorage
+            const savedLang = localStorage.getItem('bancfy_lang');
+            let userLang = savedLang;
+            if (!userLang) {
+                const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+                if (browserLang.startsWith('de-ch')) userLang = 'de-ch';
+                else if (supportedLangs[browserLang]) userLang = browserLang;
+                else if (supportedLangs[browserLang.split('-')[0]]) userLang = browserLang.split('-')[0];
+                else userLang = 'es'; // Default
+            }
+            setLanguage(userLang);
+
+            // --- Mobile Menu Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+            // --- Scroll Reveal Animation ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
             }, { threshold: 0.1 });
-            revealElements.forEach(el => observer.observe(el));
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            
+            // --- FAQ Accordion ---
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const faqItem = button.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+
+            // --- Modal Logic ---
+            const modal = document.getElementById('feedback-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalMessage = document.getElementById('modal-message');
+            const modalCloseButton = document.getElementById('modal-close-button');
+            function showModal(titleKey, messageKey) {
+                const lang = localStorage.getItem('bancfy_lang') || 'es';
+                modalTitle.textContent = translations[lang]?.[titleKey] || translations.es[titleKey];
+                modalMessage.textContent = translations[lang]?.[messageKey] || translations.es[messageKey];
+                modalCloseButton.textContent = translations[lang]?.[modal_close] || translations.es['modal_close'];
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.querySelector('.modal-backdrop').style.opacity = '1';
+                    modal.querySelector('.modal-content').style.opacity = '1';
+                    modal.querySelector('.modal-content').style.transform = 'scale(1)';
+                }, 10);
+            }
+            function hideModal() {
+                 modal.querySelector('.modal-backdrop').style.opacity = '0';
+                 modal.querySelector('.modal-content').style.opacity = '0';
+                 modal.querySelector('.modal-content').style.transform = 'scale(0.95)';
+                 setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+            modalCloseButton.addEventListener('click', hideModal);
+            modal.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
+
+            // --- Contact Form & Newsletter Logic ---
+            const contactForm = document.getElementById('contact-form');
+            const formspreeEndpoint = 'https://formspree.io/f/mblkoarn'; 
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const form = e.target;
+                const data = new FormData(form);
+                const button = form.querySelector('button[type="submit"]');
+                const originalButtonText = button.innerHTML;
+                button.textContent = '...';
+                button.disabled = true;
+
+                fetch(formspreeEndpoint, {
+                    method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        showModal('modal_thank_you', 'modal_message_sent');
+                        form.reset();
+                    } else {
+                        showModal('modal_error', 'modal_message_error');
+                    }
+                }).catch(error => {
+                    showModal('modal_error', 'modal_network_error');
+                }).finally(() => {
+                    button.innerHTML = originalButtonText;
+                    button.disabled = false;
+                });
+            });
+
+            const newsletterForm = document.getElementById('newsletter-form');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const form = e.target;
+                const email = form.querySelector('input[name="email"]').value;
+                const button = form.querySelector('button[type="submit"]');
+                const originalButtonText = button.innerHTML;
+                if (!email) { showModal('modal_error', 'Por favor, introduce un correo electrónico.'); return; }
+                if (typeof window.db === 'undefined') { console.error("Firebase not configured"); return; }
+                button.textContent = '...';
+                button.disabled = true;
+                const { collection, addDoc, serverTimestamp } = window.firestore;
+                addDoc(collection(window.db, "subscribers"), {
+                    email: email, subscribedAt: serverTimestamp()
+                }).then(() => {
+                    showModal('modal_welcome', 'modal_subscribed');
+                    form.reset();
+                }).catch((error) => {
+                    console.error("Error adding document: ", error);
+                    showModal('modal_error', 'modal_subscribe_error');
+                }).finally(() => {
+                    button.innerHTML = originalButtonText;
+                    button.disabled = false;
+                });
+            });
         });
     </script>
+
 </body>
 </html>
