@@ -425,10 +425,10 @@
     
     <!-- Firebase SDK -->
     <script type="module">
+        // --- MODIFICACIÓN 1: Importamos las funciones necesarias para consultar la base de datos ---
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-        // REMOVED for security: Your Firebase config object was here.
-        // Please replace with your actual Firebase config.
+        import { getFirestore, collection, addDoc, serverTimestamp, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        
         const firebaseConfig = {
             apiKey: "AIzaSyDMjE9AFpmtPKcvZDMx-okQoKpHcjUF-Uc",
             authDomain: "bancfy.firebaseapp.com",
@@ -442,7 +442,8 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         window.db = db;
-        window.firestore = { collection, addDoc, serverTimestamp };
+        // --- Hacemos las funciones de Firestore accesibles globalmente ---
+        window.firestore = { collection, addDoc, serverTimestamp, query, where, getDocs };
     </script>
 
     <script>
@@ -467,6 +468,7 @@
                     contact_title: '¿Hablamos?', contact_subtitle: 'Para colaboraciones, prensa o cualquier otra consulta, nuestro equipo está listo para escucharte. Rellena el formulario o escríbenos a info@bancfy.com.', contact_name: 'Nombre', contact_email: 'Email', contact_subject: 'Asunto', contact_message: 'Mensaje', contact_button: 'Enviar Mensaje',
                     footer_copyright: '© 2025 Bancfy. Todos los derechos reservados.', footer_design: 'Diseñado con ♥ para tu bienestar financiero.',
                     modal_close: 'Cerrar', modal_thank_you: '¡Gracias!', modal_message_sent: 'Tu mensaje ha sido enviado correctamente.', modal_welcome: '¡Bienvenido/a!', modal_subscribed: 'Te has suscrito a nuestra newsletter.', modal_error: 'Error', modal_message_error: 'No se pudo enviar el mensaje. Inténtalo de nuevo.', modal_network_error: 'Oops! Hubo un problema de red. Revisa tu conexión.', modal_subscribe_error: 'No hemos podido procesar tu suscripción. Inténtalo más tarde.',
+					modal_email_exists: 'Este correo electrónico ya está registrado. ¡Gracias por tu interés!',
                     modal_invalid_email: 'Por favor, introduce un correo electrónico válido.', form_sending: 'Enviando...', form_sent: 'Enviado', form_error: 'Error', form_subscribing: 'Apuntando...', form_subscribed: 'Apuntado'
                 },
                 en: {
@@ -487,7 +489,8 @@
                     contact_title: 'Let\'s Talk', contact_subtitle: 'For collaborations, press, or any other inquiry, our team is ready to listen. Fill out the form or write to us at info@bancfy.com.', contact_name: 'Name', contact_email: 'Email', contact_subject: 'Subject', contact_message: 'Message', contact_button: 'Send Message',
                     footer_copyright: '© 2025 Bancfy. All rights reserved.', footer_design: 'Designed with ♥ for your financial well-being.',
                     modal_close: 'Close', modal_thank_you: 'Thank you!', modal_message_sent: 'Your message has been sent successfully.', modal_welcome: 'Welcome!', modal_subscribed: 'You have subscribed to our newsletter.', modal_error: 'Error', modal_message_error: 'Could not send the message. Please try again.', modal_network_error: 'Oops! There was a network problem. Check your connection.', modal_subscribe_error: 'We could not process your subscription. Please try again later.',
-                    modal_invalid_email: 'Please enter a valid email address.', form_sending: 'Sending...', form_sent: 'Sent', form_error: 'Error', form_subscribing: 'Subscribing...', form_subscribed: 'Subscribed'
+                    modal_email_exists: 'This email is already registered. Thanks for your interest!',
+					modal_invalid_email: 'Please enter a valid email address.', form_sending: 'Sending...', form_sent: 'Sent', form_error: 'Error', form_subscribing: 'Subscribing...', form_subscribed: 'Subscribed'
                 },
                 ca: {
                     nav_features: 'Característiques', nav_story: 'La Nostra Història', nav_faq: 'FAQ', nav_contact: 'Contacte', nav_join_waitlist: 'Uneix-te a l\'Espera',
@@ -507,7 +510,8 @@
                     contact_title: 'Parlem?', contact_subtitle: 'Per a col·laboracions, premsa o qualsevol altra consulta, el nostre equip està a punt per escoltar-te. Emplena el formulari o escriu-nos a info@bancfy.com.', contact_name: 'Nom', contact_email: 'Correu electrònic', contact_subject: 'Assumpte', contact_message: 'Missatge', contact_button: 'Enviar Missatge',
                     footer_copyright: '© 2025 Bancfy. Tots els drets reservats.', footer_design: 'Dissenyat amb ♥ per al teu benestar financer.',
                     modal_close: 'Tancar', modal_thank_you: 'Gràcies!', modal_message_sent: 'El teu missatge s\'ha enviat correctament.', modal_welcome: 'Benvingut/da!', modal_subscribed: 'T\'has subscrit a la nostra newsletter.', modal_error: 'Error', modal_message_error: 'No s\'ha pogut enviar el missatge. Intenta-ho de nou.', modal_network_error: 'Ups! Hi ha hagut un problema de xarxa. Revisa la teva connexió.', modal_subscribe_error: 'No hem pogut processar la teva subscripció. Intenta-ho més tard.',
-                    modal_invalid_email: 'Si us plau, introdueix un correu electrònic vàlid.', form_sending: 'Enviant...', form_sent: 'Enviat', form_error: 'Error', form_subscribing: 'Apuntant...', form_subscribed: 'Apuntat'
+                    modal_email_exists: 'Aquest correu electrònic ja està registrat. Gràcies pel teu interès!',
+					modal_invalid_email: 'Si us plau, introdueix un correu electrònic vàlid.', form_sending: 'Enviant...', form_sent: 'Enviat', form_error: 'Error', form_subscribing: 'Apuntant...', form_subscribed: 'Apuntat'
                 },
                 eu: {
                     nav_features: 'Ezaugarriak', nav_story: 'Gure Istorioa', nav_faq: 'FAQ', nav_contact: 'Kontaktua', nav_join_waitlist: 'Sartu Itxaron Zerrendan',
@@ -527,7 +531,8 @@
                     contact_title: 'Hitz egingo dugu?', contact_subtitle: 'Lankidetzetarako, prentsarako edo beste edozein kontsultarako, gure taldea prest dago zuri entzuteko. Bete formularioa edo idatzi info@bancfy.com helbidera.', contact_name: 'Izena', contact_email: 'Posta elektronikoa', contact_subject: 'Gaia', contact_message: 'Mezua', contact_button: 'Mezua Bidali',
                     footer_copyright: '© 2025 Bancfy. Eskubide guztiak erreserbatuta.', footer_design: 'Zure ongizate finantzariorako ♥-rekin diseinatua.',
                     modal_close: 'Itxi', modal_thank_you: 'Eskerrik asko!', modal_message_sent: 'Zure mezua behar bezala bidali da.', modal_welcome: 'Ongi etorri!', modal_subscribed: 'Gure buletinera harpidetu zara.', modal_error: 'Errorea', modal_message_error: 'Ezin izan da mezua bidali. Saiatu berriro.', modal_network_error: 'Aupa! Sare-arazo bat egon da. Egiaztatu zure konexioa.', modal_subscribe_error: 'Ezin izan dugu zure harpidetza prozesatu. Saiatu beranduago.',
-                    modal_invalid_email: 'Mesedez, sartu baliozko helbide elektroniko bat.', form_sending: 'Bidalten...', form_sent: 'Bidalita', form_error: 'Errorea', form_subscribing: 'Harpidetzen...', form_subscribed: 'Harpidetuta'
+                    modal_email_exists: 'Helbide elektroniko hau dagoeneko erregistratuta dago. Eskerrik asko zure interesagatik!',
+					modal_invalid_email: 'Mesedez, sartu baliozko helbide elektroniko bat.', form_sending: 'Bidalten...', form_sent: 'Bidalita', form_error: 'Errorea', form_subscribing: 'Harpidetzen...', form_subscribed: 'Harpidetuta'
                 },
                 fr: {
                     nav_features: 'Fonctionnalités', nav_story: 'Notre Histoire', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Rejoindre l\'attente',
@@ -547,7 +552,8 @@
                     contact_title: 'Parlons-en', contact_subtitle: 'Pour des collaborations, la presse ou toute autre demande, notre équipe est prête à vous écouter. Remplissez le formulaire ou écrivez-nous à info@bancfy.com.', contact_name: 'Nom', contact_email: 'E-mail', contact_subject: 'Sujet', contact_message: 'Message', contact_button: 'Envoyer le Message',
                     footer_copyright: '© 2025 Bancfy. Tous droits réservés.', footer_design: 'Conçu avec ♥ pour votre bien-être financier.',
                     modal_close: 'Fermer', modal_thank_you: 'Merci !', modal_message_sent: 'Votre message a été envoyé avec succès.', modal_welcome: 'Bienvenue !', modal_subscribed: 'Vous vous êtes abonné à notre newsletter.', modal_error: 'Erreur', modal_message_error: 'Impossible d\'envoyer le message. Veuillez réessayer.', modal_network_error: 'Oups ! Un problème de réseau est survenu. Vérifiez votre connexion.', modal_subscribe_error: 'Nous n\'avons pas pu traiter votre abonnement. Veuillez réessayer plus tard.',
-                    modal_invalid_email: 'Veuillez saisir une adresse e-mail valide.', form_sending: 'Envoi en cours...', form_sent: 'Envoyé', form_error: 'Erreur', form_subscribing: 'Abonnement...', form_subscribed: 'Abonné'
+                    modal_email_exists: 'Cet e-mail est déjà enregistré. Merci de votre intérêt !',
+					modal_invalid_email: 'Veuillez saisir une adresse e-mail valide.', form_sending: 'Envoi en cours...', form_sent: 'Envoyé', form_error: 'Erreur', form_subscribing: 'Abonnement...', form_subscribed: 'Abonné'
                 },
                 it: {
                     nav_features: 'Caratteristiche', nav_story: 'La Nostra Storia', nav_faq: 'FAQ', nav_contact: 'Contatti', nav_join_waitlist: 'Unisciti all\'Attesa',
@@ -567,7 +573,8 @@
                     contact_title: 'Parliamone', contact_subtitle: 'Per collaborazioni, stampa o qualsiasi altra richiesta, il nostro team è pronto ad ascoltarti. Compila il modulo o scrivici a info@bancfy.com.', contact_name: 'Nome', contact_email: 'Email', contact_subject: 'Oggetto', contact_message: 'Messaggio', contact_button: 'Invia Messaggio',
                     footer_copyright: '© 2025 Bancfy. Tutti i diritti riservati.', footer_design: 'Progettato con ♥ per il tuo benessere finanziario.',
                     modal_close: 'Chiudi', modal_thank_you: 'Grazie!', modal_message_sent: 'Il tuo messaggio è stato inviato correttamente.', modal_welcome: 'Benvenuto/a!', modal_subscribed: 'Ti sei iscritto alla nostra newsletter.', modal_error: 'Errore', modal_message_error: 'Impossibile inviare il messaggio. Riprova.', modal_network_error: 'Oops! C\'è stato un problema di rete. Controlla la tua connessione.', modal_subscribe_error: 'Non siamo riusciti a elaborare la tua iscrizione. Riprova più tardi.',
-                    modal_invalid_email: 'Inserisci un indirizzo email valido.', form_sending: 'Invio...', form_sent: 'Inviato', form_error: 'Errore', form_subscribing: 'Iscrizione...', form_subscribed: 'Iscritto'
+                    modal_email_exists: 'Questa email è già registrata. Grazie per il tuo interesse!',
+					modal_invalid_email: 'Inserisci un indirizzo email valido.', form_sending: 'Invio...', form_sent: 'Inviato', form_error: 'Errore', form_subscribing: 'Iscrizione...', form_subscribed: 'Iscritto'
                 },
                 de: {
                     nav_features: 'Funktionen', nav_story: 'Unsere Geschichte', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Auf die Warteliste',
@@ -587,7 +594,8 @@
                     contact_title: 'Lass uns reden', contact_subtitle: 'Für Kooperationen, Presse oder andere Anfragen steht unser Team bereit, dir zuzuhören. Fülle das Formular aus oder schreibe uns an info@bancfy.com.', contact_name: 'Name', contact_email: 'E-Mail', contact_subject: 'Betreff', contact_message: 'Nachricht', contact_button: 'Nachricht senden',
                     footer_copyright: '© 2025 Bancfy. Alle Rechte vorbehalten.', footer_design: 'Mit ♥ für dein finanzielles Wohlbefinden gestaltet.',
                     modal_close: 'Schließen', modal_thank_you: 'Danke!', modal_message_sent: 'Deine Nachricht wurde erfolgreich gesendet.', modal_welcome: 'Willkommen!', modal_subscribed: 'Du hast unseren Newsletter abonniert.', modal_error: 'Fehler', modal_message_error: 'Nachricht konnte nicht gesendet werden. Bitte versuche es erneut.', modal_network_error: 'Ups! Es gab ein Netzwerkproblem. Überprüfe deine Verbindung.', modal_subscribe_error: 'Wir konnten dein Abonnement nicht bearbeiten. Bitte versuche es später noch einmal.',
-                    modal_invalid_email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.', form_sending: 'Senden...', form_sent: 'Gesendet', form_error: 'Fehler', form_subscribing: 'Abonnieren...', form_subscribed: 'Abonniert'
+                    modal_email_exists: 'Diese E-Mail-Adresse ist bereits registriert. Danke für dein Interesse!',
+					modal_invalid_email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.', form_sending: 'Senden...', form_sent: 'Gesendet', form_error: 'Fehler', form_subscribing: 'Abonnieren...', form_subscribed: 'Abonniert'
                 },
 				'de-ch': { // NEW: Swiss German Translation
                     nav_features: 'Funktione', nav_story: 'Eusi Gschicht', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Uf d\'Warteliste',
@@ -607,7 +615,8 @@
                     contact_title: 'Lömmer rede', contact_subtitle: 'Für Kooperatione, Presse oder anderi Aafrage staht üses Team bereit, dir zuezlose. Füll s\'Formular us oder schriib üs an info@bancfy.com.', contact_name: 'Name', contact_email: 'E-Mail', contact_subject: 'Betreff', contact_message: 'Nochricht', contact_button: 'Nochricht sende',
                     footer_copyright: '© 2025 Bancfy. Alli Rächt vorbhalte.', footer_design: 'Mit ♥ für dis finanziells Wohlbefinde gschaffet.',
                     modal_close: 'Schliesse', modal_thank_you: 'Danke!', modal_message_sent: 'Dini Nochricht isch erfolgriich gsendet worde.', modal_welcome: 'Willkomme!', modal_subscribed: 'Du hesch üse Newsletter abonniert.', modal_error: 'Fähler', modal_message_error: 'D\'Nochricht het nöd chönne gsendet werde. Probier\'s bitte nomal.', modal_network_error: 'Oops! Es het es Netzwerkproblem geh. Überprüef dini Verbindig.', modal_subscribe_error: 'Mir hend dis Abonnement nöd chönne verarbeite. Probier\'s bitte spöter nomal.',
-                    modal_invalid_email: 'Bitte gib e gültigi E-Mail-Adresse ii.', form_sending: 'Am Sende...', form_sent: 'Gsendet', form_error: 'Fähler', form_subscribing: 'Am Abonniere...', form_subscribed: 'Abonniert'
+                    modal_email_exists: 'Diese E-Mail-Adresse ist bereits registriert. Danke für dein Interesse!',
+					modal_invalid_email: 'Bitte gib e gültigi E-Mail-Adresse ii.', form_sending: 'Am Sende...', form_sent: 'Gsendet', form_error: 'Fähler', form_subscribing: 'Am Abonniere...', form_subscribed: 'Abonniert'
                 },
                 ja: {
                     nav_features: '特徴', nav_story: '私たちの物語', nav_faq: 'FAQ', nav_contact: 'お問い合わせ', nav_join_waitlist: 'ウェイティングリストに参加',
@@ -627,7 +636,8 @@
                     contact_title: 'お話ししましょう', contact_subtitle: 'コラボレーション、プレス、その他のお問い合わせについては、私たちのチームがいつでもお聞きします。フォームに記入するか、info@bancfy.comまでご連絡ください。', contact_name: '名前', contact_email: 'メールアドレス', contact_subject: '件名', contact_message: 'メッセージ', contact_button: 'メッセージを送信',
                     footer_copyright: '© 2025 Bancfy. 無断複写・転載を禁じます。', footer_design: 'あなたの金融の幸福のために♥を込めて設計されました。',
                     modal_close: '閉じる', modal_thank_you: 'ありがとうございます！', modal_message_sent: 'メッセージは正常に送信されました。', modal_welcome: 'ようこそ！', modal_subscribed: 'ニュースレターに登録しました。', modal_error: 'エラー', modal_message_error: 'メッセージを送信できませんでした。もう一度お試しください。', modal_network_error: 'おっと！ネットワークに問題が発生しました。接続を確認してください。', modal_subscribe_error: '登録を処理できませんでした。後でもう一度お試しください。',
-                    modal_invalid_email: '有効なメールアドレスを入力してください。', form_sending: '送信中...', form_sent: '送信済み', form_error: 'エラー', form_subscribing: '登録中...', form_subscribed: '登録済み'
+                    modal_email_exists: 'このメールアドレスは既に登録されています。ご興味をお持ちいただきありがとうございます！',
+					modal_invalid_email: '有効なメールアドレスを入力してください。', form_sending: '送信中...', form_sent: '送信済み', form_error: 'エラー', form_subscribing: '登録中...', form_subscribed: '登録済み'
                 },
                 ko: {
                     nav_features: '기능', nav_story: '우리의 이야기', nav_faq: 'FAQ', nav_contact: '문의하기', nav_join_waitlist: '대기자 명단 참여',
@@ -648,7 +658,8 @@
                     contact_title: '이야기 나눠요', contact_subtitle: '협업, 언론 또는 기타 문의 사항이 있으시면 저희 팀이 귀 기울일 준비가 되어 있습니다. 양식을 작성하거나 info@bancfy.com으로 이메일을 보내주세요.', contact_name: '이름', contact_email: '이메일', contact_subject: '제목', contact_message: '메시지', contact_button: '메시지 보내기',
                     footer_copyright: '© 2025 Bancfy. 모든 권리 보유.', footer_design: '당신의 금융 복지를 위해 ♥로 디자인되었습니다.',
                     modal_close: '닫기', modal_thank_you: '감사합니다!', modal_message_sent: '메시지가 성공적으로 전송되었습니다.', modal_welcome: '환영합니다!', modal_subscribed: '뉴스레터에 구독하셨습니다.', modal_error: '오류', modal_message_error: '메시지를 보낼 수 없습니다. 다시 시도하십시오.', modal_network_error: 'おっと！ネットワークに問題が発生しました。接続を確認してください。', modal_subscribe_error: '구독을 처리할 수 없습니다. 나중에 다시 시도하십시오.',
-                    modal_invalid_email: '유효한 이메일 주소를 입력하십시오.', form_sending: '보내는 중...', form_sent: '보냄', form_error: '오류', form_subscribing: '구독 중...', form_subscribed: '구독함'
+                    modal_email_exists: '이 이메일은 이미 등록되어 있습니다. 관심을 가져 주셔서 감사합니다!',
+					modal_invalid_email: '유효한 이메일 주소를 입력하십시오.', form_sending: '보내는 중...', form_sent: '보냄', form_error: '오류', form_subscribing: '구독 중...', form_subscribed: '구독함'
                 },
                 zh: {
                     nav_features: '功能', nav_story: '我们的故事', nav_faq: '常见问题', nav_contact: '联系我们', nav_join_waitlist: '加入等候名单',
@@ -668,7 +679,8 @@
                     contact_title: '我们谈谈', contact_subtitle: '对于合作、媒体或任何其他查询，我们的团队随时准备倾听。填写表格或写信给我们 info@bancfy.com。', contact_name: '姓名', contact_email: '电子邮件', contact_subject: '主题', contact_message: '信息', contact_button: '发送信息',
                     footer_copyright: '© 2025 Bancfy。版权所有。', footer_design: '用 ♥ 为您的财务福祉而设计。',
                     modal_close: '关闭', modal_thank_you: '谢谢！', modal_message_sent: '您的消息已成功发送。', modal_welcome: '欢迎！', modal_subscribed: '您已订阅我们的时事通讯。', modal_error: '错误', modal_message_error: '无法发送消息。请重试。', modal_network_error: '哎呀！出现网络问题。请检查您的连接。', modal_subscribe_error: '我们无法处理您的订阅。请稍后再试。',
-                    modal_invalid_email: '请输入有效的电子邮件地址。', form_sending: '发送中...', form_sent: '已发送', form_error: '错误', form_subscribing: '订阅中...', form_subscribed: '已订阅'
+                    modal_email_exists: '此电子邮件地址已被注册。感谢您的关注！',
+					modal_invalid_email: '请输入有效的电子邮件地址。', form_sending: '发送中...', form_sent: '已发送', form_error: '错误', form_subscribing: '订阅中...', form_subscribed: '已订阅'
                 },
                 ar: {
                     nav_features: 'الميزات', nav_story: 'قصتنا', nav_faq: 'الأسئلة الشائعة', nav_contact: 'اتصل بنا', nav_join_waitlist: 'انضم إلى قائمة الانتظار',
@@ -689,7 +701,8 @@
                     contact_title: 'هل نتحدث؟', contact_subtitle: 'للتعاون أو الصحافة أو أي استفسار آخر، فريقنا مستعد للاستماع إليك. املأ النموذج أو اكتب لنا على info@bancfy.com.', contact_name: 'الاسم', contact_email: 'البريد الإلكتروني', contact_subject: 'الموضوع', contact_message: 'الرسالة', contact_button: 'إرسال رسالة',
                     footer_copyright: '© 2025 Bancfy. جميع الحقوق محفوظة.', footer_design: 'صُمم بـ ♥ من أجل رفاهيتك المالية.',
                     modal_close: 'إغلاق', modal_thank_you: 'شكرًا لك!', modal_message_sent: 'تم إرسال رسالتك بنجاح.', modal_welcome: 'أهلاً بك!', modal_subscribed: 'لقد اشتركت في نشرتنا الإخبارية.', modal_error: 'خطأ', modal_message_error: 'تعذر إرسال الرسالة. الرجاء المحاولة مرة أخرى.', modal_network_error: 'عفوًا! حدثت مشكلة في الشبكة. تحقق من اتصالك.', modal_subscribe_error: 'لم نتمكن من معالجة اشتراكك. الرجاء المحاولة لاحقًا.',
-                    modal_invalid_email: 'الرجاء إدخال عنوان بريد إلكتروني صالح.', form_sending: 'جارٍ الإرسال...', form_sent: 'تم الإرسال', form_error: 'خطأ', form_subscribing: 'جارٍ الاشتراك...', form_subscribed: 'مشترك'
+                    modal_email_exists: 'هذا البريد الإلكتروني مسجل بالفعل. شكرا لاهتمامك!',
+					modal_invalid_email: 'الرجاء إدخال عنوان بريد إلكتروني صالح.', form_sending: 'جارٍ الإرسال...', form_sent: 'تم الإرسال', form_error: 'خطأ', form_subscribing: 'جارٍ الاشتراك...', form_subscribed: 'مشترك'
                 }
             };
             
@@ -906,46 +919,68 @@
                 });
             });
 
-newsletterForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const emailInput = form.querySelector('input[name="email"]');
-    const button = form.querySelector('button[type="submit"]');
-    const originalButtonHTML = button.innerHTML;
+// --- MODIFICACIÓN 3: Lógica actualizada del formulario de la newsletter ---
+            newsletterForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const form = e.target;
+                const emailInput = form.querySelector('input[name="email"]');
+                const button = form.querySelector('button[type="submit"]');
+                const originalButtonHTML = button.innerHTML;
+                const email = emailInput.value;
 
-    if (!emailInput.value || !emailInput.checkValidity()) {
-        showModal('modal_error', 'modal_invalid_email');
-        return;
-    }
-    if (typeof window.db === 'undefined') {
-        showModal('modal_error', 'modal_network_error');
-        return;
-    }
-    
-    setButtonFeedback(button, 'loading', originalButtonHTML);
+                // Validación básica del campo de correo
+                if (!email || !emailInput.checkValidity()) {
+                    showModal('modal_error', 'modal_invalid_email');
+                    return;
+                }
+                // Comprobamos si Firebase está disponible
+                if (typeof window.db === 'undefined' || typeof window.firestore === 'undefined') {
+                    showModal('modal_error', 'modal_network_error');
+                    return;
+                }
+                
+                setButtonFeedback(button, 'loading', originalButtonHTML);
 
-    // Obtenemos el idioma actual guardado en el localStorage por tu selector de idioma
-    const currentUserLanguage = localStorage.getItem('bancfy_lang') || 'es';
+                try {
+                    // Desestructuramos las funciones de Firestore que necesitamos
+                    const { collection, query, where, getDocs, addDoc, serverTimestamp } = window.firestore;
+                    const subscribersRef = collection(window.db, "subscribers");
 
-    const { collection, addDoc, serverTimestamp } = window.firestore;
-    
-    // AÑADIMOS EL CAMPO 'language' AL DOCUMENTO DE FIRESTORE
-    addDoc(collection(window.db, "subscribers"), {
-        email: emailInput.value,
-        subscribedAt: serverTimestamp(),
-        language: currentUserLanguage // <--- ¡AQUÍ ESTÁ LA MAGIA!
-    }).then(() => {
-        setButtonFeedback(button, 'success', originalButtonHTML);
-        setTimeout(() => {
-            showModal('modal_welcome', 'modal_subscribed');
-            form.reset();
-        }, 500);
-    }).catch((error) => {
-        console.error("Error adding document: ", error);
-        setButtonFeedback(button, 'error', originalButtonHTML);
-        setTimeout(() => showModal('modal_error', 'modal_subscribe_error'), 500);
-    });
-});
+                    // Creamos una consulta para buscar si el email ya existe
+                    const q = query(subscribersRef, where("email", "==", email));
+                    const querySnapshot = await getDocs(q);
+
+                    // Si la consulta devuelve algún documento, el email ya existe
+                    if (!querySnapshot.empty) {
+                        showModal('modal_error', 'modal_email_exists');
+                        // Restauramos el botón a su estado original
+                        button.disabled = false;
+                        button.innerHTML = originalButtonHTML;
+                        button.classList.remove('flex', 'items-center', 'justify-center', 'bg-gold', 'opacity-75', 'transition-all');
+                        button.classList.add(...JSON.parse(button.dataset.originalClasses));
+                        return; // Detenemos la ejecución
+                    }
+
+                    // Si el email no existe, lo añadimos
+                    const currentUserLanguage = localStorage.getItem('bancfy_lang') || 'es';
+                    await addDoc(subscribersRef, {
+                        email: email,
+                        subscribedAt: serverTimestamp(),
+                        language: currentUserLanguage
+                    });
+                    
+                    setButtonFeedback(button, 'success', originalButtonHTML);
+                    setTimeout(() => {
+                        showModal('modal_welcome', 'modal_subscribed');
+                        form.reset();
+                    }, 500);
+
+                } catch (error) {
+                    console.error("Error checking or adding document: ", error);
+                    setButtonFeedback(button, 'error', originalButtonHTML);
+                    setTimeout(() => showModal('modal_error', 'modal_subscribe_error'), 500);
+                }
+            });
         });
     </script>
 
