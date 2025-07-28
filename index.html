@@ -85,6 +85,10 @@
         .faq-arrow {
             transition: transform 0.3s ease-in-out;
         }
+        /* MODIFICACIÓN: Añadida clase para la flecha del menú de idiomas móvil */
+        .mobile-lang-arrow.rotate-180 {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="bg-white text-navy antialiased">
@@ -122,11 +126,25 @@
             </button>
         </nav>
         <!-- Mobile Menu -->
+        <!-- MODIFICACIÓN: Añadido el selector de idiomas al menú móvil -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
              <a href="#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features">Características</a>
              <a href="#story" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_story">Nuestra Historia</a>
              <a href="#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq">FAQ</a>
              <a href="#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact">Contacto</a>
+             <!-- Mobile Language Selector -->
+             <div class="border-t border-gray-200">
+                <div class="px-4 py-3">
+                    <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera del idioma actual" class="w-5 h-auto mr-3 rounded-sm">
+                        <span id="mobile-current-lang-code" class="font-semibold">ES</span>
+                        <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+                <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
+                    <!-- Mobile languages will be injected by JS -->
+                </div>
+             </div>
         </div>
     </header>
 
@@ -721,7 +739,10 @@
                 'zh': { name: '中文', flag: 'cn' },
                 'ar': { name: 'العربية', flag: 'ae' }
             };
-function translatePage(lang) {
+
+            // --- MODIFICACIÓN: Lógica de traducción y selector de idioma ---
+            
+            function translatePage(lang) {
                 const targetLang = translations[lang] ? lang : 'es'; 
                 document.querySelectorAll('[data-translate-key]').forEach(el => {
                     const key = el.getAttribute('data-translate-key');
@@ -740,49 +761,94 @@ function translatePage(lang) {
 
             function setLanguage(lang) {
                 const langInfo = supportedLangs[lang] || supportedLangs['es'];
-                const currentFlagImg = document.getElementById('current-lang-flag');
-                
-                if (langInfo.flagUrl) {
-                    currentFlagImg.src = langInfo.flagUrl;
-                } else {
-                    currentFlagImg.src = `https://flagcdn.com/w20/${langInfo.flag}.png`;
-                }
+                const flagSrc = langInfo.flagUrl ? langInfo.flagUrl : `https://flagcdn.com/w20/${langInfo.flag}.png`;
+                const langCode = lang.split('-')[0].toUpperCase();
 
-                document.getElementById('current-lang-code').textContent = lang.split('-')[0].toUpperCase();
+                // Update desktop selector
+                const currentFlagImg = document.getElementById('current-lang-flag');
+                if (currentFlagImg) {
+                    currentFlagImg.src = flagSrc;
+                    currentFlagImg.alt = `Bandera de ${langInfo.name}`;
+                }
+                const currentLangCode = document.getElementById('current-lang-code');
+                if (currentLangCode) currentLangCode.textContent = langCode;
+
+                // Update mobile selector
+                const mobileCurrentFlagImg = document.getElementById('mobile-current-lang-flag');
+                if (mobileCurrentFlagImg) {
+                    mobileCurrentFlagImg.src = flagSrc;
+                    mobileCurrentFlagImg.alt = `Bandera de ${langInfo.name}`;
+                }
+                const mobileCurrentLangCode = document.getElementById('mobile-current-lang-code');
+                if (mobileCurrentLangCode) mobileCurrentLangCode.textContent = langCode;
+
                 translatePage(lang);
                 localStorage.setItem('bancfy_lang', lang);
             }
 
             const langDropdown = document.getElementById('lang-dropdown');
             const langSelectorBtn = document.getElementById('lang-selector-btn');
+            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+            const mobileLangSelectorBtn = document.getElementById('mobile-lang-selector-btn');
+            const mobileLangArrow = document.querySelector('.mobile-lang-arrow');
+            const mobileMenu = document.getElementById('mobile-menu');
 
             for (const [code, langData] of Object.entries(supportedLangs)) {
-                const link = document.createElement('a');
-                link.href = '#';
-                link.classList.add('flex', 'items-center', 'px-4', 'py-2', 'text-sm', 'text-gray-700', 'hover:bg-light-gray');
-                link.dataset.lang = code;
-                
                 const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
-                link.innerHTML = `<img src="${flagSrc}" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
+                const innerHTML = `<img src="${flagSrc}" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
 
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    setLanguage(code);
-                    langDropdown.classList.add('hidden'); // <-- CORRECCIÓN: Cierra el menú al seleccionar
-                    langSelectorBtn.blur();
-                });
-                langDropdown.appendChild(link);
+                // Create and append desktop link
+                if (langDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'px-4', 'py-2', 'text-sm', 'text-gray-700', 'hover:bg-light-gray');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        setLanguage(code);
+                        langDropdown.classList.add('hidden');
+                        langSelectorBtn.blur();
+                    });
+                    langDropdown.appendChild(link);
+                }
+
+                // Create and append mobile link
+                if (mobileLangDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'py-1.5', 'px-2', 'text-sm', 'text-gray-700', 'hover:text-gold', 'rounded-md', 'hover:bg-white');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        setLanguage(code);
+                        if (mobileMenu) mobileMenu.classList.add('hidden');
+                    });
+                    mobileLangDropdown.appendChild(link);
+                }
             }
             
-            // --- NUEVA LÓGICA PARA EL MENÚ DESPLEGABLE DE IDIOMA (BASADO EN CLIC) ---
-            langSelectorBtn.addEventListener('click', (event) => {
-                event.stopPropagation(); // Evita que el clic se propague al 'window' y cierre el menú inmediatamente
-                langDropdown.classList.toggle('hidden');
-            });
+            // --- Event listener for desktop language dropdown
+            if (langSelectorBtn) {
+                langSelectorBtn.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    if (langDropdown) langDropdown.classList.toggle('hidden');
+                });
+            }
 
-            // Cierra el menú si se hace clic en cualquier otro lugar de la página
+            // --- Event listener for mobile language dropdown
+            if (mobileLangSelectorBtn) {
+                mobileLangSelectorBtn.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    if (mobileLangDropdown) mobileLangDropdown.classList.toggle('hidden');
+                    if (mobileLangArrow) mobileLangArrow.classList.toggle('rotate-180');
+                });
+            }
+
+            // Close dropdowns if clicking outside
             window.addEventListener('click', (e) => {
-                if (!langDropdown.classList.contains('hidden') && !langSelectorBtn.contains(e.target)) {
+                if (langDropdown && !langDropdown.classList.contains('hidden') && !langSelectorBtn.contains(e.target)) {
                     langDropdown.classList.add('hidden');
                 }
             });
@@ -799,10 +865,17 @@ function translatePage(lang) {
             setLanguage(userLang);
 
             const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                // Ensure mobile lang dropdown is closed when opening main mobile menu
+                if (mobileLangDropdown) mobileLangDropdown.classList.add('hidden');
+                if (mobileLangArrow) mobileLangArrow.classList.remove('rotate-180');
+            });
+
             mobileMenu.addEventListener('click', (e) => {
-                if(e.target.tagName === 'A') {
+                // Close menu if a main link is clicked, but not the language selector button
+                if(e.target.tagName === 'A' && !mobileLangDropdown.contains(e.target)) {
                     mobileMenu.classList.add('hidden');
                 }
             });
@@ -935,7 +1008,7 @@ function translatePage(lang) {
                 });
             });
 
-newsletterForm.addEventListener('submit', async function(e) { // Convertimos la función en async
+            newsletterForm.addEventListener('submit', async function(e) { // Convertimos la función en async
                 e.preventDefault();
                 const form = e.target;
                 const emailInput = form.querySelector('input[name="email"]');
