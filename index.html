@@ -935,46 +935,67 @@ function translatePage(lang) {
                 });
             });
 
-            newsletterForm.addEventListener('submit', function(e) {
+newsletterForm.addEventListener('submit', async function(e) { // Convertimos la función en async
                 e.preventDefault();
                 const form = e.target;
                 const emailInput = form.querySelector('input[name="email"]');
+                const emailValue = emailInput.value.trim().toLowerCase(); // Normalizamos el email
                 const button = form.querySelector('button[type="submit"]');
                 const originalButtonHTML = button.innerHTML;
 
-                if (!emailInput.value || !emailInput.checkValidity()) {
+                // Validación inicial del email
+                if (!emailValue || !emailInput.checkValidity()) {
                     showModal('modal_error', 'modal_invalid_email');
                     return;
                 }
-                if (typeof window.db === 'undefined') {
+
+                // Comprobamos si Firebase está disponible
+                if (typeof window.db === 'undefined' || typeof window.firestore === 'undefined') {
                     showModal('modal_error', 'modal_network_error');
                     return;
                 }
                 
                 setButtonFeedback(button, 'loading', originalButtonHTML);
 
-                // Obtenemos el idioma actual guardado en el localStorage por tu selector de idioma
-                const currentUserLanguage = localStorage.getItem('bancfy_lang') || 'es';
+                const { collection, query, where, getDocs, addDoc, serverTimestamp } = window.firestore;
+                const subscribersRef = collection(window.db, "subscribers");
 
-                const { collection, addDoc, serverTimestamp } = window.firestore;
-                
-                // AÑADIMOS EL CAMPO 'language' AL DOCUMENTO DE FIRESTORE
-                addDoc(collection(window.db, "subscribers"), {
-                    email: emailInput.value,
-                    subscribedAt: serverTimestamp(),
-                    language: currentUserLanguage // <--- ¡AQUÍ ESTÁ LA MAGIA!
-                }).then(() => {
+                try {
+                    // --- PASO 1: Crear la consulta para buscar el email ---
+                    const q = query(subscribersRef, where("email", "==", emailValue));
+
+                    // --- PASO 2: Ejecutar la consulta ---
+                    const querySnapshot = await getDocs(q);
+
+                    // --- PASO 3: Comprobar si el resultado está vacío ---
+                    if (!querySnapshot.empty) {
+                        // El email ya existe, mostramos un mensaje y reseteamos el botón
+                        showModal('modal_welcome', 'modal_email_exists');
+                        setButtonFeedback(button, 'success', originalButtonHTML); // Usamos 'success' para el feedback visual
+                        return; // Detenemos la ejecución
+                    }
+
+                    // --- PASO 4: Si no existe, añadimos el nuevo suscriptor ---
+                    const currentUserLanguage = localStorage.getItem('bancfy_lang') || 'es';
+                    await addDoc(subscribersRef, {
+                        email: emailValue,
+                        subscribedAt: serverTimestamp(),
+                        language: currentUserLanguage
+                    });
+
                     setButtonFeedback(button, 'success', originalButtonHTML);
                     setTimeout(() => {
                         showModal('modal_welcome', 'modal_subscribed');
                         form.reset();
                     }, 500);
-                }).catch((error) => {
-                    console.error("Error adding document: ", error);
+
+                } catch (error) {
+                    console.error("Error checking/adding document: ", error);
                     setButtonFeedback(button, 'error', originalButtonHTML);
                     setTimeout(() => showModal('modal_error', 'modal_subscribe_error'), 500);
-                });
+                }
             });
+        });
         });
     </script>
 
