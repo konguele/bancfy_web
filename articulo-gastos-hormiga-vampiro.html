@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags (will be updated by JS) -->
+    <title id="meta-title">Caza tus Gastos Hormiga y Vampiro | Blog de Bancfy</title>
+    <meta id="meta-description" name="description" content="Aprende a identificar y neutralizar los gastos hormiga y las suscripciones vampiro que devoran tu presupuesto sin que te des cuenta.">
+    
+    <!-- Open Graph / Facebook (will be updated by JS) -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.bancfy.com/articulo-gastos-hormiga-vampiro.html">
+    <meta id="og-title" property="og:title" content="Caza tus Gastos Hormiga y Vampiro | Blog de Bancfy">
+    <meta id="og-description" property="og:description" content="Aprende a identificar y neutralizar los gastos hormiga y las suscripciones vampiro que devoran tu presupuesto sin que te des cuenta.">
+    <meta id="og-image" property="og:image" content="https://placehold.co/600x400/0C2340/C8B273?text=Gastos+Ocultos">
+
+    <!-- Twitter (will be updated by JS) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bancfy.com/articulo-gastos-hormiga-vampiro.html">
+    <meta id="twitter-title" property="twitter:title" content="Caza tus Gastos Hormiga y Vampiro | Blog de Bancfy">
+    <meta id="twitter-description" property="twitter:description" content="Aprende a identificar y neutralizar los gastos hormiga y las suscripciones vampiro que devoran tu presupuesto sin que te des cuenta.">
+    <meta id="twitter-image" property="twitter:image" content="https://placehold.co/600x400/0C2340/C8B273?text=Gastos+Ocultos">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Urbanist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <style>
+        body { font-family: 'Urbanist', sans-serif; }
+        :root {
+            --navy: #0C2340;
+            --gold: #C8B273;
+            --gold-hover: #bda66b;
+            --light-gray: #F7F7F7;
+        }
+        html[dir="rtl"] .md\:text-left { text-align: right; }
+        html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-right: 1.5rem; margin-left: 0; }
+        html[dir="rtl"] .mr-2 { margin-left: 0.5rem; margin-right: 0; }
+        html[dir="rtl"] .ml-1 { margin-right: 0.25rem; margin-left: 0; }
+        html[dir="rtl"] .right-0 { left: 0; right: auto; }
+        .bg-navy { background-color: var(--navy); }
+        .text-navy { color: var(--navy); }
+        .bg-gold { background-color: var(--gold); }
+        .text-gold { color: var(--gold); }
+        .hover\:bg-gold-hover:hover { background-color: var(--gold-hover); }
+        .border-gold { border-color: var(--gold); }
+        .bg-light-gray { background-color: var(--light-gray); }
+        .prose {
+            color: #374151; /* text-gray-700 */
+        }
+        .prose h1, .prose h2, .prose h3 {
+            color: var(--navy);
+        }
+        .prose a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .prose a:hover {
+            text-decoration: underline;
+        }
+        .prose strong {
+            color: var(--navy);
+        }
+        .prose blockquote {
+            border-left-color: var(--gold);
+            color: #4b5563; /* text-gray-600 */
+        }
+        .prose ul li::marker {
+            color: var(--gold);
+        }
+        .group:hover .group-hover\:block { display: block; }
+        .mobile-lang-arrow.rotate-180 { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-white text-navy antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
+                <img src="https://placehold.co/100x100/0C2340/FFFFFF?text=B" alt="Logo de Bancfy" class="w-10 h-10 rounded-full">
+                Bancfy
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_features">Características</a>
+                <a href="blog.html" class="text-gold font-semibold transition-colors duration-300" data-translate-key="nav_blog">Blog</a>
+                <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_faq">FAQ</a>
+                <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_contact">Contacto</a>
+                <!-- Language Selector -->
+                 <div class="relative group">
+                    <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
+                        <img id="current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera de España" class="w-5 h-auto mr-2 rounded-sm">
+                        <span id="current-lang-code">ES</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
+                        <!-- Languages will be injected by JS -->
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="nav_join_waitlist">
+                Únete a la Espera
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-navy">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features">Características</a>
+             <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold" data-translate-key="nav_blog">Blog</a>
+             <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq">FAQ</a>
+             <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact">Contacto</a>
+             <!-- Mobile Language Selector -->
+             <div class="border-t border-gray-200">
+                <div class="px-4 py-3">
+                    <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera del idioma actual" class="w-5 h-auto mr-3 rounded-sm">
+                        <span id="mobile-current-lang-code" class="font-semibold">ES</span>
+                        <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+                <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
+                    <!-- Mobile languages will be injected by JS -->
+                </div>
+             </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <article class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto">
+                    <!-- Breadcrumbs -->
+                    <div class="mb-8">
+                        <a href="blog.html" class="text-gold font-semibold hover:underline" data-translate-key="back_to_blog">&larr; Volver al Blog</a>
+                    </div>
+                    
+                    <div class="prose lg:prose-xl max-w-none">
+                        <h1 data-translate-key="article_title">Los Ladrones Silenciosos de tu Dinero: Cómo Cazar tus Gastos Hormiga y Vampiro</h1>
+                        
+                        <img id="article-image" src="https://placehold.co/600x400/0C2340/C8B273?text=Gastos+Ocultos" alt="Ilustración de una lupa buscando pequeños gastos en una cartera" class="w-full rounded-xl my-8">
+
+                        <div id="article-content-wrapper" data-translate-key="article_content">
+                            <!-- El contenido del artículo se inyectará aquí con JS -->
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="mt-16 p-8 bg-light-gray rounded-xl text-center">
+                        <h3 class="text-2xl font-bold text-navy" data-translate-key="cta_title">Bancfy es tu Radar de Gastos</h3>
+                        <p class="text-gray-600 my-4" data-translate-key="cta_desc">Sabemos que este proceso puede ser tedioso. Por eso, en Bancfy, hemos creado el "Radar de Oportunidades". Nuestra app te ayuda a identificar automáticamente estos gastos recurrentes y te muestra el increíble potencial de ese dinero si lo destinaras al ahorro o la inversión.</p>
+                        <a href="index.html#newsletter" class="inline-block bg-gold text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="cta_button">
+                            Quiero descubrir mis gastos ocultos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-navy text-white">
+        <div class="container mx-auto px-6 py-8">
+             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <p class="font-semibold" data-translate-key="footer_copyright">&copy; 2025 Bancfy. Todos los derechos reservados.</p>
+                    <p class="text-sm text-gray-400" data-translate-key="footer_design">Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.</p>
+                </div>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const translations = {
+                es: {
+                    nav_features: 'Características', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacto', nav_join_waitlist: 'Únete a la Espera',
+                    back_to_blog: '&larr; Volver al Blog',
+                    article_title: 'Los Ladrones Silenciosos de tu Dinero: Cómo Cazar tus Gastos Hormiga y Vampiro',
+                    article_image_text: 'Gastos Ocultos',
+                    article_content: `<p>¿Sientes que tu sueldo se desvanece sin hacer grandes compras? No es tu imaginación. En el mundo de las finanzas personales, existen dos enemigos sigilosos que devoran tu dinero poco a poco, sin que apenas te des cuenta: los <strong>gastos hormiga</strong> y los <strong>gastos vampiro</strong>.</p><p>Identificarlos y neutralizarlos es uno de los pasos más liberadores que puedes dar para sanear tu economía. Vamos a ponerles cara.</p><h3>¿Qué son los "Gastos Hormiga"?</h3><p>Los <strong>gastos hormiga</strong> son esas pequeñas compras diarias, casi insignificantes, que haces sin pensar. Un café por la mañana, una botella de agua de una máquina, esa chocolatina en la caja del supermercado... Son tan pequeños que parecen inofensivos, pero su poder destructivo reside en su frecuencia.</p><ul><li>El café diario de 2€.</li><li>Comprar el almuerzo fuera en lugar de llevarlo de casa.</li><li>Pequeñas comisiones por sacar dinero en cajeros que no son de tu banco.</li><li>Propinas o pequeñas compras por impulso.</li></ul><blockquote><strong>El veneno está en la dosis:</strong> Un café de 2€ no parece mucho. Pero si lo tomas cada día laborable, son unos 40€ al mes. <strong>¡Eso son 480€ al año que podrías estar ahorrando o invirtiendo!</strong></blockquote><h3>¿Y los "Gastos Vampiro"?</h3><p>Si los gastos hormiga son un goteo constante, los <strong>gastos vampiro</strong> son parásitos silenciosos. Son esas suscripciones y pagos recurrentes que tienes automatizados y que, mes a mes, "chupan" tu dinero, a menudo por servicios que ya no usas o que habías olvidado por completo.</p><ul><li>La cuota de ese gimnasio al que no vas desde enero.</li><li>Suscripciones a tres plataformas de streaming diferentes cuando solo ves una.</li><li>Una app por la que pagas 4,99€ al mes y que no has abierto en un año.</li><li>Ese seguro extra que contrataste y ya no necesitas.</li></ul><p>Estos gastos son especialmente peligrosos porque operan en segundo plano. No requieren una acción de compra activa, por lo que es fácil ignorar su impacto acumulado.</p><h3>Cómo Empezar la Caza</h3><ol><li><strong>Revisa tus extractos:</strong> Dedica una hora a revisar los movimientos de tu cuenta de los últimos dos o tres meses. Sin juzgar, solo apunta todos esos pequeños gastos y suscripciones recurrentes.</li><li><strong>Suma y sorpréndete:</strong> Calcula cuánto suman al mes tus gastos hormiga. Y haz una lista de los gastos vampiro para cancelarlos de inmediato.</li><li><strong>Planifica y sustituye:</strong> No se trata de eliminar toda la alegría de tu vida. Se trata de planificar. ¿Te encanta el café? Quizás puedes prepararlo en casa y llevarlo en un termo. ¿Te gusta ver series? Elige una o dos plataformas y rota cada ciertos meses.</li></ol>`,
+                    cta_title: 'Bancfy es tu Radar de Gastos',
+                    cta_desc: 'Sabemos que este proceso puede ser tedioso. Por eso, en Bancfy, hemos creado el "Radar de Oportunidades". Nuestra app te ayuda a identificar automáticamente estos gastos recurrentes y te muestra el increíble potencial de ese dinero si lo destinaras al ahorro o la inversión.',
+                    cta_button: 'Quiero descubrir mis gastos ocultos',
+                    footer_copyright: '© 2025 Bancfy. Todos los derechos reservados.', footer_design: 'Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.'
+                },
+                en: {
+                    nav_features: 'Features', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Join the Waitlist',
+                    back_to_blog: '&larr; Back to Blog',
+                    article_title: 'The Silent Thieves of Your Money: How to Hunt Your "Latte Factor" & Vampire Expenses',
+                    article_image_text: 'Hidden Expenses',
+                    article_content: `<p>Feel like your salary vanishes without making any big purchases? It's not your imagination. In the world of personal finance, there are two stealthy enemies that devour your money little by little, without you even noticing: the <strong>"latte factor" expenses</strong> and <strong>vampire expenses</strong>.</p><p>Identifying and neutralizing them is one of the most liberating steps you can take to clean up your finances. Let's put a face to them.</p><h3>What Are "Latte Factor" Expenses?</h3><p><strong>"Latte factor" expenses</strong> are those small, almost insignificant daily purchases you make without thinking. A morning coffee, a bottle of water from a vending machine, that chocolate bar at the supermarket checkout... They are so small they seem harmless, but their destructive power lies in their frequency.</p><ul><li>The daily €2 coffee.</li><li>Buying lunch out instead of bringing it from home.</li><li>Small fees for withdrawing money from ATMs that are not from your bank.</li><li>Tips or small impulse buys.</li></ul><blockquote><strong>The poison is in the dose:</strong> A €2 coffee doesn't seem like much. But if you have it every workday, that's about €40 a month. <strong>That's €480 a year you could be saving or investing!</strong></blockquote><h3>And "Vampire Expenses"?</h3><p>If latte factor expenses are a constant drip, <strong>vampire expenses</strong> are silent parasites. They are those subscriptions and recurring payments you have automated that, month after month, "suck" your money, often for services you no longer use or have completely forgotten about.</p><ul><li>The fee for that gym you haven't been to since January.</li><li>Subscriptions to three different streaming platforms when you only watch one.</li><li>An app you pay €4.99 a month for and haven't opened in a year.</li><li>That extra insurance you bought and no longer need.</li></ul><p>These expenses are especially dangerous because they operate in the background. They don't require an active purchase action, so it's easy to ignore their cumulative impact.</p><h3>How to Start the Hunt</h3><ol><li><strong>Review your statements:</strong> Spend an hour reviewing your account statements from the last two or three months. Without judgment, just note down all those small expenses and recurring subscriptions.</li><li><strong>Add it up and be surprised:</strong> Calculate how much your latte factor expenses add up to per month. And make a list of the vampire expenses to cancel them immediately.</li><li><strong>Plan and replace:</strong> It's not about eliminating all the joy from your life. It's about planning. Love coffee? Maybe you can make it at home and carry it in a thermos. Like watching series? Choose one or two platforms and rotate every few months.</li></ol>`,
+                    cta_title: 'Bancfy is Your Expense Radar',
+                    cta_desc: 'We know this process can be tedious. That\'s why at Bancfy, we\'ve created the "Opportunity Radar". Our app helps you automatically identify these recurring expenses and shows you the incredible potential of that money if you were to save or invest it.',
+                    cta_button: 'I want to discover my hidden expenses',
+                    footer_copyright: '© 2025 Bancfy. All rights reserved.', footer_design: 'Designed with <span class="text-gold">&hearts;</span> for your financial well-being.'
+                },
+                ca: {
+                    nav_features: 'Característiques', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacte', nav_join_waitlist: 'Uneix-te a l\'Espera',
+                    back_to_blog: '&larr; Torna al Blog',
+                    article_title: 'Els Lladres Silenciosos dels Teus Diners: Com Caçar les Teves Despeses Formiga i Vampir',
+                    article_image_text: 'Despeses Ocultes',
+                    article_content: `<p>Sents que el teu sou s'esvaeix sense fer grans compres? No és la teva imaginació. En el món de les finances personals, existeixen dos enemics sigilosos que devoren els teus diners a poc a poc, sense que gairebé te n'adonis: les <strong>despeses formiga</strong> i les <strong>despeses vampir</strong>.</p><p>Identificar-les i neutralitzar-les és un dels passos més alliberadors que pots fer per sanejar la teva economia. Anem a posar-los cara.</p><h3>Què són les "Despeses Formiga"?</h3><p>Les <strong>despeses formiga</strong> són aquelles petites compres diàries, gairebé insignificants, que fas sense pensar. Un cafè al matí, una ampolla d'aigua d'una màquina, aquella xocolatina a la caixa del supermercat... Són tan petites que semblen inofensives, però el seu poder destructiu rau en la seva freqüència.</p><ul><li>El cafè diari de 2€.</li><li>Comprar el dinar fora en lloc de portar-lo de casa.</li><li>Petites comissions per treure diners en caixers que no són del teu banc.</li><li>Propines o petites compres per impuls.</li></ul><blockquote><strong>El verí està en la dosi:</strong> Un cafè de 2€ no sembla gaire. Però si el prens cada dia laborable, són uns 40€ al mes. <strong>Això són 480€ a l'any que podries estar estalviant o invertint!</strong></blockquote><h3>I les "Despeses Vampir"?</h3><p>Si les despeses formiga són un degoteig constant, les <strong>despeses vampir</strong> són paràsits silenciosos. Són aquelles subscripcions i pagaments recurrents que tens automatitzats i que, mes a mes, "xuclen" els teus diners, sovint per serveis que ja no fas servir o que havies oblidat per complet.</p><ul><li>La quota d'aquell gimnàs al qual no vas des de gener.</li><li>Subscripcions a tres plataformes de streaming diferents quan només en veus una.</li><li>Una app per la qual pagues 4,99€ al mes i que no has obert en un any.</li><li>Aquella assegurança extra que vas contractar i ja no necessites.</li></ul><p>Aquestes despeses són especialment perilloses perquè operen en segon pla. No requereixen una acció de compra activa, per la qual cosa és fàcil ignorar el seu impacte acumulat.</p><h3>Com Començar la Caça</h3><ol><li><strong>Revisa els teus extractes:</strong> Dedica una hora a revisar els moviments del teu compte dels últims dos o tres mesos. Sense jutjar, només apunta totes aquelles petites despeses i subscripcions recurrents.</li><li><strong>Suma i sorprèn-te:</strong> Calcula quant sumen al mes les teves despeses formiga. I fes una llista de les despeses vampir per cancel·lar-les immediatament.</li><li><strong>Planifica i substitueix:</strong> No es tracta d'eliminar tota l'alegria de la teva vida. Es tracta de planificar. T'encanta el cafè? Potser pots preparar-lo a casa i portar-lo en un termos. T'agrada veure sèries? Tria una o dues plataformes i rota cada certs mesos.</li></ol>`,
+                    cta_title: 'Bancfy és el teu Radar de Despeses',
+                    cta_desc: 'Sabem que aquest procés pot ser tediós. Per això, a Bancfy, hem creat el "Radar d\'Oportunitats". La nostra app t\'ajuda a identificar automàticament aquestes despeses recurrents i et mostra l\'increïble potencial d\'aquests diners si els destinessis a l\'estalvi o la inversió.',
+                    cta_button: 'Vull descobrir les meves despeses ocultes',
+                    footer_copyright: '© 2025 Bancfy. Tots els drets reservats.', footer_design: 'Dissenyat amb <span class="text-gold">&hearts;</span> per al teu benestar financer.'
+                },
+                eu: {
+                    nav_features: 'Ezaugarriak', nav_blog: 'Bloga', nav_faq: 'FAQ', nav_contact: 'Kontaktua', nav_join_waitlist: 'Sartu Itxaron Zerrendan',
+                    back_to_blog: '&larr; Itzuli Blogera',
+                    article_title: 'Zure Diruaren Lapur Isilak: Nola Ehizatu Zure Inurri eta Banpiro Gastuak',
+                    article_image_text: 'Ezkutuko Gastuak',
+                    article_content: `<p>Zure soldata erosketa handirik egin gabe desagertzen dela sentitzen duzu? Ez da zure irudimena. Finantza pertsonalen munduan, bi etsai maltzur daude zure dirua pixkanaka jaten dutenak, ia konturatu gabe: <strong>inurri gastuak</strong> eta <strong>banpiro gastuak</strong>.</p><p>Horiek identifikatzea eta neutralizatzea zure ekonomia saneatzeko eman dezakezun urrats liberatzaileenetako bat da. Jar diezaiegun aurpegia.</p><h3>Zer dira "Inurri Gastuak"?</h3><p><strong>Inurri gastuak</strong> eguneroko erosketa txiki horiek dira, ia hutsalak, pentsatu gabe egiten dituzunak. Goizeko kafe bat, makina bateko ur botila bat, supermerkatuko kutxako txokolate hori... Hain txikiak dira, kaltegabeak dirudite, baina haien botere suntsitzailea maiztasunean datza.</p><ul><li>Eguneroko 2€-ko kafea.</li><li>Bazkaria kanpoan erostea, etxetik eraman beharrean.</li><li>Zure bankukoak ez diren kutxazainetan dirua ateratzeagatiko komisio txikiak.</li><li>Eskupekoak edo bulkadazko erosketa txikiak.</li></ul><blockquote><strong>Pozoia dosian dago:</strong> 2€-ko kafe batek ez dirudi asko. Baina lanegun guztietan hartzen baduzu, hilean 40€ inguru dira. <strong>Hori urtean 480€ dira aurrezten edo inbertitzen egon zintezkeena!</strong></blockquote><h3>Eta "Banpiro Gastuak"?</h3><p>Inurri gastuak etengabeko tantaka badira, <strong>banpiro gastuak</strong> bizkarroi isilak dira. Automatizatuta dituzun harpidetza eta ordainketa errepikakor horiek dira, eta, hilero, zure dirua "xurgatzen" dute, askotan jada erabiltzen ez dituzun edo erabat ahaztuta zenituen zerbitzuengatik.</p><ul><li>Urtarriletik joan ez zaren gimnasio horren kuota.</li><li>Hiru streaming plataforma desberdinetarako harpidetzak, bakarra ikusten duzunean.</li><li>Hilero 4,99€ ordaintzen duzun eta urtebetean ireki ez duzun aplikazio bat.</li><li>Kontratatu zenuen eta jada behar ez duzun aparteko aseguru hori.</li></ul><p>Gastu hauek bereziki arriskutsuak dira bigarren planoan funtzionatzen dutelako. Ez dute erosketa ekintza aktiborik behar, beraz, erraza da haien eragin metatua alde batera uztea.</p><h3>Nola Hasi Ehiza</h3><ol><li><strong>Berrikusi zure laburpenak:</strong> Eman ordu bat azken bi edo hiru hilabeteetako zure kontuko mugimenduak berrikusten. Epaiketarik gabe, apuntatu gastu txiki eta harpidetza errepikakor guztiak.</li><li><strong>Batu eta harritu:</strong> Kalkulatu zenbat batzen duten hilean zure inurri gastuek. Eta egin banpiro gastuen zerrenda bat berehala bertan behera uzteko.</li><li><strong>Planifikatu eta ordezkatu:</strong> Ez da zure bizitzako poza guztia kentzea. Planifikatzea da kontua. Kafea maite duzu? Agian etxean prestatu eta termo batean eraman dezakezu. Serieak ikustea gustatzen zaizu? Aukeratu plataforma bat edo bi eta txandakatu hilabete batzuetan behin.</li></ol>`,
+                    cta_title: 'Bancfy Zure Gastuen Radar da',
+                    cta_desc: 'Badakigu prozesu hau aspergarria izan daitekeela. Horregatik, Bancfy-n, "Aukeren Radar" sortu dugu. Gure aplikazioak gastu errepikakor hauek automatikoki identifikatzen laguntzen dizu eta diru horren potentzial sinestezina erakusten dizu aurrezkira edo inbertsiora bideratuko bazenu.',
+                    cta_button: 'Nire ezkutuko gastuak aurkitu nahi ditut',
+                    footer_copyright: '© 2025 Bancfy. Eskubide guztiak erreserbatuta.', footer_design: 'Zure ongizate finantzariorako <span class="text-gold">&hearts;</span>-rekin diseinatua.'
+                },
+                de: {
+                    nav_features: 'Funktionen', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Auf die Warteliste',
+                    back_to_blog: '&larr; Zurück zum Blog',
+                    article_title: 'Die stillen Diebe Ihres Geldes: Wie Sie Ihre "Kleckerbeträge" und Vampir-Ausgaben jagen',
+                    article_image_text: 'Versteckte Ausgaben',
+                    article_content: `<p>Haben Sie das Gefühl, dass Ihr Gehalt verschwindet, ohne dass Sie große Einkäufe tätigen? Das ist keine Einbildung. In der Welt der persönlichen Finanzen gibt es zwei heimliche Feinde, die Ihr Geld nach und nach verschlingen, ohne dass Sie es überhaupt bemerken: die <strong>Kleckerbeträge</strong> und die <strong>Vampir-Ausgaben</strong>.</p><p>Sie zu identifizieren und zu neutralisieren ist einer der befreiendsten Schritte, die Sie zur Sanierung Ihrer Finanzen unternehmen können. Schauen wir sie uns genauer an.</p><h3>Was sind "Kleckerbeträge"?</h3><p><strong>Kleckerbeträge</strong> sind diese kleinen, fast unbedeutenden täglichen Einkäufe, die Sie ohne nachzudenken tätigen. Ein Kaffee am Morgen, eine Flasche Wasser aus dem Automaten, dieser Schokoriegel an der Supermarktkasse... Sie sind so klein, dass sie harmlos erscheinen, aber ihre zerstörerische Kraft liegt in ihrer Häufigkeit.</p><ul><li>Der tägliche Kaffee für 2 €.</li><li>Das Mittagessen auswärts kaufen, anstatt es von zu Hause mitzubringen.</li><li>Kleine Gebühren für das Abheben von Geld an fremden Geldautomaten.</li><li>Trinkgelder oder kleine Impulskäufe.</li></ul><blockquote><strong>Die Dosis macht das Gift:</strong> Ein 2-Euro-Kaffee scheint nicht viel zu sein. Aber wenn Sie ihn jeden Arbeitstag trinken, sind das etwa 40 € im Monat. <strong>Das sind 480 € im Jahr, die Sie sparen oder investieren könnten!</strong></blockquote><h3>Und "Vampir-Ausgaben"?</h3><p>Wenn Kleckerbeträge ein ständiges Tröpfeln sind, sind <strong>Vampir-Ausgaben</strong> stille Parasiten. Das sind diese Abonnements und wiederkehrenden Zahlungen, die Sie automatisiert haben und die Monat für Monat Ihr Geld "aussaugen", oft für Dienste, die Sie nicht mehr nutzen oder komplett vergessen haben.</p><ul><li>Der Beitrag für das Fitnessstudio, in dem Sie seit Januar nicht mehr waren.</li><li>Abonnements für drei verschiedene Streaming-Plattformen, obwohl Sie nur eine nutzen.</li><li>Eine App, für die Sie 4,99 € im Monat bezahlen und die Sie seit einem Jahr nicht mehr geöffnet haben.</li><li>Diese zusätzliche Versicherung, die Sie abgeschlossen haben und nicht mehr benötigen.</li></ul><p>Diese Ausgaben sind besonders gefährlich, weil sie im Hintergrund agieren. Sie erfordern keine aktive Kaufentscheidung, daher ist es leicht, ihre kumulative Wirkung zu ignorieren.</p><h3>Wie man die Jagd beginnt</h3><ol><li><strong>Überprüfen Sie Ihre Kontoauszüge:</strong> Nehmen Sie sich eine Stunde Zeit, um die Bewegungen auf Ihrem Konto der letzten zwei oder drei Monate zu überprüfen. Ohne zu urteilen, notieren Sie einfach all diese kleinen Ausgaben und wiederkehrenden Abonnements.</li><li><strong>Rechnen Sie zusammen und staunen Sie:</strong> Berechnen Sie, wie viel Ihre Kleckerbeträge pro Monat ausmachen. Und erstellen Sie eine Liste der Vampir-Ausgaben, um sie sofort zu kündigen.</li><li><strong>Planen und ersetzen:</strong> Es geht nicht darum, alle Freude aus Ihrem Leben zu verbannen. Es geht ums Planen. Lieben Sie Kaffee? Vielleicht können Sie ihn zu Hause zubereiten und in einer Thermoskanne mitnehmen. Sehen Sie gerne Serien? Wählen Sie ein oder zwei Plattformen und wechseln Sie alle paar Monate.</li></ol>`,
+                    cta_title: 'Bancfy ist Ihr Ausgaben-Radar',
+                    cta_desc: 'Wir wissen, dass dieser Prozess mühsam sein kann. Deshalb haben wir bei Bancfy den "Chancen-Radar" entwickelt. Unsere App hilft Ihnen, diese wiederkehrenden Ausgaben automatisch zu identifizieren und zeigt Ihnen das unglaubliche Potenzial dieses Geldes, wenn Sie es sparen oder investieren würden.',
+                    cta_button: 'Ich möchte meine versteckten Ausgaben entdecken',
+                    footer_copyright: '© 2025 Bancfy. Alle Rechte vorbehalten.', footer_design: 'Mit <span class="text-gold">&hearts;</span> für Ihr finanzielles Wohlbefinden gestaltet.'
+                },
+                'de-ch': {
+                    nav_features: 'Funktione', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Uf d\'Warteliste',
+                    back_to_blog: '&larr; Zrugg zum Blog',
+                    article_title: 'Di stille Dieb vo dim Gäld: Wie du dini Chliiusgabe und Vampir-Chöste jagisch',
+                    article_image_text: 'Versteckti Chöste',
+                    article_content: `<p>Hesch s'Gfühl, dis Salär verschwindet, ohni dass du grossi Iichäuf machsch? Das isch kei Iibildig. In de Wält vo de persönliche Finanze git's zwei heimlchi Fiinde, wo dis Gäld Stück für Stück uffrässed, ohni dass du's überhaupt merkisch: d'<strong>Chliiusgabe</strong> und d'<strong>Vampir-Chöste</strong>.</p><p>Sie z'identifiziere und z'neutralisiere isch eine vo de befreiendste Schritt, wo du für d'Sanierig vo dinere Wirtschaft mache chasch. Luege mer's uns gnauer aa.</p><h3>Was sind "Chliiusgabe"?</h3><p><strong>Chliiusgabe</strong> sind die chliine, fast unbedütende tägliche Iichäuf, wo du machsch, ohni z'überlegge. En Kafi am Morge, e Wasserfläsche us em Automat, de Schoggiriegel a de Supermarktkasse... Si sind so chlii, dass si harmlos wirked, aber ihri zerstörerischi Chraft liit i ihrer Hüfigkeit.</p><ul><li>De täglich Kafi für 2 CHF.</li><li>S'Mittagässe uswärts chaufe, anstatt es vo dehei mitzneh.</li><li>Chliini Gebühre für s'Abhebe vo Gäld an fremde Bankomate.</li><li>Trinkgälder oder chliini Impulsiichäuf.</li></ul><blockquote><strong>D'Dosis macht s'Gift:</strong> En 2-Franke-Kafi schiint nöd viel z'sii. Aber wenn du ihn jede Arbeitstag trinksch, sind das öppe 40 CHF im Monet. <strong>Das sind 480 CHF im Jahr, wo du chönntisch spare oder investiere!</strong></blockquote><h3>Und "Vampir-Chöste"?</h3><p>Wenn Chliiusgabe es stetigs Tröpfle sind, sind <strong>Vampir-Chöste</strong> stilli Parasite. Das sind die Abos und wiederkehrende Zahligä, wo du automatisiert hesch und wo Monet für Monet dis Gäld "suuged", oft für Dienscht, wo du nüme nutzisch oder komplett vergesse hesch.</p><ul><li>De Biitrag für s'Fitnesszenter, wo du sit Januar nüme gsi bisch.</li><li>Abos für drü verschiedeni Streaming-Plattforme, obwohl du nur eini luegsch.</li><li>E App, für die du 4.99 CHF im Monet zahlsch und sit eme Jahr nüme göffnet hesch.</li><li>Die Zuesatzversicherig, wo du abgschlosse hesch und nüme bruchsch.</li></ul><p>Die Chöste sind bsunders gföhrlich, will si im Hintergrund laufed. Si erfordered kei aktivi Chaufentscheidig, drum isch es eifach, ihre kumulative Iifluss z'ignoriere.</p><h3>Wie du d'Jagd aafangsch</h3><ol><li><strong>Überprüef dini Kontoúszüüg:</strong> Nimm dir e Stund Ziit, um d'Bewegige uf dim Konto vo de letschte zwei oder drü Monet z'überprüefe. Ohni z'urteile, notier eifach all die chliine Usgabe und wiederkehrende Abos.</li><li><strong>Rechne zäme und stuun:</strong> Berechne, wie viel dini Chliiusgabe pro Monet usmached. Und mach e Liste vo de Vampir-Chöste, um sie sofort z'kündige.</li><li><strong>Plan und ersetz:</strong> Es gaht nöd drum, alli Freud us dim Läbe z'eliminiere. Es gaht ums Plane. Liebsch du Kafi? Vielleicht chasch ihn dehei mache und im ne Thermos mitneh. Luegsch du gern Serie? Wähl eini oder zwei Plattforme und wechsle alli paar Monet.</li></ol>`,
+                    cta_title: 'Bancfy isch din Uusgabe-Radar',
+                    cta_desc: 'Mir wüssed, dass de Prozess mühsam sii chan. Drum hämmer bi Bancfy de "Chance-Radar" entwickelt. Eusi App hilft dir, die wiederkehrende Uusgabe automatisch z\'identifiziere und zeigt dir s\'unglaubliche Potenzial vo dem Gäld, wenn du\'s würdsch spare oder investiere.',
+                    cta_button: 'Ich wett mini versteckte Uusgabe entdecke',
+                    footer_copyright: '© 2025 Bancfy. Alli Rächt vorbhalte.', footer_design: 'Mit <span class="text-gold">&hearts;</span> für dis finanzielle Wohlbefinde gschaffet.'
+                },
+                fr: {
+                    nav_features: 'Fonctionnalités', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Rejoindre l\'attente',
+                    back_to_blog: '&larr; Retour au Blog',
+                    article_title: 'Les Voleurs Silencieux de Votre Argent : Comment Traquer vos Dépenses Fourmis et Vampires',
+                    article_image_text: 'Dépenses Cachées',
+                    article_content: `<p>Avez-vous l'impression que votre salaire disparaît sans que vous fassiez de gros achats ? Ce n'est pas votre imagination. Dans le monde des finances personnelles, il existe deux ennemis furtifs qui dévorent votre argent petit à petit, sans que vous vous en rendiez compte : les <strong>dépenses fourmis</strong> et les <strong>dépenses vampires</strong>.</p><p>Les identifier et les neutraliser est l'une des étapes les plus libératrices que vous puissiez franchir pour assainir votre économie. Mettons-leur un visage.</p><h3>Que sont les "Dépenses Fourmis" ?</h3><p>Les <strong>dépenses fourmis</strong> sont ces petits achats quotidiens, presque insignifiants, que vous faites sans réfléchir. Un café le matin, une bouteille d'eau à un distributeur, cette barre de chocolat à la caisse du supermarché... Elles sont si petites qu'elles semblent inoffensives, mais leur pouvoir destructeur réside dans leur fréquence.</p><ul><li>Le café quotidien à 2 €.</li><li>Acheter le déjeuner à l'extérieur au lieu de l'apporter de la maison.</li><li>Petites commissions pour retirer de l'argent à des distributeurs qui ne sont pas de votre banque.</li><li>Pourboires ou petits achats impulsifs.</li></ul><blockquote><strong>Le poison est dans la dose :</strong> Un café à 2 € ne semble pas beaucoup. Mais si vous le prenez chaque jour de travail, cela représente environ 40 € par mois. <strong>Soit 480 € par an que vous pourriez épargner ou investir !</strong></blockquote><h3>Et les "Dépenses Vampires" ?</h3><p>Si les dépenses fourmis sont un goutte-à-goutte constant, les <strong>dépenses vampires</strong> sont des parasites silencieux. Ce sont ces abonnements et paiements récurrents que vous avez automatisés et qui, mois après mois, "sucent" votre argent, souvent pour des services que vous n'utilisez plus ou que vous aviez complètement oubliés.</p><ul><li>L'abonnement à cette salle de sport où vous n'êtes pas allé depuis janvier.</li><li>Abonnements à trois plateformes de streaming différentes alors que vous n'en regardez qu'une.</li><li>Une application pour laquelle vous payez 4,99 € par mois et que vous n'avez pas ouverte depuis un an.</li><li>Cette assurance supplémentaire que vous avez souscrite et dont vous n'avez plus besoin.</li></ul><p>Ces dépenses sont particulièrement dangereuses car elles opèrent en arrière-plan. Elles ne nécessitent pas d'action d'achat active, il est donc facile d'ignorer leur impact cumulé.</p><h3>Comment Commencer la Chasse</h3><ol><li><strong>Examinez vos relevés :</strong> Consacrez une heure à examiner les mouvements de votre compte des deux ou trois derniers mois. Sans juger, notez simplement toutes ces petites dépenses et abonnements récurrents.</li><li><strong>Additionnez et soyez surpris :</strong> Calculez le montant mensuel de vos dépenses fourmis. Et faites une liste des dépenses vampires pour les annuler immédiatement.</li><li><strong>Planifiez et remplacez :</strong> Il ne s'agit pas d'éliminer toute la joie de votre vie. Il s'agit de planifier. Vous aimez le café ? Peut-être pouvez-vous le préparer à la maison et l'emporter dans un thermos. Vous aimez regarder des séries ? Choisissez une ou deux plateformes et alternez tous les quelques mois.</li></ol>`,
+                    cta_title: 'Bancfy est votre Radar de Dépenses',
+                    cta_desc: 'Nous savons que ce processus peut être fastidieux. C\'est pourquoi, chez Bancfy, nous avons créé le "Radar d\'Opportunités". Notre application vous aide à identifier automatiquement ces dépenses récurrentes et vous montre le potentiel incroyable de cet argent si vous le destiniez à l\'épargne ou à l\'investissement.',
+                    cta_button: 'Je veux découvrir mes dépenses cachées',
+                    footer_copyright: '© 2025 Bancfy. Tous droits réservés.', footer_design: 'Conçu avec <span class="text-gold">&hearts;</span> pour votre bien-être financier.'
+                },
+                it: {
+                    nav_features: 'Caratteristiche', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contatti', nav_join_waitlist: 'Unisciti all\'Attesa',
+                    back_to_blog: '&larr; Torna al Blog',
+                    article_title: 'I Ladri Silenziosi dei Tuoi Soldi: Come Dare la Caccia alle Tue Spese Formica e Vampiro',
+                    article_image_text: 'Spese Nascoste',
+                    article_content: `<p>Senti che il tuo stipendio svanisce senza fare grandi acquisti? Non è la tua immaginazione. Nel mondo della finanza personale, esistono due nemici silenziosi che divorano i tuoi soldi a poco a poco, senza che tu quasi te ne accorga: le <strong>spese formica</strong> e le <strong>spese vampiro</strong>.</p><p>Identificarli e neutralizzarli è uno dei passi più liberatori che puoi compiere per risanare la tua economia. Diamo loro un volto.</p><h3>Cosa sono le "Spese Formica"?</h3><p>Le <strong>spese formica</strong> sono quei piccoli acquisti quotidiani, quasi insignificanti, che fai senza pensare. Un caffè al mattino, una bottiglia d'acqua da un distributore automatico, quella barretta di cioccolato alla cassa del supermercato... Sono così piccoli che sembrano innocui, ma il loro potere distruttivo risiede nella loro frequenza.</p><ul><li>Il caffè quotidiano da 2 €.</li><li>Comprare il pranzo fuori invece di portarlo da casa.</li><li>Piccole commissioni per prelevare denaro da sportelli bancomat che non sono della tua banca.</li><li>Mance o piccoli acquisti d'impulso.</li></ul><blockquote><strong>Il veleno è nella dose:</strong> Un caffè da 2 € non sembra molto. Ma se lo prendi ogni giorno lavorativo, sono circa 40 € al mese. <strong>Sono 480 € all'anno che potresti risparmiare o investire!</strong></blockquote><h3>E le "Spese Vampiro"?</h3><p>Se le spese formica sono un gocciolamento costante, le <strong>spese vampiro</strong> sono parassiti silenziosi. Sono quegli abbonamenti e pagamenti ricorrenti che hai automatizzato e che, mese dopo mese, "succhiano" i tuoi soldi, spesso per servizi che non usi più o che avevi completamente dimenticato.</p><ul><li>La quota di quella palestra in cui non vai da gennaio.</li><li>Abbonamenti a tre diverse piattaforme di streaming quando ne guardi solo una.</li><li>Un'app per cui paghi 4,99 € al mese e che non apri da un anno.</li><li>Quell'assicurazione extra che hai stipulato e di cui non hai più bisogno.</li></ul><p>Queste spese sono particolarmente pericolose perché operano in background. Non richiedono un'azione di acquisto attiva, quindi è facile ignorare il loro impatto accumulato.</p><h3>Come Iniziare la Caccia</h3><ol><li><strong>Controlla i tuoi estratti conto:</strong> Dedica un'ora a controllare i movimenti del tuo conto degli ultimi due o tre mesi. Senza giudicare, annota solo tutte quelle piccole spese e abbonamenti ricorrenti.</li><li><strong>Somma e sorprenditi:</strong> Calcola a quanto ammontano al mese le tue spese formica. E fai un elenco delle spese vampiro per annullarle immediatamente.</li><li><strong>Pianifica e sostituisci:</strong> Non si tratta di eliminare tutta la gioia dalla tua vita. Si tratta di pianificare. Ami il caffè? Forse puoi prepararlo a casa e portarlo in un thermos. Ti piace guardare le serie? Scegli una o due piattaforme e ruota ogni tot mesi.</li></ol>`,
+                    cta_title: 'Bancfy è il tuo Radar delle Spese',
+                    cta_desc: 'Sappiamo che questo processo può essere noioso. Per questo, in Bancfy, abbiamo creato il "Radar delle Opportunità". La nostra app ti aiuta a identificare automaticamente queste spese ricorrenti e ti mostra l\'incredibile potenziale di quel denaro se lo destinassi al risparmio o all\'investimento.',
+                    cta_button: 'Voglio scoprire le mie spese nascoste',
+                    footer_copyright: '© 2025 Bancfy. Tutti i diritti riservati.', footer_design: 'Progettato con <span class="text-gold">&hearts;</span> per il tuo benessere finanziario.'
+                },
+                pt: {
+                    nav_features: 'Recursos', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contato', nav_join_waitlist: 'Junte-se à Espera',
+                    back_to_blog: '&larr; Voltar ao Blog',
+                    article_title: 'Os Ladrões Silenciosos do Seu Dinheiro: Como Caçar Seus Gastos Formiga e Vampiro',
+                    article_image_text: 'Despesas Ocultas',
+                    article_content: `<p>Você sente que seu salário desaparece sem fazer grandes compras? Não é imaginação sua. No mundo das finanças pessoais, existem dois inimigos sorrateiros que devoram seu dinheiro aos poucos, sem que você perceba: os <strong>gastos formiga</strong> e os <strong>gastos vampiro</strong>.</p><p>Identificá-los e neutralizá-los é um dos passos mais libertadores que você pode dar para sanar sua economia. Vamos dar uma cara a eles.</p><h3>O que são "Gastos Formiga"?</h3><p>Os <strong>gastos formiga</strong> são aquelas pequenas compras diárias, quase insignificantes, que você faz sem pensar. Um café pela manhã, uma garrafa de água de uma máquina, aquela barra de chocolate na caixa do supermercado... São tão pequenos que parecem inofensivos, mas seu poder destrutivo reside em sua frequência.</p><ul><li>O café diário de 2 €.</li><li>Comprar o almoço fora em vez de trazê-lo de casa.</li><li>Pequenas taxas para sacar dinheiro em caixas eletrônicos que não são do seu banco.</li><li>Gorjetas ou pequenas compras por impulso.</li></ul><blockquote><strong>O veneno está na dose:</strong> Um café de 2 € não parece muito. Mas se você o toma todos os dias úteis, são cerca de 40 € por mês. <strong>Isso são 480 € por ano que você poderia estar economizando ou investindo!</strong></blockquote><h3>E os "Gastos Vampiro"?</h3><p>Se os gastos formiga são um gotejamento constante, os <strong>gastos vampiro</strong> são parasitas silenciosos. São aquelas assinaturas e pagamentos recorrentes que você automatizou e que, mês a mês, "sugam" seu dinheiro, muitas vezes por serviços que você não usa mais ou que havia esquecido completamente.</p><ul><li>A mensalidade daquela academia que você não frequenta desde janeiro.</li><li>Assinaturas de três plataformas de streaming diferentes quando você só assiste a uma.</li><li>Um aplicativo pelo qual você paga 4,99 € por mês e que não abre há um ano.</li><li>Aquele seguro extra que você contratou e não precisa mais.</li></ul><p>Esses gastos são especialmente perigosos porque operam em segundo plano. Eles não exigem uma ação de compra ativa, por isso é fácil ignorar seu impacto acumulado.</p><h3>Como Começar a Caça</h3><ol><li><strong>Revise seus extratos:</strong> Dedique uma hora para revisar os movimentos de sua conta dos últimos dois ou três meses. Sem julgar, apenas anote todos esses pequenos gastos e assinaturas recorrentes.</li><li><strong>Some e surpreenda-se:</strong> Calcule quanto seus gastos formiga somam por mês. E faça uma lista dos gastos vampiro para cancelá-los imediatamente.</li><li><strong>Planeje e substitua:</strong> Não se trata de eliminar toda a alegria de sua vida. Trata-se de planejar. Adora café? Talvez você possa prepará-lo em casa e levá-lo em uma garrafa térmica. Gosta de assistir a séries? Escolha uma ou duas plataformas e alterne a cada poucos meses.</li></ol>`,
+                    cta_title: 'Bancfy é o seu Radar de Despesas',
+                    cta_desc: 'Sabemos que este processo pode ser tedioso. Por isso, na Bancfy, criamos o "Radar de Oportunidades". Nosso aplicativo ajuda você a identificar automaticamente esses gastos recorrentes e mostra o incrível potencial desse dinheiro se você o destinasse à poupança ou ao investimento.',
+                    cta_button: 'Quero descobrir minhas despesas ocultas',
+                    footer_copyright: '© 2025 Bancfy. Todos os direitos reservados.', footer_design: 'Projetado com <span class="text-gold">&hearts;</span> para o seu bem-estar financeiro.'
+                },
+                ja: {
+                    nav_features: '特徴', nav_blog: 'ブログ', nav_faq: 'FAQ', nav_contact: 'お問い合わせ', nav_join_waitlist: 'ウェイティングリストに参加',
+                    back_to_blog: '&larr; ブログに戻る',
+                    article_title: 'あなたのお金の静かな泥棒：アリと吸血鬼の出費を狩る方法',
+                    article_image_text: '隠れた経費',
+                    article_content: `<p>大きな買い物をしなくても給料が消えていくように感じますか？それはあなたの想像ではありません。個人金融の世界には、あなたがほとんど気づかないうちに、少しずつあなたのお金を食い尽くす2つのステルスな敵がいます。<strong>アリの出費</strong>と<strong>吸血鬼の出費</strong>です。</p><p>それらを特定し、無力化することは、あなたの経済を健全化するために取ることができる最も解放的なステップの1つです。彼らに顔を向けましょう。</p><h3>「アリの出費」とは何ですか？</h3><p><strong>アリの出費</strong>とは、あなたが考えずに毎日行う、ほとんど取るに足らない小さな買い物のことです。朝のコーヒー、自動販売機の水のボトル、スーパーのレジのチョコレートバー...。それらは非常に小さいので無害に見えますが、その破壊的な力はその頻度にあります。</p><ul><li>毎日の2ユーロのコーヒー。</li><li>家から持ってくる代わりに外で昼食を買う。</li><li>あなたの銀行のものではないATMからお金を引き出すための少額の手数料。</li><li>チップや小さな衝動買い。</li></ul><blockquote><strong>毒は服用量にあります：</strong>2ユーロのコーヒーはたいしたことないように思えます。しかし、それを毎日就業日に飲むと、月額約40ユーロになります。<strong>それは年間480ユーロで、貯蓄したり投資したりできたはずです！</strong></blockquote><h3>そして「吸血鬼の出費」とは？</h3><p>アリの出費が絶え間ない滴りである場合、<strong>吸血鬼の出費</strong>は静かな寄生虫です。それらはあなたが自動化したサブスクリプションと定期的な支払いで、毎月、あなたのお金を「吸い取り」、しばしばあなたがもはや使用していない、または完全に忘れていたサービスのためです。</p><ul><li>1月から行っていないジムの会費。</li><li>1つしか見ていないのに3つの異なるストリーミングプラットフォームへのサブスクリプション。</li><li>月額4.99ユーロを支払っているが、1年間開いていないアプリ。</li><li>あなたが契約したがもはや必要のない追加の保険。</li></ul><p>これらの費用は、バックグラウンドで動作するため特に危険です。積極的な購入アクションを必要としないため、累積的な影響を無視しがちです。</p><h3>狩りを始める方法</h3><ol><li><strong>明細書を確認する：</strong>過去2、3か月の口座の動きを確認するために1時間を費やしてください。判断せずに、それらすべての小さな費用と定期的なサブスクリプションを書き留めるだけです。</li><li><strong>合計して驚く：</strong>アリの出費が月額いくらになるか計算します。そして、すぐにキャンセルするために吸血鬼の出費のリストを作成します。</li><li><strong>計画して置き換える：</strong>あなたの人生からすべての喜びを排除することではありません。計画することが重要です。コーヒーが好きですか？たぶん、家で淹れて魔法瓶に入れて持ち運ぶことができます。シリーズを見るのが好きですか？1つか2つのプラットフォームを選び、数か月ごとにローテーションします。</li></ol>`,
+                    cta_title: 'Bancfyはあなたの経費レーダーです',
+                    cta_desc: 'このプロセスが面倒な場合があることは承知しています。そのため、Bancfyでは「オポチュニティレーダー」を作成しました。私たちのアプリは、これらの定期的な経費を自動的に特定し、そのお金を貯蓄や投資に回した場合の驚くべき可能性を示します。',
+                    cta_button: '隠れた経費を発見したい',
+                    footer_copyright: '© 2025 Bancfy. 無断複写・転載を禁じます。', footer_design: 'あなたの経済的幸福のために<span class="text-gold">&hearts;</span>を込めて設計されました。'
+                },
+                ko: {
+                    nav_features: '기능', nav_blog: '블로그', nav_faq: 'FAQ', nav_contact: '문의하기', nav_join_waitlist: '대기자 명단 참여',
+                    back_to_blog: '&larr; 블로그로 돌아가기',
+                    article_title: '돈의 조용한 도둑들: 개미와 뱀파이어 지출을 사냥하는 방법',
+                    article_image_text: '숨겨진 비용',
+                    article_content: `<p>큰 구매 없이 월급이 사라지는 것을 느끼십니까? 상상이 아닙니다. 개인 금융의 세계에는 거의 눈치 채지 못하는 사이에 조금씩 돈을 삼키는 두 명의 은밀한 적이 있습니다. 바로 <strong>개미 지출</strong>과 <strong>뱀파이어 지출</strong>입니다.</p><p>그것들을 식별하고 무력화하는 것은 경제를 건전하게 만들기 위해 취할 수 있는 가장 해방적인 조치 중 하나입니다. 그들의 얼굴을 알아봅시다.</p><h3>"개미 지출"이란 무엇입니까?</h3><p><strong>개미 지출</strong>은 생각 없이 매일 하는 거의 하찮은 작은 구매입니다. 아침 커피, 자동 판매기의 물 한 병, 슈퍼마켓 계산대의 초콜릿 바... 너무 작아서 무해해 보이지만 파괴적인 힘은 빈도에 있습니다.</p><ul><li>매일 2유로 커피.</li><li>집에서 가져오는 대신 밖에서 점심 사 먹기.</li><li>은행 소속이 아닌 ATM에서 돈을 인출하는 데 드는 소액 수수료.</li><li>팁이나 작은 충동 구매.</li></ul><blockquote><strong>독은 복용량에 있습니다.</strong> 2유로 커피는 별거 아닌 것 같습니다. 하지만 매일 근무일에 마시면 한 달에 약 40유로입니다. <strong>연간 480유로를 저축하거나 투자할 수 있었습니다!</strong></blockquote><h3>그리고 "뱀파이어 지출"은?</h3><p>개미 지출이 끊임없는 물방울이라면 <strong>뱀파이어 지출</strong>은 조용한 기생충입니다. 자동화한 구독 및 반복 결제로, 매달 돈을 "빨아먹으며", 종종 더 이상 사용하지 않거나 완전히 잊어버린 서비스에 대한 것입니다.</p><ul><li>1월부터 가지 않은 체육관 회비.</li><li>하나만 보는데도 세 가지 다른 스트리밍 플랫폼 구독.</li><li>한 달에 4.99유로를 내고 1년 동안 열지 않은 앱.</li><li>가입했지만 더 이상 필요하지 않은 추가 보험.</li></ul><p>이러한 지출은 백그라운드에서 작동하기 때문에 특히 위험합니다. 적극적인 구매 조치가 필요하지 않으므로 누적 영향을 무시하기 쉽습니다.</p><h3>사냥을 시작하는 방법</h3><ol><li><strong>명세서 검토:</strong> 지난 2~3개월 동안의 계정 이동 내역을 검토하는 데 한 시간을 할애하십시오. 판단하지 말고 모든 작은 지출과 반복되는 구독을 기록하십시오.</li><li><strong>합산하고 놀라십시오:</strong> 개미 지출이 한 달에 얼마인지 계산하십시오. 그리고 즉시 취소할 뱀파이어 지출 목록을 만드십시오.</li><li><strong>계획하고 대체하십시오:</strong> 인생의 모든 즐거움을 없애는 것이 아닙니다. 계획하는 것입니다. 커피를 좋아합니까? 집에서 만들어 보온병에 담아 다닐 수 있습니다. 시리즈 보는 것을 좋아합니까? 한두 개의 플랫폼을 선택하고 몇 달마다 교체하십시오.</li></ol>`,
+                    cta_title: 'Bancfy는 당신의 비용 레이더입니다',
+                    cta_desc: '이 과정이 지루할 수 있다는 것을 알고 있습니다. 그래서 Bancfy에서는 "기회 레이더"를 만들었습니다. 저희 앱은 이러한 반복적인 비용을 자동으로 식별하고 저축이나 투자에 사용했다면 그 돈의 놀라운 잠재력을 보여줍니다.',
+                    cta_button: '숨겨진 비용을 발견하고 싶습니다',
+                    footer_copyright: '© 2025 Bancfy. 모든 권리 보유.', footer_design: '귀하의 재정적 안녕을 위해 <span class="text-gold">&hearts;</span>로 디자인되었습니다.'
+                },
+                zh: {
+                    nav_features: '功能', nav_blog: '博客', nav_faq: '常见问题', nav_contact: '联系我们', nav_join_waitlist: '加入等候名单',
+                    back_to_blog: '&larr; 返回博客',
+                    article_title: '你钱的无声窃贼：如何追捕你的蚂蚁和吸血鬼开支',
+                    article_image_text: '隐藏费用',
+                    article_content: `<p>你是否觉得你的薪水在没有大笔消费的情况下就消失了？这不是你的想象。在个人理财的世界里，有两个悄无声息的敌人，它们会一点一点地吞噬你的钱，而你几乎没有察觉：<strong>蚂蚁开支</strong>和<strong>吸血鬼开支</strong>。</p><p>识别并消除它们是你可以为整顿你的经济状况而采取的最解放的步骤之一。让我们来给它们一个面目。</p><h3>什么是“蚂蚁开支”？</h3><p><strong>蚂蚁开支</strong>是你每天不假思索地进行的一些微不足道的小额购买。早晨的一杯咖啡，自动售货机里的一瓶水，超市收银台旁的那块巧克力……它们太小了，看起来无害，但它们的破坏力在于其频率。</p><ul><li>每天 2 欧元的咖啡。</li><li>在外面买午餐，而不是从家里带。</li><li>在非本行 ATM 机取款的少量手续费。</li><li>小费或小的冲动消费。</li></ul><blockquote><strong>毒药在于剂量：</strong>一杯 2 欧元的咖啡似乎不算什么。但如果你每个工作日都喝，一个月大约就是 40 欧元。<strong>那每年就是 480 欧元，你本可以用来储蓄或投资！</strong></blockquote><h3>还有“吸血鬼开支”？</h3><p>如果说蚂蚁开支是持续不断的滴漏，那么<strong>吸血鬼开支</strong>就是无声的寄生虫。它们是你已经自动化的订阅和经常性付款，月复一月地“吸走”你的钱，通常是用于你不再使用或已经完全忘记的服务。</p><ul><li>你从一月份就没去过的健身房的会员费。</li><li>订阅了三个不同的流媒体平台，而你只看一个。</li><li>你每月支付 4.99 欧元但一年都没打开过的应用程序。</li><li>你购买了但不再需要的额外保险。</li></ul><p>这些开支尤其危险，因为它们在后台运作。它们不需要主动的购买行为，因此很容易忽略它们的累积影响。</p><h3>如何开始追捕</h3><ol><li><strong>查看你的账单：</strong>花一个小时查看你过去两三个月的账户流水。不要评判，只记下所有这些小额开支和经常性订阅。</li><li><strong>加总并感到惊讶：</strong>计算你每月的蚂蚁开支总额。并列出吸血鬼开支清单，立即取消它们。</li><li><strong>计划和替代：</strong>这并不是要消除你生活中的所有乐趣。而是要进行计划。你喜欢咖啡吗？也许你可以在家煮好，用保温杯带上。你喜欢看连续剧吗？选择一两个平台，每隔几个月轮换一次。</li></ol>`,
+                    cta_title: 'Bancfy 是你的开支雷达',
+                    cta_desc: '我们知道这个过程可能很乏味。因此，在 Bancfy，我们创建了“机会雷达”。我们的应用程序可帮助您自动识别这些经常性开支，并向您展示如果您将其用于储蓄或投资，这笔钱的惊人潜力。',
+                    cta_button: '我想发现我隐藏的开支',
+                    footer_copyright: '© 2025 Bancfy。版权所有。', footer_design: '用 <span class="text-gold">&hearts;</span> 为您的财务福祉而设计。'
+                },
+                ar: {
+                    nav_features: 'الميزات', nav_blog: 'المدونة', nav_faq: 'الأسئلة الشائعة', nav_contact: 'اتصل بنا', nav_join_waitlist: 'انضم إلى قائمة الانتظar',
+                    back_to_blog: '&larr; العودة إلى المدونة',
+                    article_title: 'لصوص أموالك الصامتون: كيف تصطاد نفقاتك الصغيرة والمتكررة',
+                    article_image_text: 'نفقات خفية',
+                    article_content: `<p>هل تشعر أن راتبك يتلاشى دون القيام بعمليات شراء كبيرة؟ إنه ليس من نسج خيالك. في عالم التمويل الشخصي، هناك عدوان خفيان يلتهمان أموالك شيئًا فشيئًا، دون أن تلاحظ ذلك تقريبًا: <strong>النفقات الصغيرة (النملية)</strong> و<strong>النفقات المستنزفة (المصاصة للدماء)</strong>.</p><p>إن تحديدها وتحييدها هي إحدى أكثر الخطوات تحرراً التي يمكنك اتخاذها لإصلاح اقتصادك. دعنا نتعرف عليها.</p><h3>ما هي "النفقات الصغيرة"؟</h3><p><strong>النفقات الصغيرة</strong> هي تلك المشتريات اليومية الصغيرة التي لا تكاد تذكر والتي تقوم بها دون تفكير. فنجان قهوة في الصباح، زجاجة ماء من آلة البيع، قطعة الشوكولاتة تلك عند صندوق الدفع في السوبر ماركت... إنها صغيرة جدًا لدرجة أنها تبدو غير ضارة، لكن قوتها التدميرية تكمن في تكرارها.</p><ul><li>قهوة يومية بقيمة 2 يورو.</li><li>شراء الغداء من الخارج بدلاً من إحضاره من المنزل.</li><li>رسوم صغيرة لسحب الأموال من أجهزة الصراف الآلي التي لا تتبع مصرفك.</li><li>الإكراميات أو المشتريات الصغيرة الاندفاعية.</li></ul><blockquote><strong>السم في الجرعة:</strong> فنجان قهوة بقيمة 2 يورو لا يبدو كثيرًا. ولكن إذا كنت تتناوله كل يوم عمل، فهذا يمثل حوالي 40 يورو شهريًا. <strong>وهذا يعني 480 يورو سنويًا يمكنك توفيرها أو استثمارها!</strong></blockquote><h3>وماذا عن "النفقات المستنزفة"؟</h3><p>إذا كانت النفقات الصغيرة بمثابة تقطير مستمر، فإن <strong>النفقات المستنزفة</strong> هي طفيليات صامتة. إنها تلك الاشتراكات والمدفوعات المتكررة التي قمت بأتمتتها والتي، شهرًا بعد شهر، "تمتص" أموالك، غالبًا مقابل خدمات لم تعد تستخدمها أو نسيتها تمامًا.</p><ul><li>رسوم عضوية الصالة الرياضية التي لم تذهب إليها منذ يناير.</li><li>اشتراكات في ثلاث منصات بث مختلفة بينما تشاهد واحدة فقط.</li><li>تطبيق تدفع مقابله 4.99 يورو شهريًا ولم تفتحه منذ عام.</li><li>ذلك التأمين الإضافي الذي اشتريته ولم تعد بحاجة إليه.</li></ul><p>هذه النفقات خطيرة بشكل خاص لأنها تعمل في الخلفية. لا تتطلب إجراء شراء نشط، لذلك من السهل تجاهل تأثيرها التراكمي.</p><h3>كيف تبدأ الصيد</h3><ol><li><strong>راجع كشوف حساباتك:</strong> خصص ساعة لمراجعة حركات حسابك في الشهرين أو الثلاثة أشهر الماضية. دون إصدار أحكام، فقط قم بتدوين كل تلك النفقات الصغيرة والاشتراكات المتكررة.</li><li><strong>اجمع وتفاجأ:</strong> احسب المبلغ الذي تجمعه نفقاتك الصغيرة شهريًا. وقم بعمل قائمة بالنفقات المستنزفة لإلغائها على الفور.</li><li><strong>خطط واستبدل:</strong> لا يتعلق الأمر بإزالة كل البهجة من حياتك. إنه يتعلق بالتخطيط. هل تحب القهوة؟ ربما يمكنك تحضيرها في المنزل وحملها في ترمس. هل تحب مشاهدة المسلسلات؟ اختر منصة أو اثنتين وقم بالتبديل بينها كل بضعة أشهر.</li></ol>`,
+                    cta_title: 'Bancfy هو رادارك للنفقات',
+                    cta_desc: 'نعلم أن هذه العملية يمكن أن تكون مملة. لهذا السبب، في Bancfy، أنشأنا "رادار الفرص". يساعدك تطبيقنا على تحديد هذه النفقات المتكررة تلقائيًا ويظهر لك الإمكانات المذهلة لتلك الأموال إذا كنت ستوجهها إلى الادخار أو الاستثمار.',
+                    cta_button: 'أريد اكتشاف نفقاتي الخفية',
+                    footer_copyright: '© 2025 Bancfy. جميع الحقوق محفوظة.', footer_design: 'صُمم بـ <span class="text-gold">&hearts;</span> من أجل رفاهيتك المالية.'
+                }
+            };
+            
+            const supportedLangs = {
+                'es': { name: 'Español', flag: 'es' },
+                'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg' },
+                'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg' },
+                'en': { name: 'English', flag: 'gb' },
+                'de': { name: 'Deutsch', flag: 'de' },
+                'de-ch': { name: 'Schweizerdeutsch', flag: 'ch' },
+                'fr': { name: 'Français', flag: 'fr' },
+                'it': { name: 'Italiano', flag: 'it' },
+                'pt': { name: 'Português', flag: 'pt' },
+                'ja': { name: '日本語', flag: 'jp' },
+                'ko': { name: '한국어', flag: 'kr' },
+                'zh': { name: '中文', flag: 'cn' },
+                'ar': { name: 'العربية', flag: 'ae' }
+            };
+
+            function translatePage(lang) {
+                const targetLang = translations[lang] ? lang : 'es'; 
+                const t = translations[targetLang] || translations.es;
+
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.getAttribute('data-translate-key');
+                    const translation = t[key] || translations.es[key] || el.innerHTML;
+                    if (key) {
+                       el.innerHTML = translation;
+                    }
+                });
+                
+                const articleImage = document.getElementById('article-image');
+                if(articleImage) {
+                    const imageText = t.article_image_text || translations.es.article_image_text;
+                    const newSrc = `https://placehold.co/600x400/0C2340/C8B273?text=${encodeURIComponent(imageText)}`;
+                    articleImage.src = newSrc;
+                    articleImage.alt = `Ilustración para ${imageText}`;
+                    document.getElementById('og-image').setAttribute('content', newSrc);
+                    document.getElementById('twitter-image').setAttribute('content', newSrc);
+                }
+
+                document.getElementById('meta-title').textContent = t.article_title || translations.es.article_title;
+                document.getElementById('meta-description').setAttribute('content', t.article_content.substring(0, 160).replace(/<[^>]*>/g, ''));
+                document.getElementById('og-title').setAttribute('content', t.article_title || translations.es.article_title);
+                document.getElementById('og-description').setAttribute('content', t.article_content.substring(0, 160).replace(/<[^>]*>/g, ''));
+                document.getElementById('twitter-title').setAttribute('content', t.article_title || translations.es.article_title);
+                document.getElementById('twitter-description').setAttribute('content', t.article_content.substring(0, 160).replace(/<[^>]*>/g, ''));
+                
+                document.documentElement.lang = targetLang;
+                document.documentElement.dir = targetLang === 'ar' ? 'rtl' : 'ltr';
+            }
+
+            function setLanguage(lang) {
+                const langInfo = supportedLangs[lang] || supportedLangs['es'];
+                const flagSrc = langInfo.flagUrl ? langInfo.flagUrl : `https://flagcdn.com/w20/${langInfo.flag}.png`;
+                const langCode = lang.split('-')[0].toUpperCase();
+
+                const currentFlagImg = document.getElementById('current-lang-flag');
+                if (currentFlagImg) {
+                    currentFlagImg.src = flagSrc;
+                    currentFlagImg.alt = `Bandera de ${langInfo.name}`;
+                }
+                const currentLangCode = document.getElementById('current-lang-code');
+                if (currentLangCode) currentLangCode.textContent = langCode;
+
+                const mobileCurrentFlagImg = document.getElementById('mobile-current-lang-flag');
+                if (mobileCurrentFlagImg) {
+                    mobileCurrentFlagImg.src = flagSrc;
+                    mobileCurrentFlagImg.alt = `Bandera de ${langInfo.name}`;
+                }
+                const mobileCurrentLangCode = document.getElementById('mobile-current-lang-code');
+                if (mobileCurrentLangCode) mobileCurrentLangCode.textContent = langCode;
+
+                translatePage(lang);
+                localStorage.setItem('bancfy_lang', lang);
+            }
+
+            const langDropdown = document.getElementById('lang-dropdown');
+            const langSelectorBtn = document.getElementById('lang-selector-btn');
+            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+            const mobileLangSelectorBtn = document.getElementById('mobile-lang-selector-btn');
+            const mobileLangArrow = document.querySelector('.mobile-lang-arrow');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            for (const [code, langData] of Object.entries(supportedLangs)) {
+                const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
+                const innerHTML = `<img src="${flagSrc}" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
+
+                if (langDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'px-4', 'py-2', 'text-sm', 'text-gray-700', 'hover:bg-light-gray');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => { e.preventDefault(); setLanguage(code); langDropdown.classList.add('hidden'); langSelectorBtn.blur(); });
+                    langDropdown.appendChild(link);
+                }
+
+                if (mobileLangDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'py-1.5', 'px-2', 'text-sm', 'text-gray-700', 'hover:text-gold', 'rounded-md', 'hover:bg-white');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => { e.preventDefault(); setLanguage(code); if (mobileMenu) mobileMenu.classList.add('hidden'); });
+                    mobileLangDropdown.appendChild(link);
+                }
+            }
+            
+            if (langSelectorBtn) {
+                langSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (langDropdown) langDropdown.classList.toggle('hidden'); });
+            }
+
+            if (mobileLangSelectorBtn) {
+                mobileLangSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (mobileLangDropdown) mobileLangDropdown.classList.toggle('hidden'); if (mobileLangArrow) mobileLangArrow.classList.toggle('rotate-180'); });
+            }
+
+            window.addEventListener('click', (e) => {
+                if (langDropdown && !langDropdown.classList.contains('hidden') && !langSelectorBtn.contains(e.target)) {
+                    langDropdown.classList.add('hidden');
+                }
+            });
+
+            const savedLang = localStorage.getItem('bancfy_lang');
+            let userLang = savedLang;
+            if (!userLang) {
+                const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+                if (supportedLangs[browserLang]) userLang = browserLang;
+                else if (supportedLangs[browserLang.split('-')[0]]) userLang = browserLang.split('-')[0];
+                else userLang = 'es';
+            }
+            setLanguage(userLang);
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileLangDropdown) mobileLangDropdown.classList.add('hidden');
+                if (mobileLangArrow) mobileLangArrow.classList.remove('rotate-180');
+            });
+        });
+    </script>
+
+</body>
+</html>

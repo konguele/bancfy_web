@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags (will be updated by JS) -->
+    <title id="meta-title">La Regla 50/30/20: Tu Hoja de Ruta Financiera | Blog de Bancfy</title>
+    <meta id="meta-description" name="description" content="Domina tu presupuesto con la regla 50/30/20. Una guía sencilla para distribuir tus ingresos, cubrir necesidades, disfrutar de la vida y ahorrar para tu futuro.">
+    
+    <!-- Open Graph / Facebook (will be updated by JS) -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.bancfy.com/articulo-regla-50-30-20.html">
+    <meta id="og-title" property="og:title" content="La Regla 50/30/20: Tu Hoja de Ruta Financiera | Blog de Bancfy">
+    <meta id="og-description" property="og:description" content="Domina tu presupuesto con la regla 50/30/20. Una guía sencilla para distribuir tus ingresos, cubrir necesidades, disfrutar de la vida y ahorrar para tu futuro.">
+    <meta id="og-image" property="og:image" content="https://placehold.co/600x300/0C2340/C8B273?text=Regla+50/30/20">
+
+    <!-- Twitter (will be updated by JS) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bancfy.com/articulo-regla-50-30-20.html">
+    <meta id="twitter-title" property="twitter:title" content="La Regla 50/30/20: Tu Hoja de Ruta Financiera | Blog de Bancfy">
+    <meta id="twitter-description" property="twitter:description" content="Domina tu presupuesto con la regla 50/30/20. Una guía sencilla para distribuir tus ingresos, cubrir necesidades, disfrutar de la vida y ahorrar para tu futuro.">
+    <meta id="twitter-image" property="twitter:image" content="https://placehold.co/600x300/0C2340/C8B273?text=Regla+50/30/20">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Urbanist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <style>
+        body { font-family: 'Urbanist', sans-serif; }
+        :root {
+            --navy: #0C2340;
+            --gold: #C8B273;
+            --gold-hover: #bda66b;
+            --light-gray: #F7F7F7;
+        }
+        html[dir="rtl"] .md\:text-left { text-align: right; }
+        html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-right: 1.5rem; margin-left: 0; }
+        html[dir="rtl"] .mr-2 { margin-left: 0.5rem; margin-right: 0; }
+        html[dir="rtl"] .ml-1 { margin-right: 0.25rem; margin-left: 0; }
+        html[dir="rtl"] .right-0 { left: 0; right: auto; }
+        .bg-navy { background-color: var(--navy); }
+        .text-navy { color: var(--navy); }
+        .bg-gold { background-color: var(--gold); }
+        .text-gold { color: var(--gold); }
+        .hover\:bg-gold-hover:hover { background-color: var(--gold-hover); }
+        .border-gold { border-color: var(--gold); }
+        .bg-light-gray { background-color: var(--light-gray); }
+        .prose {
+            color: #374151; /* text-gray-700 */
+        }
+        .prose h1, .prose h2, .prose h3 {
+            color: var(--navy);
+        }
+        .prose a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .prose a:hover {
+            text-decoration: underline;
+        }
+        .prose strong {
+            color: var(--navy);
+        }
+        .prose blockquote {
+            border-left-color: var(--gold);
+            color: #4b5563; /* text-gray-600 */
+        }
+        .prose ul li::marker {
+            color: var(--gold);
+        }
+        .group:hover .group-hover\:block { display: block; }
+        .mobile-lang-arrow.rotate-180 { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-white text-navy antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
+                <img src="https://placehold.co/100x100/0C2340/FFFFFF?text=B" alt="Logo de Bancfy" class="w-10 h-10 rounded-full">
+                Bancfy
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_features">Características</a>
+                <a href="blog.html" class="text-gold font-semibold transition-colors duration-300" data-translate-key="nav_blog">Blog</a>
+                <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_faq">FAQ</a>
+                <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_contact">Contacto</a>
+                <!-- Language Selector -->
+                 <div class="relative group">
+                    <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
+                        <img id="current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera de España" class="w-5 h-auto mr-2 rounded-sm">
+                        <span id="current-lang-code">ES</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
+                        <!-- Languages will be injected by JS -->
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="nav_join_waitlist">
+                Únete a la Espera
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-navy">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features">Características</a>
+             <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold" data-translate-key="nav_blog">Blog</a>
+             <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq">FAQ</a>
+             <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact">Contacto</a>
+             <!-- Mobile Language Selector -->
+             <div class="border-t border-gray-200">
+                <div class="px-4 py-3">
+                    <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera del idioma actual" class="w-5 h-auto mr-3 rounded-sm">
+                        <span id="mobile-current-lang-code" class="font-semibold">ES</span>
+                        <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+                <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
+                    <!-- Mobile languages will be injected by JS -->
+                </div>
+             </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <article class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto">
+                    <!-- Breadcrumbs -->
+                    <div class="mb-8">
+                        <a href="blog.html" class="text-gold font-semibold hover:underline" data-translate-key="back_to_blog">&larr; Volver al Blog</a>
+                    </div>
+                    
+                    <div class="prose lg:prose-xl max-w-none">
+                        <h1 data-translate-key="article_title">Tu Hoja de Ruta Financiera: Domina tu Presupuesto con la Regla 50/30/20</h1>
+                        
+                        <img id="article-image" src="https://placehold.co/600x300/0C2340/C8B273?text=Regla+50/30/20" alt="Ilustración de un gráfico de tarta mostrando la regla 50/30/20" class="w-full rounded-xl my-8">
+
+                        <div id="article-content-wrapper" data-translate-key="article_content">
+                            <!-- El contenido del artículo se inyectará aquí con JS -->
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="mt-16 p-8 bg-light-gray rounded-xl text-center">
+                        <h3 class="text-2xl font-bold text-navy" data-translate-key="cta_title">Crea tu Primer Presupuesto en Minutos con Bancfy</h3>
+                        <p class="text-gray-600 my-4" data-translate-key="cta_desc">Pasar de la teoría a la acción nunca ha sido tan fácil. En Bancfy, puedes configurar tu primer presupuesto 50/30/20 con solo unos clics. Nuestra app te ayuda a categorizar tus gastos y te muestra visualmente cómo te estás ajustando a tu plan.</p>
+                        <a href="index.html#newsletter" class="inline-block bg-gold text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="cta_button">
+                            Quiero mi acceso a Bancfy
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-navy text-white">
+        <div class="container mx-auto px-6 py-8">
+             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <p class="font-semibold" data-translate-key="footer_copyright">&copy; 2025 Bancfy. Todos los derechos reservados.</p>
+                    <p class="text-sm text-gray-400" data-translate-key="footer_design">Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.</p>
+                </div>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const articleContent = {
+                es: `
+                    <p>La palabra "presupuesto" a menudo nos trae a la mente imágenes de restricción, de hojas de cálculo aburridas y de tener que decirle "no" a todo lo que nos gusta. Pero es hora de cambiar esa mentalidad. Un presupuesto no es una dieta para tu dinero; es un plan de ataque. Es la herramienta que te permite decirle a tu dinero a dónde ir, en lugar de preguntarte a dónde se fue.</p>
+                    <p>Y para empezar, no hay mejor guía que la famosa regla 50/30/20.</p>
+                    <h3>¿Qué es la Regla 50/30/20?</h3>
+                    <p>Es un GPS financiero. Una forma sencilla y flexible de distribuir tus ingresos mensuales para asegurarte de que cubres tus obligaciones, disfrutas de la vida y, lo más importante, construyes tu futuro.</p>
+                    <p>La regla divide tus ingresos netos (el dinero que te llega al bolsillo después de impuestos) en tres categorías:</p>
+                    <ul>
+                        <li><strong>50% para tus Necesidades:</strong> Como vimos en nuestro artículo anterior, aquí van todos los gastos esenciales. El alquiler, las facturas, la comida, el transporte... todo lo que necesitas para vivir. Si tus necesidades superan el 50%, es una señal de que podrías tener que buscar áreas para reducir o formas de aumentar tus ingresos.</li>
+                        <li><strong>30% para tus Deseos:</strong> ¡Esta es la parte divertida! Aquí entra todo lo que te hace feliz pero no es vital. Hobbies, cenas fuera, viajes, ropa nueva, conciertos, suscripciones a servicios de ocio. Esta categoría es crucial para no sentir que el presupuesto te ahoga y mantener la motivación.</li>
+                        <li><strong>20% para Ahorro e Inversión:</strong> Este es el porcentaje que te pagas a ti primero. Es el dinero destinado a construir tu futuro. Aquí se incluye la creación de tu fondo de emergencia, el ahorro para objetivos a largo plazo (como la entrada de un piso) y la inversión para tu jubilación.</li>
+                    </ul>
+                    <h3>Un Ejemplo Práctico</h3>
+                    <p>Imagina que tus ingresos mensuales netos son de 1.800€. Así se distribuirían:</p>
+                    <ul>
+                        <li><strong>Necesidades (50%):</strong> 900€ para alquiler, facturas, etc.</li>
+                        <li><strong>Deseos (30%):</strong> 540€ para ocio, compras y caprichos.</li>
+                        <li><strong>Ahorro (20%):</strong> 360€ directos a tu cuenta de ahorro o inversión.</li>
+                    </ul>
+                    <h3>¿Es una Regla Inflexible?</h3>
+                    <p>¡No! Piénsalo más como una guía de referencia. Quizás un mes tienes un gasto imprevisto y tus necesidades suben al 55%. No pasa nada. O quizás estás en modo de ahorro intensivo para un viaje y decides destinar el 30% a ahorro y solo el 20% a deseos. ¡Perfecto!</p>
+                    <p>La belleza de la regla 50/30/20 es que te da una estructura clara para empezar. Un vez que la domines, podrás ajustarla a tu estilo de vida y a tus metas personales.</p>
+                `,
+                en: `
+                    <p>The word "budget" often brings to mind images of restriction, boring spreadsheets, and having to say "no" to everything we enjoy. But it's time to change that mindset. A budget isn't a diet for your money; it's a plan of attack. It's the tool that allows you to tell your money where to go, instead of wondering where it went.</p>
+                    <p>And to get started, there's no better guide than the famous 50/30/20 rule.</p>
+                    <h3>What is the 50/30/20 Rule?</h3>
+                    <p>It's a financial GPS. A simple and flexible way to distribute your monthly income to ensure you cover your obligations, enjoy life, and, most importantly, build your future.</p>
+                    <p>The rule divides your net income (the money that hits your pocket after taxes) into three categories:</p>
+                    <ul>
+                        <li><strong>50% for your Needs:</strong> As we saw in our previous article, this is for all essential expenses. Rent, bills, food, transportation... everything you need to live. If your needs exceed 50%, it's a sign that you might need to find areas to cut back or ways to increase your income.</li>
+                        <li><strong>30% for your Wants:</strong> This is the fun part! This includes everything that makes you happy but isn't vital. Hobbies, dining out, trips, new clothes, concerts, entertainment subscriptions. This category is crucial to avoid feeling suffocated by your budget and to stay motivated.</li>
+                        <li><strong>20% for Savings & Investment:</strong> This is the percentage you pay yourself first. It's the money designated for building your future. This includes creating your emergency fund, saving for long-term goals (like a down payment on a house), and investing for your retirement.</li>
+                    </ul>
+                    <h3>A Practical Example</h3>
+                    <p>Imagine your net monthly income is €1,800. Here's how it would be distributed:</p>
+                    <ul>
+                        <li><strong>Needs (50%):</strong> €900 for rent, bills, etc.</li>
+                        <li><strong>Wants (30%):</strong> €540 for leisure, shopping, and treats.</li>
+                        <li><strong>Savings (20%):</strong> €360 straight to your savings or investment account.</li>
+                    </ul>
+                    <h3>Is it an Inflexible Rule?</h3>
+                    <p>No! Think of it more as a guideline. Maybe one month you have an unexpected expense and your needs go up to 55%. That's okay. Or maybe you're in an intensive saving mode for a trip and decide to allocate 30% to savings and only 20% to wants. Perfect!</p>
+                    <p>The beauty of the 50/30/20 rule is that it gives you a clear structure to start with. Once you master it, you can adjust it to your lifestyle and personal goals.</p>
+                `,
+                ca: `
+                    <p>La paraula "pressupost" sovint ens porta a la ment imatges de restricció, de fulls de càlcul avorrits i d'haver de dir "no" a tot el que ens agrada. Però és hora de canviar aquesta mentalitat. Un pressupost no és una dieta per als teus diners; és un pla d'atac. És l'eina que et permet dir als teus diners on anar, en lloc de preguntar-te on han anat.</p>
+                    <p>I per començar, no hi ha millor guia que la famosa regla 50/30/20.</p>
+                    <h3>Què és la Regla 50/30/20?</h3>
+                    <p>És un GPS financer. Una forma senzilla i flexible de distribuir els teus ingressos mensuals per assegurar-te que cobreixes les teves obligacions, gaudeixes de la vida i, el més important, construeixes el teu futur.</p>
+                    <p>La regla divideix els teus ingressos nets (els diners que t'arriben a la butxaca després d'impostos) en tres categories:</p>
+                    <ul>
+                        <li><strong>50% per a les teves Necessitats:</strong> Com vam veure al nostre article anterior, aquí van totes les despeses essencials. El lloguer, les factures, el menjar, el transport... tot el que necessites per viure. Si les teves necessitats superen el 50%, és un senyal que podries haver de buscar àrees per reduir o maneres d'augmentar els teus ingressos.</li>
+                        <li><strong>30% per als teus Desitjos:</strong> Aquesta és la part divertida! Aquí entra tot el que et fa feliç però no és vital. Hobbies, sopars fora, viatges, roba nova, concerts, subscripcions a serveis d'oci. Aquesta categoria és crucial per no sentir que el pressupost t'ofega i mantenir la motivació.</li>
+                        <li><strong>20% per a Estalvi i Inversió:</strong> Aquest és el percentatge que et pagues a tu primer. Són els diners destinats a construir el teu futur. Aquí s'inclou la creació del teu fons d'emergència, l'estalvi per a objectius a llarg termini (com l'entrada d'un pis) i la inversió per a la teva jubilació.</li>
+                    </ul>
+                    <h3>Un Exemple Pràctic</h3>
+                    <p>Imagina que els teus ingressos mensuals nets són de 1.800€. Així es distribuirien:</p>
+                    <ul>
+                        <li><strong>Necessitats (50%):</strong> 900€ per a lloguer, factures, etc.</li>
+                        <li><strong>Desitjos (30%):</strong> 540€ per a oci, compres i capricis.</li>
+                        <li><strong>Estalvi (20%):</strong> 360€ directes al teu compte d'estalvi o inversió.</li>
+                    </ul>
+                    <h3>És una Regla Inflexible?</h3>
+                    <p>No! Pensa-ho més com una guia de referència. Potser un mes tens una despesa imprevista i les teves necessitats pugen al 55%. No passa res. O potser estàs en mode d'estalvi intensiu per a un viatge i decideixes destinar el 30% a estalvi i només el 20% a desitjos. Perfecte!</p>
+                    <p>La bellesa de la regla 50/30/20 és que et dóna una estructura clara per començar. Un cop la dominis, podràs ajustar-la al teu estil de vida i a les teves metes personals.</p>
+                `,
+                eu: `
+                    <p>"Aurrekontu" hitzak murrizketa, kalkulu-orri aspergarriak eta gustuko dugun guztiari "ez" esan beharraren irudiak ekartzen dizkigu gogora. Baina mentalitate hori aldatzeko garaia da. Aurrekontua ez da zure diruarentzako dieta bat; eraso-plan bat da. Zure diruari nora joan behar duen esateko aukera ematen dizun tresna da, nora joan den galdetu beharrean.</p>
+                    <p>Eta hasteko, ez dago 50/30/20 arau ospetsua baino gida hoberik.</p>
+                    <h3>Zer da 50/30/20 Araua?</h3>
+                    <p>GPS finantzario bat da. Hileko diru-sarrerak banatzeko modu sinple eta malgua da, zure betebeharrak betetzen dituzula, bizitzaz gozatzen duzula eta, garrantzitsuena, zure etorkizuna eraikitzen duzula ziurtatzeko.</p>
+                    <p>Arauak zure diru-sarrera garbiak (zergen ondoren poltsikora iristen zaizun dirua) hiru kategoriatan banatzen ditu:</p>
+                    <ul>
+                        <li><strong>%50 zure Beharretarako:</strong> Aurreko artikuluan ikusi genuen bezala, hemen funtsezko gastu guztiak sartzen dira. Alokairua, fakturak, janaria, garraioa... bizitzeko behar duzun guztia. Zure beharrek %50 gainditzen badute, murrizteko arloak bilatu edo diru-sarrerak handitzeko moduak bilatu behar dituzun seinale da.</li>
+                        <li><strong>%30 zure Nahietarako:</strong> Hau da zati dibertigarria! Hemen zoriontsu egiten zaituen baina ezinbestekoa ez den guztia sartzen da. Zaletasunak, kanpoan afaltzea, bidaiak, arropa berria, kontzertuak, aisialdiko zerbitzuetarako harpidetzak. Kategoria hau funtsezkoa da aurrekontuak itotzen zaituela ez sentitzeko eta motibazioa mantentzeko.</li>
+                        <li><strong>%20 Aurrezki eta Inbertsiorako:</strong> Hau da zeure buruari lehenik ordaintzen diozun portzentajea. Zure etorkizuna eraikitzeko bideratutako dirua da. Hemen sartzen da zure larrialdi-funtsa sortzea, epe luzerako helburuetarako aurreztea (pisu baten sarrera bezala) eta zure erretiro-inbertsioa.</li>
+                    </ul>
+                    <h3>Adibide Praktiko Bat</h3>
+                    <p>Imajinatu zure hileko diru-sarrera garbiak 1.800€ direla. Horrela banatuko lirateke:</p>
+                    <ul>
+                        <li><strong>Beharrak (%50):</strong> 900€ alokairurako, fakturetarako, etab.</li>
+                        <li><strong>Nahiak (%30):</strong> 540€ aisialdirako, erosketetarako eta gutizietarako.</li>
+                        <li><strong>Aurrezkia (%20):</strong> 360€ zuzenean zure aurrezki edo inbertsio kontura.</li>
+                    </ul>
+                    <h3>Arau Malgua al da?</h3>
+                    <p>Ez! Pensa ezazu erreferentzia-gida bat bezala. Agian hilabete batean ustekabeko gastu bat duzu eta zure beharrak %55era igotzen dira. Ez da ezer gertatzen. Edo agian bidaia baterako aurrezpen intentsibo moduan zaude eta %30 aurrezkira eta soilik %20 nahietara bideratzea erabakitzen duzu. Primeran!</p>
+                    <p>50/30/20 arauaren edertasuna hasteko egitura argi bat ematen dizula da. Behin menperatzen duzunean, zure bizimodu eta helburu pertsonaletara egokitu ahal izango duzu.</p>
+                `,
+                de: `
+                    <p>Das Wort "Budget" ruft oft Bilder von Einschränkung, langweiligen Tabellenkalkulationen und dem Zwang, zu allem, was uns Spaß macht, "Nein" zu sagen, hervor. Aber es ist an der Zeit, diese Denkweise zu ändern. Ein Budget ist keine Diät für Ihr Geld; es ist ein Angriffsplan. Es ist das Werkzeug, mit dem Sie Ihrem Geld sagen, wohin es gehen soll, anstatt sich zu fragen, wohin es verschwunden ist.</p>
+                    <p>Und für den Anfang gibt es keinen besseren Leitfaden als die berühmte 50/30/20-Regel.</p>
+                    <h3>Was ist die 50/30/20-Regel?</h3>
+                    <p>Sie ist ein finanzielles GPS. Eine einfache und flexible Methode, Ihr monatliches Einkommen so zu verteilen, dass Sie Ihre Verpflichtungen erfüllen, das Leben genießen und vor allem Ihre Zukunft aufbauen.</p>
+                    <p>Die Regel teilt Ihr Nettoeinkommen (das Geld, das nach Steuern in Ihrer Tasche landet) in drei Kategorien ein:</p>
+                    <ul>
+                        <li><strong>50% für Ihre Bedürfnisse:</strong> Wie wir in unserem vorherigen Artikel gesehen haben, gehören hier alle wesentlichen Ausgaben hinein. Miete, Rechnungen, Lebensmittel, Transport... alles, was Sie zum Leben brauchen. Wenn Ihre Bedürfnisse 50% übersteigen, ist das ein Zeichen dafür, dass Sie möglicherweise Bereiche zum Kürzen oder Wege zur Einkommenserhöhung suchen müssen.</li>
+                        <li><strong>30% für Ihre Wünsche:</strong> Das ist der spaßige Teil! Hier kommt alles hinein, was Sie glücklich macht, aber nicht lebensnotwendig ist. Hobbys, Restaurantbesuche, Reisen, neue Kleidung, Konzerte, Freizeit-Abonnements. Diese Kategorie ist entscheidend, um nicht das Gefühl zu haben, vom Budget erdrückt zu werden, und um die Motivation aufrechtzuerhalten.</li>
+                        <li><strong>20% für Sparen & Investieren:</strong> Das ist der Prozentsatz, den Sie sich selbst zuerst zahlen. Es ist das Geld, das für den Aufbau Ihrer Zukunft bestimmt ist. Dazu gehören der Aufbau Ihres Notgroschens, das Sparen für langfristige Ziele (wie die Anzahlung für eine Wohnung) und die Investition in Ihre Altersvorsorge.</li>
+                    </ul>
+                    <h3>Ein praktisches Beispiel</h3>
+                    <p>Stellen Sie sich vor, Ihr monatliches Nettoeinkommen beträgt 1.800€. So würde es verteilt werden:</p>
+                    <ul>
+                        <li><strong>Bedürfnisse (50%):</strong> 900€ für Miete, Rechnungen, etc.</li>
+                        <li><strong>Wünsche (30%):</strong> 540€ für Freizeit, Einkäufe und Vergnügen.</li>
+                        <li><strong>Sparen (20%):</strong> 360€ direkt auf Ihr Spar- oder Anlagekonto.</li>
+                    </ul>
+                    <h3>Ist es eine starre Regel?</h3>
+                    <p>Nein! Betrachten Sie es eher als eine Richtlinie. Vielleicht haben Sie eines Monats eine unerwartete Ausgabe und Ihre Bedürfnisse steigen auf 55%. Das ist in Ordnung. Oder vielleicht sind Sie im intensiven Sparmodus für eine Reise und beschließen, 30% für das Sparen und nur 20% für Wünsche aufzuwenden. Perfekt!</p>
+                    <p>Das Schöne an der 50/30/20-Regel ist, dass sie Ihnen eine klare Struktur für den Anfang gibt. Sobald Sie sie beherrschen, können Sie sie an Ihren Lebensstil und Ihre persönlichen Ziele anpassen.</p>
+                `,
+                 'de-ch': `
+                    <p>S'Wort "Budget" bringt eim oft Bilder vo Iischränkige, langwiilige Tabälle und em Zwang, zu allem, wo eim Spass macht, "Nei" z'säge. Aber es isch Ziit, die Denkwiis z'ändere. Es Budget isch ke Diät für dis Gäld; es isch en Schlachtplan. Es isch s'Werkzüüg, wo dir erlaubt, dim Gäld z'säge, won es ane söll, anstatt dich z'fröge, won es blibe isch.</p>
+                    <p>Und zum Aafang git's kei besseri Aaloss als di berüemti 50/30/20-Regle.</p>
+                    <h3>Was isch d'50/30/20-Regle?</h3>
+                    <p>Si isch en finanzielle Kompass. En eifachi und flexibli Art, dis monatliche Iichomme so z'verteile, dass du dini Verpflichtige decksch, s'Läbe gnüssisch und vor allem dini Zuekunft ufbauisch.</p>
+                    <p>D'Regle teilt dis Netto-Iichomme (s'Gäld, wo nach de Stüüre i dim Portemonnaie landet) in drü Katergorie ii:</p>
+                    <ul>
+                        <li><strong>50% für dini Fixchöste:</strong> Wie mer i eusem letschte Artikel gseh händ, ghöred do alli wesentliche Usgabe ine. Miete, Rächnige, Ässe, Transport... alles, wo du zum Läbe bruchsch. Wenn dini Fixchöste meh als 50% usmached, isch das es Zeiche, dass du eventuell muesch luege, wo du chasch iispare oder wie du dis Iichomme chasch erhöhe.</li>
+                        <li><strong>30% für dini Wünsch:</strong> Das isch de luschtig Teil! Do chunt alles dri, wo dich glücklich macht, aber nöd überlebenswichtig isch. Hobbys, uswärts ässe, Reise, neui Chleider, Konzert, Abos für Streamingdienscht. Die Kategorie isch entscheidend, demit du nöd s'Gfühl hesch, vom Budget erdrückt z'werde, und d'Motivation oben abhaltisch.</li>
+                        <li><strong>20% für Spare & Investiere:</strong> Das isch de Prozentsatz, wo du dir sälber z'erscht zahlsch. Es isch s'Gäld, wo für de Ufbau vo dinere Zuekunft bestimmt isch. Do dezue ghört s'Schaffe vo dim Notgrosche, s'Spare für langfristigi Ziel (wie d'Aazahlig für e Wohnig) und s'Investiere für dini Altersvorsorg.</li>
+                    </ul>
+                    <h3>Es praktisches Biispiel</h3>
+                    <p>Stell der vor, dis monatliche Netto-Iichomme isch 1'800 CHF. So würd's verteilt werde:</p>
+                    <ul>
+                        <li><strong>Fixchöste (50%):</strong> 900 CHF für Miete, Rächnige, etc.</li>
+                        <li><strong>Wünsch (30%):</strong> 540 CHF für Freiziit, Iichäuf und Luxus.</li>
+                        <li><strong>Spare (20%):</strong> 360 CHF direkt uf dis Spar- oder Aalagekonto.</li>
+                    </ul>
+                    <h3>Isch es e starri Regle?</h3>
+                    <p>Nei! Gseh's meh als en Richtwert. Vielleicht hesch eis Monet e unerwarteti Usgab und dini Fixchöste stiiged uf 55%. Das isch i Ordnig. Oder vielleicht bisch grad im intensive Sparmodus für e Reis und entscheidisch dich, 30% für s'Spare und nur 20% für Wünsch usz'geh. Perfekt!</p>
+                    <p>S'Schöne a de 50/30/20-Regle isch, dass si dir e klari Struktur für de Aafang git. Sobald du sie meisterisch, chasch du sie a din Läbensstil und dini persönliche Ziel aapasse.</p>
+                `,
+                fr: `
+                    <p>Le mot "budget" évoque souvent des images de restriction, de feuilles de calcul ennuyeuses et de devoir dire "non" à tout ce que nous aimons. Mais il est temps de changer cette mentalité. Un budget n'est pas un régime pour votre argent ; c'est un plan d'attaque. C'est l'outil qui vous permet de dire à votre argent où aller, au lieu de vous demander où il est passé.</p>
+                    <p>Et pour commencer, il n'y a pas de meilleur guide que la célèbre règle 50/30/20.</p>
+                    <h3>Qu'est-ce que la Règle 50/30/20 ?</h3>
+                    <p>C'est un GPS financier. Une manière simple et flexible de répartir vos revenus mensuels pour vous assurer de couvrir vos obligations, de profiter de la vie et, surtout, de construire votre avenir.</p>
+                    <p>La règle divise votre revenu net (l'argent qui arrive dans votre poche après impôts) en trois catégories :</p>
+                    <ul>
+                        <li><strong>50% pour vos Besoins :</strong> Comme nous l'avons vu dans notre article précédent, cela concerne toutes les dépenses essentielles. Le loyer, les factures, la nourriture, le transport... tout ce dont vous avez besoin pour vivre. Si vos besoins dépassent 50%, c'est un signe que vous pourriez devoir chercher des domaines à réduire ou des moyens d'augmenter vos revenus.</li>
+                        <li><strong>30% pour vos Envies :</strong> C'est la partie amusante ! Ici, on retrouve tout ce qui vous rend heureux mais n'est pas vital. Hobbies, dîners au restaurant, voyages, nouveaux vêtements, concerts, abonnements à des services de loisirs. Cette catégorie est cruciale pour ne pas avoir l'impression que le budget vous étouffe et pour garder la motivation.</li>
+                        <li><strong>20% pour l'Épargne et l'Investissement :</strong> C'est le pourcentage que vous vous payez en premier. C'est l'argent destiné à construire votre avenir. Cela inclut la création de votre fonds d'urgence, l'épargne pour des objectifs à long terme (comme l'acompte pour un appartement) et l'investissement pour votre retraite.</li>
+                    </ul>
+                    <h3>Un Exemple Pratique</h3>
+                    <p>Imaginez que votre revenu mensuel net soit de 1 800 €. Voici comment il serait réparti :</p>
+                    <ul>
+                        <li><strong>Besoins (50%) :</strong> 900 € pour le loyer, les factures, etc.</li>
+                        <li><strong>Envies (30%) :</strong> 540 € pour les loisirs, les achats et les petits plaisirs.</li>
+                        <li><strong>Épargne (20%) :</strong> 360 € directement sur votre compte d'épargne ou d'investissement.</li>
+                    </ul>
+                    <h3>Est-ce une Règle Inflexible ?</h3>
+                    <p>Non ! Considérez-la plutôt comme une ligne directrice. Peut-être qu'un mois, vous avez une dépense imprévue et que vos besoins montent à 55%. Ce n'est pas grave. Ou peut-être que vous êtes en mode d'épargne intensive pour un voyage et que vous décidez d'allouer 30% à l'épargne et seulement 20% aux envies. Parfait !</p>
+                    <p>La beauté de la règle 50/30/20 est qu'elle vous donne une structure claire pour commencer. Une fois que vous la maîtrisez, vous pouvez l'ajuster à votre style de vie et à vos objectifs personnels.</p>
+                `,
+                it: `
+                    <p>La parola "budget" evoca spesso immagini di restrizione, di noiosi fogli di calcolo e di dover dire "no" a tutto ciò che ci piace. Ma è ora di cambiare questa mentalità. Un budget non è una dieta per i tuoi soldi; è un piano d'attacco. È lo strumento che ti permette di dire ai tuoi soldi dove andare, invece di chiederti dove sono finiti.</p>
+                    <p>E per iniziare, non c'è guida migliore della famosa regola del 50/30/20.</p>
+                    <h3>Cos'è la Regola del 50/30/20?</h3>
+                    <p>È un GPS finanziario. Un modo semplice e flessibile per distribuire le tue entrate mensili per assicurarti di coprire i tuoi obblighi, goderti la vita e, cosa più importante, costruire il tuo futuro.</p>
+                    <p>La regola divide il tuo reddito netto (i soldi che ti entrano in tasca dopo le tasse) in three categorie:</p>
+                    <ul>
+                        <li><strong>50% per le tue Necessità:</strong> Come abbiamo visto nel nostro articolo precedente, qui vanno tutte le spese essenziali. L'affitto, le bollette, il cibo, i trasporti... tutto ciò di cui hai bisogno per vivere. Se le tue necessità superano il 50%, è un segnale che potresti dover cercare aree in cui ridurre o modi per aumentare le tue entrate.</li>
+                        <li><strong>30% per i tuoi Desideri:</strong> Questa è la parte divertente! Qui rientra tutto ciò che ti rende felice ma non è vitale. Hobby, cene fuori, viaggi, vestiti nuovi, concerti, abbonamenti a servizi di svago. Questa categoria è cruciale per non sentire che il budget ti soffoca e per mantenere la motivazione.</li>
+                        <li><strong>20% per Risparmio e Investimenti:</strong> Questa è la percentuale che paghi prima a te stesso. È il denaro destinato a costruire il tuo futuro. Qui si include la creazione del tuo fondo di emergenza, il risparmio per obiettivi a lungo termine (come l'acconto per un appartamento) e l'investimento per la tua pensione.</li>
+                    </ul>
+                    <h3>Un Esempio Pratico</h3>
+                    <p>Immagina che le tue entrate mensili nette siano di 1.800€. Ecco come sarebbero distribuite:</p>
+                    <ul>
+                        <li><strong>Necessità (50%):</strong> 900€ per affitto, bollette, ecc.</li>
+                        <li><strong>Desideri (30%):</strong> 540€ per svago, acquisti e capricci.</li>
+                        <li><strong>Risparmio (20%):</strong> 360€ diretti sul tuo conto di risparmio o di investimento.</li>
+                    </ul>
+                    <h3>È una Regola Inflessibile?</h3>
+                    <p>No! Pensala più come una linea guida di riferimento. Forse un mese hai una spesa imprevista e le tue necessità salgono al 55%. Non succede niente. O forse sei in modalità di risparmio intensivo per un viaggio e decidi di destinare il 30% al risparmio e solo il 20% ai desideri. Perfetto!</p>
+                    <p>La bellezza della regola del 50/30/20 è che ti dà una struttura chiara da cui partire. Una volta che la padroneggi, potrai adattarla al tuo stile di vita e ai tuoi obiettivi personali.</p>
+                `,
+                pt: `
+                    <p>A palavra "orçamento" muitas vezes nos traz à mente imagens de restrição, de planilhas chatas e de ter que dizer "não" a tudo o que gostamos. Mas é hora de mudar essa mentalidade. Um orçamento não é uma dieta para o seu dinheiro; é um plano de ataque. É a ferramenta que permite que você diga ao seu dinheiro para onde ir, em vez de se perguntar para onde ele foi.</p>
+                    <p>E para começar, não há guia melhor do que a famosa regra 50/30/20.</p>
+                    <h3>O que é a Regra 50/30/20?</h3>
+                    <p>É um GPS financeiro. Uma forma simples e flexível de distribuir sua renda mensal para garantir que você cubra suas obrigações, aproveite a vida e, o mais importante, construa seu futuro.</p>
+                    <p>A regra divide sua renda líquida (o dinheiro que chega ao seu bolso após os impostos) em três categorias:</p>
+                    <ul>
+                        <li><strong>50% para suas Necessidades:</strong> Como vimos em nosso artigo anterior, aqui vão todas as despesas essenciais. O aluguel, as contas, a comida, o transporte... tudo o que você precisa para viver. Se suas necessidades excederem 50%, é um sinal de que você pode precisar encontrar áreas para cortar ou maneiras de aumentar sua renda.</li>
+                        <li><strong>30% para seus Desejos:</strong> Esta é a parte divertida! Aqui entra tudo o que te faz feliz, mas não é vital. Hobbies, jantares fora, viagens, roupas novas, shows, assinaturas de serviços de lazer. Esta categoria é crucial para não sentir que o orçamento te sufoca e para manter a motivazione.</li>
+                        <li><strong>20% para Poupança e Investimento:</strong> Esta é a porcentagem que você paga a si mesmo primeiro. É o dinheiro destinado a construir seu futuro. Isso inclui a criação de seu fundo de emergência, a poupança para metas de longo prazo (como a entrada de um imóvel) e o investimento para sua aposentadoria.</li>
+                    </ul>
+                    <h3>Um Exemplo Prático</h3>
+                    <p>Imagine que sua renda mensal líquida seja de 1.800€. Seria distribuída assim:</p>
+                    <ul>
+                        <li><strong>Necessidades (50%):</strong> 900€ para aluguel, contas, etc.</li>
+                        <li><strong>Desejos (30%):</strong> 540€ para lazer, compras e mimos.</li>
+                        <li><strong>Poupança (20%):</strong> 360€ diretos para sua conta de poupança ou investimento.</li>
+                    </ul>
+                    <h3>É uma Regra Inflexível?</h3>
+                    <p>Não! Pense nela mais como uma diretriz de referência. Talvez um mês você tenha uma despesa inesperada e suas necessidades subam para 55%. Não há problema. Ou talvez você esteja em modo de poupança intensiva para uma viagem e decida destinar 30% para poupança e apenas 20% para desejos. Perfeito!</p>
+                    <p>A beleza da regra 50/30/20 é que ela te dá uma estrutura clara para começar. Depois de dominá-la, você poderá ajustá-la ao seu estilo de vida e às suas metas pessoais.</p>
+                `,
+                ja: `
+                    <p>「予算」という言葉は、しばしば制約、退屈なスプレッドシート、そして私たちが楽しむすべてのものに「いいえ」と言わなければならないというイメージを思い起こさせます。しかし、その考え方を変える時が来ました。予算はあなたのお金のためのダイエットではありません。それは攻撃計画です。それはあなたのお金にどこへ行くべきかを教えるツールであり、どこへ行ったのか不思議に思う代わりになります。</p>
+                    <p>そして、始めるには、有名な50/30/20ルールほど優れたガイドはありません。</p>
+                    <h3>50/30/20ルールとは何ですか？</h3>
+                    <p>それは金融のGPSです。あなたの義務を確実に果たし、人生を楽しみ、そして最も重要なことに、あなたの未来を築くために、あなたの月収を分配するシンプルで柔軟な方法です。</p>
+                    <p>このルールは、あなたの純利益（税引き後にあなたのポケットに入るお金）を3つのカテゴリーに分けます。</p>
+                    <ul>
+                        <li><strong>ニーズに50％：</strong>前の記事で見たように、ここにはすべての必要不可欠な経費が含まれます。家賃、請求書、食料、交通費など、生活に必要なものすべてです。ニーズが50％を超える場合は、削減する分野を見つけるか、収入を増やす方法を見つける必要があるというサインです。</li>
+                        <li><strong>ウォンツに30％：</strong>これは楽しい部分です！ここには、あなたを幸せにするが、不可欠ではないすべてのものが含まれます。趣味、外食、旅行、新しい服、コンサート、レジャーサービスの購読などです。このカテゴリーは、予算に窒息させられていると感じないようにし、モチベーションを維持するために不可欠です。</li>
+                        <li><strong>貯蓄と投資に20％：</strong>これはあなたが最初に自分自身に支払う割合です。それはあなたの未来を築くために指定されたお金です。これには、緊急資金の創設、長期目標（住宅の頭金など）のための貯蓄、退職後のための投資が含まれます。</li>
+                    </ul>
+                    <h3>実用的な例</h3>
+                    <p>あなたの月々の純収入が1,800ユーロだと想像してみてください。それは次のように分配されます。</p>
+                    <ul>
+                        <li><strong>ニーズ（50％）：</strong>家賃、請求書などに900ユーロ。</li>
+                        <li><strong>ウォンツ（30％）：</strong>レジャー、買い物、おやつに540ユーロ。</li>
+                        <li><strong>貯蓄（20％）：</strong>貯蓄または投資口座に直接360ユーロ。</li>
+                    </ul>
+                    <h3>それは柔軟性のないルールですか？</h3>
+                    <p>いいえ！それを参照ガイドとして考えてください。ある月、予期せぬ出費があり、ニーズが55％に上がるかもしれません。問題ありません。あるいは、旅行のために集中して貯蓄しているモードで、貯蓄に30％、ウォンツに20％だけを割り当てることを決めるかもしれません。完璧です！</p>
+                    <p>50/30/20ルールの美しさは、始めるための明確な構造を提供してくれることです。一度マスターすれば、あなたのライフスタイルや個人の目標に合わせて調整することができます。</p>
+                `,
+                ko: `
+                    <p>"예산"이라는 단어는 종종 제약, 지루한 스프레드시트, 그리고 우리가 즐기는 모든 것에 "아니오"라고 말해야 하는 이미지를 떠올리게 합니다. 하지만 이제 그 사고방식을 바꿀 때입니다. 예산은 당신의 돈을 위한 다이어트가 아닙니다. 그것은 공격 계획입니다. 그것은 당신의 돈이 어디로 갔는지 궁금해하는 대신 어디로 가야 할지 알려주는 도구입니다.</p>
+                    <p>그리고 시작하기에, 유명한 50/30/20 규칙보다 더 좋은 가이드는 없습니다.</p>
+                    <h3>50/30/20 규칙이란 무엇입니까?</h3>
+                    <p>그것은 금융 GPS입니다. 당신의 의무를 다하고, 삶을 즐기고, 가장 중요하게는 당신의 미래를 건설하기 위해 월 수입을 분배하는 간단하고 유연한 방법입니다.</p>
+                    <p>이 규칙은 당신의 순소득(세금 후 주머니에 들어오는 돈)을 세 가지 범주로 나눕니다.</p>
+                    <ul>
+                        <li><strong>필요에 50%:</strong> 이전 기사에서 보았듯이, 여기에는 모든 필수 지출이 포함됩니다. 임대료, 청구서, 음식, 교통비... 생활에 필요한 모든 것입니다. 필요가 50%를 초과하면 줄일 부분을 찾거나 소득을 늘릴 방법을 찾아야 한다는 신호입니다.</li>
+                        <li><strong>욕구에 30%:</strong> 이것은 재미있는 부분입니다! 여기에는 당신을 행복하게 하지만 필수적이지는 않은 모든 것이 포함됩니다. 취미, 외식, 여행, 새 옷, 콘서트, 레저 서비스 구독. 이 범주는 예산에 질식당하는 느낌을 받지 않고 동기를 유지하는 데 중요합니다.</li>
+                        <li><strong>저축 및 투자에 20%:</strong> 이것은 당신이 자신에게 먼저 지불하는 비율입니다. 그것은 당신의 미래를 건설하기 위해 지정된 돈입니다. 여기에는 비상 자금 마련, 장기 목표(주택 계약금 등)를 위한 저축, 은퇴를 위한 투자가 포함됩니다.</li>
+                    </ul>
+                    <h3>실용적인 예</h3>
+                    <p>월 순수입이 1,800유로라고 상상해보십시오. 다음과 같이 분배됩니다.</p>
+                    <ul>
+                        <li><strong>필요(50%):</strong> 임대료, 청구서 등에 900유로.</li>
+                        <li><strong>욕구(30%):</strong> 여가, 쇼핑, 간식에 540유로.</li>
+                        <li><strong>저축(20%):</strong> 저축 또는 투자 계좌에 직접 360유로.</li>
+                    </ul>
+                    <h3>그것은 융통성 없는 규칙입니까?</h3>
+                    <p>아니요! 그것을 참조 가이드라인으로 생각하십시오. 어느 달 예기치 않은 지출이 있어 필요가 55%로 올라갈 수 있습니다. 괜찮습니다. 또는 여행을 위해 집중적으로 저축하는 모드에 있고 저축에 30%, 욕구에 20%만 할당하기로 결정할 수도 있습니다. 완벽합니다!</p>
+                    <p>50/30/20 규칙의 아름다움은 시작할 수 있는 명확한 구조를 제공한다는 것입니다. 일단 그것을 마스터하면, 당신의 라이프스타일과 개인적인 목표에 맞게 조정할 수 있습니다.</p>
+                `,
+                zh: `
+                    <p>“预算”这个词常常让我们联想到限制、无聊的电子表格，以及不得不对我们喜欢的一切说“不”的画面。但是时候改变这种心态了。预算不是为你​​的钱节食；这是一个攻击计划。它是一个工具，可以让你告诉你的钱该去哪里，而不是想知道它去了哪里。</p>
+                    <p>而要开始，没有比著名的 50/30/20 法则更好的指南了。</p>
+                    <h3>什么是 50/30/20 法则？</h3>
+                    <p>它是一个金融 GPS。一种简单灵活的方式来分配您的月收入，以确保您履行义务、享受生活，最重要的是，建立您的未来。</p>
+                    <p>该法则将您的净收入（税后进入您口袋的钱）分为三类：</p>
+                    <ul>
+                        <li><strong>50% 用于您的需求：</strong>正如我们在上一篇文章中看到的，这里包括所有基本开支。租金、账单、食物、交通……您生活所需的一切。如果您的需求超过 50%，则表明您可能需要寻找可以削减的领域或增加收入的方法。</li>
+                        <li><strong>30% 用于您的愿望：</strong>这是有趣的部分！这里包括所有让您快乐但并非至关重要的事情。爱好、外出就餐、旅行、新衣服、音乐会、休闲服务订阅。这个类别至关重要，这样您就不会感到被预算窒息并保持动力。</li>
+                        <li><strong>20% 用于储蓄和投资：</strong>这是您首先支付给自己的百分比。这是指定用于建设您未来的钱。这包括建立您的应急基金、为长期目标（如房屋首付）储蓄以及为您的退休进行投资。</li>
+                    </ul>
+                    <h3>一个实际的例子</h3>
+                    <p>想象一下，您的每月净收入为 1,800 欧元。它将按如下方式分配：</p>
+                    <ul>
+                        <li><strong>需求 (50%)：</strong>900 欧元用于租金、账单等。</li>
+                        <li><strong>愿望 (30%)：</strong>540 欧元用于休闲、购物和零食。</li>
+                        <li><strong>储蓄 (20%)：</strong>360 欧元直接存入您的储蓄或投资账户。</li>
+                    </ul>
+                    <h3>这是一个僵化的规则吗？</h3>
+                    <p>不！把它更多地看作是一个参考指南。也许某个月您有一笔意外开支，您的需求上升到 55%。没关系。或者，也许您正处于为旅行而集中储蓄的模式，并决定将 30% 分配给储蓄，只将 20% 分配给愿望。完美！</p>
+                    <p>50/30/20 法则的美妙之处在于，它为您提供了一个清晰的入门结构。一旦您掌握了它，就可以根据您的生活方式和个人目标进行调整。</p>
+                `,
+                ar: `
+                    <p>كلمة "ميزانية" غالباً ما تثير في أذهاننا صوراً للقيود، وجداول البيانات المملة، واضطرارنا لقول "لا" لكل ما نحبه. لكن حان الوقت لتغيير هذه العقلية. الميزانية ليست حمية لأموالك؛ إنها خطة هجوم. إنها الأداة التي تسمح لك بإخبار أموالك إلى أين تذهب، بدلاً من التساؤل عن مكان ذهابها.</p>
+                    <p>وللبدء، لا يوجد دليل أفضل من قاعدة 50/30/20 الشهيرة.</p>
+                    <h3>ما هي قاعدة 50/30/20؟</h3>
+                    <p>إنها بمثابة نظام تحديد المواقع المالي. طريقة بسيطة ومرنة لتوزيع دخلك الشهري لضمان تغطية التزاماتك، والاستمتاع بالحياة، والأهم من ذلك، بناء مستقبلك.</p>
+                    <p>تقسم القاعدة صافي دخلك (المال الذي يدخل جيبك بعد الضرائب) إلى ثلاث فئات:</p>
+                    <ul>
+                        <li><strong>50% لاحتياجاتك:</strong> كما رأينا في مقالنا السابق، هنا تذهب جميع النفقات الأساسية. الإيجار، الفواتير، الطعام، النقل... كل ما تحتاجه للعيش. إذا تجاوزت احتياجاتك 50%، فهذه علامة على أنك قد تحتاج إلى البحث عن مجالات لتقليصها أو طرق لزيادة دخلك.</li>
+                        <li><strong>30% لرغباتك:</strong> هذا هو الجزء الممتع! هنا يأتي كل ما يجعلك سعيدًا ولكنه ليس حيويًا. الهوايات، تناول الطعام بالخارج، الرحلات، الملابس الجديدة، الحفلات الموسيقية، اشتراكات الخدمات الترفيهية. هذه الفئة حاسمة حتى لا تشعر بأن الميزانية تخنقك وتحافظ على حماسك.</li>
+                        <li><strong>20% للادخar والاستثمار:</strong> هذه هي النسبة التي تدفعها لنفسك أولاً. إنه المال المخصص لبناء مستقبلك. وهذا يشمل إنشاء صندوق الطوارئ الخاص بك، والادخار للأهداف طويلة الأجل (مثل دفعة أولى لشقة)، والاستثمار لتقاعدك.</li>
+                    </ul>
+                    <h3>مثال عملي</h3>
+                    <p>تخيل أن صافي دخلك الشهري هو 1800 يورو. هكذا سيتم توزيعه:</p>
+                    <ul>
+                        <li><strong>الاحتياجات (50%):</strong> 900 يورو للإيجار والفواتير وما إلى ذلك.</li>
+                        <li><strong>الرغبات (30%):</strong> 540 يورو للترفيه والتسوق والكماليات.</li>
+                        <li><strong>الادخار (20%):</strong> 360 يورو مباشرة إلى حساب التوفير أو الاستثمار الخاص بك.</li>
+                    </ul>
+                    <h3>هل هي قاعدة غير مرنة؟</h3>
+                    <p>لا! فكر فيها على أنها دليل مرجعي. ربما يكون لديك في شهر ما مصاريف غير متوقعة وترتفع احتياجاتك إلى 55%. لا بأس. أو ربما تكون في وضع ادخار مكثف لرحلة وتقرر تخصيص 30% للادخار و 20% فقط للرغبات. ممتاز!</p>
+                    <p>جمال قاعدة 50/30/20 هو أنها تمنحك هيكلاً واضحاً للبدء. بمجرد إتقانها، يمكنك تعديلها لتناسب نمط حياتك وأهدافك الشخصية.</p>
+                `
+            };
+            
+            const baseTranslations = {
+                nav_features: 'Características', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacto', nav_join_waitlist: 'Únete a la Espera',
+                back_to_blog: '&larr; Volver al Blog',
+                footer_copyright: '© 2025 Bancfy. Todos los derechos reservados.', footer_design: 'Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.'
+            };
+
+            const translations = {
+                es: { ...baseTranslations, seo_title: 'La Regla 50/30/20: Tu Hoja de Ruta Financiera | Blog de Bancfy', seo_description: 'Domina tu presupuesto con la regla 50/30/20. Una guía sencilla para distribuir tus ingresos, cubrir necesidades, disfrutar de la vida y ahorrar para tu futuro.', og_title: 'La Regla 50/30/20: Tu Hoja de Ruta Financiera | Blog de Bancfy', og_description: 'Domina tu presupuesto con la regla 50/30/20...', article_title: 'Tu Hoja de Ruta Financiera: Domina tu Presupuesto con la Regla 50/30/20', article_image_text: 'Regla 50/30/20', article_content: articleContent.es, cta_title: 'Crea tu Primer Presupuesto en Minutos con Bancfy', cta_desc: 'Pasar de la teoría a la acción nunca ha sido tan fácil. En Bancfy, puedes configurar tu primer presupuesto 50/30/20 con solo unos clics. Nuestra app te ayuda a categorizar tus gastos y te muestra visualmente cómo te estás ajustando a tu plan.', cta_button: 'Quiero mi acceso a Bancfy' },
+                en: { ...baseTranslations, nav_features: 'Features', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Join the Waitlist', back_to_blog: '&larr; Back to Blog', seo_title: 'The 50/30/20 Rule: Your Financial Roadmap | Bancfy Blog', seo_description: 'Master your budget with the 50/30/20 rule. A simple guide to allocate your income, cover needs, enjoy life, and save for your future.', og_title: 'The 50/30/20 Rule: Your Financial Roadmap | Bancfy Blog', og_description: 'Master your budget with the 50/30/20 rule...', article_title: 'Your Financial Roadmap: Master Your Budget with the 50/30/20 Rule', article_image_text: '50/30/20 Rule', article_content: articleContent.en, cta_title: 'Create Your First Budget in Minutes with Bancfy', cta_desc: 'Moving from theory to action has never been easier. At Bancfy, you can set up your first 50/30/20 budget with just a few clicks. Our app helps you categorize your expenses and visually shows you how you are sticking to your plan.', cta_button: 'I want my access to Bancfy', footer_copyright: '© 2025 Bancfy. All rights reserved.', footer_design: 'Designed with <span class="text-gold">&hearts;</span> for your financial well-being.' },
+                ca: { ...baseTranslations, nav_features: 'Característiques', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacte', nav_join_waitlist: 'Uneix-te a l\'Espera', back_to_blog: '&larr; Torna al Blog', seo_title: 'La Regla 50/30/20: El Teu Full de Ruta Financer | Blog de Bancfy', article_title: 'El Teu Full de Ruta Financer: Domina el Teu Pressupost amb la Regla 50/30/20', article_image_text: 'Regla 50/30/20', article_content: articleContent.ca, cta_title: 'Crea el Teu Primer Pressupost en Minuts amb Bancfy', cta_desc: 'Passar de la teoria a l\'acció mai ha estat tan fàcil. A Bancfy, pots configurar el teu primer pressupost 50/30/20 amb només uns clics. La nostra app t\'ajuda a categoritzar les teves despeses i et mostra visualment com t\'estàs ajustant al teu pla.', cta_button: 'Vull el meu accés a Bancfy' },
+                eu: { ...baseTranslations, nav_features: 'Ezaugarriak', nav_blog: 'Bloga', nav_faq: 'FAQ', nav_contact: 'Kontaktua', nav_join_waitlist: 'Sartu Itxaron Zerrendan', back_to_blog: '&larr; Itzuli Blogera', seo_title: '50/30/20 Araua: Zure Ibilbide Orri Finantzarioa | Bancfy Bloga', article_title: 'Zure Ibilbide Orri Finantzarioa: Menderatu Zure Aurrekontua 50/30/20 Arauarekin', article_image_text: '50/30/20 Araua', article_content: articleContent.eu, cta_title: 'Sortu Zure Lehen Aurrekontua Minututan Bancfy-rekin', cta_desc: 'Teoriatik praktikara pasatzea ez da inoiz hain erraza izan. Bancfy-n, zure lehen 50/30/20 aurrekontua klik gutxirekin konfigura dezakezu. Gure aplikazioak zure gastuak sailkatzen laguntzen dizu eta zure planera nola egokitzen zaren erakusten dizu bisualki.', cta_button: 'Nire sarbidea nahi dut Bancfy-ra' },
+                de: { ...baseTranslations, nav_features: 'Funktionen', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Auf die Warteliste', back_to_blog: '&larr; Zurück zum Blog', seo_title: 'Die 50/30/20-Regel: Dein finanzieller Fahrplan | Bancfy Blog', article_title: 'Dein finanzieller Fahrplan: Meistere dein Budget mit der 50/30/20-Regel', article_image_text: '50/30/20 Regel', article_content: articleContent.de, cta_title: 'Erstelle dein erstes Budget in Minuten mit Bancfy', cta_desc: 'Der Schritt von der Theorie zur Praxis war noch nie so einfach. Bei Bancfy kannst du dein erstes 50/30/20-Budget mit nur wenigen Klicks einrichten. Unsere App hilft dir, deine Ausgaben zu kategorisieren und zeigt dir visuell, wie du dich an deinen Plan hältst.', cta_button: 'Ich möchte meinen Zugang zu Bancfy' },
+                'de-ch': { ...baseTranslations, nav_features: 'Funktione', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Uf d\'Warteliste', back_to_blog: '&larr; Zrugg zum Blog', seo_title: 'D\'50/30/20-Regle: Din finanzielle Fahrplan | Bancfy Blog', article_title: 'Din finanzielle Fahrplan: Meister dis Budget mit de 50/30/20-Regle', article_image_text: '50/30/20 Regle', article_content: articleContent['de-ch'], cta_title: 'Erstell dis erschte Budget in Minute mit Bancfy', cta_desc: 'De Schritt vo de Theorie zur Praxis isch no nie so eifach gsi. Bi Bancfy chasch dis erschte 50/30/20-Budget mit nur wenige Klicks iirichte. Eusi App hilft dir, dini Usgabe z\'kategorisiere und zeigt dir visuell, wie du dich a din Plan haltisch.', cta_button: 'Ich wett min Zuegang zu Bancfy' },
+                fr: { ...baseTranslations, nav_features: 'Fonctionnalités', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Rejoindre l\'attente', back_to_blog: '&larr; Retour au Blog', seo_title: 'La Règle 50/30/20 : Votre Feuille de Route Financière | Blog de Bancfy', article_title: 'Votre Feuille de Route Financière : Maîtrisez Votre Budget avec la Règle 50/30/20', article_image_text: 'Règle 50/30/20', article_content: articleContent.fr, cta_title: 'Créez Votre Premier Budget en Quelques Minutes avec Bancfy', cta_desc: 'Passer de la théorie à la pratique n\'a jamais été aussi facile. Sur Bancfy, vous pouvez configurer votre premier budget 50/30/20 en quelques clics. Notre application vous aide à classer vos dépenses et vous montre visuellement comment vous vous adaptez à votre plan.', cta_button: 'Je veux mon accès à Bancfy' },
+                it: { ...baseTranslations, nav_features: 'Caratteristiche', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contatti', nav_join_waitlist: 'Unisciti all\'Attesa', back_to_blog: '&larr; Torna al Blog', seo_title: 'La Regola 50/30/20: La Tua Tabella di Marcia Finanziaria | Blog di Bancfy', article_title: 'La Tua Tabella di Marcia Finanziaria: Domina il Tuo Budget con la Regola 50/30/20', article_image_text: 'Regola 50/30/20', article_content: articleContent.it, cta_title: 'Crea il Tuo Primo Budget in Pochi Minuti con Bancfy', cta_desc: 'Passare dalla teoria all\'azione non è mai stato così facile. In Bancfy, puoi configurare il tuo primo budget 50/30/20 con pochi clic. La nostra app ti aiuta a categorizzare le tue spese e ti mostra visivamente come ti stai adeguando al tuo piano.', cta_button: 'Voglio il mio accesso a Bancfy' },
+                pt: { ...baseTranslations, nav_features: 'Recursos', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contato', nav_join_waitlist: 'Junte-se à Espera', back_to_blog: '&larr; Voltar ao Blog', seo_title: 'A Regra 50/30/20: O Seu Roteiro Financeiro | Blog da Bancfy', article_title: 'O Seu Roteiro Financeiro: Domine o Seu Orçamento com a Regra 50/30/20', article_image_text: 'Regra 50/30/20', article_content: articleContent.pt, cta_title: 'Crie Seu Primeiro Orçamento em Minutos com a Bancfy', cta_desc: 'Passar da teoria à ação nunca foi tão fácil. No Bancfy, você pode configurar seu primeiro orçamento 50/30/20 com apenas alguns cliques. Nosso aplicativo ajuda você a categorizar seus gastos e mostra visualmente como você está se ajustando ao seu plano.', cta_button: 'Quero meu acesso à Bancfy' },
+                ja: { ...baseTranslations, nav_features: '特徴', nav_blog: 'ブログ', nav_faq: 'FAQ', nav_contact: 'お問い合わせ', nav_join_waitlist: 'ウェイティングリストに参加', back_to_blog: '&larr; ブログに戻る', seo_title: '50/30/20ルール：あなたの経済的ロードマップ | Bancfyブログ', article_title: 'あなたの経済的ロードマップ：50/30/20ルールで予算をマスターしよう', article_image_text: '50/30/20ルール', article_content: articleContent.ja, cta_title: 'Bancfyで数分で最初の予算を作成', cta_desc: '理論から実践への移行は、かつてないほど簡単になりました。Bancfyでは、数回クリックするだけで最初の50/30/20予算を設定できます。私たちのアプリは、経費を分類し、計画にどのように固執しているかを視覚的に表示するのに役立ちます。', cta_button: 'Bancfyへのアクセスを希望します' },
+                ko: { ...baseTranslations, nav_features: '기능', nav_blog: '블로그', nav_faq: 'FAQ', nav_contact: '문의하기', nav_join_waitlist: '대기자 명단 참여', back_to_blog: '&larr; 블로그로 돌아가기', seo_title: '50/30/20 규칙: 당신의 재정 로드맵 | Bancfy 블로그', article_title: '당신의 재정 로드맵: 50/30/20 규칙으로 예산을 마스터하세요', article_image_text: '50/30/20 규칙', article_content: articleContent.ko, cta_title: 'Bancfy로 몇 분 만에 첫 예산 만들기', cta_desc: '이론에서 행동으로 옮기는 것이 그 어느 때보다 쉬워졌습니다. Bancfy에서는 몇 번의 클릭만으로 첫 50/30/20 예산을 설정할 수 있습니다. 저희 앱은 비용을 분류하고 계획을 어떻게 지키고 있는지 시각적으로 보여주는 데 도움이 됩니다.', cta_button: 'Bancfy 이용을 원합니다' },
+                zh: { ...baseTranslations, nav_features: '功能', nav_blog: '博客', nav_faq: '常见问题', nav_contact: '联系我们', nav_join_waitlist: '加入等候名单', back_to_blog: '&larr; 返回博客', seo_title: '50/30/20 法则：您的财务路线图 | Bancfy 博客', article_title: '您的财务路线图：使用 50/30/20 法则掌控您的预算', article_image_text: '50/30/20 法则', article_content: articleContent.zh, cta_title: '使用 Bancfy 在几分钟内创建您的第一个预算', cta_desc: '从理论到实践从未如此简单。在 Bancfy 中，您只需点击几下即可设置您的第一个 50/30/20 预算。我们的应用程序可帮助您对支出进行分类，并直观地向您显示您如何遵守计划。', cta_button: '我想要访问 Bancfy' },
+                ar: { ...baseTranslations, nav_features: 'الميزات', nav_blog: 'المدونة', nav_faq: 'الأسئلة الشائعة', nav_contact: 'اتصل بنا', nav_join_waitlist: 'انضم إلى قائمة الانتظار', back_to_blog: '&larr; العودة إلى المدونة', seo_title: 'قاعدة 50/30/20: خارطة طريقك المالية | مدونة Bancfy', article_title: 'خارطة طريقك المالية: أتقن ميزانيتك مع قاعدة 50/30/20', article_image_text: 'قاعدة 50/30/20', article_content: articleContent.ar, cta_title: 'أنشئ ميزانيتك الأولى في دقائق مع Bancfy', cta_desc: 'لم يكن الانتقال من النظرية إلى التطبيق أسهل من أي وقت مضى. في Bancfy ، يمكنك إعداد أول ميزانية 50/30/20 ببضع نقرات فقط. يساعدك تطبيقنا على تصنيف نفقاتك ويظهر لك بصريًا كيف تلتزم بخطتك.', cta_button: 'أريد الوصول إلى Bancfy' }
+            };
+            
+            const supportedLangs = {
+                'es': { name: 'Español', flag: 'es' },
+                'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg' },
+                'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg' },
+                'en': { name: 'English', flag: 'gb' },
+                'de': { name: 'Deutsch', flag: 'de' },
+                'de-ch': { name: 'Schweizerdeutsch', flag: 'ch' },
+                'fr': { name: 'Français', flag: 'fr' },
+                'it': { name: 'Italiano', flag: 'it' },
+                'pt': { name: 'Português', flag: 'pt' },
+                'ja': { name: '日本語', flag: 'jp' },
+                'ko': { name: '한국어', flag: 'kr' },
+                'zh': { name: '中文', flag: 'cn' },
+                'ar': { name: 'العربية', flag: 'ae' }
+            };
+
+            function translatePage(lang) {
+                const targetLang = translations[lang] ? lang : 'es'; 
+                const t = translations[targetLang] || translations.es;
+
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.getAttribute('data-translate-key');
+                    const translation = t[key] || translations.es[key] || el.innerHTML;
+                    if (key) {
+                       el.innerHTML = translation;
+                    }
+                });
+                
+                const articleImage = document.getElementById('article-image');
+                if(articleImage) {
+                    const imageText = t.article_image_text || translations.es.article_image_text;
+                    const newSrc = `https://placehold.co/600x300/0C2340/C8B273?text=${encodeURIComponent(imageText)}`;
+                    articleImage.src = newSrc;
+                    articleImage.alt = `Ilustración para ${imageText}`;
+                    document.getElementById('og-image').setAttribute('content', newSrc);
+                    document.getElementById('twitter-image').setAttribute('content', newSrc);
+                }
+
+                document.getElementById('meta-title').textContent = t.seo_title || translations.es.seo_title;
+                document.getElementById('meta-description').setAttribute('content', t.seo_description || translations.es.seo_description);
+                document.getElementById('og-title').setAttribute('content', t.og_title || translations.es.og_title);
+                document.getElementById('og-description').setAttribute('content', t.og_description || translations.es.og_description);
+                document.getElementById('twitter-title').setAttribute('content', t.og_title || translations.es.og_title);
+                document.getElementById('twitter-description').setAttribute('content', t.og_description || translations.es.og_description);
+                
+                document.documentElement.lang = targetLang;
+                document.documentElement.dir = targetLang === 'ar' ? 'rtl' : 'ltr';
+            }
+
+            function setLanguage(lang) {
+                const langInfo = supportedLangs[lang] || supportedLangs['es'];
+                const flagSrc = langInfo.flagUrl ? langInfo.flagUrl : `https://flagcdn.com/w20/${langInfo.flag}.png`;
+                const langCode = lang.split('-')[0].toUpperCase();
+
+                const currentFlagImg = document.getElementById('current-lang-flag');
+                if (currentFlagImg) {
+                    currentFlagImg.src = flagSrc;
+                    currentFlagImg.alt = `Bandera de ${langInfo.name}`;
+                }
+                const currentLangCode = document.getElementById('current-lang-code');
+                if (currentLangCode) currentLangCode.textContent = langCode;
+
+                const mobileCurrentFlagImg = document.getElementById('mobile-current-lang-flag');
+                if (mobileCurrentFlagImg) {
+                    mobileCurrentFlagImg.src = flagSrc;
+                    mobileCurrentFlagImg.alt = `Bandera de ${langInfo.name}`;
+                }
+                const mobileCurrentLangCode = document.getElementById('mobile-current-lang-code');
+                if (mobileCurrentLangCode) mobileCurrentLangCode.textContent = langCode;
+
+                translatePage(lang);
+                localStorage.setItem('bancfy_lang', lang);
+            }
+
+            const langDropdown = document.getElementById('lang-dropdown');
+            const langSelectorBtn = document.getElementById('lang-selector-btn');
+            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+            const mobileLangSelectorBtn = document.getElementById('mobile-lang-selector-btn');
+            const mobileLangArrow = document.querySelector('.mobile-lang-arrow');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            for (const [code, langData] of Object.entries(supportedLangs)) {
+                const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
+                const innerHTML = `<img src="${flagSrc}" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
+
+                if (langDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'px-4', 'py-2', 'text-sm', 'text-gray-700', 'hover:bg-light-gray');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => { e.preventDefault(); setLanguage(code); langDropdown.classList.add('hidden'); langSelectorBtn.blur(); });
+                    langDropdown.appendChild(link);
+                }
+
+                if (mobileLangDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'py-1.5', 'px-2', 'text-sm', 'text-gray-700', 'hover:text-gold', 'rounded-md', 'hover:bg-white');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => { e.preventDefault(); setLanguage(code); if (mobileMenu) mobileMenu.classList.add('hidden'); });
+                    mobileLangDropdown.appendChild(link);
+                }
+            }
+            
+            if (langSelectorBtn) {
+                langSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (langDropdown) langDropdown.classList.toggle('hidden'); });
+            }
+
+            if (mobileLangSelectorBtn) {
+                mobileLangSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (mobileLangDropdown) mobileLangDropdown.classList.toggle('hidden'); if (mobileLangArrow) mobileLangArrow.classList.toggle('rotate-180'); });
+            }
+
+            window.addEventListener('click', (e) => {
+                if (langDropdown && !langDropdown.classList.contains('hidden') && !langSelectorBtn.contains(e.target)) {
+                    langDropdown.classList.add('hidden');
+                }
+            });
+
+            const savedLang = localStorage.getItem('bancfy_lang');
+            let userLang = savedLang;
+            if (!userLang) {
+                const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+                if (supportedLangs[browserLang]) userLang = browserLang;
+                else if (supportedLangs[browserLang.split('-')[0]]) userLang = browserLang.split('-')[0];
+                else userLang = 'es';
+            }
+            setLanguage(userLang);
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileLangDropdown) mobileLangDropdown.classList.add('hidden');
+                if (mobileLangArrow) mobileLangArrow.classList.remove('rotate-180');
+            });
+        });
+    </script>
+
+</body>
+</html>

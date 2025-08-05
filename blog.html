@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags (will be updated by JS) -->
+    <title id="seo-title">Blog de Educación Financiera | Bancfy</title>
+    <meta id="seo-description" name="description" content="Aprende a gestionar tu dinero, ahorrar y alcanzar tus metas con los consejos y artículos de educación financiera de Bancfy.">
+    
+    <meta name="keywords" content="blog de finanzas, consejos de ahorro, educación financiera, presupuesto, gastos hormiga, fondo de emergencia, bancfy">
+    <meta name="author" content="Bancfy">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook (will be updated by JS) -->
+    <meta id="og-title" property="og:title" content="Blog de Educación Financiera | Bancfy">
+    <meta id="og-description" property="og:description" content="Aprende a gestionar tu dinero con los consejos de nuestro blog.">
+    <meta property="og:image" content="https://www.bancfy.com/images/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bancfy.com/blog.html">
+
+    <!-- Twitter (will be updated by JS) -->
+    <meta id="twitter-title" property="twitter:title" content="Blog de Educación Financiera | Bancfy">
+    <meta id="twitter-description" property="twitter:description" content="Aprende a gestionar tu dinero con los consejos de nuestro blog.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bancfy.com/blog.html">
+    <meta property="twitter:image" content="https://www.bancfy.com/images/logo.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Urbanist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <style>
+        body { font-family: 'Urbanist', sans-serif; }
+        :root {
+            --navy: #0C2340;
+            --gold: #C8B273;
+            --gold-hover: #bda66b;
+            --light-gray: #F7F7F7;
+        }
+        /* Soporte para RTL (Right-to-Left) */
+        html[dir="rtl"] .md\:text-left { text-align: right; }
+        html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-right: 1.5rem; margin-left: 0; }
+        html[dir="rtl"] .mr-2 { margin-left: 0.5rem; margin-right: 0; }
+        html[dir="rtl"] .ml-1 { margin-right: 0.25rem; margin-left: 0; }
+        html[dir="rtl"] .right-0 { left: 0; right: auto; }
+        html[dir="rtl"] .md\:text-left { text-align: right !important; }
+        html[dir="rtl"] .text-center { text-align: center !important; }
+        .bg-navy { background-color: var(--navy); }
+        .text-navy { color: var(--navy); }
+        .bg-gold { background-color: var(--gold); }
+        .text-gold { color: var(--gold); }
+        .hover\:bg-gold-hover:hover { background-color: var(--gold-hover); }
+        .border-gold { border-color: var(--gold); }
+        .bg-light-gray { background-color: var(--light-gray); }
+        .group:hover .group-hover\:block { display: block; }
+        .mobile-lang-arrow.rotate-180 { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-white text-navy antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
+                <img src="https://placehold.co/40x40/0C2340/ffffff?text=B" alt="Logo de Bancfy" class="w-10 h-10 rounded-full">
+                Bancfy
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_features">Características</a>
+                <a href="blog.html" class="text-gold font-semibold transition-colors duration-300" data-translate-key="nav_blog">Blog</a>
+                <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_faq">FAQ</a>
+                <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_contact">Contacto</a>
+                 <!-- Language Selector -->
+                 <div class="relative group">
+                    <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
+                        <img id="current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera de España" class="w-5 h-auto mr-2 rounded-sm">
+                        <span id="current-lang-code">ES</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
+                        <!-- Languages will be injected by JS -->
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="nav_join_waitlist">
+                Únete a la Espera
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-navy">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features">Características</a>
+             <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold" data-translate-key="nav_blog">Blog</a>
+             <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq">FAQ</a>
+             <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact">Contacto</a>
+             <!-- Mobile Language Selector -->
+             <div class="border-t border-gray-200">
+                <div class="px-4 py-3">
+                    <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera del idioma actual" class="w-5 h-auto mr-3 rounded-sm">
+                        <span id="mobile-current-lang-code" class="font-semibold">ES</span>
+                        <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+                <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
+                    <!-- Mobile languages will be injected by JS -->
+                </div>
+             </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <!-- ========== BLOG LISTING SECTION ========== -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-navy leading-tight mb-4" data-translate-key="blog_title">Blog de Bancfy</h1>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-translate-key="blog_subtitle">Tu fuente de conocimiento para tomar el control de tus finanzas. Artículos, consejos y guías para potenciar tu salud financiera.</p>
+                </div>
+
+                <!-- Articles Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Article Card 1 -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="articulo-necesidades-vs-deseos.html">
+                            <img id="article-img-1" src="https://placehold.co/600x400/0C2340/C8B273?text=Necesidades+vs+Deseos" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2" data-translate-key="article1_title">Necesidades vs. Deseos: La Clave Maestra para Tomar el Control de tu Dinero</h3>
+                            <p class="text-gray-600 mb-4 flex-grow" data-translate-key="article1_desc">El primer paso, y el más poderoso, para dominar tus finanzas es aprender a diferenciar entre lo que es esencial y lo que no lo es.</p>
+                            <a href="articulo-necesidades-vs-deseos.html" class="text-gold font-semibold hover:underline mt-auto" data-translate-key="read_more">Leer más &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article Card 2 -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="articulo-regla-50-30-20.html">
+                             <img id="article-img-2" src="https://placehold.co/600x400/0C2340/C8B273?text=Regla+50/30/20" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2" data-translate-key="article2_title">Tu Hoja de Ruta Financiera: Domina tu Presupuesto con la Regla 50/30/20</h3>
+                            <p class="text-gray-600 mb-4 flex-grow" data-translate-key="article2_desc">Un presupuesto no es una dieta para tu dinero, es un plan de ataque. Descubre cómo esta simple regla puede transformar tu economía.</p>
+                            <a href="articulo-regla-50-30-20.html" class="text-gold font-semibold hover:underline mt-auto" data-translate-key="read_more">Leer más &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article Card 3 -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="articulo-gastos-hormiga-vampiro.html">
+                             <img id="article-img-3" src="https://placehold.co/600x400/0C2340/C8B273?text=Gastos+Ocultos" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2" data-translate-key="article3_title">Los Ladrones Silenciosos de tu Dinero: Cómo Cazar tus Gastos Hormiga y Vampiro</h3>
+                            <p class="text-gray-600 mb-4 flex-grow" data-translate-key="article3_desc">¿Sientes que tu sueldo se desvanece? Aprende a identificar y neutralizar esos pequeños gastos y suscripciones que devoran tu presupuesto.</p>
+                            <a href="articulo-gastos-hormiga-vampiro.html" class="text-gold font-semibold hover:underline mt-auto" data-translate-key="read_more">Leer más &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article Card 4 -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="articulo-fondo-emergencia.html">
+                             <img id="article-img-4" src="https://placehold.co/600x400/0C2340/C8B273?text=Fondo+de+Emergencia" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2" data-translate-key="article4_title">Tu Red de Seguridad Financiera: La Guía Definitiva para Crear tu Fondo de Emergencia</h3>
+                            <p class="text-gray-600 mb-4 flex-grow" data-translate-key="article4_desc">Tener un colchón para imprevistos no te hace rico, te da algo mucho más valioso: tranquilidad. Aprende a construir el tuyo paso a paso.</p>
+                            <a href="articulo-fondo-emergencia.html" class="text-gold font-semibold hover:underline mt-auto" data-translate-key="read_more">Leer más &rarr;</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-navy text-white">
+        <div class="container mx-auto px-6 py-8">
+             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <p class="font-semibold" data-translate-key="footer_copyright">&copy; 2025 Bancfy. Todos los derechos reservados.</p>
+                    <p class="text-sm text-gray-400" data-translate-key="footer_design">Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.</p>
+                </div>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Objeto con todos los idiomas soportados
+            const supportedLangs = {
+                'es': { name: 'Español', flag: 'es' },
+                'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg' },
+                'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg' },
+                'en': { name: 'English', flag: 'gb' },
+                'de': { name: 'Deutsch', flag: 'de' },
+                'de-ch': { name: 'Schweizerdeutsch', flag: 'ch' },
+                'fr': { name: 'Français', flag: 'fr' },
+                'it': { name: 'Italiano', flag: 'it' },
+                'pt': { name: 'Português', flag: 'pt' },
+                'ja': { name: '日本語', flag: 'jp' },
+                'ko': { name: '한국어', flag: 'kr' },
+                'zh': { name: '中文', flag: 'cn' },
+                'ar': { name: 'العربية', flag: 'ae' }
+            };
+
+            // Objeto con todas las traducciones completas
+            const translations = {
+                es: {
+                    nav_features: 'Características', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacto', nav_join_waitlist: 'Únete a la Espera',
+                    blog_title: 'Blog de Bancfy', blog_subtitle: 'Tu fuente de conocimiento para tomar el control de tus finanzas. Artículos, consejos y guías para potenciar tu salud financiera.',
+                    article1_title: 'Necesidades vs. Deseos: La Clave Maestra para Tomar el Control de tu Dinero',
+                    article1_desc: 'El primer paso, y el más poderoso, para dominar tus finanzas es aprender a diferenciar entre lo que es esencial y lo que no lo es.',
+                    article2_title: 'Tu Hoja de Ruta Financiera: Domina tu Presupuesto con la Regla 50/30/20',
+                    article2_desc: 'Un presupuesto no es una dieta para tu dinero, es un plan de ataque. Descubre cómo esta simple regla puede transformar tu economía.',
+                    article3_title: 'Los Ladrones Silenciosos de tu Dinero: Cómo Cazar tus Gastos Hormiga y Vampiro',
+                    article3_desc: '¿Sientes que tu sueldo se desvanece? Aprende a identificar y neutralizar esos pequeños gastos y suscripciones que devoran tu presupuesto.',
+                    article4_title: 'Tu Red de Seguridad Financiera: La Guía Definitiva para Crear tu Fondo de Emergencia',
+                    article4_desc: 'Tener un colchón para imprevistos no te hace rico, te da algo mucho más valioso: tranquilidad. Aprende a construir el tuyo paso a paso.',
+                    read_more: 'Leer más &rarr;',
+                    footer_copyright: '© 2025 Bancfy. Todos los derechos reservados.', footer_design: 'Diseñado con ♥ para tu bienestar financiero.'
+                },
+                en: {
+                    nav_features: 'Features', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Join the Waitlist',
+                    blog_title: 'Bancfy Blog', blog_subtitle: 'Your source of knowledge to take control of your finances. Articles, tips, and guides to boost your financial health.',
+                    article1_title: 'Needs vs. Wants: The Master Key to Taking Control of Your Money',
+                    article1_desc: 'The first, and most powerful, step to mastering your finances is learning to differentiate between what is essential and what is not.',
+                    article2_title: 'Your Financial Roadmap: Master Your Budget with the 50/30/20 Rule',
+                    article2_desc: 'A budget isn\'t a diet for your money; it\'s an attack plan. Discover how this simple rule can transform your economy.',
+                    article3_title: 'The Silent Thieves of Your Money: How to Hunt Your "Latte Factor" & Vampire Expenses',
+                    article3_desc: 'Feel like your salary vanishes? Learn to identify and neutralize those small expenses and subscriptions that devour your budget.',
+                    article4_title: 'Your Financial Safety Net: The Definitive Guide to Creating Your Emergency Fund',
+                    article4_desc: 'Having a cushion for unexpected events doesn\'t make you rich, it gives you something much more valuable: peace of mind. Learn to build yours step by step.',
+                    read_more: 'Read more &rarr;',
+                    footer_copyright: '© 2025 Bancfy. All rights reserved.', footer_design: 'Designed with ♥ for your financial well-being.'
+                },
+                ca: {
+                    nav_features: 'Característiques', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacte', nav_join_waitlist: 'Uneix-te a l\'Espera',
+                    blog_title: 'Blog de Bancfy', blog_subtitle: 'La teva font de coneixement per prendre el control de les teves finances. Articles, consells i guies per potenciar la teva salut financera.',
+                    article1_title: 'Necessitats vs. Desitjos: La Clau Mestra per Prendre el Control dels teus Diners',
+                    article1_desc: 'El primer pas, i el més poderós, per dominar les teves finances és aprendre a diferenciar entre allò que és essencial i allò que no ho és.',
+                    article2_title: 'El Teu Full de Ruta Financer: Domina el teu Pressupost amb la Regla 50/30/20',
+                    article2_desc: 'Un pressupost no és una dieta per als teus diners, és un pla d\'atac. Descobreix com aquesta simple regla pot transformar la teva economia.',
+                    article3_title: 'Els Lladres Silenciosos dels teus Diners: Com Caçar les teves Despeses Formiga i Vampir',
+                    article3_desc: 'Sents que el teu sou s\'esvaeix? Aprèn a identificar i neutralitzar aquelles petites despeses i subscripcions que devoren el teu pressupost.',
+                    article4_title: 'La Teva Xarxa de Seguretat Financera: La Guia Definitiva per Crear el teu Fons d\'Emergència',
+                    article4_desc: 'Tenir un coixí per a imprevistos no et fa ric, et dóna una cosa molt més valuosa: tranquil·litat. Aprèn a construir el teu pas a pas.',
+                    read_more: 'Llegir més &rarr;',
+                    footer_copyright: '© 2025 Bancfy. Tots els drets reservats.', footer_design: 'Dissenyat amb ♥ per al teu benestar financer.'
+                },
+                eu: {
+                    nav_features: 'Ezaugarriak', nav_blog: 'Bloga', nav_faq: 'FAQ', nav_contact: 'Kontaktua', nav_join_waitlist: 'Sartu Itxaron Zerrendan',
+                    blog_title: 'Bancfy Bloga', blog_subtitle: 'Zure finantzak kontrolatzeko zure ezagutza iturria. Artikuluak, aholkuak eta gidak zure finantza-osasuna sustatzeko.',
+                    article1_title: 'Beharrak vs. Nahiak: Zure Diruaren Kontrola Hartzeko Giltza Nagusia',
+                    article1_desc: 'Zure finantzak menderatzeko lehen urratsa, eta boteretsuena, funtsezkoa dena eta ez dena bereizten ikastea da.',
+                    article2_title: 'Zure Finantza Bide-orria: Menderatu Zure Aurrekontua 50/30/20 Arauarekin',
+                    article2_desc: 'Aurrekontu bat ez da zure diruarentzako dieta bat, eraso-plan bat da. Ezagutu arau sinple honek nola eralda dezakeen zure ekonomia.',
+                    article3_title: 'Zure Diruaren Lapur Isilak: Nola Ehizatu Zure Inurri eta Banpiro Gastuak',
+                    article3_desc: 'Zure soldata desagertzen dela sentitzen duzu? Ikasi zure aurrekontua jaten duten gastu txiki eta harpidetza horiek identifikatzen eta neutralizatzen.',
+                    article4_title: 'Zure Finantza Segurtasun Sarea: Zure Larrialdi Funtsa Sortzeko Gida Behin Betikoa',
+                    article4_desc: 'Ustekabeetarako koltxoi bat izateak ez zaitu aberats egiten, askoz baliotsuagoa den zerbait ematen dizu: lasaitasuna. Ikasi zurea pausoz pauso eraikitzen.',
+                    read_more: 'Gehiago irakurri &rarr;',
+                    footer_copyright: '© 2025 Bancfy. Eskubide guztiak erreserbatuta.', footer_design: 'Zure finantza-ongizaterako ♥-rekin diseinatua.'
+                },
+                de: {
+                    nav_features: 'Funktionen', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Tritt der Warteliste bei',
+                    blog_title: 'Bancfy Blog', blog_subtitle: 'Ihre Wissensquelle, um die Kontrolle über Ihre Finanzen zu übernehmen. Artikel, Tipps und Anleitungen zur Stärkung Ihrer finanziellen Gesundheit.',
+                    article1_title: 'Bedürfnisse vs. Wünsche: Der Generalschlüssel zur Kontrolle über Ihr Geld',
+                    article1_desc: 'Der erste und mächtigste Schritt zur Beherrschung Ihrer Finanzen ist zu lernen, zwischen dem Wesentlichen und dem Unwesentlichen zu unterscheiden.',
+                    article2_title: 'Ihr finanzieller Fahrplan: Meistern Sie Ihr Budget mit der 50/30/20-Regel',
+                    article2_desc: 'Ein Budget ist keine Diät für Ihr Geld, es ist ein Angriffsplan. Entdecken Sie, wie diese einfache Regel Ihre Wirtschaft verändern kann.',
+                    article3_title: 'Die stillen Diebe Ihres Geldes: Wie Sie Ihre kleinen und wiederkehrenden Ausgaben jagen',
+                    article3_desc: 'Haben Sie das Gefühl, dass Ihr Gehalt verschwindet? Lernen Sie, jene kleinen Ausgaben und Abonnements zu erkennen und zu neutralisieren, die Ihr Budget verschlingen.',
+                    article4_title: 'Ihr finanzielles Sicherheitsnetz: Der ultimative Leitfaden zum Aufbau Ihres Notfallfonds',
+                    article4_desc: 'Ein Polster für unvorhergesehene Ereignisse macht Sie nicht reich, es gibt Ihnen etwas viel Wertvolleres: Seelenfrieden. Lernen Sie, Ihres Schritt für Schritt aufzubauen.',
+                    read_more: 'Weiterlesen &rarr;',
+                    footer_copyright: '© 2025 Bancfy. Alle Rechte vorbehalten.', footer_design: 'Entworfen mit ♥ für Ihr finanzielles Wohlbefinden.'
+                },
+                'de-ch': {
+                    nav_features: 'Funktione', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Uf d\'Warteliste',
+                    blog_title: 'Bancfy Blog', blog_subtitle: 'Dini Wissensquälle, zum d\'Kontrolle über dini Finanze z\'überneh. Artikel, Tipps und Aal-leitige für dini finanzielli Gsundheit.',
+                    article1_title: 'Bedürfnis vs. Wünsch: De Generalschlüssel für d\'Kontrolle über dis Geld',
+                    article1_desc: 'De erst und mächtigscht Schritt zum Meischtere vo dine Finanze isch z\'lerne, zwüsched dem, was wesentlich isch und was nöd, z\'unterscheide.',
+                    article2_title: 'Din finanzielle Fahrplan: Meischtere dis Budget mit de 50/30/20-Regle',
+                    article2_desc: 'Es Budget isch ke Diät für dis Geld, es isch en Aagriffspan. Entdeck, wie die eifachi Regle dini Wirtschaft chan verändere.',
+                    article3_title: 'Di stille Dieb vo dim Geld: Wie du dini chliine und wiederkehrende Usgabe jahsch',
+                    article3_desc: 'Hesch s\'Gfühl, dass din Lohn verschwindet? Lern, die chliine Usgabe und Abos z\'erkenne und z\'neutralisiere, wo dis Budget uffressed.',
+                    article4_title: 'Dis finanzielle Sicherheitsnetz: De ultimativi Leitfade zum Ufbau vo dim Notfallfonds',
+                    article4_desc: 'Es Polschter für unvorhergsehni Ereignis macht dich nöd riich, es git dir öppis viel Wertvollers: Seelerueh. Lern, dis Schritt für Schritt ufzbaue.',
+                    read_more: 'Wiiterläse &rarr;',
+                    footer_copyright: '© 2025 Bancfy. Alli Rächt vorbhalte.', footer_design: 'Designt mit ♥ für dis finanzielle Wohlbefinde.'
+                },
+                fr: {
+                    nav_features: 'Caractéristiques', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Rejoignez la liste d\'attente',
+                    blog_title: 'Blog de Bancfy', blog_subtitle: 'Votre source de connaissances pour prendre le contrôle de vos finances. Articles, conseils et guides pour renforcer votre santé financière.',
+                    article1_title: 'Besoins vs Envies : La Clé Maîtresse pour Prendre le Contrôle de votre Argent',
+                    article1_desc: 'Le premier pas, et le plus puissant, pour maîtriser vos finances est d\'apprendre à différencier ce qui est essentiel de ce qui ne l\'est pas.',
+                    article2_title: 'Votre Feuille de Route Financière : Maîtrisez votre Budget avec la Règle 50/30/20',
+                    article2_desc: 'Un budget n\'est pas un régime pour votre argent, c\'est un plan d\'attaque. Découvrez comment cette simple règle peut transformer votre économie.',
+                    article3_title: 'Les Voleurs Silencieux de votre Argent : Comment Traquer vos Dépenses Fourmis et Vampires',
+                    article3_desc: 'Avez-vous l\'impression que votre salaire s\'évapore ? Apprenez à identifier et à neutraliser ces petites dépenses et abonnements qui dévorent votre budget.',
+                    article4_title: 'Votre Filet de Sécurité Financier : Le Guide Ultime pour Créer votre Fonds d\'Urgence',
+                    article4_desc: 'Avoir un matelas pour les imprévus ne vous rend pas riche, il vous donne quelque chose de bien plus précieux : la tranquillité d\'esprit. Apprenez à construire le vôtre pas à pas.',
+                    read_more: 'Lire la suite &rarr;',
+                    footer_copyright: '© 2025 Bancfy. Tous droits réservés.', footer_design: 'Conçu avec ♥ pour votre bien-être financier.'
+                },
+                it: {
+                    nav_features: 'Caratteristiche', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contatto', nav_join_waitlist: 'Unisciti alla lista d\'attesa',
+                    blog_title: 'Blog di Bancfy', blog_subtitle: 'La tua fonte di conoscenza per prendere il controllo delle tue finanze. Articoli, consigli e guide per potenziare la tua salute finanziaria.',
+                    article1_title: 'Bisogni vs. Desideri: La Chiave Maestra per Prendere il Controllo del tuo Denaro',
+                    article1_desc: 'Il primo e più potente passo per dominare le tue finanze è imparare a distinguere tra ciò che è essenziale e ciò che non lo è.',
+                    article2_title: 'La Tua Tabella di Marcia Finanziaria: Domina il tuo Budget con la Regola 50/30/20',
+                    article2_desc: 'Un budget non è una dieta per i tuoi soldi, è un piano d\'attacco. Scopri come questa semplice regola può trasformare la tua economia.',
+                    article3_title: 'I Ladri Silenziosi del tuo Denaro: Come Dare la Caccia alle tue Spese Formica e Vampiro',
+                    article3_desc: 'Senti che il tuo stipendio svanisce? Impara a identificare e neutralizzare quelle piccole spese e abbonamenti che divorano il tuo budget.',
+                    article4_title: 'La Tua Rete di Sicurezza Finanziaria: La Guida Definitiva per Creare il tuo Fondo di Emergenza',
+                    article4_desc: 'Avere un cuscino per gli imprevisti non ti rende ricco, ti dà qualcosa di molto più prezioso: la tranquillità. Impara a costruire il tuo passo dopo passo.',
+                    read_more: 'Leggi di più &rarr;',
+                    footer_copyright: '© 2025 Bancfy. Tutti i diritti riservati.', footer_design: 'Progettato con ♥ per il tuo benessere finanziario.'
+                },
+                pt: {
+                    nav_features: 'Recursos', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contato', nav_join_waitlist: 'Junte-se à lista de espera',
+                    blog_title: 'Blog da Bancfy', blog_subtitle: 'Sua fonte de conhecimento para assumir o controle de suas finanças. Artigos, dicas e guias para impulsionar sua saúde financeira.',
+                    article1_title: 'Necessidades vs. Desejos: A Chave Mestra para Assumir o Controle do seu Dinheiro',
+                    article1_desc: 'O primeiro e mais poderoso passo para dominar suas finanças é aprender a diferenciar entre o que é essencial e o que não é.',
+                    article2_title: 'Seu Roteiro Financeiro: Domine seu Orçamento com a Regra 50/30/20',
+                    article2_desc: 'Um orçamento não é uma dieta para o seu dinheiro, é um plano de ataque. Descubra como esta regra simples pode transformar sua economia.',
+                    article3_title: 'Os Ladrões Silenciosos do seu Dinheiro: Como Caçar seus Gastos Formiga e Vampiro',
+                    article3_desc: 'Você sente que seu salário desaparece? Aprenda a identificar e neutralizar aqueles pequenos gastos e assinaturas que devoram seu orçamento.',
+                    article4_title: 'Sua Rede de Segurança Financeira: O Guia Definitivo para Criar seu Fundo de Emergência',
+                    article4_desc: 'Ter uma reserva para imprevistos não o torna rico, dá-lhe algo muito mais valioso: tranquilidade. Aprenda a construir o seu passo a passo.',
+                    read_more: 'Leia mais &rarr;',
+                    footer_copyright: '© 2025 Bancfy. Todos os direitos reservados.', footer_design: 'Projetado com ♥ para o seu bem-estar financeiro.'
+                },
+                ja: {
+                    nav_features: '特徴', nav_blog: 'ブログ', nav_faq: 'FAQ', nav_contact: 'お問い合わせ', nav_join_waitlist: 'ウェイティングリストに参加',
+                    blog_title: 'Bancfyブログ', blog_subtitle: 'あなたの財政を管理するための知識の源。あなたの金融健康を促進するための記事、ヒント、ガイド。',
+                    article1_title: '必要経費 vs. 欲しいもの：お金を管理するためのマスターキー',
+                    article1_desc: '財政をマスターするための最初の、そして最も強力なステップは、不可欠なものとそうでないものを区別することを学ぶことです。',
+                    article2_title: 'あなたの財務ロードマップ：50/30/20ルールで予算をマスターする',
+                    article2_desc: '予算はあなたのお金のためのダイエットではなく、攻撃計画です。この簡単なルールがあなたの経済をどのように変えることができるかを発見してください。',
+                    article3_title: 'あなたのお金の静かな泥棒：あなたの「ラテマネー」と吸血鬼の費用を狩る方法',
+                    article3_desc: '給料が消えていく感じがしますか？予算を食いつぶすそれらの小さな費用と購読を特定し、無力化する方法を学びましょう。',
+                    article4_title: 'あなたの金融セーフティネット：緊急資金を作成するための決定版ガイド',
+                    article4_desc: '不測の事態に備えたクッションを持つことはあなたを豊かにするのではなく、はるかに価値のあるもの、つまり安心を与えてくれます。段階的にあなたのものを作る方法を学びましょう。',
+                    read_more: '続きを読む &rarr;',
+                    footer_copyright: '© 2025 Bancfy. 全著作権所有。', footer_design: 'あなたの金融の幸福のために♥を込めて設計されました。'
+                },
+                ko: {
+                    nav_features: '특징', nav_blog: '블로그', nav_faq: 'FAQ', nav_contact: '문의', nav_join_waitlist: '대기자 명단에 합류하기',
+                    blog_title: 'Bancfy 블로그', blog_subtitle: '재정을 관리하기 위한 지식의 원천. 금융 건강을 증진시키기 위한 기사, 팁, 가이드.',
+                    article1_title: '필요 vs. 욕구: 돈을 통제하기 위한 마스터 키',
+                    article1_desc: '재정을 마스터하기 위한 첫 번째이자 가장 강력한 단계는 필수적인 것과 그렇지 않은 것을 구별하는 법을 배우는 것입니다.',
+                    article2_title: '금융 로드맵: 50/30/20 규칙으로 예산 마스터하기',
+                    article2_desc: '예산은 돈을 위한 다이어트가 아니라 공격 계획입니다. 이 간단한 규칙이 경제를 어떻게 변화시킬 수 있는지 알아보세요.',
+                    article3_title: '돈의 조용한 도둑들: "라떼 요인"과 뱀파이어 비용 사냥하기',
+                    article3_desc: '월급이 사라지는 느낌이 드나요? 예산을 잠식하는 작은 비용과 구독을 식별하고 무력화하는 방법을 배우세요.',
+                    article4_title: '금융 안전망: 비상 자금 마련을 위한 최종 가이드',
+                    article4_desc: '예상치 못한 상황에 대비한 쿠션은 당신을 부자로 만들지 않지만, 훨씬 더 가치 있는 것, 즉 마음의 평화를 줍니다. 단계별로 자신만의 것을 만드는 법을 배우세요.',
+                    read_more: '더 읽기 &rarr;',
+                    footer_copyright: '© 2025 Bancfy. 모든 권리 보유.', footer_design: '금융 복지를 위해 ♥로 디자인되었습니다.'
+                },
+                zh: {
+                    nav_features: '特征', nav_blog: '博客', nav_faq: '常问问题', nav_contact: '联系', nav_join_waitlist: '加入等候名单',
+                    blog_title: 'Bancfy博客', blog_subtitle: '您掌控财务知识的源泉。文章、技巧和指南，助您提升财务健康。',
+                    article1_title: '需求与欲望：掌控金钱的关键',
+                    article1_desc: '掌握财务的第一步也是最有力的一步是学会区分什么是必需的，什么不是。',
+                    article2_title: '您的财务路线图：用50/30/20法则掌控您的预算',
+                    article2_desc: '预算不是为您省钱的节食，而是一个攻击计划。了解这个简单的规则如何改变您的经济状况。',
+                    article3_title: '您金钱的无声窃贼：如何追捕您的“拿铁因子”和吸血鬼开支',
+                    article3_desc: '感觉您的薪水消失了？学习识别并消除那些吞噬您预算的小额开支和订阅。',
+                    article4_title: '您的财务安全网：建立应急基金的终极指南',
+                    article4_desc: '为意外事件准备一个缓冲垫不会让您致富，但它会给您更有价值的东西：内心的平静。学习如何一步步建立自己的缓冲垫。',
+                    read_more: '阅读更多 &rarr;',
+                    footer_copyright: '© 2025 Bancfy. 版权所有。', footer_design: '为您的财务健康而用♥设计。'
+                },
+                ar: {
+                    nav_features: 'الميزات', nav_blog: 'المدونة', nav_faq: 'الأسئلة الشائعة', nav_contact: 'اتصل بنا', nav_join_waitlist: 'انضم إلى قائمة الانتظar',
+                    blog_title: 'مدونة Bancfy', blog_subtitle: 'مصدرك المعرفي للسيطرة على أموالك. مقالات ونصائح وأدلة لتعزيز صحتك المالية.',
+                    article1_title: 'الاحتياجات مقابل الرغبات: المفتاح الرئيسي للسيطرة على أموالك',
+                    article1_desc: 'الخطوة الأولى والأكثر قوة لإتقان أموالك هي تعلم التمييز بين ما هو ضروري وما هو غير ضروري.',
+                    article2_title: 'خارطة طريقك المالية: أتقن ميزانيتك بقاعدة 50/30/20',
+                    article2_desc: 'الميزانية ليست نظامًا غذائيًا لأموالك، إنها خطة هجوم. اكتشف كيف يمكن لهذه القاعدة البسيطة أن تغير اقتصادك.',
+                    article3_title: 'لصوص أموالك الصامتون: كيفية مطاردة نفقاتك الصغيرة والمتكررة',
+                    article3_desc: 'هل تشعر أن راتبك يتلاشى؟ تعلم كيفية تحديد وتحييد تلك النفقات الصغيرة والاشتراكات التي تلتهم ميزانيتك.',
+                    article4_title: 'شبكة الأمان المالية الخاصة بك: الدليل النهائي لإنشاء صندوق الطوارئ الخاص بك',
+                    article4_desc: 'وجود وسادة للأحداث غير المتوقعة لا يجعلك غنيًا، بل يمنحك شيئًا أكثر قيمة: راحة البال. تعلم كيفية بناء خاصتك خطوة بخطوة.',
+                    read_more: 'اقرأ المزيد &rarr;',
+                    footer_copyright: '© 2025 Bancfy. كل الحقوق محفوظة.', footer_design: 'صُمم بـ ♥ من أجل رفاهيتك المالية.'
+                }
+            };
+            
+                        function translatePage(lang) {
+                let langKey = lang;
+                if (lang === 'de-ch' && !translations['de-ch']) {
+                    langKey = 'de';
+                }
+                const t = translations[langKey] || translations['es']; 
+                
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.getAttribute('data-translate-key');
+                    const translation = t[key] || translations['es'][key] || el.innerHTML;
+                    el.innerHTML = translation;
+                });
+
+                document.getElementById('seo-title').textContent = t.seo_title || translations['es'].seo_title;
+                document.getElementById('seo-description').setAttribute('content', t.seo_description || translations['es'].seo_description);
+
+                // **NUEVO: Actualizar imágenes**
+                for (let i = 1; i <= 4; i++) {
+                    const img = document.getElementById(`article-img-${i}`);
+                    const imgTextKey = `article${i}_img_text`;
+                    const altTextKey = `article${i}_alt`;
+
+                    if (img) {
+                        const translatedImgText = t[imgTextKey] || translations['es'][imgTextKey];
+                        const translatedAltText = t[altTextKey] || translations['es'][altTextKey];
+
+                        if (translatedImgText) {
+                            const newSrc = `https://placehold.co/600x400/0C2340/C8B273?text=${encodeURIComponent(translatedImgText)}`;
+                            img.src = newSrc;
+                        }
+                        if (translatedAltText) {
+                            img.alt = translatedAltText;
+                        }
+                    }
+                }
+
+                document.documentElement.lang = lang;
+                document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            }
+
+            function setLanguage(lang) {
+                const langInfo = supportedLangs[lang] || supportedLangs['es'];
+                const flagSrc = langInfo.flagUrl ? langInfo.flagUrl : `https://flagcdn.com/w20/${langInfo.flag}.png`;
+                const langCode = lang.split('-')[0].toUpperCase();
+
+                const currentFlagImg = document.getElementById('current-lang-flag');
+                if (currentFlagImg) { currentFlagImg.src = flagSrc; currentFlagImg.alt = `Bandera de ${langInfo.name}`; }
+                const currentLangCode = document.getElementById('current-lang-code');
+                if (currentLangCode) { currentLangCode.textContent = langCode; }
+
+                const mobileCurrentFlagImg = document.getElementById('mobile-current-lang-flag');
+                if (mobileCurrentFlagImg) { mobileCurrentFlagImg.src = flagSrc; mobileCurrentFlagImg.alt = `Bandera de ${langInfo.name}`; }
+                const mobileCurrentLangCode = document.getElementById('mobile-current-lang-code');
+                if (mobileCurrentLangCode) { mobileCurrentLangCode.textContent = langCode; }
+
+                translatePage(lang);
+                localStorage.setItem('bancfy_lang', lang);
+            }
+
+            const langDropdown = document.getElementById('lang-dropdown');
+            const langSelectorBtn = document.getElementById('lang-selector-btn');
+            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+            const mobileLangSelectorBtn = document.getElementById('mobile-lang-selector-btn');
+            const mobileLangArrow = document.querySelector('.mobile-lang-arrow');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            for (const [code, langData] of Object.entries(supportedLangs)) {
+                const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
+                const innerHTML = `<img src="${flagSrc}" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
+
+                if (langDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'px-4', 'py-2', 'text-sm', 'text-gray-700', 'hover:bg-light-gray');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => { e.preventDefault(); setLanguage(code); langDropdown.classList.add('hidden'); langSelectorBtn.blur(); });
+                    langDropdown.appendChild(link);
+                }
+
+                if (mobileLangDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'py-1.5', 'px-2', 'text-sm', 'text-gray-700', 'hover:text-gold', 'rounded-md', 'hover:bg-white');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => { e.preventDefault(); setLanguage(code); if (mobileMenu) mobileMenu.classList.add('hidden'); });
+                    mobileLangDropdown.appendChild(link);
+                }
+            }
+            
+            if (langSelectorBtn) { langSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (langDropdown) langDropdown.classList.toggle('hidden'); }); }
+            if (mobileLangSelectorBtn) { mobileLangSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (mobileLangDropdown) mobileLangDropdown.classList.toggle('hidden'); if (mobileLangArrow) mobileLangArrow.classList.toggle('rotate-180'); }); }
+            window.addEventListener('click', (e) => { if (langDropdown && !langDropdown.classList.contains('hidden') && !langSelectorBtn.contains(e.target)) { langDropdown.classList.add('hidden'); } });
+
+            const savedLang = localStorage.getItem('bancfy_lang');
+            let userLang = savedLang;
+            if (!userLang) {
+                const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+                if (supportedLangs[browserLang]) { userLang = browserLang; }
+                else if (supportedLangs[browserLang.split('-')[0]]) { userLang = browserLang.split('-')[0]; }
+                else { userLang = 'es'; }
+            }
+            setLanguage(userLang);
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileLangDropdown) mobileLangDropdown.classList.add('hidden');
+                if (mobileLangArrow) mobileLangArrow.classList.remove('rotate-180');
+            });
+        });
+    </script>
+
+</body>
+</html>

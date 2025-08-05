@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags (will be updated by JS) -->
+    <title id="meta-title">Tu Red de Seguridad Financiera: Guía para Crear tu Fondo de Emergencia | Blog de Bancfy</title>
+    <meta id="meta-description" name="description" content="Aprende qué es un fondo de emergencia, cuánto dinero necesitas y cómo construirlo paso a paso para proteger tu estabilidad financiera.">
+    
+    <!-- Open Graph / Facebook (will be updated by JS) -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.bancfy.com/articulo-fondo-emergencia.html">
+    <meta id="og-title" property="og:title" content="Tu Red de Seguridad Financiera: Guía para Crear tu Fondo de Emergencia | Blog de Bancfy">
+    <meta id="og-description" property="og:description" content="Aprende qué es un fondo de emergencia, cuánto dinero necesitas y cómo construirlo paso a paso para proteger tu estabilidad financiera.">
+    <meta id="og-image" property="og:image" content="https://placehold.co/600x400/0C2340/C8B273?text=Fondo+de+Emergencia">
+
+    <!-- Twitter (will be updated by JS) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bancfy.com/articulo-fondo-emergencia.html">
+    <meta id="twitter-title" property="twitter:title" content="Tu Red de Seguridad Financiera: Guía para Crear tu Fondo de Emergencia | Blog de Bancfy">
+    <meta id="twitter-description" property="twitter:description" content="Aprende qué es un fondo de emergencia, cuánto dinero necesitas y cómo construirlo paso a paso para proteger tu estabilidad financiera.">
+    <meta id="twitter-image" property="twitter:image" content="https://placehold.co/600x400/0C2340/C8B273?text=Fondo+de+Emergencia">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Urbanist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <style>
+        body { font-family: 'Urbanist', sans-serif; }
+        :root {
+            --navy: #0C2340;
+            --gold: #C8B273;
+            --gold-hover: #bda66b;
+            --light-gray: #F7F7F7;
+        }
+        html[dir="rtl"] .md\:text-left { text-align: right; }
+        html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-right: 1.5rem; margin-left: 0; }
+        html[dir="rtl"] .mr-2 { margin-left: 0.5rem; margin-right: 0; }
+        html[dir="rtl"] .ml-1 { margin-right: 0.25rem; margin-left: 0; }
+        html[dir="rtl"] .right-0 { left: 0; right: auto; }
+        .bg-navy { background-color: var(--navy); }
+        .text-navy { color: var(--navy); }
+        .bg-gold { background-color: var(--gold); }
+        .text-gold { color: var(--gold); }
+        .hover\:bg-gold-hover:hover { background-color: var(--gold-hover); }
+        .border-gold { border-color: var(--gold); }
+        .bg-light-gray { background-color: var(--light-gray); }
+        .prose {
+            color: #374151; /* text-gray-700 */
+        }
+        .prose h1, .prose h2, .prose h3 {
+            color: var(--navy);
+        }
+        .prose a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .prose a:hover {
+            text-decoration: underline;
+        }
+        .prose strong {
+            color: var(--navy);
+        }
+        .prose blockquote {
+            border-left-color: var(--gold);
+            color: #4b5563; /* text-gray-600 */
+        }
+        .prose ul li::marker {
+            color: var(--gold);
+        }
+        .group:hover .group-hover\:block { display: block; }
+        .mobile-lang-arrow.rotate-180 { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-white text-navy antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
+                <img src="https://placehold.co/100x100/0C2340/FFFFFF?text=B" alt="Logo de Bancfy" class="w-10 h-10 rounded-full">
+                Bancfy
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_features">Características</a>
+                <a href="blog.html" class="text-gold font-semibold transition-colors duration-300" data-translate-key="nav_blog">Blog</a>
+                <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_faq">FAQ</a>
+                <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_contact">Contacto</a>
+                <!-- Language Selector -->
+                 <div class="relative group">
+                    <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
+                        <img id="current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera de España" class="w-5 h-auto mr-2 rounded-sm">
+                        <span id="current-lang-code">ES</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
+                        <!-- Languages will be injected by JS -->
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="nav_join_waitlist">
+                Únete a la Espera
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-navy">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features">Características</a>
+             <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold" data-translate-key="nav_blog">Blog</a>
+             <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq">FAQ</a>
+             <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact">Contacto</a>
+             <!-- Mobile Language Selector -->
+             <div class="border-t border-gray-200">
+                <div class="px-4 py-3">
+                    <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera del idioma actual" class="w-5 h-auto mr-3 rounded-sm">
+                        <span id="mobile-current-lang-code" class="font-semibold">ES</span>
+                        <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+                <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
+                    <!-- Mobile languages will be injected by JS -->
+                </div>
+             </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <article class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto">
+                    <!-- Breadcrumbs -->
+                    <div class="mb-8">
+                        <a href="blog.html" class="text-gold font-semibold hover:underline" data-translate-key="back_to_blog">&larr; Volver al Blog</a>
+                    </div>
+                    
+                    <div class="prose lg:prose-xl max-w-none">
+                        <h1 data-translate-key="article_title">Tu Red de Seguridad Financiera: La Guía Definitiva para Crear tu Fondo de Emergencia</h1>
+                        
+                        <img id="article-image" src="https://placehold.co/600x400/0C2340/C8B273?text=Fondo+de+Emergencia" alt="Ilustración de un paraguas protegiendo unas monedas de la lluvia" class="w-full rounded-xl my-8">
+
+                        <div id="article-content-wrapper" data-translate-key="article_content">
+                            <!-- El contenido del artículo se inyectará aquí con JS -->
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="mt-16 p-8 bg-light-gray rounded-xl text-center">
+                        <h3 class="text-2xl font-bold text-navy" data-translate-key="cta_title">Convierte tu Fondo de Emergencia en una Meta Real con Bancfy</h3>
+                        <p class="text-gray-600 my-4" data-translate-key="cta_desc">Un objetivo sin un plan es solo un deseo. En Bancfy, puedes crear tu "Meta de Ahorro" para el fondo de emergencia. Ponle nombre, define la cantidad y la fecha objetivo. Ver cómo la barra de progreso avanza cada mes es la mejor motivación para seguir adelante.</p>
+                        <a href="index.html#newsletter" class="inline-block bg-gold text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="cta_button">
+                            Crea tu primera meta de ahorro en Bancfy
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-navy text-white">
+        <div class="container mx-auto px-6 py-8">
+             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <p class="font-semibold" data-translate-key="footer_copyright">&copy; 2025 Bancfy. Todos los derechos reservados.</p>
+                    <p class="text-sm text-gray-400" data-translate-key="footer_design">Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.</p>
+                </div>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const translations = {
+                es: {
+                    nav_features: 'Características', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacto', nav_join_waitlist: 'Únete a la Espera',
+                    back_to_blog: '&larr; Volver al Blog',
+                    article_title: 'Tu Red de Seguridad Financiera: La Guía Definitiva para Crear tu Fondo de Emergencia',
+                    article_image_text: 'Fondo de Emergencia',
+                    article_content: `<p>Imagina que mañana se estropea el coche y la reparación cuesta 1.000€. O que, de repente, te enfrentas a un gasto médico inesperado. O, en el peor de los casos, pierdes tu fuente de ingresos. ¿Cómo lo afrontarías? ¿Tirando de tarjeta de crédito? ¿Pidiendo un préstamo a un familiar?</p><p>Estas situaciones son estresantes, pero lo son mucho menos cuando tienes una red de seguridad. Esa red tiene un nombre: el fondo de emergencia.</p><h3>¿Qué es (y qué no es) un Fondo de Emergencia?</h3><p>Un fondo de emergencia es un dinero que tienes ahorrado y reservado exclusivamente para imprevistos graves e inesperados. Es tu superhéroe financiero personal, listo para rescatarte y evitar que un bache en el camino se convierta en una crisis de deuda.</p><p>Es crucial entender para qué NO es este fondo:</p><ul><li>No es para las vacaciones de verano.</li><li>No es para dar la entrada de un coche nuevo.</li><li>No es para comprar acciones que están de oferta.</li></ul><p>Su única misión es proteger tu estabilidad financiera cuando la vida te lanza una curva.</p><h3>¿Cuánto Dinero Necesito? La Regla de los 3 a 6 Meses</h3><p>La recomendación general es tener ahorrado el equivalente a entre 3 y 6 meses de tus gastos fijos esenciales.</p><ul><li><strong>3 meses:</strong> Si tienes un trabajo estable y pocas personas a tu cargo.</li><li><strong>6 meses:</strong> Si eres autónomo, tienes ingresos irregulares o una familia que depende de ti.</li></ul><p>¿Cómo calcularlo? Suma tus gastos mensuales imprescindibles: alquiler/hipoteca, facturas, comida y transporte. Multiplica esa cifra por 3 o 6, y esa es tu meta. Por ejemplo, si tus gastos esenciales son 1.200€ al mes, tu objetivo ideal sería un fondo de 7.200€.</p><h3>¿Cómo Construyo mi Fondo de Emergencia sin Agobiarme?</h3><p>La cifra puede parecer abrumadora, pero la clave es empezar.</p><ol><li><strong>Abre una cuenta separada:</strong> Tu fondo de emergencia debe estar en una cuenta de ahorro diferente a la que usas a diario. Debe ser líquida (fácil de acceder) pero no tan a la vista como para que caigas en la tentación de usarla.</li><li><strong>Automatiza el ahorro:</strong> Este es el truco más poderoso. Programa una transferencia automática desde tu cuenta principal a tu cuenta de emergencia para el día después de cobrar. "Págate a ti primero", aunque sea con 50€ al mes.</li><li><strong>Empieza pequeño y sé constante:</strong> No importa si solo puedes aportar 20€ al mes. Lo importante es crear el hábito. La constancia es más importante que la cantidad inicial.</li><li><strong>Destina ingresos extra:</strong> ¿Has recibido una paga extra? ¿Una devolución de Hacienda? ¿Has vendido algo que no usabas? Destina una parte directamente a tu fondo.</li></ol><p>Tener un fondo de emergencia no te hará rico, pero te dará algo mucho más valioso: tranquilidad. Es la base sobre la que se construye cualquier plan financiero sólido.</p>`,
+                    cta_title: 'Convierte tu Fondo de Emergencia en una Meta Real con Bancfy',
+                    cta_desc: 'Un objetivo sin un plan es solo un deseo. En Bancfy, puedes crear tu "Meta de Ahorro" para el fondo de emergencia. Ponle nombre, define la cantidad y la fecha objetivo. Ver cómo la barra de progreso avanza cada mes es la mejor motivación para seguir adelante.',
+                    cta_button: 'Crea tu primera meta de ahorro en Bancfy',
+                    footer_copyright: '© 2025 Bancfy. Todos los derechos reservados.', footer_design: 'Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.'
+                },
+                en: {
+                    nav_features: 'Features', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Join the Waitlist',
+                    back_to_blog: '&larr; Back to Blog',
+                    article_title: 'Your Financial Safety Net: The Ultimate Guide to Creating Your Emergency Fund',
+                    article_image_text: 'Emergency Fund',
+                    article_content: `<p>Imagine your car breaks down tomorrow and the repair costs €1,000. Or you suddenly face an unexpected medical expense. Or, in the worst-case scenario, you lose your source of income. How would you handle it? By using a credit card? Asking a relative for a loan?</p><p>These situations are stressful, but they are much less so when you have a safety net. That net has a name: the emergency fund.</p><h3>What an Emergency Fund Is (and Isn't)</h3><p>An emergency fund is money you have saved and set aside exclusively for serious, unexpected events. It's your personal financial superhero, ready to rescue you and prevent a bump in the road from turning into a debt crisis.</p><p>It's crucial to understand what this fund is NOT for:</p><ul><li>It's not for summer vacations.</li><li>It's not for a down payment on a new car.</li><li>It's not for buying stocks that are on sale.</li></ul><p>Its sole mission is to protect your financial stability when life throws you a curveball.</p><h3>How Much Money Do I Need? The 3-to-6-Month Rule</h3><p>The general recommendation is to have saved the equivalent of 3 to 6 months of your essential fixed expenses.</p><ul><li><strong>3 months:</strong> If you have a stable job and few dependents.</li><li><strong>6 months:</strong> If you are self-employed, have irregular income, or a family that depends on you.</li></ul><p>How to calculate it? Add up your essential monthly expenses: rent/mortgage, bills, food, and transportation. Multiply that figure by 3 or 6, and that's your goal. For example, if your essential expenses are €1,200 per month, your ideal goal would be a fund of €7,200.</p><h3>How Do I Build My Emergency Fund Without Feeling Overwhelmed?</h3><p>The figure might seem daunting, but the key is to start.</p><ol><li><strong>Open a separate account:</strong> Your emergency fund should be in a savings account different from the one you use daily. It should be liquid (easy to access) but not so visible that you're tempted to use it.</li><li><strong>Automate your savings:</strong> This is the most powerful trick. Schedule an automatic transfer from your main account to your emergency account for the day after you get paid. "Pay yourself first," even if it's with €50 a month.</li><li><strong>Start small and be consistent:</strong> It doesn't matter if you can only contribute €20 a month. The important thing is to create the habit. Consistency is more important than the initial amount.</li><li><strong>Allocate extra income:</strong> Received a bonus? A tax refund? Sold something you no longer used? Allocate a portion directly to your fund.</li></ol><p>Having an emergency fund won't make you rich, but it will give you something much more valuable: peace of mind. It is the foundation upon which any solid financial plan is built.</p>`,
+                    cta_title: 'Turn Your Emergency Fund into a Real Goal with Bancfy',
+                    cta_desc: 'A goal without a plan is just a wish. At Bancfy, you can create your "Savings Goal" for your emergency fund. Give it a name, define the amount, and set a target date. Watching the progress bar move forward each month is the best motivation to keep going.',
+                    cta_button: 'Create your first savings goal at Bancfy',
+                    footer_copyright: '© 2025 Bancfy. All rights reserved.', footer_design: 'Designed with <span class="text-gold">&hearts;</span> for your financial well-being.'
+                },
+                ca: {
+                    nav_features: 'Característiques', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacte', nav_join_waitlist: 'Uneix-te a l\'Espera',
+                    back_to_blog: '&larr; Torna al Blog',
+                    article_title: 'La Teva Xarxa de Seguretat Financera: La Guia Definitiva per Crear el Teu Fons d\'Emergència',
+                    article_image_text: 'Fons d\'Emergència',
+                    article_content: `<p>Imagina que demà s'espatlla el cotxe i la reparació costa 1.000€. O que, de sobte, t'enfrontes a una despesa mèdica inesperada. O, en el pitjor dels casos, perds la teva font d'ingressos. Com ho afrontaries? Tirant de targeta de crèdit? Demanant un préstec a un familiar?</p><p>Aquestes situacions són estressants, però ho són molt menys quan tens una xarxa de seguretat. Aquesta xarxa té un nom: el fons d'emergència.</p><h3>Què és (i què no és) un Fons d'Emergència?</h3><p>Un fons d'emergència són uns diners que tens estalviats i reservats exclusivament per a imprevistos greus i inesperats. És el teu superheroi financer personal, a punt per rescatar-te i evitar que un sotrac en el camí es converteixi en una crisi de deute.</p><p>És crucial entendre per a què NO és aquest fons:</p><ul><li>No és per a les vacances d'estiu.</li><li>No és per donar l'entrada d'un cotxe nou.</li><li>No és per comprar accions que estan d'oferta.</li></ul><p>La seva única missió és protegir la teva estabilitat financera quan la vida et llança una corba.</p><h3>Quants Diners Necessito? La Regla dels 3 a 6 Mesos</h3><p>La recomanació general és tenir estalviat l'equivalent a entre 3 i 6 mesos de les teves despeses fixes essencials.</p><ul><li><strong>3 mesos:</strong> Si tens una feina estable i poques persones a càrrec teu.</li><li><strong>6 mesos:</strong> Si ets autònom, tens ingressos irregulars o una família que depèn de tu.</li></ul><p>Com calcular-ho? Suma les teves despeses mensuals imprescindibles: lloguer/hipoteca, factures, menjar i transport. Multiplica aquesta xifra per 3 o 6, i aquesta és la teva meta. Per exemple, si les teves despeses essencials són 1.200€ al mes, el teu objectiu ideal seria un fons de 7.200€.</p><h3>Com Construeixo el Meu Fons d'Emergència sense Aclaparar-me?</h3><p>La xifra pot semblar aclaparadora, però la clau és començar.</p><ol><li><strong>Obre un compte separat:</strong> El teu fons d'emergència ha d'estar en un compte d'estalvi diferent del que fas servir diàriament. Ha de ser líquid (fàcil d'accedir) però no tan a la vista com per caure en la temptació de fer-lo servir.</li><li><strong>Automatitza l'estalvi:</strong> Aquest és el truc més poderós. Programa una transferència automàtica des del teu compte principal al teu compte d'emergència per al dia després de cobrar. "Paga't a tu primer", encara que sigui amb 50€ al mes.</li><li><strong>Comença petit i sigues constant:</strong> No importa si només pots aportar 20€ al mes. L'important és crear l'hàbit. La constància és més important que la quantitat inicial.</li><li><strong>Destina ingressos extra:</strong> Has rebut una paga extra? Una devolució d'Hisenda? Has venut alguna cosa que no feies servir? Destina una part directament al teu fons.</li></ol><p>Tenir un fons d'emergència no et farà ric, però et donarà una cosa molt més valuosa: tranquil·litat. És la base sobre la qual es construeix qualsevol pla financer sòlid.</p>`,
+                    cta_title: 'Converteix el Teu Fons d\'Emergència en una Meta Real amb Bancfy',
+                    cta_desc: 'Un objectiu sense un pla és només un desig. A Bancfy, pots crear la teva "Meta d\'Estalvi" per al fons d\'emergència. Posa-li nom, defineix la quantitat i la data objectiu. Veure com la barra de progrés avança cada mes és la millor motivació per seguir endavant.',
+                    cta_button: 'Crea la teva primera meta d\'estalvi a Bancfy',
+                    footer_copyright: '© 2025 Bancfy. Tots els drets reservats.', footer_design: 'Dissenyat amb <span class="text-gold">&hearts;</span> per al teu benestar financer.'
+                },
+                eu: {
+                    nav_features: 'Ezaugarriak', nav_blog: 'Bloga', nav_faq: 'FAQ', nav_contact: 'Kontaktua', nav_join_waitlist: 'Sartu Itxaron Zerrendan',
+                    back_to_blog: '&larr; Itzuli Blogera',
+                    article_title: 'Zure Finantza Segurtasun Sarea: Zure Larrialdi Funtsa Sortzeko Gida Behin Betikoa',
+                    article_image_text: 'Larrialdi Funtsa',
+                    article_content: `<p>Imajinatu bihar autoa matxuratzen zaizula eta konponketak 1.000€ balio duela. Edo, bat-batean, ustekabeko gastu mediko bati aurre egin behar diozula. Edo, kasurik txarrenean, zure diru-sarrera iturria galtzen duzula. Nola egingo zenioke aurre? Kreditu-txartela erabiliz? Familiako bati mailegu bat eskatuz?</p><p>Egoera hauek estresagarriak dira, baina askoz gutxiago dira segurtasun sare bat duzunean. Sare horrek izen bat du: larrialdi funtsa.</p><h3>Zer da (eta zer ez da) Larrialdi Funtsa?</h3><p>Larrialdi funtsa aurreztuta eta ezusteko larri eta ustekabeetarako soilik gordeta duzun dirua da. Zure superheroi finantzario pertsonala da, zu erreskatatzeko prest eta bideko oztopo bat zor-krisi bihur ez dadin saihesteko.</p><p>Funtsezkoa da ulertzea funts hau ZERTARAKO EZ den:</p><ul><li>Ez da udako oporretarako.</li><li>Ez da auto berri baten sarrera emateko.</li><li>Ez da eskaintzan dauden akzioak erosteko.</li></ul><p>Bere eginkizun bakarra zure finantza-egonkortasuna babestea da bizitzak bihurgune bat ematen dizunean.</p><h3>Zenbat Diru Behar Dut? 3 eta 6 Hilabeteen Araua</h3><p>Gomendio orokorra zure funtsezko gastu finkoen 3 eta 6 hilabete arteko baliokidea aurreztuta izatea da.</p><ul><li><strong>3 hilabete:</strong> Lan egonkorra eta zure kargura pertsona gutxi badituzu.</li><li><strong>6 hilabete:</strong> Autonomoa bazara, diru-sarrera irregularrak badituzu edo zure menpeko familia bat baduzu.</li></ul><p>Nola kalkulatu? Batu zure ezinbesteko hileko gastuak: alokairua/hipoteka, fakturak, janaria eta garraioa. Biderkatu zifra hori 3z edo 6z, eta hori da zure helburua. Adibidez, zure funtsezko gastuak hilean 1.200€ badira, zure helburu ideala 7.200€-ko funtsa litzateke.</p><h3>Nola Eraiki Nire Larrialdi Funtsa Larritu Gabe?</h3><p>Zifra izugarria iruditu daiteke, baina gakoa hastea da.</p><ol><li><strong>Ireki kontu bereizi bat:</strong> Zure larrialdi funtsa egunero erabiltzen duzun kontutik bereizitako aurrezki-kontu batean egon behar da. Likidoa izan behar du (erraz eskuragarria) baina ez hain agerian, erabiltzeko tentazioan eror ez zaitezen.</li><li><strong>Automatizatu aurrezkia:</strong> Hau da trikimailurik indartsuena. Programatu transferentzia automatiko bat zure kontu nagusitik larrialdi-kontura kobratu eta hurrengo egunean. "Ordaindu zeure buruari lehenik", nahiz eta hilean 50€ izan.</li><li><strong>Hasi txiki eta izan konstantea:</strong> Berdin du hilean 20€ bakarrik jar ditzakezun. Garrantzitsuena ohitura sortzea da. Konstantzia hasierako kantitatea baino garrantzitsuagoa da.</li><li><strong>Bideratu diru-sarrera gehigarriak:</strong> Aparteko paga bat jaso duzu? Ogasunaren itzulketa bat? Erabiltzen ez zenuen zerbait saldu duzu? Bideratu zati bat zuzenean zure funtsera.</li></ol><p>Larrialdi funtsa izateak ez zaitu aberats egingo, baina askoz baliotsuagoa den zerbait emango dizu: lasaitasuna. Edozein finantza-plan sendoren oinarria da.</p>`,
+                    cta_title: 'Bihurtu Zure Larrialdi Funtsa Benetako Helburu Bancfy-rekin',
+                    cta_desc: 'Planik gabeko helburu bat desio bat besterik ez da. Bancfy-n, zure "Aurrezki Helburua" sor dezakezu larrialdi funtserako. Jarri izena, zehaztu zenbatekoa eta helburu-data. Hilero aurrerapen-barra nola mugitzen den ikustea aurrera jarraitzeko motibaziorik onena da.',
+                    cta_button: 'Sortu zure lehen aurrezki helburua Bancfy-n',
+                    footer_copyright: '© 2025 Bancfy. Eskubide guztiak erreserbatuta.', footer_design: 'Zure ongizate finantzariorako <span class="text-gold">&hearts;</span>-rekin diseinatua.'
+                },
+                de: {
+                    nav_features: 'Funktionen', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Auf die Warteliste',
+                    back_to_blog: '&larr; Zurück zum Blog',
+                    article_title: 'Ihr finanzielles Sicherheitsnetz: Der ultimative Leitfaden zum Aufbau Ihres Notgroschens',
+                    article_image_text: 'Notgroschen',
+                    article_content: `<p>Stellen Sie sich vor, morgen geht Ihr Auto kaputt und die Reparatur kostet 1.000 €. Oder Sie sehen sich plötzlich mit unerwarteten medizinischen Kosten konfrontiert. Oder, im schlimmsten Fall, Sie verlieren Ihre Einkommensquelle. Wie würden Sie damit umgehen? Mit der Kreditkarte? Indem Sie einen Verwandten um einen Kredit bitten?</p><p>Diese Situationen sind stressig, aber sie sind viel weniger stressig, wenn Sie ein Sicherheitsnetz haben. Dieses Netz hat einen Namen: der Notgroschen.</p><h3>Was ein Notgroschen ist (und was nicht)</h3><p>Ein Notgroschen ist Geld, das Sie gespart und ausschließlich für ernste, unerwartete Ereignisse zurückgelegt haben. Er ist Ihr persönlicher finanzieller Superheld, bereit, Sie zu retten und zu verhindern, dass eine Hürde auf dem Weg zu einer Schuldenkrise wird.</p><p>Es ist entscheidend zu verstehen, wofür dieser Fonds NICHT da ist:</p><ul><li>Er ist nicht für den Sommerurlaub.</li><li>Er ist nicht für die Anzahlung eines neuen Autos.</li><li>Er ist nicht für den Kauf von Aktien, die im Angebot sind.</li></ul><p>Seine einzige Mission ist es, Ihre finanzielle Stabilität zu schützen, wenn das Leben Ihnen einen Streich spielt.</p><h3>Wie viel Geld brauche ich? Die 3-bis-6-Monats-Regel</h3><p>Die allgemeine Empfehlung lautet, das Äquivalent von 3 bis 6 Monaten Ihrer wesentlichen Fixkosten gespart zu haben.</p><ul><li><strong>3 Monate:</strong> Wenn Sie einen stabilen Arbeitsplatz und wenige Angehörige haben.</li><li><strong>6 Monate:</strong> Wenn Sie selbstständig sind, unregelmäßiges Einkommen haben oder eine Familie von Ihnen abhängig ist.</li></ul><p>Wie berechnet man das? Addieren Sie Ihre wesentlichen monatlichen Ausgaben: Miete/Hypothek, Rechnungen, Lebensmittel und Transport. Multiplizieren Sie diese Zahl mit 3 oder 6, und das ist Ihr Ziel. Wenn Ihre wesentlichen Ausgaben beispielsweise 1.200 € pro Monat betragen, wäre Ihr ideales Ziel ein Fonds von 7.200 €.</p><h3>Wie baue ich meinen Notgroschen auf, ohne mich überfordert zu fühlen?</h3><p>Die Zahl mag entmutigend erscheinen, aber der Schlüssel ist, anzufangen.</p><ol><li><strong>Eröffnen Sie ein separates Konto:</strong> Ihr Notgroschen sollte auf einem Sparkonto sein, das von dem Konto getrennt ist, das Sie täglich verwenden. Es sollte liquide sein (leicht zugänglich), aber nicht so sichtbar, dass Sie in Versuchung geraten, es zu verwenden.</li><li><strong>Automatisieren Sie das Sparen:</strong> Dies ist der stärkste Trick. Richten Sie eine automatische Überweisung von Ihrem Hauptkonto auf Ihr Notfallkonto für den Tag nach dem Gehaltseingang ein. "Zahlen Sie sich selbst zuerst", auch wenn es nur 50 € pro Monat sind.</li><li><strong>Fangen Sie klein an und seien Sie konsequent:</strong> Es spielt keine Rolle, ob Sie nur 20 € pro Monat beisteuern können. Wichtig ist, die Gewohnheit zu schaffen. Beständigkeit ist wichtiger als der anfängliche Betrag.</li><li><strong>Verwenden Sie zusätzliches Einkommen:</strong> Haben Sie einen Bonus erhalten? Eine Steuerrückerstattung? Etwas verkauft, das Sie nicht mehr benutzt haben? Leiten Sie einen Teil direkt in Ihren Fonds.</li></ol><p>Einen Notgroschen zu haben, wird Sie nicht reich machen, aber er wird Ihnen etwas viel Wertvolleres geben: Seelenfrieden. Er ist die Grundlage, auf der jeder solide Finanzplan aufbaut.</p>`,
+                    cta_title: 'Verwandeln Sie Ihren Notgroschen mit Bancfy in ein echtes Ziel',
+                    cta_desc: 'Ein Ziel ohne Plan ist nur ein Wunsch. Bei Bancfy können Sie Ihr "Sparziel" für den Notgroschen erstellen. Geben Sie ihm einen Namen, definieren Sie den Betrag und das Zieldatum. Zu sehen, wie der Fortschrittsbalken jeden Monat voranschreitet, ist die beste Motivation, um weiterzumachen.',
+                    cta_button: 'Erstellen Sie Ihr erstes Sparziel bei Bancfy',
+                    footer_copyright: '© 2025 Bancfy. Alle Rechte vorbehalten.', footer_design: 'Mit <span class="text-gold">&hearts;</span> für Ihr finanzielles Wohlbefinden gestaltet.'
+                },
+                'de-ch': {
+                    nav_features: 'Funktione', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Uf d\'Warteliste',
+                    back_to_blog: '&larr; Zrugg zum Blog',
+                    article_title: 'Dis finanzielli Sicherheitsnetz: De ultimativi Leitfade zum Ufbau vo dim Notgrosche',
+                    article_image_text: 'Notgrosche',
+                    article_content: `<p>Stell der vor, morn gaht dis Auto kaputt und d'Reparatur choschtet 1'000 CHF. Oder du wirsch plötzlich mit unerwartete medizinische Chöste konfrontiert. Oder, im schlimmste Fall, du verlüürsch dini Iichommesquelle. Wie würdsch dem entgegne? Mit de Chreditcharte? Indem du en Verwandte um es Darlehe bittisch?</p><p>Die Situatione sind stressig, aber si sind viel weniger stressig, wenn du es Sicherheitsnetz hesch. Das Netz het en Name: de Notgrosche.</p><h3>Was en Notgrosche isch (und was nöd)</h3><p>En Notgrosche isch Gäld, wo du gspart und exklusiv für ernsti, unerwarteti Ereignis zrugggleit hesch. Er isch din persönliche finanzielle Superheld, bereit, dich z'rette und z'verhindere, dass es Hindernis uf em Weg zu ere Schuldekrise wird.</p><p>Es isch entscheidend z'verstah, für was de Fonds NICHT da isch:</p><ul><li>Er isch nöd für d'Summerferie.</li><li>Er isch nöd für d'Aazahlig vo me neue Auto.</li><li>Er isch nöd für de Chauf vo Aktie, wo im Aagebot sind.</li></ul><p>Sini einzigi Mission isch es, dini finanzielli Stabilität z'schütze, wenn s'Läbe dir en Streich spielt.</p><h3>Wie viel Gäld bruch ich? D'3-bis-6-Mönet-Regle</h3><p>Di allgemeini Empfehlig luutet, s'Äquivalent vo 3 bis 6 Mönet vo dine wesentliche Fixchöste gspart z'ha.</p><ul><li><strong>3 Mönet:</strong> Wenn du en stabile Job und wenig Unterhaltspflichte hesch.</li><li><strong>6 Mönet:</strong> Wenn du selbständig bisch, unregelmässigs Iichomme hesch oder e Familie vo dir abhängig isch.</li></ul><p>Wie berechnet me das? Zähle dini wesentliche monatliche Uusgabe zäme: Miete/Hypothek, Rächnige, Ässe und Transport. Multiplizier die Zahl mit 3 oder 6, und das isch dis Ziel. Wenn dini wesentliche Uusgabe zum Biispiel 1'200 CHF pro Monet sind, wär dis ideale Ziel en Fonds vo 7'200 CHF.</p><h3>Wie bau ich min Notgrosche uf, ohni mich überforderet z'fühle?</h3><p>D'Zahl mag abschreckend wirke, aber de Schlüssel isch, aazfange.</p><ol><li><strong>Eröffne es separates Konto:</strong> Din Notgrosche sött uf me Sparkonto sii, wo vom Konto trennt isch, wo du täglich bruchsch. Es sött liquid sii (eifach zuegänglich), aber nöd so sichtbar, dass du in Versuchig chunnsch, es z'bruuche.</li><li><strong>Automatisiere s'Spare:</strong> Das isch de starchst Trick. Richte en automatische Überwiisig vo dim Hauptkonto uf dis Notfallkonto für de Tag nach em Lohniigang ii. "Zahl dich sälber z'erscht", au wenn's nur 50 CHF pro Monet sind.</li><li><strong>Fang chlii aa und blib dra:</strong> Es spielt kei Rolle, ob du nur 20 CHF pro Monet biiträge chasch. Wichtig isch, d'Gwohnheit z'schaffe. D'Konstanz isch wichtiger als de Aafangsbetrag.</li><li><strong>Verwende zusätzliches Iichomme:</strong> Hesch en Bonus übercho? E Stüürrückzahlig? Öppis verchauft, wo du nüme brucht hesch? Leit en Teil direkt in din Fonds.</li></ol><p>En Notgrosche z'ha, wird dich nöd riich mache, aber er wird dir öppis viel wertvollers geh: Seelerueh. Er isch d'Grundlag, uf de jede solidi Finanzplan ufbaut.</p>`,
+                    cta_title: 'Mach din Notgrosche mit Bancfy zu me reale Ziel',
+                    cta_desc: 'Es Ziel ohni Plan isch nur en Wunsch. Bi Bancfy chasch dis "Sparziel" für de Notgrosche erstelle. Gib ihm en Name, definier de Betrag und s\'Zieldatum. Z\'gseh, wie de Fortschrittsbalke jede Monet vorwärts gaht, isch di besti Motivation, zum wiitermache.',
+                    cta_button: 'Erstell dis erschte Sparziel bi Bancfy',
+                    footer_copyright: '© 2025 Bancfy. Alli Rächt vorbhalte.', footer_design: 'Mit <span class="text-gold">&hearts;</span> für dis finanzielle Wohlbefinde gschaffet.'
+                },
+                fr: {
+                    nav_features: 'Fonctionnalités', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Rejoindre l\'attente',
+                    back_to_blog: '&larr; Retour au Blog',
+                    article_title: 'Votre Filet de Sécurité Financier : Le Guide Ultime pour Créer Votre Fonds d\'Urgence',
+                    article_image_text: 'Fonds d\'Urgence',
+                    article_content: `<p>Imaginez que demain votre voiture tombe en panne et que la réparation coûte 1 000 €. Ou que, soudainement, vous faites face à une dépense médicale imprévue. Ou, dans le pire des cas, vous perdez votre source de revenus. Comment y feriez-vous face ? En utilisant une carte de crédit ? En demandant un prêt à un membre de votre famille ?</p><p>Ces situations sont stressantes, mais elles le sont beaucoup moins lorsque vous disposez d'un filet de sécurité. Ce filet a un nom : le fonds d'urgence.</p><h3>Qu'est-ce qu'un Fonds d'Urgence (et ce qu'il n'est pas) ?</h3><p>Un fonds d'urgence est de l'argent que vous avez épargné et réservé exclusivement pour des imprévus graves et inattendus. C'est votre super-héros financier personnel, prêt à vous secourir et à éviter qu'un obstacle sur la route ne se transforme en crise d'endettement.</p><p>Il est crucial de comprendre à quoi ce fonds n'est PAS destiné :</p><ul><li>Il n'est pas pour les vacances d'été.</li><li>Il n'est pas pour l'acompte d'une nouvelle voiture.</li><li>Il n'est pas pour acheter des actions en promotion.</li></ul><p>Sa seule mission est de protéger votre stabilité financière lorsque la vie vous joue un mauvais tour.</p><h3>De Combien d'Argent Ai-je Besoin ? La Règle des 3 à 6 Mois</h3><p>La recommandation générale est d'avoir épargné l'équivalent de 3 à 6 mois de vos dépenses fixes essentielles.</p><ul><li><strong>3 mois :</strong> Si vous avez un emploi stable et peu de personnes à votre charge.</li><li><strong>6 mois :</strong> Si vous êtes indépendant, avez des revenus irréguliers ou une famille qui dépend de vous.</li></ul><p>Comment le calculer ? Additionnez vos dépenses mensuelles essentielles : loyer/hypothèque, factures, nourriture et transport. Multipliez ce chiffre par 3 ou 6, et voilà votre objectif. Par exemple, si vos dépenses essentielles sont de 1 200 € par mois, votre objectif idéal serait un fonds de 7 200 €.</p><h3>Comment Constituer Mon Fonds d'Urgence sans Me Sentir Débordé ?</h3><p>Le chiffre peut sembler intimidant, mais la clé est de commencer.</p><ol><li><strong>Ouvrez un compte séparé :</strong> Votre fonds d'urgence doit se trouver sur un compte d'épargne différent de celui que vous utilisez quotidiennement. Il doit être liquide (facile d'accès) mais pas trop en vue pour ne pas être tenté de l'utiliser.</li><li><strong>Automatisez l'épargne :</strong> C'est l'astuce la plus puissante. Programmez un virement automatique de votre compte principal vers votre compte d'urgence le lendemain de votre paie. "Payez-vous d'abord", même si ce n'est que 50 € par mois.</li><li><strong>Commencez petit et soyez constant :</strong> Peu importe si vous ne pouvez cotiser que 20 € par mois. L'important est de créer l'habitude. La constance est plus importante que le montant initial.</li><li><strong>Allouez les revenus supplémentaires :</strong> Vous avez reçu une prime ? Un remboursement d'impôts ? Vendu quelque chose que vous n'utilisiez plus ? Allouez une partie directement à votre fonds.</li></ol><p>Avoir un fonds d'urgence ne vous rendra pas riche, mais il vous apportera quelque chose de bien plus précieux : la tranquillité d'esprit. C'est la base sur laquelle se construit tout plan financier solide.</p>`,
+                    cta_title: 'Transformez Votre Fonds d\'Urgence en un Véritable Objectif avec Bancfy',
+                    cta_desc: 'Un objectif sans plan n\'est qu\'un souhait. Chez Bancfy, vous pouvez créer votre "Objectif d\'Épargne" pour votre fonds d\'urgence. Donnez-lui un nom, définissez le montant et la date cible. Voir la barre de progression avancer chaque mois est la meilleure motivation pour continuer.',
+                    cta_button: 'Créez votre premier objectif d\'épargne sur Bancfy',
+                    footer_copyright: '© 2025 Bancfy. Tous droits réservés.', footer_design: 'Conçu avec <span class="text-gold">&hearts;</span> pour votre bien-être financier.'
+                },
+                it: {
+                    nav_features: 'Caratteristiche', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contatti', nav_join_waitlist: 'Unisciti all\'Attesa',
+                    back_to_blog: '&larr; Torna al Blog',
+                    article_title: 'La Tua Rete di Sicurezza Finanziaria: La Guida Definitiva per Creare il Tuo Fondo di Emergenza',
+                    article_image_text: 'Fondo di Emergenza',
+                    article_content: `<p>Immagina che domani si rompa la macchina e la riparazione costi 1.000 €. O che, all'improvviso, ti trovi di fronte a una spesa medica inaspettata. O, nel peggiore dei casi, perdi la tua fonte di reddito. Come la affronteresti? Usando la carta di credito? Chiedendo un prestito a un familiare?</p><p>Queste situazioni sono stressanti, ma lo sono molto meno quando hai una rete di sicurezza. Quella rete ha un nome: il fondo di emergenza.</p><h3>Cos'è (e cosa non è) un Fondo di Emergenza?</h3><p>Un fondo di emergenza è un denaro che hai risparmiato e messo da parte esclusivamente per imprevisti gravi e inaspettati. È il tuo supereroe finanziario personale, pronto a salvarti e a evitare che un ostacolo sulla strada si trasformi in una crisi di debito.</p><p>È fondamentale capire per cosa NON è questo fondo:</p><ul><li>Non è per le vacanze estive.</li><li>Non è per l'acconto di una macchina nuova.</li><li>Non è per comprare azioni in offerta.</li></ul><p>La sua unica missione è proteggere la tua stabilità finanziaria quando la vita ti lancia una palla curva.</p><h3>Di Quanti Soldi ho Bisogno? La Regola dei 3-6 Mesi</h3><p>La raccomandazione generale è di avere risparmiato l'equivalente di 3-6 mesi delle tue spese fisse essenziali.</p><ul><li><strong>3 mesi:</strong> Se hai un lavoro stabile e poche persone a tuo carico.</li><li><strong>6 mesi:</strong> Se sei un lavoratore autonomo, hai un reddito irregolare o una famiglia che dipende da te.</li></ul><p>Come calcolarlo? Somma le tue spese mensili essenziali: affitto/mutuo, bollette, cibo e trasporti. Moltiplica quella cifra per 3 o 6, e quello è il tuo obiettivo. Ad esempio, se le tue spese essenziali sono 1.200 € al mese, il tuo obiettivo ideale sarebbe un fondo di 7.200 €.</p><h3>Come Costruisco il Mio Fondo di Emergenza Senza Stressarmi?</h3><p>La cifra può sembrare scoraggiante, ma la chiave è iniziare.</p><ol><li><strong>Apri un conto separato:</strong> Il tuo fondo di emergenza dovrebbe essere in un conto di risparmio diverso da quello che usi quotidianamente. Deve essere liquido (di facile accesso) ma non così in vista da cadere nella tentazione di usarlo.</li><li><strong>Automatizza il risparmio:</strong> Questo è il trucco più potente. Programma un bonifico automatico dal tuo conto principale al tuo conto di emergenza per il giorno dopo l'accredito dello stipendio. "Paga te stesso per primo", anche se con 50 € al mese.</li><li><strong>Inizia in piccolo e sii costante:</strong> Non importa se puoi contribuire solo con 20 € al mese. L'importante è creare l'abitudine. La costanza è più importante dell'importo iniziale.</li><li><strong>Destina entrate extra:</strong> Hai ricevuto un bonus? Un rimborso fiscale? Hai venduto qualcosa che non usavi? Destina una parte direttamente al tuo fondo.</li></ol><p>Avere un fondo di emergenza non ti renderà ricco, ma ti darà qualcosa di molto più prezioso: la tranquillità. È la base su cui si costruisce qualsiasi solido piano finanziario.</p>`,
+                    cta_title: 'Trasforma il Tuo Fondo di Emergenza in un Obiettivo Reale con Bancfy',
+                    cta_desc: 'Un obiettivo senza un piano è solo un desiderio. In Bancfy, puoi creare il tuo "Obiettivo di Risparmio" per il fondo di emergenza. Dagli un nome, definisci l\'importo e la data obiettivo. Vedere la barra di avanzamento progredire ogni mese è la migliore motivazione per andare avanti.',
+                    cta_button: 'Crea il tuo primo obiettivo di risparmio su Bancfy',
+                    footer_copyright: '© 2025 Bancfy. Tutti i diritti riservati.', footer_design: 'Progettato con <span class="text-gold">&hearts;</span> per il tuo benessere finanziario.'
+                },
+                pt: {
+                    nav_features: 'Recursos', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contato', nav_join_waitlist: 'Junte-se à Espera',
+                    back_to_blog: '&larr; Voltar ao Blog',
+                    article_title: 'Sua Rede de Segurança Financeira: O Guia Definitivo para Criar seu Fundo de Emergência',
+                    article_image_text: 'Fundo de Emergência',
+                    article_content: `<p>Imagine que amanhã seu carro quebra e o conserto custa 1.000 €. Ou que, de repente, você enfrenta uma despesa médica inesperada. Ou, no pior dos casos, perde sua fonte de renda. Como você lidaria com isso? Usando o cartão de crédito? Pedindo um empréstimo a um familiar?</p><p>Essas situações são estressantes, mas são muito menos quando você tem uma rede de segurança. Essa rede tem um nome: o fundo de emergência.</p><h3>O que é (e o que não é) um Fundo de Emergência?</h3><p>Um fundo de emergência é um dinheiro que você economizou e reservou exclusivamente para imprevistos graves e inesperados. É o seu super-herói financeiro pessoal, pronto para resgatá-lo e evitar que um obstáculo no caminho se transforme em uma crise de dívida.</p><p>É crucial entender para que este fundo NÃO serve:</p><ul><li>Não é para as férias de verão.</li><li>Não é para dar de entrada em um carro novo.</li><li>Não é para comprar ações que estão em promoção.</li></ul><p>Sua única missão é proteger sua estabilidade financeira quando a vida lhe prega uma peça.</p><h3>Quanto Dinheiro Eu Preciso? A Regra dos 3 a 6 Meses</h3><p>A recomendação geral é ter economizado o equivalente a 3 a 6 meses de suas despesas fixas essenciais.</p><ul><li><strong>3 meses:</strong> Se você tem um emprego estável e poucas pessoas a seu cargo.</li><li><strong>6 meses:</strong> Se você é autônomo, tem renda irregular ou uma família que depende de você.</li></ul><p>Como calcular? Some suas despesas mensais essenciais: aluguel/hipoteca, contas, comida e transporte. Multiplique esse valor por 3 ou 6, e essa é a sua meta. Por exemplo, se suas despesas essenciais são 1.200 € por mês, sua meta ideal seria um fundo de 7.200 €.</p><h3>Como Construir Meu Fundo de Emergência sem Me Sobrecarregar?</h3><p>O valor pode parecer assustador, mas a chave é começar.</p><ol><li><strong>Abra uma conta separada:</strong> Seu fundo de emergência deve estar em uma conta poupança diferente da que você usa no dia a dia. Deve ser líquida (de fácil acesso), mas não tão à vista a ponto de você cair na tentação de usá-la.</li><li><strong>Automatize a poupança:</strong> Este é o truque mais poderoso. Programe uma transferência automática de sua conta principal para sua conta de emergência para o dia seguinte ao recebimento do salário. "Pague-se primeiro", mesmo que seja com 50 € por mês.</li><li><strong>Comece pequeno e seja consistente:</strong> Não importa se você só pode contribuir com 20 € por mês. O importante é criar o hábito. A consistência é mais importante que o valor inicial.</li><li><strong>Destine rendas extras:</strong> Recebeu um bônus? Uma restituição de imposto? Vendeu algo que não usava? Destine uma parte diretamente para o seu fundo.</li></ol><p>Ter um fundo de emergência não o tornará rico, mas lhe dará algo muito mais valioso: tranquilidade. É a base sobre a qual se constrói qualquer plano financeiro sólido.</p>`,
+                    cta_title: 'Transforme seu Fundo de Emergência em uma Meta Real com a Bancfy',
+                    cta_desc: 'Um objetivo sem um plano é apenas um desejo. Na Bancfy, você pode criar sua "Meta de Poupança" para o fundo de emergência. Dê um nome, defina o valor e a data-alvo. Ver a barra de progresso avançar a cada mês é a melhor motivação para continuar.',
+                    cta_button: 'Crie sua primeira meta de poupança na Bancfy',
+                    footer_copyright: '© 2025 Bancfy. Todos os direitos reservados.', footer_design: 'Projetado com <span class="text-gold">&hearts;</span> para o seu bem-estar financeiro.'
+                },
+                ja: {
+                    nav_features: '特徴', nav_blog: 'ブログ', nav_faq: 'FAQ', nav_contact: 'お問い合わせ', nav_join_waitlist: 'ウェイティングリストに参加',
+                    back_to_blog: '&larr; ブログに戻る',
+                    article_title: 'あなたの金融セーフティネット：緊急資金を作成するための究極のガイド',
+                    article_image_text: '緊急資金',
+                    article_content: `<p>明日、車が故障して修理に1,000ユーロかかると想像してみてください。あるいは、突然、予期せぬ医療費に直面したとします。あるいは、最悪の場合、収入源を失ったとします。どう対処しますか？クレジットカードを使いますか？親戚にローンを頼みますか？</p><p>これらの状況はストレスですが、セーフティネットがあれば、はるかにストレスが少なくなります。そのネットには名前があります：緊急資金です。</p><h3>緊急資金とは何か（そして何ではないか）</h3><p>緊急資金とは、深刻で予期せぬ不測の事態に備えて、特別に貯蓄し、確保しておいたお金のことです。それはあなたの個人的な金融スーパーヒーローであり、あなたを救出し、道の上の障害が債務危機に発展するのを防ぐ準備ができています。</p><p>この資金が何のためにあるのではないかを理解することが重要です。</p><ul><li>夏の休暇のためではありません。</li><li>新車の頭金のためではありません。</li><li>セール中の株を買うためではありません。</li></ul><p>その唯一の使命は、人生があなたにカーブボールを投げたときに、あなたの経済的安定を守ることです。</p><h3>いくらお金が必要ですか？3〜6か月の法則</h3><p>一般的な推奨事項は、あなたの必須の固定費の3〜6か月分に相当する額を貯蓄しておくことです。</p><ul><li><strong>3か月：</strong>安定した仕事があり、扶養家族が少ない場合。</li><li><strong>6か月：</strong>自営業者、不規則な収入がある、またはあなたに依存している家族がいる場合。</li></ul><p>計算方法は？あなたの必須の月間費用を合計します：家賃/住宅ローン、請求書、食料、交通費。その数字に3または6を掛けると、それがあなたの目標です。たとえば、あなたの必須費用が月額1,200ユーロの場合、あなたの理想的な目標は7,200ユーロの資金になります。</p><h3>圧倒されずに緊急資金を構築するにはどうすればよいですか？</h3><p>その数字は気が遠くなるように思えるかもしれませんが、重要なのは始めることです。</p><ol><li><strong>別の口座を開設する：</strong>緊急資金は、日常的に使用する口座とは別の普通預金口座にあるべきです。流動性があり（簡単にアクセスできる）必要がありますが、使いたくなる誘惑に駆られるほど目に見える場所にあってはなりません。</li><li><strong>貯蓄を自動化する：</strong>これは最も強力なトリックです。給料日の翌日に、メイン口座から緊急口座への自動振込をスケジュールします。「まず自分に支払う」、たとえ月額50ユーロでも。</li><li><strong>小さく始めて一貫性を保つ：</strong>月額20ユーロしか拠出できなくてもかまいません。重要なのは習慣を作ることです。一貫性は最初の金額よりも重要です。</li><li><strong>余分な収入を割り当てる：</strong>ボーナスを受け取りましたか？税金の還付？使わなくなったものを売りましたか？一部を直接あなたの資金に割り当てます。</li></ol><p>緊急資金を持っていても金持ちにはなれませんが、それよりもはるかに価値のあるもの、つまり心の安らぎを与えてくれます。それは、あらゆる堅実な財務計画が構築される基盤です。</p>`,
+                    cta_title: 'Bancfyで緊急資金を本当の目標に変えましょう',
+                    cta_desc: '計画のない目標はただの願いです。Bancfyでは、緊急資金のための「貯蓄目標」を作成できます。名前を付け、金額を定義し、目標日を設定します。毎月進捗バーが進むのを見ることは、続けるための最高のモチベーションです。',
+                    cta_button: 'Bancfyで最初の貯蓄目標を作成する',
+                    footer_copyright: '© 2025 Bancfy. 無断複写・転載を禁じます。', footer_design: 'あなたの経済的幸福のために<span class="text-gold">&hearts;</span>を込めて設計されました。'
+                },
+                ko: {
+                    nav_features: '기능', nav_blog: '블로그', nav_faq: 'FAQ', nav_contact: '문의하기', nav_join_waitlist: '대기자 명단 참여',
+                    back_to_blog: '&larr; 블로그로 돌아가기',
+                    article_title: '금융 안전망: 비상 자금 마련을 위한 궁극적인 가이드',
+                    article_image_text: '비상 자금',
+                    article_content: `<p>내일 차가 고장 나서 수리비가 1,000유로가 든다고 상상해보십시오. 또는 갑자기 예상치 못한 의료비를 마주하게 됩니다. 또는 최악의 경우 소득원을 잃게 됩니다. 어떻게 대처하시겠습니까? 신용카드를 사용하시겠습니까? 친척에게 대출을 요청하시겠습니까?</p><p>이러한 상황은 스트레스가 많지만 안전망이 있으면 훨씬 덜합니다. 그 망에는 이름이 있습니다. 바로 비상 자금입니다.</p><h3>비상 자금이란 무엇이며 (무엇이 아닌가)</h3><p>비상 자금은 심각하고 예상치 못한 사건에 대비하여 저축하고 따로 마련해 둔 돈입니다. 길 위의 장애물이 부채 위기로 번지는 것을 막고 당신을 구출할 준비가 된 개인 금융 슈퍼히어로입니다.</p><p>이 자금이 무엇을 위한 것이 아닌지 이해하는 것이 중요합니다.</p><ul><li>여름 휴가를 위한 것이 아닙니다.</li><li>새 차 계약금을 위한 것이 아닙니다.</li><li>세일 중인 주식을 사기 위한 것이 아닙니다.</li></ul><p>그것의 유일한 임무는 인생이 당신에게 커브볼을 던질 때 당신의 재정적 안정을 보호하는 것입니다.</p><h3>얼마나 많은 돈이 필요합니까? 3~6개월 규칙</h3><p>일반적인 권장 사항은 필수 고정 비용의 3~6개월에 해당하는 금액을 저축하는 것입니다.</p><ul><li><strong>3개월:</strong> 안정적인 직업이 있고 부양가족이 거의 없는 경우.</li><li><strong>6개월:</strong> 자영업자이거나 소득이 불규칙하거나 당신에게 의존하는 가족이 있는 경우.</li></ul><p>계산 방법은? 필수 월간 비용을 모두 더하십시오: 임대료/담보 대출, 청구서, 식비 및 교통비. 그 수치에 3 또는 6을 곱하면 그것이 당신의 목표입니다. 예를 들어, 필수 비용이 월 1,200유로인 경우 이상적인 목표는 7,200유로의 자금이 될 것입니다.</p><h3>압도당하지 않고 비상 자금을 마련하는 방법은 무엇입니까?</h3><p>그 수치는 벅차게 보일 수 있지만 핵심은 시작하는 것입니다.</p><ol><li><strong>별도의 계좌 개설:</strong> 비상 자금은 매일 사용하는 계좌와 다른 저축 계좌에 있어야 합니다. 유동성이 있어야 하지만(쉽게 접근할 수 있어야 함) 사용하고 싶은 유혹에 빠질 정도로 눈에 띄어서는 안 됩니다.</li><li><strong>저축 자동화:</strong> 이것이 가장 강력한 비결입니다. 월급날 다음 날 주 계좌에서 비상 계좌로 자동 이체를 예약하십시오. "자신에게 먼저 지불하십시오", 비록 한 달에 50유로일지라도.</li><li><strong>작게 시작하고 꾸준히 하십시오:</strong> 한 달에 20유로만 기부할 수 있어도 상관없습니다. 중요한 것은 습관을 만드는 것입니다. 꾸준함이 초기 금액보다 더 중요합니다.</li><li><strong>추가 소득 할당:</strong> 보너스를 받았습니까? 세금 환급? 더 이상 사용하지 않는 물건을 팔았습니까? 일부를 자금에 직접 할당하십시오.</li></ol><p>비상 자금이 있다고 해서 부자가 되는 것은 아니지만 훨씬 더 가치 있는 것, 즉 마음의 평화를 줄 것입니다. 그것은 모든 견고한 재정 계획이 구축되는 기반입니다.</p>`,
+                    cta_title: 'Bancfy로 비상 자금을 실제 목표로 전환하십시오',
+                    cta_desc: '계획 없는 목표는 단지 소원일 뿐입니다. Bancfy에서는 비상 자금을 위한 "저축 목표"를 만들 수 있습니다. 이름을 지정하고 금액을 정의하고 목표 날짜를 설정하십시오. 매달 진행률 표시줄이 앞으로 나아가는 것을 보는 것이 계속 나아갈 수 있는 최고의 동기 부여입니다.',
+                    cta_button: 'Bancfy에서 첫 저축 목표 만들기',
+                    footer_copyright: '© 2025 Bancfy. 모든 권리 보유.', footer_design: '귀하의 재정적 안녕을 위해 <span class="text-gold">&hearts;</span>로 디자인되었습니다.'
+                },
+                zh: {
+                    nav_features: '功能', nav_blog: '博客', nav_faq: '常见问题', nav_contact: '联系我们', nav_join_waitlist: '加入等候名单',
+                    back_to_blog: '&larr; 返回博客',
+                    article_title: '您的财务安全网：创建应急基金的终极指南',
+                    article_image_text: '应急基金',
+                    article_content: `<p>想象一下，明天您的汽车抛锚了，修理费需要 1000 欧元。或者，您突然面临一笔意想不到的医疗费用。或者，在最坏的情况下，您失去了收入来源。您将如何应对？使用信用卡？向亲戚借钱？</p><p>这些情况压力很大，但当您有安全网时，压力就会小得多。这个网有一个名字：应急基金。</p><h3>什么是（以及什么不是）应急基金？</h3><p>应急基金是您专门为严重、意外的突发事件储蓄和预留的钱。它是您的个人财务超级英雄，随时准备拯救您，防止路上的一个小坎坷变成一场债务危机。</p><p>了解这笔资金不是用来做什么至关重要：</p><ul><li>它不是用来度暑假的。</li><li>它不是用来支付新车首付的。</li><li>它不是用来购买正在打折的股票的。</li></ul><p>它唯一的使命是在生活给您带来意外时保护您的财务稳定。</p><h3>我需要多少钱？3 到 6 个月法则</h3><p>一般建议是储蓄相当于您 3 到 6 个月基本固定开支的钱。</p><ul><li><strong>3 个月：</strong>如果您有稳定的工作，并且需要抚养的人很少。</li><li><strong>6 个月：</strong>如果您是自雇人士，收入不稳定，或者有家人依赖您。</li></ul><p>如何计算？将您每月的基本开支相加：租金/抵押贷款、账单、食物和交通。将该数字乘以 3 或 6，这就是您的目标。例如，如果您的基本开支是每月 1200 欧元，那么您的理想目标将是 7200 欧元的基金。</p><h3>如何在不感到不知所措的情况下建立我的应急基金？</h3><p>这个数字可能看起来令人望而生畏，但关键是开始。</p><ol><li><strong>开设一个单独的账户：</strong>您的应急基金应该在一个与您日常使用的账户不同的储蓄账户中。它应该是流动的（容易取用），但又不能太显眼，以免您忍不住动用它。</li><li><strong>自动化储蓄：</strong>这是最强大的技巧。在发薪日后的第二天，安排从您的主账户向您的应急账户自动转账。“先付钱给自己”，即使每月只有 50 欧元。</li><li><strong>从小处着手，坚持不懈：</strong>即使您每月只能存入 20 欧元也没关系。重要的是养成习惯。坚持比初始金额更重要。</li><li><strong>分配额外收入：</strong>收到奖金了吗？退税了吗？卖掉了不再使用的东西？将一部分直接存入您的基金。</li></ol><p>拥有应急基金不会让您致富，但它会给您带来更有价值的东西：内心的平静。它是任何稳健财务计划建立的基础。</p>`,
+                    cta_title: '使用 Bancfy 将您的应急基金变成一个真正的目标',
+                    cta_desc: '没有计划的目标只是一个愿望。在 Bancfy，您可以为您的应急基金创建“储蓄目标”。给它起个名字，定义金额和目标日期。看着进度条每个月都在前进是继续前进的最佳动力。',
+                    cta_button: '在 Bancfy 创建您的第一个储蓄目标',
+                    footer_copyright: '© 2025 Bancfy。版权所有。', footer_design: '用 <span class="text-gold">&hearts;</span> 为您的财务福祉而设计。'
+                },
+                ar: {
+                    nav_features: 'الميزات', nav_blog: 'المدونة', nav_faq: 'الأسئلة الشائعة', nav_contact: 'اتصل بنا', nav_join_waitlist: 'انضم إلى قائمة الانتظار',
+                    back_to_blog: '&larr; العودة إلى المدونة',
+                    article_title: 'شبكة الأمان المالية الخاصة بك: الدليل النهائي لإنشاء صندوق الطوارئ الخاص بك',
+                    article_image_text: 'صندوق الطوارئ',
+                    article_content: `<p>تخيل أن سيارتك تعطلت غدًا وتكلفة الإصلاح 1000 يورو. أو أنك تواجه فجأة مصاريف طبية غير متوقعة. أو، في أسوأ الحالات، تفقد مصدر دخلك. كيف ستتعامل مع ذلك؟ باستخدام بطاقة الائتمان؟ بطلب قرض من أحد الأقارب؟</p><p>هذه المواقف مرهقة، لكنها أقل إرهاقًا بكثير عندما يكون لديك شبكة أمان. هذه الشبكة لها اسم: صندوق الطوارئ.</p><h3>ما هو (وما ليس) صندوق الطوارئ؟</h3><p>صندوق الطوارئ هو مبلغ من المال قمت بتوفيره وتخصيصه حصريًا للحالات الطارئة الخطيرة وغير المتوقعة. إنه بطلك المالي الخارق الشخصي، جاهز لإنقاذك ومنع أي عثرة في الطريق من التحول إلى أزمة ديون.</p><p>من الأهمية بمكان أن تفهم ما الذي لا يستخدم من أجله هذا الصندوق:</p><ul><li>ليس لقضاء العطلة الصيفية.</li><li>ليس لدفع دفعة أولى لسيارة جديدة.</li><li>ليس لشراء أسهم معروضة للبيع.</li></ul><p>مهمته الوحيدة هي حماية استقرارك المالي عندما تلقي عليك الحياة بكرة منعطفة.</p><h3>كم من المال أحتاج؟ قاعدة 3 إلى 6 أشهر</h3><p>التوصية العامة هي أن يكون لديك ما يعادل 3 إلى 6 أشهر من نفقاتك الثابتة الأساسية مدخرة.</p><ul><li><strong>3 أشهر:</strong> إذا كان لديك وظيفة مستقرة وعدد قليل من المعالين.</li><li><strong>6 أشهر:</strong> إذا كنت تعمل لحسابك الخاص، أو لديك دخل غير منتظم، أو لديك عائلة تعتمد عليك.</li></ul><p>كيف تحسبه؟ اجمع نفقاتك الشهرية الأساسية: الإيجار / الرهن العقاري، الفواتير، الطعام، والمواصلات. اضرب هذا الرقم في 3 أو 6، وهذا هو هدفك. على سبيل المثال، إذا كانت نفقاتك الأساسية 1200 يورو شهريًا، فسيكون هدفك المثالي هو صندوق بقيمة 7200 يورو.</p><h3>كيف أبني صندوق الطوارئ الخاص بي دون الشعور بالإرهاق؟</h3><p>قد يبدو الرقم شاقًا، لكن المفتاح هو البدء.</p><ol><li><strong>افتح حسابًا منفصلاً:</strong> يجب أن يكون صندوق الطوارئ الخاص بك في حساب توفير مختلف عن الحساب الذي تستخدمه يوميًا. يجب أن يكون سائلاً (سهل الوصول إليه) ولكن ليس مرئيًا لدرجة أنك تميل إلى استخدامه.</li><li><strong>أتمتة مدخراتك:</strong> هذه هي أقوى خدعة. قم بجدولة تحويل تلقائي من حسابك الرئيسي إلى حساب الطوارئ الخاص بك في اليوم التالي لاستلام راتبك. "ادفع لنفسك أولاً"، حتى لو كان ذلك بمبلغ 50 يورو شهريًا.</li><li><strong>ابدأ صغيرًا وكن ثابتًا:</strong> لا يهم إذا كان بإمكانك المساهمة بمبلغ 20 يورو فقط شهريًا. الشيء المهم هو خلق العادة. الاتساق أهم من المبلغ الأولي.</li><li><strong>خصص دخلاً إضافيًا:</strong> هل تلقيت مكافأة؟ استرداد ضريبي؟ هل بعت شيئًا لم تعد تستخدمه؟ خصص جزءًا مباشرة لصندوقك.</li></ol><p>لن يجعلك امتلاك صندوق طوارئ ثريًا، لكنه سيمنحك شيئًا أكثر قيمة بكثير: راحة البال. إنه الأساس الذي يبنى عليه أي خطة مالية قوية.</p>`,
+                    cta_title: 'حوّل صندوق الطوارئ الخاص بك إلى هدف حقيقي مع Bancfy',
+                    cta_desc: 'الهدف بدون خطة هو مجرد أمنية. في Bancfy، يمكنك إنشاء "هدف التوفير" الخاص بك لصندوق الطوارئ. أعطه اسمًا، وحدد المبلغ، وحدد تاريخًا مستهدفًا. إن مشاهدة شريط التقدم يتقدم كل شهر هو أفضل حافز للمضي قدمًا.',
+                    cta_button: 'أنشئ أول هدف توفير لك في Bancfy',
+                    footer_copyright: '© 2025 Bancfy. جميع الحقوق محفوظة.', footer_design: 'صُمم بـ <span class="text-gold">&hearts;</span> من أجل رفاهيتك المالية.'
+                }
+            };
+            
+            const supportedLangs = {
+                'es': { name: 'Español', flag: 'es' },
+                'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg' },
+                'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg' },
+                'en': { name: 'English', flag: 'gb' },
+                'de': { name: 'Deutsch', flag: 'de' },
+                'de-ch': { name: 'Schweizerdeutsch', flag: 'ch' },
+                'fr': { name: 'Français', flag: 'fr' },
+                'it': { name: 'Italiano', flag: 'it' },
+                'pt': { name: 'Português', flag: 'pt' },
+                'ja': { name: '日本語', flag: 'jp' },
+                'ko': { name: '한국어', flag: 'kr' },
+                'zh': { name: '中文', flag: 'cn' },
+                'ar': { name: 'العربية', flag: 'ae' }
+            };
+
+            function translatePage(lang) {
+                const targetLang = translations[lang] ? lang : 'es'; 
+                const t = translations[targetLang] || translations.es;
+
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.getAttribute('data-translate-key');
+                    const translation = t[key] || translations.es[key] || el.innerHTML;
+                    if (key) {
+                       el.innerHTML = translation;
+                    }
+                });
+                
+                const articleImage = document.getElementById('article-image');
+                if(articleImage) {
+                    const imageText = t.article_image_text || translations.es.article_image_text;
+                    const newSrc = `https://placehold.co/600x400/0C2340/C8B273?text=${encodeURIComponent(imageText)}`;
+                    articleImage.src = newSrc;
+                    articleImage.alt = `Ilustración para ${imageText}`;
+                    document.getElementById('og-image').setAttribute('content', newSrc);
+                    document.getElementById('twitter-image').setAttribute('content', newSrc);
+                }
+
+                document.getElementById('meta-title').textContent = t.article_title || translations.es.article_title;
+                document.getElementById('meta-description').setAttribute('content', t.article_content.substring(0, 160).replace(/<[^>]*>/g, ''));
+                document.getElementById('og-title').setAttribute('content', t.article_title || translations.es.article_title);
+                document.getElementById('og-description').setAttribute('content', t.article_content.substring(0, 160).replace(/<[^>]*>/g, ''));
+                document.getElementById('twitter-title').setAttribute('content', t.article_title || translations.es.article_title);
+                document.getElementById('twitter-description').setAttribute('content', t.article_content.substring(0, 160).replace(/<[^>]*>/g, ''));
+                
+                document.documentElement.lang = targetLang;
+                document.documentElement.dir = targetLang === 'ar' ? 'rtl' : 'ltr';
+            }
+
+            function setLanguage(lang) {
+                const langInfo = supportedLangs[lang] || supportedLangs['es'];
+                const flagSrc = langInfo.flagUrl ? langInfo.flagUrl : `https://flagcdn.com/w20/${langInfo.flag}.png`;
+                const langCode = lang.split('-')[0].toUpperCase();
+
+                const currentFlagImg = document.getElementById('current-lang-flag');
+                if (currentFlagImg) {
+                    currentFlagImg.src = flagSrc;
+                    currentFlagImg.alt = `Bandera de ${langInfo.name}`;
+                }
+                const currentLangCode = document.getElementById('current-lang-code');
+                if (currentLangCode) currentLangCode.textContent = langCode;
+
+                const mobileCurrentFlagImg = document.getElementById('mobile-current-lang-flag');
+                if (mobileCurrentFlagImg) {
+                    mobileCurrentFlagImg.src = flagSrc;
+                    mobileCurrentFlagImg.alt = `Bandera de ${langInfo.name}`;
+                }
+                const mobileCurrentLangCode = document.getElementById('mobile-current-lang-code');
+                if (mobileCurrentLangCode) mobileCurrentLangCode.textContent = langCode;
+
+                translatePage(lang);
+                localStorage.setItem('bancfy_lang', lang);
+            }
+
+            const langDropdown = document.getElementById('lang-dropdown');
+            const langSelectorBtn = document.getElementById('lang-selector-btn');
+            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+            const mobileLangSelectorBtn = document.getElementById('mobile-lang-selector-btn');
+            const mobileLangArrow = document.querySelector('.mobile-lang-arrow');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            for (const [code, langData] of Object.entries(supportedLangs)) {
+                const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
+                const innerHTML = `<img src="${flagSrc}" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
+
+                if (langDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'px-4', 'py-2', 'text-sm', 'text-gray-700', 'hover:bg-light-gray');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => { e.preventDefault(); setLanguage(code); langDropdown.classList.add('hidden'); langSelectorBtn.blur(); });
+                    langDropdown.appendChild(link);
+                }
+
+                if (mobileLangDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'py-1.5', 'px-2', 'text-sm', 'text-gray-700', 'hover:text-gold', 'rounded-md', 'hover:bg-white');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => { e.preventDefault(); setLanguage(code); if (mobileMenu) mobileMenu.classList.add('hidden'); });
+                    mobileLangDropdown.appendChild(link);
+                }
+            }
+            
+            if (langSelectorBtn) {
+                langSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (langDropdown) langDropdown.classList.toggle('hidden'); });
+            }
+
+            if (mobileLangSelectorBtn) {
+                mobileLangSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (mobileLangDropdown) mobileLangDropdown.classList.toggle('hidden'); if (mobileLangArrow) mobileLangArrow.classList.toggle('rotate-180'); });
+            }
+
+            window.addEventListener('click', (e) => {
+                if (langDropdown && !langDropdown.classList.contains('hidden') && !langSelectorBtn.contains(e.target)) {
+                    langDropdown.classList.add('hidden');
+                }
+            });
+
+            const savedLang = localStorage.getItem('bancfy_lang');
+            let userLang = savedLang;
+            if (!userLang) {
+                const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+                if (supportedLangs[browserLang]) userLang = browserLang;
+                else if (supportedLangs[browserLang.split('-')[0]]) userLang = browserLang.split('-')[0];
+                else userLang = 'es';
+            }
+            setLanguage(userLang);
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileLangDropdown) mobileLangDropdown.classList.add('hidden');
+                if (mobileLangArrow) mobileLangArrow.classList.remove('rotate-180');
+            });
+        });
+    </script>
+
+</body>
+</html>

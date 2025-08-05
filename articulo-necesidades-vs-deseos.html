@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags (will be updated by JS) -->
+    <title id="meta-title">Necesidades vs. Deseos: La Clave Maestra | Blog de Bancfy</title>
+    <meta id="meta-description" name="description" content="Aprende a diferenciar entre lo que necesitas y lo que deseas para tomar el control total de tus finanzas personales. El primer paso hacia la libertad financiera.">
+    
+    <!-- Open Graph / Facebook (will be updated by JS) -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.bancfy.com/articulo-necesidades-vs-deseos.html">
+    <meta id="og-title" property="og:title" content="Necesidades vs. Deseos: La Clave Maestra | Blog de Bancfy">
+    <meta id="og-description" property="og:description" content="Aprende a diferenciar entre lo que necesitas y lo que deseas para tomar el control total de tus finanzas personales.">
+    <meta id="og-image" property="og:image" content="https://placehold.co/600x300/0C2340/C8B273?text=Necesidades+vs+Deseos">
+
+    <!-- Twitter (will be updated by JS) -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bancfy.com/articulo-necesidades-vs-deseos.html">
+    <meta id="twitter-title" property="twitter:title" content="Necesidades vs. Deseos: La Clave Maestra | Blog de Bancfy">
+    <meta id="twitter-description" property="twitter:description" content="Aprende a diferenciar entre lo que necesitas y lo que deseas para tomar el control total de tus finanzas personales.">
+    <meta id="twitter-image" property="twitter:image" content="https://placehold.co/600x300/0C2340/C8B273?text=Necesidades+vs+Deseos">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Urbanist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <style>
+        body { font-family: 'Urbanist', sans-serif; }
+        :root {
+            --navy: #0C2340;
+            --gold: #C8B273;
+            --gold-hover: #bda66b;
+            --light-gray: #F7F7F7;
+        }
+        html[dir="rtl"] .md\:text-left { text-align: right; }
+        html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-right: 1.5rem; margin-left: 0; }
+        html[dir="rtl"] .mr-2 { margin-left: 0.5rem; margin-right: 0; }
+        html[dir="rtl"] .ml-1 { margin-right: 0.25rem; margin-left: 0; }
+        html[dir="rtl"] .right-0 { left: 0; right: auto; }
+        .bg-navy { background-color: var(--navy); }
+        .text-navy { color: var(--navy); }
+        .bg-gold { background-color: var(--gold); }
+        .text-gold { color: var(--gold); }
+        .hover\:bg-gold-hover:hover { background-color: var(--gold-hover); }
+        .border-gold { border-color: var(--gold); }
+        .bg-light-gray { background-color: var(--light-gray); }
+        .prose {
+            color: #374151; /* text-gray-700 */
+        }
+        .prose h1, .prose h2, .prose h3 {
+            color: var(--navy);
+        }
+        .prose a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .prose a:hover {
+            text-decoration: underline;
+        }
+        .prose strong {
+            color: var(--navy);
+        }
+        .prose blockquote {
+            border-left-color: var(--gold);
+            color: #4b5563; /* text-gray-600 */
+        }
+        .group:hover .group-hover\:block { display: block; }
+        .mobile-lang-arrow.rotate-180 { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-white text-navy antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
+                <img src="images/logo.png" alt="Logo de Bancfy" class="w-10 h-10 rounded-full">
+                Bancfy
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_features">Características</a>
+                <a href="blog.html" class="text-gold font-semibold transition-colors duration-300" data-translate-key="nav_blog">Blog</a>
+                <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_faq">FAQ</a>
+                <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_contact">Contacto</a>
+                <!-- Language Selector -->
+                 <div class="relative group">
+                    <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
+                        <img id="current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera de España" class="w-5 h-auto mr-2 rounded-sm">
+                        <span id="current-lang-code">ES</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
+                        <!-- Languages will be injected by JS -->
+                    </div>
+                </div>
+            </div>
+            <a href="index.html#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="nav_join_waitlist">
+                Únete a la Espera
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-navy">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features">Características</a>
+             <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold" data-translate-key="nav_blog">Blog</a>
+             <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq">FAQ</a>
+             <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact">Contacto</a>
+             <!-- Mobile Language Selector -->
+             <div class="border-t border-gray-200">
+                <div class="px-4 py-3">
+                    <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/es.png" alt="Bandera del idioma actual" class="w-5 h-auto mr-3 rounded-sm">
+                        <span id="mobile-current-lang-code" class="font-semibold">ES</span>
+                        <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                </div>
+                <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
+                    <!-- Mobile languages will be injected by JS -->
+                </div>
+             </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <article class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto">
+                    <!-- Breadcrumbs -->
+                    <div class="mb-8">
+                        <a href="blog.html" class="text-gold font-semibold hover:underline" data-translate-key="back_to_blog">&larr; Volver al Blog</a>
+                    </div>
+                    
+                    <div class="prose lg:prose-xl max-w-none">
+                        <h1 data-translate-key="article_title">Necesidades vs. Deseos: La Clave Maestra para Tomar el Control de tu Dinero</h1>
+                        
+                        <img id="article-image" src="https://placehold.co/600x300/0C2340/C8B273?text=Necesidades+vs+Deseos" alt="Ilustración de una balanza comparando necesidades y deseos" class="w-full rounded-xl my-8">
+
+                        <div id="article-content-wrapper" data-translate-key="article_content">
+                            <!-- El contenido del artículo se inyectará aquí con JS -->
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="mt-16 p-8 bg-light-gray rounded-xl text-center">
+                        <h3 class="text-2xl font-bold text-navy" data-translate-key="cta_title">Da el Siguiente Paso con Bancfy</h3>
+                        <p class="text-gray-600 my-4" data-translate-key="cta_desc">Entender la teoría es genial, pero la verdadera transformación llega con la práctica. En Bancfy, hemos diseñado herramientas intuitivas para que clasificar tus gastos sea un proceso automático y revelador.</p>
+                        <a href="index.html#newsletter" class="inline-block bg-gold text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105" data-translate-key="cta_button">
+                            Únete a la lista de espera
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-navy text-white">
+        <div class="container mx-auto px-6 py-8">
+             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <p class="font-semibold" data-translate-key="footer_copyright">&copy; 2025 Bancfy. Todos los derechos reservados.</p>
+                    <p class="text-sm text-gray-400" data-translate-key="footer_design">Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.</p>
+                </div>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const translations = {
+                es: {
+                    seo_title: 'Necesidades vs. Deseos: La Clave Maestra | Blog de Bancfy',
+                    seo_description: 'Aprende a diferenciar entre lo que necesitas y lo que deseas para tomar el control total de tus finanzas personales. El primer paso hacia la libertad financiera.',
+                    og_title: 'Necesidades vs. Deseos: La Clave Maestra | Blog de Bancfy',
+                    og_description: 'Aprende a diferenciar entre lo que necesitas y lo que deseas para tomar el control total de tus finanzas personales.',
+                    nav_features: 'Características', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacto', nav_join_waitlist: 'Únete a la Espera',
+                    back_to_blog: '&larr; Volver al Blog',
+                    article_title: 'Necesidades vs. Deseos: La Clave Maestra para Tomar el Control de tu Dinero',
+                    article_image_text: 'Necesidades vs Deseos',
+                    article_content: `<p>¿Alguna vez has llegado a fin de mes preguntándote "a dónde se ha ido todo mi dinero"? No estás solo. Es una sensación frustrante que nos hace sentir impotentes frente a nuestras propias finanzas. Pero, ¿y si te dijera que la solución empieza con un simple ejercicio de honestidad?</p><p>La educación financiera no va de fórmulas matemáticas complejas ni de convertirse en un experto de Wall Street. Va de entender tus propios hábitos para poder tomar decisiones conscientes. Y el primer paso, el más poderoso de todos, es aprender a diferenciar entre lo que <strong>necesitas</strong> y lo que <strong>deseas</strong>.</p><h3>¿Qué es una "Necesidad"?</h3><p>Las <strong>necesidades</strong> son aquellos gastos absolutamente esenciales para vivir. Son los pilares de tu vida, los gastos no negociables que te permiten mantener tu día a día de forma segura y saludable.</p><ul><li>El alquiler o la hipoteca de tu vivienda.</li><li>Las facturas de servicios básicos: luz, agua, gas, internet.</li><li>La compra de comida en el supermercado.</li><li>El transporte para ir a trabajar.</li><li>Gastos médicos o seguros de salud.</li></ul><p>Estos son los cimientos de tu presupuesto. Sin ellos, tu estabilidad se vería comprometida.</p><h3>¿Y qué es un "Deseo"?</h3><p>Los <strong>deseos</strong>, por otro lado, son todo aquello que hace la vida más agradable y divertida, pero que no es estrictamente esencial para tu supervivencia. Son las pequeñas (o grandes) recompensas que te das.</p><ul><li>Ese café para llevar que te tomas cada mañana.</li><li>Las zapatillas de edición limitada que acabas de ver online.</li><li>Las cenas en restaurantes o las copas con amigos.</li><li>La suscripción a esa plataforma de streaming que casi no usas.</li><li>El último modelo de smartphone.</li></ul><h3>El Poder No Está en Restringir, Sino en Decidir</h3><p>Aquí está la magia: diferenciar necesidades de deseos no significa que nunca más puedas comprarte unas zapatillas nuevas o salir a cenar. ¡Para nada! Significa que <strong>tú tienes el poder de decidir</strong>.</p><p>Cuando eres consciente de que esa cena de 50€ es un deseo, puedes preguntarte: "¿Realmente quiero gastar este dinero aquí, o prefiero destinarlo a esa escapada de fin de semana que tanto me apetece?". Dejas de ser un espectador de tus finanzas y te conviertes en el director.</p><p><strong>Ejercicio práctico:</strong> Coge el extracto de tu banco del último mes. Al lado de cada gasto, escribe una "N" de Necesidad o una "D" de Deseo. El resultado te sorprenderá y te dará una claridad increíble sobre tus patrones de consumo.</p>`,
+                    cta_title: 'Da el Siguiente Paso con Bancfy',
+                    cta_desc: 'Entender la teoría es genial, pero la verdadera transformación llega con la práctica. En Bancfy, hemos diseñado herramientas intuitivas para que clasificar tus gastos sea un proceso automático y revelador.',
+                    cta_button: 'Únete a la lista de espera',
+                    footer_copyright: '© 2025 Bancfy. Todos los derechos reservados.', footer_design: 'Diseñado con ♥ para tu bienestar financiero.'
+                },
+                ca: {
+                    seo_title: 'Necessitats vs. Desitjos: La Clau Mestra | Blog de Bancfy',
+                    seo_description: 'Aprèn a diferenciar entre el que necessites i el que desitges per prendre el control total de les teves finances personals. El primer pas cap a la llibertat financera.',
+                    og_title: 'Necessitats vs. Desitjos: La Clau Mestra | Blog de Bancfy',
+                    og_description: 'Aprèn a diferenciar entre el que necessites i el que desitges per prendre el control total de les teves finances personals.',
+                    nav_features: 'Característiques', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacte', nav_join_waitlist: 'Uneix-te a l\'Espera',
+                    back_to_blog: '&larr; Torna al Blog',
+                    article_title: 'Necessitats vs. Desitjos: La Clau Mestra per Prendre el Control dels teus Diners',
+                    article_image_text: 'Necessitats vs Desitjos',
+                    article_content: `<p>Alguna vegada has arribat a final de mes preguntant-te "on han anat tots els meus diners"? No estàs sol. És una sensació frustrant que ens fa sentir impotents davant les nostres pròpies finances. Però, i si et digués que la solució comença amb un simple exercici d\'honestedat?</p><p>L'educació financera no va de fórmules matemàtiques complexes ni de convertir-se en un expert de Wall Street. Va d'entendre els teus propis hàbits per poder prendre decisions conscients. I el primer pas, el més poderós de tots, és aprendre a diferenciar entre el que <strong>necessites</strong> i el que <strong>desitges</strong>.</p><h3>Què és una "Necessitat"?</h3><p>Les <strong>necessitats</strong> són aquelles despeses absolutament essencials per viure. Són els pilars de la teva vida, les despeses no negociables que et permeten mantenir el teu dia a dia de forma segura i saludable.</p><ul><li>El lloguer o la hipoteca del teu habitatge.</li><li>Les factures de serveis bàsics: llum, aigua, gas, internet.</li><li>La compra de menjar al supermercat.</li><li>El transport per anar a treballar.</li><li>Despeses mèdiques o assegurances de salut.</li></ul><p>Aquests són els fonaments del teu pressupost. Sense ells, la teva estabilitat es veuria compromesa.</p><h3>I què és un "Desig"?</h3><p>Els <strong>desitjos</strong>, d'altra banda, són tot allò que fa la vida més agradable i divertida, però que no és estrictament essencial per a la teva supervivència. Són les petites (o grans) recompenses que et dones.</p><ul><li>Aquell cafè per emportar que et prens cada matí.</li><li>Les vambes d'edició limitada que acabes de veure en línia.</li><li>Els sopars a restaurants o les copes amb amics.</li><li>La subscripció a aquella plataforma de streaming que gairebé no fas servir.</li><li>L'últim model de smartphone.</li></ul><h3>El Poder No Està a Restringir, Sinó a Decidir</h3><p>Aquí hi ha la màgia: diferenciar necessitats de desitjos no significa que mai més puguis comprar-te unes vambes noves o sortir a sopar. Gens ni mica! Significa que <strong>tu tens el poder de decidir</strong>.</p><p>Quan ets conscient que aquell sopar de 50€ és un desig, pots preguntar-te: "Realment vull gastar aquests diners aquí, o prefereixo destinar-los a aquella escapada de cap de setmana que tant em ve de gust?". Deixes de ser un espectador de les teves finances i et converteixes en el director.</p><p><strong>Exercici pràctic:</strong> Agafa l'extracte del teu banc de l'últim mes. Al costat de cada despesa, escriu una "N" de Necessitat o una "D" de Desig. El resultat et sorprendrà i et donarà una claredat increïble sobre els teus patrons de consum.</p>`,
+                    cta_title: 'Fes el Següent Pas amb Bancfy',
+                    cta_desc: 'Entendre la teoria és genial, però la veritable transformació arriba amb la pràctica. A Bancfy, hem dissenyat eines intuïtives perquè classificar les teves despeses sigui un procés automàtic i revelador.',
+                    cta_button: 'Uneix-te a la llista d\'espera',
+                    footer_copyright: '© 2025 Bancfy. Tots els drets reservats.', footer_design: 'Dissenyat amb ♥ per al teu benestar financer.'
+                },
+                eu: {
+                    seo_title: 'Beharrak vs. Nahiak: Giltza Nagusia | Bancfy Bloga',
+                    seo_description: 'Ikasi zer behar duzun eta zer nahi duzun bereizten zure finantza pertsonalen kontrol osoa hartzeko. Askatasun finantzariorako lehen urratsa.',
+                    og_title: 'Beharrak vs. Nahiak: Giltza Nagusia | Bancfy Bloga',
+                    og_description: 'Ikasi zer behar duzun eta zer nahi duzun bereizten zure finantza pertsonalen kontrol osoa hartzeko.',
+                    nav_features: 'Ezaugarriak', nav_blog: 'Bloga', nav_faq: 'FAQ', nav_contact: 'Kontaktua', nav_join_waitlist: 'Sartu Itxaron Zerrendan',
+                    back_to_blog: '&larr; Itzuli Blogera',
+                    article_title: 'Beharrak vs. Nahiak: Zure Diruaren Kontrola Hartzeko Giltza Nagusia',
+                    article_image_text: 'Beharrak vs Nahiak',
+                    article_content: `<p>Inoiz iritsi al zara hilabete amaierara "nora joan da nire diru guztia?" galdetuz? Ez zaude bakarrik. Gure finantzen aurrean ezintasuna sentiarazten digun sentsazio frustragarria da. Baina, eta esango banizu konponbidea zintzotasun ariketa soil batekin hasten dela?</p><p>Finantza-heziketak ez du zerikusirik formula matematiko konplexuekin edo Wall Streeteko aditu bihurtzearekin. Zure ohiturak ulertzean datza, erabaki kontzienteak hartu ahal izateko. Eta lehen urratsa, guztietan ahaltsuena, <strong>behar</strong> duzunaren eta <strong>nahi</strong> duzunaren artean bereizten ikastea da.</p><h3>Zer da "Behar" bat?</h3><p><strong>Beharrak</strong> bizitzeko erabat ezinbestekoak diren gastuak dira. Zure bizitzako zutabeak dira, zure egunerokotasuna modu seguru eta osasuntsuan mantentzea ahalbidetzen dizuten gastu negoziatu ezinak.</p><ul><li>Zure etxebizitzaren alokairua edo hipoteka.</li><li>Oinarrizko zerbitzuen fakturak: argia, ura, gasa, interneta.</li><li>Janaria supermerkatuan erostea.</li><li>Lanera joateko garraioa.</li><li>Gastu medikoak edo osasun-aseguruak.</li></ul><p>Hauek dira zure aurrekontuaren oinarriak. Horiek gabe, zure egonkortasuna arriskuan egongo litzateke.</p><h3>Eta zer da "Nahi" bat?</h3><p><strong>Nahiak</strong>, bestalde, bizitza atseginagoa eta dibertigarriagoa egiten duen guztia dira, baina ez da zure biziraupenerako erabat ezinbestekoa. Zeure buruari ematen dizkiozun sari txikiak (edo handiak) dira.</p><ul><li>Goizero hartzen duzun kafe eramangarri hori.</li><li>Sarean ikusi berri dituzun edizio mugatuko zapatilak.</li><li>Jatetxeetako afariak edo lagunekin hartutako kopak.</li><li>Ia erabiltzen ez duzun streaming plataforma horretarako harpidetza.</li><li>Smartphonearen azken modeloa.</li></ul><h3>Ahalmena Ez Dago Murriztean, Erabakitzean Baizik</h3><p>Hemen dago magia: beharrak eta nahiak bereizteak ez du esan nahi inoiz gehiago ezingo dituzunik zapatila berriak erosi edo afaltzera irten. Inola ere ez! <strong>Zuk erabakitzeko ahalmena duzula</strong> esan nahi du.</p><p>50€-ko afari hori nahi bat dela jabetzen zarenean, zeure buruari galde diezaiokezu: "Benetan gastatu nahi dut diru hau hemen, edo nahiago dut hainbeste nahi dudan asteburuko ihesaldi horretara bideratu?". Zure finantzen ikusle izateari utzi eta zuzendari bihurtzen zara.</p><p><strong>Ariketa praktikoa:</strong> Hartu zure bankuko azken hilabeteko laburpena. Gastu bakoitzaren ondoan, idatzi "B" bat Beharrarentzat edo "N" bat Nahiarentzat. Emaitzak harritu egingo zaitu eta zure kontsumo-ereduei buruzko argitasun izugarria emango dizu.</p>`,
+                    cta_title: 'Egin Hurrengo Urratsa Bancfy-rekin',
+                    cta_desc: 'Teoria ulertzea bikaina da, baina benetako eraldaketa praktikarekin dator. Bancfy-n, tresna intuitiboak diseinatu ditugu zure gastuak sailkatzea prozesu automatiko eta errebelatzailea izan dadin.',
+                    cta_button: 'Eman izena itxaron-zerrendan',
+                    footer_copyright: '© 2025 Bancfy. Eskubide guztiak erreserbatuta.', footer_design: 'Zure ongizate finantzariorako ♥-rekin diseinatua.'
+                },
+                en: {
+                    seo_title: 'Needs vs. Wants: The Master Key | Bancfy Blog',
+                    seo_description: 'Learn to differentiate between what you need and what you want to take full control of your personal finances. The first step toward financial freedom.',
+                    og_title: 'Needs vs. Wants: The Master Key | Bancfy Blog',
+                    og_description: 'Learn to differentiate between what you need and what you want to take full control of your personal finances.',
+                    nav_features: 'Features', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Join the Waitlist',
+                    back_to_blog: '&larr; Back to Blog',
+                    article_title: 'Needs vs. Wants: The Master Key to Taking Control of Your Money',
+                    article_image_text: 'Needs vs Wants',
+                    article_content: `<p>Have you ever reached the end of the month wondering, "where did all my money go?" You're not alone. It's a frustrating feeling that makes us feel powerless over our own finances. But what if I told you the solution begins with a simple exercise in honesty?</p><p>Financial education isn't about complex math formulas or becoming a Wall Street expert. It's about understanding your own habits to make conscious decisions. And the first, most powerful step of all is learning to differentiate between what you <strong>need</strong> and what you <strong>want</strong>.</p><h3>What is a "Need"?</h3><p><strong>Needs</strong> are those expenses that are absolutely essential for living. They are the pillars of your life, the non-negotiable expenses that allow you to maintain your day-to-day life safely and healthily.</p><ul><li>Rent or mortgage for your home.</li><li>Utility bills: electricity, water, gas, internet.</li><li>Groceries from the supermarket.</li><li>Transportation to get to work.</li><li>Medical expenses or health insurance.</li></ul><p>These are the foundations of your budget. Without them, your stability would be compromised.</p><h3>And what is a "Want"?</h3><p><strong>Wants</strong>, on the other hand, are everything that makes life more enjoyable and fun, but is not strictly essential for your survival. They are the small (or large) rewards you give yourself.</p><ul><li>That daily takeaway coffee.</li><li>The limited-edition sneakers you just saw online.</li><li>Dinners at restaurants or drinks with friends.</li><li>The subscription to that streaming platform you barely use.</li><li>The latest smartphone model.</li></ul><h3>The Power Isn't in Restricting, But in Deciding</h3><p>Here's the magic: differentiating needs from wants doesn't mean you can never buy new sneakers or go out to dinner again. Not at all! It means <strong>you have the power to decide</strong>.</p><p>When you're aware that a €50 dinner is a want, you can ask yourself, "Do I really want to spend this money here, or would I rather put it towards that weekend getaway I've been craving?" You stop being a spectator of your finances and become the director.</p><p><strong>Practical exercise:</strong> Take your bank statement from the last month. Next to each expense, write an "N" for Need or a "W" for Want. The result will surprise you and give you incredible clarity about your spending patterns.</p>`,
+                    cta_title: 'Take the Next Step with Bancfy',
+                    cta_desc: 'Understanding the theory is great, but true transformation comes with practice. At Bancfy, we have designed intuitive tools to make classifying your expenses an automatic and insightful process.',
+                    cta_button: 'Join the waitlist',
+                    footer_copyright: '© 2025 Bancfy. All rights reserved.', footer_design: 'Designed with ♥ for your financial well-being.'
+                },
+                de: {
+                    seo_title: 'Bedürfnisse vs. Wünsche: Der Schlüssel | Bancfy Blog',
+                    seo_description: 'Lernen Sie, zwischen dem, was Sie brauchen, und dem, was Sie wollen, zu unterscheiden, um die volle Kontrolle über Ihre persönlichen Finanzen zu übernehmen. Der erste Schritt zur finanziellen Freiheit.',
+                    og_title: 'Bedürfnisse vs. Wünsche: Der Schlüssel | Bancfy Blog',
+                    og_description: 'Lernen Sie, zwischen dem, was Sie brauchen, und dem, was Sie wollen, zu unterscheiden, um die volle Kontrolle über Ihre persönlichen Finanzen zu übernehmen.',
+                    nav_features: 'Funktionen', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Auf die Warteliste',
+                    back_to_blog: '&larr; Zurück zum Blog',
+                    article_title: 'Bedürfnisse vs. Wünsche: Der Schlüssel zur Kontrolle über Ihr Geld',
+                    article_image_text: 'Bedürfnisse vs Wünsche',
+                    article_content: `<p>Haben Sie sich am Ende des Monats jemals gefragt, "wo ist mein ganzes Geld hin?" Sie sind nicht allein. Es ist ein frustrierendes Gefühl, das uns angesichts unserer eigenen Finanzen machtlos fühlen lässt. Aber was wäre, wenn ich Ihnen sagen würde, dass die Lösung mit einer einfachen Übung in Ehrlichkeit beginnt?</p><p>Finanzbildung hat nichts mit komplexen mathematischen Formeln oder dem Werden eines Wall-Street-Experten zu tun. Es geht darum, Ihre eigenen Gewohnheiten zu verstehen, um bewusste Entscheidungen treffen zu können. Und der erste, mächtigste Schritt von allen ist zu lernen, zwischen dem zu unterscheiden, was Sie <strong>brauchen</strong> und was Sie <strong>wollen</strong>.</p><h3>Was ist ein "Bedürfnis"?</h3><p><strong>Bedürfnisse</strong> sind jene Ausgaben, die absolut lebensnotwendig sind. Sie sind die Säulen Ihres Lebens, die nicht verhandelbaren Ausgaben, die es Ihnen ermöglichen, Ihren Alltag sicher und gesund zu gestalten.</p><ul><li>Miete oder Hypothek für Ihr Zuhause.</li><li>Rechnungen für Grundversorgung: Strom, Wasser, Gas, Internet.</li><li>Lebensmitteleinkäufe im Supermarkt.</li><li>Transport zur Arbeit.</li><li>Medizinische Ausgaben oder Krankenversicherung.</li></ul><p>Dies sind die Grundlagen Ihres Budgets. Ohne sie wäre Ihre Stabilität gefährdet.</p><h3>Und was ist ein "Wunsch"?</h3><p><strong>Wünsche</strong> hingegen sind alles, was das Leben angenehmer und unterhaltsamer macht, aber nicht unbedingt für Ihr Überleben notwendig ist. Es sind die kleinen (oder großen) Belohnungen, die Sie sich gönnen.</p><ul><li>Der tägliche Kaffee zum Mitnehmen.</li><li>Die limitierten Turnschuhe, die Sie gerade online gesehen haben.</li><li>Abendessen in Restaurants oder Drinks mit Freunden.</li><li>Das Abonnement für die Streaming-Plattform, die Sie kaum nutzen.</li><li>Das neueste Smartphone-Modell.</li></ul><h3>Die Macht liegt nicht im Einschränken, sondern im Entscheiden</h3><p>Hier liegt die Magie: Bedürfnisse von Wünschen zu unterscheiden bedeutet nicht, dass Sie sich nie wieder neue Turnschuhe kaufen oder zum Abendessen ausgehen können. Überhaupt nicht! Es bedeutet, dass <strong>Sie die Macht haben zu entscheiden</strong>.</p><p>Wenn Sie sich bewusst sind, dass ein 50-Euro-Abendessen ein Wunsch ist, können Sie sich fragen: "Möchte ich dieses Geld wirklich hier ausgeben, oder möchte ich es lieber für den Wochenendausflug verwenden, auf den ich mich so freue?". Sie hören auf, ein Zuschauer Ihrer Finanzen zu sein, und werden zum Regisseur.</p><p><strong>Praktische Übung:</strong> Nehmen Sie Ihren Kontoauszug des letzten Monats. Schreiben Sie neben jede Ausgabe ein "B" für Bedürfnis oder ein "W" für Wunsch. Das Ergebnis wird Sie überraschen und Ihnen eine unglaubliche Klarheit über Ihre Ausgabengewohnheiten geben.</p>`,
+                    cta_title: 'Machen Sie den nächsten Schritt mit Bancfy',
+                    cta_desc: 'Die Theorie zu verstehen ist großartig, aber die wahre Transformation kommt mit der Praxis. Bei Bancfy haben wir intuitive Werkzeuge entwickelt, um die Klassifizierung Ihrer Ausgaben zu einem automatischen und aufschlussreichen Prozess zu machen.',
+                    cta_button: 'Auf die Warteliste',
+                    footer_copyright: '© 2025 Bancfy. Alle Rechte vorbehalten.', footer_design: 'Mit ♥ für Ihr finanzielles Wohlbefinden gestaltet.'
+                },
+                'de-ch': {
+                    seo_title: 'Bedürfnis vs. Wunsch: De Schlüssel | Bancfy Blog',
+                    seo_description: 'Lern z\'unterscheide zwüsched dem, was bruchsch, und dem, was wotsch, um di volli Kontroll über dini persönliche Finanze z\'überneh. De erst Schritt zur finanzielle Freiheit.',
+                    og_title: 'Bedürfnis vs. Wunsch: De Schlüssel | Bancfy Blog',
+                    og_description: 'Lern z\'unterscheide zwüsched dem, was bruchsch, und dem, was wotsch, um di volli Kontroll über dini persönliche Finanze z\'überneh.',
+                    nav_features: 'Funktione', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Uf d\'Warteliste',
+                    back_to_blog: '&larr; Zrugg zum Blog',
+                    article_title: 'Bedürfnis vs. Wunsch: De Schlüssel zur Kontroll über dis Geld',
+                    article_image_text: 'Bedürfnis vs Wunsch',
+                    article_content: `<p>Bisch am Endi vom Monet au scho mal da gstande und hesch dich gfrogt, "wo isch all mis Geld ane?" Du bisch nöd allein. S\'isch es frustrierends Gfühl, wo eim machtlos macht gägenüber de eigene Finanze. Aber was, wenn ich dir säge wür, d\'Lösig fangt mitere eifache Üebig in Ehrlichkeit aa?</p><p>Finanzbildig gaht nöd um komplexi mathematischi Formle oder drum, en Wall-Street-Expert z\'werde. Es gaht drum, dini eigene Gwohnheite z\'verstah, zum bewussti Entscheidige chönne z\'treffe. Und de erst, de mächtigst Schritt vo allne, isch z\'lerne, zwüsched dem z\'unterscheide, was <strong>bruchsch</strong> und was <strong>wotsch</strong>.</p><h3>Was isch es "Bedürfnis"?</h3><p><strong>Bedürfnis</strong> sind die Usgabe, wo absolut überlebensnotwendig sind. Si sind d\'Pfiiler vo dim Lebe, di nöd verhandelbare Usgabe, wo dir erlaube, din Alltag sicher und gsund z\'gstalte.</p><ul><li>D\'Mieti oder d\'Hypothek für dini Wohnig.</li><li>D\'Rächnige für d\'Grundversorgig: Strom, Wasser, Gas, Internet.</li><li>S\'Ii chaufe vo Esse im Supermarkt.</li><li>De Transport zum Schaffe.</li><li>Medizinischi Usgabe oder Chrankekasse.</li></ul><p>Das sind d\'Grundlage vo dim Budget. Ohni die wär dini Stabilität gföhrdet.</p><h3>Und was isch en "Wunsch"?</h3><p><strong>Wünsch</strong>, uf de andere Siite, sind all die Sache, wo s\'Lebe schöner und luschtiger mached, aber nöd unbedingt für dis Überlebe notwendig sind. S\'sind di chliine (oder grosse) Belohnige, wo du dir gisch.</p><ul><li>De Kafi zum Mitneh, wo du dir jede Morge gönnsch.</li><li>Di limitierti Uflag vo Turnschueh, wo du grad online gseh hesch.</li><li>S\'Znacht im Restaurant oder es Bier mit Kollege.</li><li>S\'Abo für die Streaming-Plattform, wo du fascht nie luegsch.</li><li>S\'neuste Smartphone-Modell.</li></ul><h3>D\'Macht liit nöd im Iischränke, sondern im Entscheide</h3><p>Do isch de Zauber: Bedürfnis vo Wünsch z\'unterscheide heisst nöd, dass du dir nie meh neui Schueh chaufe oder go Znacht esse dörfsch. Gar nöd! Es heisst, dass <strong>du d\'Macht hesch z\'entscheide</strong>.</p><p>Wenn dir bewusst wird, dass es 50-Franke-Znacht en Wunsch isch, chasch dich frage: "Will ich das Geld würklich do usgeh, oder investier ichs lieber in de Wuchenend-Usflug, wo ich mir so sehr wünsche?". Du hörsch uf, en Zueschauer vo dine Finanze z\'sii, und wirsch zum Regisseur.</p><p><strong>Praktischi Üebig:</strong> Nimm din Konto-Uszug vom letschte Monet. Schriib näbe jedi Usgab es "B" für Bedürfnis oder es "W" für Wunsch. S\'Resultat wird dich überrasche und dir e unglaublici Klarheit über dini Konsum-Muster geh.</p>`,
+                    cta_title: 'Mach de nächst Schritt mit Bancfy',
+                    cta_desc: 'D\'Theorie z\'verstah isch super, aber di echt Transformation chunnt mit de Praxis. Bi Bancfy hemmer intuitivi Werkzüüg entwicklet, demit s\'Kategorisiere vo dine Usgabe en automatische und erhellende Prozess wird.',
+                    cta_button: 'Uf d\'Warteliste',
+                    footer_copyright: '© 2025 Bancfy. Alli Rächt vorbhalte.', footer_design: 'Mit ♥ für dis finanziells Wohlbefinde gschaffet.'
+                },
+                fr: {
+                    seo_title: 'Besoins vs. Envies : La Clé Maîtresse | Blog de Bancfy',
+                    seo_description: 'Apprenez à faire la différence entre ce dont vous avez besoin et ce que vous désirez pour prendre le contrôle total de vos finances personnelles. Le premier pas vers la liberté financière.',
+                    og_title: 'Besoins vs. Envies : La Clé Maîtresse | Blog de Bancfy',
+                    og_description: 'Apprenez à faire la différence entre ce dont vous avez besoin et ce que vous désirez pour prendre le contrôle total de vos finances personnelles.',
+                    nav_features: 'Fonctionnalités', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Rejoindre l\'attente',
+                    back_to_blog: '&larr; Retour au Blog',
+                    article_title: 'Besoins vs. Envies : La Clé Maîtresse pour Prendre le Contrôle de votre Argent',
+                    article_image_text: 'Besoins vs Envies',
+                    article_content: `<p>Êtes-vous déjà arrivé à la fin du mois en vous demandant "où est passé tout mon argent" ? Vous n'êtes pas seul. C'est un sentiment frustrant qui nous fait nous sentir impuissants face à nos propres finances. Mais si je vous disais que la solution commence par un simple exercice d'honnêteté ?</p><p>L'éducation financière ne consiste pas en des formules mathématiques complexes ou à devenir un expert de Wall Street. Il s'agit de comprendre ses propres habitudes pour pouvoir prendre des décisions conscientes. Et le premier pas, le plus puissant de tous, est d'apprendre à faire la différence entre ce dont vous <strong>avez besoin</strong> et ce que vous <strong>désirez</strong>.</p><h3>Qu'est-ce qu'un "Besoin" ?</h3><p>Les <strong>besoins</strong> sont les dépenses absolument essentielles pour vivre. Ce sont les piliers de votre vie, les dépenses non négociables qui vous permettent de maintenir votre quotidien de manière sûre et saine.</p><ul><li>Le loyer ou l'hypothèque de votre logement.</li><li>Les factures des services de base : électricité, eau, gaz, internet.</li><li>Les courses alimentaires au supermarché.</li><li>Le transport pour aller au travail.</li><li>Les frais médicaux ou l'assurance maladie.</li></ul><p>Ce sont les fondations de votre budget. Sans eux, votre stabilité serait compromise.</p><h3>Et qu'est-ce qu'une "Envie" ?</h3><p>Les <strong>envies</strong>, en revanche, sont tout ce qui rend la vie plus agréable et amusante, mais qui n'est pas strictement essentiel à votre survie. Ce sont les petites (ou grandes) récompenses que vous vous offrez.</p><ul><li>Ce café à emporter que vous prenez chaque matin.</li><li>Les baskets en édition limitée que vous venez de voir en ligne.</li><li>Les dîners au restaurant ou les verres entre amis.</li><li>L'abonnement à cette plateforme de streaming que vous n'utilisez presque jamais.</li><li>Le dernier modèle de smartphone.</li></ul><h3>Le Pouvoir n'est pas dans la Restriction, mais dans la Décision</h3><p>Voici la magie : différencier les besoins des envies ne signifie pas que vous ne pourrez plus jamais vous acheter de nouvelles baskets ou sortir dîner. Pas du tout ! Cela signifie que <strong>vous avez le pouvoir de décider</strong>.</p><p>Lorsque vous êtes conscient qu'un dîner à 50 € est une envie, vous pouvez vous demander : "Est-ce que je veux vraiment dépenser cet argent ici, ou est-ce que je préfère le consacrer à cette escapade de week-end dont j'ai tant envie ?". Vous cessez d'être un spectateur de vos finances et vous en devenez le réalisateur.</p><p><strong>Exercice pratique :</strong> Prenez votre relevé bancaire du dernier mois. À côté de chaque dépense, écrivez un "B" pour Besoin ou un "E" for Envie. Le résultat vous surprendra et vous apportera une clarté incroyable sur vos habitudes de consommation.</p>`,
+                    cta_title: 'Passez à l\'Étape Suivante avec Bancfy',
+                    cta_desc: 'Comprendre la théorie, c\'est bien, mais la véritable transformation vient avec la pratique. Chez Bancfy, nous avons conçu des outils intuitifs pour que la classification de vos dépenses devienne un processus automatique et révélateur.',
+                    cta_button: 'Rejoindre la liste d\'attente',
+                    footer_copyright: '© 2025 Bancfy. Tous droits réservés.', footer_design: 'Conçu avec ♥ pour votre bien-être financier.'
+                },
+                it: {
+                    seo_title: 'Bisogni vs. Desideri: La Chiave Maestra | Blog di Bancfy',
+                    seo_description: 'Impara a distinguere tra ciò di cui hai bisogno e ciò che desideri per assumere il pieno controllo delle tue finanze personali. Il primo passo verso la libertà finanziaria.',
+                    og_title: 'Bisogni vs. Desideri: La Chiave Maestra | Blog di Bancfy',
+                    og_description: 'Impara a distinguere tra ciò di cui hai bisogno e ciò che desideri per assumere il pieno controllo delle tue finanze personali.',
+                    nav_features: 'Caratteristiche', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contatti', nav_join_waitlist: 'Unisciti all\'Attesa',
+                    back_to_blog: '&larr; Torna al Blog',
+                    article_title: 'Bisogni vs. Desideri: La Chiave Maestra per Prendere il Controllo del Tuo Denaro',
+                    article_image_text: 'Bisogni vs Desideri',
+                    article_content: `<p>Sei mai arrivato a fine mese chiedendoti "dove sono finiti tutti i miei soldi"? Non sei solo. È una sensazione frustrante che ci fa sentire impotenti di fronte alle nostre finanze. Ma se ti dicessi che la soluzione inizia con un semplice esercizio di onestà?</p><p>L'educazione finanziaria non riguarda formule matematiche complesse o diventare un esperto di Wall Street. Riguarda la comprensione delle proprie abitudini per poter prendere decisioni consapevoli. E il primo passo, il più potente di tutti, è imparare a distinguere tra ciò di cui hai <strong>bisogno</strong> e ciò che <strong>desideri</strong>.</p><h3>Cos'è un "Bisogno"?</h3><p>I <strong>bisogni</strong> sono quelle spese assolutamente essenziali per vivere. Sono i pilastri della tua vita, le spese non negoziabili che ti permettono di mantenere la tua vita quotidiana in modo sicuro e sano.</p><ul><li>L'affitto o il mutuo della tua casa.</li><li>Le bollette dei servizi di base: luce, acqua, gas, internet.</li><li>La spesa al supermercato.</li><li>Il trasporto per andare al lavoro.</li><li>Spese mediche o assicurazione sanitaria.</li></ul><p>Queste sono le fondamenta del tuo budget. Senza di esse, la tua stabilità sarebbe compromessa.</p><h3>E cos'è un "Desiderio"?</h3><p>I <strong>desideri</strong>, d'altra parte, sono tutto ciò che rende la vita più piacevole e divertente, ma che non è strettamente essenziale per la tua sopravvivenza. Sono le piccole (o grandi) ricompense che ti concedi.</p><ul><li>Quel caffè da asporto che prendi ogni mattina.</li><li>Le scarpe da ginnastica in edizione limitata che hai appena visto online.</li><li>Le cene al ristorante o i drink con gli amici.</li><li>L'abbonamento a quella piattaforma di streaming che usi a malapena.</li><li>L'ultimo modello di smartphone.</li></ul><h3>Il Potere Non Sta nel Restringere, ma nel Decidere</h3><p>Ecco la magia: distinguere i bisogni dai desideri non significa che non potrai mai più comprarti un paio di scarpe nuove o uscire a cena. Assolutamente no! Significa che <strong>tu hai il potere di decidere</strong>.</p><p>Quando sei consapevole che una cena da 50€ è un desiderio, puoi chiederti: "Voglio davvero spendere questi soldi qui, o preferisco destinarli a quella gita del fine settimana che desidero tanto?". Smetti di essere uno spettatore delle tue finanze e diventi il regista.</p><p><strong>Esercizio pratico:</strong> Prendi l'estratto conto della tua banca dell'ultimo mese. Accanto a ogni spesa, scrivi una "B" per Bisogno o una "D" per Desiderio. Il risultato ti sorprenderà e ti darà una chiarezza incredibile sui tuoi schemi di consumo.</p>`,
+                    cta_title: 'Fai il Prossimo Passo con Bancfy',
+                    cta_desc: 'Capire la teoria è fantastico, ma la vera trasformazione arriva con la pratica. In Bancfy, abbiamo progettato strumenti intuitivi per rendere la classificazione delle tue spese un processo automatico e rivelatore.',
+                    cta_button: 'Unisciti alla lista d\'attesa',
+                    footer_copyright: '© 2025 Bancfy. Tutti i diritti riservati.', footer_design: 'Progettato con ♥ per il tuo benessere finanziario.'
+                },
+                pt: {
+                    seo_title: 'Necessidades vs. Desejos: A Chave Mestra | Blog da Bancfy',
+                    seo_description: 'Aprenda a diferenciar entre o que você precisa e o que deseja para assumir o controle total de suas finanças pessoais. O primeiro passo para a liberdade financeira.',
+                    og_title: 'Necessidades vs. Desejos: A Chave Mestra | Blog da Bancfy',
+                    og_description: 'Aprenda a diferenciar entre o que você precisa e o que deseja para assumir o controle total de suas finanças pessoais.',
+                    nav_features: 'Recursos', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contato', nav_join_waitlist: 'Junte-se à Espera',
+                    back_to_blog: '&larr; Voltar ao Blog',
+                    article_title: 'Necessidades vs. Desejos: A Chave Mestra para Assumir o Controle do seu Dinheiro',
+                    article_image_text: 'Necessidades vs Desejos',
+                    article_content: `<p>Você já chegou ao final do mês se perguntando "para onde foi todo o meu dinheiro"? Você não está sozinho. É uma sensação frustrante que nos faz sentir impotentes diante de nossas próprias finanças. Mas, e se eu lhe dissesse que a solução começa com um simples exercício de honestidade?</p><p>Educação financeira não é sobre fórmulas matemáticas complexas ou se tornar um especialista de Wall Street. É sobre entender seus próprios hábitos para poder tomar decisões conscientes. E o primeiro passo, o mais poderoso de todos, é aprender a diferenciar entre o que você <strong>precisa</strong> e o que você <strong>deseja</strong>.</p><h3>O que é uma "Necessidade"?</h3><p>As <strong>necessidades</strong> são aquelas despesas absolutamente essenciais para viver. São os pilares da sua vida, as despesas não negociáveis que permitem que você mantenha seu dia a dia de forma segura e saudável.</p><ul><li>O aluguel ou a hipoteca da sua casa.</li><li>As contas de serviços básicos: luz, água, gás, internet.</li><li>A compra de comida no supermercado.</li><li>O transporte para ir ao trabalho.</li><li>Despesas médicas ou seguro de saúde.</li></ul><p>Estes são os alicerces do seu orçamento. Sem eles, sua estabilidade estaria comprometida.</p><h3>E o que é um "Desejo"?</h3><p>Os <strong>desejos</strong>, por outro lado, são tudo aquilo que torna a vida mais agradável e divertida, mas que não é estritamente essencial para sua sobrevivência. São as pequenas (ou grandes) recompensas que você se dá.</p><ul><li>Aquele café para levar que você toma toda manhã.</li><li>Os tênis de edição limitada que você acabou de ver online.</li><li>Os jantares em restaurantes ou as bebidas com amigos.</li><li>A assinatura daquela plataforma de streaming que você quase não usa.</li><li>O último modelo de smartphone.</li></ul><h3>O Poder Não Está em Restringir, Mas em Decidir</h3><p>Aqui está a mágica: diferenciar necessidades de desejos não significa que você nunca mais poderá comprar tênis novos ou sair para jantar. De jeito nenhum! Significa que <strong>você tem o poder de decidir</strong>.</p><p>Quando você está ciente de que um jantar de 50€ é um desejo, pode se perguntar: "Eu realmente quero gastar esse dinheiro aqui, ou prefiro destiná-lo àquela escapada de fim de semana que tanto desejo?". Você deixa de ser um espectador de suas finanças e se torna o diretor.</p><p><strong>Exercício prático:</strong> Pegue o extrato do seu banco do último mês. Ao lado de cada despesa, escreva um "N" para Necessidade ou um "D" para Desejo. O resultado irá surpreendê-lo e lhe dará uma clareza incrível sobre seus padrões de consumo.</p>`,
+                    cta_title: 'Dê o Próximo Passo com a Bancfy',
+                    cta_desc: 'Entender a teoria é ótimo, mas a verdadeira transformação vem com a prática. Na Bancfy, projetamos ferramentas intuitivas para que classificar suas despesas seja um processo automático e revelador.',
+                    cta_button: 'Junte-se à lista de espera',
+                    footer_copyright: '© 2025 Bancfy. Todos os direitos reservados.', footer_design: 'Projetado com ♥ para o seu bem-estar financeiro.'
+                },
+                ja: {
+                    seo_title: '必要経費 vs. 欲しいもの：マスターキー | Bancfyブログ',
+                    seo_description: '個人の財政を完全にコントロールするために、必要なものと欲しいものを区別する方法を学びましょう。経済的自由への第一歩です。',
+                    og_title: '必要経費 vs. 欲しいもの：マスターキー | Bancfyブログ',
+                    og_description: '個人の財政を完全にコントロールするために、必要なものと欲しいものを区別する方法を学びましょう。',
+                    nav_features: '特徴', nav_blog: 'ブログ', nav_faq: 'FAQ', nav_contact: 'お問い合わせ', nav_join_waitlist: 'ウェイティングリストに参加',
+                    back_to_blog: '&larr; ブログに戻る',
+                    article_title: '必要経費 vs. 欲しいもの：お金を管理するためのマスターキー',
+                    article_image_text: '必要経費 vs 欲しいもの',
+                    article_content: `<p>月末に「お金はどこへ消えたんだろう？」と不思議に思ったことはありませんか？あなただけではありません。それは私たちを自分自身の財政に対して無力だと感じさせる、もどかしい感覚です。しかし、解決策は正直さという単純な練習から始まると言ったらどうでしょう？</p><p>金融教育は、複雑な数式やウォール街の専門家になることではありません。意識的な決定を下すために自分自身の習慣を理解することです。そして、その第一歩であり、最も強力なステップは、<strong>必要なもの</strong>と<strong>欲しいもの</strong>を区別することを学ぶことです。</p><h3>「必要経費」とは？</h3><p><strong>必要経費</strong>とは、生活に絶対不可欠な支出です。それらはあなたの人生の柱であり、安全で健康的な日常生活を維持するための交渉の余地のない費用です。</p><ul><li>住居の家賃または住宅ローン。</li><li>光熱費：電気、水道、ガス、インターネット。</li><li>スーパーマーケットでの食料品の購入。</li><li>職場への交通費。</li><li>医療費または健康保険。</li></ul><p>これらはあなたの予算の基盤です。これらがなければ、あなたの安定は損なわれます。</p><h3>では、「欲しいもの」とは？</h3><p>一方、<strong>欲しいもの</strong>とは、生活をより楽しく、面白くするものですが、生存に厳密に不可欠ではありません。それはあなたが自分自身に与える小さな（または大きな）ご褒美です。</p><ul><li>毎朝飲むテイクアウトのコーヒー。</li><li>オンラインで見たばかりの限定版スニーカー。</li><li>レストランでのディナーや友人との飲み会。</li><li>ほとんど利用しないストリーミングプラットフォームのサブスクリプション。</li><li>最新モデルのスマートフォン。</li></ul><h3>力は制限することではなく、決定することにある</h3><p>ここに魔法があります：必要経費と欲しいものを区別することは、二度と新しいスニーカーを買ったり、外食したりできないという意味ではありません。まったく違います！それは<strong>あなたが決定する力を持っている</strong>ということです。</p><p>50ユーロのディナーが欲しいものであると認識したとき、「本当にこのお金をここで使いたいのか、それとも切望している週末の小旅行のために取っておきたいのか？」と自問することができます。あなたは自分の財政の傍観者であることをやめ、監督になります。</p><p><strong>実践的な演習：</strong>先月の銀行の明細書を取り出してください。各支出の横に、必要経費の場合は「N」、欲しいものの場合は「W」と記入してください。その結果はあなたを驚かせ、あなたの消費パターンについて信じられないほどの明確さを与えるでしょう。</p>`,
+                    cta_title: 'Bancfyで次の一歩を踏み出そう',
+                    cta_desc: '理論を理解することは素晴らしいことですが、真の変革は実践から生まれます。Bancfyでは、支出の分類を自動的で洞察に満ちたプロセスにするための直感的なツールを設計しました。',
+                    cta_button: 'ウェイティングリストに参加する',
+                    footer_copyright: '© 2025 Bancfy. 無断複写・転載を禁じます。', footer_design: 'あなたの金融の幸福のために♥を込めて設計されました。'
+                },
+                ko: {
+                    seo_title: '필요 vs. 원함: 마스터 키 | Bancfy 블로그',
+                    seo_description: '개인 재정을 완전히 통제하기 위해 필요한 것과 원하는 것을 구별하는 법을 배우세요. 재정적 자유를 향한 첫 걸음입니다.',
+                    og_title: '필요 vs. 원함: 마스터 키 | Bancfy 블로그',
+                    og_description: '개인 재정을 완전히 통제하기 위해 필요한 것과 원하는 것을 구별하는 법을 배우세요.',
+                    nav_features: '기능', nav_blog: '블로그', nav_faq: 'FAQ', nav_contact: '문의하기', nav_join_waitlist: '대기자 명단 참여',
+                    back_to_blog: '&larr; 블로그로 돌아가기',
+                    article_title: '필요 대 원함: 돈을 통제하기 위한 마스터 키',
+                    article_image_text: '필요 vs 원함',
+                    article_content: `<p>월말에 "내 돈이 다 어디로 갔지?"라고 궁금해한 적이 있습니까? 당신 혼자가 아닙니다. 그것은 우리 자신의 재정에 대해 무력감을 느끼게 하는 좌절스러운 감정입니다. 하지만 해결책이 정직이라는 간단한 연습에서 시작된다고 말하면 어떨까요?</p><p>금융 교육은 복잡한 수학 공식이나 월스트리트 전문가가 되는 것에 관한 것이 아닙니다. 의식적인 결정을 내리기 위해 자신의 습관을 이해하는 것입니다. 그리고 그 첫 번째이자 가장 강력한 단계는 <strong>필요한 것</strong>과 <strong>원하는 것</strong>을 구별하는 법을 배우는 것입니다.</p><h3>"필요"란 무엇인가?</h3><p><strong>필요</strong>는 생활에 절대적으로 필수적인 지출입니다. 그것들은 당신의 삶의 기둥이며, 안전하고 건강하게 일상을 유지할 수 있게 해주는 협상 불가능한 비용입니다.</p><ul><li>집의 임대료 또는 모기지.</li><li>공과금: 전기, 수도, 가스, 인터넷.</li><li>슈퍼마켓에서의 식료품 구매.</li><li>직장 출퇴근 교통비.</li><li>의료비 또는 건강 보험.</li></ul><p>이것들은 당신의 예산의 기초입니다. 이것들이 없으면 당신의 안정성이 위태로워질 것입니다.</p><h3>"원함"이란 무엇인가?</h3><p>반면에 <strong>원함</strong>은 삶을 더 즐겁고 재미있게 만들지만 생존에 엄격하게 필수적이지는 않은 모든 것입니다. 그것은 당신이 자신에게 주는 작거나 큰 보상입니다.</p><ul><li>매일 아침 마시는 테이크아웃 커피.</li><li>방금 온라인에서 본 한정판 운동화.</li><li>레스토랑에서의 저녁 식사나 친구들과의 술자리.</li><li>거의 사용하지 않는 스트리밍 플랫폼 구독.</li><li>최신 스마트폰 모델.</li></ul><h3>힘은 제한하는 것이 아니라 결정하는 것에 있다</h3><p>여기에 마법이 있습니다. 필요와 원함을 구별한다고 해서 새 운동화를 사거나 외식을 할 수 없다는 의미는 아닙니다. 전혀 그렇지 않습니다! 그것은 <strong>당신이 결정할 힘이 있다</strong>는 것을 의미합니다.</p><p>50유로짜리 저녁 식사가 원하는 것임을 알게 되면 "정말로 이 돈을 여기에 쓰고 싶은가, 아니면 그토록 갈망하던 주말 여행을 위해 저축하고 싶은가?"라고 자문할 수 있습니다. 당신은 당신의 재정의 구경꾼이 되는 것을 멈추고 감독이 됩니다.</p><p><strong>실용적인 연습:</strong> 지난달 은행 명세서를 가져오세요. 각 지출 옆에 필요의 경우 "N", 원함의 경우 "W"를 적으십시오. 결과는 당신을 놀라게 할 것이며 당신의 소비 패턴에 대한 놀라운 명확성을 줄 것입니다.</p>`,
+                    cta_title: 'Bancfy와 함께 다음 단계로 나아가세요',
+                    cta_desc: '이론을 이해하는 것도 좋지만, 진정한 변화는 실천에서 비롯됩니다. Bancfy에서는 지출 분류를 자동적이고 통찰력 있는 프로세스로 만드는 직관적인 도구를 설계했습니다.',
+                    cta_button: '대기자 명단에 등록하기',
+                    footer_copyright: '© 2025 Bancfy. 모든 권리 보유.', footer_design: '당신의 금융 복지를 위해 ♥로 디자인되었습니다.'
+                },
+                zh: {
+                    seo_title: '需求 vs. 欲望：万能钥匙 | Bancfy 博客',
+                    seo_description: '学习区分您需要什么和想要什么，以完全控制您的个人财务。迈向财务自由的第一步。',
+                    og_title: '需求 vs. 欲望：万能钥匙 | Bancfy 博客',
+                    og_description: '学习区分您需要什么和想要什么，以完全控制您的个人财务。',
+                    nav_features: '功能', nav_blog: '博客', nav_faq: '常见问题', nav_contact: '联系我们', nav_join_waitlist: '加入等候名单',
+                    back_to_blog: '&larr; 返回博客',
+                    article_title: '需求与欲望：掌控金钱的万能钥匙',
+                    article_image_text: '需求 vs 欲望',
+                    article_content: `<p>您是否曾在月底时想知道“我所有的钱都去哪儿了”？您并不孤单。这是一种令人沮丧的感觉，让我们对自己的财务状况感到无能为力。但是，如果我告诉您解决方案始于一个简单的诚实练习呢？</p><p>金融教育不是关于复杂的数学公式或成为华尔街专家。它是关于了解自己的习惯，以便做出有意识的决定。而第一步，也是最强大的一步，就是学会区分您<strong>需要</strong>什么和您<strong>想要</strong>什么。</p><h3>什么是“需求”？</h3><p><strong>需求</strong>是生活绝对必需的开支。它们是您生活的支柱，是维持您日常生活安全和健康的不可协商的开支。</p><ul><li>您住房的租金或抵押贷款。</li><li>公用事业账单：电、水、煤气、互联网。</li><li>在超市购买食品。</li><li>上班的交通费用。</li><li>医疗费用或健康保险。</li></ul><p>这些是您预算的基础。没有它们，您的稳定将受到损害。</p><h3>什么是“欲望”？</h3><p>另一方面，<strong>欲望</strong>是让生活更愉快、更有趣，但并非生存所必需的一切。它们是您给自己的小（或大）奖励。</p><ul><li>您每天早上喝的外卖咖啡。</li><li>您刚在网上看到的限量版运动鞋。</li><li>在餐厅用餐或与朋友喝酒。</li><li>您几乎不使用的流媒体平台的订阅。</li><li>最新款的智能手机。</li></ul><h3>力量不在于限制，而在于决定</h3><p>这就是魔力所在：区分需求和欲望并不意味着您再也不能买新运动鞋或出去吃饭了。一点也不！这意味着<strong>您有权决定</strong>。</p><p>当您意识到一顿 50 欧元的晚餐是一种欲望时，您可以问自己：“我真的想把这笔钱花在这里，还是更愿意把它用于我一直渴望的周末度假？”您不再是自己财务的旁观者，而是导演。</p><p><strong>实践练习：</strong>拿出您上个月的银行对账单。在每笔支出旁边，写上“N”代表需求，或“W”代表欲望。结果会让您大吃一惊，并让您对自己的消费模式有惊人的清晰度。</p>`,
+                    cta_title: '与 Bancfy 一起迈出下一步',
+                    cta_desc: '理解理论很棒，但真正的转变来自于实践。在 Bancfy，我们设计了直观的工具，使您的支出分类成为一个自动化且富有洞察力的过程。',
+                    cta_button: '加入等候名单',
+                    footer_copyright: '© 2025 Bancfy。版权所有。', footer_design: '用 ♥ 为您的财务福祉而设计。'
+                },
+                ar: {
+                    seo_title: 'الاحتياجات مقابل الرغبات: المفتاح الرئيسي | مدونة Bancfy',
+                    seo_description: 'تعلم كيفية التمييز بين ما تحتاجه وما تريده للسيطرة الكاملة على أموالك الشخصية. الخطوة الأولى نحو الحرية المالية.',
+                    og_title: 'الاحتياجات مقابل الرغبات: المفتاح الرئيسي | مدونة Bancfy',
+                    og_description: 'تعلم كيفية التمييز بين ما تحتاجه وما تريده للسيطرة الكاملة على أموالك الشخصية.',
+                    nav_features: 'الميزات', nav_blog: 'المدونة', nav_faq: 'الأسئلة الشائعة', nav_contact: 'اتصل بنا', nav_join_waitlist: 'انضم إلى قائمة الانتظار',
+                    back_to_blog: '&larr; العودة إلى المدونة',
+                    article_title: 'الاحتياجات مقابل الرغبات: المفتاح الرئيسي للسيطرة على أموالك',
+                    article_image_text: 'الاحتياجات مقابل الرغبات',
+                    article_content: `<p>هل وصلت يومًا إلى نهاية الشهر تتساءل "أين ذهبت كل أموالي"؟ أنت لست وحدك. إنه شعور محبط يجعلنا نشعر بالعجز أمام مواردنا المالية. ولكن، ماذا لو أخبرتك أن الحل يبدأ بتمرين بسيط في الصدق؟</p><p>لا تتعلق الثقافة المالية بالصيغ الرياضية المعقدة أو أن تصبح خبيرًا في وول ستريت. إنها تتعلق بفهم عاداتك الخاصة لاتخاذ قرارات واعية. والخطوة الأولى، والأكثر قوة على الإطلاق، هي تعلم التمييز بين ما <strong>تحتاجه</strong> وما <strong>تريده</strong>.</p><h3>ما هي "الحاجة"؟</h3><p><strong>الاحتياجات</strong> هي تلك النفقات الضرورية للغاية للعيش. إنها ركائز حياتك، والنفقات غير القابلة للتفاوض التي تسمح لك بالحفاظ على حياتك اليومية بأمان وصحة.</p><ul><li>إيجار أو رهن منزلك.</li><li>فواتير الخدمات الأساسية: الكهرباء والماء والغاز والإنترنت.</li><li>شراء الطعام من السوبر ماركت.</li><li>المواصلات للذهاب إلى العمل.</li><li>النفقات الطبية أو التأمين الصحي.</li></ul><p>هذه هي أسس ميزانيتك. بدونها، سيتعرض استقرارك للخطر.</p><h3>وما هي "الرغبة"؟</h3><p><strong>الرغبات</strong>، من ناحية أخرى، هي كل ما يجعل الحياة أكثر متعة ومرحًا، ولكنه ليس ضروريًا لبقائك على قيد الحياة. إنها المكافآت الصغيرة (أو الكبيرة) التي تمنحها لنفسك.</p><ul><li>تلك القهوة الجاهزة التي تتناولها كل صباح.</li><li>الأحذية الرياضية ذات الإصدار المحدود التي رأيتها للتو عبر الإنترنت.</li><li>العشاء في المطاعم أو المشروبات مع الأصدقاء.</li><li>الاشتراك في منصة البث التي بالكاد تستخدمها.</li><li>أحدث طراز من الهواتف الذكية.</li></ul><h3>القوة ليست في التقييد، بل في اتخاذ القرار</h3><p>هنا يكمن السحر: التمييز بين الاحتياجات والرغبات لا يعني أنك لن تتمكن أبدًا من شراء أحذية رياضية جديدة أو الخروج لتناول العشاء مرة أخرى. على الاطلاق! هذا يعني أن <strong>لديك القدرة على اتخاذ القرار</strong>.</p><p>عندما تدرك أن عشاء بقيمة 50 يورو هو رغبة، يمكنك أن تسأل نفسك: "هل أريد حقًا إنفاق هذا المال هنا، أم أفضل تخصيصه لتلك الرحلة في عطلة نهاية الأسبوع التي أتوق إليها؟". تتوقف عن كونك متفرجًا على أموالك وتصبح المخرج.</p><p><strong>تمرين عملي:</strong> خذ كشف حسابك البنكي للشهر الماضي. بجانب كل حساب، اكتب "ح" للحاجة أو "ر" للرغبة. ستفاجئك النتيجة وستمنحك وضوحًا لا يصدق حول أنماط إنفاقك.</p>`,
+                    cta_title: 'اتخذ الخطوة التالية مع Bancfy',
+                    cta_desc: 'فهم النظرية أمر رائع، لكن التحول الحقيقي يأتي مع الممارسة. في Bancfy، قمنا بتصميم أدوات سهلة الاستخدام لجعل تصنيف نفقاتك عملية تلقائية وكاشفة.',
+                    cta_button: 'انضم إلى قائمة الانتظaar',
+                    footer_copyright: '© 2025 Bancfy. جميع الحقوق محفوظة.', footer_design: 'صُمم بـ ♥ من أجل رفاهيتك المالية.'
+                }
+            };
+            
+            const supportedLangs = {
+                'es': { name: 'Español', flag: 'es' },
+                'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg' },
+                'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg' },
+                'en': { name: 'English', flag: 'gb' },
+                'de': { name: 'Deutsch', flag: 'de' },
+                'de-ch': { name: 'Schweizerdeutsch', flag: 'ch' },
+                'fr': { name: 'Français', flag: 'fr' },
+                'it': { name: 'Italiano', flag: 'it' },
+                'pt': { name: 'Português', flag: 'pt' },
+                'ja': { name: '日本語', flag: 'jp' },
+                'ko': { name: '한국어', flag: 'kr' },
+                'zh': { name: '中文', flag: 'cn' },
+                'ar': { name: 'العربية', flag: 'ae' }
+            };
+
+            function translatePage(lang) {
+                const targetLang = translations[lang] ? lang : 'es'; 
+                const t = translations[targetLang] || translations.es;
+
+                // Update body content
+                document.querySelectorAll('[data-translate-key]').forEach(el => {
+                    const key = el.getAttribute('data-translate-key');
+                    const translation = t[key] || translations.es[key] || el.innerHTML;
+                    
+                    // CORRECCIÓN: Usar innerHTML para que respete el formato HTML del texto
+                    if (key === 'article_content') {
+                         el.innerHTML = translation;
+                    } else {
+                         el.innerHTML = translation;
+                    }
+                });
+                
+                // CORRECCIÓN: Actualizar la imagen con el texto traducido
+                const articleImage = document.getElementById('article-image');
+                if(articleImage) {
+                    const imageText = t.article_image_text || translations.es.article_image_text;
+                    articleImage.src = `https://placehold.co/600x300/0C2340/C8B273?text=${encodeURIComponent(imageText)}`;
+                }
+
+
+                // Update SEO and Open Graph meta tags
+                document.getElementById('meta-title').textContent = t.seo_title || translations.es.seo_title;
+                document.getElementById('meta-description').setAttribute('content', t.seo_description || translations.es.seo_description);
+                document.getElementById('og-title').setAttribute('content', t.og_title || translations.es.og_title);
+                document.getElementById('og-description').setAttribute('content', t.og_description || translations.es.og_description);
+                document.getElementById('twitter-title').setAttribute('content', t.og_title || translations.es.og_title);
+                document.getElementById('twitter-description').setAttribute('content', t.og_description || translations.es.og_description);
+                if (articleImage) {
+                    document.getElementById('og-image').setAttribute('content', articleImage.src);
+                    document.getElementById('twitter-image').setAttribute('content', articleImage.src);
+                }
+
+
+                // Update root attributes
+                document.documentElement.lang = targetLang;
+                document.documentElement.dir = targetLang === 'ar' ? 'rtl' : 'ltr';
+            }
+
+            function setLanguage(lang) {
+                const langInfo = supportedLangs[lang] || supportedLangs['es'];
+                const flagSrc = langInfo.flagUrl ? langInfo.flagUrl : `https://flagcdn.com/w20/${langInfo.flag}.png`;
+                const langCode = lang.split('-')[0].toUpperCase();
+
+                const currentFlagImg = document.getElementById('current-lang-flag');
+                if (currentFlagImg) {
+                    currentFlagImg.src = flagSrc;
+                    currentFlagImg.alt = `Bandera de ${langInfo.name}`;
+                }
+                const currentLangCode = document.getElementById('current-lang-code');
+                if (currentLangCode) currentLangCode.textContent = langCode;
+
+                const mobileCurrentFlagImg = document.getElementById('mobile-current-lang-flag');
+                if (mobileCurrentFlagImg) {
+                    mobileCurrentFlagImg.src = flagSrc;
+                    mobileCurrentFlagImg.alt = `Bandera de ${langInfo.name}`;
+                }
+                const mobileCurrentLangCode = document.getElementById('mobile-current-lang-code');
+                if (mobileCurrentLangCode) mobileCurrentLangCode.textContent = langCode;
+
+                translatePage(lang);
+                localStorage.setItem('bancfy_lang', lang);
+            }
+
+            const langDropdown = document.getElementById('lang-dropdown');
+            const langSelectorBtn = document.getElementById('lang-selector-btn');
+            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+            const mobileLangSelectorBtn = document.getElementById('mobile-lang-selector-btn');
+            const mobileLangArrow = document.querySelector('.mobile-lang-arrow');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            for (const [code, langData] of Object.entries(supportedLangs)) {
+                const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
+                const innerHTML = `<img src="${flagSrc}" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
+
+                if (langDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'px-4', 'py-2', 'text-sm', 'text-gray-700', 'hover:bg-light-gray');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => { e.preventDefault(); setLanguage(code); langDropdown.classList.add('hidden'); langSelectorBtn.blur(); });
+                    langDropdown.appendChild(link);
+                }
+
+                if (mobileLangDropdown) {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.classList.add('flex', 'items-center', 'py-1.5', 'px-2', 'text-sm', 'text-gray-700', 'hover:text-gold', 'rounded-md', 'hover:bg-white');
+                    link.dataset.lang = code;
+                    link.innerHTML = innerHTML;
+                    link.addEventListener('click', (e) => { e.preventDefault(); setLanguage(code); if (mobileMenu) mobileMenu.classList.add('hidden'); });
+                    mobileLangDropdown.appendChild(link);
+                }
+            }
+            
+            if (langSelectorBtn) {
+                langSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (langDropdown) langDropdown.classList.toggle('hidden'); });
+            }
+
+            if (mobileLangSelectorBtn) {
+                mobileLangSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (mobileLangDropdown) mobileLangDropdown.classList.toggle('hidden'); if (mobileLangArrow) mobileLangArrow.classList.toggle('rotate-180'); });
+            }
+
+            window.addEventListener('click', (e) => {
+                if (langDropdown && !langDropdown.classList.contains('hidden') && !langSelectorBtn.contains(e.target)) {
+                    langDropdown.classList.add('hidden');
+                }
+            });
+
+            const savedLang = localStorage.getItem('bancfy_lang');
+            let userLang = savedLang;
+            if (!userLang) {
+                const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+                if (supportedLangs[browserLang]) userLang = browserLang;
+                else if (supportedLangs[browserLang.split('-')[0]]) userLang = browserLang.split('-')[0];
+                else userLang = 'es';
+            }
+            setLanguage(userLang);
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileLangDropdown) mobileLangDropdown.classList.add('hidden');
+                if (mobileLangArrow) mobileLangArrow.classList.remove('rotate-180');
+            });
+        });
+    </script>
+
+</body>
+</html>
