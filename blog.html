@@ -135,7 +135,7 @@
                     <!-- Article Card 1 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-necesidades-vs-deseos.html">
-                            <img id="article-img-1" src="https://placehold.co/600x400/0C2340/C8B273?text=Necesidades+vs+Deseos" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <img id="article-img-1" src="https://placehold.co/600x400/0C2340/C8B273?text=Necesidades+vs+Deseos" alt="Ilustración sobre la diferencia entre necesidades y deseos" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2" data-translate-key="article1_title">Necesidades vs. Deseos: La Clave Maestra para Tomar el Control de tu Dinero</h3>
@@ -147,7 +147,7 @@
                     <!-- Article Card 2 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-regla-50-30-20.html">
-                             <img id="article-img-2" src="https://placehold.co/600x400/0C2340/C8B273?text=Regla+50/30/20" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                             <img id="article-img-2" src="https://placehold.co/600x400/0C2340/C8B273?text=Regla+50/30/20" alt="Ilustración de la regla de presupuesto 50/30/20" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2" data-translate-key="article2_title">Tu Hoja de Ruta Financiera: Domina tu Presupuesto con la Regla 50/30/20</h3>
@@ -159,7 +159,7 @@
                     <!-- Article Card 3 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-gastos-hormiga-vampiro.html">
-                             <img id="article-img-3" src="https://placehold.co/600x400/0C2340/C8B273?text=Gastos+Ocultos" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                             <img id="article-img-3" src="https://placehold.co/600x400/0C2340/C8B273?text=Gastos+Ocultos" alt="Ilustración sobre gastos hormiga y vampiro" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2" data-translate-key="article3_title">Los Ladrones Silenciosos de tu Dinero: Cómo Cazar tus Gastos Hormiga y Vampiro</h3>
@@ -171,7 +171,7 @@
                     <!-- Article Card 4 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-fondo-emergencia.html">
-                             <img id="article-img-4" src="https://placehold.co/600x400/0C2340/C8B273?text=Fondo+de+Emergencia" alt="" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                             <img id="article-img-4" src="https://placehold.co/600x400/0C2340/C8B273?text=Fondo+de+Emergencia" alt="Ilustración de un fondo de emergencia" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2" data-translate-key="article4_title">Tu Red de Seguridad Financiera: La Guía Definitiva para Crear tu Fondo de Emergencia</h3>
@@ -407,65 +407,83 @@
                 }
             };
             
-                        function translatePage(lang) {
-                let langKey = lang;
-                if (lang === 'de-ch' && !translations['de-ch']) {
-                    langKey = 'de';
-                }
-                const t = translations[langKey] || translations['es']; 
+            // Función para traducir la página
+            function translatePage(lang) {
+                // Se asegura de que el idioma exista, si no, usa español como fallback.
+                const t = translations[lang] || translations['es']; 
                 
+                // Itera sobre todos los elementos que tienen la clave de traducción.
                 document.querySelectorAll('[data-translate-key]').forEach(el => {
                     const key = el.getAttribute('data-translate-key');
+                    // Busca la traducción, si no la encuentra en el idioma actual, la busca en español.
                     const translation = t[key] || translations['es'][key] || el.innerHTML;
                     el.innerHTML = translation;
                 });
 
-                document.getElementById('seo-title').textContent = t.seo_title || translations['es'].seo_title;
-                document.getElementById('seo-description').setAttribute('content', t.seo_description || translations['es'].seo_description);
+                // Actualiza las metaetiquetas para SEO.
+                document.getElementById('seo-title').textContent = t.blog_title || translations['es'].blog_title;
+                document.getElementById('seo-description').setAttribute('content', t.blog_subtitle || translations['es'].blog_subtitle);
 
-                // **NUEVO: Actualizar imágenes**
+                // =============================================================
+                //  INICIO DE LA CORRECCIÓN: Actualizar imágenes de artículos
+                // =============================================================
+                // Itera sobre las 4 tarjetas de artículo.
                 for (let i = 1; i <= 4; i++) {
                     const img = document.getElementById(`article-img-${i}`);
+                    // Construye las claves para el texto de la imagen y el texto alternativo.
                     const imgTextKey = `article${i}_img_text`;
                     const altTextKey = `article${i}_alt`;
 
                     if (img) {
+                        // Obtiene el texto traducido para la imagen, con fallback a español.
                         const translatedImgText = t[imgTextKey] || translations['es'][imgTextKey];
+                        // Obtiene el texto alternativo traducido, con fallback a español.
                         const translatedAltText = t[altTextKey] || translations['es'][altTextKey];
 
+                        // Si se encontró texto para la imagen, actualiza la URL de la imagen.
                         if (translatedImgText) {
                             const newSrc = `https://placehold.co/600x400/0C2340/C8B273?text=${encodeURIComponent(translatedImgText)}`;
                             img.src = newSrc;
                         }
+                        // Si se encontró texto alternativo, actualiza el atributo alt.
                         if (translatedAltText) {
                             img.alt = translatedAltText;
                         }
                     }
                 }
+                // =============================================================
+                //  FIN DE LA CORRECCIÓN
+                // =============================================================
 
+                // Establece el idioma y la dirección del texto en el tag <html>.
                 document.documentElement.lang = lang;
                 document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             }
 
+            // Función para establecer el idioma seleccionado.
             function setLanguage(lang) {
                 const langInfo = supportedLangs[lang] || supportedLangs['es'];
                 const flagSrc = langInfo.flagUrl ? langInfo.flagUrl : `https://flagcdn.com/w20/${langInfo.flag}.png`;
                 const langCode = lang.split('-')[0].toUpperCase();
 
+                // Actualiza la bandera y el código de idioma en el menú de escritorio.
                 const currentFlagImg = document.getElementById('current-lang-flag');
                 if (currentFlagImg) { currentFlagImg.src = flagSrc; currentFlagImg.alt = `Bandera de ${langInfo.name}`; }
                 const currentLangCode = document.getElementById('current-lang-code');
                 if (currentLangCode) { currentLangCode.textContent = langCode; }
 
+                // Actualiza la bandera y el código de idioma en el menú móvil.
                 const mobileCurrentFlagImg = document.getElementById('mobile-current-lang-flag');
                 if (mobileCurrentFlagImg) { mobileCurrentFlagImg.src = flagSrc; mobileCurrentFlagImg.alt = `Bandera de ${langInfo.name}`; }
                 const mobileCurrentLangCode = document.getElementById('mobile-current-lang-code');
                 if (mobileCurrentLangCode) { mobileCurrentLangCode.textContent = langCode; }
 
+                // Llama a la función de traducción y guarda la preferencia.
                 translatePage(lang);
                 localStorage.setItem('bancfy_lang', lang);
             }
 
+            // --- Lógica para construir los menús de idiomas y manejar eventos ---
             const langDropdown = document.getElementById('lang-dropdown');
             const langSelectorBtn = document.getElementById('lang-selector-btn');
             const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
@@ -473,6 +491,7 @@
             const mobileLangArrow = document.querySelector('.mobile-lang-arrow');
             const mobileMenu = document.getElementById('mobile-menu');
 
+            // Rellena los desplegables de idiomas.
             for (const [code, langData] of Object.entries(supportedLangs)) {
                 const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
                 const innerHTML = `<img src="${flagSrc}" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
@@ -498,10 +517,12 @@
                 }
             }
             
+            // Manejadores de eventos para los botones de idioma.
             if (langSelectorBtn) { langSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (langDropdown) langDropdown.classList.toggle('hidden'); }); }
             if (mobileLangSelectorBtn) { mobileLangSelectorBtn.addEventListener('click', (event) => { event.stopPropagation(); if (mobileLangDropdown) mobileLangDropdown.classList.toggle('hidden'); if (mobileLangArrow) mobileLangArrow.classList.toggle('rotate-180'); }); }
             window.addEventListener('click', (e) => { if (langDropdown && !langDropdown.classList.contains('hidden') && !langSelectorBtn.contains(e.target)) { langDropdown.classList.add('hidden'); } });
 
+            // Detecta el idioma guardado o el del navegador y lo aplica.
             const savedLang = localStorage.getItem('bancfy_lang');
             let userLang = savedLang;
             if (!userLang) {
@@ -512,6 +533,7 @@
             }
             setLanguage(userLang);
 
+            // Manejador de evento para el menú móvil.
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
