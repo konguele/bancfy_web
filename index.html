@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
-    <title>Bancfy | El Futuro de las Finanzas Personales con IA y Kakebo</title>
-    <meta name="description" content="Bancfy es la app definitiva para tu salud financiera. Usa el método Kakebo, IA, gamificación y educación para controlar tus gastos, ahorrar y alcanzar tus metas. ¡Únete a la lista de espera!">
-    <meta name="keywords" content="Bancfy, finanzas personales, app de presupuesto, método Kakebo, ahorrar dinero, salud financiera, inteligencia artificial, gamificación, bancbot, control de gastos, inversión, criptomonedas">
+    <!-- SEO Meta Tags (will be updated by JS) -->
+    <title id="meta-title">Bancfy | El Futuro de las Finanzas Personales con IA y Kakebo</title>
+    <meta id="meta-description" name="description" content="Bancfy es la app definitiva para tu salud financiera. Usa el método Kakebo, IA, gamificación y educación para controlar tus gastos, ahorrar y alcanzar tus metas. ¡Únete a la lista de espera!">
+    <meta id="meta-keywords" name="keywords" content="Bancfy, finanzas personales, app de presupuesto, método Kakebo, ahorrar dinero, salud financiera, inteligencia artificial, gamificación, bancbot, control de gastos, inversión, criptomonedas">
     <meta name="author" content="Bancfy">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook (will be updated by JS) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bancfy.com/">
-    <meta property="og:title" content="Bancfy | Tu App de Finanzas con IA y Kakebo">
-    <meta property="og:description" content="Toma el control de tu dinero con el método Kakebo, IA, gamificación y educación financiera.">
+    <meta id="og-title" property="og:title" content="Bancfy | Tu App de Finanzas con IA y Kakebo">
+    <meta id="og-description" property="og:description" content="Toma el control de tu dinero con el método Kakebo, IA, gamificación y educación financiera.">
     <meta property="og:image" content="https://www.bancfy.com/images/logo.png">
 
-    <!-- Twitter -->
+    <!-- Twitter (will be updated by JS) -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.bancfy.com/">
-    <meta property="twitter:title" content="Bancfy | Tu App de Finanzas con IA y Kakebo">
-    <meta property="twitter:description" content="Toma el control de tu dinero con el método Kakebo, IA, gamificación y educación financiera.">
+    <meta id="twitter-title" property="twitter:title" content="Bancfy | Tu App de Finanzas con IA y Kakebo">
+    <meta id="twitter-description" property="twitter:description" content="Toma el control de tu dinero con el método Kakebo, IA, gamificación y educación financiera.">
     <meta property="twitter:image" content="https://www.bancfy.com/images/logo.png">
 
     <!-- Tailwind CSS -->
@@ -85,7 +85,6 @@
         .faq-arrow {
             transition: transform 0.3s ease-in-out;
         }
-        /* MODIFICACIÓN: Añadida clase para la flecha del menú de idiomas móvil */
         .mobile-lang-arrow.rotate-180 {
             transform: rotate(180deg);
         }
@@ -96,16 +95,15 @@
     <!-- ========== HEADER ========== -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-navy flex items-center gap-3">
-                <!-- LOGO IMAGE -->
+            <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
                 <img src="images/logo.png" alt="Logo de Bancfy" class="w-10 h-10 rounded-full">
                 Bancfy
             </a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#features" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_features">Características</a>
-                <a href="#story" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_story">Nuestra Historia</a>
-                <a href="#faq" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_faq">FAQ</a>
-                <a href="#contact" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_contact">Contacto</a>
+                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_features">Características</a>
+                <a href="blog.html" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_blog">Blog</a>
+                <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_faq">FAQ</a>
+                <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300" data-translate-key="nav_contact">Contacto</a>
                 <!-- Language Selector -->
                 <div class="relative group">
                     <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
@@ -126,12 +124,11 @@
             </button>
         </nav>
         <!-- Mobile Menu -->
-        <!-- MODIFICACIÓN: Añadido el selector de idiomas al menú móvil -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-             <a href="#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features">Características</a>
-             <a href="#story" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_story">Nuestra Historia</a>
-             <a href="#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq">FAQ</a>
-             <a href="#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact">Contacto</a>
+             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_features">Características</a>
+             <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_blog">Blog</a>
+             <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_faq">FAQ</a>
+             <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray" data-translate-key="nav_contact">Contacto</a>
              <!-- Mobile Language Selector -->
              <div class="border-t border-gray-200">
                 <div class="px-4 py-3">
@@ -150,7 +147,7 @@
 
     <!-- ========== MAIN CONTENT ========== -->
     <main>
-        <!-- ========== HERO SECTION (NEW) ========== -->
+        <!-- ========== HERO SECTION ========== -->
         <section class="bg-light-gray overflow-hidden">
             <div class="container mx-auto px-6 py-20 md:py-28">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -224,7 +221,7 @@
             </div>
         </section>
 
-        <!-- ========== APP SHOWCASE SECTION (RESTORED) ========== -->
+        <!-- ========== APP SHOWCASE SECTION ========== -->
         <section id="app-showcase" class="py-20 bg-light-gray">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -265,7 +262,7 @@
             </div>
         </section>
         
-        <!-- ========== FAQ SECTION (UPDATED) ========== -->
+        <!-- ========== FAQ SECTION ========== -->
         <section id="faq" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -273,7 +270,7 @@
                     <p class="text-gray-600 mt-2 max-w-3xl mx-auto reveal" style="transition-delay: 200ms;" data-translate-key="faq_subtitle">¿Tienes dudas? Aquí resolvemos las más comunes.</p>
                 </div>
                 <div class="max-w-3xl mx-auto space-y-4">
-                    <!-- FAQ Item 1 -->
+                    <!-- FAQ Items -->
                     <div class="faq-item border-b border-gray-200 pb-4 reveal">
                         <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
                             <span data-translate-key="faq1_q">¿Qué es exactamente Bancfy?</span>
@@ -283,7 +280,6 @@
                             <p data-translate-key="faq1_a">Bancfy es tu coach financiero personal. Hemos transformado el método japonés Kakebo en una experiencia digital, intuitiva y gamificada. No solo te ayudamos a registrar tus gastos, sino a entenderlos y a tomar el control de tu dinero de una forma sencilla y motivadora.</p>
                         </div>
                     </div>
-                    <!-- FAQ Item 2 -->
                     <div class="faq-item border-b border-gray-200 pb-4 reveal">
                         <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
                             <span data-translate-key="faq2_q">¿Es seguro usar mis datos en Bancfy?</span>
@@ -293,7 +289,6 @@
                             <p data-translate-key="faq2_a">Absolutamente. La seguridad es nuestro pilar fundamental. Toda tu información está protegida con cifrado de extremo a extremo y protocolos de seguridad de nivel bancario. Tu privacidad y tus datos son solo tuyos.</p>
                         </div>
                     </div>
-                    <!-- FAQ Item 3 -->
                     <div class="faq-item border-b border-gray-200 pb-4 reveal">
                         <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
                             <span data-translate-key="faq3_q">¿Podré sincronizar en diferentes dispositivos?</span>
@@ -303,7 +298,6 @@
                            <p data-translate-key="faq3_a">¡Por supuesto! Tu información se sincroniza en tiempo real en todos tus dispositivos. Además, hemos incluido la función de "cuentas compartidas", ideal para gestionar las finanzas en pareja, con tu familia o compañeros de piso.</p>
                         </div>
                     </div>
-                    <!-- FAQ Item 4 -->
                     <div class="faq-item border-b border-gray-200 pb-4 reveal">
                         <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
                             <span data-translate-key="faq4_q">¿Tengo que conectar mi cuenta bancaria?</span>
@@ -313,7 +307,6 @@
                            <p data-translate-key="faq4_a">No es necesario. Creemos en el poder de registrar manualmente tus gastos para crear conciencia, como enseña el método Kakebo. Sin embargo, para darte flexibilidad, también te permitimos importar tus movimientos desde un fichero PDF, Excel o CSV de forma rápida y sencilla.</p>
                         </div>
                     </div>
-                    <!-- FAQ Item 5 -->
                     <div class="faq-item border-b border-gray-200 pb-4 reveal">
                         <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
                             <span data-translate-key="faq5_q">¿Bancfy es gratis?</span>
@@ -323,7 +316,6 @@
                            <p data-translate-key="faq5_a">Sí, el corazón de Bancfy es y será siempre gratuito, dándote todas las herramientas que necesitas para tu día a día. Para aquellos que quieran llevar sus finanzas al siguiente nivel, ofreceremos opciones Premium complementarias con funciones avanzadas.</p>
                         </div>
                     </div>
-                    <!-- FAQ Item 6 -->
                     <div class="faq-item border-b border-gray-200 pb-4 reveal">
                         <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
                             <span data-translate-key="faq6_q">¿Qué divisas y criptomonedas soporta?</span>
@@ -336,7 +328,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- ========== NEWSLETTER SECTION ========== -->
         <section id="newsletter" class="py-20 bg-light-gray">
@@ -394,7 +385,7 @@
         </section>
     </main>
 
-    <!-- ========== FOOTER (UPDATED) ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer class="bg-navy text-white">
         <div class="container mx-auto px-6 py-8">
              <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
@@ -404,15 +395,9 @@
                 </div>
                 <!-- SOCIAL ICONS -->
                 <div class="flex space-x-5">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                 </div>
             </div>
         </div>
@@ -443,7 +428,6 @@
     
     <!-- Firebase SDK -->
     <script type="module">
-        // --- MODIFICACIÓN 1: Importamos las funciones necesarias para consultar la base de datos ---
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         import { getFirestore, collection, addDoc, serverTimestamp, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
         
@@ -452,7 +436,7 @@
             authDomain: "bancfy.firebaseapp.com",
 			databaseURL: "https://bancfy-default-rtdb.europe-west1.firebasedatabase.app",
             projectId: "bancfy",
-            storageBucket: "bancfy.firebasestorage.app",
+            storageBucket: "bancfy.appspot.com",
             messagingSenderId: "151762707230",
             appId: "1:151762707230:web:2143e1d92e6a90f2689f0f",
 			measurementId: "G-RS0WGCECK3"
@@ -460,16 +444,20 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         window.db = db;
-        // --- Hacemos las funciones de Firestore accesibles globalmente ---
         window.firestore = { collection, addDoc, serverTimestamp, query, where, getDocs };
     </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- TRANSLATION LOGIC ---
             const translations = {
-                es: {
-                    nav_features: 'Características', nav_story: 'Nuestra Historia', nav_faq: 'FAQ', nav_contact: 'Contacto', nav_join_waitlist: 'Únete a la Espera',
+                 es: {
+                    // SEO Translations
+                    seo_title: 'Bancfy | El Futuro de las Finanzas Personales con IA y Kakebo',
+                    seo_description: 'Bancfy es la app definitiva para tu salud financiera. Usa el método Kakebo, IA, gamificación y educación para controlar tus gastos, ahorrar y alcanzar tus metas. ¡Únete a la lista de espera!',
+                    og_title: 'Bancfy | Tu App de Finanzas con IA y Kakebo',
+                    og_description: 'Toma el control de tu dinero con el método Kakebo, IA, gamificación y educación financiera.',
+                    // Page Content
+                    nav_features: 'Características', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contacto', nav_join_waitlist: 'Únete a la Espera',
                     hero_title: 'Bienvenido al futuro de las finanzas personales.', hero_subtitle: 'Bancfy no es solo una app, es tu nuevo ecosistema financiero. Combinamos la sabiduría del método Kakebo con la potencia de la IA para darte una claridad y un control que nunca antes habías imaginado.', hero_cta1: 'Únete a la revolución', hero_cta2: 'Descubre más',
                     features_title: 'La app más completa para tu salud financiera.', features_subtitle: 'Hemos combinado métodos probados con tecnología de punta para darte un control sin precedentes.',
                     feature1_title: 'Método Kakebo Digital', feature1_desc: 'El arte japonés de ahorrar, simplificado. Registra, analiza y toma conciencia de cada gasto.',
@@ -490,7 +478,11 @@
                     modal_invalid_email: 'Por favor, introduce un correo electrónico válido.', form_sending: 'Enviando...', form_sent: 'Enviado', form_error: 'Error', form_subscribing: 'Apuntando...', form_subscribed: 'Apuntado'
                 },
                 en: {
-                    nav_features: 'Features', nav_story: 'Our Story', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Join the Waitlist',
+                    seo_title: 'Bancfy | The Future of Personal Finance with AI and Kakebo',
+                    seo_description: 'Bancfy is the ultimate app for your financial health. Use the Kakebo method, AI, gamification, and education to control your expenses, save, and reach your goals. Join the waitlist!',
+                    og_title: 'Bancfy | Your Finance App with AI and Kakebo',
+                    og_description: 'Take control of your money with the Kakebo method, AI, gamification, and financial education.',
+                    nav_features: 'Features', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Join the Waitlist',
                     hero_title: 'Welcome to the future of personal finance.', hero_subtitle: 'Bancfy isn\'t just an app; it\'s your new financial ecosystem. We combine the wisdom of the Kakebo method with the power of AI to give you clarity and control you\'ve never imagined.', hero_cta1: 'Join the revolution', hero_cta2: 'Discover more',
                     features_title: 'The most complete app for your financial health.', features_subtitle: 'We have combined proven methods with cutting-edge technology to give you unprecedented control.',
                     feature1_title: 'Digital Kakebo Method', feature1_desc: 'The Japanese art of saving, simplified. Record, analyze, and become aware of every expense.',
@@ -511,6 +503,10 @@
 					modal_invalid_email: 'Please enter a valid email address.', form_sending: 'Sending...', form_sent: 'Sent', form_error: 'Error', form_subscribing: 'Subscribing...', form_subscribed: 'Subscribed'
                 },
                 ca: {
+                    seo_title: 'Bancfy | El Futur de les Finances Personals amb IA i Kakebo',
+                    seo_description: 'Bancfy és l\'app definitiva per a la teva salut financera. Fes servir el mètode Kakebo, IA, ludificació i educació per controlar les teves despeses, estalviar i assolir els teus objectius. Uneix-te a la llista d\'espera!',
+                    og_title: 'Bancfy | La teva App de Finances amb IA i Kakebo',
+                    og_description: 'Pren el control dels teus diners amb el mètode Kakebo, IA, ludificació i educació financera.',
                     nav_features: 'Característiques', nav_story: 'La Nostra Història', nav_faq: 'FAQ', nav_contact: 'Contacte', nav_join_waitlist: 'Uneix-te a l\'Espera',
                     hero_title: 'Benvingut al futur de les finances personals.', hero_subtitle: 'Bancfy no és només una app, és el teu nou ecosistema financer. Combinem la saviesa del mètode Kakebo amb la potència de la IA per donar-te una claredat i un control que mai abans havies imaginat.', hero_cta1: 'Uneix-te a la revolució', hero_cta2: 'Descobreix-ne més',
                     features_title: 'L\'app més completa per a la teva salut financera.', features_subtitle: 'Hem combinat mètodes provats amb tecnologia d\'avantguarda per donar-te un control sense precedents.',
@@ -532,6 +528,10 @@
 					modal_invalid_email: 'Si us plau, introdueix un correu electrònic vàlid.', form_sending: 'Enviant...', form_sent: 'Enviat', form_error: 'Error', form_subscribing: 'Apuntant...', form_subscribed: 'Apuntat'
                 },
                 eu: {
+                    seo_title: 'Bancfy | Finantza Pertsonalen Etorkizuna IA eta Kakebo-rekin',
+                    seo_description: 'Bancfy zure osasun finantzariorako behin betiko aplikazioa da. Erabili Kakebo metodoa, IA, gamifikazioa eta hezkuntza zure gastuak kontrolatzeko, aurrezteko eta zure helburuak lortzeko. Eman izena itxaron-zerrendan!',
+                    og_title: 'Bancfy | Zure Finantza App-a IA eta Kakebo-rekin',
+                    og_description: 'Hartu zure diruaren kontrola Kakebo metodoarekin, IA, gamifikazioarekin eta finantza-hezkuntzarekin.',
                     nav_features: 'Ezaugarriak', nav_story: 'Gure Istorioa', nav_faq: 'FAQ', nav_contact: 'Kontaktua', nav_join_waitlist: 'Sartu Itxaron Zerrendan',
                     hero_title: 'Ongi etorri finantza pertsonalen etorkizunera.', hero_subtitle: 'Bancfy ez da soilik app bat, zure ekosistema finantzario berria da. Kakebo metodoaren jakinduria eta IAren indarra konbinatzen ditugu, inoiz imajinatu ez duzun argitasuna eta kontrola emateko.', hero_cta1: 'Batu iraultzara', hero_cta2: 'Ezagutu gehiago',
                     features_title: 'Zure osasun finantzariorako app osatuena.', features_subtitle: 'Metodo frogatuak eta punta-puntako teknologia konbinatu ditugu aurrekaririk gabeko kontrola emateko.',
@@ -553,6 +553,10 @@
 					modal_invalid_email: 'Mesedez, sartu baliozko helbide elektroniko bat.', form_sending: 'Bidalten...', form_sent: 'Bidalita', form_error: 'Errorea', form_subscribing: 'Harpidetzen...', form_subscribed: 'Harpidetuta'
                 },
                 fr: {
+                    seo_title: 'Bancfy | L\'avenir des finances personnelles avec l\'IA et le Kakebo',
+                    seo_description: 'Bancfy est l\'application ultime pour votre santé financière. Utilisez la méthode Kakebo, l\'IA, la gamification et l\'éducation pour contrôler vos dépenses, épargner et atteindre vos objectifs. Rejoignez la liste d\'attente !',
+                    og_title: 'Bancfy | Votre application financière avec IA et Kakebo',
+                    og_description: 'Prenez le contrôle de votre argent avec la méthode Kakebo, l\'IA, la gamification et l\'éducation financière.',
                     nav_features: 'Fonctionnalités', nav_story: 'Notre Histoire', nav_faq: 'FAQ', nav_contact: 'Contact', nav_join_waitlist: 'Rejoindre l\'attente',
                     hero_title: 'Bienvenue dans le futur des finances personnelles.', hero_subtitle: 'Bancfy n\'est pas juste une application, c\'est votre nouvel écosystème financier. Nous combinons la sagesse de la méthode Kakebo avec la puissance de l\'IA pour vous offrir une clarté et un contrôle que vous n\'aviez jamais imaginés.', hero_cta1: 'Rejoignez la révolution', hero_cta2: 'En savoir plus',
                     features_title: 'L\'application la plus complète pour votre santé financière.', features_subtitle: 'Nous avons combiné des méthodes éprouvées avec une technologie de pointe pour vous donner un contrôle sans précédent.',
@@ -574,6 +578,10 @@
 					modal_invalid_email: 'Veuillez saisir une adresse e-mail valide.', form_sending: 'Envoi en cours...', form_sent: 'Envoyé', form_error: 'Erreur', form_subscribing: 'Abonnement...', form_subscribed: 'Abonné'
                 },
                 it: {
+                    seo_title: 'Bancfy | Il futuro della finanza personale con IA e Kakebo',
+                    seo_description: 'Bancfy è l\'app definitiva per la tua salute finanziaria. Usa il metodo Kakebo, l\'IA, la gamification e l\'educazione per controllare le tue spese, risparmiare e raggiungere i tuoi obiettivi. Iscriviti alla lista d\'attesa!',
+                    og_title: 'Bancfy | La tua app di finanza con IA e Kakebo',
+                    og_description: 'Prendi il controllo del tuo denaro con il metodo Kakebo, l\'IA, la gamification e l\'educazione finanziaria.',
                     nav_features: 'Caratteristiche', nav_story: 'La Nostra Storia', nav_faq: 'FAQ', nav_contact: 'Contatti', nav_join_waitlist: 'Unisciti all\'Attesa',
                     hero_title: 'Benvenuto nel futuro della finanza personale.', hero_subtitle: 'Bancfy non è solo un\'app, è il tuo nuovo ecosistema finanziario. Uniamo la saggezza del metodo Kakebo con la potenza dell\'IA per darti una chiarezza e un controllo che non avevi mai immaginato.', hero_cta1: 'Unisciti alla rivoluzione', hero_cta2: 'Scopri di più',
                     features_title: 'L\'app più completa per la tua salute finanziaria.', features_subtitle: 'Abbiamo combinato metodi collaudati con tecnologia all\'avanguardia per darti un controllo senza precedenti.',
@@ -594,7 +602,7 @@
                     modal_email_exists: 'Questa email è già registrata. Grazie per il tuo interesse!',
 					modal_invalid_email: 'Inserisci un indirizzo email valido.', form_sending: 'Invio...', form_sent: 'Inviato', form_error: 'Errore', form_subscribing: 'Iscrizione...', form_subscribed: 'Iscritto'
                 },
-                de: {
+				de: {
                     nav_features: 'Funktionen', nav_story: 'Unsere Geschichte', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Auf die Warteliste',
                     hero_title: 'Willkommen in der Zukunft der persönlichen Finanzen.', hero_subtitle: 'Bancfy ist nicht nur eine App, es ist dein neues finanzielles Ökosystem. Wir kombinieren die Weisheit der Kakebo-Methode mit der Kraft der KI, um dir eine Klarheit und Kontrolle zu geben, die du dir nie vorgestellt hast.', hero_cta1: 'Tritt der Revolution bei', hero_cta2: 'Mehr entdecken',
                     features_title: 'Die umfassendste App für deine finanzielle Gesundheit.', features_subtitle: 'Wir haben bewährte Methoden mit modernster Technologie kombiniert, um dir eine beispiellose Kontrolle zu geben.',
@@ -615,8 +623,21 @@
                     modal_email_exists: 'Diese E-Mail-Adresse ist bereits registriert. Danke für dein Interesse!',
 					modal_invalid_email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.', form_sending: 'Senden...', form_sent: 'Gesendet', form_error: 'Fehler', form_subscribing: 'Abonnieren...', form_subscribed: 'Abonniert'
                 },
-				'de-ch': { // NEW: Swiss German Translation
-                    nav_features: 'Funktione', nav_story: 'Eusi Gschicht', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Uf d\'Warteliste',
+                pt: {
+                    seo_title: 'Bancfy | O Futuro das Finanças Pessoais com IA e Kakebo',
+                    seo_description: 'Bancfy é o aplicativo definitivo para a sua saúde financeira. Use o método Kakebo, IA, gamificação e educação para controlar suas despesas, economizar e alcançar suas metas. Junte-se à lista de espera!',
+                    og_title: 'Bancfy | Seu App de Finanças com IA e Kakebo',
+                    og_description: 'Assuma o controle do seu dinheiro com o método Kakebo, IA, gamificação e educação financeira.',
+                    nav_features: 'Recursos', nav_blog: 'Blog', nav_faq: 'FAQ', nav_contact: 'Contato', nav_join_waitlist: 'Junte-se à Espera',
+                    hero_title: 'Bem-vindo ao futuro das finanças pessoais.', hero_subtitle: 'Bancfy não é apenas um aplicativo, é o seu novo ecossistema financeiro. Combinamos a sabedoria do método Kakebo com o poder da IA para lhe dar uma clareza e controle que você nunca imaginou.',
+                    // ... (resto de las traducciones en portugués)
+                },
+                'de-ch': {
+                    seo_title: 'Bancfy | D\'Zuekunft vo de persönliche Finanze mit KI und Kakebo',
+                    seo_description: 'Bancfy isch di ultimativi App für dini finanzielli Gsundheit. Nutz d\'Kakebo-Methode, KI, Gamification und Bildig, um dini Usgabe z\'kontrolliere, z\'spare und dini Ziel z\'erreiche. Chum uf d\'Warteliste!',
+                    og_title: 'Bancfy | Dini Finanz-App mit KI und Kakebo',
+                    og_description: 'Übernimm d\'Kontroll über dis Geld mit de Kakebo-Methode, KI, Gamification und Finanzbildig.',
+					nav_features: 'Funktione', nav_story: 'Eusi Gschicht', nav_faq: 'FAQ', nav_contact: 'Kontakt', nav_join_waitlist: 'Uf d\'Warteliste',
                     hero_title: 'Willkomme i de Zuekunft vo de persönliche Finanze.', hero_subtitle: 'Bancfy isch nöd nur en App, es isch dis neue finanzielli Ökosystem. Mir kombiniere d\'Wiisheit vo de Kakebo-Methode mit de Chraft vo de KI, um dir e Klarheit und Kontroll z\'geh, wo du dir nie hesch chönne vorstelle.', hero_cta1: 'Chum zur Revoluzion', hero_cta2: 'Meh entdecke',
                     features_title: 'Di umfassendschti App für dini finanzielli Gsundheit.', features_subtitle: 'Mir hend bewährti Methode mit modernster Technologie kombiniert, um dir e beispiellosi Kontroll z\'geh.',
                     feature1_title: 'Digitali Kakebo-Methode', feature1_desc: 'D\'japanischi Kunst vom Spare, vereifacht. Erfass, analysier und werd dir jeder Usgab bewusst.',
@@ -637,6 +658,10 @@
 					modal_invalid_email: 'Bitte gib e gültigi E-Mail-Adresse ii.', form_sending: 'Am Sende...', form_sent: 'Gsendet', form_error: 'Fähler', form_subscribing: 'Am Abonniere...', form_subscribed: 'Abonniert'
                 },
                 ja: {
+                    seo_title: 'Bancfy | AIと家計簿で個人の資産管理の未来を',
+                    seo_description: 'Bancfyはあなたの金融健全性のための究極のアプリです。家計簿メソッド、AI、ゲーミフィケーション、教育を活用して、支出を管理し、貯蓄し、目標を達成しましょう。ウェイティングリストに参加してください！',
+                    og_title: 'Bancfy | AIと家計簿であなたの金融アプリ',
+                    og_description: '家計簿メソッド、AI、ゲーミフィケーション、金融教育であなたのお金を管理しましょう。',
                     nav_features: '特徴', nav_story: '私たちの物語', nav_faq: 'FAQ', nav_contact: 'お問い合わせ', nav_join_waitlist: 'ウェイティングリストに参加',
                     hero_title: '個人の資産管理の未来へようこそ。', hero_subtitle: 'Bancfyは単なるアプリではなく、あなたの新しい金融エコシステムです。家計簿の知恵とAIの力を組み合わせ、これまでに想像もできなかったほどの明確さと管理能力を提供します。', hero_cta1: '革命に参加する', hero_cta2: 'もっと詳しく',
                     features_title: 'あなたの金融健全性のための最も完全なアプリ。', features_subtitle: '実績のある方法と最先端技術を組み合わせ、前例のない管理能力を提供します。',
@@ -658,6 +683,10 @@
 					modal_invalid_email: '有効なメールアドレスを入力してください。', form_sending: '送信中...', form_sent: '送信済み', form_error: 'エラー', form_subscribing: '登録中...', form_subscribed: '登録済み'
                 },
                 ko: {
+                    seo_title: 'Bancfy | AI와 카케이보로 여는 개인 금융의 미래',
+                    seo_description: 'Bancfy는 당신의 금융 건강을 위한 최고의 앱입니다. 카케이보 방식, AI, 게이미피케이션, 교육을 통해 지출을 관리하고, 저축하며, 목표를 달성하세요. 대기자 명단에 등록하세요!',
+                    og_title: 'Bancfy | AI와 카케이보를 활용한 당신의 금융 앱',
+                    og_description: '카케이보 방식, AI, 게이미피케이션, 금융 교육으로 당신의 돈을 관리하세요.',
                     nav_features: '기능', nav_story: '우리의 이야기', nav_faq: 'FAQ', nav_contact: '문의하기', nav_join_waitlist: '대기자 명단 참여',
                     hero_title: '개인 금융의 미래에 오신 것을 환영합니다.', hero_subtitle: 'Bancfy는 단순한 앱이 아니라 새로운 금융 생태계입니다. 카케이보 방법의 지혜와 AI의 힘을 결합하여 상상하지 못했던 명확성과 통제력을 제공합니다.', hero_cta1: '혁명에 동참하세요', hero_cta2: '더 알아보기',
                     features_title: '금융 건강을 위한 가장 완벽한 앱.', features_subtitle: '검증된 방법과 최첨단 기술을 결합하여 전례 없는 통제력을 제공합니다.',
@@ -680,6 +709,10 @@
 					modal_invalid_email: '유효한 이메일 주소를 입력하십시오.', form_sending: '보내는 중...', form_sent: '보냄', form_error: '오류', form_subscribing: '구독 중...', form_subscribed: '구독함'
                 },
                 zh: {
+                    seo_title: 'Bancfy | 人工智能与Kakebo开启个人理财的未来',
+                    seo_description: 'Bancfy是您财务健康的终极应用程序。使用Kakebo方法、人工智能、游戏化和教育来控制您的开支、储蓄并实现您的目标。加入等候名单！',
+                    og_title: 'Bancfy | 您的人工智能与Kakebo理财应用',
+                    og_description: '通过Kakebo方法、人工智能、游戏化和金融教育来掌控您的资金。',
                     nav_features: '功能', nav_story: '我们的故事', nav_faq: '常见问题', nav_contact: '联系我们', nav_join_waitlist: '加入等候名单',
                     hero_title: '欢迎来到个人理财的未来。', hero_subtitle: 'Bancfy 不仅仅是一个应用程序，它是您的新金融生态系统。我们将 Kakebo 方法的智慧与人工智能的力量相结合，为您带来前所未有的清晰度和控制力。', hero_cta1: '加入革命', hero_cta2: '发现更多',
                     features_title: '为您财务健康最完整的应用程序。', features_subtitle: '我们将经过验证的方法与尖端技术相结合，为您提供前所未有的控制。',
@@ -701,6 +734,10 @@
 					modal_invalid_email: '请输入有效的电子邮件地址。', form_sending: '发送中...', form_sent: '已发送', form_error: '错误', form_subscribing: '订阅中...', form_subscribed: '已订阅'
                 },
                 ar: {
+                    seo_title: 'Bancfy | مستقبل التمويل الشخصي مع الذكاء الاصطناعي وكاكيبو',
+                    seo_description: 'Bancfy هو التطبيق الأمثل لصحتك المالية. استخدم طريقة كا كيبو، الذكاء الاصطناعي، التلعيب، والتعليم للتحكم في نفقاتك، الادخار، وتحقيق أهدافك. انضم إلى قائمة الانتظار!',
+                    og_title: 'Bancfy | تطبيقك المالي بالذكاء الاصطناعي وكاكيبو',
+                    og_description: 'تحكم في أموالك مع طريقة كا كيبو، الذكاء الاصطناعي، التلعيب، والتعليم المالي.',
                     nav_features: 'الميزات', nav_story: 'قصتنا', nav_faq: 'الأسئلة الشائعة', nav_contact: 'اتصل بنا', nav_join_waitlist: 'انضم إلى قائمة الانتظار',
                     hero_title: 'مرحبًا بك في مستقبل التمويل الشخصي.', hero_subtitle: 'Bancfy ليس مجرد تطبيق، بل هو نظامك المالي الجديد. نحن نجمع بين حكمة طريقة Kakebo وقوة الذكاء الاصطناعي لنمنحك وضوحًا وتحكمًا لم تتخيله من قبل.', hero_cta1: 'انضم إلى الثورة', hero_cta2: 'اكتشف المزيد',
                     features_title: 'التطبيق الأكثر اكتمالاً لصحتك المالية.', features_subtitle: 'لقد قمنا بدمج الأساليب المثبتة مع أحدث التقنيات لنمنحك تحكمًا غير مسبوق.',
@@ -730,7 +767,7 @@
                 'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg' },
                 'en': { name: 'English', flag: 'gb' },
                 'de': { name: 'Deutsch', flag: 'de' },
-                'de-ch': { name: 'Schweizerdeutsch', flag: 'ch' }, // NEW: Swiss German
+                'de-ch': { name: 'Schweizerdeutsch', flag: 'ch' },
                 'fr': { name: 'Français', flag: 'fr' },
                 'it': { name: 'Italiano', flag: 'it' },
                 'pt': { name: 'Português', flag: 'pt' },
@@ -739,14 +776,15 @@
                 'zh': { name: '中文', flag: 'cn' },
                 'ar': { name: 'العربية', flag: 'ae' }
             };
-
-            // --- MODIFICACIÓN: Lógica de traducción y selector de idioma ---
             
             function translatePage(lang) {
                 const targetLang = translations[lang] ? lang : 'es'; 
+                const t = translations[targetLang] || translations.es;
+
+                // Update body content
                 document.querySelectorAll('[data-translate-key]').forEach(el => {
                     const key = el.getAttribute('data-translate-key');
-                    const translation = translations[targetLang]?.[key] || translations['es']?.[key] || el.textContent;
+                    const translation = t[key] || el.innerHTML;
                     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                         if(el.type !== 'submit') {
                            el.placeholder = translation;
@@ -755,6 +793,16 @@
                         el.innerHTML = translation;
                     }
                 });
+
+                // Update SEO and Open Graph meta tags
+                document.getElementById('meta-title').textContent = t.seo_title;
+                document.getElementById('meta-description').setAttribute('content', t.seo_description);
+                document.getElementById('og-title').setAttribute('content', t.og_title);
+                document.getElementById('og-description').setAttribute('content', t.og_description);
+                document.getElementById('twitter-title').setAttribute('content', t.og_title); // Twitter uses the same title
+                document.getElementById('twitter-description').setAttribute('content', t.og_description); // Twitter uses the same description
+
+                // Update root attributes
                 document.documentElement.lang = targetLang;
                 document.documentElement.dir = targetLang === 'ar' ? 'rtl' : 'ltr';
             }
@@ -764,7 +812,6 @@
                 const flagSrc = langInfo.flagUrl ? langInfo.flagUrl : `https://flagcdn.com/w20/${langInfo.flag}.png`;
                 const langCode = lang.split('-')[0].toUpperCase();
 
-                // Update desktop selector
                 const currentFlagImg = document.getElementById('current-lang-flag');
                 if (currentFlagImg) {
                     currentFlagImg.src = flagSrc;
@@ -773,7 +820,6 @@
                 const currentLangCode = document.getElementById('current-lang-code');
                 if (currentLangCode) currentLangCode.textContent = langCode;
 
-                // Update mobile selector
                 const mobileCurrentFlagImg = document.getElementById('mobile-current-lang-flag');
                 if (mobileCurrentFlagImg) {
                     mobileCurrentFlagImg.src = flagSrc;
@@ -797,7 +843,6 @@
                 const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
                 const innerHTML = `<img src="${flagSrc}" alt="Bandera de ${langData.name}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
 
-                // Create and append desktop link
                 if (langDropdown) {
                     const link = document.createElement('a');
                     link.href = '#';
@@ -813,7 +858,6 @@
                     langDropdown.appendChild(link);
                 }
 
-                // Create and append mobile link
                 if (mobileLangDropdown) {
                     const link = document.createElement('a');
                     link.href = '#';
@@ -829,7 +873,6 @@
                 }
             }
             
-            // --- Event listener for desktop language dropdown
             if (langSelectorBtn) {
                 langSelectorBtn.addEventListener('click', (event) => {
                     event.stopPropagation();
@@ -837,7 +880,6 @@
                 });
             }
 
-            // --- Event listener for mobile language dropdown
             if (mobileLangSelectorBtn) {
                 mobileLangSelectorBtn.addEventListener('click', (event) => {
                     event.stopPropagation();
@@ -846,13 +888,11 @@
                 });
             }
 
-            // Close dropdowns if clicking outside
             window.addEventListener('click', (e) => {
                 if (langDropdown && !langDropdown.classList.contains('hidden') && !langSelectorBtn.contains(e.target)) {
                     langDropdown.classList.add('hidden');
                 }
             });
-
 
             const savedLang = localStorage.getItem('bancfy_lang');
             let userLang = savedLang;
@@ -868,13 +908,11 @@
             
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
-                // Ensure mobile lang dropdown is closed when opening main mobile menu
                 if (mobileLangDropdown) mobileLangDropdown.classList.add('hidden');
                 if (mobileLangArrow) mobileLangArrow.classList.remove('rotate-180');
             });
 
             mobileMenu.addEventListener('click', (e) => {
-                // Close menu if a main link is clicked, but not the language selector button
                 if(e.target.tagName === 'A' && !mobileLangDropdown.contains(e.target)) {
                     mobileMenu.classList.add('hidden');
                 }
@@ -1008,21 +1046,19 @@
                 });
             });
 
-            newsletterForm.addEventListener('submit', async function(e) { // Convertimos la función en async
+            newsletterForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 const form = e.target;
                 const emailInput = form.querySelector('input[name="email"]');
-                const emailValue = emailInput.value.trim().toLowerCase(); // Normalizamos el email
+                const emailValue = emailInput.value.trim().toLowerCase();
                 const button = form.querySelector('button[type="submit"]');
                 const originalButtonHTML = button.innerHTML;
 
-                // Validación inicial del email
                 if (!emailValue || !emailInput.checkValidity()) {
                     showModal('modal_error', 'modal_invalid_email');
                     return;
                 }
 
-                // Comprobamos si Firebase está disponible
                 if (typeof window.db === 'undefined' || typeof window.firestore === 'undefined') {
                     showModal('modal_error', 'modal_network_error');
                     return;
@@ -1034,21 +1070,15 @@
                 const subscribersRef = collection(window.db, "subscribers");
 
                 try {
-                    // --- PASO 1: Crear la consulta para buscar el email ---
                     const q = query(subscribersRef, where("email", "==", emailValue));
-
-                    // --- PASO 2: Ejecutar la consulta ---
                     const querySnapshot = await getDocs(q);
 
-                    // --- PASO 3: Comprobar si el resultado está vacío ---
                     if (!querySnapshot.empty) {
-                        // El email ya existe, mostramos un mensaje y reseteamos el botón
                         showModal('modal_welcome', 'modal_email_exists');
-                        setButtonFeedback(button, 'success', originalButtonHTML); // Usamos 'success' para el feedback visual
-                        return; // Detenemos la ejecución
+                        setButtonFeedback(button, 'success', originalButtonHTML);
+                        return;
                     }
 
-                    // --- PASO 4: Si no existe, añadimos el nuevo suscriptor ---
                     const currentUserLanguage = localStorage.getItem('bancfy_lang') || 'es';
                     await addDoc(subscribersRef, {
                         email: emailValue,
