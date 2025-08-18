@@ -9,8 +9,8 @@
     SEO والعلامات للنسخة العربية من المدونة
     ================================================================
     -->
-    <title>مدونة التعليم المالي | Bancfy</title>
-    <meta name="description" content="تعلم كيفية إدارة أموالك والادخار وتحقيق أهدافك من خلال نصائح ومقالات التعليم المالي من Bancfy.">
+    <title>مدونة التثقيف المالي | Bancfy</title>
+    <meta name="description" content="تعلم إدارة أموالك والادخار وتحقيق أهدافك من خلال نصائح ومقالات التثقيف المالي من Bancfy.">
     <link rel="canonical" href="https://www.bancfy.com/ar/blog.html" />
 	<link rel="alternate" hreflang="es" href="https://www.bancfy.com/es/blog.html" />
 	<link rel="alternate" hreflang="ca" href="https://www.bancfy.com/ca/blog.html" />
@@ -27,20 +27,20 @@
 	<link rel="alternate" hreflang="ar" href="https://www.bancfy.com/ar/blog.html" />
 	<link rel="alternate" hreflang="x-default" href="https://www.bancfy.com/blog.html" />
     
-    <meta name="keywords" content="مدونة مالية, نصائح للادخار, تعليم مالي, ميزانية, نفقات صغيرة, صندوق الطوارئ, bancfy">
+    <meta name="keywords" content="مدونة مالية, نصائح للادخار, تثقيف مالي, ميزانية, نفقات شبحية, صندوق طوارئ, bancfy">
     <meta name="author" content="Bancfy">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="مدونة التعليم المالي | Bancfy">
-    <meta property="og:description" content="تعلم كيفية إدارة أموالك من خلال نصائح مدونتنا.">
+    <meta property="og:title" content="مدونة التثقيف المالي | Bancfy">
+    <meta property="og:description" content="تعلم إدارة أموالك من خلال نصائح مدونتنا.">
     <meta property="og:image" content="https://www.bancfy.com/images/logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bancfy.com/ar/blog.html">
 
     <!-- Twitter -->
-    <meta property="twitter:title" content="مدونة التعليم المالي | Bancfy">
-    <meta property="twitter:description" content="تعلم كيفية إدارة أموالك من خلال نصائح مدونتنا.">
+    <meta property="twitter:title" content="مدونة التثقيف المالي | Bancfy">
+    <meta property="twitter:description" content="تعلم إدارة أموالك من خلال نصائح مدونتنا.">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.bancfy.com/ar/blog.html">
     <meta property="twitter:image" content="https://www.bancfy.com/images/logo.png">
@@ -48,7 +48,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Urbanist + Noto Sans Arabic -->
+    <!-- Google Fonts: Urbanist & Noto Sans Arabic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
@@ -64,15 +64,6 @@
             --gold-hover: #bda66b;
             --light-gray: #F7F7F7;
         }
-        /* RTL specific styles */
-        html[dir="rtl"] .md\:text-left { text-align: right; }
-        html[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-right: 1rem; margin-left: 0; }
-        html[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-right: 1.5rem; margin-left: 0; }
-        html[dir="rtl"] .mr-2 { margin-left: 0.5rem; margin-right: 0; }
-        html[dir="rtl"] .ml-1 { margin-right: 0.25rem; margin-left: 0; }
-        html[dir="rtl"] .ml-auto { margin-right: auto; margin-left: 0; }
-        html[dir="rtl"] .right-0 { left: 0; right: auto; }
-
         .bg-navy { background-color: var(--navy); }
         .text-navy { color: var(--navy); }
         .bg-gold { background-color: var(--gold); }
@@ -86,7 +77,7 @@
 </head>
 <body class="bg-white text-navy antialiased">
 
-    <!-- ========== HEADER ========== -->
+    <!-- ========== الرأس ========== -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
@@ -98,7 +89,7 @@
                 <a href="blog.html" class="text-gold font-semibold transition-colors duration-300">المدونة</a>
                 <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300">الأسئلة الشائعة</a>
                 <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300">اتصل بنا</a>
-                 <!-- Language Selector -->
+                 <!-- محدد اللغة -->
                  <div class="relative group">
                     <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
                         <img id="current-lang-flag" src="https://flagcdn.com/w20/ae.png" alt="علم الإمارات العربية المتحدة" class="w-5 h-auto ml-2 rounded-sm">
@@ -106,7 +97,7 @@
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 left-0 max-h-60 overflow-y-auto">
-                        <!-- Languages will be injected by JS -->
+                        <!-- سيتم إدخال اللغات بواسطة JS -->
                     </div>
                 </div>
             </div>
@@ -117,42 +108,56 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
+        <!-- القائمة المحمولة -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
              <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">الميزات</a>
              <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold">المدونة</a>
              <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">الأسئلة الشائعة</a>
              <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">اتصل بنا</a>
-             <!-- Mobile Language Selector -->
+             <!-- محدد اللغة المحمول -->
              <div class="border-t border-gray-200">
                 <div class="px-4 py-3">
-                    <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
-                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/ae.png" alt="علم الإمارات العربية المتحدة" class="w-5 h-auto ml-3 rounded-sm">
+                    <button id="mobile-lang-selector-btn" class="w-full flex items-center text-right text-sm text-navy">
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/ae.png" alt="علم اللغة الحالية" class="w-5 h-auto ml-3 rounded-sm">
                         <span id="mobile-current-lang-code" class="font-semibold">العربية</span>
                         <svg class="mobile-lang-arrow w-4 h-4 mr-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                 </div>
                 <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
-                    <!-- Mobile languages will be injected by JS -->
+                    <!-- سيتم إدخال اللغات المحمولة بواسطة JS -->
                 </div>
              </div>
         </div>
     </header>
 
-    <!-- ========== MAIN CONTENT ========== -->
+    <!-- ========== المحتوى الرئيسي ========== -->
     <main>
-        <!-- ========== BLOG LISTING SECTION ========== -->
+        <!-- ========== قسم قائمة المدونة ========== -->
         <section class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h1 class="text-4xl md:text-5xl font-extrabold text-navy leading-tight mb-4">مدونة Bancfy</h1>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">مصدرك المعرفي للسيطرة على أموالك. مقالات ونصائح وأدلة لتعزيز صحتك المالية.</p>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">مصدرك للمعرفة للسيطرة على أموالك. مقالات ونصائح وأدلة لتعزيز صحتك المالية.</p>
                 </div>
 
-                <!-- Articles Grid -->
+                <!-- شبكة المقالات -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Article Card 1 -->
+                    <!-- بطاقة مقال جديد -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="articulo-kakebo-bancfy.html" class="block">
+                            <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
+                                <h2 class="text-2xl font-bold text-gold text-center">كاكيبو وبانكفاي</h2>
+                            </div>
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2">كاكيبو وبانكفاي: الاتحاد المثالي لصحتك المالية</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">اكتشف كيف تندمج حكمة الكاكيبو اليابانية القديمة مع تقنية بانكفاي لإحداث ثورة في إدارتك المالية.</p>
+                            <a href="articulo-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">اقرأ المزيد &larr;</a>
+                        </div>
+                    </div>
+
+                    <!-- بطاقة المقال 1 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-necesidades-vs-deseos.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
@@ -161,12 +166,12 @@
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2">الاحتياجات مقابل الرغبات: المفتاح الرئيسي للسيطرة على أموالك</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">الخطوة الأولى والأكثر قوة لإتقان أموالك هي تعلم التمييز بين ما هو ضروري وما هو غير ضروري.</p>
+                            <p class="text-gray-600 mb-4 flex-grow">الخطوة الأولى والأقوى لإتقان أموالك هي تعلم التمييز بين ما هو ضروري وما هو ليس كذلك.</p>
                             <a href="articulo-necesidades-vs-deseos.html" class="text-gold font-semibold hover:underline mt-auto">اقرأ المزيد &larr;</a>
                         </div>
                     </div>
 
-                    <!-- Article Card 2 -->
+                    <!-- بطاقة المقال 2 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-regla-50-30-20.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
@@ -174,13 +179,13 @@
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">خارطة طريقك المالية: أتقن ميزانيتك بقاعدة 50/30/20</h3>
+                            <h3 class="text-xl font-semibold text-navy mb-2">خارطة طريقك المالية: أتقن ميزانيتك مع قاعدة 50/30/20</h3>
                             <p class="text-gray-600 mb-4 flex-grow">الميزانية ليست نظامًا غذائيًا لأموالك، إنها خطة هجوم. اكتشف كيف يمكن لهذه القاعدة البسيطة أن تغير اقتصادك.</p>
                             <a href="articulo-regla-50-30-20.html" class="text-gold font-semibold hover:underline mt-auto">اقرأ المزيد &larr;</a>
                         </div>
                     </div>
 
-                    <!-- Article Card 3 -->
+                    <!-- بطاقة المقال 3 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-gastos-hormiga-vampiro.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
@@ -188,13 +193,13 @@
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">لصوص أموالك الصامتون: كيفية مطاردة نفقاتك الصغيرة والمتكررة</h3>
+                            <h3 class="text-xl font-semibold text-navy mb-2">لصوص أموالك الصامتون: كيف تصطاد نفقاتك النملية والمصاصة للدماء</h3>
                             <p class="text-gray-600 mb-4 flex-grow">هل تشعر أن راتبك يتلاشى؟ تعلم كيفية تحديد وتحييد تلك النفقات الصغيرة والاشتراكات التي تلتهم ميزانيتك.</p>
                             <a href="articulo-gastos-hormiga-vampiro.html" class="text-gold font-semibold hover:underline mt-auto">اقرأ المزيد &larr;</a>
                         </div>
                     </div>
 
-                    <!-- Article Card 4 -->
+                    <!-- بطاقة المقال 4 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-fondo-emergencia.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
@@ -203,7 +208,7 @@
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2">شبكة الأمان المالية الخاصة بك: الدليل النهائي لإنشاء صندوق الطوارئ الخاص بك</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">وجود وسادة للأحداث غير المتوقعة لا يجعلك غنيًا، بل يمنحك شيئًا أكثر قيمة: راحة البال. تعلم كيفية بناء خاصتك خطوة بخطوة.</p>
+                            <p class="text-gray-600 mb-4 flex-grow">وجود وسادة للأحداث غير المتوقعة لا يجعلك غنيًا، بل يمنحك شيئًا أكثر قيمة: راحة البال. تعلم كيفية بناء وسادتك خطوة بخطوة.</p>
                             <a href="articulo-fondo-emergencia.html" class="text-gold font-semibold hover:underline mt-auto">اقرأ المزيد &larr;</a>
                         </div>
                     </div>
@@ -213,13 +218,13 @@
         </section>
     </main>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- ========== التذييل ========== -->
     <footer class="bg-navy text-white">
         <div class="container mx-auto px-6 py-8">
              <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div class="mb-4 md:mb-0">
-                    <p class="font-semibold">&copy; 2025 Bancfy. كل الحقوق محفوظة.</p>
-                    <p class="text-sm text-gray-400">صُمم بـ <span class="text-gold">&hearts;</span> من أجل رفاهيتك المالية.</p>
+                    <p class="font-semibold">&copy; 2025 Bancfy. جميع الحقوق محفوظة.</p>
+                    <p class="text-sm text-gray-400">مصمم بـ <span class="text-gold">&hearts;</span> لرفاهيتك المالية.</p>
                 </div>
                 <div class="flex space-x-5">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
@@ -232,7 +237,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Objeto con todos los idiomas soportados
+            // كائن يحتوي على جميع اللغات المدعومة
             const supportedLangs = {
                 'es': { name: 'Español', flag: 'es', url: '/es/blog.html' },
                 'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/blog.html' },
@@ -249,7 +254,7 @@
                 'ar': { name: 'العربية', flag: 'ae', url: '/ar/blog.html' }
             };
 
-            // --- Lógica para construir los menús de idiomas y manejar eventos ---
+            // --- منطق بناء قوائم اللغات ومعالجة الأحداث ---
             const langDropdown = document.getElementById('lang-dropdown');
             const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
 
