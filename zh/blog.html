@@ -6,7 +6,7 @@
     
     <!-- 
     ================================================================
-    中文版博客的SEO和标签
+    博客中文版的SEO和标签
     ================================================================
     -->
     <title>金融教育博客 | Bancfy</title>
@@ -27,20 +27,20 @@
 	<link rel="alternate" hreflang="ar" href="https://www.bancfy.com/ar/blog.html" />
 	<link rel="alternate" hreflang="x-default" href="https://www.bancfy.com/blog.html" />
     
-    <meta name="keywords" content="金融博客, 储蓄技巧, 金融教育, 预算, 幽灵开支, 应急基金, bancfy">
+    <meta name="keywords" content="金融博客, 储蓄技巧, 金融教育, 预算, 微消费, 应急基金, bancfy">
     <meta name="author" content="Bancfy">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="金融教育博客 | Bancfy">
-    <meta property="og:description" content="通过我们博客的技巧学习如何管理您的资金。">
+    <meta property="og:description" content="通过我们博客的技巧，学习如何管理您的资金。">
     <meta property="og:image" content="https://www.bancfy.com/images/logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bancfy.com/zh/blog.html">
 
     <!-- Twitter -->
     <meta property="twitter:title" content="金融教育博客 | Bancfy">
-    <meta property="twitter:description" content="通过我们博客的技巧学习如何管理您的资金。">
+    <meta property="twitter:description" content="通过我们博客的技巧，学习如何管理您的资金。">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.bancfy.com/zh/blog.html">
     <meta property="twitter:image" content="https://www.bancfy.com/images/logo.png">
@@ -77,7 +77,7 @@
 </head>
 <body class="bg-white text-navy antialiased">
 
-    <!-- ========== 页眉 ========== -->
+    <!-- ========== HEADER ========== -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
@@ -89,7 +89,7 @@
                 <a href="blog.html" class="text-gold font-semibold transition-colors duration-300">博客</a>
                 <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300">常见问题</a>
                 <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300">联系我们</a>
-                 <!-- 语言选择器 -->
+                 <!-- Language Selector -->
                  <div class="relative group">
                     <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
                         <img id="current-lang-flag" src="https://flagcdn.com/w20/cn.png" alt="中国国旗" class="w-5 h-auto mr-2 rounded-sm">
@@ -97,7 +97,7 @@
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
-                        <!-- 语言将由JS注入 -->
+                        <!-- Languages will be injected by JS -->
                     </div>
                 </div>
             </div>
@@ -108,31 +108,31 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <!-- 移动菜单 -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
              <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">功能</a>
              <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold">博客</a>
              <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">常见问题</a>
              <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">联系我们</a>
-             <!-- 移动语言选择器 -->
+             <!-- Mobile Language Selector -->
              <div class="border-t border-gray-200">
                 <div class="px-4 py-3">
                     <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
-                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/cn.png" alt="当前语言国旗" class="w-5 h-auto mr-3 rounded-sm">
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/cn.png" alt="当前语言的国旗" class="w-5 h-auto mr-3 rounded-sm">
                         <span id="mobile-current-lang-code" class="font-semibold">中文</span>
                         <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                 </div>
                 <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
-                    <!-- 移动语言将由JS注入 -->
+                    <!-- Mobile languages will be injected by JS -->
                 </div>
              </div>
         </div>
     </header>
 
-    <!-- ========== 主要内容 ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
     <main>
-        <!-- ========== 博客列表部分 ========== -->
+        <!-- ========== BLOG LISTING SECTION ========== -->
         <section class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -140,76 +140,90 @@
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">您掌控财务的知识源泉。提升您财务健康的文章、技巧和指南。</p>
                 </div>
 
-                <!-- 文章网格 -->
+                <!-- Articles Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- 文章卡片 新 -->
+
+                    <!-- Article Card NEW -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-kakebo-bancfy.html" class="block">
+                        <a href="article-splitting-expenses.html" class="block">
+                            <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
+                                <h2 class="text-2xl font-bold text-gold text-center">金钱与关系</h2>
+                            </div>
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2">金钱与关系：在不破坏关系的情况下分摊费用的艺术</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">发现与伴侣、朋友或家人分摊费用的最公平、最有效的方法。沟通是关键。</p>
+                            <a href="article-splitting-expenses.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Article Card Kakebo -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="article-kakebo-bancfy.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">家计簿与Bancfy</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">家计簿与Bancfy：实现您财务健康的完美结合</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">探索日本古老的家计簿智慧如何与Bancfy的技术融合，彻底改变您的财务管理。</p>
-                            <a href="articulo-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">家计簿与Bancfy：您财务健康的完美结合</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">探索日本古老的家计簿智慧如何与Bancfy的技术相结合，彻底改变您的财务管理。</p>
+                            <a href="article-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- 文章卡片 1 -->
+                    <!-- Article Card 1 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-necesidades-vs-deseos.html" class="block">
+                        <a href="article-needs-vs-wants.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
-                                <h2 class="text-2xl font-bold text-gold text-center">需求与欲望</h2>
+                                <h2 class="text-2xl font-bold text-gold text-center">需要与想要</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">需求与欲望：掌控金钱的关键</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">掌握财务的第一步也是最有力的一步，是学会区分什么是必需的，什么不是。</p>
-                            <a href="articulo-necesidades-vs-deseos.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">需要 vs. 想要：掌控您资金的主钥匙</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">掌握财务的第一步，也是最有力的一步，是学会区分什么是必需的，什么不是。</p>
+                            <a href="article-needs-vs-wants.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- 文章卡片 2 -->
+                    <!-- Article Card 2 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-regla-50-30-20.html" class="block">
+                        <a href="article-50-30-20-rule.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">50/30/20法则</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">您的财务路线图：用50/30/20法则掌控您的预算</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">预算不是为您省钱的节食计划，而是一项攻击计划。了解这个简单的规则如何改变您的经济状况。</p>
-                            <a href="articulo-regla-50-30-20.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">您的财务路线图：用50/30/20法则掌握您的预算</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">预算不是为您省钱的节食，而是一个攻击计划。了解这个简单的规则如何改变您的经济状况。</p>
+                            <a href="article-50-30-20-rule.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- 文章卡片 3 -->
+                    <!-- Article Card 3 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-gastos-hormiga-vampiro.html" class="block">
+                        <a href="article-latte-factor-vampire-spending.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">隐藏开支</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">您资金的无声窃贼：如何揪出您的蚂蚁和吸血鬼开支</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">感觉您的薪水凭空消失？学习识别并消除那些吞噬您预算的小额开支和订阅。</p>
-                            <a href="articulo-gastos-hormiga-vampiro.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">您资金的无声窃贼：如何追踪您的“拿铁因子”和“吸血鬼支出”</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">感觉您的薪水消失了？学习识别并消除那些吞噬您预算的小额开支和订阅。</p>
+                            <a href="article-latte-factor-vampire-spending.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- 文章卡片 4 -->
+                    <!-- Article Card 4 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-fondo-emergencia.html" class="block">
+                        <a href="article-emergency-fund.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">应急基金</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">您的财务安全网：创建应急基金的终极指南</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">为意外事件准备一笔缓冲资金并不会让您致富，但它会给您带来更宝贵的东西：内心的平静。学习如何一步步建立自己的应急基金。</p>
-                            <a href="articulo-fondo-emergencia.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">您的财务安全网：建立应急基金的终极指南</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">为意外事件准备一笔缓冲资金不会让您致富，但它会给您带来更宝贵的东西：内心的平静。学习如何一步步建立它。</p>
+                            <a href="article-emergency-fund.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
                     
@@ -218,7 +232,7 @@
         </section>
     </main>
 
-    <!-- ========== 页脚 ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer class="bg-navy text-white">
         <div class="container mx-auto px-6 py-8">
              <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
@@ -237,7 +251,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 包含所有支持语言的对象
             const supportedLangs = {
                 'es': { name: 'Español', flag: 'es', url: '/es/blog.html' },
                 'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/blog.html' },
@@ -254,7 +267,6 @@
                 'ar': { name: 'العربية', flag: 'ae', url: '/ar/blog.html' }
             };
 
-            // --- 构建语言菜单和处理事件的逻辑 ---
             const langDropdown = document.getElementById('lang-dropdown');
             const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
 
@@ -262,7 +274,7 @@
                 if (code === 'zh') continue; 
 
                 const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
-                const innerHTML = `<img src="${flagSrc}" alt="${langData.name}国旗" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
+                const innerHTML = `<img src="${flagSrc}" alt="${langData.name}的国旗" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
 
                 const desktopLink = document.createElement('a');
                 desktopLink.href = langData.url;

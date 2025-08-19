@@ -27,7 +27,7 @@
 	<link rel="alternate" hreflang="ar" href="https://www.bancfy.com/ar/blog.html" />
 	<link rel="alternate" hreflang="x-default" href="https://www.bancfy.com/blog.html" />
     
-    <meta name="keywords" content="blog finances, conseils épargne, éducation financière, budget, dépenses fantômes, fonds d'urgence, bancfy">
+    <meta name="keywords" content="blog finance, conseils épargne, éducation financière, budget, micro-dépenses, fonds d'urgence, bancfy">
     <meta name="author" content="Bancfy">
     <meta name="robots" content="index, follow">
 
@@ -77,7 +77,7 @@
 </head>
 <body class="bg-white text-navy antialiased">
 
-    <!-- ========== EN-TÊTE ========== -->
+    <!-- ========== HEADER ========== -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
@@ -89,7 +89,7 @@
                 <a href="blog.html" class="text-gold font-semibold transition-colors duration-300">Blog</a>
                 <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300">FAQ</a>
                 <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300">Contact</a>
-                 <!-- Sélecteur de langue -->
+                 <!-- Language Selector -->
                  <div class="relative group">
                     <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
                         <img id="current-lang-flag" src="https://flagcdn.com/w20/fr.png" alt="Drapeau de la France" class="w-5 h-auto mr-2 rounded-sm">
@@ -97,24 +97,24 @@
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
-                        <!-- Les langues seront injectées par JS -->
+                        <!-- Languages will be injected by JS -->
                     </div>
                 </div>
             </div>
             <a href="index.html#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
-                Rejoindre la liste d'attente
+                Rejoindre l'Attente
             </a>
             <button id="mobile-menu-button" class="md:hidden text-navy">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <!-- Menu Mobile -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
              <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">Caractéristiques</a>
              <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold">Blog</a>
              <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">FAQ</a>
              <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">Contact</a>
-             <!-- Sélecteur de langue mobile -->
+             <!-- Mobile Language Selector -->
              <div class="border-t border-gray-200">
                 <div class="px-4 py-3">
                     <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
@@ -124,15 +124,15 @@
                     </button>
                 </div>
                 <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
-                    <!-- Les langues mobiles seront injectées par JS -->
+                    <!-- Mobile languages will be injected by JS -->
                 </div>
              </div>
         </div>
     </header>
 
-    <!-- ========== CONTENU PRINCIPAL ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
     <main>
-        <!-- ========== SECTION LISTE DU BLOG ========== -->
+        <!-- ========== BLOG LISTING SECTION ========== -->
         <section class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -140,76 +140,90 @@
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">Votre source de connaissances pour prendre le contrôle de vos finances. Articles, conseils et guides pour améliorer votre santé financière.</p>
                 </div>
 
-                <!-- Grille d'articles -->
+                <!-- Articles Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Carte d'article NOUVEAU -->
+
+                    <!-- Article Card NOUVEAU -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-kakebo-bancfy.html" class="block">
+                        <a href="article-partager-depenses.html" class="block">
+                            <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
+                                <h2 class="text-2xl font-bold text-gold text-center">Argent et Relations</h2>
+                            </div>
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2">Argent et Relations : L'Art de Partager les Dépenses sans Rompre les Liens</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Découvrez les méthodes les plus justes et efficaces pour diviser les dépenses en couple, entre amis ou en famille. La clé est la communication.</p>
+                            <a href="article-partager-depenses.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Article Card Kakebo -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="article-kakebo-bancfy.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">Kakebo et Bancfy</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">Kakebo et Bancfy : L'Union Parfaite pour Votre Santé Financière</h3>
+                            <h3 class="text-xl font-semibold text-navy mb-2">Kakebo et Bancfy : L'Union Parfaite pour votre Santé Financière</h3>
                             <p class="text-gray-600 mb-4 flex-grow">Découvrez comment la sagesse ancestrale japonaise du Kakebo fusionne avec la technologie de Bancfy pour révolutionner votre gestion financière.</p>
-                            <a href="articulo-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
+                            <a href="article-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Carte d'article 1 -->
+                    <!-- Article Card 1 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-necesidades-vs-deseos.html" class="block">
+                        <a href="article-besoins-vs-desirs.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
-                                <h2 class="text-2xl font-bold text-gold text-center">Besoins vs Envies</h2>
+                                <h2 class="text-2xl font-bold text-gold text-center">Besoins vs Désirs</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">Besoins vs. Envies : La Clé Maîtresse pour Prendre le Contrôle de Votre Argent</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">La première et la plus puissante étape pour maîtriser vos finances est d'apprendre à différencier ce qui est essentiel de ce qui ne l'est pas.</p>
-                            <a href="articulo-necesidades-vs-deseos.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">Besoins vs. Désirs : La Clé de Voûte pour Prendre le Contrôle de votre Argent</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Le premier pas, et le plus puissant, pour maîtriser vos finances est d'apprendre à faire la différence entre ce qui est essentiel et ce qui ne l'est pas.</p>
+                            <a href="article-besoins-vs-desirs.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Carte d'article 2 -->
+                    <!-- Article Card 2 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-regla-50-30-20.html" class="block">
+                        <a href="article-regle-50-30-20.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">Règle 50/30/20</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">Votre Feuille de Route Financière : Maîtrisez Votre Budget avec la Règle 50/30/20</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Un budget n'est pas un régime pour votre argent, c'est un plan d'attaque. Découvrez comment cette règle simple peut transformer votre économie.</p>
-                            <a href="articulo-regla-50-30-20.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">Votre Feuille de Route Financière : Maîtrisez votre Budget avec la Règle 50/30/20</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Un budget n'est pas un régime pour votre argent, c'est un plan d'attaque. Découvrez comment cette simple règle peut transformer votre économie.</p>
+                            <a href="article-regle-50-30-20.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Carte d'article 3 -->
+                    <!-- Article Card 3 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-gastos-hormiga-vampiro.html" class="block">
+                        <a href="article-depenses-fourmis-vampires.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">Dépenses Cachées</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">Les Voleurs Silencieux de Votre Argent : Comment Traquer Vos Dépenses Fantômes et Vampires</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Vous avez l'impression que votre salaire disparaît ? Apprenez à identifier et à neutraliser ces petites dépenses et abonnements qui dévorent votre budget.</p>
-                            <a href="articulo-gastos-hormiga-vampiro.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">Les Voleurs Silencieux de votre Argent : Comment Traquer vos Dépenses Fourmis et Vampires</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Vous avez l'impression que votre salaire s'évapore ? Apprenez à identifier et à neutraliser ces petites dépenses et abonnements qui dévorent votre budget.</p>
+                            <a href="article-depenses-fourmis-vampires.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Carte d'article 4 -->
+                    <!-- Article Card 4 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-fondo-emergencia.html" class="block">
+                        <a href="article-fonds-urgence.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">Fonds d'Urgence</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">Votre Filet de Sécurité Financier : Le Guide Définitif pour Créer Votre Fonds d'Urgence</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Avoir un coussin pour les imprévus ne vous rend pas riche, il vous donne quelque chose de bien plus précieux : la tranquillité d'esprit. Apprenez à construire le vôtre étape par étape.</p>
-                            <a href="articulo-fondo-emergencia.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">Votre Filet de Sécurité Financier : Le Guide Ultime pour Créer votre Fonds d'Urgence</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Avoir un matelas pour les imprévus ne vous rend pas riche, il vous donne quelque chose de bien plus précieux : la tranquillité d'esprit. Apprenez à construire le vôtre pas à pas.</p>
+                            <a href="article-fonds-urgence.html" class="text-gold font-semibold hover:underline mt-auto">Lire la suite &rarr;</a>
                         </div>
                     </div>
                     
@@ -218,7 +232,7 @@
         </section>
     </main>
 
-    <!-- ========== PIED DE PAGE ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer class="bg-navy text-white">
         <div class="container mx-auto px-6 py-8">
              <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
@@ -237,7 +251,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Objet avec toutes les langues prises en charge
             const supportedLangs = {
                 'es': { name: 'Español', flag: 'es', url: '/es/blog.html' },
                 'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/blog.html' },
@@ -254,7 +267,6 @@
                 'ar': { name: 'العربية', flag: 'ae', url: '/ar/blog.html' }
             };
 
-            // --- Logique pour construire les menus de langue et gérer les événements ---
             const langDropdown = document.getElementById('lang-dropdown');
             const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
 

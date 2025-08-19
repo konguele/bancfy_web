@@ -6,11 +6,11 @@
     
     <!-- 
     ================================================================
-    SEO UND TAGS FÜR D'SCHWIIZERDÜÜTSCH VERSION VOM BLOG
+    SEO UND TAGS FÜR DIE SCHWEIZERDEUTSCHE VERSION DES BLOGS
     ================================================================
     -->
-    <title>Blog für finanzielli Bildig | Bancfy</title>
-    <meta name="description" content="Lerned Sie, Ihr Geld z'verwalte, z'spare und Ihri Ziel z'erreiche – mit de Tipps und Artikel zur finanzielle Bildig vo Bancfy.">
+    <title>Blog zur Finanzielle Bildig | Bancfy</title>
+    <meta name="description" content="Lerned Sie, wie Sie Ihr Geld verwalte, spare und Ihri Ziel erreiche – mit de Tipps und Artikel zur finanzielle Bildig vo Bancfy.">
     <link rel="canonical" href="https://www.bancfy.com/de-ch/blog.html" />
 	<link rel="alternate" hreflang="es" href="https://www.bancfy.com/es/blog.html" />
 	<link rel="alternate" hreflang="ca" href="https://www.bancfy.com/ca/blog.html" />
@@ -27,20 +27,20 @@
 	<link rel="alternate" hreflang="ar" href="https://www.bancfy.com/ar/blog.html" />
 	<link rel="alternate" hreflang="x-default" href="https://www.bancfy.com/blog.html" />
     
-    <meta name="keywords" content="Finanzblog, Spartipps, finanzielli Bildig, Budgetierig, versteckti Usgabe, Notgrosche, bancfy">
+    <meta name="keywords" content="Finanzblog, Spartipps, finanzielle Bildig, Budgetierig, Chliiusgabe, Notgrosche, bancfy">
     <meta name="author" content="Bancfy">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Blog für finanzielli Bildig | Bancfy">
-    <meta property="og:description" content="Lerned Sie mit de Tipps us unserem Blog, Ihr Geld z'verwalte.">
+    <meta property="og:title" content="Blog zur Finanzielle Bildig | Bancfy">
+    <meta property="og:description" content="Lerned Sie mit de Tipps us unserem Blog, wie Sie Ihr Geld verwalte.">
     <meta property="og:image" content="https://www.bancfy.com/images/logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bancfy.com/de-ch/blog.html">
 
     <!-- Twitter -->
-    <meta property="twitter:title" content="Blog für finanzielli Bildig | Bancfy">
-    <meta property="twitter:description" content="Lerned Sie mit de Tipps us unserem Blog, Ihr Geld z'verwalte.">
+    <meta property="twitter:title" content="Blog zur Finanzielle Bildig | Bancfy">
+    <meta property="twitter:description" content="Lerned Sie mit de Tipps us unserem Blog, wie Sie Ihr Geld verwalte.">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.bancfy.com/de-ch/blog.html">
     <meta property="twitter:image" content="https://www.bancfy.com/images/logo.png">
@@ -77,7 +77,7 @@
 </head>
 <body class="bg-white text-navy antialiased">
 
-    <!-- ========== CHOPFZIILE ========== -->
+    <!-- ========== HEADER ========== -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
@@ -85,11 +85,11 @@
                 Bancfy
             </a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300">Merkmal</a>
+                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300">Funktione</a>
                 <a href="blog.html" class="text-gold font-semibold transition-colors duration-300">Blog</a>
                 <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300">FAQ</a>
                 <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300">Kontakt</a>
-                 <!-- Sprachuswahl -->
+                 <!-- Language Selector -->
                  <div class="relative group">
                     <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
                         <img id="current-lang-flag" src="https://flagcdn.com/w20/ch.png" alt="Flagge vo de Schwiiz" class="w-5 h-auto mr-2 rounded-sm">
@@ -97,119 +97,133 @@
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
-                        <!-- Sprache werded vo JS iigfüegt -->
+                        <!-- Languages will be injected by JS -->
                     </div>
                 </div>
             </div>
             <a href="index.html#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
-                Uf d'Warteliste
+                Uf d' Warteliste
             </a>
             <button id="mobile-menu-button" class="md:hidden text-navy">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <!-- Mobils Menü -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">Merkmal</a>
+             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">Funktione</a>
              <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold">Blog</a>
              <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">FAQ</a>
              <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">Kontakt</a>
-             <!-- Mobili Sprachuswahl -->
+             <!-- Mobile Language Selector -->
              <div class="border-t border-gray-200">
                 <div class="px-4 py-3">
                     <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
-                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/ch.png" alt="Aktuelli Sprachflagge" class="w-5 h-auto mr-3 rounded-sm">
-                        <span id="mobile-current-lang-code" class="font-semibold">Schwiizerdüütsch</span>
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/ch.png" alt="Flagge vo de aktuelle Sprache" class="w-5 h-auto mr-3 rounded-sm">
+                        <span id="mobile-current-lang-code" class="font-semibold">Schweizerdeutsch</span>
                         <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                 </div>
                 <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
-                    <!-- Mobili Sprache werded vo JS iigfüegt -->
+                    <!-- Mobile languages will be injected by JS -->
                 </div>
              </div>
         </div>
     </header>
 
-    <!-- ========== HAUPTINHALT ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
     <main>
-        <!-- ========== BLOG-LISTE-ABSCHNITT ========== -->
+        <!-- ========== BLOG LISTING SECTION ========== -->
         <section class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h1 class="text-4xl md:text-5xl font-extrabold text-navy leading-tight mb-4">Bancfy Blog</h1>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Ihri Wüssensquelle, um d'Kontrolle über Ihri Finanze z'überneh. Artikel, Tipps und Aaleitige zur Stärkig vo Ihrer finanzielle Gsundheit.</p>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Ihri Wüssensquelle, zum d'Kontrolle über Ihri Finanze z'überneh. Artikel, Tipps und Aal-leitige zur Stärkig vo Ihrere finanzielle Gsundheit.</p>
                 </div>
 
-                <!-- Artikel-Gitter -->
+                <!-- Articles Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Artikelcharte NEU -->
+
+                    <!-- Article Card NEU -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-kakebo-bancfy.html" class="block">
+                        <a href="artikel-usgabe-teile.html" class="block">
+                            <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
+                                <h2 class="text-2xl font-bold text-gold text-center">Geld und Beziehige</h2>
+                            </div>
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2">Geld und Beziehige: D'Kunst, Usgabe z'teile, ohni Bindige z'breche</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Entdecked Sie die fairste und effektivste Methode, zum Usgabe als Paar, mit Fründe oder de Familie z'teile. D'Kommunikation isch de Schlüssel.</p>
+                            <a href="artikel-usgabe-teile.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Article Card Kakebo -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="artikel-kakebo-bancfy.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">Kakebo und Bancfy</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">Kakebo und Bancfy: Di perfekti Verbindig für Ihri finanzielli Gsundheit</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Entdecked Sie, wie di alti japanischi Wiisheit vom Kakebo mit de Technologie vo Bancfy verschmilzt, um Ihri Finanzverwaltig z'revolutioniere.</p>
-                            <a href="articulo-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">Kakebo und Bancfy: Di perfekt Verbindig für Ihri finanzielli Gsundheit</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Entdecked Sie, wie di alti japanischi Wiisheit vom Kakebo mit de Technologie vo Bancfy verschmilzt, zum Ihr Finanzmanagement z'revolutioniere.</p>
+                            <a href="artikel-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Artikelcharte 1 -->
+                    <!-- Article Card 1 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-necesidades-vs-deseos.html" class="block">
+                        <a href="artikel-beduerfnis-vs-wuensch.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">Bedürfnis vs. Wünsch</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2">Bedürfnis vs. Wünsch: De Generalschlüssel zur Kontroll über Ihr Geld</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">De erst und mächtigscht Schritt zur Beherrschig vo Ihne Finanze isch z'lerne, zwüsched em Wesentliche und em Unwesentliche z'underscheide.</p>
-                            <a href="articulo-necesidades-vs-deseos.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
+                            <p class="text-gray-600 mb-4 flex-grow">De erst und mächtigst Schritt zur Beherrschig vo Ihrne Finanze isch z'lerne, zwüsched dem Wesentliche und dem Unwesentliche z'unterscheide.</p>
+                            <a href="artikel-beduerfnis-vs-wuensch.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Artikelcharte 2 -->
+                    <!-- Article Card 2 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-regla-50-30-20.html" class="block">
+                        <a href="artikel-50-30-20-regel.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">50/30/20-Regle</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">Ihre finanzielli Fahrplan: Meischtered Sie Ihr Budget mit de 50/30/20-Regle</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Es Budget isch ke Diät für Ihr Geld, es isch en Aagriffplan. Entdecked Sie, wie die eifachi Regle Ihri Wirtschaft cha verändere.</p>
-                            <a href="articulo-regla-50-30-20.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">Ihr finanzielle Fahrplan: Meistered Sie Ihr Budget mit de 50/30/20-Regle</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Es Budget isch ke Diät für Ihr Geld, sondern en Aagriffspan. Entdecked Sie, wie die eifachi Regle Ihri Finanze verändere chan.</p>
+                            <a href="artikel-50-30-20-regel.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Artikelcharte 3 -->
+                    <!-- Article Card 3 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-gastos-hormiga-vampiro.html" class="block">
+                        <a href="artikel-latte-faktor-vampir-usgabe.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">Versteckti Usgabe</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">Di stille Dieb vo Ihrem Geld: Wie Sie Ihri Phantom- und Vampirusgabe jaged</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Fühlt es sich aa, als ob Ihr Lohn verschwindet? Lerned Sie, die chliine Usgabe und Abos z'erkenne und z'neutralisiere, wo Ihr Budget verschlinged.</p>
-                            <a href="articulo-gastos-hormiga-vampiro.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">Di stille Dieb vo Ihrem Geld: Wie Sie Ihre Latte-Faktor und Vampir-Usgabe ufs püre</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Händ Sie s'Gfühl, Ihr Lohn löst sich in Luft uf? Lerned Sie, die chliine Usgabe und Abos z'erkenne und z'neutralisiere, die Ihr Budget uffrässed.</p>
+                            <a href="artikel-latte-faktor-vampir-usgabe.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- Artikelcharte 4 -->
+                    <!-- Article Card 4 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-fondo-emergencia.html" class="block">
+                        <a href="artikel-notgrosche.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">Notgrosche</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">Ihr finanziells Sicherheitsnetz: De ultimativi Leitfade zur Erschtelling vo Ihrem Notgrosche</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Es Polschter für unvorhergsehni Ereignis macht Sie nöd riich, es git Ihne öppis viel Wertvollers: Seelerueh. Lerned Sie, Ihres Schritt für Schritt ufzbaue.</p>
-                            <a href="articulo-fondo-emergencia.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">Ihr finanzielle Sicherheitsnetz: De ultimativi Leitfade zum Ufbau vo Ihrem Notgrosche</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">Es Polster für unvorhergsehni Ereignis macht Sie nöd riich, es git Ihne öppis viel Wertvollers: Seelerueh. Lerned Sie, Ihres Schritt für Schritt ufzbaue.</p>
+                            <a href="artikel-notgrosche.html" class="text-gold font-semibold hover:underline mt-auto">Wiiterläse &rarr;</a>
                         </div>
                     </div>
                     
@@ -218,13 +232,13 @@
         </section>
     </main>
 
-    <!-- ========== FUESSZIILE ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer class="bg-navy text-white">
         <div class="container mx-auto px-6 py-8">
              <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div class="mb-4 md:mb-0">
-                    <p class="font-semibold">&copy; 2025 Bancfy. Alli Rächt vorbhalte.</p>
-                    <p class="text-sm text-gray-400">Mit <span class="text-gold">&hearts;</span> für Ihr finanziells Wohlbefinde gschtalte.</p>
+                    <p class="font-semibold">&copy; 2025 Bancfy. Alli Rächt vorbehalte.</p>
+                    <p class="text-sm text-gray-400">Mit <span class="text-gold">&hearts;</span> für Ihr finanzielle Wohlbefinde gestaltet.</p>
                 </div>
                 <div class="flex space-x-5">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
@@ -237,7 +251,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Objekt mit allne unterstützte Sprache
             const supportedLangs = {
                 'es': { name: 'Español', flag: 'es', url: '/es/blog.html' },
                 'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/blog.html' },
@@ -254,7 +267,6 @@
                 'ar': { name: 'العربية', flag: 'ae', url: '/ar/blog.html' }
             };
 
-            // --- Logik zum Erstelle vo de Sprachmenüs und zur Handhabig vo Ereignis ---
             const langDropdown = document.getElementById('lang-dropdown');
             const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
 

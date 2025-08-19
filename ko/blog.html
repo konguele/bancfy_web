@@ -6,7 +6,7 @@
     
     <!-- 
     ================================================================
-    한국어 버전 블로그의 SEO 및 태그
+    블로그 한국어 버전을 위한 SEO 및 태그
     ================================================================
     -->
     <title>금융 교육 블로그 | Bancfy</title>
@@ -27,7 +27,7 @@
 	<link rel="alternate" hreflang="ar" href="https://www.bancfy.com/ar/blog.html" />
 	<link rel="alternate" hreflang="x-default" href="https://www.bancfy.com/blog.html" />
     
-    <meta name="keywords" content="금융 블로그, 저축 팁, 금융 교육, 예산 책정, 유령 비용, 비상 자금, bancfy">
+    <meta name="keywords" content="금융 블로그, 저축 팁, 금융 교육, 예산 관리, 소액 지출, 비상 자금, bancfy">
     <meta name="author" content="Bancfy">
     <meta name="robots" content="index, follow">
 
@@ -77,7 +77,7 @@
 </head>
 <body class="bg-white text-navy antialiased">
 
-    <!-- ========== 헤더 ========== -->
+    <!-- ========== HEADER ========== -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
@@ -87,9 +87,9 @@
             <div class="hidden md:flex items-center space-x-6">
                 <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300">기능</a>
                 <a href="blog.html" class="text-gold font-semibold transition-colors duration-300">블로그</a>
-                <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300">FAQ</a>
-                <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300">문의하기</a>
-                 <!-- 언어 선택기 -->
+                <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300">자주 묻는 질문</a>
+                <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300">문의</a>
+                 <!-- Language Selector -->
                  <div class="relative group">
                     <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
                         <img id="current-lang-flag" src="https://flagcdn.com/w20/kr.png" alt="대한민국 국기" class="w-5 h-auto mr-2 rounded-sm">
@@ -97,24 +97,24 @@
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
-                        <!-- JS에 의해 언어가 주입됩니다 -->
+                        <!-- Languages will be injected by JS -->
                     </div>
                 </div>
             </div>
             <a href="index.html#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
-                대기자 명단에 등록
+                대기자 명단 참여
             </a>
             <button id="mobile-menu-button" class="md:hidden text-navy">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <!-- 모바일 메뉴 -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
              <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">기능</a>
              <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold">블로그</a>
-             <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">FAQ</a>
-             <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">문의하기</a>
-             <!-- 모바일 언어 선택기 -->
+             <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">자주 묻는 질문</a>
+             <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">문의</a>
+             <!-- Mobile Language Selector -->
              <div class="border-t border-gray-200">
                 <div class="px-4 py-3">
                     <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
@@ -124,15 +124,15 @@
                     </button>
                 </div>
                 <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
-                    <!-- JS에 의해 모바일 언어가 주입됩니다 -->
+                    <!-- Mobile languages will be injected by JS -->
                 </div>
              </div>
         </div>
     </header>
 
-    <!-- ========== 주요 내용 ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
     <main>
-        <!-- ========== 블로그 목록 섹션 ========== -->
+        <!-- ========== BLOG LISTING SECTION ========== -->
         <section class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -140,76 +140,90 @@
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">재정을 관리하기 위한 지식의 원천. 금융 건강을 증진시키기 위한 기사, 팁, 가이드.</p>
                 </div>
 
-                <!-- 기사 그리드 -->
+                <!-- Articles Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Article Card NEW -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="article-splitting-expenses.html" class="block">
+                            <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
+                                <h2 class="text-2xl font-bold text-gold text-center">돈과 관계</h2>
+                            </div>
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2">돈과 관계: 관계를 해치지 않고 비용을 분담하는 기술</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">파트너, 친구 또는 가족과 비용을 분담하는 가장 공정하고 효과적인 방법을 알아보세요. 핵심은 소통입니다.</p>
+                            <a href="article-splitting-expenses.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                        </div>
+                    </div>
                     
-                    <!-- 기사 카드 신규 -->
+                    <!-- Article Card Kakebo -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-kakebo-bancfy.html" class="block">
+                        <a href="article-kakebo-bancfy.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
-                                <h2 class="text-2xl font-bold text-gold text-center">카케이보와 Bancfy</h2>
+                                <h2 class="text-2xl font-bold text-gold text-center">가계부와 Bancfy</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">카케이보와 Bancfy: 당신의 금융 건강을 위한 완벽한 결합</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">고대 일본의 지혜인 카케이보가 Bancfy의 기술과 융합하여 재정 관리를 혁신하는 방법을 알아보세요.</p>
-                            <a href="articulo-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">가계부와 Bancfy: 금융 건강을 위한 완벽한 결합</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">일본의 고대 지혜인 가계부가 Bancfy의 기술과 융합하여 재무 관리를 혁신하는 방법을 알아보세요.</p>
+                            <a href="article-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- 기사 카드 1 -->
+                    <!-- Article Card 1 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-necesidades-vs-deseos.html" class="block">
+                        <a href="article-needs-vs-wants.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
-                                <h2 class="text-2xl font-bold text-gold text-center">필요 vs 욕구</h2>
+                                <h2 class="text-2xl font-bold text-gold text-center">필요와 욕구</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">필요 vs. 욕구: 돈을 통제하기 위한 마스터 키</h3>
+                            <h3 class="text-xl font-semibold text-navy mb-2">필요 대 욕구: 돈을 통제하기 위한 마스터 키</h3>
                             <p class="text-gray-600 mb-4 flex-grow">재정을 마스터하기 위한 첫 번째이자 가장 강력한 단계는 필수적인 것과 그렇지 않은 것을 구별하는 법을 배우는 것입니다.</p>
-                            <a href="articulo-necesidades-vs-deseos.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <a href="article-needs-vs-wants.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- 기사 카드 2 -->
+                    <!-- Article Card 2 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-regla-50-30-20.html" class="block">
+                        <a href="article-50-30-20-rule.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">50/30/20 규칙</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">당신의 금융 로드맵: 50/30/20 규칙으로 예산을 마스터하세요</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">예산은 돈을 위한 다이어트가 아니라 공격 계획입니다. 이 간단한 규칙이 당신의 경제를 어떻게 변화시킬 수 있는지 알아보세요.</p>
-                            <a href="articulo-regla-50-30-20.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">금융 로드맵: 50/30/20 규칙으로 예산 마스터하기</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">예산은 돈을 위한 다이어트가 아니라 공격 계획입니다. 이 간단한 규칙이 경제를 어떻게 변화시킬 수 있는지 알아보세요.</p>
+                            <a href="article-50-30-20-rule.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- 기사 카드 3 -->
+                    <!-- Article Card 3 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-gastos-hormiga-vampiro.html" class="block">
+                        <a href="article-latte-factor-vampire-spending.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">숨겨진 비용</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">당신 돈의 조용한 도둑들: 개미 비용과 뱀파이어 비용을 사냥하는 방법</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">월급이 사라지는 것 같나요? 예산을 잠식하는 작은 비용과 구독을 식별하고 무력화하는 방법을 배우세요.</p>
-                            <a href="articulo-gastos-hormiga-vampiro.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">돈의 조용한 도둑들: 라떼 요인과 뱀파이어 지출 추적 방법</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">월급이 사라지는 것 같나요? 예산을 잠식하는 소액 지출과 구독을 식별하고 무력화하는 방법을 배우세요.</p>
+                            <a href="article-latte-factor-vampire-spending.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- 기사 카드 4 -->
+                    <!-- Article Card 4 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-fondo-emergencia.html" class="block">
+                        <a href="article-emergency-fund.html" class="block">
                              <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
                                 <h2 class="text-2xl font-bold text-gold text-center">비상 자금</h2>
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">당신의 금융 안전망: 비상 자금을 만들기 위한 최종 가이드</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">예상치 못한 사건에 대비한 쿠션은 당신을 부자로 만들지는 않지만, 훨씬 더 가치 있는 것, 즉 마음의 평화를 줍니다. 단계별로 당신의 것을 만드는 법을 배우세요.</p>
-                            <a href="articulo-fondo-emergencia.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">금융 안전망: 비상 자금 마련을 위한 궁극적인 가이드</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">예상치 못한 사건에 대비한 쿠션이 있으면 부자가 되는 것이 아니라 훨씬 더 가치 있는 것, 즉 마음의 평화를 얻을 수 있습니다. 단계별로 구축하는 방법을 배우세요.</p>
+                            <a href="article-emergency-fund.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
                         </div>
                     </div>
                     
@@ -218,13 +232,13 @@
         </section>
     </main>
 
-    <!-- ========== 바닥글 ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer class="bg-navy text-white">
         <div class="container mx-auto px-6 py-8">
              <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div class="mb-4 md:mb-0">
                     <p class="font-semibold">&copy; 2025 Bancfy. 모든 권리 보유.</p>
-                    <p class="text-sm text-gray-400">당신의 금융 복지를 위해 <span class="text-gold">&hearts;</span>로 디자인되었습니다.</p>
+                    <p class="text-sm text-gray-400">금융 복지를 위해 <span class="text-gold">&hearts;</span>로 디자인되었습니다.</p>
                 </div>
                 <div class="flex space-x-5">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
@@ -237,7 +251,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 지원되는 모든 언어가 포함된 객체
             const supportedLangs = {
                 'es': { name: 'Español', flag: 'es', url: '/es/blog.html' },
                 'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/blog.html' },
@@ -254,7 +267,6 @@
                 'ar': { name: 'العربية', flag: 'ae', url: '/ar/blog.html' }
             };
 
-            // --- 언어 메뉴를 만들고 이벤트를 처리하는 로직 ---
             const langDropdown = document.getElementById('lang-dropdown');
             const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
 
