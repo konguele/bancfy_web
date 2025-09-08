@@ -6,7 +6,7 @@
     
     <!-- 
     ================================================================
-    한국어 버전 블로그의 SEO 및 태그
+    SEO 및 한국어 버전 블로그 태그
     ================================================================
     -->
     <title>금융 교육 블로그 | Bancfy</title>
@@ -48,16 +48,16 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Urbanist -->
+    <!-- Google Fonts: Urbanist & Noto Sans KR -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" href="/images/logo.png" type="image/png">
 
     <style>
-        body { font-family: 'Urbanist', sans-serif; }
+        body { font-family: 'Urbanist', 'Noto Sans KR', sans-serif; }
         :root {
             --navy: #0C2340;
             --gold: #C8B273;
@@ -85,10 +85,10 @@
                 Bancfy
             </a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300">특징</a>
+                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300">기능</a>
                 <a href="blog.html" class="text-gold font-semibold transition-colors duration-300">블로그</a>
-                <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300">FAQ</a>
-                <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300">문의</a>
+                <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300">자주 묻는 질문</a>
+                <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300">문의하기</a>
                  <!-- Language Selector -->
                  <div class="relative group">
                     <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
@@ -102,7 +102,7 @@
                 </div>
             </div>
             <a href="index.html#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
-                대기자 명단에 합류
+                대기자 명단 참여
             </a>
             <button id="mobile-menu-button" class="md:hidden text-navy">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -110,15 +110,15 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">특징</a>
+             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">기능</a>
              <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold">블로그</a>
-             <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">FAQ</a>
-             <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">문의</a>
+             <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">자주 묻는 질문</a>
+             <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">문의하기</a>
              <!-- Mobile Language Selector -->
              <div class="border-t border-gray-200">
                 <div class="px-4 py-3">
                     <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
-                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/kr.png" alt="현재 언어 국기" class="w-5 h-auto mr-3 rounded-sm">
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/kr.png" alt="대한민국 국기" class="w-5 h-auto mr-3 rounded-sm">
                         <span id="mobile-current-lang-code" class="font-semibold">한국어</span>
                         <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
@@ -137,27 +137,41 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h1 class="text-4xl md:text-5xl font-extrabold text-navy leading-tight mb-4">Bancfy 블로그</h1>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">재정 관리를 위한 지식의 원천. 금융 건강을 증진시키기 위한 기사, 팁, 가이드.</p>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">재정을 관리하기 위한 지식의 원천. 재정 건전성을 높이기 위한 기사, 팁, 가이드.</p>
                 </div>
 
                 <!-- Articles Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- 새 기사 - 저축 vs. 투자 -->
+                    <!-- Article Card - 초보자를 위한 암호화폐 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-ahorrar-vs-invertir.html" class="block">
+                        <a href="articulo-criptomonedas-principiantes.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
-                                <h2 class="text-2xl font-bold text-gold text-center">저축 vs 투자</h2>
+                                <h2 class="text-2xl font-bold text-gold text-center">암호화폐 세계</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">저축 vs. 투자: 당신의 돈을 위한 궁극적인 가이드</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">저축과 투자의 핵심 차이점을 배우고 재정적 미래를 위한 이상적인 전략을 발견하세요. 통제권을 되찾기 위한 결정판 가이드.</p>
-                            <a href="articulo-ahorrar-vs-invertir.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">초보자를 위한 암호화폐 가이드</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">암호화폐가 무엇인지, 블록체인이 어떻게 작동하는지, 그리고 안전하게 투자를 시작하는 단계를 알아보세요. 초보자를 위한 필수 가이드입니다.</p>
+                            <a href="articulo-criptomonedas-principiantes.html" class="text-gold font-semibold hover:underline mt-auto">더 읽어보기 &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article Card - 저축 대 투자 -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="articulo-ahorrar-vs-invertir.html" class="block">
+                            <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
+                                <h2 class="text-2xl font-bold text-gold text-center">저축 대 투자</h2>
+                            </div>
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2">저축 대 투자: 당신의 돈을 위한 궁극적인 가이드</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">저축과 투자의 주요 차이점을 배우고 재정적 미래를 위한 이상적인 전략을 찾아보세요. 통제력을 되찾기 위한 최종 가이드입니다.</p>
+                            <a href="articulo-ahorrar-vs-invertir.html" class="text-gold font-semibold hover:underline mt-auto">더 읽어보기 &rarr;</a>
                         </div>
                     </div>
                     
-                    <!-- 기사 - 예산 -->
+                    <!-- Article Card - 예산 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-presupuesto-libertad-financiera.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
@@ -166,12 +180,12 @@
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2">예산은 감옥이 아니라 자유로 가는 지도입니다</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">예산에 대한 신화를 타파합니다. 왜 그것이 제한이 아니라 돈을 통제하는 가장 강력한 도구인지 배우세요.</p>
-                            <a href="articulo-presupuesto-libertad-financiera.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <p class="text-gray-600 mb-4 flex-grow">우리는 예산에 대한 신화를 파헤칩니다. 왜 그것이 제한이 아니라 돈을 통제하는 가장 강력한 도구인지 배우세요.</p>
+                            <a href="articulo-presupuesto-libertad-financiera.html" class="text-gold font-semibold hover:underline mt-auto">더 읽어보기 &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- 기사 비용 분담 -->
+                    <!-- Article Card 비용 분담 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-repartir-gastos.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
@@ -180,12 +194,12 @@
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2">돈과 관계: 유대를 깨지 않고 비용을 분담하는 기술</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">커플, 친구 또는 가족과 비용을 분담하는 가장 공정하고 효과적인 방법을 발견하세요. 소통이 핵심입니다.</p>
-                            <a href="articulo-repartir-gastos.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <p class="text-gray-600 mb-4 flex-grow">커플, 친구 또는 가족과 비용을 나누는 가장 공정하고 효과적인 방법을 찾아보세요. 핵심은 소통입니다.</p>
+                            <a href="articulo-repartir-gastos.html" class="text-gold font-semibold hover:underline mt-auto">더 읽어보기 &rarr;</a>
                         </div>
                     </div>
                     
-                    <!-- 기사 가계부 -->
+                    <!-- Article Card Kakebo -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-kakebo-bancfy.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
@@ -193,9 +207,9 @@
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">가계부와 Bancfy: 당신의 금융 건강을 위한 완벽한 결합</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">일본의 고대 지혜인 가계부가 Bancfy의 기술과 융합하여 재정 관리를 혁신하는 방법을 발견하세요.</p>
-                            <a href="articulo-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">가계부와 Bancfy: 당신의 재정 건강을 위한 완벽한 조합</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">일본의 고대 지혜인 가계부가 Bancfy의 기술과 융합하여 재무 관리를 혁신하는 방법을 알아보세요.</p>
+                            <a href="articulo-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">더 읽어보기 &rarr;</a>
                         </div>
                     </div>
 
@@ -203,13 +217,13 @@
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-necesidades-vs-deseos.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
-                                <h2 class="text-2xl font-bold text-gold text-center">필요 vs 욕구</h2>
+                                <h2 class="text-2xl font-bold text-gold text-center">필요 대 욕구</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">필요 vs. 욕구: 당신의 돈을 통제하기 위한 마스터 키</h3>
+                            <h3 class="text-xl font-semibold text-navy mb-2">필요 대 욕구: 돈을 통제하기 위한 마스터 키</h3>
                             <p class="text-gray-600 mb-4 flex-grow">재정을 마스터하기 위한 첫 번째이자 가장 강력한 단계는 필수적인 것과 그렇지 않은 것을 구별하는 법을 배우는 것입니다.</p>
-                            <a href="articulo-necesidades-vs-deseos.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <a href="articulo-necesidades-vs-deseos.html" class="text-gold font-semibold hover:underline mt-auto">더 읽어보기 &rarr;</a>
                         </div>
                     </div>
 
@@ -221,9 +235,9 @@
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">당신의 재정 로드맵: 50/30/20 규칙으로 예산을 마스터하세요</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">예산은 돈을 위한 다이어트가 아니라 공격 계획입니다. 이 간단한 규칙이 당신의 경제를 어떻게 변화시킬 수 있는지 알아보세요.</p>
-                            <a href="articulo-regla-50-30-20.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">재무 로드맵: 50/30/20 규칙으로 예산 마스터하기</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">예산은 돈을 위한 다이어트가 아니라 공격 계획입니다. 이 간단한 규칙이 경제를 어떻게 변화시킬 수 있는지 알아보세요.</p>
+                            <a href="articulo-regla-50-30-20.html" class="text-gold font-semibold hover:underline mt-auto">더 읽어보기 &rarr;</a>
                         </div>
                     </div>
 
@@ -235,9 +249,9 @@
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">당신의 돈을 훔치는 조용한 도둑들: 유령 및 뱀파이어 비용을 사냥하는 방법</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">월급이 사라지는 것을 느끼나요? 예산을 잠식하는 작은 비용과 구독을 식별하고 무력화하는 방법을 배우세요.</p>
-                            <a href="articulo-gastos-hormiga-vampiro.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">돈의 조용한 도둑들: 유령 비용을 추적하는 방법</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">월급이 사라지는 것처럼 느껴지나요? 예산을 잠식하는 작은 비용과 구독을 식별하고 무력화하는 방법을 배우세요.</p>
+                            <a href="articulo-gastos-hormiga-vampiro.html" class="text-gold font-semibold hover:underline mt-auto">더 읽어보기 &rarr;</a>
                         </div>
                     </div>
 
@@ -249,9 +263,9 @@
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">당신의 금융 안전망: 비상 자금을 만들기 위한 결정판 가이드</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">예상치 못한 상황에 대비한 쿠션은 당신을 부자로 만들지 않지만, 훨씬 더 가치 있는 것, 즉 마음의 평화를 줍니다. 단계별로 당신의 것을 만드는 방법을 배우세요.</p>
-                            <a href="articulo-fondo-emergencia.html" class="text-gold font-semibold hover:underline mt-auto">더 읽기 &rarr;</a>
+                            <h3 class="text-xl font-semibold text-navy mb-2">재정 안전망: 비상 자금 마련을 위한 궁극적인 가이드</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">예상치 못한 사건에 대비한 쿠션이 있으면 부자가 되는 것이 아니라 훨씬 더 가치 있는 것, 즉 마음의 평화를 얻을 수 있습니다. 단계별로 자신만의 것을 만드는 방법을 배우세요.</p>
+                            <a href="articulo-fondo-emergencia.html" class="text-gold font-semibold hover:underline mt-auto">더 읽어보기 &rarr;</a>
                         </div>
                     </div>
                     
@@ -263,10 +277,10 @@
     <!-- ========== FOOTER ========== -->
     <footer class="bg-navy text-white">
         <div class="container mx-auto px-6 py-8">
-             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div class="mb-4 md:mb-0">
                     <p class="font-semibold">&copy; 2025 Bancfy. 모든 권리 보유.</p>
-                    <p class="text-sm text-gray-400">당신의 금융 복지를 위해 <span class="text-gold">&hearts;</span>로 디자인되었습니다.</p>
+                    <p class="text-sm text-gray-400">당신의 재정적 안녕을 위해 <span class="text-gold">&hearts;</span>로 디자인되었습니다.</p>
                 </div>
                 <div class="flex space-x-5">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
@@ -274,13 +288,38 @@
                     <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                 </div>
             </div>
+            <!-- 시작: SEO 링크 섹션 -->
+            <div class="border-t border-gray-700 mt-8 pt-6">
+                <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
+                    <div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+                        <a href="articulo-necesidades-vs-deseos.html" class="hover:text-white">기본 금융 개념</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-ahorrar-vs-invertir.html" class="hover:text-white">저축 시작 가이드</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-presupuesto-libertad-financiera.html" class="hover:text-white">예산 작성 방법</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-ahorrar-vs-invertir.html" class="hover:text-white">초보자를 위한 투자</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-gastos-hormiga-vampiro.html" class="hover:text-white">유령 비용이란?</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-fondo-emergencia.html" class="hover:text-white">비상 자금 마련</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-criptomonedas-principiantes.html" class="hover:text-white">암호화폐 이해하기</a>
+                        <span class="opacity-50">|</span>
+                         <a href="articulo-regla-50-30-20.html" class="hover:text-white">저축 방법</a>
+                         <span class="opacity-50">|</span>
+                         <a href="articulo-kakebo-bancfy.html" class="hover:text-white">가계부: 일본식 저축</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 종료: SEO 링크 섹션 -->
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const currentLangCode = 'ko';
             const supportedLangs = {
-                'ko': { name: '한국어', flag: 'kr', url: '/ko/blog.html' },
                 'es': { name: 'Español', flag: 'es', url: '/es/blog.html' },
                 'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/blog.html' },
                 'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg', url: '/eu/blog.html' },
@@ -291,6 +330,7 @@
                 'it': { name: 'Italiano', flag: 'it', url: '/it/blog.html' },
                 'pt': { name: 'Português', flag: 'pt', url: '/pt/blog.html' },
                 'ja': { name: '日本語', flag: 'jp', url: '/ja/blog.html' },
+                'ko': { name: '한국어', flag: 'kr', url: '/ko/blog.html' },
                 'zh': { name: '中文', flag: 'cn', url: '/zh/blog.html' },
                 'ar': { name: 'العربية', flag: 'ae', url: '/ar/blog.html' }
             };
@@ -299,7 +339,7 @@
             const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
 
             for (const [code, langData] of Object.entries(supportedLangs)) {
-                if (code === 'ko') continue; 
+                if (code === currentLangCode) continue; 
 
                 const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
                 const innerHTML = `<img src="${flagSrc}" alt="${langData.name} 국기" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;

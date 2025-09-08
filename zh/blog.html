@@ -6,7 +6,7 @@
     
     <!-- 
     ================================================================
-    中文版博客的SEO和标签
+    SEO和中文版博客的标签
     ================================================================
     -->
     <title>金融教育博客 | Bancfy</title>
@@ -27,20 +27,20 @@
 	<link rel="alternate" hreflang="ar" href="https://www.bancfy.com/ar/blog.html" />
 	<link rel="alternate" hreflang="x-default" href="https://www.bancfy.com/blog.html" />
     
-    <meta name="keywords" content="金融博客, 储蓄技巧, 金融教育, 预算, 幽灵消费, 应急基金, bancfy">
+    <meta name="keywords" content="金融博客, 储蓄技巧, 金融教育, 预算, 幽灵开销, 应急基金, bancfy">
     <meta name="author" content="Bancfy">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="金融教育博客 | Bancfy">
-    <meta property="og:description" content="通过我们博客的技巧，学习如何管理您的资金。">
+    <meta property="og:description" content="通过我们博客的技巧学习如何管理您的资金。">
     <meta property="og:image" content="https://www.bancfy.com/images/logo.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bancfy.com/zh/blog.html">
 
     <!-- Twitter -->
     <meta property="twitter:title" content="金融教育博客 | Bancfy">
-    <meta property="twitter:description" content="通过我们博客的技巧，学习如何管理您的资金。">
+    <meta property="twitter:description" content="通过我们博客的技巧学习如何管理您的资金。">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.bancfy.com/zh/blog.html">
     <meta property="twitter:image" content="https://www.bancfy.com/images/logo.png">
@@ -48,16 +48,16 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Urbanist -->
+    <!-- Google Fonts: Urbanist & Noto Sans SC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" href="/images/logo.png" type="image/png">
 
     <style>
-        body { font-family: 'Urbanist', sans-serif; }
+        body { font-family: 'Urbanist', 'Noto Sans SC', sans-serif; }
         :root {
             --navy: #0C2340;
             --gold: #C8B273;
@@ -85,7 +85,7 @@
                 Bancfy
             </a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300">特点</a>
+                <a href="index.html#features" class="text-navy hover:text-gold transition-colors duration-300">功能</a>
                 <a href="blog.html" class="text-gold font-semibold transition-colors duration-300">博客</a>
                 <a href="index.html#faq" class="text-navy hover:text-gold transition-colors duration-300">常见问题</a>
                 <a href="index.html#contact" class="text-navy hover:text-gold transition-colors duration-300">联系我们</a>
@@ -110,7 +110,7 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">特点</a>
+             <a href="index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">功能</a>
              <a href="blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold">博客</a>
              <a href="index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">常见问题</a>
              <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">联系我们</a>
@@ -118,7 +118,7 @@
              <div class="border-t border-gray-200">
                 <div class="px-4 py-3">
                     <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
-                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/cn.png" alt="当前语言国旗" class="w-5 h-auto mr-3 rounded-sm">
+                        <img id="mobile-current-lang-flag" src="https://flagcdn.com/w20/cn.png" alt="中国国旗" class="w-5 h-auto mr-3 rounded-sm">
                         <span id="mobile-current-lang-code" class="font-semibold">中文</span>
                         <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
@@ -137,27 +137,41 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h1 class="text-4xl md:text-5xl font-extrabold text-navy leading-tight mb-4">Bancfy博客</h1>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">您掌握财务的知识源泉。提升您财务健康的文章、技巧和指南。</p>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">您掌握财务知识的源泉。提升您财务健康的文章、技巧和指南。</p>
                 </div>
 
                 <!-- Articles Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- 新文章 - 储蓄 vs. 投资 -->
+                    <!-- Article Card - 加密货币入门指南 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
-                        <a href="articulo-ahorrar-vs-invertir.html" class="block">
+                        <a href="articulo-criptomonedas-principiantes.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
-                                <h2 class="text-2xl font-bold text-gold text-center">储蓄 vs 投资</h2>
+                                <h2 class="text-2xl font-bold text-gold text-center">加密世界</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">储蓄 vs. 投资：您的资金终极指南</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">了解储蓄与投资的关键区别，为您的财务未来发现理想策略。掌握控制权的终极指南。</p>
+                            <h3 class="text-xl font-semibold text-navy mb-2">加密货币入门指南</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">了解什么是加密货币、区块链如何运作以及安全开始投资的步骤。这是初学者的必备指南。</p>
+                            <a href="articulo-criptomonedas-principiantes.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article Card - 储蓄与投资 -->
+                    <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
+                        <a href="articulo-ahorrar-vs-invertir.html" class="block">
+                            <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
+                                <h2 class="text-2xl font-bold text-gold text-center">储蓄与投资</h2>
+                            </div>
+                        </a>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-semibold text-navy mb-2">储蓄与投资：您的资金终极指南</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">了解储蓄与投资之间的关键区别，并为您的财务未来发现理想的策略。这是掌握控制权的权威指南。</p>
                             <a href="articulo-ahorrar-vs-invertir.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
                     
-                    <!-- 文章 - 预算 -->
+                    <!-- Article Card - 预算 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-presupuesto-libertad-financiera.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
@@ -166,12 +180,12 @@
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2">预算不是监狱，而是您通往自由的地图</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">我们揭开预算的神秘面纱。了解为什么它不是限制，而是掌控您资金的最强大工具。</p>
+                            <p class="text-gray-600 mb-4 flex-grow">我们揭穿了预算的迷思。了解为什么它不是限制，而是掌控您资金的最强大工具。</p>
                             <a href="articulo-presupuesto-libertad-financiera.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
 
-                    <!-- 文章 分摊开支 -->
+                    <!-- Article Card 分摊开支 -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-repartir-gastos.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
@@ -179,13 +193,13 @@
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">金钱与关系：在不破坏关系的情况下分摊开支的艺术</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">发现与伴侣、朋友或家人分摊开支的最公平、最有效的方法。沟通是关键。</p>
+                            <h3 class="text-xl font-semibold text-navy mb-2">金钱与关系：不破坏关系而分摊开支的艺术</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">发现与伴侣、朋友或家人分摊开支的最公平有效的方法。关键在于沟通。</p>
                             <a href="articulo-repartir-gastos.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
                     
-                    <!-- 文章 家计簿 -->
+                    <!-- Article Card Kakebo -->
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-kakebo-bancfy.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
@@ -194,7 +208,7 @@
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2">家计簿与Bancfy：您财务健康的完美结合</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">探索日本古老的家计簿智慧如何与Bancfy的技术融合，彻底改变您的财务管理。</p>
+                            <p class="text-gray-600 mb-4 flex-grow">探索日本古老的家计簿智慧如何与Bancfy的技术相结合，彻底改变您的财务管理。</p>
                             <a href="articulo-kakebo-bancfy.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
@@ -203,12 +217,12 @@
                     <div class="bg-light-gray rounded-xl shadow-sm overflow-hidden flex flex-col group">
                         <a href="articulo-necesidades-vs-deseos.html" class="block">
                             <div class="w-full h-48 bg-navy flex items-center justify-center p-4 group-hover:scale-105 transition-transform duration-300">
-                                <h2 class="text-2xl font-bold text-gold text-center">需求 vs 欲望</h2>
+                                <h2 class="text-2xl font-bold text-gold text-center">需要与欲望</h2>
                             </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">需求 vs. 欲望：掌控您资金的主钥匙</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">掌握财务的第一步也是最有力的一步是学会区分什么是必需品，什么不是。</p>
+                            <h3 class="text-xl font-semibold text-navy mb-2">需要与欲望：掌控您资金的主钥匙</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">掌握您财务的第一步也是最强大的一步是学会区分什么是必需的，什么不是。</p>
                             <a href="articulo-necesidades-vs-deseos.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
@@ -222,7 +236,7 @@
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2">您的财务路线图：用50/30/20法则掌握您的预算</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">预算不是为您省钱的节食，而是一个攻击计划。了解这个简单的规则如何改变您的经济状况。</p>
+                            <p class="text-gray-600 mb-4 flex-grow">预算不是您资金的节食计划，而是一个攻击计划。了解这个简单的法则如何改变您的经济状况。</p>
                             <a href="articulo-regla-50-30-20.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
@@ -235,8 +249,8 @@
                              </div>
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-xl font-semibold text-navy mb-2">您资金的无声窃贼：如何追捕您的幽灵和吸血鬼开销</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">感觉您的薪水消失得无影无踪？学习如何识别并消除那些吞噬您预算的小额开销和订阅。</p>
+                            <h3 class="text-xl font-semibold text-navy mb-2">您资金的无声窃贼：如何追踪您的幽灵开销</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">您是否感觉薪水不翼而飞？学习识别并消除那些吞噬您预算的小额开销和订阅。</p>
                             <a href="articulo-gastos-hormiga-vampiro.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
@@ -250,7 +264,7 @@
                         </a>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-xl font-semibold text-navy mb-2">您的财务安全网：建立应急基金的终极指南</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">为意外情况准备一个缓冲垫不会让您致富，但它会给您带来更宝贵的东西：内心的平静。学习如何一步步建立您的应急基金。</p>
+                            <p class="text-gray-600 mb-4 flex-grow">为意外事件准备缓冲垫不会让您致富，但它会给您更宝贵的东西：内心的平静。学习如何一步步建立自己的应急基金。</p>
                             <a href="articulo-fondo-emergencia.html" class="text-gold font-semibold hover:underline mt-auto">阅读更多 &rarr;</a>
                         </div>
                     </div>
@@ -263,10 +277,10 @@
     <!-- ========== FOOTER ========== -->
     <footer class="bg-navy text-white">
         <div class="container mx-auto px-6 py-8">
-             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div class="mb-4 md:mb-0">
                     <p class="font-semibold">&copy; 2025 Bancfy. 版权所有。</p>
-                    <p class="text-sm text-gray-400">为您的财务福祉<span class="text-gold">&hearts;</span>设计。</p>
+                    <p class="text-sm text-gray-400">为了您的财务福祉，用<span class="text-gold">&hearts;</span>设计。</p>
                 </div>
                 <div class="flex space-x-5">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
@@ -274,13 +288,38 @@
                     <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                 </div>
             </div>
+            <!-- 开始：SEO链接部分 -->
+            <div class="border-t border-gray-700 mt-8 pt-6">
+                <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
+                    <div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+                        <a href="articulo-necesidades-vs-deseos.html" class="hover:text-white">基本金融概念</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-ahorrar-vs-invertir.html" class="hover:text-white">开始储蓄指南</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-presupuesto-libertad-financiera.html" class="hover:text-white">如何制定预算</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-ahorrar-vs-invertir.html" class="hover:text-white">初学者投资</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-gastos-hormiga-vampiro.html" class="hover:text-white">什么是幽灵开销</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-fondo-emergencia.html" class="hover:text-white">建立应急基金</a>
+                        <span class="opacity-50">|</span>
+                        <a href="articulo-criptomonedas-principiantes.html" class="hover:text-white">了解加密货币</a>
+                        <span class="opacity-50">|</span>
+                         <a href="articulo-regla-50-30-20.html" class="hover:text-white">储蓄方法</a>
+                         <span class="opacity-50">|</span>
+                         <a href="articulo-kakebo-bancfy.html" class="hover:text-white">家计簿：日本储蓄法</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 结束：SEO链接部分 -->
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const currentLangCode = 'zh';
             const supportedLangs = {
-                'zh': { name: '中文', flag: 'cn', url: '/zh/blog.html' },
                 'es': { name: 'Español', flag: 'es', url: '/es/blog.html' },
                 'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/blog.html' },
                 'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg', url: '/eu/blog.html' },
@@ -292,6 +331,7 @@
                 'pt': { name: 'Português', flag: 'pt', url: '/pt/blog.html' },
                 'ja': { name: '日本語', flag: 'jp', url: '/ja/blog.html' },
                 'ko': { name: '한국어', flag: 'kr', url: '/ko/blog.html' },
+                'zh': { name: '中文', flag: 'cn', url: '/zh/blog.html' },
                 'ar': { name: 'العربية', flag: 'ae', url: '/ar/blog.html' }
             };
 
@@ -299,7 +339,7 @@
             const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
 
             for (const [code, langData] of Object.entries(supportedLangs)) {
-                if (code === 'zh') continue; 
+                if (code === currentLangCode) continue; 
 
                 const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
                 const innerHTML = `<img src="${flagSrc}" alt="${langData.name}国旗" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
