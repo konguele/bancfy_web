@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- 
+    ================================================================
+    SEO Y ETIQUETAS
+    ================================================================
+    -->
     <title>Guía de Criptomonedas para Principiantes | Blog de Bancfy</title>
     <meta name="description" content="Descubre qué son las criptomonedas, cómo funciona la blockchain y los pasos seguros para empezar a invertir. Guía esencial para principiantes.">
     
@@ -27,164 +32,247 @@
     <meta property="og:url" content="https://www.bancfy.com/es/articulo-criptomonedas-principiantes.html">
     <meta property="og:title" content="Guía de Criptomonedas para Principiantes | Blog de Bancfy">
     <meta property="og:description" content="Descubre qué son las criptomonedas, cómo funciona la blockchain y los pasos seguros para empezar a invertir. Guía esencial para principiantes.">
-    <meta property="og:image" content="https://placehold.co/600x400/0C2340/C8B273?text=Gu%C3%ADa+Cripto">
+    <meta property="og:image" content="https://www.bancfy.com/images/crypto.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.bancfy.com/es/articulo-criptomonedas-principiantes.html">
     <meta property="twitter:title" content="Guía de Criptomonedas para Principiantes | Blog de Bancfy">
     <meta property="twitter:description" content="Descubre qué son las criptomonedas, cómo funciona la blockchain y los pasos seguros para empezar a invertir. Guía esencial para principiantes.">
-    <meta property="twitter:image" content="https://placehold.co/600x400/0C2340/C8B273?text=Gu%C3%ADa+Cripto">
+    <meta property="twitter:image" content="https://www.bancfy.com/images/crypto.png">
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de Colores Tailwind -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0A2540',
+                        gold: '#C8B273',
+                        'gold-hover': '#bda66b',
+                        'neon-cian': '#00FFFF',
+                        'neon-fucsia': '#F50057',
+                        'banhyde-bg': '#040C18',
+                        'banhyde-glass': 'rgba(10, 25, 47, 0.85)',
+                        'light-gray': '#F7F7F7'
+                    },
+                    fontFamily: {
+                        sans: ['Urbanist', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-cian': '0 0 15px rgba(0, 255, 255, 0.5)',
+                        'neon-fucsia': '0 0 15px rgba(245, 0, 87, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts: Urbanist -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
     <link rel="icon" href="/images/logo.png" type="image/png">
 
+    <!-- Estilos Personalizados -->
     <style>
-        body { font-family: 'Urbanist', sans-serif; }
-        :root {
-            --navy: #0C2340;
-            --gold: #C8B273;
-            --gold-hover: #bda66b;
-            --light-gray: #F7F7F7;
-        }
-        .bg-navy { background-color: var(--navy); }
-        .text-navy { color: var(--navy); }
-        .bg-gold { background-color: var(--gold); }
-        .text-gold { color: var(--gold); }
-        .hover\:bg-gold-hover:hover { background-color: var(--gold-hover); }
-        .border-gold { border-color: var(--gold); }
-        .bg-light-gray { background-color: var(--light-gray); }
-        .prose { color: #374151; }
-        .prose h1, .prose h2, .prose h3, .prose h4 { color: var(--navy); }
-        .prose a { color: var(--gold); text-decoration: none; }
-        .prose a:hover { text-decoration: underline; }
-        .prose strong { color: var(--navy); }
-        .prose blockquote { border-left-color: var(--gold); color: #4b5563; }
-        .prose ul li::marker { color: var(--gold); }
-        .prose ol li::marker { color: var(--navy); }
-        .prose p { margin-bottom: 1.25em; }
+        body { font-family: 'Urbanist', sans-serif; transition: background-color 0.5s ease, color 0.5s ease; overflow-x: hidden; }
+        
+        /* Glitch Effect */
+        .glitch-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; pointer-events: none; opacity: 0; }
+        .glitching .glitch-overlay { display: block; animation: glitch-anim 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+        @keyframes glitch-anim { 0% { opacity: 0; transform: translate(0); } 10% { opacity: 1; transform: translate(-5px, 5px); background: #0A2540; } 30% { transform: translate(-5px, 5px); background: #00FFFF; clip-path: inset(80% 0 10% 0); } 50% { opacity: 1; transform: translate(0); filter: invert(1); } 100% { opacity: 0; transform: translate(0); } }
+        
+        /* Banhyde Specifics */
+        .dark body { background-color: #040C18; background-image: linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px); background-size: 40px 40px; }
+        
+        /* App Bar */
+        header.app-bar { position: fixed; top: 1rem; left: 50%; transform: translateX(-50%); width: 92%; max-width: 1200px; border-radius: 9999px; }
+        
+        /* Dropdown Fix */
         .group:hover .group-hover\:block { display: block; }
-        .mobile-lang-arrow.rotate-180 { transform: rotate(180deg); }
+        #lang-dropdown { padding-top: 0.5rem; margin-top: 0; }
+        .lang-inner { background-color: white; border-radius: 0.75rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); overflow: hidden; }
+        .dark .lang-inner { background-color: rgba(10, 25, 47, 0.95); border: 1px solid rgba(0, 255, 255, 0.3); }
+        
+        /* Typography */
+        .prose h1, .prose h2, .prose h3, .prose h4 { color: inherit; }
+        .dark .prose strong { color: #00FFFF; } 
+        .dark .prose { color: #d1d5db; }
+        .dark .prose ul li::marker { color: #00FFFF; }
+        .dark .prose ol li::marker { color: #00FFFF; }
+        .dark .prose blockquote { border-left-color: #00FFFF; color: #9ca3af; }
     </style>
-</head>
-<body class="bg-white text-navy antialiased">
 
-    <!-- Header remains the same as the template -->
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
-        <!-- Navigation content from template goes here -->
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-             <a href="/es/index.html" class="text-2xl font-bold text-navy flex items-center gap-3">
-                <img src="/images/logo.png" alt="Logo de Bancfy" class="w-10 h-10 rounded-full">
-                Bancfy
+    <!-- Script de Detección de Modo -->
+    <script>
+        if (localStorage.getItem('banhydeMode') === 'true') { document.documentElement.classList.add('dark'); } else { document.documentElement.classList.remove('dark'); }
+    </script>
+</head>
+<body class="bg-white text-navy antialiased selection:bg-gold selection:text-white dark:selection:bg-neon-cian dark:selection:text-black">
+
+    <div class="glitch-overlay"></div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="app-bar z-50 transition-all duration-300 bg-white/70 dark:bg-banhyde-bg/60 backdrop-blur-xl border border-gray-200 dark:border-neon-cian/30 shadow-xl">
+        <nav class="px-6 py-3 flex justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="/images/logo.png" alt="Bancfy Logo" class="w-10 h-10 rounded-full object-cover shadow-sm group-hover:scale-105 transition-transform">
+                <span class="text-xl font-bold text-navy dark:text-white dark:group-hover:text-neon-cian transition-colors">Bancfy</span>
             </a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="/es/index.html#features" class="text-navy hover:text-gold transition-colors duration-300">Características</a>
-                <a href="/es/blog.html" class="text-gold font-semibold transition-colors duration-300">Blog</a>
-                <a href="/es/index.html#faq" class="text-navy hover:text-gold transition-colors duration-300">FAQ</a>
-                <a href="/es/index.html#contact" class="text-navy hover:text-gold transition-colors duration-300">Contacto</a>
-                 <div class="relative group">
-                    <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
-                        <img src="https://flagcdn.com/w20/es.png" alt="Bandera de España" class="w-5 h-auto mr-2 rounded-sm">
+
+            <!-- Menu Desktop -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="index.html#hero" class="text-sm font-bold hover:text-gold dark:text-gray-300 dark:hover:text-neon-cian transition-colors">Inicio</a>
+                <a href="index.html#features" class="text-sm font-bold hover:text-gold dark:text-gray-300 dark:hover:text-neon-cian transition-colors">Características</a>
+                <a href="blog.html" class="text-sm font-bold text-gold dark:text-neon-cian transition-colors">Blog</a>
+                <a href="index.html#faq" class="text-sm font-bold hover:text-gold dark:text-gray-300 dark:hover:text-neon-cian transition-colors">FAQ</a>
+                <a href="index.html#contact" class="text-sm font-bold hover:text-gold dark:text-gray-300 dark:hover:text-neon-cian transition-colors">Contacto</a>
+                
+                <!-- Toggle Mode Mini -->
+                <button onclick="toggleBanhydeMode()" class="flex items-center justify-center w-8 h-8 rounded-full border border-navy/20 dark:border-neon-cian/50 text-sm font-bold hover:bg-gray-100 dark:hover:bg-neon-cian/10 dark:text-white transition-all">
+                    <span class="dark:hidden">☾</span>
+                    <span class="hidden dark:inline text-neon-cian">☀</span>
+                </button>
+
+                <!-- Selector Idioma -->
+                <div class="relative group h-10 flex items-center">
+                    <button id="desktop-lang-btn" class="flex items-center gap-2 text-sm font-bold text-navy dark:text-white hover:text-gold dark:hover:text-neon-cian px-2 py-1 rounded-full hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
+                        <img src="https://flagcdn.com/w20/es.png" alt="ES" class="w-5 rounded-sm shadow-sm">
                         <span>ES</span>
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
+                    <div id="lang-dropdown" class="absolute right-0 top-full w-48 hidden group-hover:block pt-2">
+                        <div class="lang-inner max-h-80 overflow-y-auto" id="desktop-lang-list">
+                            <!-- Inyectado por JS -->
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="/es/index.html#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
-                Únete a la Espera
-            </a>
-            <button id="mobile-menu-button" class="md:hidden text-navy">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            
+             <!-- Menu Mobile Button -->
+             <button id="mobile-menu-btn" class="lg:hidden text-navy dark:text-white p-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-             <a href="/es/index.html#features" class="block py-2 px-4 text-sm hover:bg-light-gray">Características</a>
-             <a href="/es/blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray text-gold font-semibold">Blog</a>
-             <a href="/es/index.html#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">FAQ</a>
-             <a href="/es/index.html#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">Contacto</a>
-             <div class="border-t border-gray-200">
-                <div class="px-4 py-3">
-                    <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
-                        <img src="https://flagcdn.com/w20/es.png" alt="Bandera de España" class="w-5 h-auto mr-3 rounded-sm">
-                        <span class="font-semibold">Español</span>
-                        <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                </div>
-                <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
-                </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-banhyde-bg border-t dark:border-neon-cian/20 rounded-b-3xl absolute w-full left-0 top-full shadow-2xl overflow-hidden transition-all">
+             <div class="flex flex-col p-6 space-y-4">
+                 <a href="index.html#features" class="block text-lg font-bold text-navy dark:text-white">Características</a>
+                 <a href="blog.html" class="block text-lg font-bold text-gold dark:text-neon-cian">Blog</a>
+                 <a href="index.html#faq" class="block text-lg font-bold text-navy dark:text-white">FAQ</a>
+                 <a href="index.html#contact" class="block text-lg font-bold text-navy dark:text-white">Contacto</a>
+                 
+                 <!-- Toggle Mobile -->
+                 <button onclick="toggleBanhydeMode()" class="flex items-center gap-2 text-lg font-bold text-navy dark:text-white">
+                    <span class="dark:hidden">☾ Activar Modo Banhyde</span>
+                    <span class="hidden dark:inline text-neon-cian">☀ Volver a la Luz</span>
+                 </button>
+
+                 <div class="pt-4 mt-2 border-t border-gray-100 dark:border-gray-800">
+                     <p class="text-xs font-bold text-gray-400 mb-3 uppercase tracking-wider">Selecciona idioma</p>
+                     <div id="mobile-lang-list" class="grid grid-cols-2 gap-3">
+                         <!-- JS injected -->
+                     </div>
+                 </div>
              </div>
         </div>
     </header>
 
+    <div class="h-28"></div>
+
+    <!-- ========== MAIN CONTENT ========== -->
     <main>
-        <article class="py-20">
+        <!-- HERO SECTION (crypto.png) -->
+        <section class="relative w-full h-[50vh] min-h-[400px] flex items-center justify-start pt-20 bg-cover bg-center" style="background-image: url('/images/crypto.png');">
+            <!-- Overlay degradado -->
+            <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-transparent dark:from-black/90 dark:via-black/70 dark:to-transparent"></div>
+            
+            <div class="relative z-10 px-6 md:px-12 max-w-4xl">
+                <span class="inline-block py-1 px-3 rounded-full bg-gold/20 text-gold border border-gold/50 backdrop-blur-md text-sm font-bold tracking-widest mb-4 dark:text-neon-cian dark:bg-neon-cian/10 dark:border-neon-cian">CRIPTO</span>
+                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight drop-shadow-lg text-left">
+                    Guía de Criptomonedas<br>para Principiantes
+                </h1>
+                <p class="text-gray-200 mt-4 text-lg md:text-xl font-medium max-w-lg">Descubre qué son, la blockchain y los pasos seguros para invertir.</p>
+            </div>
+        </section>
+
+        <!-- ARTICLE CONTENT -->
+        <article class="py-16 bg-white dark:bg-transparent transition-colors">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto">
+                    <!-- Breadcrumbs -->
                     <div class="mb-8">
-                        <a href="/es/blog.html" class="text-gold font-semibold hover:underline">&larr; Volver al Blog</a>
+                        <a href="blog.html" class="inline-flex items-center text-gold dark:text-neon-cian font-bold hover:underline transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                            Volver al Blog
+                        </a>
                     </div>
                     
-                    <div class="prose lg:prose-xl max-w-none">
-                        <h1>Guía de Criptomonedas para Principiantes: Lo que Debes Saber Antes de Invertir</h1>
-                        
-                        <img src="https://placehold.co/600x400/0C2340/C8B273?text=Gu%C3%ADa+Cripto" alt="Ilustración conceptual de Criptomonedas con logos de Bitcoin y Ethereum." class="w-full rounded-xl my-8">
-
-                        <p>El mundo ha oído hablar de Bitcoin. Has visto titulares sobre subidas espectaculares y caídas dramáticas, y es probable que te preguntes: ¿qué son realmente las criptomonedas? ¿Es una oportunidad de inversión que estoy dejando pasar o una burbuja a punto de estallar?</p>
+                    <div class="prose lg:prose-xl max-w-none text-gray-600 dark:text-gray-300 transition-colors">
+                        <p class="lead text-xl font-medium text-navy dark:text-white mb-8">
+                            El mundo ha oído hablar de Bitcoin. Has visto titulares sobre subidas espectaculares y caídas dramáticas, y es probable que te preguntes: ¿qué son realmente las criptomonedas? ¿Es una oportunidad de inversión que estoy dejando pasar o una burbuja a punto de estallar?
+                        </p>
                         
                         <p>Si sientes una mezcla de curiosidad y confusión, estás en el lugar correcto. Olvídate del lenguaje técnico y el ruido de las redes sociales. Esta guía está diseñada para principiantes, para darte una base sólida y ayudarte a entender este nuevo universo financiero con una perspectiva clara y sensata.</p>
 
-                        <h3>¿Qué son exactamente las Criptomonedas?</h3>
+                        <h3 class="text-2xl font-bold text-navy dark:text-white mt-10 mb-4">¿Qué son exactamente las Criptomonedas?</h3>
                         <p>Imagina el dinero que usas cada día. Está controlado por bancos y gobiernos. Las criptomonedas, en cambio, son <strong>dinero digital nativo de internet</strong>. Su característica principal es la <strong>descentralización</strong>: no dependen de ninguna autoridad central.</p>
                         <p>Piénsalo como un libro de contabilidad público y compartido. En lugar de que un solo banco registre todas las transacciones, miles de ordenadores en todo el mundo validan y guardan esa información. Esto es posible gracias a una tecnología revolucionaria llamada blockchain.</p>
 
-                        <h3>La Magia Detrás: ¿Qué es la Blockchain?</h3>
+                        <h3 class="text-2xl font-bold text-navy dark:text-white mt-10 mb-4">La Magia Detrás: ¿Qué es la Blockchain?</h3>
                         <p>La blockchain o "cadena de bloques" es el corazón de casi todas las criptomonedas. Es más fácil de entender con una analogía:</p>
-                        <ul>
+                        <ul class="list-disc pl-6 space-y-2 border-l-4 border-gold dark:border-neon-cian ml-2">
                             <li>Imagina un <strong>cuaderno digital (un bloque)</strong> donde se anotan todas las transacciones.</li>
                             <li>Una vez que el cuaderno se llena, <strong>se sella con un candado criptográfico único y se añade a una cadena</strong> de cuadernos anteriores.</li>
                             <li>Esta cadena es <strong>pública y transparente</strong>. Todos los participantes tienen una copia, por lo que es prácticamente imposible alterar o falsificar una transacción pasada sin que toda la red se dé cuenta.</li>
                         </ul>
                         <p>Esta tecnología es lo que aporta <strong>seguridad, transparencia e inmutabilidad</strong> a las criptomonedas.</p>
 
-                        <h3>Bitcoin y el Universo de las "Altcoins"</h3>
+                        <h3 class="text-2xl font-bold text-navy dark:text-white mt-10 mb-4">Bitcoin y el Universo de las "Altcoins"</h3>
                         <p>Seguro conoces <strong>Bitcoin (BTC)</strong>. Fue la primera criptomoneda, creada en 2009, y sigue siendo la más grande y conocida. Su propósito original era ser un "oro digital": una reserva de valor descentralizada.</p>
                         <p>Pero el universo cripto es mucho más que Bitcoin. A todas las demás criptomonedas se les conoce como <strong>"altcoins"</strong> (monedas alternativas). Algunas de las más importantes son:</p>
-                        <ul>
+                        <ul class="list-disc pl-6 space-y-2 border-l-4 border-gold dark:border-neon-cian ml-2">
                             <li><strong>Ethereum (ETH):</strong> Es la segunda más grande. Más que solo dinero, Ethereum funciona como una plataforma para construir aplicaciones descentralizadas (DApps) y "contratos inteligentes", que son acuerdos que se ejecutan automáticamente sin intermediarios.</li>
                             <li><strong>Otras:</strong> Existen miles de altcoins, cada una con un propósito diferente, desde mejorar la velocidad de las transacciones hasta centrarse en la privacidad o en industrias específicas como los videojuegos o las finanzas.</li>
                         </ul>
                         
-                        <h3>La Psicología del Inversor: 3 Reglas de Oro Antes de Empezar</h3>
+                        <h3 class="text-2xl font-bold text-navy dark:text-white mt-10 mb-4">La Psicología del Inversor: 3 Reglas de Oro Antes de Empezar</h3>
                         <p>El mercado de las criptomonedas es famoso por su <strong>volatilidad</strong>. Los precios pueden subir o bajar drásticamente en muy poco tiempo. Por eso, entender la psicología financiera es tan importante como entender la tecnología.</p>
-                        <ol>
+                        <ol class="list-decimal pl-6 space-y-3">
                             <li><strong>Cuidado con el FOMO (Fear Of Missing Out):</strong> El "miedo a quedarse fuera" es el peor consejero. Ver que una moneda sube un 100% en un día puede generar la tentación de comprar sin pensar. Las decisiones impulsivas suelen llevar a pérdidas.</li>
                             <li><strong>Haz tu Propia Investigación (DYOR - Do Your Own Research):</strong> No inviertas en algo solo porque un amigo o un influencer te lo dijo. Investiga el proyecto detrás de la moneda: ¿qué problema resuelve? ¿Quién es el equipo? ¿Tiene un caso de uso real?</li>
                             <li><strong>La Regla Fundamental: No Inviertas Más de lo que Puedas Permitirte Perder.</strong> Esta es, sin duda, la regla más importante. Debido a su volatilidad, nunca debes invertir dinero que necesites para tus gastos esenciales, tu fondo de emergencia o tus objetivos financieros a corto plazo.</li>
                         </ol>
 
-                        <h3>¿Cómo Empezar de Forma Segura? Guía Práctica en 3 Pasos</h3>
+                        <h3 class="text-2xl font-bold text-navy dark:text-white mt-10 mb-4">¿Cómo Empezar de Forma Segura? Guía Práctica en 3 Pasos</h3>
                         <p>Si después de informarte decides dar el primer paso, hazlo de manera ordenada y segura.</p>
-                        <ul>
+                        <ul class="list-disc pl-6 space-y-2 border-l-4 border-gold dark:border-neon-cian ml-2">
                             <li><strong>Paso 1: Fórmate continuamente.</strong> La educación es tu mejor herramienta. Sigue fuentes fiables, lee los documentos de los proyectos (whitepapers) y entiende los fundamentos antes de invertir.</li>
                             <li><strong>Paso 2: Elige un "Exchange" de Confianza.</strong> Un exchange es una plataforma online que funciona como un mercado para comprar, vender e intercambiar criptomonedas por dinero fiduciario (como euros o dólares). Investiga las opciones más seguras y con buena reputación.</li>
                             <li><strong>Paso 3: Compra y Almacena de Forma Segura.</strong> Una vez que compras tus primeras criptomonedas, se guardan en una "wallet" o monedero digital. Puede ser dentro del propio exchange (más sencillo para empezar) o en un monedero externo (más seguro para grandes cantidades a largo plazo).</li>
                         </ul>
                         
-                        <h3>Conclusión: Una Revolución en Marcha</h3>
+                        <h3 class="text-2xl font-bold text-navy dark:text-white mt-10 mb-4">Conclusión: Una Revolución en Marcha</h3>
                         <p>Las criptomonedas y la tecnología blockchain representan un cambio de paradigma con el potencial de transformar muchas industrias. Sin embargo, como toda tecnología emergente, conlleva riesgos y volatilidad.</p>
                         <p>El enfoque más inteligente para un principiante no es buscar el enriquecimiento rápido, sino la <strong>comprensión y la prudencia</strong>. Empieza poco a poco, prioriza la educación y toma decisiones informadas.</p>
                         <p>En Bancfy, creemos que el conocimiento es la clave para tomar el control de tu futuro financiero. Sigue explorando nuestro blog para aprender más sobre cómo navegar el mundo de las finanzas, tanto el tradicional como el digital, con confianza y seguridad.</p>
                     </div>
 
                     <!-- CTA Section -->
-                    <div class="mt-16 p-8 bg-light-gray rounded-xl text-center">
-                        <h3 class="text-2xl font-bold text-navy">¿Listo para explorar nuevas fronteras financieras?</h3>
-                        <p class="text-gray-600 my-4">Entender el mundo cripto es el primer paso. Pero como has leído, la prudencia y una base financiera sólida son claves antes de explorar inversiones volátiles. Con Bancfy, puedes construir esa base: visualiza tus finanzas, sé consciente de tu capital y decide con confianza qué cantidad puedes destinar a nuevas oportunidades, aplicando la regla de oro de no arriesgar más de lo que puedes permitirte. Toma el control hoy para invertir con más seguridad mañana.</p>
-                        <a href="/es/index.html#newsletter" class="inline-block bg-gold text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
+                    <div class="mt-16 p-10 bg-navy dark:bg-black/40 rounded-3xl text-center border border-transparent dark:border-neon-cian/30 shadow-2xl group relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gold/10 dark:bg-neon-cian/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h3 class="text-2xl font-extrabold text-white mb-4 relative z-10">¿Listo para explorar nuevas fronteras financieras?</h3>
+                        <p class="text-gray-300 mb-8 max-w-lg mx-auto relative z-10">Entender el mundo cripto es el primer paso. Pero como has leído, la prudencia y una base financiera sólida son claves antes de explorar inversiones volátiles. Con Bancfy, puedes construir esa base: visualiza tus finanzas, sé consciente de tu capital y decide con confianza qué cantidad puedes destinar a nuevas oportunidades, aplicando la regla de oro de no arriesgar más de lo que puedes permitirte. Toma el control hoy para invertir con más seguridad mañana.</p>
+                        <a href="index.html#newsletter" class="inline-block bg-gold text-white font-bold px-8 py-4 rounded-full shadow-lg hover:scale-105 transition-all relative z-10 dark:bg-neon-cian dark:text-black hover:bg-gold-hover dark:hover:bg-white dark:hover:text-neon-cian">
                             Construye mi Base Financiera
                         </a>
                     </div>
@@ -193,121 +281,92 @@
         </article>
     </main>
 
-    <!-- Footer remains the same as the template -->
-    <footer class="bg-navy text-white">
-        <div class="container mx-auto px-6 py-8">
-             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-                <div class="mb-4 md:mb-0">
-                    <p class="font-semibold">&copy; 2025 Bancfy. Todos los derechos reservados.</p>
-                    <p class="text-sm text-gray-400">Diseñado con <span class="text-gold">&hearts;</span> para tu bienestar financiero.</p>
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-navy text-white py-12 dark:bg-black dark:border-t dark:border-gray-800 transition-colors">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left mb-8">
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-xl font-bold mb-2">© 2025 Bancfy. Todos los derechos reservados.</h4>
+                    <p class="text-gray-400 text-sm">Diseñado con <span class="text-gold dark:text-neon-cian">♥</span> para tu bienestar financiero.</p>
                 </div>
-                <!-- Social media icons from template -->
-                <div class="flex space-x-5">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.c7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <div class="flex space-x-6">
+                    <a href="https://www.instagram.com/bancfyapp" target="_blank" class="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@bancfyapp" target="_blank" class="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@stiluproject" target="_blank" class="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts remain the same as the template -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Define all languages and their properties
-            const allLangs = {
-                'es': { name: 'Español', flag: 'es', url: '/es/articulo-criptomonedas-principiantes.html' },
-                'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/articulo-criptomonedas-principiantes.html' },
-                'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg', url: '/eu/articulo-criptomonedas-principiantes.html' },
-                'en': { name: 'English', flag: 'gb', url: '/articulo-criptomonedas-principiantes.html' },
-                'de': { name: 'Deutsch', flag: 'de', url: '/de/articulo-criptomonedas-principiantes.html' },
-                'de-ch': { name: 'Schweizerdeutsch', flag: 'ch', url: '/de-ch/articulo-criptomonedas-principiantes.html' },
-                'fr': { name: 'Français', flag: 'fr', url: '/fr/articulo-criptomonedas-principiantes.html' },
-                'it': { name: 'Italiano', flag: 'it', url: '/it/articulo-criptomonedas-principiantes.html' },
-                'pt': { name: 'Português', flag: 'pt', url: '/pt/articulo-criptomonedas-principiantes.html' },
-                'ja': { name: '日本語', flag: 'jp', url: '/ja/articulo-criptomonedas-principiantes.html' },
-                'ko': { name: '한국어', flag: 'kr', url: '/ko/articulo-criptomonedas-principiantes.html' },
-                'zh': { name: '中文', flag: 'cn', url: '/zh/articulo-criptomonedas-principiantes.html' },
-                'ar': { name: 'العربية', flag: 'ae', url: '/ar/articulo-criptomonedas-principiantes.html' }
-            };
+        const body = document.body;
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        let isBanhyde = localStorage.getItem('banhydeMode') === 'true';
 
-            // 2. Detect current language from the <html> tag
-            const currentLangCode = document.documentElement.lang || 'es';
-            const currentLang = allLangs[currentLangCode];
+        // Objeto con todos los idiomas soportados (Rutas específicas para este artículo)
+        const supportedLangs = {
+            'es': { name: 'Español', flag: 'es', url: '/es/articulo-criptomonedas-principiantes.html' },
+            'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/articulo-criptomonedas-principiantes.html' },
+            'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg', url: '/eu/articulo-criptomonedas-principiantes.html' },
+            'en': { name: 'English', flag: 'gb', url: '/articulo-criptomonedas-principiantes.html' },
+            'de': { name: 'Deutsch', flag: 'de', url: '/de/articulo-criptomonedas-principiantes.html' },
+            'de-ch': { name: 'Schweizerdeutsch', flag: 'ch', url: '/de-ch/articulo-criptomonedas-principiantes.html' },
+            'fr': { name: 'Français', flag: 'fr', url: '/fr/articulo-criptomonedas-principiantes.html' },
+            'it': { name: 'Italiano', flag: 'it', url: '/it/articulo-criptomonedas-principiantes.html' },
+            'pt': { name: 'Português', flag: 'pt', url: '/pt/articulo-criptomonedas-principiantes.html' },
+            'ja': { name: '日本語', flag: 'jp', url: '/ja/articulo-criptomonedas-principiantes.html' },
+            'ko': { name: '한국어', flag: 'kr', url: '/ko/articulo-criptomonedas-principiantes.html' },
+            'zh': { name: '中文', flag: 'cn', url: '/zh/articulo-criptomonedas-principiantes.html' },
+            'ar': { name: 'العربية', flag: 'ae', url: '/ar/articulo-criptomonedas-principiantes.html' }
+        };
+
+        const dropdownList = document.getElementById('desktop-lang-list');
+        const mobileLangList = document.getElementById('mobile-lang-list');
+
+        for (const [code, langData] of Object.entries(supportedLangs)) {
+            const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
             
-            // 3. Get DOM elements for dropdowns
-            const langDropdown = document.getElementById('lang-dropdown');
-            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
-            const langSelectorBtn = document.getElementById('lang-selector-btn');
-            const mobileLangSelectorBtn = document.getElementById('mobile-lang-selector-btn');
+            // Desktop Item
+            const desktopLink = document.createElement('a');
+            desktopLink.href = langData.url;
+            desktopLink.className = 'w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-neon-cian/20 text-sm text-gray-700 dark:text-gray-300 transition-colors border-b border-gray-50 dark:border-gray-800 last:border-0 text-left';
+            desktopLink.innerHTML = `<img src="${flagSrc}" class="w-5 rounded-sm shadow-sm"> ${langData.name}`;
+            dropdownList.appendChild(desktopLink);
 
-            // 4. Update the main buttons to show the current language
-            if (currentLang && langSelectorBtn && mobileLangSelectorBtn) {
-                const desktopFlag = langSelectorBtn.querySelector('img');
-                const desktopSpan = langSelectorBtn.querySelector('span');
-                const mobileFlag = mobileLangSelectorBtn.querySelector('img');
-                const mobileSpan = mobileLangSelectorBtn.querySelector('span');
-                
-                const flagSrc = currentLang.flagUrl ? currentLang.flagUrl : `https://flagcdn.com/w20/${currentLang.flag}.png`;
-                
-                if(desktopFlag) {
-                    desktopFlag.src = flagSrc;
-                    desktopFlag.alt = `Bandera de ${currentLang.name}`;
-                }
-                if(desktopSpan) desktopSpan.textContent = currentLangCode.split('-')[0].toUpperCase();
-                
-                if(mobileFlag) {
-                    mobileFlag.src = flagSrc;
-                    mobileFlag.alt = `Bandera de ${currentLang.name}`;
-                }
-                if(mobileSpan) mobileSpan.textContent = currentLang.name;
-            }
-
-            // 5. Populate the dropdowns with all OTHER languages
-            if(langDropdown && mobileLangDropdown) {
-                for (const [code, langData] of Object.entries(allLangs)) {
-                    if (code === currentLangCode) continue; // Skip the current language
-
-                    const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
-                    const altText = `Bandera de ${langData.name}`;
-
-                    // Create for Desktop
-                    const desktopLink = document.createElement('a');
-                    desktopLink.href = langData.url;
-                    desktopLink.className = 'flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-light-gray';
-                    desktopLink.innerHTML = `<img src="${flagSrc}" alt="${altText}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
-                    langDropdown.appendChild(desktopLink);
-
-                    // Create for Mobile
-                    const mobileLink = document.createElement('a');
-                    mobileLink.href = langData.url;
-                    mobileLink.className = 'flex items-center py-1.5 px-2 text-sm text-gray-700 hover:text-gold rounded-md hover:bg-white';
-                    mobileLink.innerHTML = `<img src="${flagSrc}" alt="${altText}" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
-                    mobileLangDropdown.appendChild(mobileLink);
-                }
-            }
-            
-            // 6. Add event listeners for mobile menu and dropdown
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileLangArrow = mobileLangSelectorBtn ? mobileLangSelectorBtn.querySelector('.mobile-lang-arrow') : null;
-            
-            if(mobileMenuButton) {
-                mobileMenuButton.addEventListener('click', () => {
-                    if(mobileMenu) mobileMenu.classList.toggle('hidden');
-                });
-            }
-            
-            if(mobileLangSelectorBtn) {
-                mobileLangSelectorBtn.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                    if(mobileLangDropdown) mobileLangDropdown.classList.toggle('hidden');
-                    if(mobileLangArrow) mobileLangArrow.classList.toggle('rotate-180');
-                });
-            }
+            // Mobile Item
+            const mobileLink = document.createElement('a');
+            mobileLink.href = langData.url;
+            mobileLink.className = 'flex items-center gap-2 p-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-gold dark:hover:border-neon-cian text-xs text-navy dark:text-white transition-all';
+            mobileLink.innerHTML = `<img src="${flagSrc}" class="w-5 rounded-sm"> <span class="font-bold">${code.toUpperCase()}</span>`;
+            mobileLangList.appendChild(mobileLink);
+        }
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-    </script>
 
+        function toggleBanhydeMode() {
+            body.classList.add('glitching');
+            setTimeout(() => {
+                isBanhyde = !isBanhyde;
+                if (isBanhyde) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+                localStorage.setItem('banhydeMode', isBanhyde);
+
+            }, 250);
+            setTimeout(() => body.classList.remove('glitching'), 500);
+        }
+    </script>
 </body>
 </html>
-
