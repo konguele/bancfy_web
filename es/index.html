@@ -365,14 +365,23 @@
         <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-banhyde-bg border-t dark:border-neon-cian/20 rounded-b-3xl absolute w-full left-0 top-full shadow-2xl overflow-hidden transition-all">
              <div class="flex flex-col p-6 space-y-4">
                  <a href="#features" class="block text-lg font-bold text-navy dark:text-white">Características</a>
-                 <!-- Link Blog Añadido en Móvil -->
                  <a href="/es/blog.html" class="block text-lg font-bold text-navy dark:text-white">Blog</a>
                  <a href="#faq" class="block text-lg font-bold text-navy dark:text-white">FAQ</a>
                  <a href="#contact" class="block text-lg font-bold text-navy dark:text-white">Contacto</a>
                  
+                 <!-- SELECTOR DESPLEGABLE MOVIL -->
                  <div class="pt-4 mt-2 border-t border-gray-100 dark:border-gray-800">
-                     <p class="text-xs font-bold text-gray-400 mb-3 uppercase tracking-wider">Selecciona idioma</p>
-                     <div id="mobile-lang-list" class="grid grid-cols-2 gap-3">
+                     <button id="mobile-lang-btn" class="w-full flex justify-between items-center text-lg font-bold text-navy dark:text-white py-2 group">
+                         <div class="flex items-center gap-3">
+                             <span>Idioma:</span>
+                             <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-white/10 text-sm">
+                                 <img id="mobile-current-flag" src="https://flagcdn.com/w20/es.png" class="w-5 rounded-sm">
+                                 <span id="mobile-current-text">ES</span>
+                             </div>
+                         </div>
+                         <svg id="mobile-lang-arrow" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                     </button>
+                     <div id="mobile-lang-dropdown" class="hidden mt-2 space-y-1 pl-1">
                          <!-- JS injected -->
                      </div>
                  </div>
@@ -808,7 +817,17 @@
 
         // Inicialización de Selectores de Idioma
         const dropdownInner = document.querySelector('#lang-dropdown .lang-inner');
-        const mobileLangList = document.getElementById('mobile-lang-list');
+        
+        // --- NUEVA LÓGICA MOVIL (DROPDOWN) ---
+        const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+        const mobileLangBtn = document.getElementById('mobile-lang-btn');
+        const mobileLangArrow = document.getElementById('mobile-lang-arrow');
+
+        // Toggle del dropdown móvil
+        mobileLangBtn.addEventListener('click', () => {
+            mobileLangDropdown.classList.toggle('hidden');
+            mobileLangArrow.classList.toggle('rotate-180');
+        });
 
         for (const [code, lang] of Object.entries(supportedLangs)) {
             const flagSrc = lang.flagUrl || `https://flagcdn.com/w20/${lang.flag}.png`;
@@ -820,12 +839,12 @@
             item.innerHTML = `<img src="${flagSrc}" class="w-5 rounded-sm shadow-sm"> ${lang.name}`;
             dropdownInner.appendChild(item);
 
-            // Mobile Item (Link real <a>)
+            // Mobile Item (Link real <a>) - ESTILO LISTA
             const mobileItem = document.createElement('a');
-            mobileItem.href = lang.url; // Usar la URL definida
-            mobileItem.className = "flex items-center gap-2 p-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-gold dark:hover:border-neon-cian text-xs text-navy dark:text-white transition-all";
-            mobileItem.innerHTML = `<img src="${flagSrc}" class="w-5 rounded-sm"> <span class="font-bold">${code.toUpperCase()}</span>`;
-            mobileLangList.appendChild(mobileItem);
+            mobileItem.href = lang.url; 
+            mobileItem.className = "flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 text-navy dark:text-gray-300 transition-colors";
+            mobileItem.innerHTML = `<img src="${flagSrc}" class="w-6 rounded-sm shadow-sm"> <span class="text-base font-medium">${lang.name}</span>`;
+            mobileLangDropdown.appendChild(mobileItem);
         }
 
         // --- MOBILE MENU ---
