@@ -6,18 +6,20 @@
     
     <!-- 
     ================================================================
-    SEO 및 한국어 버전용 태그
+    SEO 및 태그
     ================================================================
     -->
-
-    <title>Bancfy | AI와 카케이보로 여는 개인 금융의 미래</title>
-    <meta name="description" content="Bancfy는 당신의 금융 건강을 위한 최고의 앱입니다. 카케이보 방식, AI, 게이미피케이션, 교육을 통해 지출을 관리하고, 저축하며, 목표를 달성하세요. 대기자 명단에 등록하세요!">
-    <meta name="keywords" content="Bancfy, 개인 금융, 예산 앱, 카케이보, 돈 모으기, 금융 건강, 인공지능, 게이미피케이션, bancbot, 지출 추적, 투자, 암호화폐">
+    <title>Bancfy | AI와 Kakebo로 여는 개인 금융의 미래</title>
+    <meta name="description" content="Bancfy는 당신의 재정 건강을 위한 최고의 앱입니다. Kakebo 방식, AI, 게임화 및 교육을 사용하여 지출을 관리하고, 저축하며, 목표를 달성하세요. 대기자 명단에 합류하세요!">
+    <meta name="keywords" content="Bancfy, 개인 금융, 예산 앱, Kakebo 방식, 돈 절약, 재정 건강, 인공 지능, 게임화, bancbot, 지출 관리, 투자, 암호화폐">
     
-    <!-- Canonical 태그: 이 한국어 페이지의 기본 URL을 가리킵니다. -->
+    <!-- 파비콘 -->
+    <link rel="icon" href="/images/logo.png" type="image/png">
+    
+    <!-- 캐노니컬 태그 -->
     <link rel="canonical" href="https://www.bancfy.com/ko/" />
 
-    <!-- Hreflang 태그: Google에 이 페이지의 다른 언어 버전을 알립니다. -->
+    <!-- Hreflang 태그 -->
     <link rel="alternate" hreflang="es" href="https://www.bancfy.com/es/" />
     <link rel="alternate" hreflang="ca" href="https://www.bancfy.com/ca/" />
     <link rel="alternate" hreflang="eu" href="https://www.bancfy.com/eu/" />
@@ -33,7 +35,7 @@
     <link rel="alternate" hreflang="ar" href="https://www.bancfy.com/ar/" />
     <link rel="alternate" hreflang="x-default" href="https://www.bancfy.com/" />
 
-    <!-- 구조화된 데이터 (JSON-LD) 한국어 -->
+    <!-- 구조화된 데이터 (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -41,11 +43,11 @@
       "name": "Bancfy",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "iOS, Android, Web",
-      "description": "Bancfy는 카케이보 방법과 인공지능을 결합한 개인 금융 애플리케이션으로, 사용자가 지출을 관리하고 돈을 절약하며 금융 목표를 달성하도록 돕습니다.",
+      "description": "Bancfy는 Kakebo 방식과 인공지능을 결합한 개인 금융 애플리케이션입니다.",
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "KRW"
+        "priceCurrency": "USD"
       },
       "author": {
         "@type": "Organization",
@@ -57,653 +59,963 @@
     <meta name="author" content="Bancfy">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph / Facebook 한국어 -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bancfy.com/ko/">
-    <meta property="og:title" content="Bancfy | AI와 카케이보를 활용한 당신의 금융 앱">
-    <meta property="og:description" content="카케이보 방식, AI, 게이미피케이션, 금융 교육으로 당신의 돈을 관리하세요.">
+    <meta property="og:title" content="Bancfy | AI와 Kakebo를 갖춘 당신의 금융 앱">
     <meta property="og:image" content="https://www.bancfy.com/images/logo.png">
-
-    <!-- Twitter 한국어 -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.bancfy.com/ko/">
-    <meta property="twitter:title" content="Bancfy | AI와 카케이보를 활용한 당신의 금융 앱">
-    <meta property="twitter:description" content="카케이보 방식, AI, 게이미피케이션, 금융 교육으로 당신의 돈을 관리하세요.">
-    <meta property="twitter:image" content="https://www.bancfy.com/images/logo.png">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Urbanist + Noto Sans KR -->
+    <!-- Tailwind 설정 -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0A2540',
+                        gold: '#C8B273',
+                        'gold-hover': '#bda66b',
+                        'neon-cian': '#00FFFF',
+                        'neon-fucsia': '#F50057',
+                        'banhyde-bg': '#040C18',
+                        'banhyde-glass': 'rgba(10, 25, 47, 0.85)',
+                        'light-gray': '#F7F7F7'
+                    },
+                    fontFamily: {
+                        sans: ['Urbanist', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-cian': '0 0 15px rgba(0, 255, 255, 0.5)',
+                        'neon-fucsia': '0 0 15px rgba(245, 0, 87, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Urbanist -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Favicon -->
-    <link rel="icon" href="/images/logo.png" type="image/png">
-
+    <!-- 커스텀 스타일 -->
     <style>
-        body { font-family: 'Urbanist', 'Noto Sans KR', sans-serif; }
-        :root {
-            --navy: #0C2340;
-            --gold: #C8B273;
-            --gold-hover: #bda66b;
-            --light-gray: #F7F7F7;
+        /* --- CORE STYLES --- */
+        body {
+            font-family: 'Urbanist', sans-serif;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            overflow-x: hidden;
         }
-        .bg-navy { background-color: var(--navy); }
-        .text-navy { color: var(--navy); }
-        .bg-gold { background-color: var(--gold); }
-        .text-gold { color: var(--gold); }
-        .hover\:bg-gold-hover:hover { background-color: var(--gold-hover); }
-        .border-gold { border-color: var(--gold); }
-        .ring-gold:focus { ring-color: var(--gold); }
-        .bg-light-gray { background-color: var(--light-gray); }
-        .reveal {
+
+        /* --- GLITCH EFFECT ANIMATION --- */
+        .glitch-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            z-index: 9999;
+            pointer-events: none;
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .glitching .glitch-overlay {
+            display: block;
+            animation: glitch-anim 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        @keyframes glitch-anim {
+            0% { opacity: 0; transform: translate(0); }
+            10% { opacity: 1; transform: translate(-5px, 5px); background: #0A2540; }
+            20% { transform: translate(5px, -5px); background: #F50057; clip-path: inset(10% 0 80% 0); }
+            30% { transform: translate(-5px, 5px); background: #00FFFF; clip-path: inset(80% 0 10% 0); }
+            40% { transform: translate(5px, -5px); background: #040C18; clip-path: inset(40% 0 40% 0); }
+            50% { opacity: 1; transform: translate(0); filter: invert(1); }
+            100% { opacity: 0; transform: translate(0); }
+        }
+
+        /* --- 3D CAROUSEL (8 ITEMS) --- */
+        .carousel-scene {
+            perspective: 1200px;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .carousel-container {
+            width: 260px;
+            height: 520px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: translateZ(-400px);
+            transition: transform 1s;
+            animation: rotate-carousel 40s infinite linear;
+        }
+
+        .carousel-item {
+            position: absolute;
+            width: 240px;
+            height: 500px;
+            left: 10px;
+            top: 10px;
+            border-radius: 24px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.95;
+            border: 2px solid transparent;
+            transition: all 0.5s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        /* Calculations for 8 items (360 / 8 = 45deg) */
+        .carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+        .carousel-item:nth-child(2) { transform: rotateY(45deg) translateZ(400px); }
+        .carousel-item:nth-child(3) { transform: rotateY(90deg) translateZ(400px); }
+        .carousel-item:nth-child(4) { transform: rotateY(135deg) translateZ(400px); }
+        .carousel-item:nth-child(5) { transform: rotateY(180deg) translateZ(400px); }
+        .carousel-item:nth-child(6) { transform: rotateY(225deg) translateZ(400px); }
+        .carousel-item:nth-child(7) { transform: rotateY(270deg) translateZ(400px); }
+        .carousel-item:nth-child(8) { transform: rotateY(315deg) translateZ(400px); }
+
+        @keyframes rotate-carousel {
+            from { transform: translateZ(-400px) rotateY(0deg); }
+            to { transform: translateZ(-400px) rotateY(-360deg); }
+        }
+
+        .carousel-scene:hover .carousel-container { animation-play-state: paused; }
+
+        /* Banhyde Carousel */
+        .dark .carousel-item {
+            border: 1px solid #00FFFF;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            filter: brightness(0.85) contrast(1.1);
+        }
+
+        /* --- SMARTPHONE MOCKUP --- */
+        .smartphone-mockup {
+            position: relative;
+            width: 290px;
+            height: 600px;
+            background: #000;
+            border-radius: 45px;
+            border: 8px solid #1a1a1a;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+            overflow: hidden;
+            transition: all 0.5s ease;
+            margin: 0 auto;
+            z-index: 20;
+        }
+        .smartphone-screen { width: 100%; height: 100%; background: #fff; overflow: hidden; position: relative; }
+        .smartphone-notch {
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 130px; height: 28px; background: #1a1a1a;
+            border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; z-index: 30;
+        }
+
+        /* Banhyde Mockup */
+        .dark .smartphone-mockup {
+            border-color: #0A192F;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.15);
+        }
+
+        /* --- UTILITIES --- */
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
         .reveal.visible { opacity: 1; transform: translateY(0); }
-        .group:hover .group-hover\:block { display: block; }
-        .modal-backdrop { transition: opacity 0.3s ease-in-out; }
-        .modal-content { transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-        .faq-item.active .faq-answer {
-            max-height: 200px; /* Adjust as needed */
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-        .faq-item.active .faq-arrow { transform: rotate(180deg); }
-        .faq-arrow { transition: transform 0.3s ease-in-out; }
-        .mobile-lang-arrow.rotate-180 { transform: rotate(180deg); }
-    </style>
-</head>
-<body class="bg-white text-navy antialiased">
 
-    <!-- ========== 헤더 ========== -->
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/ko/" class="text-2xl font-bold text-navy flex items-center gap-3">
-                <img src="/images/logo.png" alt="Bancfy 로고" class="w-10 h-10 rounded-full">
-                Bancfy
+        /* FAQ Transition */
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease;
+        }
+        .faq-item.active .faq-answer { max-height: 500px; padding-top: 1rem; }
+        .faq-arrow { transition: transform 0.3s ease; }
+        .faq-item.active .faq-arrow { transform: rotate(180deg); }
+
+        /* Banhyde Specifics */
+        .dark body {
+            background-color: #040C18;
+            background-image: linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Banhyde 카드 명시적 정의 */
+        .banhyde-card {
+            background-color: transparent; 
+        }
+        .dark .banhyde-card {
+            background-color: rgba(10, 25, 47, 0.7) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 255, 0.25);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .dark .banhyde-card:hover {
+            border-color: #00FFFF;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+        }
+        
+        /* Banhyde Inputs/Forms */
+        .dark input, .dark textarea {
+            background-color: rgba(4, 12, 24, 0.6) !important;
+            border: 1px solid rgba(0, 255, 255, 0.3) !important;
+            color: #fff !important;
+        }
+        .dark input:focus, .dark textarea:focus {
+            border-color: #00FFFF !important;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3) !important;
+        }
+        .dark input::placeholder, .dark textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* 플로팅 App Bar */
+        header.app-bar {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 92%;
+            max-width: 1200px;
+            border-radius: 9999px; /* Pill shape */
+        }
+        
+        /* Dropdown Fix */
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+        #lang-dropdown {
+            padding-top: 0.5rem; 
+            margin-top: 0;
+        }
+        .lang-inner {
+            background-color: white;
+            border-radius: 1rem; /* Updated: Rounded borders (16px) */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .dark .lang-inner {
+            background-color: rgba(10, 25, 47, 0.95);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+    </style>
+
+    <!-- 모드 감지 스크립트 -->
+    <script>
+        if (localStorage.getItem('banhydeMode') === 'true') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-white text-navy antialiased selection:bg-gold selection:text-white dark:selection:bg-neon-cian dark:selection:text-black">
+
+    <!-- 글리치 효과 오버레이 -->
+    <div class="glitch-overlay"></div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="app-bar z-50 transition-all duration-300 bg-white/70 dark:bg-banhyde-bg/60 backdrop-blur-xl border border-gray-200 dark:border-neon-cian/30 shadow-xl">
+        <nav class="px-6 py-3 flex justify-between items-center">
+            
+            <!-- 로고 -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="/images/logo.png" alt="Bancfy Logo" class="w-10 h-10 rounded-full object-cover shadow-sm group-hover:scale-105 transition-transform">
+                <span class="text-xl font-bold text-navy dark:text-white dark:group-hover:text-neon-cian transition-colors">Bancfy</span>
             </a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#features" class="text-navy hover:text-gold transition-colors duration-300">기능</a>
-                <a href="/ko/blog.html" class="text-navy hover:text-gold transition-colors duration-300">블로그</a>
-                <a href="#faq" class="text-navy hover:text-gold transition-colors duration-300">FAQ</a>
-                <a href="#contact" class="text-navy hover:text-gold transition-colors duration-300">문의하기</a>
-                <!-- 언어 선택기 (데스크톱) -->
-                <div class="relative group">
-                    <button id="lang-selector-btn" class="flex items-center text-navy hover:text-gold transition-colors duration-300">
-                        <img src="https://flagcdn.com/w20/kr.png" alt="대한민국 국기" class="w-5 h-auto mr-2 rounded-sm">
-                        <span>KO</span>
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+
+            <!-- 데스크탑 메뉴 -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="#hero" class="text-sm font-bold hover:text-gold dark:text-gray-300 dark:hover:text-neon-cian transition-colors">홈</a>
+                <a href="#features" class="text-sm font-bold hover:text-gold dark:text-gray-300 dark:hover:text-neon-cian transition-colors">기능</a>
+                <!-- Link Blog -->
+                <a href="/ko/blog.html" class="text-sm font-bold hover:text-gold dark:text-gray-300 dark:hover:text-neon-cian transition-colors">블로그</a>
+                <a href="#story" class="text-sm font-bold hover:text-gold dark:text-gray-300 dark:hover:text-neon-cian transition-colors">스토리</a>
+                <a href="#faq" class="text-sm font-bold hover:text-gold dark:text-gray-300 dark:hover:text-neon-cian transition-colors">FAQ</a>
+                <a href="#contact" class="text-sm font-bold hover:text-gold dark:text-gray-300 dark:hover:text-neon-cian transition-colors">문의</a>
+                
+                <!-- Toggle Mode Mini -->
+                <button onclick="toggleBanhydeMode()" class="flex items-center justify-center w-8 h-8 rounded-full border border-navy/20 dark:border-neon-cian/50 text-sm font-bold hover:bg-gray-100 dark:hover:bg-neon-cian/10 dark:text-white transition-all">
+                    <span class="dark:hidden">☾</span>
+                    <span class="hidden dark:inline text-neon-cian">☀</span>
+                </button>
+
+                <!-- 언어 선택기 -->
+                <div class="relative group h-10 flex items-center">
+                    <button id="desktop-lang-btn" class="flex items-center gap-2 text-sm font-bold text-navy dark:text-white hover:text-gold dark:hover:text-neon-cian px-2 py-1 rounded-full hover:bg-gray-50 dark:hover:bg-white/5 transition-all">
+                        <img src="https://flagcdn.com/w20/kr.png" alt="KO" class="w-5 rounded-sm shadow-sm" id="desktop-flag-img">
+                        <span id="desktop-lang-code">KO</span>
+                        <svg class="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div id="lang-dropdown" class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-1 w-48 right-0 max-h-60 overflow-y-auto">
-                        <!-- JS에 의해 언어 삽입 -->
+                    <div id="lang-dropdown" class="absolute right-0 top-full w-48 hidden group-hover:block pt-2">
+                        <div class="lang-inner max-h-80 overflow-y-auto">
+                            <!-- JS로 주입 -->
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="#newsletter" class="hidden md:inline-block bg-gold text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
-                대기자 명단 참여
-            </a>
-            <button id="mobile-menu-button" class="md:hidden text-navy">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            
+             <!-- 모바일 메뉴 버튼 -->
+             <button id="mobile-menu-btn" class="lg:hidden text-navy dark:text-white p-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
+        
         <!-- 모바일 메뉴 -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-             <a href="#features" class="block py-2 px-4 text-sm hover:bg-light-gray">기능</a>
-             <a href="/ko/blog.html" class="block py-2 px-4 text-sm hover:bg-light-gray">블로그</a>
-             <a href="#faq" class="block py-2 px-4 text-sm hover:bg-light-gray">FAQ</a>
-             <a href="#contact" class="block py-2 px-4 text-sm hover:bg-light-gray">문의하기</a>
-             <!-- 언어 선택기 (모바일) -->
-             <div class="border-t border-gray-200">
-                <div class="px-4 py-3">
-                    <button id="mobile-lang-selector-btn" class="w-full flex items-center text-left text-sm text-navy">
-                        <img src="https://flagcdn.com/w20/kr.png" alt="대한민국 국기" class="w-5 h-auto mr-3 rounded-sm">
-                        <span class="font-semibold">한국어</span>
-                        <svg class="mobile-lang-arrow w-4 h-4 ml-auto transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                </div>
-                <div id="mobile-lang-dropdown" class="hidden bg-light-gray px-4 pb-3 space-y-1">
-                    <!-- JS에 의해 언어 삽입 -->
-                </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-banhyde-bg border-t dark:border-neon-cian/20 rounded-b-3xl absolute w-full left-0 top-full shadow-2xl overflow-hidden transition-all">
+             <div class="flex flex-col p-6 space-y-4">
+                 <a href="#features" class="block text-lg font-bold text-navy dark:text-white">기능</a>
+                 <a href="/ko/blog.html" class="block text-lg font-bold text-navy dark:text-white">블로그</a>
+                 <a href="#faq" class="block text-lg font-bold text-navy dark:text-white">FAQ</a>
+                 <a href="#contact" class="block text-lg font-bold text-navy dark:text-white">문의</a>
+                 
+                 <!-- Toggle Mode + 언어 (드롭다운) -->
+                 <div class="pt-4 mt-2 border-t border-gray-100 dark:border-gray-800">
+                     <!-- Toggle Mode (Mobile) -->
+                     <div class="flex items-center justify-between mb-4">
+                         <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">모드</span>
+                         <button onclick="toggleBanhydeMode()" class="flex items-center justify-center w-10 h-10 rounded-full border border-navy/20 dark:border-neon-cian/50 text-sm font-bold hover:bg-gray-100 dark:hover:bg-neon-cian/10 dark:text-white transition-all">
+                             <span class="dark:hidden">☾</span>
+                             <span class="hidden dark:inline text-neon-cian">☀</span>
+                         </button>
+                     </div>
+
+                     <!-- 모바일 드롭다운 선택기 -->
+                     <button id="mobile-lang-btn" class="w-full flex justify-between items-center text-lg font-bold text-navy dark:text-white py-2 group">
+                         <div class="flex items-center gap-3">
+                             <span>언어:</span>
+                             <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-white/10 text-sm">
+                                 <img id="mobile-current-flag" src="https://flagcdn.com/w20/kr.png" class="w-5 rounded-sm">
+                                 <span id="mobile-current-text">KO</span>
+                             </div>
+                         </div>
+                         <svg id="mobile-lang-arrow" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                     </button>
+                     <div id="mobile-lang-dropdown" class="hidden mt-2 space-y-1 pl-1">
+                         <!-- JS injected -->
+                     </div>
+                 </div>
              </div>
         </div>
     </header>
 
-    <!-- ========== 메인 콘텐츠 ========== -->
+    <div class="h-28"></div>
+
+    <!-- ========== MAIN CONTENT ========== -->
     <main>
-        <!-- ========== 히어로 섹션 ========== -->
-        <section class="bg-light-gray overflow-hidden">
-            <div class="container mx-auto px-6 py-20 md:py-28">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <!-- 텍스트 열 -->
-                    <div class="text-center md:text-left">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-navy leading-tight mb-4 reveal">
+        
+        <!-- ========== HERO SECTION ========== -->
+        <section id="hero" class="relative pt-8 pb-20 lg:pt-16 lg:pb-28 overflow-hidden bg-light-gray dark:bg-transparent transition-colors duration-500">
+            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="text-center lg:text-left z-10">
+                    <!-- Light Mode -->
+                    <div class="block dark:hidden reveal">
+                        <h1 class="text-5xl lg:text-7xl font-extrabold text-navy leading-tight mb-6 tracking-tight">
                             개인 금융의 미래에 오신 것을 환영합니다.
                         </h1>
-                        <p class="text-lg md:text-xl text-gray-600 max-w-xl mx-auto md:mx-0 mb-8 reveal" style="transition-delay: 200ms;">
-                            Bancfy는 단순한 앱이 아니라 새로운 금융 생태계입니다. 카케이보 방법의 지혜와 AI의 힘을 결합하여 상상하지 못했던 명확성과 통제력을 제공합니다.
+                        <p class="text-xl text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 font-medium leading-relaxed">
+                            Bancfy는 단순한 앱이 아니라 새로운 금융 생태계입니다. Kakebo 방식의 지혜와 AI의 힘을 결합하여 완벽한 명확성을 제공합니다.
                         </p>
-                        <div class="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 reveal" style="transition-delay: 400ms;">
-                            <a href="#newsletter" class="bg-gold text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105 w-full sm:w-auto">
-                                혁명에 동참하세요
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#newsletter" class="bg-gold text-white px-8 py-4 rounded-full font-bold hover:bg-gold-hover transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
+                                혁명에 참여하기
                             </a>
-                            <a href="#features" class="bg-white text-navy font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto">
+                            <a href="#features" class="bg-white text-navy border border-gray-200 px-8 py-4 rounded-full font-bold hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
                                 더 알아보기
                             </a>
                         </div>
                     </div>
-                    <!-- 이미지 열 -->
-                    <div class="relative flex justify-center items-center reveal" style="transition-delay: 300ms;">
-                         <div class="absolute w-full h-full bg-navy/10 rounded-full blur-3xl -z-10"></div>
-                         <img src="/images/cabecera.png" 
-                             alt="스마트폰에서 Bancfy 애플리케이션 보기" 
-                             class="rounded-3xl shadow-2xl max-w-sm w-full transform transition-transform duration-500 hover:scale-105 z-10">
+
+                    <!-- Dark Mode -->
+                    <div class="hidden dark:block reveal">
+                        <span class="text-neon-fucsia font-mono text-xs tracking-[0.3em] mb-4 block animate-pulse border border-neon-fucsia/30 inline-block px-3 py-1 rounded bg-neon-fucsia/10">> SYSTEM_OVERRIDE: 활성</span>
+                        <h1 class="text-5xl lg:text-7xl font-black text-white leading-tight mb-6" style="text-shadow: 0 0 30px rgba(0, 255, 255, 0.3);">
+                            <span class="text-neon-cian">NEXUS</span>에 오신 것을 환영합니다.
+                        </h1>
+                        <p class="text-xl text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0 border-l-4 border-neon-fucsia pl-6 leading-relaxed">
+                            당신은 문턱을 넘었습니다. 여기서 당신의 데이터는 단순한 숫자가 아니라 에너지입니다. 시각화하고, 습관을 해킹하고, 자산을 발전시키세요.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#newsletter" class="group relative bg-transparent border-2 border-neon-cian text-neon-cian px-8 py-4 rounded-full font-bold overflow-hidden transition-all shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:shadow-[0_0_25px_rgba(0,255,255,0.6)]">
+                                <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-neon-cian rounded-full group-hover:w-56 group-hover:h-56 opacity-10"></span>
+                                <span class="relative">프로토콜 시작</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Column -->
+                <div class="relative flex justify-center reveal" style="transition-delay: 200ms;">
+                    <div class="absolute -z-10 w-[120%] h-[120%] bg-white rounded-full blur-3xl opacity-60 dark:hidden"></div>
+                    <div class="absolute -z-10 w-[120%] h-[120%] bg-neon-cian/5 rounded-full blur-3xl opacity-40 hidden dark:block"></div>
+
+                    <div class="smartphone-mockup">
+                        <div class="smartphone-notch"></div>
+                        <div class="smartphone-screen">
+                            <video id="hero-video-light" class="w-full h-full object-cover block dark:hidden" 
+                                   autoplay loop muted playsinline preload="metadata">
+                                <!-- Source dynamically set by JS -->
+                            </video>
+                            <video id="hero-video-dark" class="w-full h-full object-cover hidden dark:block" 
+                                   autoplay loop muted playsinline preload="metadata">
+                                <!-- Source dynamically set by JS -->
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== 기능 섹션 ========== -->
-        <section id="features" class="py-20">
+        <!-- ========== FEATURES SECTION ========== -->
+        <section id="features" class="py-24 bg-white dark:bg-transparent transition-colors duration-500">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">금융 건강을 위한 가장 완벽한 앱.</h2>
-                    <p class="text-gray-600 mt-2 max-w-3xl mx-auto reveal" style="transition-delay: 200ms;">검증된 방법과 최첨단 기술을 결합하여 전례 없는 통제력을 제공합니다.</p>
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-navy dark:text-white reveal">당신의 재정 건강을 위한 가장 완벽한 앱.</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mt-4 max-w-3xl mx-auto reveal text-lg">검증된 방법과 최첨단 기술을 결합하여 전례 없는 통제력을 제공합니다.</p>
                 </div>
+
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 기능: 카케이보 -->
-                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4">
-                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">디지털 카케이보 방식</h3><p class="text-gray-600">일본의 절약 기술을 단순화했습니다. 모든 지출을 기록, 분석하고 인식하세요.</p></div>
+                    <!-- Cards -->
+                    <div class="p-8 rounded-3xl bg-light-gray banhyde-card transition-all duration-300 hover:shadow-lg reveal group h-full">
+                        <div class="w-14 h-14 rounded-full bg-gold text-white flex items-center justify-center mb-6 text-2xl dark:bg-transparent dark:border-2 dark:border-neon-cian dark:text-neon-cian dark:shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-all">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy dark:text-white mb-3">디지털 Kakebo 방식</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">일본의 절약 기술을 단순화했습니다. 지출하는 모든 푼돈을 기록하고, 분석하고, 진정으로 인식하세요.</p>
                     </div>
-                    <!-- 기능: Bancbot AI -->
-                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 100ms;">
-                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V8.25a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 8.25v7.5A2.25 2.25 0 006.75 18z" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">당신의 AI 코치, Bancbot</h3><p class="text-gray-600">당신의 습관에서 배우는 머신러닝 덕분에 맞춤형 조언을 받으세요.</p></div>
+
+                    <div class="p-8 rounded-3xl bg-light-gray banhyde-card transition-all duration-300 hover:shadow-lg reveal group h-full" style="transition-delay: 100ms;">
+                        <div class="w-14 h-14 rounded-full bg-gold text-white flex items-center justify-center mb-6 text-2xl dark:bg-transparent dark:border-2 dark:border-neon-cian dark:text-neon-cian dark:shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-all">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy dark:text-white mb-3">Bancbot, 당신의 AI 코치</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">일상 습관을 학습하는 머신 러닝 덕분에 초개인화된 조언을 받을 수 있습니다.</p>
                     </div>
-                    <!-- 기능: 게이미피케이션 -->
-                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 200ms;">
-                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9.75 9.75 0 100-13.5h9a9.75 9.75 0 100 13.5zM16.5 18.75a9.75 9.75 0 00-9-13.5" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">재미있는 게임화</h3><p class="text-gray-600">절약은 게임입니다. 트로피를 획득하고 개인 또는 사회적 챌린지에서 경쟁하세요.</p></div>
+
+                    <div class="p-8 rounded-3xl bg-light-gray banhyde-card transition-all duration-300 hover:shadow-lg reveal group h-full" style="transition-delay: 200ms;">
+                         <div class="w-14 h-14 rounded-full bg-gold text-white flex items-center justify-center mb-6 text-2xl dark:bg-transparent dark:border-2 dark:border-neon-cian dark:text-neon-cian dark:shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-all">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy dark:text-white mb-3">재미있는 게임화</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">저축은 게임입니다. 트로피를 획득하고, 레벨을 올리고, 개인 도전이나 친구들과 경쟁하세요.</p>
                     </div>
-                    <!-- 기능: 계정 -->
-                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 300ms;">
-                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">모든 계정을 한 곳에</h3><p class="text-gray-600">입출금, 저축, 투자, 암호화폐, 대출. 공유 계정까지 모든 것을 한 곳에서!</p></div>
+
+                    <div class="p-8 rounded-3xl bg-light-gray banhyde-card transition-all duration-300 hover:shadow-lg reveal group h-full" style="transition-delay: 300ms;">
+                        <div class="w-14 h-14 rounded-full bg-gold text-white flex items-center justify-center mb-6 text-2xl dark:bg-transparent dark:border-2 dark:border-neon-cian dark:text-neon-cian dark:shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-all">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy dark:text-white mb-3">모든 계좌를 한곳에</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">입출금, 저축, 투자, 암호화폐 및 신용. 공유 계좌를 포함하여 모든 것을 한 곳에서 중앙 집중화합니다.</p>
                     </div>
-                    <!-- 기능: 교육 -->
-                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 400ms;">
-                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5z" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">인터랙티브 교육</h3><p class="text-gray-600">미니 게임과 지식 알약으로 금융을 배우세요. 새로운 레벨을 잠금 해제하세요!</p></div>
+
+                    <div class="p-8 rounded-3xl bg-light-gray banhyde-card transition-all duration-300 hover:shadow-lg reveal group h-full" style="transition-delay: 400ms;">
+                         <div class="w-14 h-14 rounded-full bg-gold text-white flex items-center justify-center mb-6 text-2xl dark:bg-transparent dark:border-2 dark:border-neon-cian dark:text-neon-cian dark:shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-all">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy dark:text-white mb-3">인터랙티브 교육</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">미니 게임과 지식 알약으로 금융을 배우세요. 금융 지혜의 레벨을 잠금 해제하세요!</p>
                     </div>
-                    <!-- 기능: 레이더 -->
-                    <div class="p-6 bg-light-gray rounded-xl shadow-sm reveal flex items-start space-x-4" style="transition-delay: 500ms;">
-                        <div class="flex-shrink-0 h-12 w-12 rounded-full bg-gold text-white flex items-center justify-center"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25a8.964 8.964 0 014.971 1.572A8.965 8.965 0 0121 12a8.965 8.965 0 01-3.971 7.178A8.964 8.964 0 0112 21.75a8.964 8.964 0 01-7.178-3.971A8.965 8.965 0 013 12a8.965 8.965 0 013.971-7.178A8.964 8.964 0 0112 2.25z" /></svg></div>
-                        <div><h3 class="text-xl font-semibold text-navy mb-1">기회 레이더</h3><p class="text-gray-600">"라떼 요인"과 유령 지출의 실제 영향을 발견하고 어떻게 투자할 수 있었는지 알아보세요.</p></div>
+
+                    <div class="p-8 rounded-3xl bg-light-gray banhyde-card transition-all duration-300 hover:shadow-lg reveal group h-full" style="transition-delay: 500ms;">
+                        <div class="w-14 h-14 rounded-full bg-gold text-white flex items-center justify-center mb-6 text-2xl dark:bg-transparent dark:border-2 dark:border-neon-cian dark:text-neon-cian dark:shadow-[0_0_10px_rgba(0,255,255,0.3)] transition-all">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy dark:text-white mb-3">기회 레이더</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">"개미" 및 "뱀파이어" 지출의 실제 영향을 발견하고, 투자했을 때 얼마를 벌 수 있었는지 시각화하세요.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== 앱 쇼케이스 섹션 ========== -->
-        <section id="app-showcase" class="py-20 bg-light-gray">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">금융 성공 시각화</h2>
-                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto reveal" style="transition-delay: 200ms;">더 이상의 혼란이 아닌 명확성을 제공하도록 설계된 깨끗하고 강력한 인터페이스.</p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-                    <div class="reveal" style="transition-delay: 400ms;">
-                        <img src="/images/imagen1.png" 
-                             alt="저축 목표를 보여주는 Bancfy 앱 스크린샷" 
-                             class="mx-auto rounded-2xl shadow-xl w-full max-w-sm">
-                    </div>
-                    <div class="reveal" style="transition-delay: 600ms;">
-                        <img src="/images/imagen2.png" 
-                             alt="게임화 섹션을 보여주는 Bancfy 앱 스크린샷" 
-                             class="mx-auto rounded-2xl shadow-xl w-full max-w-sm">
+        <!-- ========== 3D SHOWCASE ========== -->
+        <section id="central" class="py-12 relative overflow-hidden bg-white dark:bg-transparent transition-colors">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-navy dark:text-neon-cian mb-4 reveal">
+                    당신의 금융 성공을 시각화하세요
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto reveal mb-8 text-lg">
+                    당신의 이성적이고 감성적인 뇌를 사로잡도록 설계된 인터페이스.
+                </p>
+                <div class="carousel-scene dark:opacity-90">
+                    <div class="carousel-container" id="carousel-container">
+                        <!-- JS injected -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== 스토리텔링 섹션 ========== -->
-        <section id="story" class="py-20 bg-navy text-white">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto">
+        <!-- ========== STORYTELLING ========== -->
+        <section id="story" class="py-24 bg-navy text-white transition-colors duration-500 dark:bg-transparent relative">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto banhyde-card rounded-3xl p-8 md:p-10">
                     <div class="text-center mb-10 reveal">
-                        <span class="font-semibold text-gold">우리의 이야기</span>
-                        <h2 class="text-3xl md:text-4xl font-bold mt-2">불확실성에서 명확성으로, Bancfy와 함께</h2>
+                        <span class="font-bold text-gold dark:text-neon-cian tracking-widest text-sm uppercase transition-colors">우리의 이야기</span>
+                        <h2 class="text-3xl md:text-5xl font-extrabold mt-4 text-white">Bancfy와 함께 불확실성에서 명확성으로</h2>
                     </div>
-                    <div class="text-gray-300 space-y-4 reveal" style="transition-delay: 200ms;">
-                        <p>어느 시점에서 우리 모두는 재정 문제로 압도당한 적이 있습니다. 예상치 못한 지출, 충동적인 결정, 그리고 돈이 손가락 사이로 빠져나가는 느낌. 저도 그랬습니다.</p>
-                        <p class="font-semibold text-white">몇 년 동안 저는 왜 저축을 할 수 없는지 이해하지 못한 채 재정 문제와 씨름했습니다. "뱀파이어 지출"이 저도 모르게 제 예산을 잠식하고 있었습니다. 정말로 도움이 되는 도구 없이 길을 잃은 기분이었습니다.</p>
-                        <p>그때 저는 통제권을 되찾기로 결심했습니다. 그렇게 Bancfy의 아이디어가 탄생했습니다. 돈을 관리할 뿐만 아니라 교육하고, 동기를 부여하며, 돈과의 관계를 변화시키는 도구입니다.</p>
-                        <p>Bancfy는 금융 건강으로 가는 여정의 동반자입니다. 우리를 차별화하는 것은 포괄적인 접근 방식입니다. 추적하는 것뿐만 아니라 이해하고, 배우고, 정보에 입각한 결정을 내리는 것입니다. 당신에게 힘을 실어주기 위해 설계된 도구입니다.</p>
-                        <p class="text-lg font-bold text-center mt-6 text-gold">오늘, 더 건강하고 의식적인 금융 생활을 향한 첫걸음을 내딛으시길 바랍니다. Bancfy 커뮤니티에 가입하세요.</p>
+                    <div class="text-gray-300 space-y-6 text-lg leading-relaxed reveal" style="transition-delay: 200ms;">
+                        <p>어느 순간, 우리 모두는 재정에 압도당한다고 느꼈습니다. 예상치 못한 지출, 충동적인 결정, 그리고 돈이 손가락 사이로 빠져나가는 느낌. 저도 거기에 있었습니다.</p>
+                        <p class="font-bold text-white text-xl">수년 동안 저는 왜 저축할 수 없는지 이해하지 못한 채 재정과 씨름했습니다. "뱀파이어 지출"은 제가 눈치채지 못하는 사이에 예산을 소모했습니다. 진정으로 도움이 되는 도구 없이 길을 잃은 느낌이었습니다.</p>
+                        <p>그때 저는 통제권을 잡기로 결심했습니다. 그렇게 해서 Bancfy 아이디어가 탄생했습니다: 돈을 관리할 뿐만 아니라 교육하고, 동기를 부여하며, 돈과의 관계를 변화시키는 도구입니다.</p>
+                        <p>Bancfy는 재정 건강을 향한 여정의 동반자입니다. 우리를 구별하는 것은 전체론적 접근 방식입니다: 단순히 통제하는 것이 아니라 이해하고, 배우고, 정보에 입각한 결정을 내리는 것입니다. 당신에게 힘을 실어주도록 설계된 도구입니다.</p>
+                        <p class="text-xl font-bold text-center mt-12 text-gold dark:text-neon-cian transition-colors">오늘, 더 건강하고 의식적인 금융 생활을 향한 첫 걸음을 내딛으시길 초대합니다. Bancfy 커뮤니티에 가입하세요.</p>
+                    </div>
+                    <div class="text-center mt-16 reveal">
+                        <button id="portal-btn" onclick="toggleBanhydeMode()" 
+                                class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white transition-all duration-300 border-2 border-gold rounded-full hover:bg-gold hover:text-white dark:border-neon-fucsia dark:text-neon-fucsia dark:hover:bg-neon-fucsia dark:hover:text-white dark:hover:shadow-[0_0_20px_#F50057] transform hover:scale-105">
+                            <span id="portal-text">Banhyde 모드 활성화</span>
+                            <svg class="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- ========== FAQ 섹션 ========== -->
-        <section id="faq" class="py-20">
+
+        <!-- ========== FAQ ========== -->
+        <section id="faq" class="py-24 bg-white dark:bg-transparent transition-colors">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">자주 묻는 질문</h2>
-                    <p class="text-gray-600 mt-2 max-w-3xl mx-auto reveal" style="transition-delay: 200ms;">궁금한 점이 있으신가요? 가장 일반적인 질문에 대해 여기서 답변해 드립니다.</p>
+                    <h2 class="text-4xl font-extrabold text-navy dark:text-white reveal">자주 묻는 질문</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 max-w-2xl mx-auto reveal text-lg">의문이 있으신가요? 여기서 가장 흔한 질문을 해결해 드립니다.</p>
                 </div>
-                <div class="max-w-3xl mx-auto space-y-4">
+                <div class="max-w-4xl mx-auto space-y-6">
                     <!-- FAQ Items -->
-                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
-                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
-                            <span>Bancfy는 정확히 무엇인가요?</span>
-                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <div class="faq-item banhyde-card rounded-2xl border border-gray-100 dark:border-neon-cian/20 p-2 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-bold text-navy dark:text-white hover:text-gold dark:hover:text-neon-cian transition-colors p-4">
+                            <span>Bancfy란 정확히 무엇인가요?</span>
+                            <svg class="faq-arrow w-6 h-6 text-gold dark:text-neon-cian flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="faq-answer text-gray-600">
-                            <p>Bancfy는 개인 금융 코치입니다. 일본의 카케이보 방법을 디지털, 직관적, 게임화된 경험으로 변환했습니다. 지출을 추적하는 데 도움을 줄 뿐만 아니라, 그것을 이해하고 간단하고 동기 부여가 되는 방식으로 돈을 통제할 수 있도록 돕습니다.</p>
+                        <div class="faq-answer text-gray-600 dark:text-gray-300 px-4">
+                            <p class="pb-4">Bancfy는 당신의 개인 금융 코치입니다. 일본의 Kakebo 방식을 디지털, 직관적, 게임화된 경험으로 변환했습니다. 지출을 기록하는 것뿐만 아니라 이해하고 간단하고 동기 부여가 되는 방식으로 돈을 통제할 수 있도록 도와줍니다.</p>
                         </div>
                     </div>
-                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
-                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
-                            <span>Bancfy에서 제 데이터를 사용하는 것이 안전한가요?</span>
-                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <div class="faq-item banhyde-card rounded-2xl border border-gray-100 dark:border-neon-cian/20 p-2 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-bold text-navy dark:text-white hover:text-gold dark:hover:text-neon-cian transition-colors p-4">
+                            <span>Bancfy에서 내 데이터를 사용하는 것이 안전한가요?</span>
+                            <svg class="faq-arrow w-6 h-6 text-gold dark:text-neon-cian flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="faq-answer text-gray-600">
-                            <p>물론입니다. 보안은 우리의 핵심입니다. 모든 정보는 종단 간 암호화 및 은행 수준의 보안 프로토콜로 보호됩니다. 귀하의 개인 정보와 데이터는 오직 귀하의 것입니다.</p>
+                        <div class="faq-answer text-gray-600 dark:text-gray-300 px-4">
+                            <p class="pb-4">물론입니다. 보안은 우리의 기본 기둥입니다. 모든 정보는 종단 간 암호화 및 은행 수준의 보안 프로토콜로 보호됩니다. 당신의 개인 정보와 데이터는 오직 당신의 것입니다.</p>
                         </div>
                     </div>
-                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
-                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
-                            <span>다른 기기에서 동기화할 수 있나요?</span>
-                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <div class="faq-item banhyde-card rounded-2xl border border-gray-100 dark:border-neon-cian/20 p-2 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-bold text-navy dark:text-white hover:text-gold dark:hover:text-neon-cian transition-colors p-4">
+                            <span>다른 기기 간에 동기화할 수 있나요?</span>
+                            <svg class="faq-arrow w-6 h-6 text-gold dark:text-neon-cian flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="faq-answer text-gray-600">
-                           <p>네, 가능합니다! 정보는 모든 기기에서 실시간으로 동기화됩니다. 또한 파트너, 가족 또는 룸메이트와 재정을 관리하기에 이상적인 "공유 계정" 기능을 포함했습니다.</p>
+                        <div class="faq-answer text-gray-600 dark:text-gray-300 px-4">
+                            <p class="pb-4">물론이죠! 정보는 모든 기기에서 실시간으로 동기화됩니다. 또한 커플, 가족 또는 룸메이트와 재정을 관리하기에 이상적인 "공유 계좌" 기능을 포함했습니다.</p>
                         </div>
                     </div>
-                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
-                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
+                    <div class="faq-item banhyde-card rounded-2xl border border-gray-100 dark:border-neon-cian/20 p-2 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-bold text-navy dark:text-white hover:text-gold dark:hover:text-neon-cian transition-colors p-4">
                             <span>은행 계좌를 연결해야 하나요?</span>
-                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="faq-arrow w-6 h-6 text-gold dark:text-neon-cian flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="faq-answer text-gray-600">
-                           <p>그럴 필요 없습니다. 우리는 카케이보 방법이 가르치는 것처럼 인식을 높이기 위해 수동으로 지출을 기록하는 힘을 믿습니다. 그러나 유연성을 제공하기 위해 PDF, Excel 또는 CSV 파일에서 거래를 빠르고 쉽게 가져올 수도 있습니다.</p>
+                        <div class="faq-answer text-gray-600 dark:text-gray-300 px-4">
+                            <p class="pb-4"><strong>아니요.</strong> Bancfy는 은행이 아니며 은행 계좌에 연결하지 않습니다. 우리는 절대적인 프라이버시와 의식적인 방법을 믿습니다. 은행 중개자 없이 데이터에 대한 완전한 통제권은 당신에게 있습니다.</p>
                         </div>
                     </div>
-                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
-                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
+                    <div class="faq-item banhyde-card rounded-2xl border border-gray-100 dark:border-neon-cian/20 p-2 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-bold text-navy dark:text-white hover:text-gold dark:hover:text-neon-cian transition-colors p-4">
                             <span>Bancfy는 무료인가요?</span>
-                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="faq-arrow w-6 h-6 text-gold dark:text-neon-cian flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="faq-answer text-gray-600">
-                           <p>네, Bancfy의 핵심은 항상 무료이며 일상 생활에 필요한 모든 도구를 제공합니다. 재정을 다음 단계로 끌어올리고 싶은 분들을 위해 고급 기능이 포함된 보완적인 프리미엄 옵션을 제공할 것입니다.</p>
+                        <div class="faq-answer text-gray-600 dark:text-gray-300 px-4">
+                            <p class="pb-4">네, Bancfy의 핵심은 항상 무료이며 일상 생활에 필요한 모든 도구를 제공합니다. 재정을 다음 단계로 끌어올리고 싶은 분들을 위해 고급 기능을 갖춘 프리미엄 옵션을 제공할 예정입니다.</p>
                         </div>
                     </div>
-                    <div class="faq-item border-b border-gray-200 pb-4 reveal">
-                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-semibold text-navy">
+                    <div class="faq-item banhyde-card rounded-2xl border border-gray-100 dark:border-neon-cian/20 p-2 reveal">
+                        <button class="faq-question w-full flex justify-between items-center text-left text-lg font-bold text-navy dark:text-white hover:text-gold dark:hover:text-neon-cian transition-colors p-4">
                             <span>어떤 통화와 암호화폐를 지원하나요?</span>
-                            <svg class="faq-arrow w-5 h-5 text-gold transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            <svg class="faq-arrow w-6 h-6 text-gold dark:text-neon-cian flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <div class="faq-answer text-gray-600">
-                           <p>우리는 글로벌 세계에 대비하고 있습니다. Bancfy는 50개 이상의 전통적인 통화와 30개 이상의 가장 중요한 암호화폐를 지원하므로 모든 자산을 한 곳에서 완벽하게 볼 수 있습니다.</p>
+                        <div class="faq-answer text-gray-600 dark:text-gray-300 px-4">
+                            <p class="pb-4">우리는 글로벌 세계에 대비되어 있습니다. Bancfy는 50개 이상의 전통 통화와 30개 이상의 주요 암호화폐와 호환되므로 모든 자산을 한 곳에서 완벽하게 볼 수 있습니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== 뉴스레터 섹션 ========== -->
-        <section id="newsletter" class="py-20 bg-light-gray">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">금융 혁명은 2025년 11월에 시작됩니다.</h2>
-                <p class="text-gray-600 mt-3 max-w-2xl mx-auto mb-8 reveal" style="transition-delay: 200ms;">
-                    뒤처지지 마세요. 뉴스레터에 가입하여 조기 액세스, 독점 뉴스 및 번영으로 가는 길을 준비하기 위한 팁을 가장 먼저 받아보세요.
+        <!-- ========== NEWSLETTER ========== -->
+        <section id="newsletter" class="py-24 bg-light-gray dark:bg-banhyde-bg border-y border-transparent dark:border-neon-cian/20 relative overflow-hidden transition-colors">
+             <div class="absolute top-0 right-0 w-80 h-80 bg-neon-fucsia/10 rounded-full blur-[100px] hidden dark:block"></div>
+             <div class="absolute bottom-0 left-0 w-80 h-80 bg-neon-cian/10 rounded-full blur-[100px] hidden dark:block"></div>
+
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="text-4xl md:text-6xl font-black text-navy dark:text-white reveal leading-tight">
+                    금융 혁명은 <br><span class="text-gold dark:text-neon-cian">2026년 1월</span>에 시작됩니다.
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto mb-10 reveal text-lg">
+                    소외되지 마세요. 뉴스레터에 등록하고 조기 액세스, 독점 뉴스 및 팁을 가장 먼저 받으세요.
                 </p>
-                <form id="newsletter-form" class="max-w-lg mx-auto reveal" style="transition-delay: 400ms;" novalidate>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <input type="email" name="email" placeholder="최고의 이메일 주소" required class="w-full px-5 py-3 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors" />
-                        <button type="submit" class="bg-gold text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
-                            가입하기!
-                        </button>
-                    </div>
+                <form id="newsletter-form" class="max-w-lg mx-auto flex flex-col sm:flex-row gap-4 reveal">
+                    <input type="email" name="email" placeholder="최고의 이메일 주소" required 
+                           class="flex-1 px-6 py-4 rounded-full border-2 border-gray-200 focus:border-gold focus:ring-gold outline-none dark:bg-black/50 dark:border-neon-cian/50 dark:text-white dark:focus:border-neon-cian transition-all shadow-inner">
+                    <button type="submit" class="bg-gold text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-gold-hover transition-all transform hover:scale-105 dark:bg-neon-cian dark:text-black dark:hover:bg-white dark:shadow-[0_0_15px_#00FFFF]">
+                        등록하기!
+                    </button>
                 </form>
             </div>
         </section>
 
-        <!-- ========== 문의하기 섹션 ========== -->
-        <section id="contact" class="py-20">
+        <!-- ========== CONTACT ========== -->
+        <section id="contact" class="py-24 bg-white dark:bg-transparent transition-colors">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-navy reveal">이야기 나눠요</h2>
-                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto mb-8 reveal" style="transition-delay: 200ms;">
-                        협업, 언론 또는 기타 문의 사항이 있으시면 저희 팀이 귀 기울일 준비가 되어 있습니다. 양식을 작성하거나 <a href="mailto:info@bancfy.com" class="text-gold font-semibold hover:underline">info@bancfy.com</a>으로 이메일을 보내주세요.
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-navy dark:text-white reveal">이야기할까요?</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto reveal text-lg">
+                        협업, 언론 또는 기타 문의 사항이 있으시면 우리 팀이 경청할 준비가 되어 있습니다. 양식을 작성하거나 <span class="text-gold dark:text-neon-cian font-bold">info@bancfy.com</span>으로 이메일을 보내주세요.
                     </p>
                 </div>
-                <form id="contact-form" action="https://formspree.io/f/mblkoarn" method="POST" class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg reveal" style="transition-delay: 400ms;" novalidate>
+                
+                <form id="contact-form" action="https://formspree.io/f/mblkoarn" method="POST" class="max-w-xl mx-auto banhyde-card p-10 rounded-[2.5rem] shadow-2xl border border-gray-100 dark:border-neon-cian/30 reveal">
                     <div class="space-y-6">
                         <div>
-                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">이름</label>
-                            <input type="text" name="name" id="name" required class="w-full px-4 py-2 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors">
+                            <label class="block text-sm font-bold text-navy dark:text-white mb-2 ml-2">이름</label>
+                            <input type="text" name="name" required class="w-full px-6 py-4 rounded-full border border-gray-300 focus:border-gold focus:ring-1 focus:ring-gold outline-none dark:bg-black/40 dark:border-gray-700 dark:text-white dark:focus:border-neon-cian transition-all">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-1">이메일</label>
-                            <input type="email" name="email" id="email" required class="w-full px-4 py-2 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors">
+                            <label class="block text-sm font-bold text-navy dark:text-white mb-2 ml-2">이메일</label>
+                            <input type="email" name="email" required class="w-full px-6 py-4 rounded-full border border-gray-300 focus:border-gold focus:ring-1 focus:ring-gold outline-none dark:bg-black/40 dark:border-gray-700 dark:text-white dark:focus:border-neon-cian transition-all">
                         </div>
                         <div>
-                            <label for="subject" class="block text-sm font-semibold text-gray-700 mb-1">제목</label>
-                            <input type="text" name="subject" id="subject" required class="w-full px-4 py-2 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors">
+                            <label class="block text-sm font-bold text-navy dark:text-white mb-2 ml-2">제목</label>
+                            <input type="text" name="subject" required class="w-full px-6 py-4 rounded-full border border-gray-300 focus:border-gold focus:ring-1 focus:ring-gold outline-none dark:bg-black/40 dark:border-gray-700 dark:text-white dark:focus:border-neon-cian transition-all">
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-1">메시지</label>
-                            <textarea name="message" id="message" rows="4" required class="w-full px-4 py-2 rounded-lg border-2 border-gray-300 focus:border-gold focus:ring-gold transition-colors"></textarea>
+                            <label class="block text-sm font-bold text-navy dark:text-white mb-2 ml-2">메시지</label>
+                            <textarea name="message" rows="4" required class="w-full px-6 py-4 rounded-3xl border border-gray-300 focus:border-gold focus:ring-1 focus:ring-gold outline-none dark:bg-black/40 dark:border-gray-700 dark:text-white dark:focus:border-neon-cian transition-all"></textarea>
                         </div>
-                        <div>
-                            <button type="submit" class="w-full bg-gold text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gold-hover transition-all duration-300 transform hover:scale-105">
-                                메시지 보내기
-                            </button>
-                        </div>
+                        <button type="submit" class="w-full bg-gold text-white font-bold py-4 rounded-full hover:bg-gold-hover transition-all dark:bg-neon-fucsia dark:hover:bg-white dark:hover:text-neon-fucsia dark:shadow-[0_0_15px_#F50057] transform hover:scale-[1.02]">
+                            메시지 보내기
+                        </button>
                     </div>
+                    <p id="form-status" class="text-center mt-4 text-sm font-bold hidden"></p>
                 </form>
             </div>
         </section>
-    </main>
 
-    <!-- ========== 푸터 ========== -->
-    <footer class="bg-navy text-white">
-        <div class="container mx-auto px-6 py-8">
-             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-                <div class="mb-4 md:mb-0">
-                    <p class="font-semibold">&copy; 2025 Bancfy. 모든 권리 보유.</p>
-                    <p class="text-sm text-gray-400">당신의 금융 복지를 위해 <span class="text-gold">&hearts;</span>로 디자인되었습니다.</p>
+        <!-- ========== FOOTER ========== -->
+        <footer class="bg-navy text-white py-12 dark:bg-black dark:border-t dark:border-gray-800 transition-colors">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-2">© 2025 Bancfy. 모든 권리 보유.</h4>
+                    <p class="text-gray-400 text-sm">당신의 재정적 안녕을 위해 <span class="text-gold dark:text-neon-cian">♥</span>로 설계되었습니다.</p>
                 </div>
-                <!-- 소셜 아이콘 -->
-                <div class="flex space-x-5">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318-5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="TikTok"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <div class="flex space-x-6">
+                    <a href="https://www.instagram.com/bancfyapp" target="_blank" class="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.143 0-3.505.011-4.73.068-2.695.123-3.993 1.423-4.116 4.116-.057 1.225-.068 1.586-.068 4.73s.011 3.505.068 4.73c.123 2.692 1.421 3.993 4.116 4.116 1.225.057 1.587.068 4.73.068s3.505-.011 4.73-.068c2.695-.123 3.993-1.423 4.116-4.116.057-1.225.068-1.586.068-4.73s-.011-3.505-.068-4.73c-.123-2.692-1.421-3.993-4.116-4.116-1.225-.057-1.586-.068-4.73-.068zm0 3.064c-2.835 0-5.153 2.318-5.153 5.153s2.318 5.153 5.153 5.153 5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-2.318 5.153-5.153-5.153zm0 8.505c-1.841 0-3.35-1.509-3.35-3.35s1.509-3.35 3.35-3.35 3.35 1.509 3.35 3.35-1.509 3.35-3.35 3.35zm4.512-8.305c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@bancfyapp" target="_blank" class="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.25-4.38-1.91-6.78.34-2.4 1.91-4.44 3.96-5.74.96-.6 2.07-.97 3.22-1.15.06-1.54.03-3.08.01-4.63.23-.02.47-.02.7-.02 1.33-.01 2.65-.02 3.98-.03z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@stiluproject" target="_blank" class="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- ========== 피드백 모달 ========== -->
-    <div id="feedback-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden modal-backdrop">
-        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-sm w-full text-center modal-content opacity-0 transform scale-95">
-            <h3 id="modal-title" class="text-2xl font-bold text-navy mb-4"></h3>
-            <p id="modal-message" class="text-gray-600 mb-6"></p>
-            <button id="modal-close-button" class="bg-gold text-white font-bold py-2 px-6 rounded-lg hover:bg-gold-hover transition-colors">닫기</button>
-        </div>
-    </div>
+    </main>
 
-    <!-- ========== 양식 피드백용 아이콘 (숨김) ========== -->
-    <div class="hidden">
-        <svg id="icon-spinner" class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        <svg id="icon-check" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-        </svg>
-        <svg id="icon-error" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-        </svg>
-    </div>
-    
-    <!-- Firebase SDK (업데이트 버전) -->
+    <!-- FIREBASE SDK (FIRESTORE) -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getFirestore, collection, addDoc, serverTimestamp, query, where, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
         
+        // Firebase 설정 (실제)
         const firebaseConfig = {
             apiKey: "AIzaSyDMjE9AFpmtPKcvZDMx-okQoKpHcjUF-Uc",
             authDomain: "bancfy.firebaseapp.com",
-			databaseURL: "https://bancfy-default-rtdb.europe-west1.firebasedatabase.app",
+            databaseURL: "https://bancfy-default-rtdb.europe-west1.firebasedatabase.app",
             projectId: "bancfy",
             storageBucket: "bancfy.appspot.com",
             messagingSenderId: "151762707230",
             appId: "1:151762707230:web:2143e1d92e6a90f2689f0f",
-			measurementId: "G-RS0WGCECK3"
+            measurementId: "G-RS0WGCECK3"
         };
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
+        
+        // 폼에서 사용하기 위해 전역 스코프에 DB 노출
         window.db = db;
         window.firestore = { collection, addDoc, serverTimestamp, query, where, getDocs };
     </script>
 
+    <!-- ========== JAVASCRIPT 로직 ========== -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- 언어 선택기 로직 ---
-            const supportedLangs = {
-                'es': { name: 'Español', flag: 'es', url: '/es/' },
-                'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/' },
-                'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg', url: '/eu/' },
-                'en': { name: 'English', flag: 'gb', url: '/' },
-                'de': { name: 'Deutsch', flag: 'de', url: '/de/' },
-                'de-ch': { name: 'Schweizerdeutsch', flag: 'ch', url: '/de-ch/' },
-                'fr': { name: 'Français', flag: 'fr', url: '/fr/' },
-                'it': { name: 'Italiano', flag: 'it', url: '/it/' },
-                'pt': { name: 'Português', flag: 'pt', url: '/pt/' },
-                'ja': { name: '日本語', flag: 'jp', url: '/ja/' },
-                'ko': { name: '한국어', flag: 'kr', url: '/ko/' },
-                'zh': { name: '中文', flag: 'cn', url: '/zh/' },
-                'ar': { name: 'العربية', flag: 'ae', url: '/ar/' }
-            };
+        const body = document.body;
+        const portalBtn = document.getElementById('portal-btn');
+        const portalText = document.getElementById('portal-text');
+        const videoLight = document.getElementById('hero-video-light');
+        const videoDark = document.getElementById('hero-video-dark');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // 상태 변수
+        // 초기 설정 읽기
+        let isBanhyde = localStorage.getItem('banhydeMode') === 'true';
+        let currentLang = 'ko'; // 기본값은 한국어
 
-            const langDropdown = document.getElementById('lang-dropdown');
-            const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+        // 이미 다크 모드인 경우 버튼의 초기 텍스트 업데이트
+        if (isBanhyde && portalText) {
+            portalText.textContent = "빛으로 돌아가기";
+        }
 
-            for (const [code, langData] of Object.entries(supportedLangs)) {
-                if (code === 'ko') continue; // 현재 언어를 목록에 표시하지 않음
+        // --- 언어 로직 ---
+        const supportedLangs = {
+            'es': { name: 'Español', flag: 'es', url: '/es/' },
+            'ca': { name: 'Català', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg', url: '/ca/' },
+            'eu': { name: 'Euskara', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Flag_of_the_Basque_Country.svg', url: '/eu/' },
+            'en': { name: 'English', flag: 'gb', url: '/' },
+            'de': { name: 'Deutsch', flag: 'de', url: '/de/' },
+            'de-ch': { name: 'Schweizerdeutsch', flag: 'ch', url: '/de-ch/' }, 
+            'fr': { name: 'Français', flag: 'fr', url: '/fr/' },
+            'it': { name: 'Italiano', flag: 'it', url: '/it/' },
+            'pt': { name: 'Português', flag: 'pt', url: '/pt/' },
+            'ja': { name: '日本語', flag: 'jp', url: '/ja/' },
+            'ko': { name: '한국어', flag: 'kr', url: '/ko/' },
+            'zh': { name: '中文', flag: 'cn', url: '/zh/' },
+            'ar': { name: 'العربية', flag: 'ae', url: '/ar/' }
+        };
 
-                const flagSrc = langData.flagUrl ? langData.flagUrl : `https://flagcdn.com/w20/${langData.flag}.png`;
-                const innerHTML = `<img src="${flagSrc}" alt="${langData.name} 국기" class="w-5 h-auto mr-3 rounded-sm"><span class="flex-1">${langData.name}</span>`;
+        // --- 동적 자산 함수 ---
+        
+        // 2. 히어로 비디오 업데이트
+        function updateHeroVideos() {
+            // FIX: 하위 폴더 오류 방지를 위한 절대 경로
+            
+            // UPDATED: 한국어 버전에는 _en_ 사용
+            const srcLight = `/images/hero_en_clar.mp4`;
+            const srcDark = `/images/hero_en_osc.mp4`;
+            
+            // 소스가 변경된 경우에만 업데이트
+            if (!videoLight.src.includes(srcLight)) videoLight.src = srcLight;
+            if (!videoDark.src.includes(srcDark)) videoDark.src = srcDark;
+        }
 
-                // 데스크톱 메뉴용 링크 생성
-                const desktopLink = document.createElement('a');
-                desktopLink.href = langData.url;
-                desktopLink.classList.add('flex', 'items-center', 'px-4', 'py-2', 'text-sm', 'text-gray-700', 'hover:bg-light-gray');
-                desktopLink.innerHTML = innerHTML;
-                langDropdown.appendChild(desktopLink);
+        // 3. 캐러셀 이미지 업데이트
+        function updateCarouselImages() {
+            const container = document.getElementById('carousel-container');
+            container.innerHTML = ''; // 이전 항목 지우기
 
-                // 모바일 메뉴용 링크 생성
-                const mobileLink = document.createElement('a');
-                mobileLink.href = langData.url;
-                mobileLink.classList.add('flex', 'items-center', 'py-1.5', 'px-2', 'text-sm', 'text-gray-700', 'hover:text-gold', 'rounded-md', 'hover:bg-white');
-                mobileLink.innerHTML = innerHTML;
-                mobileLangDropdown.appendChild(mobileLink);
+            for (let i = 1; i <= 8; i++) {
+                const item = document.createElement('div');
+                item.className = 'carousel-item';
+                
+                const modeSuffix = isBanhyde ? 'osc' : 'clar';
+                
+                // UPDATED: 한국어 버전에는 _en_ 사용
+                const imgSrc = `/images/carru${i}_en_${modeSuffix}.png`;
+                
+                item.style.backgroundImage = `url('${imgSrc}')`;
+                container.appendChild(item);
             }
+        }
+
+        // 4. 언어 설정 (UI만)
+        function setLanguage(code) {
+            currentLang = code;
             
-            // --- 모바일 메뉴 및 드롭다운 로직 ---
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileLangSelectorBtn = document.getElementById('mobile-lang-selector-btn');
-            const mobileLangArrow = document.querySelector('.mobile-lang-arrow');
+            // 데스크탑 선택기 UI 업데이트
+            const langData = supportedLangs[code];
+            const flagSrc = langData.flagUrl || `https://flagcdn.com/w20/${langData.flag}.png`;
+            document.getElementById('desktop-flag-img').src = flagSrc;
+            document.getElementById('desktop-lang-code').textContent = code.toUpperCase();
             
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            mobileLangSelectorBtn.addEventListener('click', (event) => {
-                event.stopPropagation();
-                mobileLangDropdown.classList.toggle('hidden');
-                mobileLangArrow.classList.toggle('rotate-180');
-            });
+            // 자산 업데이트
+            updateHeroVideos();
+            updateCarouselImages();
+        }
 
-            mobileMenu.addEventListener('click', (e) => {
-                if(e.target.tagName === 'A' && !mobileLangDropdown.contains(e.target) && !mobileLangSelectorBtn.contains(e.target)) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
+        // 언어 선택기 초기화
+        const dropdownInner = document.querySelector('#lang-dropdown .lang-inner');
+        
+        // --- 모바일 드롭다운 로직 ---
+        const mobileLangDropdown = document.getElementById('mobile-lang-dropdown');
+        const mobileLangBtn = document.getElementById('mobile-lang-btn');
+        const mobileLangArrow = document.getElementById('mobile-lang-arrow');
 
-            // --- 애니메이션 및 FAQ 로직 ---
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-            
-            document.querySelectorAll('.faq-question').forEach(button => {
-                button.addEventListener('click', () => {
-                    const faqItem = button.parentElement;
-                    faqItem.classList.toggle('active');
-                });
-            });
-
-            // --- 피드백 모달 로직 ---
-            const modal = document.getElementById('feedback-modal');
-            const modalContent = modal.querySelector('.modal-content');
-            const modalTitle = document.getElementById('modal-title');
-            const modalMessage = document.getElementById('modal-message');
-            const modalCloseButton = document.getElementById('modal-close-button');
-            
-            const modalTranslations = {
-                ko: {
-                    modal_close: '닫기', modal_thank_you: '감사합니다!', modal_message_sent: '메시지가 성공적으로 전송되었습니다.', modal_welcome: '환영합니다!', modal_subscribed: '뉴스레터에 구독하셨습니다.', modal_error: '오류', modal_message_error: '메시지를 보낼 수 없습니다. 다시 시도하십시오.', modal_network_error: 'おっと！ネットワークに問題が発生しました。接続を確認してください。', modal_subscribe_error: '구독을 처리할 수 없습니다. 나중에 다시 시도하십시오.', modal_email_exists: '이 이메일은 이미 등록되어 있습니다. 관심을 가져 주셔서 감사합니다!', modal_invalid_email: '유효한 이메일 주소를 입력하십시오.',
-                    form_sending: '보내는 중...', form_sent: '보냄', form_error: '오류', form_subscribing: '구독 중...', form_subscribed: '구독함'
-                }
-            };
-            const t = modalTranslations.ko;
-
-            function showModal(titleKey, messageKey) {
-                modalTitle.textContent = t[titleKey] || titleKey;
-                modalMessage.textContent = t[messageKey] || messageKey;
-                modalCloseButton.textContent = t['modal_close'];
-                modal.classList.remove('hidden');
-                setTimeout(() => {
-                    modal.style.opacity = '1';
-                    modalContent.style.opacity = '1';
-                    modalContent.style.transform = 'scale(1)';
-                }, 10);
-            }
-
-            function hideModal() {
-                 modal.style.opacity = '0';
-                 modalContent.style.opacity = '0';
-                 modalContent.style.transform = 'scale(0.95)';
-                 setTimeout(() => modal.classList.add('hidden'), 300);
-            }
-            modalCloseButton.addEventListener('click', hideModal);
-            modal.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
-
-            // --- 양식 로직 ---
-            const contactForm = document.getElementById('contact-form');
-            const newsletterForm = document.getElementById('newsletter-form');
-
-            const setButtonFeedback = (button, state, originalHTML) => {
-                const feedbackText = {
-                    contact: { loading: t.form_sending, success: t.form_sent, error: t.form_error },
-                    newsletter: { loading: t.form_subscribing, success: t.form_subscribed, error: t.form_error }
-                };
-                const formType = button.form.id.includes('contact') ? 'contact' : 'newsletter';
-                const text = feedbackText[formType][state] || '';
-                button.disabled = true;
-                button.innerHTML = '';
-                if(!button.dataset.originalClasses) {
-                    const originalClasses = Array.from(button.classList);
-                    button.dataset.originalClasses = JSON.stringify(originalClasses.filter(c => c.startsWith('bg-') || c.startsWith('hover:bg-') || c.startsWith('transform') || c.startsWith('hover:scale')));
-                }
-                button.classList.remove(...JSON.parse(button.dataset.originalClasses));
-                button.classList.add('flex', 'items-center', 'justify-center', 'transition-all');
-                const icons = {
-                    loading: document.getElementById('icon-spinner')?.cloneNode(true),
-                    success: document.getElementById('icon-check')?.cloneNode(true),
-                    error: document.getElementById('icon-error')?.cloneNode(true)
-                };
-                const icon = icons[state];
-                if (icon) {
-                    icon.classList.remove('hidden');
-                    button.appendChild(icon);
-                }
-                if (text) {
-                    const textSpan = document.createElement('span');
-                    textSpan.className = 'ml-2';
-                    textSpan.textContent = text;
-                    button.appendChild(textSpan);
-                }
-                if (state === 'success') button.classList.add('bg-green-500');
-                else if (state === 'error') button.classList.add('bg-red-500');
-                else button.classList.add('bg-gold', 'opacity-75');
-                if (state === 'success' || state === 'error') {
-                    setTimeout(() => {
-                        button.disabled = false;
-                        button.innerHTML = originalHTML;
-                        button.classList.remove('flex', 'items-center', 'justify-center', 'bg-green-500', 'bg-red-500', 'bg-gold', 'opacity-75', 'transition-all');
-                        button.classList.add(...JSON.parse(button.dataset.originalClasses));
-                    }, 2500);
-                }
-            };
-
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const form = e.target;
-                const button = form.querySelector('button[type="submit"]');
-                const originalButtonHTML = button.innerHTML;
-                setButtonFeedback(button, 'loading', originalButtonHTML);
-                fetch(form.action, {
-                    method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }
-                }).then(response => {
-                    if (response.ok) {
-                        setButtonFeedback(button, 'success', originalButtonHTML);
-                        setTimeout(() => { showModal('modal_thank_you', 'modal_message_sent'); form.reset(); }, 500);
-                    } else { throw new Error('Response not ok'); }
-                }).catch(() => {
-                    setButtonFeedback(button, 'error', originalButtonHTML);
-                    setTimeout(() => showModal('modal_error', 'modal_message_error'), 500);
-                });
-            });
-
-            newsletterForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                const form = e.target;
-                const emailInput = form.querySelector('input[name="email"]');
-                const emailValue = emailInput.value.trim().toLowerCase();
-                const button = form.querySelector('button[type="submit"]');
-                const originalButtonHTML = button.innerHTML;
-
-                if (!emailValue || !emailInput.checkValidity()) {
-                    showModal('modal_error', 'modal_invalid_email');
-                    return;
-                }
-                if (typeof window.db === 'undefined' || typeof window.firestore === 'undefined') {
-                    showModal('modal_error', 'modal_network_error');
-                    return;
-                }
-                setButtonFeedback(button, 'loading', originalButtonHTML);
-                const { collection, query, where, getDocs, addDoc, serverTimestamp } = window.firestore;
-                const subscribersRef = collection(window.db, "subscribers");
-                try {
-                    const q = query(subscribersRef, where("email", "==", emailValue));
-                    const querySnapshot = await getDocs(q);
-                    if (!querySnapshot.empty) {
-                        showModal('modal_welcome', 'modal_email_exists');
-                        setButtonFeedback(button, 'success', originalButtonHTML);
-                        return;
-                    }
-                    await addDoc(subscribersRef, {
-                        email: emailValue,
-                        subscribedAt: serverTimestamp(),
-                        language: 'ko'
-                    });
-                    setButtonFeedback(button, 'success', originalButtonHTML);
-                    setTimeout(() => { showModal('modal_welcome', 'modal_subscribed'); form.reset(); }, 500);
-                } catch (error) {
-                    console.error("문서 확인/추가 중 오류 발생: ", error);
-                    setButtonFeedback(button, 'error', originalButtonHTML);
-                    setTimeout(() => showModal('modal_error', 'modal_subscribe_error'), 500);
-                }
-            });
+        // 모바일 드롭다운 토글
+        mobileLangBtn.addEventListener('click', () => {
+            mobileLangDropdown.classList.toggle('hidden');
+            mobileLangArrow.classList.toggle('rotate-180');
         });
-    </script>
 
+        for (const [code, lang] of Object.entries(supportedLangs)) {
+            const flagSrc = lang.flagUrl || `https://flagcdn.com/w20/${lang.flag}.png`;
+            
+            // 데스크탑 아이템 (실제 링크 <a>)
+            const item = document.createElement('a'); 
+            item.href = lang.url; 
+            item.className = "w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 dark:hover:bg-neon-cian/20 text-sm text-gray-700 dark:text-gray-300 transition-colors border-b border-gray-50 dark:border-gray-800 last:border-0 text-left";
+            item.innerHTML = `<img src="${flagSrc}" class="w-5 rounded-sm shadow-sm"> ${lang.name}`;
+            dropdownInner.appendChild(item);
+
+            // 모바일 아이템 (실제 링크 <a>)
+            const mobileItem = document.createElement('a');
+            mobileItem.href = lang.url; 
+            mobileItem.className = "flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 text-navy dark:text-gray-300 transition-colors";
+            mobileItem.innerHTML = `<img src="${flagSrc}" class="w-6 rounded-sm shadow-sm"> <span class="text-base font-medium">${lang.name}</span>`;
+            mobileLangDropdown.appendChild(mobileItem);
+        }
+
+        // --- 모바일 메뉴 ---
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- BANHYDE 모드 ---
+        function toggleBanhydeMode() {
+            body.classList.add('glitching');
+            setTimeout(() => {
+                isBanhyde = !isBanhyde;
+                
+                // 설정 저장
+                localStorage.setItem('banhydeMode', isBanhyde);
+
+                if (isBanhyde) {
+                    document.documentElement.classList.add('dark');
+                    if(portalText) portalText.textContent = "빛으로 돌아가기";
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    if(portalText) portalText.textContent = "Banhyde 모드 활성화";
+                }
+                // 모드 변경 시 캐러셀 업데이트
+                updateCarouselImages();
+                
+            }, 250);
+            setTimeout(() => body.classList.remove('glitching'), 500);
+        }
+
+        // --- 스크롤 애니메이션 ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // --- FAQ 로직 ---
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => button.parentElement.classList.toggle('active'));
+        });
+
+        // --- 비디오 최적화 (Intersection Observer) ---
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // 현재 보이는 비디오만 제어
+                const video = entry.target;
+                const isVisible = (video.id === 'hero-video-dark' && isBanhyde) || (video.id === 'hero-video-light' && !isBanhyde);
+                
+                if (entry.isIntersecting && isVisible) {
+                    video.play().catch(e => console.log("자동 재생이 차단되었습니다", e));
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.5 }); 
+
+        videoObserver.observe(videoLight);
+        videoObserver.observe(videoDark);
+
+        // --- 초기화 ---
+        // 초기 자산 로드
+        updateHeroVideos();
+        updateCarouselImages();
+
+
+        // --- FORMSPREE 로직 (문의) ---
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            btn.disabled = true;
+            btn.innerHTML = '전송 중...';
+            
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    formStatus.textContent = "메시지가 성공적으로 전송되었습니다!";
+                    formStatus.className = "text-center mt-4 text-sm font-bold text-green-500 dark:text-neon-cian block";
+                    contactForm.reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (err) {
+                formStatus.textContent = "오류가 발생했습니다. 다시 시도해 주세요.";
+                formStatus.className = "text-center mt-4 text-sm font-bold text-red-500 dark:text-neon-fucsia block";
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
+        });
+
+        // --- FIRESTORE 로직 (뉴스레터) ---
+        const newsletterForm = document.getElementById('newsletter-form');
+        
+        newsletterForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = newsletterForm.querySelector('button');
+            const emailInput = newsletterForm.querySelector('input[name="email"]');
+            const email = emailInput.value;
+            const originalText = btn.innerHTML;
+
+            if (!window.firestore || !window.db) {
+                alert("연결 오류. 페이지를 새로고침하세요.");
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = "처리 중...";
+
+            try {
+                const { collection, addDoc, serverTimestamp, query, where, getDocs } = window.firestore;
+                const ref = collection(window.db, "subscribers");
+                
+                // 중복 확인
+                const q = query(ref, where("email", "==", email));
+                const snapshot = await getDocs(q);
+
+                if (!snapshot.empty) {
+                    alert("이미 구독하셨습니다!");
+                } else {
+                    await addDoc(ref, {
+                        email: email,
+                        subscribedAt: serverTimestamp(),
+                        lang: 'ko'
+                    });
+                    alert("혁명에 동참해 주셔서 감사합니다!");
+                    newsletterForm.reset();
+                }
+            } catch (err) {
+                console.error(err);
+                alert("구독 오류.");
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
+        });
+
+    </script>
 </body>
 </html>
