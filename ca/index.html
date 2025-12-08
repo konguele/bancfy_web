@@ -299,7 +299,7 @@
         }
         .lang-inner {
             background-color: white;
-            border-radius: 0.75rem;
+            border-radius: 1rem; /* CORRECCIÓN: Bordes redondeados (16px) */
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             overflow: hidden;
         }
@@ -370,8 +370,17 @@
                  <a href="#faq" class="block text-lg font-bold text-navy dark:text-white">FAQ</a>
                  <a href="#contact" class="block text-lg font-bold text-navy dark:text-white">Contacte</a>
                  
+                 <!-- CORRECCIÓ: Toggle Mode + Idiomes -->
                  <div class="pt-4 mt-2 border-t border-gray-100 dark:border-gray-800">
-                     <p class="text-xs font-bold text-gray-400 mb-3 uppercase tracking-wider">Selecciona idioma</p>
+                     <div class="flex items-center justify-between mb-4">
+                         <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Mode & Idioma</span>
+                         <!-- Botó Toggle afegit al mòbil -->
+                         <button onclick="toggleBanhydeMode()" class="flex items-center justify-center w-10 h-10 rounded-full border border-navy/20 dark:border-neon-cian/50 text-sm font-bold hover:bg-gray-100 dark:hover:bg-neon-cian/10 dark:text-white transition-all">
+                             <span class="dark:hidden">☾</span>
+                             <span class="hidden dark:inline text-neon-cian">☀</span>
+                         </button>
+                     </div>
+                     
                      <div id="mobile-lang-list" class="grid grid-cols-2 gap-3">
                          <!-- JS injected -->
                      </div>
@@ -528,7 +537,8 @@
         <!-- ========== STORYTELLING ========== -->
         <section id="story" class="py-24 bg-navy text-white transition-colors duration-500 dark:bg-transparent relative">
             <div class="container mx-auto px-6 relative z-10">
-                <div class="max-w-4xl mx-auto banhyde-card rounded-3xl p-0 md:p-10">
+                <!-- CORRECCIÓ: Padding p-8 per a mòbil (era p-0) -->
+                <div class="max-w-4xl mx-auto banhyde-card rounded-3xl p-8 md:p-10">
                     <div class="text-center mb-10 reveal">
                         <span class="font-bold text-gold dark:text-neon-cian tracking-widest text-sm uppercase transition-colors">La Nostra Història</span>
                         <h2 class="text-3xl md:text-5xl font-extrabold mt-4 text-white">De la incertesa a la claredat amb Bancfy</h2>
@@ -825,7 +835,8 @@
             // Mobile Item (Link real <a>)
             const mobileItem = document.createElement('a');
             mobileItem.href = lang.url; // Usar la URL definida
-            mobileItem.className = "flex items-center gap-2 p-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-gold dark:hover:border-neon-cian text-xs text-navy dark:text-white transition-all";
+            // CORRECCIÓ: rounded-none en lloc de rounded-xl per a fer-lo quadrat com a la versió ES
+            mobileItem.className = "flex items-center gap-2 p-3 rounded-none bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 hover:border-gold dark:hover:border-neon-cian text-xs text-navy dark:text-white transition-all";
             mobileItem.innerHTML = `<img src="${flagSrc}" class="w-5 rounded-sm"> <span class="font-bold">${code.toUpperCase()}</span>`;
             mobileLangList.appendChild(mobileItem);
         }
