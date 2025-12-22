@@ -1,104 +1,266 @@
-PRIBATUTASUN POLITIKA
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pribatutasun Politika - Bancfy</title>
+    
+    <!-- Importar fuente Urbanist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-Azken eguneratzea: 2025eko abenduaren 22a
+    <style>
+        :root {
+            --navy-blue: #0A192F;
+            --rich-gold: #D4AF37;
+            --light-gold: #F4E4BC;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-gray: #F3F4F6;
+        }
 
-Ongi etorri Bancfyra.
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
 
-Zure datuen pribatutasuna eta segurtasuna gure lehentasun nagusia dira. Pribatutasun Politika honek zehazten du Juan José García Manzanok (aurrerantzean, "Arduraduna", "gu" edo "Bancfy") nola erabiltzen eta babesten duen erabiltzaileek mugikorreko aplikazioa erabiltzean ematen duten informazioa.
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.08);
+        }
 
-Politika hau Europar Batasuneko Datuak Babesteko Erregelamendu Orokorraren (DBEO/RGPD) eta Suitzako Datuak Babesteko Lege Federalaren (LPD) eskakizunen arabera idatzi da.
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 20px;
+        }
 
-1. Tratamenduaren Arduraduna
+        h1 {
+            color: var(--navy-blue);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-Titularra: Juan José García Manzano
+        .update-date {
+            color: var(--rich-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-Egoitza: Suitza (Suitzako Konfederazioa)
+        h2 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--rich-gold);
+            padding-left: 15px;
+        }
 
-Harremanetarako helbide elektronikoa: info@bancfy.com
+        h3 {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
 
-2. Zerbitzuaren Izaera (Ohar Garrantzitsua)
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
 
-Bancfy EZ da banku-erakunde bat.
-Finantza pertsonalak kudeatzeko, finantza-hezkuntzarako eta gamifikaziorako aplikazio bat da, Kakebo metodoan oinarrituta.
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-Eskuzko Sarrera: Aplikazioa ez da zure banku-kontuekin konektatzen, ez du banku irekiko APIrik (Open Banking) erabiltzen, eta ez du hirugarrenen daturik automatikoki ateratzen.
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
 
-Datuaren Erantzukizuna: Finantza-informazio guztia (gastuak, diru-sarrerak, aurrekontuak) Erabiltzaileak berak sartzen du eskuz.
+        ul li::before {
+            content: "•";
+            color: var(--rich-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
 
-3. Biltzen Ditugun Datuak
+        strong {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
 
-Gamifikazio eta finantza-kudeaketako funtzioak eskaintzeko beharrezkoak diren datuak soilik biltzen ditugu:
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--rich-gold);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
 
-3.1. Nortasun eta Kontu Datuak
+        .disclaimer-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--navy-blue);
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 15px 0;
+        }
 
-Erregistroa: Izena, abizenak eta helbide elektronikoa (Google Sign-In bidez lortuak).
+        a {
+            color: var(--rich-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-Profila: Profileko argazkia (Google-tik inportatzen bada), hizkuntza-lehentasunak eta tokiko moneta.
+        a:hover {
+            color: var(--navy-blue);
+        }
 
-3.2. Finantza eta Joko Datuak (Erabiltzaileak Sortuak)
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
 
-Transakzioak: Eskuz sartutako gastu eta diru-sarreren erregistroak, datak, kategoriak eta oharrak.
+        .brand-signature {
+            font-weight: 700;
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
 
-Gamifikazioa (Trebetasun Zuhaitza): Aurrerapen-datuak, desblokeatutako mailak, esperientzia (XP), garaikurrak eta aurrezki-helburuen konfigurazioa.
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
 
-Txata eta Komunitatea: Taldeetako txatetan edo aurrezki-zirkuluetan bidalitako testu-mezuak.
+<div class="container">
+    <header>
+        <h1>PRIBATUTASUN POLITIKA</h1>
+        <div class="update-date">Azken eguneratzea: 2025eko abenduaren 22a</div>
+    </header>
 
-3.3. Datu Teknikoak
+    <p>Ongi etorri <strong>Bancfy</strong>ra.</p>
+    <p>Zure datuen pribatutasuna eta segurtasuna gure lehentasun nagusia dira. Pribatutasun Politika honek zehazten du <strong>Juan José García Manzano</strong>k (aurrerantzean, "Arduraduna", "gu" edo "Bancfy") nola erabiltzen eta babesten duen erabiltzaileek mugikorreko aplikazioa erabiltzean ematen duten informazioa.</p>
+    <p>Politika hau Europar Batasuneko <strong>Datuak Babesteko Erregelamendu Orokorraren (DBEO/RGPD)</strong> eta Suitzako <strong>Datuak Babesteko Lege Federalaren (LPD)</strong> eskakizunen arabera idatzi da.</p>
 
-Ez dugu jarraipen inbasiborik egiten. Ez dugu zure IP helbidea biltzen jarraipena egiteko, ezta gailuaren eredu zehatza edo publizitate-identifikatzaileak ere (IDFA/AAID).
+    <h2>1. Tratamenduaren Arduraduna</h2>
+    <ul>
+        <li><strong>Titularra:</strong> Juan José García Manzano</li>
+        <li><strong>Egoitza:</strong> Suitza (Suitzako Konfederazioa)</li>
+        <li><strong>Harremanetarako helbide elektronikoa:</strong> <a href="mailto:info@bancfy.com">info@bancfy.com</a></li>
+    </ul>
 
-4. Tratamenduaren Helburua
+    <h2>2. Zerbitzuaren Izaera (Ohar Garrantzitsua)</h2>
+    <div class="highlight-box">
+        <p><strong>Bancfy EZ da banku-erakunde bat.</strong> Finantza pertsonalak kudeatzeko, finantza-hezkuntzarako eta gamifikaziorako aplikazio bat da, Kakebo metodoan oinarrituta.</p>
+    </div>
+    <ul>
+        <li><strong>Eskuzko Sarrera:</strong> Aplikazioa ez da zure banku-kontuekin konektatzen, ez du banku irekiko APIrik (Open Banking) erabiltzen, eta ez du hirugarrenen daturik automatikoki ateratzen.</li>
+        <li><strong>Datuaren Erantzukizuna:</strong> Finantza-informazio guztia (gastuak, diru-sarrerak, aurrekontuak) Erabiltzaileak berak sartzen du eskuz.</li>
+    </ul>
 
-Zure datu pertsonalak honako helburu hauekin tratatzen ditugu:
+    <h2>3. Biltzen Ditugun Datuak</h2>
+    <p>Gamifikazio eta finantza-kudeaketako funtzioak eskaintzeko beharrezkoak diren datuak soilik biltzen ditugu:</p>
 
-Zerbitzua Ematea: Zure kontua kudeatzea, zure eskuzko finantza-erregistroak gordetzea eta Kakebo metodoaren bidez zure aurrerapena ikustaraztea.
+    <h3>3.1. Nortasun eta Kontu Datuak</h3>
+    <ul>
+        <li><strong>Erregistroa:</strong> Izena, abizenak eta helbide elektronikoa (Google Sign-In bidez lortuak).</li>
+        <li><strong>Profila:</strong> Profileko argazkia (Google-tik inportatzen bada), hizkuntza-lehentasunak eta tokiko moneta.</li>
+    </ul>
 
-Funtzio Sozialak ("Aurrezki Zirkuluak" eta Kontu Partekatuak):
+    <h3>3.2. Finantza eta Joko Datuak (Erabiltzaileak Sortuak)</h3>
+    <ul>
+        <li><strong>Transakzioak:</strong> Eskuz sartutako gastu eta diru-sarreren erregistroak, datak, kategoriak eta oharrak.</li>
+        <li><strong>Gamifikazioa (Trebetasun Zuhaitza):</strong> Aurrerapen-datuak, desblokeatutako mailak, esperientzia (XP), garaikurrak eta aurrezki-helburuen konfigurazioa.</li>
+        <li><strong>Txata eta Komunitatea:</strong> Taldeetako txatetan edo aurrezki-zirkuluetan bidalitako testu-mezuak.</li>
+    </ul>
 
-Kontu Partekatu batean parte hartzen baduzu, kontu horretako kideek bertan erregistratutako gastuak eta diru-sarrerak ikusi ahal izango dituzte.
+    <h3>3.3. Datu Teknikoak</h3>
+    <p>Ez dugu jarraipen inbasiborik egiten. Ez dugu zure IP helbidea biltzen jarraipena egiteko, ezta gailuaren eredu zehatza edo publizitate-identifikatzaileak ere (IDFA/AAID).</p>
 
-Aurrezki Zirkulu (Erronkak) batean parte hartzen baduzu, gainerako partaideek zure izena, rankingeko posizioa, erronkari egindako ekarpenak eta jokoaren testuinguruan lortutako garaikurrak/zigorrak ikusi ahal izango dituzte.
+    <h2>4. Tratamenduaren Helburua</h2>
+    <p>Zure datu pertsonalak honako helburu hauekin tratatzen ditugu:</p>
+    <ul>
+        <li><strong>Zerbitzua Ematea:</strong> Zure kontua kudeatzea, zure eskuzko finantza-erregistroak gordetzea eta Kakebo metodoaren bidez zure aurrerapena ikustaraztea.</li>
+    </ul>
+    
+    <h3>Funtzio Sozialak ("Aurrezki Zirkuluak" eta Kontu Partekatuak):</h3>
+    <ul>
+        <li><strong>Kontu Partekatu</strong> batean parte hartzen baduzu, kontu horretako kideek bertan erregistratutako gastuak eta diru-sarrerak ikusi ahal izango dituzte.</li>
+        <li><strong>Aurrezki Zirkulu (Erronkak)</strong> batean parte hartzen baduzu, gainerako partaideek zure izena, rankingeko posizioa, erronkari egindako ekarpenak eta jokoaren testuinguruan lortutako garaikurrak/zigorrak ikusi ahal izango dituzte.</li>
+    </ul>
 
-Adimen Artifiziala (Aholkularitza):
+    <h3>Adimen Artifiziala (Aholkularitza):</h3>
+    <p>AIa erabiltzen dugu sartutako datuak aztertzeko eta finantza-ahoku pertsonalizatuak eskaintzeko edo txatean zalantzak argitzeko.</p>
+    <div class="disclaimer-box">
+        <strong>Oharra:</strong> Aholkuak AIak sortzen ditu hezkuntza- eta entretenimendu-helburuekin. Ez dira finantza-aholkularitza profesionala.
+    </div>
 
-AIa erabiltzen dugu sartutako datuak aztertzeko eta finantza-ahoku pertsonalizatuak eskaintzeko edo txatean zalantzak argitzeko.
+    <h3>Mantentzea eta Komunikazioak:</h3>
+    <ul>
+        <li><strong>Segurtasuna:</strong> Aplikazioaren egoera teknikoa monitorizatzea, iruzurrak edo akatsak prebenitzeko.</li>
+        <li><strong>Komunikazioak:</strong> Aplikazioaren barne-gertaerei buruzko push jakinarazpenak bidaltzea (adibidez, "Lorpen bat desblokeatu duzu", "Mezu berria txatean"). <strong>Ez dugu mezu komertzialik edo marketin-mezurik bidaltzen.</strong></li>
+    </ul>
 
-Oharra: Aholkuak AIak sortzen ditu hezkuntza- eta entretenimendu-helburuekin. Ez dira finantza-aholkularitza profesionala.
+    <h2>5. Hartzaileak eta Nazioarteko Transferentziak</h2>
+    <p><strong>Ez dizkiegu zure datuak hirugarrenei saltzen, eta ez dugu publizitaterik erakusten.</strong></p>
+    <p>Zerbitzua emateko, lehen mailako azpiegitura teknologikoko hornitzaileak erabiltzen ditugu. Arduraduna Suitzan bizi denez eta hornitzaile globalak erabiltzen dituenez, zure datuak nazioartean transferi daitezke segurtasun-berme zorrotzekin:</p>
+    <ul>
+        <li><strong>Google Cloud / Firebase (Google LLC):</strong> Datu-basearen hornitzailea (Firestore), autentifikazioa eta hodeiko konputazio-zerbitzuak (Cloud Run AIrako). Googlek bermatzen du RGPDa betetzen duela Kontratu Klausula Tipoen (SCC) bidez.</li>
+        <li><strong>Suitza-EB Egokitasuna:</strong> Europako Batzordeak Suitza datu-babes maila egokia eskaintzen duen herrialdetzat hartzen du, datuen fluxu segurua ahalbidetuz.</li>
+    </ul>
 
-Mantentzea eta Segurtasuna: Aplikazioaren egoera teknikoa monitorizatzea, iruzurrak edo akatsak prebenitzeko.
+    <h2>6. Datuen Kontserbazioa</h2>
+    <p>Zure datu pertsonalak gordeko ditugu zure kontuak aktibo jarraitzen duen bitartean.</p>
+    <ul>
+        <li><strong>Jarduerarik Ezagatik Ezabatzea:</strong> Datuen higienea eta pribatutasuna bermatzeko, <strong>6 hilabeteko</strong> epean zure kontuan jarduerarik hautematen ez bada, eskubidea dugu zure kontua eta lotutako datu guztiak behin betiko ezabatzeko.</li>
+        <li><strong>Borondatezko Ezabatzea:</strong> Zure kontua eta datu guztiak berehala ezabatzeko eska dezakezu edozein unetan, aplikazioko profilaren ezarpenetan dagoen "Ezabatu Kontua" botoia erabiliz.</li>
+    </ul>
 
-Komunikazioak: Aplikazioaren barne-gertaerei buruzko push jakinarazpenak bidaltzea (adibidez, "Lorpen bat desblokeatu duzu", "Mezu berria txatean"). Ez dugu mezu komertzialik edo marketin-mezurik bidaltzen.
+    <h2>7. Segurtasuna</h2>
+    <p>Muturretik muturrerako enkriptatzea (E2EE) erabiltzen dugu garraioan (HTTPS/TLS) zure gailuaren eta gure zerbitzarien arteko komunikazioa babesteko. Sarbide-kredentzialak modu seguruan babestuta eta kudeatuta daude autentifikazio-hornitzailearen bidez.</p>
 
-5. Hartzaileak eta Nazioarteko Transferentziak
+    <h2>8. Zure Eskubideak</h2>
+    <p>Erabiltzaile gisa, eskubidea duzu zure datuak eskuratzeko, zuzentzeko, ezabatzeko ("ahaztua izateko eskubidea"), tratamendua mugatzeko eta datuen portabilitatea eskatzeko. Eskubide horiek doan balia ditzakezu <a href="mailto:info@bancfy.com">info@bancfy.com</a> helbidera idatziz edo aplikazioaren interfazetik zuzenean kudeatuz.</p>
 
-Ez dizkiegu zure datuak hirugarrenei saltzen, eta ez dugu publizitaterik erakusten.
+    <h2>9. Hizkuntza Nagusia</h2>
+    <p>Pribatutasun Politika hau jatorriz gaztelaniaz idatzi da. Gure komunitate globalak errazago ulertzeko beste hizkuntza batzuetara (ingelesa, alemana, frantsesa, euskara, etab.) itzuli badaiteke ere, itzulitako bertsioen eta gaztelaniazko bertsioaren artean desadostasunik, interpretazio-gatazkarik edo zalantza legalik egonez gero, <strong>gaztelaniazko bertsioa gailenduko da beti</strong>, aplikagarria den legediak ahalbidetzen duen neurrian.</p>
 
-Zerbitzua emateko, lehen mailako azpiegitura teknologikoko hornitzaileak erabiltzen ditugu. Arduraduna Suitzan bizi denez eta hornitzaile globalak erabiltzen dituenez, zure datuak nazioartean transferi daitezke segurtasun-berme zorrotzekin:
+    <h2>10. Politika Aldatzea</h2>
+    <p>Bancfy-k eskubidea du politika hau aldatzeko, lege- edo jurisprudentzia-berrikuntzetara zein industriaren praktiketara egokitzeko. Aldaketa nabarmenak aplikazioaren barruan jakinaraziko dira ezarri aurretik.</p>
 
-Google Cloud / Firebase (Google LLC): Datu-basearen hornitzailea (Firestore), autentifikazioa eta hodeiko konputazio-zerbitzuak (Cloud Run AIrako). Googlek bermatzen du RGPDa betetzen duela Kontratu Klausula Tipoen (SCC) bidez.
+    <div class="footer">
+        <span class="brand-signature">Bancfy - Zure finantza-osasuna, gamifikatua.</span>
+        <p>&copy; 2025 Juan José García Manzano. Eskubide guztiak erreserbatuta.</p>
+    </div>
+</div>
 
-Suitza-EB Egokitasuna: Europako Batzordeak Suitza datu-babes maila egokia eskaintzen duen herrialdetzat hartzen du, datuen fluxu segurua ahalbidetuz.
-
-6. Datuen Kontserbazioa
-
-Zure datu pertsonalak gordeko ditugu zure kontuak aktibo jarraitzen duen bitartean.
-
-Jarduerarik Ezagatik Ezabatzea: Datuen higienea eta pribatutasuna bermatzeko, 6 hilabeteko epean zure kontuan jarduerarik hautematen ez bada, eskubidea dugu zure kontua eta lotutako datu guztiak behin betiko ezabatzeko.
-
-Borondatezko Ezabatzea: Zure kontua eta datu guztiak berehala ezabatzeko eska dezakezu edozein unetan, aplikazioko profilaren ezarpenetan dagoen "Ezabatu Kontua" botoia erabiliz.
-
-7. Segurtasuna
-
-Muturretik muturrerako enkriptatzea (E2EE) erabiltzen dugu garraioan (HTTPS/TLS) zure gailuaren eta gure zerbitzarien arteko komunikazioa babesteko. Sarbide-kredentzialak modu seguruan babestuta eta kudeatuta daude autentifikazio-hornitzailearen bidez.
-
-8. Zure Eskubideak
-
-Erabiltzaile gisa, eskubidea duzu zure datuak eskuratzeko, zuzentzeko, ezabatzeko ("ahaztua izateko eskubidea"), tratamendua mugatzeko eta datuen portabilitatea eskatzeko. Eskubide horiek doan balia ditzakezu info@bancfy.com helbidera idatziz edo aplikazioaren interfazetik zuzenean kudeatuz.
-
-9. Hizkuntza Nagusia
-
-Pribatutasun Politika hau jatorriz gaztelaniaz idatzi da. Gure komunitate globalak errazago ulertzeko beste hizkuntza batzuetara (ingelesa, alemana, frantsesa, euskara, etab.) itzuli badaiteke ere, itzulitako bertsioen eta gaztelaniazko bertsioaren artean desadostasunik, interpretazio-gatazkarik edo zalantza legalik egonez gero, gaztelaniazko bertsioa gailenduko da beti, aplikagarria den legediak ahalbidetzen duen neurrian.
-
-10. Politika Aldatzea
-
-Bancfyk eskubidea du politika hau aldatzeko, lege- edo jurisprudentzia-berrikuntzetara zein industriaren praktiketara egokitzeko. Aldaketa nabarmenak aplikazioaren barruan jakinaraziko dira ezarri aurretik.
+</body>
+</html>
