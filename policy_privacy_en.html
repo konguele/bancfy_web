@@ -1,104 +1,266 @@
-PRIVACY POLICY
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Bancfy</title>
+    
+    <!-- Import Urbanist font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-Last updated: December 22, 2025
+    <style>
+        :root {
+            --navy-blue: #0A192F;
+            --rich-gold: #D4AF37;
+            --light-gold: #F4E4BC;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-gray: #F3F4F6;
+        }
 
-Welcome to Bancfy.
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
 
-The privacy and security of your data are our top priority. This Privacy Policy establishes the terms under which Juan José García Manzano (hereinafter, "the Controller", "we", or "Bancfy") uses and protects the information provided by its users when using the mobile application.
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.08);
+        }
 
-This policy has been drafted in accordance with the requirements of the European Union's General Data Protection Regulation (GDPR) and the Swiss Federal Act on Data Protection (FADP).
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 20px;
+        }
 
-1. Data Controller
+        h1 {
+            color: var(--navy-blue);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-Owner: Juan José García Manzano
+        .update-date {
+            color: var(--rich-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-Address: Switzerland (Swiss Confederation)
+        h2 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--rich-gold);
+            padding-left: 15px;
+        }
 
-Contact email: info@bancfy.com
+        h3 {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
 
-2. Nature of the Service (Important Notice)
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
 
-Bancfy is NOT a banking entity.
-It is a personal finance management, financial education, and gamification application based on the Kakebo method.
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-Manual Entry: The application does not connect to your bank accounts, does not use Open Banking APIs, and does not automatically extract data from third parties.
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
 
-Data Responsibility: All financial information (expenses, income, budgets) is manually entered by the User.
+        ul li::before {
+            content: "•";
+            color: var(--rich-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
 
-3. Data We Collect
+        strong {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
 
-We only collect data necessary to provide gamification and financial management features:
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--rich-gold);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
 
-3.1. Identity and Account Data
+        .disclaimer-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--navy-blue);
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 15px 0;
+        }
 
-Registration: Name, surname, and email address (obtained via Google Sign-In).
+        a {
+            color: var(--rich-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-Profile: Profile picture (if imported from Google), language preferences, and local currency.
+        a:hover {
+            color: var(--navy-blue);
+        }
 
-3.2. Financial and Gameplay Data (User-Generated)
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
 
-Transactions: Records of expenses and income, dates, categories, and associated notes entered manually.
+        .brand-signature {
+            font-weight: 700;
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
 
-Gamification (Skill Tree): Progress data, unlocked levels, experience (XP), trophies, and savings goal configurations.
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
 
-Chat and Community: Text messages sent in group chats or savings circles.
+<div class="container">
+    <header>
+        <h1>PRIVACY POLICY</h1>
+        <div class="update-date">Last updated: December 22, 2025</div>
+    </header>
 
-3.3. Technical Data
+    <p>Welcome to <strong>Bancfy</strong>.</p>
+    <p>The privacy and security of your data are our top priority. This Privacy Policy establishes the terms under which <strong>Juan José García Manzano</strong> (hereinafter, "the Controller", "we", or "Bancfy") uses and protects the information provided by its users when using the mobile application.</p>
+    <p>This policy has been drafted in accordance with the requirements of the European Union's <strong>General Data Protection Regulation (GDPR)</strong> and the Swiss <strong>Federal Act on Data Protection (FADP)</strong>.</p>
 
-No invasive tracking: We do not collect your IP address for tracking purposes, nor the exact device model or advertising identifiers (IDFA/AAID).
+    <h2>1. Data Controller</h2>
+    <ul>
+        <li><strong>Owner:</strong> Juan José García Manzano</li>
+        <li><strong>Address:</strong> Switzerland (Swiss Confederation)</li>
+        <li><strong>Contact email:</strong> <a href="mailto:info@bancfy.com">info@bancfy.com</a></li>
+    </ul>
 
-4. Purpose of Processing
+    <h2>2. Nature of the Service (Important Notice)</h2>
+    <div class="highlight-box">
+        <p><strong>Bancfy is NOT a banking entity.</strong> It is a personal finance management, financial education, and gamification application based on the Kakebo method.</p>
+    </div>
+    <ul>
+        <li><strong>Manual Entry:</strong> The application does not connect to your bank accounts, does not use Open Banking APIs, and does not automatically extract data from third parties.</li>
+        <li><strong>Data Responsibility:</strong> All financial information (expenses, income, budgets) is manually entered by the User.</li>
+    </ul>
 
-We process your personal data for the following purposes:
+    <h2>3. Data We Collect</h2>
+    <p>We only collect data necessary to provide gamification and financial management features:</p>
 
-Service Provision: To manage your account, store your manual financial records, and allow visualization of your progress via the Kakebo method.
+    <h3>3.1. Identity and Account Data</h3>
+    <ul>
+        <li><strong>Registration:</strong> Name, surname, and email address (obtained via Google Sign-In).</li>
+        <li><strong>Profile:</strong> Profile picture (if imported from Google), language preferences, and local currency.</li>
+    </ul>
 
-Social Functions ("Savings Circles" and Shared Accounts):
+    <h3>3.2. Financial and Gameplay Data (User-Generated)</h3>
+    <ul>
+        <li><strong>Transactions:</strong> Records of expenses and income, dates, categories, and associated notes entered manually.</li>
+        <li><strong>Gamification (Skill Tree):</strong> Progress data, unlocked levels, experience (XP), trophies, and savings goal configurations.</li>
+        <li><strong>Chat and Community:</strong> Text messages sent in group chats or savings circles.</li>
+    </ul>
 
-If you participate in a Shared Account, members of that account will have access to view the expenses and income recorded therein.
+    <h3>3.3. Technical Data</h3>
+    <p>We do not perform invasive tracking. We do not collect your IP address for tracking purposes, nor the exact device model or advertising identifiers (IDFA/AAID).</p>
 
-If you participate in a Savings Circle (Challenges), other participants will be able to see your name, ranking position, contributions to the challenge, and trophies/penalties obtained within the game context.
+    <h2>4. Purpose of Processing</h2>
+    <p>We process your personal data for the following purposes:</p>
+    <ul>
+        <li><strong>Service Provision:</strong> To manage your account, store your manual financial records, and allow visualization of your progress via the Kakebo method.</li>
+    </ul>
+    
+    <h3>Social Functions ("Savings Circles" and Shared Accounts):</h3>
+    <ul>
+        <li>If you participate in a <strong>Shared Account</strong>, members of that account will have access to view the expenses and income recorded therein.</li>
+        <li>If you participate in a <strong>Savings Circle (Challenges)</strong>, other participants will be able to see your name, ranking position, contributions to the challenge, and trophies/penalties obtained within the game context.</li>
+    </ul>
 
-Artificial Intelligence (Advisory):
+    <h3>Artificial Intelligence (Advisory):</h3>
+    <p>We use AI to analyze your input data and offer personalized financial tips or answer questions in the chat.</p>
+    <div class="disclaimer-box">
+        <strong>Disclaimer:</strong> Tips are generated by AI for educational and entertainment purposes. They do not constitute professional financial advice.
+    </div>
 
-We use AI to analyze your input data and offer personalized financial tips or answer questions in the chat.
+    <h3>Maintenance and Communications:</h3>
+    <ul>
+        <li><strong>Security:</strong> To monitor the technical status of the application to prevent fraud or errors.</li>
+        <li><strong>Communications:</strong> Sending push notifications regarding internal app events (e.g., "You unlocked an achievement", "New message in chat"). <strong>We do not send commercial or marketing emails.</strong></li>
+    </ul>
 
-Disclaimer: Tips are generated by AI for educational and entertainment purposes. They do not constitute professional financial advice.
+    <h2>5. Recipients and International Transfers</h2>
+    <p><strong>We do not sell your data to third parties nor do we display advertising.</strong></p>
+    <p>To operate the service, we use top-tier technological infrastructure providers. As the Controller resides in Switzerland and uses global providers, your data may be transferred internationally under strict security guarantees:</p>
+    <ul>
+        <li><strong>Google Cloud / Firebase (Google LLC):</strong> Database provider (Firestore), authentication, and cloud computing services (Cloud Run for AI). Google guarantees GDPR compliance via Standard Contractual Clauses (SCC).</li>
+        <li><strong>Switzerland-EU Adequacy:</strong> The European Commission recognizes Switzerland as a country providing an adequate level of data protection, allowing secure data flow.</li>
+    </ul>
 
-Maintenance and Security: To monitor the technical status of the application to prevent fraud or errors.
+    <h2>6. Data Retention</h2>
+    <p>We will retain your personal data as long as your account remains active.</p>
+    <ul>
+        <li><strong>Deletion due to Inactivity:</strong> To ensure data hygiene and privacy, if no activity is detected on your account for a period of <strong>6 months</strong>, we reserve the right to permanently delete your account and all associated data.</li>
+        <li><strong>Voluntary Deletion:</strong> You may request the immediate deletion of your account and all your data at any time using the "Delete Account" button located within your profile settings in the app.</li>
+    </ul>
 
-Communications: Sending push notifications regarding internal app events (e.g., "You unlocked an achievement", "New message in chat"). We do not send commercial or marketing emails.
+    <h2>7. Security</h2>
+    <p>We use end-to-end encryption (E2EE) in transit (HTTPS/TLS) to protect communication between your device and our servers. Access credentials are protected and securely managed by the authentication provider.</p>
 
-5. Recipients and International Transfers
+    <h2>8. Your Rights</h2>
+    <p>As a user, you have the right to access, rectify, delete ("right to be forgotten"), limit processing, and request portability of your data. You can exercise these rights free of charge by writing to <a href="mailto:info@bancfy.com">info@bancfy.com</a> or managing them directly from the application interface.</p>
 
-We do not sell your data to third parties nor do we display advertising.
+    <h2>9. Prevailing Language</h2>
+    <p>This Privacy Policy was originally written in Spanish. Although it may be translated into other languages (such as English, German, French, etc.) to facilitate understanding by our global community, in the event of any discrepancy, conflict of interpretation, or legal doubt between the translated versions and the Spanish version, <strong>the Spanish version shall always prevail</strong> to the extent permitted by applicable law.</p>
 
-To operate the service, we use top-tier technological infrastructure providers. As the Controller resides in Switzerland and uses global providers, your data may be transferred internationally under strict security guarantees:
+    <h2>10. Changes to the Policy</h2>
+    <p>Bancfy reserves the right to modify this policy to adapt it to legislative or jurisprudential developments, as well as industry practices. Substantial changes will be notified within the application prior to their implementation.</p>
 
-Google Cloud / Firebase (Google LLC): Database provider (Firestore), authentication, and cloud computing services (Cloud Run for AI). Google guarantees GDPR compliance via Standard Contractual Clauses (SCC).
+    <div class="footer">
+        <span class="brand-signature">Bancfy - Your financial health, gamified.</span>
+        <p>&copy; 2025 Juan José García Manzano. All rights reserved.</p>
+    </div>
+</div>
 
-Switzerland-EU Adequacy: The European Commission recognizes Switzerland as a country providing an adequate level of data protection, allowing secure data flow.
-
-6. Data Retention
-
-We will retain your personal data as long as your account remains active.
-
-Deletion due to Inactivity: To ensure data hygiene and privacy, if no activity is detected on your account for a period of 6 months, we reserve the right to permanently delete your account and all associated data.
-
-Voluntary Deletion: You may request the immediate deletion of your account and all your data at any time using the "Delete Account" button located within your profile settings in the app.
-
-7. Security
-
-We use end-to-end encryption (E2EE) in transit (HTTPS/TLS) to protect communication between your device and our servers. Access credentials are protected and securely managed by the authentication provider.
-
-8. Your Rights
-
-As a user, you have the right to access, rectify, delete ("right to be forgotten"), limit processing, and request portability of your data. You can exercise these rights free of charge by writing to info@bancfy.com or managing them directly from the application interface.
-
-9. Prevailing Language
-
-This Privacy Policy was originally written in Spanish. Although it may be translated into other languages (such as English, German, French, etc.) to facilitate understanding by our global community, in the event of any discrepancy, conflict of interpretation, or legal doubt between the translated versions and the Spanish version, the Spanish version shall always prevail to the extent permitted by applicable law.
-
-10. Changes to the Policy
-
-Bancfy reserves the right to modify this policy to adapt it to legislative or jurisprudential developments, as well as industry practices. Substantial changes will be notified within the application prior to their implementation.
+</body>
+</html>
