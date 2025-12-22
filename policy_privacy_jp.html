@@ -1,104 +1,266 @@
-プライバシーポリシー
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー - Bancfy</title>
+    
+    <!-- Import Urbanist font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-最終更新日: 2025年12月22日
+    <style>
+        :root {
+            --navy-blue: #0A192F;
+            --rich-gold: #D4AF37;
+            --light-gold: #F4E4BC;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-gray: #F3F4F6;
+        }
 
-Bancfyへようこそ。
+        body {
+            font-family: 'Urbanist', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+        }
 
-お客様のデータのプライバシーとセキュリティは、私たちの最優先事項です。本プライバシーポリシーは、Juan José García Manzano（以下「管理者」、「私たち」、または「Bancfy」）が、モバイルアプリケーションの使用時にユーザーから提供される情報をどのように使用し、保護するかを定めたものです。
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.08);
+        }
 
-本ポリシーは、欧州連合の**一般データ保護規則（GDPR）およびスイスの連邦データ保護法（FADP）**の要件に従って作成されています。
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 20px;
+        }
 
-1. データ管理者
+        h1 {
+            color: var(--navy-blue);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-所有者: Juan José García Manzano
+        .update-date {
+            color: var(--rich-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-住所: スイス（スイス連邦）
+        h2 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--rich-gold);
+            padding-left: 15px;
+        }
 
-連絡先メールアドレス: info@bancfy.com
+        h3 {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
 
-2. サービスの性質（重要なお知らせ）
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
 
-Bancfyは銀行機関ではありません。
-これは、*家計簿（Kakebo）*メソッドに基づいた個人財務管理、金融教育、およびゲーミフィケーションアプリです。
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-手動入力: アプリケーションは、お客様の銀行口座に接続せず、オープンバンキングAPIを使用せず、第三者からデータを自動的に抽出しません。
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
 
-データの責任: すべての財務情報（支出、収入、予算）は、ユーザーによって手動で入力されます。
+        ul li::before {
+            content: "•";
+            color: var(--rich-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
 
-3. 収集するデータ
+        strong {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
 
-ゲーミフィケーションおよび財務管理機能を提供するために厳密に必要なデータのみを収集します。
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--rich-gold);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
 
-3.1. 本人確認およびアカウントデータ
+        .disclaimer-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--navy-blue);
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 15px 0;
+        }
 
-登録: 氏名およびメールアドレス（Googleサインインを通じて取得）。
+        a {
+            color: var(--rich-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-プロフィール: プロフィール写真（Googleからインポートした場合）、言語設定、および現地通貨。
+        a:hover {
+            color: var(--navy-blue);
+        }
 
-3.2. 財務およびゲームデータ（ユーザー生成）
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
 
-取引: 手動で入力された支出と収入の記録、日付、カテゴリ、および関連するメモ。
+        .brand-signature {
+            font-weight: 700;
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
 
-ゲーミフィケーション（スキルツリー）: 進捗データ、ロック解除されたレベル、経験値（XP）、トロフィー、および貯蓄目標の設定。
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
 
-チャットおよびコミュニティ: グループチャットまたは貯蓄サークルで送信されたテキストメッセージ。
+<div class="container">
+    <header>
+        <h1>プライバシーポリシー</h1>
+        <div class="update-date">最終更新日: 2025年12月22日</div>
+    </header>
 
-3.3. 技術データ
+    <p><strong>Bancfy</strong>へようこそ。</p>
+    <p>お客様のデータのプライバシーとセキュリティは、私たちの最優先事項です。本プライバシーポリシーは、<strong>Juan José García Manzano</strong>（以下「管理者」、「私たち」、または「Bancfy」）が、モバイルアプリケーションの使用時にユーザーから提供される情報をどのように使用し、保護するかを定めたものです。</p>
+    <p>本ポリシーは、欧州連合の<strong>一般データ保護規則（GDPR）</strong>およびスイスの<strong>連邦データ保護法（FADP）</strong>の要件に従って作成されています。</p>
 
-侵襲的な追跡なし: 追跡目的でIPアドレスを収集したり、正確なデバイスモデルや広告識別子（IDFA/AAID）を収集したりすることはありません。
+    <h2>1. データ管理者</h2>
+    <ul>
+        <li><strong>所有者:</strong> Juan José García Manzano</li>
+        <li><strong>住所:</strong> スイス（スイス連邦）</li>
+        <li><strong>連絡先メールアドレス:</strong> <a href="mailto:info@bancfy.com">info@bancfy.com</a></li>
+    </ul>
 
-4. 処理の目的
+    <h2>2. サービスの性質（重要なお知らせ）</h2>
+    <div class="highlight-box">
+        <p><strong>Bancfyは銀行機関ではありません。</strong> これは、家計簿（Kakebo）メソッドに基づいた個人財務管理、金融教育、およびゲーミフィケーションアプリです。</p>
+    </div>
+    <ul>
+        <li><strong>手動入力:</strong> アプリケーションは、お客様の銀行口座に接続せず、オープンバンキングAPIを使用せず、第三者からデータを自動的に抽出しません。</li>
+        <li><strong>データの責任:</strong> すべての財務情報（支出、収入、予算）は、ユーザーによって手動で入力されます。</li>
+    </ul>
 
-私たちは以下の目的でお客様の個人データを処理します。
+    <h2>3. 収集するデータ</h2>
+    <p>ゲーミフィケーションおよび財務管理機能を提供するために厳密に必要なデータのみを収集します。</p>
 
-サービスの提供: アカウントの管理、手動の財務記録の保存、および家計簿メソッドによる進捗状況の可視化。
+    <h3>3.1. 本人確認およびアカウントデータ</h3>
+    <ul>
+        <li><strong>登録:</strong> 氏名およびメールアドレス（Googleサインインを通じて取得）。</li>
+        <li><strong>プロフィール:</strong> プロフィール写真（Googleからインポートした場合）、言語設定、および現地通貨。</li>
+    </ul>
 
-ソーシャル機能（「貯蓄サークル」および共有アカウント）:
+    <h3>3.2. 財務およびゲームデータ（ユーザー生成）</h3>
+    <ul>
+        <li><strong>取引:</strong> 手動で入力された支出と収入の記録、日付、カテゴリ、および関連するメモ。</li>
+        <li><strong>ゲーミフィケーション（スキルツリー）:</strong> 進捗データ、ロック解除されたレベル、経験値（XP）、トロフィー、および貯蓄目標の設定。</li>
+        <li><strong>チャットおよびコミュニティ:</strong> グループチャットまたは貯蓄サークルで送信されたテキストメッセージ。</li>
+    </ul>
 
-共有アカウントに参加する場合、そのアカウントのメンバーは、そこに記録された支出と収入を閲覧できます。
+    <h3>3.3. 技術データ</h3>
+    <p>侵襲的な追跡なし: 追跡目的でIPアドレスを収集したり、正確なデバイスモデルや広告識別子（IDFA/AAID）を収集したりすることはありません。</p>
 
-**貯蓄サークル（チャレンジ）**に参加する場合、他の参加者はあなたの名前、ランキング順位、チャレンジへの貢献、およびゲーム内で獲得したトロフィー/ペナルティを見ることができます。
+    <h2>4. 処理の目的</h2>
+    <p>私たちは以下の目的でお客様の個人データを処理します。</p>
+    <ul>
+        <li><strong>サービスの提供:</strong> アカウントの管理、手動の財務記録の保存、および家計簿メソッドによる進捗状況の可視化。</li>
+    </ul>
+    
+    <h3>ソーシャル機能（「貯蓄サークル」および共有アカウント）:</h3>
+    <ul>
+        <li><strong>共有アカウント</strong>に参加する場合、そのアカウントのメンバーは、そこに記録された支出と収入を閲覧できます。</li>
+        <li><strong>貯蓄サークル（チャレンジ）</strong>に参加する場合、他の参加者はあなたの名前、ランキング順位、チャレンジへの貢献、およびゲーム内で獲得したトロフィー/ペナルティを見ることができます。</li>
+    </ul>
 
-人工知能（アドバイス）:
+    <h3>人工知能（アドバイス）:</h3>
+    <p>AIを使用して入力データを分析し、パーソナライズされた財務アドバイスを提供したり、チャットでの質問に回答したりします。</p>
+    <div class="disclaimer-box">
+        <strong>免責事項:</strong> アドバイスは教育および娯楽目的でAIによって生成されます。専門的な財務アドバイスを構成するものではありません。
+    </div>
 
-AIを使用して入力データを分析し、パーソナライズされた財務アドバイスを提供したり、チャットでの質問に回答したりします。
+    <h3>保守および通信:</h3>
+    <ul>
+        <li><strong>セキュリティ:</strong> 不正やエラーを防ぐためにアプリケーションの技術的状態を監視します。</li>
+        <li><strong>通信:</strong> アプリ内部のイベント（例：「実績を解除しました」、「チャットに新しいメッセージがあります」）に関するプッシュ通知の送信。<strong>商用またはマーケティングメールは送信しません。</strong></li>
+    </ul>
 
-免責事項: アドバイスは教育および娯楽目的でAIによって生成されます。専門的な財務アドバイスを構成するものではありません。
+    <h2>5. 受信者および国際転送</h2>
+    <p><strong>私たちはお客様のデータを第三者に販売したり、広告を表示したりしません。</strong></p>
+    <p>サービスを運営するために、一流の技術インフラプロバイダーを使用しています。管理者はスイスに居住し、グローバルプロバイダーを使用しているため、厳格なセキュリティ保証の下でデータが国際的に転送される場合があります。</p>
+    <ul>
+        <li><strong>Google Cloud / Firebase (Google LLC):</strong> データベースプロバイダー（Firestore）、認証、およびクラウドコンピューティングサービス（AI用Cloud Run）。Googleは、標準契約条項（SCC）を通じてGDPRへの準拠を保証しています。</li>
+        <li><strong>スイス-EUの十分性:</strong> 欧州委員会は、スイスを十分なレベルのデータ保護を提供する国として認めており、安全なデータフローを可能にしています。</li>
+    </ul>
 
-保守およびセキュリティ: 不正やエラーを防ぐためにアプリケーションの技術的状態を監視します。
+    <h2>6. データの保持</h2>
+    <p>アカウントがアクティブである限り、個人データを保持します。</p>
+    <ul>
+        <li><strong>非アクティブによる削除:</strong> データの衛生とプライバシーを確保するため、<strong>6か月間</strong>アカウントでのアクティビティが検出されない場合、私たちはアカウントおよび関連するすべてのデータを完全に削除する権利を留保します。</li>
+        <li><strong>自発的な削除:</strong> アプリ内のプロフィール設定にある「アカウントを削除」ボタンを使用して、いつでもアカウントおよびすべてのデータの即時削除をリクエストできます。</li>
+    </ul>
 
-通信: アプリ内部のイベント（例：「実績を解除しました」、「チャットに新しいメッセージがあります」）に関するプッシュ通知の送信。商用またはマーケティングメールは送信しません。
+    <h2>7. セキュリティ</h2>
+    <p>デバイスとサーバー間の通信を保護するために、転送中のエンドツーエンド暗号化（E2EE）（HTTPS/TLS）を使用しています。アクセス資格情報は、認証プロバイダーによって安全に保護および管理されています。8. お客様の権利</p>
 
-5. 受信者および国際転送
+    <h2>8. お客様の権利</h2>
+    <p>ユーザーとして、お客様は自身のデータへのアクセス、訂正、削除（「忘れられる権利」）、処理の制限、およびデータポータビリティを要求する権利を有します。これらの権利は、<a href="mailto:info@bancfy.com">info@bancfy.com</a> に書面で連絡するか、アプリケーションインターフェイスから直接管理することで無料で行使できます。</p>
 
-私たちはお客様のデータを第三者に販売したり、広告を表示したりしません。
+    <h2>9. 優先言語</h2>
+    <p>本プライバシーポリシーは、元々スペイン語で作成されました。グローバルコミュニティの理解を助けるために他の言語（英語、ドイツ語、フランス語、日本語など）に翻訳される場合がありますが、翻訳版とスペイン語版の間に不一致、解釈の相違、または法的疑義が生じた場合、適用法で認められる範囲において、<strong>常にスペイン語版が優先されます</strong>。</p>
 
-サービスを運営するために、一流の技術インフラプロバイダーを使用しています。管理者はスイスに居住し、グローバルプロバイダーを使用しているため、厳格なセキュリティ保証の下でデータが国際的に転送される場合があります。
+    <h2>10. ポリシーの変更</h2>
+    <p>Bancfyは、立法や判例の新たな進展、および業界の慣行に適応するために、本ポリシーを変更する権利を留保します。実質的な変更は、実施前にアプリケーション内で通知されます。</p>
 
-Google Cloud / Firebase (Google LLC): データベースプロバイダー（Firestore）、認証、およびクラウドコンピューティングサービス（AI用Cloud Run）。Googleは、標準契約条項（SCC）を通じてGDPRへの準拠を保証しています。
+    <div class="footer">
+        <span class="brand-signature">Bancfy - あなたの経済的な健全性をゲーム化します。</span>
+        <p>&copy; 2025 Juan José García Manzano. All rights reserved.</p>
+    </div>
+</div>
 
-スイス-EUの十分性: 欧州委員会は、スイスを十分なレベルのデータ保護を提供する国として認めており、安全なデータフローを可能にしています。
-
-6. データの保持
-
-アカウントがアクティブである限り、個人データを保持します。
-
-非アクティブによる削除: データの衛生とプライバシーを確保するため、6か月間アカウントでのアクティビティが検出されない場合、私たちはアカウントおよび関連するすべてのデータを完全に削除する権利を留保します。
-
-自発的な削除: アプリ内のプロフィール設定にある**「アカウントを削除」**ボタンを使用して、いつでもアカウントおよびすべてのデータの即時削除をリクエストできます。
-
-7. セキュリティ
-
-デバイスとサーバー間の通信を保護するために、転送中のエンドツーエンド暗号化（E2EE）（HTTPS/TLS）を使用しています。アクセス資格情報は、認証プロバイダーによって安全に保護および管理されています。
-
-8. お客様の権利
-
-ユーザーとして、お客様は自身のデータへのアクセス、訂正、削除（「忘れられる権利」）、処理の制限、およびデータポータビリティを要求する権利を有します。これらの権利は、info@bancfy.com に書面で連絡するか、アプリケーションインターフェイスから直接管理することで無料で行使できます。
-
-9. 優先言語
-
-本プライバシーポリシーは、元々スペイン語で作成されました。グローバルコミュニティの理解を助けるために他の言語（英語、ドイツ語、フランス語、日本語など）に翻訳される場合がありますが、翻訳版とスペイン語版の間に不一致、解釈の相違、または法的疑義が生じた場合、適用法で認められる範囲において、常にスペイン語版が優先されます。
-
-10. ポリシーの変更
-
-Bancfyは、立法や判例の新たな進展、および業界の慣行に適応するために、本ポリシーを変更する権利を留保します。実質的な変更は、実施前にアプリケーション内で通知されます。
+</body>
+</html>
