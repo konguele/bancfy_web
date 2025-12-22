@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Policy - Bancfy</title>
+    
+    <!-- Importar fuente Urbanist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Paleta de colores Bancfy */
+            --navy-blue: #0A192F;  /* Azul oscuro profundo */
+            --rich-gold: #D4AF37;  /* Oro rico metálico */
+            --light-gold: #F4E4BC; /* Oro muy claro para fondos */
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-gray: #F3F4F6;
+            --danger-red: #DC2626; /* Para advertencias de eliminación */
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.08);
+            position: relative;
+        }
+
+        /* Language Selector Styles */
+        .lang-selector-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .lang-select {
+            padding: 8px 12px;
+            border: 1px solid var(--rich-gold);
+            border-radius: 6px;
+            background-color: var(--white);
+            color: var(--navy-blue);
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .lang-select:hover {
+            background-color: var(--light-gold);
+        }
+
+        /* Cabecera */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--navy-blue);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .update-date {
+            color: var(--rich-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Tipografía y Secciones */
+        h2 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--rich-gold);
+            padding-left: 15px;
+        }
+        
+        [dir="rtl"] h2 {
+            border-left: none;
+            border-right: 5px solid var(--rich-gold);
+            padding-left: 0;
+            padding-right: 15px;
+        }
+
+        h3 {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        /* Lista de pasos numerada */
+        ol {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        [dir="rtl"] ol li {
+            padding-left: 0;
+            padding-right: 40px;
+        }
+
+        ol li::before {
+            content: counter(item);
+            counter-increment: item;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background-color: var(--navy-blue);
+            color: var(--rich-gold);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        [dir="rtl"] ol li::before {
+            left: auto;
+            right: 0;
+        }
+
+        /* Listas no ordenadas */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] ul {
+            padding-right: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+        
+        [dir="rtl"] ul li {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--rich-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        [dir="rtl"] ul li::before {
+            margin-left: 0;
+            margin-right: -1em;
+        }
+
+        strong {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
+
+        /* Cajas especiales */
+        .warning-box {
+            background-color: #FEF2F2;
+            border: 1px solid var(--danger-red);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            color: #991B1B;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .warning-icon {
+            font-size: 1.5rem;
+            color: var(--danger-red);
+        }
+
+        a {
+            color: var(--rich-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--navy-blue);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .brand-signature {
+            font-weight: 700;
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Animación de fade */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="lang-selector-container">
+        <select id="languageSelect" class="lang-select" onchange="changeLanguage(this.value)">
+            <option value="en" selected>🇺🇸 English</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="ca">ES-CT Català</option>
+            <option value="eu">ES-PV Euskera</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="it">🇮🇹 Italiano</option>
+            <option value="pt">🇵🇹 Português</option>
+            <option value="ja">🇯🇵 日本語</option>
+            <option value="ko">🇰🇷 한국어</option>
+            <option value="zh">🇨🇳 中文</option>
+            <option value="ar">🇦🇪 العربية</option>
+        </select>
+    </div>
+
+    <div id="content-area" class="fade-in">
+        <!-- Content will be injected via JS -->
+    </div>
+
+    <div class="footer">
+        <span id="brand-sig" class="brand-signature">Bancfy - Your financial health, gamified.</span>
+        <p id="copyright">&copy; 2025 Juan José García Manzano. All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+    // Database of translations for Data Deletion
+    const translations = {
+        es: {
+            title: "Política de Eliminación de Datos",
+            date: "Última actualización: 22 de diciembre de 2025",
+            intro: "En Bancfy, valoramos tu privacidad y te damos control total sobre tus datos. Si decides dejar de utilizar nuestros servicios, tienes el derecho de solicitar la eliminación total de tu cuenta y todos los datos asociados.",
+            steps_title: "Pasos para eliminar tu cuenta",
+            steps: [
+                "Haz clic en el <strong>avatar</strong> de la parte superior izquierda o <strong>desliza a la derecha</strong> para abrir el menú lateral.",
+                "Haz clic en la <strong>tarjeta</strong> de la parte superior del menú donde se ve tu nombre y avatar.",
+                "Una vez en el Perfil de Usuario, desliza la pantalla hasta <strong>abajo del todo</strong>.",
+                "Pulsa el botón rojo que dice <strong>\"Eliminar Cuenta\"</strong>."
+            ],
+            types_title: "Tipos de Datos Eliminados",
+            types_list: [
+                "<strong>Datos Personales:</strong> Nombre, dirección de correo electrónico, foto de perfil.",
+                "<strong>Datos Financieros:</strong> Todos los registros de gastos, ingresos, presupuestos y notas asociadas.",
+                "<strong>Progreso del Juego:</strong> Niveles, puntos de experiencia (XP), trofeos y configuración de objetivos."
+            ],
+            retention_title: "Política de Retención",
+            retention_text: "La eliminación es inmediata y permanente. No conservamos copias de seguridad, historiales ni datos residuales después de confirmar la solicitud de eliminación.",
+            warning_text: "<strong>Advertencia Importante:</strong> Esta acción es <strong>IRREVERSIBLE</strong>. Una vez confirmada, tu cuenta y todos los datos mencionados anteriormente serán eliminados permanentemente de nuestros servidores y no podrán ser recuperados.",
+            contact: "Si tienes problemas para acceder a la app, también puedes solicitar la eliminación escribiendo a <a href='mailto:info@bancfy.com'>info@bancfy.com</a>.",
+            sig: "Bancfy - Tu salud financiera, gamificada.",
+            copy: "&copy; 2025 Juan José García Manzano. Todos los derechos reservados."
+        },
+        en: {
+            title: "Data Deletion Policy",
+            date: "Last updated: December 22, 2025",
+            intro: "At Bancfy, we value your privacy and give you full control over your data. If you decide to stop using our services, you have the right to request the complete deletion of your account and all associated data.",
+            steps_title: "Steps to delete your account",
+            steps: [
+                "Click on the <strong>avatar</strong> at the top left or <strong>swipe right</strong> to open the side menu.",
+                "Click on the <strong>card</strong> at the top of the menu where your name and avatar are displayed.",
+                "Once in the User Profile, scroll down to the <strong>very bottom</strong>.",
+                "Tap the red button that says <strong>\"Delete Account\"</strong>."
+            ],
+            types_title: "Types of Data Deleted",
+            types_list: [
+                "<strong>Personal Data:</strong> Name, email address, profile photo.",
+                "<strong>Financial Data:</strong> All records of expenses, income, budgets, and associated notes.",
+                "<strong>Game Progress:</strong> Levels, experience points (XP), trophies, and goal settings."
+            ],
+            retention_title: "Retention Policy",
+            retention_text: "Deletion is immediate and permanent. We do not retain backups, histories, or residual data after the deletion request is confirmed.",
+            warning_text: "<strong>Important Warning:</strong> This action is <strong>IRREVERSIBLE</strong>. Once confirmed, your account and all data mentioned above will be permanently deleted from our servers and cannot be recovered.",
+            contact: "If you have trouble accessing the app, you can also request deletion by writing to <a href='mailto:info@bancfy.com'>info@bancfy.com</a>.",
+            sig: "Bancfy - Your financial health, gamified.",
+            copy: "&copy; 2025 Juan José García Manzano. All rights reserved."
+        },
+        ca: {
+            title: "Política d'Eliminació de Dades",
+            date: "Darrera actualització: 22 de desembre de 2025",
+            intro: "A Bancfy, valorem la teva privadesa i et donem control total sobre les teves dades. Si decideixes deixar d'utilitzar els nostres serveis, tens el dret de sol·licitar l'eliminació total del teu compte i totes les dades associades.",
+            steps_title: "Passos per eliminar el teu compte",
+            steps: [
+                "Fes clic a l'<strong>avatar</strong> de la part superior esquerra o <strong>llisca a la dreta</strong> per obrir el menú lateral.",
+                "Fes clic a la <strong>targeta</strong> de la part superior del menú on es veu el teu nom i avatar.",
+                "Un cop al Perfil d'Usuari, desplaça la pantalla fins a <strong>baix de tot</strong>.",
+                "Prem el botó vermell que diu <strong>\"Eliminar Compte\"</strong>."
+            ],
+            types_title: "Tipus de Dades Eliminades",
+            types_list: [
+                "<strong>Dades Personals:</strong> Nom, adreça de correu electrònic, foto de perfil.",
+                "<strong>Dades Financeres:</strong> Tots els registres de despeses, ingressos, pressupostos i notes associades.",
+                "<strong>Progrés del Joc:</strong> Nivells, punts d'experiència (XP), trofeus i configuració d'objectius."
+            ],
+            retention_title: "Política de Retenció",
+            retention_text: "L'eliminació és immediata i permanent. No conservem còpies de seguretat, historials ni dades residuals després de confirmar la sol·licitud d'eliminació.",
+            warning_text: "<strong>Advertència Important:</strong> Aquesta acció és <strong>IRREVERSIBLE</strong>. Un cop confirmada, el teu compte i totes les dades esmentades anteriorment seran eliminats permanentment dels nostres servidors i no es podran recuperar.",
+            contact: "Si tens problemes per accedir a l'app, també pots sol·licitar l'eliminació escrivint a <a href='mailto:info@bancfy.com'>info@bancfy.com</a>.",
+            sig: "Bancfy - La teva salut financera, gamificada.",
+            copy: "&copy; 2025 Juan José García Manzano. Tots els drets reservats."
+        },
+        eu: {
+            title: "Datuak Ezabatzeko Politika",
+            date: "Azken eguneratzea: 2025eko abenduaren 22a",
+            intro: "Bancfyn zure pribatutasuna baloratzen dugu eta zure datuen gaineko kontrol osoa ematen dizugu. Gure zerbitzuak erabiltzeari uztea erabakitzen baduzu, zure kontua eta lotutako datu guztiak erabat ezabatzeko eskatzeko eskubidea duzu.",
+            steps_title: "Zure kontua ezabatzeko urratsak",
+            steps: [
+                "Egin klik goiko ezkerreko <strong>abatarrean</strong> edo <strong>irristatu eskuinera</strong> alboko menua irekitzeko.",
+                "Egin klik menuaren goiko aldean zure izena eta abatarra ikusten diren <strong>txartelean</strong>.",
+                "Erabiltzaile-profilean sartuta, joan pantailaren <strong>behe-behera</strong>.",
+                "Sakatu <strong>\"Ezabatu Kontua\"</strong> dioen botoi gorria."
+            ],
+            types_title: "Ezabatutako Datu Motak",
+            types_list: [
+                "<strong>Datu Pertsonalak:</strong> Izena, helbide elektronikoa, profil-argazkia.",
+                "<strong>Finantza Datuak:</strong> Gastu, diru-sarrera, aurrekontu eta ohar elkartuen erregistro guztiak.",
+                "<strong>Jokoaren Aurrerapena:</strong> Mailak, esperientzia puntuak (XP), garaikurrak eta helburuen konfigurazioa."
+            ],
+            retention_title: "Atxikipen Politika",
+            retention_text: "Ezabatzea berehalakoa eta behin betikoa da. Ez dugu segurtasun-kopiarik, historiarik edo hondakin-daturik gordetzen ezabaketa-eskaera baieztatu ondoren.",
+            warning_text: "<strong>Ohar Garrantzitsua:</strong> Ekintza hau <strong>ATZERAEZINA</strong> da. Baieztatu ondoren, zure kontua eta goian aipatutako datu guztiak gure zerbitzarietatik behin betiko ezabatuko dira eta ezin izango dira berreskuratu.",
+            contact: "Aplikaziora sartzeko arazoak badituzu, ezabaketa ere eska dezakezu <a href='mailto:info@bancfy.com'>info@bancfy.com</a> helbidera idatziz.",
+            sig: "Bancfy - Zure finantza-osasuna, gamifikatua.",
+            copy: "&copy; 2025 Juan José García Manzano. Eskubide guztiak erreserbatuta."
+        },
+        de: {
+            title: "Datenlöschungsrichtlinie",
+            date: "Letzte Aktualisierung: 22. Dezember 2025",
+            intro: "Bei Bancfy schätzen wir Ihre Privatsphäre und geben Ihnen die volle Kontrolle über Ihre Daten. Wenn Sie unsere Dienste nicht mehr nutzen möchten, haben Sie das Recht, die vollständige Löschung Ihres Kontos und aller damit verbundenen Daten zu verlangen.",
+            steps_title: "Schritte zum Löschen Ihres Kontos",
+            steps: [
+                "Klicken Sie auf den <strong>Avatar</strong> oben links oder <strong>wischen Sie nach rechts</strong>, um das Seitenmenü zu öffnen.",
+                "Klicken Sie oben im Menü auf die <strong>Karte</strong>, auf der Ihr Name und Avatar angezeigt werden.",
+                "Scrollen Sie im Benutzerprofil ganz nach <strong>unten</strong>.",
+                "Tippen Sie auf den roten Button mit der Aufschrift <strong>\"Konto löschen\"</strong>."
+            ],
+            types_title: "Arten der gelöschten Daten",
+            types_list: [
+                "<strong>Persönliche Daten:</strong> Name, E-Mail-Adresse, Profilbild.",
+                "<strong>Finanzdaten:</strong> Alle Aufzeichnungen von Ausgaben, Einnahmen, Budgets und zugehörigen Notizen.",
+                "<strong>Spielfortschritt:</strong> Level, Erfahrungspunkte (XP), Trophäen und Zieleinstellungen."
+            ],
+            retention_title: "Aufbewahrungsrichtlinie",
+            retention_text: "Die Löschung erfolgt sofort und dauerhaft. Wir bewahren keine Backups, Verläufe oder Restdaten auf, nachdem die Löschanfrage bestätigt wurde.",
+            warning_text: "<strong>Wichtige Warnung:</strong> Diese Aktion ist <strong>IRREVERSIBEL</strong>. Nach der Bestätigung werden Ihr Konto und alle oben genannten Daten dauerhaft von unseren Servern gelöscht und können nicht wiederhergestellt werden.",
+            contact: "Wenn Sie Probleme beim Zugriff auf die App haben, können Sie die Löschung auch schriftlich unter <a href='mailto:info@bancfy.com'>info@bancfy.com</a> beantragen.",
+            sig: "Bancfy - Deine finanzielle Gesundheit, gamifiziert.",
+            copy: "&copy; 2025 Juan José García Manzano. Alle Rechte vorbehalten."
+        },
+        fr: {
+            title: "Politique de Suppression des Données",
+            date: "Dernière mise à jour : 22 décembre 2025",
+            intro: "Chez Bancfy, nous accordons de l'importance à votre confidentialité et vous donnons un contrôle total sur vos données. Si vous décidez de ne plus utiliser nos services, vous avez le droit de demander la suppression totale de votre compte et de toutes les données associées.",
+            steps_title: "Étapes pour supprimer votre compte",
+            steps: [
+                "Cliquez sur l'<strong>avatar</strong> en haut à gauche ou <strong>glissez vers la droite</strong> pour ouvrir le menu latéral.",
+                "Cliquez sur la <strong>carte</strong> en haut du menu où votre nom et votre avatar sont affichés.",
+                "Une fois dans le Profil Utilisateur, faites défiler l'écran jusqu'<strong>tout en bas</strong>.",
+                "Appuyez sur le bouton rouge indiquant <strong>\"Supprimer le compte\"</strong>."
+            ],
+            types_title: "Types de Données Supprimées",
+            types_list: [
+                "<strong>Données Personnelles :</strong> Nom, adresse e-mail, photo de profil.",
+                "<strong>Données Financières :</strong> Tous les enregistrements de dépenses, revenus, budgets et notes associées.",
+                "<strong>Progrès du Jeu :</strong> Niveaux, points d'expérience (XP), trophées et paramètres d'objectifs."
+            ],
+            retention_title: "Politique de Rétention",
+            retention_text: "La suppression est immédiate et définitive. Nous ne conservons aucune sauvegarde, historique ou donnée résiduelle après confirmation de la demande de suppression.",
+            warning_text: "<strong>Avertissement Important :</strong> Cette action est <strong>IRRÉVERSIBLE</strong>. Une fois confirmée, votre compte et toutes les données mentionnées ci-dessus seront supprimés définitivement de nos serveurs et ne pourront pas être récupérés.",
+            contact: "Si vous rencontrez des problèmes pour accéder à l'application, vous pouvez également demander la suppression en écrivant à <a href='mailto:info@bancfy.com'>info@bancfy.com</a>.",
+            sig: "Bancfy - Votre santé financière, gamifiée.",
+            copy: "&copy; 2025 Juan José García Manzano. Tous droits réservés."
+        },
+        it: {
+            title: "Politica di Cancellazione dei Dati",
+            date: "Ultimo aggiornamento: 22 dicembre 2025",
+            intro: "In Bancfy, diamo valore alla tua privacy e ti diamo il pieno controllo sui tuoi dati. Se decidi di smettere di utilizzare i nostri servizi, hai il diritto di richiedere la cancellazione totale del tuo account e di tutti i dati associati.",
+            steps_title: "Passaggi per eliminare il tuo account",
+            steps: [
+                "Clicca sull'<strong>avatar</strong> in alto a sinistra o <strong>scorri verso destra</strong> per aprire il menu laterale.",
+                "Clicca sulla <strong>scheda</strong> nella parte superiore del menu dove vengono visualizzati il tuo nome e avatar.",
+                "Una volta nel Profilo Utente, scorri fino <strong>in fondo</strong>.",
+                "Premi il pulsante rosso che dice <strong>\"Elimina Account\"</strong>."
+            ],
+            types_title: "Tipi di Dati Eliminati",
+            types_list: [
+                "<strong>Dati Personali:</strong> Nome, indirizzo email, foto del profilo.",
+                "<strong>Dati Finanziari:</strong> Tutti i record di spese, entrate, budget e note associate.",
+                "<strong>Progressi di Gioco:</strong> Livelli, punti esperienza (XP), trofei e impostazioni degli obiettivi."
+            ],
+            retention_title: "Politica di Conservazione",
+            retention_text: "La cancellazione è immediata e permanente. Non conserviamo backup, cronologie o dati residui dopo la conferma della richiesta di cancellazione.",
+            warning_text: "<strong>Avviso Importante:</strong> Questa azione è <strong>IRREVERSIBILE</strong>. Una volta confermata, il tuo account e tutti i dati menzionati sopra saranno eliminati definitivamente dai nostri server e non potranno essere recuperati.",
+            contact: "Se hai problemi ad accedere all'app, puoi anche richiedere la cancellazione scrivendo a <a href='mailto:info@bancfy.com'>info@bancfy.com</a>.",
+            sig: "Bancfy - La tua salute finanziaria, gamificata.",
+            copy: "&copy; 2025 Juan José García Manzano. Tutti i diritti riservati."
+        },
+        pt: {
+            title: "Política de Exclusão de Dados",
+            date: "Última atualização: 22 de dezembro de 2025",
+            intro: "Na Bancfy, valorizamos sua privacidade e damos a você controle total sobre seus dados. Se decidir parar de usar nossos serviços, você tem o direito de solicitar a exclusão total de sua conta e todos os dados associados.",
+            steps_title: "Passos para excluir sua conta",
+            steps: [
+                "Clique no <strong>avatar</strong> no canto superior esquerdo ou <strong>deslize para a direita</strong> para abrir o menu lateral.",
+                "Clique no <strong>cartão</strong> na parte superior do menu onde seu nome e avatar são exibidos.",
+                "Uma vez no Perfil do Usuário, role a tela até o <strong>final</strong>.",
+                "Pressione o botão vermelho que diz <strong>\"Excluir Conta\"</strong>."
+            ],
+            types_title: "Tipos de Dados Excluídos",
+            types_list: [
+                "<strong>Dados Pessoais:</strong> Nome, endereço de e-mail, foto do perfil.",
+                "<strong>Dados Financeiros:</strong> Todos os registros de despesas, receitas, orçamentos e notas associadas.",
+                "<strong>Progresso do Jogo:</strong> Níveis, pontos de experiência (XP), troféus e configurações de metas."
+            ],
+            retention_title: "Política de Retenção",
+            retention_text: "A exclusão é imediata e permanente. Não mantemos backups, históricos ou dados residuais após a confirmação da solicitação de exclusão.",
+            warning_text: "<strong>Aviso Importante:</strong> Esta ação é <strong>IRREVERSÍVEL</strong>. Uma vez confirmada, sua conta e todos os dados mencionados acima serão excluídos permanentemente de nossos servidores e não poderão ser recuperados.",
+            contact: "Se tiver problemas para acessar o aplicativo, você também pode solicitar a exclusão escrevendo para <a href='mailto:info@bancfy.com'>info@bancfy.com</a>.",
+            sig: "Bancfy - Sua saúde financeira, gamificada.",
+            copy: "&copy; 2025 Juan José García Manzano. Todos os direitos reservados."
+        },
+        ja: {
+            title: "データ削除ポリシー",
+            date: "最終更新日：2025年12月22日",
+            intro: "Bancfyでは、お客様のプライバシーを尊重し、データに対する完全な制御権を提供します。サービスの利用を停止する場合、アカウントおよび関連するすべてのデータの完全な削除を要求する権利があります。",
+            steps_title: "アカウントを削除する手順",
+            steps: [
+                "左上の<strong>アバター</strong>をクリックするか、<strong>右にスワイプ</strong>してサイドメニューを開きます。",
+                "名前とアバターが表示されているメニュー上部の<strong>カード</strong>をクリックします。",
+                "ユーザープロフィールに入ったら、画面を<strong>一番下まで</strong>スクロールします。",
+                "<strong>「アカウントを削除」</strong>と書かれた赤いボタンをタップします。"
+            ],
+            types_title: "削除されるデータの種類",
+            types_list: [
+                "<strong>個人データ：</strong> 名前、メールアドレス、プロフィール写真。",
+                "<strong>財務データ：</strong> 支出、収入、予算、および関連するメモのすべての記録。",
+                "<strong>ゲームの進行状況：</strong> レベル、経験値（XP）、トロフィー、および目標設定。"
+            ],
+            retention_title: "保持ポリシー",
+            retention_text: "削除は即時かつ永続的です。削除リクエストが確認された後、バックアップ、履歴、または残留データは保持されません。",
+            warning_text: "<strong>重要な警告：</strong> この操作は<strong>取り消せません</strong>。確認後、アカウントおよび上記のすべてのデータはサーバーから永久に削除され、復元することはできません。",
+            contact: "アプリへのアクセスに問題がある場合は、<a href='mailto:info@bancfy.com'>info@bancfy.com</a>にメールで削除を依頼することもできます。",
+            sig: "Bancfy - ゲーミフィケーションされた財務の健全性。",
+            copy: "&copy; 2025 Juan José García Manzano. All rights reserved."
+        },
+        ko: {
+            title: "데이터 삭제 정책",
+            date: "최종 업데이트: 2025년 12월 22일",
+            intro: "Bancfy는 귀하의 개인 정보를 소중히 여기며 데이터에 대한 완전한 통제권을 제공합니다. 서비스 사용을 중단하기로 결정한 경우, 계정 및 모든 관련 데이터의 완전한 삭제를 요청할 권리가 있습니다.",
+            steps_title: "계정 삭제 단계",
+            steps: [
+                "왼쪽 상단의 <strong>아바타</strong>를 클릭하거나 <strong>오른쪽으로 스와이프</strong>하여 사이드 메뉴를 엽니다.",
+                "이름과 아바타가 표시된 메뉴 상단의 <strong>카드</strong>를 클릭합니다.",
+                "사용자 프로필에서 화면을 <strong>맨 아래로</strong> 스크롤합니다.",
+                "<strong>\"계정 삭제\"</strong>라고 적힌 빨간색 버튼을 누릅니다."
+            ],
+            types_title: "삭제되는 데이터 유형",
+            types_list: [
+                "<strong>개인 데이터:</strong> 이름, 이메일 주소, 프로필 사진.",
+                "<strong>금융 데이터:</strong> 지출, 수입, 예산 및 관련 메모의 모든 기록.",
+                "<strong>게임 진행 상황:</strong> 레벨, 경험치(XP), 트로피 및 목표 설정."
+            ],
+            retention_title: "보존 정책",
+            retention_text: "삭제는 즉시 이루어지며 영구적입니다. 삭제 요청이 확인된 후에는 백업, 기록 또는 잔여 데이터를 보관하지 않습니다.",
+            warning_text: "<strong>중요 경고:</strong> 이 작업은 <strong>되돌릴 수 없습니다</strong>. 확인되면 계정 및 위에 언급된 모든 데이터가 서버에서 영구적으로 삭제되며 복구할 수 없습니다.",
+            contact: "앱에 액세스하는 데 문제가 있는 경우 <a href='mailto:info@bancfy.com'>info@bancfy.com</a>으로 이메일을 보내 삭제를 요청할 수도 있습니다.",
+            sig: "Bancfy - 게임화된 금융 건강.",
+            copy: "&copy; 2025 Juan José García Manzano. All rights reserved."
+        },
+        zh: {
+            title: "数据删除政策",
+            date: "最后更新：2025年12月22日",
+            intro: "在 Bancfy，我们重视您的隐私，并让您完全掌控自己的数据。如果您决定停止使用我们的服务，您有权要求完全删除您的账户及所有相关数据。",
+            steps_title: "删除账户的步骤",
+            steps: [
+                "点击左上角的<strong>头像</strong>或<strong>向右滑动</strong>以打开侧边菜单。",
+                "点击菜单顶部显示您姓名和头像的<strong>卡片</strong>。",
+                "进入用户个人资料后，将屏幕滚动到<strong>最底部</strong>。",
+                "点击写有<strong>“删除账户”</strong>的红色按钮。"
+            ],
+            types_title: "删除的数据类型",
+            types_list: [
+                "<strong>个人数据：</strong> 姓名、电子邮件地址、个人资料照片。",
+                "<strong>财务数据：</strong> 所有支出、收入、预算和相关备注的记录。",
+                "<strong>游戏进度：</strong> 等级、经验值 (XP)、奖杯和目标设置。"
+            ],
+            retention_title: "保留政策",
+            retention_text: "删除是立即且永久的。在确认删除请求后，我们不会保留备份、历史记录或残留数据。",
+            warning_text: "<strong>重要警告：</strong> 此操作是<strong>不可逆的</strong>。一旦确认，您的账户及上述所有数据将从我们的服务器中永久删除，无法恢复。",
+            contact: "如果您无法访问应用程序，也可以致信 <a href='mailto:info@bancfy.com'>info@bancfy.com</a> 请求删除。",
+            sig: "Bancfy - 您的财务健康，游戏化。",
+            copy: "&copy; 2025 Juan José García Manzano. All rights reserved."
+        },
+        ar: {
+            title: "سياسة حذف البيانات",
+            date: "آخر تحديث: 22 ديسمبر 2025",
+            intro: "في Bancfy، نحن نقدر خصوصيتك ونمنحك السيطرة الكاملة على بياناتك. إذا قررت التوقف عن استخدام خدماتنا، لديك الحق في طلب الحذف الكامل لحسابك وجميع البيانات المرتبطة به.",
+            steps_title: "خطوات حذف حسابك",
+            steps: [
+                "انقر على <strong>الصورة الرمزية</strong> في الزاوية العلوية اليسرى أو <strong>اسحب لليمين</strong> لفتح القائمة الجانبية.",
+                "انقر على <strong>البطاقة</strong> في الجزء العلوي من القائمة حيث يظهر اسمك وصورتك الرمزية.",
+                "بمجرد الدخول إلى ملف تعريف المستخدم، قم بالتمرير إلى <strong>الأسفل تمامًا</strong>.",
+                "اضغط على الزر الأحمر الذي يقول <strong>\"حذف الحساب\"</strong>."
+            ],
+            types_title: "أنواع البيانات المحذوفة",
+            types_list: [
+                "<strong>البيانات الشخصية:</strong> الاسم، عنوان البريد الإلكتروني، صورة الملف الشخصي.",
+                "<strong>البيانات المالية:</strong> جميع سجلات النفقات والدخل والميزانيات والملاحظات المرتبطة.",
+                "<strong>تقدم اللعبة:</strong> المستويات، نقاط الخبرة (XP)، الجوائز، وإعدادات الأهداف."
+            ],
+            retention_title: "سياسة الاحتفاظ",
+            retention_text: "الحذف فوري ودائم. لا نحتفظ بنسخ احتياطية أو تواريخ أو بيانات متبقية بعد تأكيد طلب الحذف.",
+            warning_text: "<strong>تحذير هام:</strong> هذا الإجراء <strong>لا رجعة فيه</strong>. بمجرد التأكيد، سيتم حذف حسابك وجميع البيانات المذكورة أعلاه بشكل دائم من خوادمنا ولا يمكن استعادتها.",
+            contact: "إذا كنت تواجه مشكلة في الوصول إلى التطبيق، يمكنك أيضًا طلب الحذف عن طريق الكتابة إلى <a href='mailto:info@bancfy.com'>info@bancfy.com</a>.",
+            sig: "Bancfy - صحتك المالية، بأسلوب الألعاب.",
+            copy: "&copy; 2025 Juan José García Manzano. All rights reserved."
+        }
+    };
+
+    function renderContent(lang) {
+        const data = translations[lang];
+        const container = document.getElementById('content-area');
+        
+        // Handle RTL for Arabic
+        const mainContainer = document.querySelector('.container');
+        if (lang === 'ar') {
+            mainContainer.setAttribute('dir', 'rtl');
+        } else {
+            mainContainer.setAttribute('dir', 'ltr');
+        }
+
+        // Helper function for lists
+        const createList = (items) => {
+            if (!items) return '';
+            return `<ul>${items.map(item => `<li>${item}</li>`).join('')}</ul>`;
+        };
+
+        const html = `
+            <header>
+                <h1>${data.title}</h1>
+                <div class="update-date">${data.date}</div>
+            </header>
+
+            <p>${data.intro}</p>
+
+            <h2>${data.steps_title}</h2>
+            <ol>
+                ${data.steps.map(step => `<li>${step}</li>`).join('')}
+            </ol>
+
+            <h3>${data.types_title}</h3>
+            ${createList(data.types_list)}
+
+            <h3>${data.retention_title}</h3>
+            <p>${data.retention_text}</p>
+
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle warning-icon"></i>
+                <p style="margin:0">${data.warning_text}</p>
+            </div>
+
+            <p style="margin-top: 30px; font-size: 0.95rem;">${data.contact}</p>
+        `;
+
+        container.innerHTML = html;
+        
+        // Update Footer
+        document.getElementById('brand-sig').textContent = data.sig;
+        document.getElementById('copyright').innerHTML = data.copy;
+
+        // Re-trigger animation
+        container.classList.remove('fade-in');
+        void container.offsetWidth; // trigger reflow
+        container.classList.add('fade-in');
+    }
+
+    function changeLanguage(lang) {
+        renderContent(lang);
+    }
+
+    // Initialize in English
+    document.addEventListener('DOMContentLoaded', () => {
+        changeLanguage('en');
+    });
+
+</script>
+
+</body>
+</html>
