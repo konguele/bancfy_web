@@ -1,104 +1,266 @@
-隐私政策
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 - Bancfy</title>
+    
+    <!-- Import Urbanist & Noto Sans SC font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-最后更新日期： 2025年12月22日
+    <style>
+        :root {
+            --navy-blue: #0A192F;
+            --rich-gold: #D4AF37;
+            --light-gold: #F4E4BC;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-gray: #F3F4F6;
+        }
 
-欢迎使用 Bancfy。
+        body {
+            font-family: 'Urbanist', 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+        }
 
-您的数据隐私和安全是我们的首要任务。本隐私政策规定了 Juan José García Manzano（以下简称“控制方”、“我们”或“Bancfy”）在用户使用移动应用程序时如何使用和保护用户提供的信息。
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.08);
+        }
 
-本政策是根据欧盟**《通用数据保护条例》（GDPR）和瑞士《联邦数据保护法》（FADP）**的要求制定的。
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 20px;
+        }
 
-1. 数据控制方
+        h1 {
+            color: var(--navy-blue);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-所有者： Juan José García Manzano
+        .update-date {
+            color: var(--rich-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-地址： 瑞士（瑞士联邦）
+        h2 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--rich-gold);
+            padding-left: 15px;
+        }
 
-联系邮箱： info@bancfy.com
+        h3 {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
 
-2. 服务性质（重要通知）
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
 
-Bancfy 不是银行机构。
-它是一款基于 家计簿 (Kakebo) 方法的个人财务管理、金融教育和游戏化应用程序。
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-手动输入： 本应用程序不连接您的银行账户，不使用开放银行 API，也不自动从第三方提取数据。
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
 
-数据责任： 所有财务信息（支出、收入、预算）均由用户手动输入。
+        ul li::before {
+            content: "•";
+            color: var(--rich-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
 
-3. 我们收集的数据
+        strong {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
 
-我们仅收集提供游戏化和财务管理功能所必需的数据：
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--rich-gold);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
 
-3.1. 身份和账户数据
+        .disclaimer-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--navy-blue);
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 15px 0;
+        }
 
-注册： 姓名、姓氏和电子邮件地址（通过 Google 登录获取）。
+        a {
+            color: var(--rich-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-个人资料： 个人资料照片（如果从 Google 导入）、语言偏好和本地货币。
+        a:hover {
+            color: var(--navy-blue);
+        }
 
-3.2. 财务和游戏数据（用户生成）
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
 
-交易： 手动输入的支出和收入记录、日期、类别和相关备注。
+        .brand-signature {
+            font-weight: 700;
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
 
-游戏化（技能树）： 进度数据、解锁等级、经验值 (XP)、奖杯和储蓄目标配置。
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
 
-聊天和社区： 在群聊或储蓄圈中发送的文本消息。
+<div class="container">
+    <header>
+        <h1>隐私政策</h1>
+        <div class="update-date">最后更新日期：2025年12月22日</div>
+    </header>
 
-3.3. 技术数据
+    <p>欢迎使用 <strong>Bancfy</strong>。</p>
+    <p>您的数据隐私和安全是我们的首要任务。本隐私政策规定了 <strong>Juan José García Manzano</strong>（以下简称“控制方”、“我们”或“Bancfy”）在用户使用移动应用程序时如何使用和保护用户提供的信息。</p>
+    <p>本政策是根据欧盟<strong>《通用数据保护条例》（GDPR）</strong>和瑞士<strong>《联邦数据保护法》（FADP）</strong>的要求制定的。</p>
 
-无侵入性跟踪： 我们不会出于跟踪目的收集您的 IP 地址，也不会收集精确的设备型号或广告标识符 (IDFA/AAID)。
+    <h2>1. 数据控制方</h2>
+    <ul>
+        <li><strong>所有者：</strong> Juan José García Manzano</li>
+        <li><strong>地址：</strong> 瑞士（瑞士联邦）</li>
+        <li><strong>联系邮箱：</strong> <a href="mailto:info@bancfy.com">info@bancfy.com</a></li>
+    </ul>
 
-4. 处理目的
+    <h2>2. 服务性质（重要通知）</h2>
+    <div class="highlight-box">
+        <p><strong>Bancfy 不是银行机构。</strong> 它是一款基于 家计簿 (Kakebo) 方法的个人财务管理、金融教育和游戏化应用程序。</p>
+    </div>
+    <ul>
+        <li><strong>手动输入：</strong> 本应用程序不连接您的银行账户，不使用开放银行 API，也不自动从第三方提取数据。</li>
+        <li><strong>数据责任：</strong> 所有财务信息（支出、收入、预算）均由用户手动输入。</li>
+    </ul>
 
-我们将您的个人数据用于以下目的：
+    <h2>3. 我们收集的数据</h2>
+    <p>我们仅收集提供游戏化和财务管理功能所必需的数据：</p>
 
-提供服务： 管理您的账户，存储您的手动财务记录，并通过家计簿方法可视化您的进度。
+    <h3>3.1. 身份和账户数据</h3>
+    <ul>
+        <li><strong>注册：</strong> 姓名、姓氏和电子邮件地址（通过 Google 登录获取）。</li>
+        <li><strong>个人资料：</strong> 个人资料照片（如果从 Google 导入）、语言偏好和本地货币。</li>
+    </ul>
 
-社交功能（“储蓄圈”和共享账户）：
+    <h3>3.2. 财务和游戏数据（用户生成）</h3>
+    <ul>
+        <li><strong>交易：</strong> 手动输入的支出和收入记录、日期、类别和相关备注。</li>
+        <li><strong>游戏化（技能树）：</strong> 进度数据、解锁等级、经验值 (XP)、奖杯和储蓄目标配置。</li>
+        <li><strong>聊天和社区：</strong> 在群聊或储蓄圈中发送的文本消息。</li>
+    </ul>
 
-如果您参与共享账户，该账户的成员将有权查看其中记录的支出和收入。
+    <h3>3.3. 技术数据</h3>
+    <p>无侵入性跟踪：我们不会出于跟踪目的收集您的 IP 地址，也不会收集精确的设备型号或广告标识符 (IDFA/AAID)。</p>
 
-如果您参与储蓄圈（挑战），其他参与者将能够看到您的姓名、排名位置、对挑战的贡献以及在游戏环境中获得的奖杯/惩罚。
+    <h2>4. 处理目的</h2>
+    <p>我们将您的个人数据用于以下目的：</p>
+    <ul>
+        <li><strong>提供服务：</strong> 管理您的账户，存储您的手动财务记录，并通过家计簿方法可视化您的进度。</li>
+    </ul>
+    
+    <h3>社交功能（“储蓄圈”和共享账户）：</h3>
+    <ul>
+        <li>如果您参与<strong>共享账户</strong>，该账户的成员将有权查看其中记录的支出和收入。</li>
+        <li>如果您参与<strong>储蓄圈（挑战）</strong>，其他参与者将能够看到您的姓名、排名位置、对挑战的贡献以及在游戏环境中获得的奖杯/惩罚。</li>
+    </ul>
 
-人工智能（咨询）：
+    <h3>人工智能（咨询）：</h3>
+    <p>我们使用 AI 分析您的输入数据，并为您提供个性化的理财建议或在聊天中回答问题。</p>
+    <div class="disclaimer-box">
+        <strong>免责声明：</strong> 建议由 AI 生成，仅用于教育和娱乐目的。它们不构成专业的财务建议。
+    </div>
 
-我们使用 AI 分析您的输入数据，并为您提供个性化的理财建议或在聊天中回答问题。
+    <h3>维护和安全：</h3>
+    <ul>
+        <li><strong>安全：</strong> 监控应用程序的技术状态，以防止欺诈或错误。</li>
+        <li><strong>通信：</strong> 发送有关应用程序内部事件的推送通知（例如，“您解锁了一项成就”，“聊天中有新消息”）。<strong>我们不发送商业或营销电子邮件。</strong></li>
+    </ul>
 
-免责声明： 建议由 AI 生成，仅用于教育和娱乐目的。它们不构成专业的财务建议。
+    <h2>5. 接收者和国际传输</h2>
+    <p><strong>我们不出售您的数据给第三方，也不展示广告。</strong></p>
+    <p>为了运营服务，我们使用一流的技术基础设施提供商。由于控制方居住在瑞士并使用全球提供商，您的数据可能会在严格的安全保证下进行国际传输：</p>
+    <ul>
+        <li><strong>Google Cloud / Firebase (Google LLC)：</strong> 数据库提供商 (Firestore)、身份验证和云计算服务（用于 AI 的 Cloud Run）。Google 通过标准合同条款 (SCC) 保证符合 GDPR。</li>
+        <li><strong>瑞士-欧盟充分性：</strong> 欧盟委员会承认瑞士是提供充分数据保护水平的国家，允许安全的数据流动。</li>
+    </ul>
 
-维护和安全： 监控应用程序的技术状态，以防止欺诈或错误。
+    <h2>6. 数据保留</h2>
+    <p>只要您的账户保持活跃，我们将保留您的个人数据。</p>
+    <ul>
+        <li><strong>因不活跃而删除：</strong> 为了确保数据卫生和隐私，如果 <strong>6 个月</strong> 内未检测到您的账户有任何活动，我们保留永久删除您的账户和所有相关数据的权利。</li>
+        <li><strong>自愿删除：</strong> 您可以随时使用应用程序内个人资料设置中的“删除账户”按钮，请求立即删除您的账户和所有数据。</li>
+    </ul>
 
-通信： 发送有关应用程序内部事件的推送通知（例如，“您解锁了一项成就”，“聊天中有新消息”）。我们不发送商业或营销电子邮件。
+    <h2>7. 安全</h2>
+    <p>我们在传输过程中使用端到端加密 (E2EE) (HTTPS/TLS) 来保护您的设备与我们服务器之间的通信。访问凭据由身份验证提供商安全地保护和管理。</p>
 
-5. 接收者和国际传输
+    <h2>8. 您的权利</h2>
+    <p>作为用户，您有权访问、更正、删除（“被遗忘权”）、限制处理和请求数据可移植性。您可以通过写信至 <a href="mailto:info@bancfy.com">info@bancfy.com</a> 或直接从应用程序界面管理这些权利来免费行使这些权利。</p>
 
-我们不出售您的数据给第三方，也不展示广告。
+    <h2>9. 以此语言为准</h2>
+    <p>本隐私政策最初以西班牙语撰写。虽然为了便于我们的全球社区理解，可能会将其翻译成其他语言（如英语、德语、法语、中文等），但如果翻译版本与西班牙语版本之间存在任何差异、解释冲突或法律疑问，在适用法律允许的范围内，<strong>始终以西班牙语版本为准</strong>。</p>
 
-为了运营服务，我们使用一流的技术基础设施提供商。由于控制方居住在瑞士并使用全球提供商，您的数据可能会在严格的安全保证下进行国际传输：
+    <h2>10. 政策变更</h2>
+    <p>Bancfy 保留修改本政策的权利，以适应立法或判例的新发展以及行业惯例。重大变更将在实施前在应用程序内通知。</p>
 
-Google Cloud / Firebase (Google LLC)： 数据库提供商 (Firestore)、身份验证和云计算服务（用于 AI 的 Cloud Run）。Google 通过标准合同条款 (SCC) 保证符合 GDPR。
+    <div class="footer">
+        <span class="brand-signature">Bancfy - 您的财务健康，游戏化体验。</span>
+        <p>&copy; 2025 Juan José García Manzano. 保留所有权利。</p>
+    </div>
+</div>
 
-瑞士-欧盟充分性： 欧盟委员会承认瑞士是提供充分数据保护水平的国家，允许安全的数据流动。
-
-6. 数据保留
-
-只要您的账户保持活跃，我们将保留您的个人数据。
-
-因不活跃而删除： 为了确保数据卫生和隐私，如果 6 个月 内未检测到您的账户有任何活动，我们保留永久删除您的账户和所有相关数据的权利。
-
-自愿删除： 您可以随时使用应用程序内个人资料设置中的**“删除账户”**按钮，请求立即删除您的账户和所有数据。
-
-7. 安全
-
-我们在传输过程中使用端到端加密 (E2EE) (HTTPS/TLS) 来保护您的设备与我们服务器之间的通信。访问凭据由身份验证提供商安全地保护和管理。
-
-8. 您的权利
-
-作为用户，您有权访问、更正、删除（“被遗忘权”）、限制处理和请求数据可移植性。您可以通过写信至 info@bancfy.com 或直接从应用程序界面管理这些权利来免费行使这些权利。
-
-9.以此语言为准
-
-本隐私政策最初以西班牙语撰写。虽然为了便于我们的全球社区理解，可能会将其翻译成其他语言（如英语、德语、法语、中文等），但如果翻译版本与西班牙语版本之间存在任何差异、解释冲突或法律疑问，在适用法律允许的范围内，始终以西班牙语版本为准。
-
-10. 政策变更
-
-Bancfy 保留修改本政策的权利，以适应立法或判例的新发展以及行业惯例。重大变更将在实施前在应用程序内通知。
+</body>
+</html>
