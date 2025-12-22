@@ -1,104 +1,266 @@
-DATENSCHUTZERKLÄRUNG
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung - Bancfy</title>
+    
+    <!-- Import Urbanist font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-Letzte Aktualisierung: 22. Dezember 2025
+    <style>
+        :root {
+            --navy-blue: #0A192F;
+            --rich-gold: #D4AF37;
+            --light-gold: #F4E4BC;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-gray: #F3F4F6;
+        }
 
-Willkommen bei Bancfy.
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
 
-Die Privatsphäre und Sicherheit Ihrer Daten haben für uns oberste Priorität. Diese Datenschutzerklärung legt fest, wie Juan José García Manzano (im Folgenden „der Verantwortliche“, „wir“ oder „Bancfy“) die Informationen nutzt und schützt, die von den Benutzern bei der Verwendung der mobilen Anwendung bereitgestellt werden.
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.08);
+        }
 
-Diese Richtlinie wurde in Übereinstimmung mit den Anforderungen der Datenschutz-Grundverordnung (DSGVO) der Europäischen Union und des Schweizer Bundesgesetzes über den Datenschutz (DSG) erstellt.
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 20px;
+        }
 
-1. Verantwortlicher für die Datenverarbeitung
+        h1 {
+            color: var(--navy-blue);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-Inhaber: Juan José García Manzano
+        .update-date {
+            color: var(--rich-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-Anschrift: Schweiz (Schweizerische Eidgenossenschaft)
+        h2 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--rich-gold);
+            padding-left: 15px;
+        }
 
-Kontakt-E-Mail: info@bancfy.com
+        h3 {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
 
-2. Art des Dienstes (Wichtiger Hinweis)
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
 
-Bancfy ist KEIN Bankinstitut.
-Es handelt sich um eine Anwendung für persönliches Finanzmanagement, Finanzbildung und Gamification, basierend auf der Kakebo-Methode.
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-Manuelle Eingabe: Die Anwendung verbindet sich nicht mit Ihren Bankkonten, verwendet keine Open-Banking-APIs und ruft keine Daten automatisch von Dritten ab.
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
 
-Datenverantwortung: Alle Finanzinformationen (Ausgaben, Einnahmen, Budgets) werden vom Benutzer manuell eingegeben.
+        ul li::before {
+            content: "•";
+            color: var(--rich-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
 
-3. Erhobene Daten
+        strong {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
 
-Wir erheben nur die Daten, die für die Bereitstellung der Gamification- und Finanzmanagementfunktionen erforderlich sind:
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--rich-gold);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
 
-3.1. Identitäts- und Kontodaten
+        .disclaimer-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--navy-blue);
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 15px 0;
+        }
 
-Registrierung: Vorname, Nachname und E-Mail-Adresse (erhalten über Google Sign-In).
+        a {
+            color: var(--rich-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-Profil: Profilbild (falls von Google importiert), Sprachpräferenzen und lokale Währung.
+        a:hover {
+            color: var(--navy-blue);
+        }
 
-3.2. Finanz- und Spieldaten (Vom Benutzer generiert)
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
 
-Transaktionen: Aufzeichnungen von Ausgaben und Einnahmen, Daten, Kategorien und zugehörigen Notizen, die manuell eingegeben wurden.
+        .brand-signature {
+            font-weight: 700;
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
 
-Gamification (Fertigkeitsbaum): Fortschrittsdaten, freigeschaltete Level, Erfahrungspunkte (XP), Trophäen und Konfiguration von Sparzielen.
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
 
-Chat und Community: Textnachrichten, die in Gruppenchats oder Sparkreisen gesendet werden.
+<div class="container">
+    <header>
+        <h1>DATENSCHUTZERKLÄRUNG</h1>
+        <div class="update-date">Letzte Aktualisierung: 22. Dezember 2025</div>
+    </header>
 
-3.3. Technische Daten
+    <p>Willkommen bei <strong>Bancfy</strong>.</p>
+    <p>Die Privatsphäre und Sicherheit Ihrer Daten haben für uns oberste Priorität. Diese Datenschutzerklärung legt fest, wie <strong>Juan José García Manzano</strong> (im Folgenden „der Verantwortliche“, „wir“ oder „Bancfy“) die Informationen nutzt und schützt, die von den Benutzern bei der Verwendung der mobilen Anwendung bereitgestellt werden.</p>
+    <p>Diese Richtlinie wurde in Übereinstimmung mit den Anforderungen der <strong>Datenschutz-Grundverordnung (DSGVO)</strong> der Europäischen Union und des <strong>Schweizer Bundesgesetzes über den Datenschutz (DSG)</strong> erstellt.</p>
 
-Kein invasives Tracking: Wir erfassen weder Ihre IP-Adresse zu Trackingzwecken noch das genaue Gerätemodell oder Werbe-IDs (IDFA/AAID).
+    <h2>1. Verantwortlicher für die Datenverarbeitung</h2>
+    <ul>
+        <li><strong>Inhaber:</strong> Juan José García Manzano</li>
+        <li><strong>Anschrift:</strong> Schweiz (Schweizerische Eidgenossenschaft)</li>
+        <li><strong>Kontakt-E-Mail:</strong> <a href="mailto:info@bancfy.com">info@bancfy.com</a></li>
+    </ul>
 
-4. Zweck der Verarbeitung
+    <h2>2. Art des Dienstes (Wichtiger Hinweis)</h2>
+    <div class="highlight-box">
+        <p><strong>Bancfy ist KEIN Bankinstitut.</strong> Es handelt sich um eine Anwendung für persönliches Finanzmanagement, Finanzbildung und Gamification, basierend auf der Kakebo-Methode.</p>
+    </div>
+    <ul>
+        <li><strong>Manuelle Eingabe:</strong> Die Anwendung verbindet sich nicht mit Ihren Bankkonten, verwendet keine Open-Banking-APIs und ruft keine Daten automatisch von Dritten ab.</li>
+        <li><strong>Datenverantwortung:</strong> Alle Finanzinformationen (Ausgaben, Einnahmen, Budgets) werden vom Benutzer manuell eingegeben.</li>
+    </ul>
 
-Wir verarbeiten Ihre personenbezogenen Daten zu folgenden Zwecken:
+    <h2>3. Erhobene Daten</h2>
+    <p>Wir erheben nur die Daten, die für die Bereitstellung der Gamification- und Finanzmanagementfunktionen erforderlich sind:</p>
 
-Dienstleistungserbringung: Verwaltung Ihres Kontos, Speicherung Ihrer manuellen Finanzaufzeichnungen und Visualisierung Ihres Fortschritts mittels der Kakebo-Methode.
+    <h3>3.1. Identitäts- und Kontodaten</h3>
+    <ul>
+        <li><strong>Registrierung:</strong> Vorname, Nachname und E-Mail-Adresse (erhalten über Google Sign-In).</li>
+        <li><strong>Profil:</strong> Profilbild (falls von Google importiert), Sprachpräferenzen und lokale Währung.</li>
+    </ul>
 
-Soziale Funktionen („Sparkreise“ und geteilte Konten):
+    <h3>3.2. Finanz- und Spieldaten (Vom Benutzer generiert)</h3>
+    <ul>
+        <li><strong>Transaktionen:</strong> Aufzeichnungen von Ausgaben und Einnahmen, Daten, Kategorien und zugehörigen Notizen, die manuell eingegeben wurden.</li>
+        <li><strong>Gamification (Fertigkeitsbaum):</strong> Fortschrittsdaten, freigeschaltete Level, Erfahrungspunkte (XP), Trophäen und Konfiguration von Sparzielen.</li>
+        <li><strong>Chat und Community:</strong> Textnachrichten, die in Gruppenchats oder Sparkreisen gesendet werden.</li>
+    </ul>
 
-Wenn Sie an einem geteilten Konto teilnehmen, haben die Mitglieder dieses Kontos Zugriff auf die darin erfassten Ausgaben und Einnahmen.
+    <h3>3.3. Technische Daten</h3>
+    <p>Wir erfassen weder Ihre IP-Adresse zu Trackingzwecken noch das genaue Gerätemodell oder Werbe-IDs (IDFA/AAID).</p>
 
-Wenn Sie an einem Sparkreis (Challenges) teilnehmen, können andere Teilnehmer Ihren Namen, Ihre Ranglistenposition, Ihre Beiträge zur Challenge und die im Spielkontext erhaltenen Trophäen/Strafen sehen.
+    <h2>4. Zweck der Verarbeitung</h2>
+    <p>Wir verarbeiten Ihre personenbezogenen Daten zu folgenden Zwecken:</p>
+    <ul>
+        <li><strong>Dienstleistungserbringung:</strong> Verwaltung Ihres Kontos, Speicherung Ihrer manuellen Finanzaufzeichnungen und Visualisierung Ihres Fortschritts mittels der Kakebo-Methode.</li>
+    </ul>
+    
+    <h3>Soziale Funktionen („Sparkreise“ und geteilte Konten):</h3>
+    <ul>
+        <li>Wenn Sie an einem <strong>geteilten Konto</strong> teilnehmen, haben die Mitglieder dieses Kontos Zugriff auf die darin erfassten Ausgaben und Einnahmen.</li>
+        <li>Wenn Sie an einem <strong>Sparkreis (Challenges)</strong> teilnehmen, können andere Teilnehmer Ihren Namen, Ihre Ranglistenposition, Ihre Beiträge zur Challenge und die im Spielkontext erhaltenen Trophäen/Strafen sehen.</li>
+    </ul>
 
-Künstliche Intelligenz (Beratung):
+    <h3>Künstliche Intelligenz (Beratung):</h3>
+    <p>Wir verwenden KI, um Ihre eingegebenen Daten zu analysieren und Ihnen personalisierte Finanztipps zu geben oder Fragen im Chat zu beantworten.</p>
+    <div class="disclaimer-box">
+        <strong>Haftungsausschluss:</strong> Tipps werden von der KI zu Bildungs- und Unterhaltungszwecken generiert. Sie stellen keine professionelle Finanzberatung dar.
+    </div>
 
-Wir verwenden KI, um Ihre eingegebenen Daten zu analysieren und Ihnen personalisierte Finanztipps zu geben oder Fragen im Chat zu beantworten.
+    <h3>Wartung und Kommunikation:</h3>
+    <ul>
+        <li><strong>Sicherheit:</strong> Überwachung des technischen Status der Anwendung zur Vermeidung von Betrug oder Fehlern.</li>
+        <li><strong>Kommunikation:</strong> Versand von Push-Benachrichtigungen über interne App-Ereignisse (z. B. „Du hast einen Erfolg freigeschaltet“, „Neue Nachricht im Chat“). <strong>Wir versenden keine Werbe- oder Marketing-E-Mails.</strong></li>
+    </ul>
 
-Haftungsausschluss: Tipps werden von der KI zu Bildungs- und Unterhaltungszwecken generiert. Sie stellen keine professionelle Finanzberatung dar.
+    <h2>5. Empfänger und internationale Übermittlungen</h2>
+    <p><strong>Wir verkaufen Ihre Daten nicht an Dritte und zeigen keine Werbung an.</strong></p>
+    <p>Für den Betrieb des Dienstes nutzen wir erstklassige Anbieter technologischer Infrastruktur. Da der Verantwortliche in der Schweiz ansässig ist und globale Anbieter nutzt, können Ihre Daten unter strengen Sicherheitsgarantien international übertragen werden:</p>
+    <ul>
+        <li><strong>Google Cloud / Firebase (Google LLC):</strong> Datenbankanbieter (Firestore), Authentifizierung und Cloud-Computing-Dienste (Cloud Run für die KI). Google garantiert die Einhaltung der DSGVO durch Standardvertragsklauseln (SCC).</li>
+        <li><strong>Angemessenheit Schweiz-EU:</strong> Die Europäische Kommission erkennt die Schweiz als ein Land an, das ein angemessenes Datenschutzniveau bietet, was einen sicheren Datenfluss ermöglicht.</li>
+    </ul>
 
-Wartung und Sicherheit: Überwachung des technischen Status der Anwendung zur Vermeidung von Betrug oder Fehlern.
+    <h2>6. Datenspeicherung</h2>
+    <p>Wir bewahren Ihre personenbezogenen Daten so lange auf, wie Ihr Konto aktiv bleibt.</p>
+    <ul>
+        <li><strong>Löschung wegen Inaktivität:</strong> Um Datenhygiene und Privatsphäre zu gewährleisten, behalten wir uns das Recht vor, Ihr Konto und alle zugehörigen Daten dauerhaft zu löschen, wenn über einen Zeitraum von <strong>6 Monaten</strong> keine Aktivität auf Ihrem Konto festgestellt wird.</li>
+        <li><strong>Freiwillige Löschung:</strong> Sie können die sofortige Löschung Ihres Kontos und aller Ihrer Daten jederzeit über die Schaltfläche „Konto löschen“ in den Profileinstellungen der App anfordern.</li>
+    </ul>
 
-Kommunikation: Versand von Push-Benachrichtigungen über interne App-Ereignisse (z. B. „Du hast einen Erfolg freigeschaltet“, „Neue Nachricht im Chat“). Wir versenden keine Werbe- oder Marketing-E-Mails.
+    <h2>7. Sicherheit</h2>
+    <p>Wir verwenden Ende-zu-Ende-Verschlüsselung (E2EE) bei der Übertragung (HTTPS/TLS), um die Kommunikation zwischen Ihrem Gerät und unseren Servern zu schützen. Zugangsdaten werden sicher geschützt und vom Authentifizierungsanbieter verwaltet.</p>
 
-5. Empfänger und internationale Übermittlungen
+    <h2>8. Ihre Rechte</h2>
+    <p>Als Benutzer haben Sie das Recht auf Auskunft, Berichtigung, Löschung („Recht auf Vergessenwerden“), Einschränkung der Verarbeitung und Datenübertragbarkeit. Sie können diese Rechte kostenlos ausüben, indem Sie an <a href="mailto:info@bancfy.com">info@bancfy.com</a> schreiben oder sie direkt über die Anwendungsoberfläche verwalten.</p>
 
-Wir verkaufen Ihre Daten nicht an Dritte und zeigen keine Werbung an.
+    <h2>9. Maßgebliche Sprache</h2>
+    <p>Diese Datenschutzerklärung wurde ursprünglich auf Spanisch verfasst. Obwohl sie in andere Sprachen (wie Englisch, Deutsch, Französisch usw.) übersetzt werden kann, um das Verständnis für unsere globale Gemeinschaft zu erleichtern, hat im Falle von Abweichungen, Auslegungskonflikten oder rechtlichen Zweifeln zwischen den übersetzten Versionen und der spanischen Version <strong>stets die spanische Version Vorrang</strong>, soweit dies nach geltendem Recht zulässig ist.</p>
 
-Für den Betrieb des Dienstes nutzen wir erstklassige Anbieter technologischer Infrastruktur. Da der Verantwortliche in der Schweiz ansässig ist und globale Anbieter nutzt, können Ihre Daten unter strengen Sicherheitsgarantien international übertragen werden:
+    <h2>10. Änderungen der Richtlinie</h2>
+    <p>Bancfy behält sich das Recht vor, diese Richtlinie zu ändern, um sie an gesetzliche oder rechtsprechende Neuerungen sowie an Branchenpraktiken anzupassen. Wesentliche Änderungen werden vor ihrer Umsetzung innerhalb der Anwendung mitgeteilt.</p>
 
-Google Cloud / Firebase (Google LLC): Datenbankanbieter (Firestore), Authentifizierung und Cloud-Computing-Dienste (Cloud Run für die KI). Google garantiert die Einhaltung der DSGVO durch Standardvertragsklauseln (SCC).
+    <div class="footer">
+        <span class="brand-signature">Bancfy - Ihre finanzielle Gesundheit, spielerisch.</span>
+        <p>&copy; 2025 Juan José García Manzano. Alle Rechte vorbehalten.</p>
+    </div>
+</div>
 
-Angemessenheit Schweiz-EU: Die Europäische Kommission erkennt die Schweiz als ein Land an, das ein angemessenes Datenschutzniveau bietet, was einen sicheren Datenfluss ermöglicht.
-
-6. Datenspeicherung
-
-Wir bewahren Ihre personenbezogenen Daten so lange auf, wie Ihr Konto aktiv bleibt.
-
-Löschung wegen Inaktivität: Um Datenhygiene und Privatsphäre zu gewährleisten, behalten wir uns das Recht vor, Ihr Konto und alle zugehörigen Daten dauerhaft zu löschen, wenn über einen Zeitraum von 6 Monaten keine Aktivität auf Ihrem Konto festgestellt wird.
-
-Freiwillige Löschung: Sie können die sofortige Löschung Ihres Kontos und aller Ihrer Daten jederzeit über die Schaltfläche „Konto löschen“ in den Profileinstellungen der App anfordern.
-
-7. Sicherheit
-
-Wir verwenden Ende-zu-Ende-Verschlüsselung (E2EE) bei der Übertragung (HTTPS/TLS), um die Kommunikation zwischen Ihrem Gerät und unseren Servern zu schützen. Zugangsdaten werden sicher geschützt und vom Authentifizierungsanbieter verwaltet.
-
-8. Ihre Rechte
-
-Als Benutzer haben Sie das Recht auf Auskunft, Berichtigung, Löschung („Recht auf Vergessenwerden“), Einschränkung der Verarbeitung und Datenübertragbarkeit. Sie können diese Rechte kostenlos ausüben, indem Sie an info@bancfy.com schreiben oder sie direkt über die Anwendungsoberfläche verwalten.
-
-9. Maßgebliche Sprache
-
-Diese Datenschutzerklärung wurde ursprünglich auf Spanisch verfasst. Obwohl sie in andere Sprachen (wie Englisch, Deutsch, Französisch usw.) übersetzt werden kann, um das Verständnis für unsere globale Gemeinschaft zu erleichtern, hat im Falle von Abweichungen, Auslegungskonflikten oder rechtlichen Zweifeln zwischen den übersetzten Versionen und der spanischen Version stets die spanische Version Vorrang, soweit dies nach geltendem Recht zulässig ist.
-
-10. Änderungen der Richtlinie
-
-Bancfy behält sich das Recht vor, diese Richtlinie zu ändern, um sie an gesetzliche oder rechtsprechende Neuerungen sowie an Branchenpraktiken anzupassen. Wesentliche Änderungen werden vor ihrer Umsetzung innerhalb der Anwendung mitgeteilt.
+</body>
+</html>
