@@ -1,104 +1,266 @@
-POLÍTICA DE PRIVACITAT
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacitat - Bancfy</title>
+    
+    <!-- Importar fuente Urbanist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-Darrera actualització: 22 de desembre de 2025
+    <style>
+        :root {
+            --navy-blue: #0A192F;
+            --rich-gold: #D4AF37;
+            --light-gold: #F4E4BC;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-gray: #F3F4F6;
+        }
 
-Benvingut a Bancfy.
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
 
-La privacitat i la seguretat de les teves dades són la nostra màxima prioritat. Aquesta Política de Privacitat estableix els termes en què Juan José García Manzano (en endavant, "el Responsable", "nosaltres" o "Bancfy") utilitza i protegeix la informació que és proporcionada pels seus usuaris en el moment d'utilitzar l'aplicació mòbil.
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.08);
+        }
 
-Aquesta política ha estat redactada d'acord amb les exigències del Reglament General de Protecció de Dades (RGPD) de la Unió Europea i la Llei Federal de Protecció de Dades (LPD) de Suïssa.
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 20px;
+        }
 
-1. Responsable del Tractament
+        h1 {
+            color: var(--navy-blue);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-Titular: Juan José García Manzano
+        .update-date {
+            color: var(--rich-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-Domicili: Suïssa (Confederació Suïssa)
+        h2 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--rich-gold);
+            padding-left: 15px;
+        }
 
-Correu electrònic de contacte: info@bancfy.com
+        h3 {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
 
-2. Naturalesa del Servei (Avís Important)
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
 
-Bancfy NO és una entitat bancària.
-És una aplicació de gestió de finances personals, educació financera i gamificació basada en el mètode Kakebo.
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-Entrada Manual: L'aplicació no es connecta als teus comptes bancaris, no utilitza APIs de banca oberta (Open Banking) ni extreu dades automàticament de tercers.
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
 
-Responsabilitat de la Dada: Tota la informació financera (despeses, ingressos, pressupostos) és introduïda manualment per l'Usuari.
+        ul li::before {
+            content: "•";
+            color: var(--rich-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
 
-3. Dades que Recopilem
+        strong {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
 
-Recopilem únicament les dades necessàries per a proporcionar les funcions de gamificació i gestió financera:
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--rich-gold);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
 
-3.1. Dades d'Identitat i Compte
+        .disclaimer-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--navy-blue);
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 15px 0;
+        }
 
-Registre: Nom, cognoms i adreça de correu electrònic (obtinguts a través de Google Sign-In).
+        a {
+            color: var(--rich-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-Perfil: Foto de perfil (si s'importa de Google), preferències d'idioma i moneda local.
+        a:hover {
+            color: var(--navy-blue);
+        }
 
-3.2. Dades Financeres i de Joc (Generades per l'Usuari)
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
 
-Transaccions: Registres de despeses i ingressos, dates, categories i notes associades introduïdes manualment.
+        .brand-signature {
+            font-weight: 700;
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
 
-Gamificació (Arbre d'Habilitats): Dades de progrés, nivells desbloquejats, experiència (XP), trofeus i configuració de metes d'estalvi.
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
 
-Xat i Comunitat: Missatges de text enviats als xats de grups o cercles d'estalvi.
+<div class="container">
+    <header>
+        <h1>POLÍTICA DE PRIVACITAT</h1>
+        <div class="update-date">Darrera actualització: 22 de desembre de 2025</div>
+    </header>
 
-3.3. Dades Tècniques
+    <p>Benvingut a <strong>Bancfy</strong>.</p>
+    <p>La privacitat i la seguretat de les teves dades són la nostra màxima prioritat. Aquesta Política de Privacitat estableix els termes en què <strong>Juan José García Manzano</strong> (en endavant, "el Responsable", "nosaltres" o "Bancfy") utilitza i protegeix la informació que és proporcionada pels seus usuaris en el moment d'utilitzar l'aplicació mòbil.</p>
+    <p>Aquesta política ha estat redactada d'acord amb les exigències del <strong>Reglament General de Protecció de Dades (RGPD)</strong> de la Unió Europea i la <strong>Llei Federal de Protecció de Dades (LPD)</strong> de Suïssa.</p>
 
-No realitzem rastreig invasiu. No recopilem la teva adreça IP per a rastreig, ni el model exacte de dispositiu o identificadors publicitaris (IDFA/AAID).
+    <h2>1. Responsable del Tractament</h2>
+    <ul>
+        <li><strong>Titular:</strong> Juan José García Manzano</li>
+        <li><strong>Domicili:</strong> Suïssa (Confederació Suïssa)</li>
+        <li><strong>Correu electrònic de contacte:</strong> <a href="mailto:info@bancfy.com">info@bancfy.com</a></li>
+    </ul>
 
-4. Finalitat del Tractament
+    <h2>2. Naturalesa del Servei (Avís Important)</h2>
+    <div class="highlight-box">
+        <p><strong>Bancfy NO és una entitat bancària.</strong> És una aplicació de gestió de finances personals, educació financera i gamificació basada en el mètode Kakebo.</p>
+    </div>
+    <ul>
+        <li><strong>Entrada Manual:</strong> L'aplicació no es connecta als teus comptes bancaris, no utilitza APIs de banca oberta (Open Banking) ni extreu dades automàticament de tercers.</li>
+        <li><strong>Responsabilitat de la Dada:</strong> Tota la informació financera (despeses, ingressos, pressupostos) és introduïda manualment per l'Usuari.</li>
+    </ul>
 
-Tractem les teves dades personals amb les següents finalitats:
+    <h2>3. Dades que Recopilem</h2>
+    <p>Recopilem únicament les dades necessàries per a proporcionar les funcions de gamificació i gestió financera:</p>
 
-Prestació del Servei: Gestionar el teu compte, emmagatzemar els teus registres financers manuals i permetre la visualització del teu progrés mitjançant el mètode Kakebo.
+    <h3>3.1. Dades d'Identitat i Compte</h3>
+    <ul>
+        <li><strong>Registre:</strong> Nom, cognoms i adreça de correu electrònic (obtinguts a través de Google Sign-In).</li>
+        <li><strong>Perfil:</strong> Foto de perfil (si s'importa de Google), preferències d'idioma i moneda local.</li>
+    </ul>
 
-Funcions Socials ("Cercles d'Estalvi" i Comptes Compartits):
+    <h3>3.2. Dades Financeres i de Joc (Generades per l'Usuari)</h3>
+    <ul>
+        <li><strong>Transaccions:</strong> Registres de despeses i ingressos, dates, categories i notes associades introduïdes manualment.</li>
+        <li><strong>Gamificació (Arbre d'Habilitats):</strong> Dades de progrés, nivells desbloquejats, experiència (XP), trofeus i configuració de metes d'estalvi.</li>
+        <li><strong>Xat i Comunitat:</strong> Missatges de text enviats als xats de grups o cercles d'estalvi.</li>
+    </ul>
 
-Si participes en un Compte Compartit, els membres d'aquest compte tindran accés a veure les despeses i ingressos registrats en ell.
+    <h3>3.3. Dades Tècniques</h3>
+    <p>No realitzem rastreig invasiu. No recopilem la teva adreça IP per a rastreig, ni el model exacte de dispositiu o identificadors publicitaris (IDFA/AAID).</p>
 
-Si participes en un Cercle d'Estalvi (Reptes), els altres participants podran veure el teu nom, la teva posició en el rànquing, les teves aportacions al repte i els trofeus/penalitzacions obtinguts en el context del joc.
+    <h2>4. Finalitat del Tractament</h2>
+    <p>Tractem les teves dades personals amb les següents finalitats:</p>
+    <ul>
+        <li><strong>Prestació del Servei:</strong> Gestionar el teu compte, emmagatzemar els teus registres financers manuals i permetre la visualització del teu progrés mitjançant el mètode Kakebo.</li>
+    </ul>
+    
+    <h3>Funcions Socials ("Cercles d'Estalvi" i Comptes Compartits):</h3>
+    <ul>
+        <li>Si participes en un <strong>Compte Compartit</strong>, els membres d'aquest compte tindran accés a veure les despeses i ingressos registrats en ell.</li>
+        <li>Si participes en un <strong>Cercle d'Estalvi (Reptes)</strong>, els altres participants podran veure el teu nom, la teva posició en el rànquing, les teves aportacions al repte i els trofeus/penalitzacions obtinguts en el context del joc.</li>
+    </ul>
 
-Intel·ligència Artificial (Assessorament):
+    <h3>Intel·ligència Artificial (Assessorament):</h3>
+    <p>Utilitzem IA per analitzar les teves dades introduïdes i oferir-te consells financers personalitzats o respondre dubtes al xat.</p>
+    <div class="disclaimer-box">
+        <strong>Disclaimer:</strong> Els consells són generats per IA amb fins educatius i d'entreteniment. No constitueixen assessorament financer professional.
+    </div>
 
-Utilitzem IA per analitzar les teves dades introduïdes i oferir-te consells financers personalitzats o respondre dubtes al xat.
+    <h3>Manteniment i Comunicacions:</h3>
+    <ul>
+        <li><strong>Seguretat:</strong> Monitoritzar l'estat tècnic de l'aplicació per prevenir fraus o errors.</li>
+        <li><strong>Comunicacions:</strong> Enviament de notificacions push sobre esdeveniments interns de l'app (ex. "Has desbloquejat un assoliment", "Nou missatge al xat"). <strong>No enviem correus comercials ni de màrqueting.</strong></li>
+    </ul>
 
-Disclaimer: Els consells són generats per IA amb fins educatius i d'entreteniment. No constitueixen assessorament financer professional.
+    <h2>5. Destinataris i Transferències Internacionals</h2>
+    <p><strong>No venem les teves dades a tercers ni mostrem publicitat.</strong></p>
+    <p>Per operar el servei, utilitzem proveïdors d'infraestructura tecnològica de primer nivell. En residir el Responsable a Suïssa i utilitzar proveïdors globals, les teves dades poden ser transferides internacionalment sota estrictes garanties de seguretat:</p>
+    <ul>
+        <li><strong>Google Cloud / Firebase (Google LLC):</strong> Proveïdor de base de dades (Firestore), autenticació i serveis de computació al núvol (Cloud Run per a la IA). Google garanteix el compliment del RGPD mitjançant Clàusules Contractuals Tipus (SCC).</li>
+        <li><strong>Adequació Suïssa-UE:</strong> La Comissió Europea reconeix Suïssa com un país que ofereix un nivell de protecció de dades adequat, permetent el flux de dades segur.</li>
+    </ul>
 
-Manteniment i Seguretat: Monitoritzar l'estat tècnic de l'aplicació per prevenir fraus o errors.
+    <h2>6. Conservació de les Dades</h2>
+    <p>Mantindrem les teves dades personals mentre el teu compte romangui actiu.</p>
+    <ul>
+        <li><strong>Eliminació per Inactivitat:</strong> Per garantir la higiene de dades i la privacitat, si no es detecta activitat en el teu compte durant un període de <strong>6 mesos</strong>, ens reservem el dret d'eliminar el teu compte i totes les dades associades de forma permanent.</li>
+        <li><strong>Eliminació Voluntària:</strong> Pots sol·licitar l'eliminació immediata del teu compte i totes les teves dades en qualsevol moment utilitzant el botó "Eliminar Compte" situat dins de la configuració del teu perfil a l'app.</li>
+    </ul>
 
-Comunicacions: Enviament de notificacions push sobre esdeveniments interns de l'app (ex. "Has desbloquejat un assoliment", "Nou missatge al xat"). No enviem correus comercials ni de màrqueting.
+    <h2>7. Seguretat</h2>
+    <p>Utilitzem encriptació d'extrem a extrem (E2EE) en trànsit (HTTPS/TLS) per protegir la comunicació entre el teu dispositiu i els nostres servidors. Les credencials d'accés estan protegides i gestionades de forma segura pel proveïdor d'autenticació.</p>
 
-5. Destinataris i Transferències Internacionals
+    <h2>8. Els Teus Drets</h2>
+    <p>Com a usuari, tens dret a accedir, rectificar, suprimir ("dret a l'oblit"), limitar el tractament i sol·licitar la portabilitat de les teves dades. Pots exercir aquests drets gratuïtament escrivint a <a href="mailto:info@bancfy.com">info@bancfy.com</a> o gestionant-los directament des de la interfície de l'aplicació.</p>
 
-No venem les teves dades a tercers ni mostrem publicitat.
+    <h2>9. Idioma Predominant</h2>
+    <p>Aquesta Política de Privacitat ha estat redactada originalment en espanyol. Tot i que pot ser traduïda a altres idiomes (com anglès, alemany, francès, català, etc.) per a facilitar la seva comprensió per part de la nostra comunitat global, en cas de qualsevol discrepància, conflicte d'interpretació o dubte legal entre les versions traduïdes i la versió en espanyol, <strong>prevaldrà sempre la versió en espanyol</strong> en la mesura que la legislació aplicable ho permeti.</p>
 
-Per operar el servei, utilitzem proveïdors d'infraestructura tecnològica de primer nivell. En residir el Responsable a Suïssa i utilitzar proveïdors globals, les teves dades poden ser transferides internacionalment sota estrictes garanties de seguretat:
+    <h2>10. Canvis en la Política</h2>
+    <p>Bancfy es reserva el dret de modificar aquesta política per adaptar-la a novetats legislatives o jurisprudencials, així com a pràctiques de la indústria. Els canvis substancials seran notificats dins de l'aplicació abans de la seva implementació.</p>
 
-Google Cloud / Firebase (Google LLC): Proveïdor de base de dades (Firestore), autenticació i serveis de computació al núvol (Cloud Run per a la IA). Google garanteix el compliment del RGPD mitjançant Clàusules Contractuals Tipus (SCC).
+    <div class="footer">
+        <span class="brand-signature">Bancfy - La teva salut financera, gamificada.</span>
+        <p>&copy; 2025 Juan José García Manzano. Tots els drets reservats.</p>
+    </div>
+</div>
 
-Adequació Suïssa-UE: La Comissió Europea reconeix Suïssa com un país que ofereix un nivell de protecció de dades adequat, permetent el flux de dades segur.
-
-6. Conservació de les Dades
-
-Mantindrem les teves dades personals mentre el teu compte romangui actiu.
-
-Eliminació per Inactivitat: Per garantir la higiene de dades i la privacitat, si no es detecta activitat en el teu compte durant un període de 6 mesos, ens reservem el dret d'eliminar el teu compte i totes les dades associades de forma permanent.
-
-Eliminació Voluntària: Pots sol·licitar l'eliminació immediata del teu compte i totes les teves dades en qualsevol moment utilitzant el botó "Eliminar Compte" situat dins de la configuració del teu perfil a l'app.
-
-7. Seguretat
-
-Utilitzem encriptació d'extrem a extrem (E2EE) en trànsit (HTTPS/TLS) per protegir la comunicació entre el teu dispositiu i els nostres servidors. Les credencials d'accés estan protegides i gestionades de forma segura pel proveïdor d'autenticació.
-
-8. Els Teus Drets
-
-Com a usuari, tens dret a accedir, rectificar, suprimir ("dret a l'oblit"), limitar el tractament i sol·licitar la portabilitat de les teves dades. Pots exercir aquests drets gratuïtament escrivint a info@bancfy.com o gestionant-los directament des de la interfície de l'aplicació.
-
-9. Idioma Predominant
-
-Aquesta Política de Privacitat ha estat redactada originalment en espanyol. Tot i que pot ser traduïda a altres idiomes (com anglès, alemany, francès, català, etc.) per a facilitar la seva comprensió per part de la nostra comunitat global, en cas de qualsevol discrepància, conflicte d'interpretació o dubte legal entre les versions traduïdes i la versió en espanyol, prevaldrà sempre la versió en espanyol en la mesura que la legislació aplicable ho permeti.
-
-10. Canvis en la Política
-
-Bancfy es reserva el dret de modificar aquesta política per adaptar-la a novetats legislatives o jurisprudencials, així com a pràctiques de la indústria. Els canvis substancials seran notificats dins de l'aplicació abans de la seva implementació.
+</body>
+</html>
