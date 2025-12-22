@@ -1,104 +1,266 @@
-INFORMATIVA SULLA PRIVACY
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informativa sulla Privacy - Bancfy</title>
+    
+    <!-- Import Urbanist font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-Ultimo aggiornamento: 22 dicembre 2025
+    <style>
+        :root {
+            --navy-blue: #0A192F;
+            --rich-gold: #D4AF37;
+            --light-gold: #F4E4BC;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-gray: #F3F4F6;
+        }
 
-Benvenuto su Bancfy.
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
 
-La privacy e la sicurezza dei tuoi dati sono la nostra massima priorità. La presente Informativa sulla Privacy stabilisce i termini in cui Juan José García Manzano (di seguito "il Titolare", "noi" o "Bancfy") utilizza e protegge le informazioni fornite dagli utenti durante l'utilizzo dell'applicazione mobile.
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.08);
+        }
 
-Questa politica è stata redatta in conformità con i requisiti del Regolamento Generale sulla Protezione dei Dati (GDPR) dell'Unione Europea e della Legge Federale sulla Protezione dei Dati (LPD) della Svizzera.
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 20px;
+        }
 
-1. Titolare del Trattamento
+        h1 {
+            color: var(--navy-blue);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-Titolare: Juan José García Manzano
+        .update-date {
+            color: var(--rich-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-Indirizzo: Svizzera (Confederazione Svizzera)
+        h2 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--rich-gold);
+            padding-left: 15px;
+        }
 
-E-mail di contatto: info@bancfy.com
+        h3 {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
 
-2. Natura del Servizio (Avviso Importante)
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
 
-Bancfy NON è un istituto bancario.
-È un'applicazione di gestione delle finanze personali, educazione finanziaria e gamification basata sul metodo Kakebo.
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-Inserimento Manuale: L'applicazione non si connette ai tuoi conti bancari, non utilizza API di open banking e non estrae automaticamente dati da terze parti.
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
 
-Responsabilità dei Dati: Tutte le informazioni finanziarie (spese, entrate, budget) sono inserite manualmente dall'Utente.
+        ul li::before {
+            content: "•";
+            color: var(--rich-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
 
-3. Dati che Raccogliamo
+        strong {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
 
-Raccogliamo solo i dati strettamente necessari per fornire le funzionalità di gamification e gestione finanziaria:
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--rich-gold);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
 
-3.1. Dati di Identità e Account
+        .disclaimer-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--navy-blue);
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 15px 0;
+        }
 
-Registrazione: Nome, cognome e indirizzo e-mail (ottenuti tramite Google Sign-In).
+        a {
+            color: var(--rich-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-Profilo: Foto del profilo (se importata da Google), preferenze di lingua e valuta locale.
+        a:hover {
+            color: var(--navy-blue);
+        }
 
-3.2. Dati Finanziari e di Gioco (Generati dall'Utente)
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
 
-Transazioni: Registri di spese ed entrate, date, categorie e note associate inserite manualmente.
+        .brand-signature {
+            font-weight: 700;
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
 
-Gamification (Albero delle Abilità): Dati di progresso, livelli sbloccati, esperienza (XP), trofei e configurazione degli obiettivi di risparmio.
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
 
-Chat e Community: Messaggi di testo inviati nelle chat di gruppo o nei circoli di risparmio.
+<div class="container">
+    <header>
+        <h1>INFORMATIVA SULLA PRIVACY</h1>
+        <div class="update-date">Ultimo aggiornamento: 22 dicembre 2025</div>
+    </header>
 
-3.3. Dati Tecnici
+    <p>Benvenuto su <strong>Bancfy</strong>.</p>
+    <p>La privacy e la sicurezza dei tuoi dati sono la nostra massima priorità. La presente Informativa sulla Privacy stabilisce i termini in cui <strong>Juan José García Manzano</strong> (di seguito "il Titolare", "noi" o "Bancfy") utilizza e protegge le informazioni fornite dagli utenti durante l'utilizzo dell'applicazione mobile.</p>
+    <p>Questa politica è stata redatta in conformità con i requisiti del <strong>Regolamento Generale sulla Protezione dei Dati (GDPR)</strong> dell'Unione Europea e della <strong>Legge Federale sulla Protezione dei Dati (LPD)</strong> della Svizzera.</p>
 
-Nessun tracciamento invasivo: Non raccogliamo il tuo indirizzo IP per scopi di tracciamento, né il modello esatto del dispositivo o identificatori pubblicitari (IDFA/AAID).
+    <h2>1. Titolare del Trattamento</h2>
+    <ul>
+        <li><strong>Titolare:</strong> Juan José García Manzano</li>
+        <li><strong>Indirizzo:</strong> Svizzera (Confederazione Svizzera)</li>
+        <li><strong>E-mail di contatto:</strong> <a href="mailto:info@bancfy.com">info@bancfy.com</a></li>
+    </ul>
 
-4. Finalità del Trattamento
+    <h2>2. Natura del Servizio (Avviso Importante)</h2>
+    <div class="highlight-box">
+        <p><strong>Bancfy NON è un istituto bancario.</strong> È un'applicazione di gestione delle finanze personali, educazione finanziaria e gamification basata sul metodo Kakebo.</p>
+    </div>
+    <ul>
+        <li><strong>Inserimento Manuale:</strong> L'applicazione non si connette ai tuoi conti bancari, non utilizza API di open banking e non estrae automaticamente dati da terze parti.</li>
+        <li><strong>Responsabilità dei Dati:</strong> Tutte le informazioni finanziarie (spese, entrate, budget) sono inserite manualmente dall'Utente.</li>
+    </ul>
 
-Trattiamo i tuoi dati personali per le seguenti finalità:
+    <h2>3. Dati che Raccogliamo</h2>
+    <p>Raccogliamo solo i dati strettamente necessari per fornire le funzionalità di gamification e gestione finanziaria:</p>
 
-Erogazione del Servizio: Gestire il tuo account, archiviare i tuoi registri finanziari manuali e consentire la visualizzazione dei tuoi progressi tramite il metodo Kakebo.
+    <h3>3.1. Dati di Identità e Account</h3>
+    <ul>
+        <li><strong>Registrazione:</strong> Nome, cognome e indirizzo e-mail (ottenuti tramite Google Sign-In).</li>
+        <li><strong>Profilo:</strong> Foto del profilo (se importata da Google), preferenze di lingua e valuta locale.</li>
+    </ul>
 
-Funzioni Sociali ("Circoli di Risparmio" e Conti Condivisi):
+    <h3>3.2. Dati Finanziari e di Gioco (Generati dall'Utente)</h3>
+    <ul>
+        <li><strong>Transazioni:</strong> Registri di spese ed entrate, date, categorie e note associate inserite manualmente.</li>
+        <li><strong>Gamification (Albero delle Abilità):</strong> Dati di progresso, livelli sbloccati, esperienza (XP), trofei e configurazione degli obiettivi di risparmio.</li>
+        <li><strong>Chat e Community:</strong> Messaggi di testo inviati nelle chat di gruppo o nei circoli di risparmio.</li>
+    </ul>
 
-Se partecipi a un Conto Condiviso, i membri di tale conto avranno accesso alla visualizzazione delle spese e delle entrate ivi registrate.
+    <h3>3.3. Dati Tecnici</h3>
+    <p>Non raccogliamo il tuo indirizzo IP per scopi di tracciamento, né il modello esatto del dispositivo o identificatori pubblicitari (IDFA/AAID).</p>
 
-Se partecipi a un Circolo di Risparmio (Sfide), gli altri partecipanti potranno vedere il tuo nome, la tua posizione in classifica, i tuoi contributi alla sfida e i trofei/penalità ottenuti nel contesto del gioco.
+    <h2>4. Finalità del Trattamento</h2>
+    <p>Trattiamo i tuoi dati personali per le seguenti finalità:</p>
+    <ul>
+        <li><strong>Erogazione del Servizio:</strong> Gestire il tuo account, archiviare i tuoi registri finanziari manuali e consentire la visualizzazione dei tuoi progressi tramite il metodo Kakebo.</li>
+    </ul>
+    
+    <h3>Funzioni Sociali ("Circoli di Risparmio" e Conti Condivisi):</h3>
+    <ul>
+        <li>Se partecipi a un <strong>Conto Condiviso</strong>, i membri di tale conto avranno accesso alla visualizzazione delle spese e delle entrate ivi registrate.</li>
+        <li>Se partecipi a un <strong>Circolo di Risparmio (Sfide)</strong>, gli altri partecipanti potranno vedere il tuo nome, la tua posizione in classifica, i tuoi contributi alla sfida e i trofei/penalità ottenuti nel contesto del gioco.</li>
+    </ul>
 
-Intelligenza Artificiale (Consulenza):
+    <h3>Intelligenza Artificiale (Consulenza):</h3>
+    <p>Utilizziamo l'IA per analizzare i dati inseriti e offrirti consigli finanziari personalizzati o rispondere a domande nella chat.</p>
+    <div class="disclaimer-box">
+        <strong>Disclaimer:</strong> I consigli sono generati dall'IA a scopi educativi e di intrattenimento. Non costituiscono consulenza finanziaria professionale.
+    </div>
 
-Utilizziamo l'IA per analizzare i dati inseriti e offrirti consigli finanziari personalizzati o rispondere a domande nella chat.
+    <h3>Manutenzione e Comunicazioni:</h3>
+    <ul>
+        <li><strong>Sicurezza:</strong> Monitorare lo stato tecnico dell'applicazione per prevenire frodi o errori.</li>
+        <li><strong>Comunicazioni:</strong> Invio di notifiche push relative a eventi interni dell'app (es. "Hai sbloccato un obiettivo", "Nuovo messaggio nella chat"). <strong>Non inviamo e-mail commerciali o di marketing.</strong></li>
+    </ul>
 
-Disclaimer: I consigli sono generati dall'IA a scopi educativi e di intrattenimento. Non costituiscono consulenza finanziaria professionale.
+    <h2>5. Destinatari e Trasferimenti Internazionali</h2>
+    <p><strong>Non vendiamo i tuoi dati a terzi né mostriamo pubblicità.</strong></p>
+    <p>Per operare il servizio, utilizziamo fornitori di infrastrutture tecnologiche di primo livello. Poiché il Titolare risiede in Svizzera e utilizza fornitori globali, i tuoi dati possono essere trasferiti a livello internazionale sotto strette garanzie di sicurezza:</p>
+    <ul>
+        <li><strong>Google Cloud / Firebase (Google LLC):</strong> Fornitore di database (Firestore), autenticazione e servizi di cloud computing (Cloud Run per l'IA). Google garantisce la conformità al GDPR tramite Clausole Contrattuali Tipo (SCC).</li>
+        <li><strong>Adeguatezza Svizzera-UE:</strong> La Commissione Europea riconosce la Svizzera come un paese che offre un livello adeguato di protezione dei dati, consentendo un flusso sicuro dei dati.</li>
+    </ul>
 
-Manutenzione e Sicurezza: Monitorare lo stato tecnico dell'applicazione per prevenire frodi o errori.
+    <h2>6. Conservazione dei Dati</h2>
+    <p>Conserveremo i tuoi dati personali finché il tuo account rimarrà attivo.</p>
+    <ul>
+        <li><strong>Cancellazione per Inattività:</strong> Per garantire l'igiene dei dati e la privacy, se non viene rilevata alcuna attività sul tuo account per un periodo di <strong>6 mesi</strong>, ci riserviamo il diritto di eliminare definitivamente il tuo account e tutti i dati associati.</li>
+        <li><strong>Cancellazione Volontaria:</strong> Puoi richiedere la cancellazione immediata del tuo account e di tutti i tuoi dati in qualsiasi momento utilizzando il pulsante "Elimina Account" situato nelle impostazioni del tuo profilo nell'app.</li>
+    </ul>
 
-Comunicazioni: Invio di notifiche push relative a eventi interni dell'app (es. "Hai sbloccato un obiettivo", "Nuovo messaggio nella chat"). Non inviamo e-mail commerciali o di marketing.
+    <h2>7. Sicurezza</h2>
+    <p>Utilizziamo la crittografia end-to-end (E2EE) in transito (HTTPS/TLS) per proteggere la comunicazione tra il tuo dispositivo e i nostri server. Le credenziali di accesso sono protette e gestite in modo sicuro dal fornitore di autenticazione.</p>
 
-5. Destinatari e Trasferimenti Internazionali
+    <h2>8. I Tuoi Diritti</h2>
+    <p>Come utente, hai il diritto di accedere, rettificare, cancellare ("diritto all'oblio"), limitare il trattamento e richiedere la portabilità dei tuoi dati. Puoi esercitare questi diritti gratuitamente scrivendo a <a href="mailto:info@bancfy.com">info@bancfy.com</a> o gestendoli direttamente dall'interfaccia dell'applicazione.</p>
 
-Non vendiamo i tuoi dati a terzi né mostriamo pubblicità.
+    <h2>9. Lingua Prevalente</h2>
+    <p>Questa Informativa sulla Privacy è stata redatta originariamente in spagnolo. Sebbene possa essere tradotta in altre lingue (come inglese, tedesco, francese, ecc.) per facilitare la comprensione da parte della nostra comunità globale, in caso di discrepanza, conflitto di interpretazione o dubbio legale tra le versioni tradotte e la versione spagnola, <strong>prevarrà sempre la versione spagnola</strong> nella misura consentita dalla legge applicabile.</p>
 
-Per operare il servizio, utilizziamo fornitori di infrastrutture tecnologiche di primo livello. Poiché il Titolare risiede in Svizzera e utilizza fornitori globali, i tuoi dati possono essere trasferiti a livello internazionale sotto strette garanzie di sicurezza:
+    <h2>10. Modifiche alla Politica</h2>
+    <p>Bancfy si riserva il diritto di modificare questa politica per adattarla a novità legislative o giurisprudenziali, nonché alle pratiche del settore. Le modifiche sostanziali saranno notificate all'interno dell'applicazione prima della loro attuazione.</p>
 
-Google Cloud / Firebase (Google LLC): Fornitore di database (Firestore), autenticazione e servizi di cloud computing (Cloud Run per l'IA). Google garantisce la conformità al GDPR tramite Clausole Contrattuali Tipo (SCC).
+    <div class="footer">
+        <span class="brand-signature">Bancfy - La tua salute finanziaria, gamificata.</span>
+        <p>&copy; 2025 Juan José García Manzano. Tutti i diritti riservati.</p>
+    </div>
+</div>
 
-Adeguatezza Svizzera-UE: La Commissione Europea riconosce la Svizzera come un paese che offre un livello adeguato di protezione dei dati, consentendo un flusso sicuro dei dati.
-
-6. Conservazione dei Dati
-
-Conserveremo i tuoi dati personali finché il tuo account rimarrà attivo.
-
-Cancellazione per Inattività: Per garantire l'igiene dei dati e la privacy, se non viene rilevata alcuna attività sul tuo account per un periodo di 6 mesi, ci riserviamo il diritto di eliminare definitivamente il tuo account e tutti i dati associati.
-
-Cancellazione Volontaria: Puoi richiedere la cancellazione immediata del tuo account e di tutti i tuoi dati in qualsiasi momento utilizzando il pulsante "Elimina Account" situato nelle impostazioni del tuo profilo nell'app.
-
-7. Sicurezza
-
-Utilizziamo la crittografia end-to-end (E2EE) in transito (HTTPS/TLS) per proteggere la comunicazione tra il tuo dispositivo e i nostri server. Le credenziali di accesso sono protette e gestite in modo sicuro dal fornitore di autenticazione.
-
-8. I Tuoi Diritti
-
-Come utente, hai il diritto di accedere, rettificare, cancellare ("diritto all'oblio"), limitare il trattamento e richiedere la portabilità dei tuoi dati. Puoi esercitare questi diritti gratuitamente scrivendo a info@bancfy.com o gestendoli direttamente dall'interfaccia dell'applicazione.
-
-9. Lingua Prevalente
-
-Questa Informativa sulla Privacy è stata redatta originariamente in spagnolo. Sebbene possa essere tradotta in altre lingue (come inglese, tedesco, francese, ecc.) per facilitare la comprensione da parte della nostra comunità globale, in caso di discrepanza, conflitto di interpretazione o dubbio legale tra le versioni tradotte e la versione spagnola, prevarrà sempre la versione spagnola nella misura consentita dalla legge applicabile.
-
-10. Modifiche alla Politica
-
-Bancfy si riserva il diritto di modificare questa politica per adattarla a novità legislative o giurisprudenziali, nonché alle pratiche del settore. Le modifiche sostanziali saranno notificate all'interno dell'applicazione prima della loro attuazione.
+</body>
+</html>
