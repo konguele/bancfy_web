@@ -1,104 +1,266 @@
-개인정보 처리방침
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보 처리방침 - Bancfy</title>
+    
+    <!-- Import Urbanist & Noto Sans KR font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-최종 업데이트: 2025년 12월 22일
+    <style>
+        :root {
+            --navy-blue: #0A192F;
+            --rich-gold: #D4AF37;
+            --light-gold: #F4E4BC;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-gray: #F3F4F6;
+        }
 
-Bancfy에 오신 것을 환영합니다.
+        body {
+            font-family: 'Urbanist', 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+        }
 
-귀하의 데이터에 대한 개인정보 보호 및 보안은 당사의 최우선 과제입니다. 본 개인정보 처리방침은 Juan José García Manzano(이하 "관리자", "당사" 또는 "Bancfy")가 모바일 애플리케이션 사용 시 사용자가 제공한 정보를 사용하고 보호하는 조건을 명시합니다.
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.08);
+        }
 
-이 정책은 유럽 연합의 일반 데이터 보호 규정(GDPR) 및 스위스의 연방 데이터 보호법(FADP) 요구 사항에 따라 작성되었습니다.
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 20px;
+        }
 
-1. 데이터 관리자
+        h1 {
+            color: var(--navy-blue);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-소유자: Juan José García Manzano
+        .update-date {
+            color: var(--rich-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
 
-주소: 스위스 (Swiss Confederation)
+        h2 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--rich-gold);
+            padding-left: 15px;
+        }
 
-문의 이메일: info@bancfy.com
+        h3 {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
 
-2. 서비스의 성격 (중요 공지)
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
 
-Bancfy는 은행 기관이 아닙니다.
-이 앱은 가계부(Kakebo) 방식을 기반으로 한 개인 재무 관리, 금융 교육 및 게이미피케이션 애플리케이션입니다.
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-수동 입력: 이 애플리케이션은 귀하의 은행 계좌에 연결되지 않으며, 오픈 뱅킹 API를 사용하지 않고, 제3자로부터 데이터를 자동으로 추출하지 않습니다.
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
 
-데이터 책임: 모든 금융 정보(지출, 수입, 예산)는 사용자가 수동으로 입력합니다.
+        ul li::before {
+            content: "•";
+            color: var(--rich-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
 
-3. 수집하는 데이터
+        strong {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
 
-당사는 게이미피케이션 및 재무 관리 기능을 제공하는 데 꼭 필요한 데이터만 수집합니다.
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--rich-gold);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
 
-3.1. 신원 및 계정 데이터
+        .disclaimer-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--navy-blue);
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 15px 0;
+        }
 
-등록: 이름, 성, 이메일 주소 (Google 로그인을 통해 획득).
+        a {
+            color: var(--rich-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
 
-프로필: 프로필 사진 (Google에서 가져온 경우), 언어 기본 설정 및 현지 통화.
+        a:hover {
+            color: var(--navy-blue);
+        }
 
-3.2. 금융 및 게임 데이터 (사용자 생성)
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
 
-거래: 수동으로 입력된 지출 및 수입 기록, 날짜, 카테고리 및 관련 메모.
+        .brand-signature {
+            font-weight: 700;
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
 
-게이미피케이션 (스킬 트리): 진행 데이터, 잠금 해제된 레벨, 경험치(XP), 트로피 및 저축 목표 설정.
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
 
-채팅 및 커뮤니티: 그룹 채팅 또는 저축 서클에서 전송된 텍스트 메시지.
+<div class="container">
+    <header>
+        <h1>개인정보 처리방침</h1>
+        <div class="update-date">최종 업데이트: 2025년 12월 22일</div>
+    </header>
 
-3.3. 기술 데이터
+    <p><strong>Bancfy</strong>에 오신 것을 환영합니다.</p>
+    <p>귀하의 데이터에 대한 개인정보 보호 및 보안은 당사의 최우선 과제입니다. 본 개인정보 처리방침은 <strong>Juan José García Manzano</strong>(이하 "관리자", "당사" 또는 "Bancfy")가 모바일 애플리케이션 사용 시 사용자가 제공한 정보를 사용하고 보호하는 조건을 명시합니다.</p>
+    <p>이 정책은 유럽 연합의 <strong>일반 데이터 보호 규정(GDPR)</strong> 및 스위스의 <strong>연방 데이터 보호법(FADP)</strong> 요구 사항에 따라 작성되었습니다.</p>
 
-침해적 추적 없음: 당사는 추적 목적으로 IP 주소를 수집하지 않으며, 정확한 기기 모델이나 광고 식별자(IDFA/AAID)를 수집하지 않습니다.
+    <h2>1. 데이터 관리자</h2>
+    <ul>
+        <li><strong>소유자:</strong> Juan José García Manzano</li>
+        <li><strong>주소:</strong> 스위스 (Swiss Confederation)</li>
+        <li><strong>문의 이메일:</strong> <a href="mailto:info@bancfy.com">info@bancfy.com</a></li>
+    </ul>
 
-4. 처리 목적
+    <h2>2. 서비스의 성격 (중요 공지)</h2>
+    <div class="highlight-box">
+        <p><strong>Bancfy는 은행 기관이 아닙니다.</strong> 이 앱은 가계부(Kakebo) 방식을 기반으로 한 개인 재무 관리, 금융 교육 및 게이미피케이션 애플리케이션입니다.</p>
+    </div>
+    <ul>
+        <li><strong>수동 입력:</strong> 이 애플리케이션은 귀하의 은행 계좌에 연결되지 않으며, 오픈 뱅킹 API를 사용하지 않고, 제3자로부터 데이터를 자동으로 추출하지 않습니다.</li>
+        <li><strong>데이터 책임:</strong> 모든 금융 정보(지출, 수입, 예산)는 사용자가 수동으로 입력합니다.</li>
+    </ul>
 
-당사는 다음과 같은 목적으로 귀하의 개인 데이터를 처리합니다.
+    <h2>3. 수집하는 데이터</h2>
+    <p>당사는 게이미피케이션 및 재무 관리 기능을 제공하는 데 꼭 필요한 데이터만 수집합니다.</p>
 
-서비스 제공: 계정 관리, 수동 금융 기록 저장, 가계부 방식을 통한 진행 상황 시각화.
+    <h3>3.1. 신원 및 계정 데이터</h3>
+    <ul>
+        <li><strong>등록:</strong> 이름, 성, 이메일 주소 (Google 로그인을 통해 획득).</li>
+        <li><strong>프로필:</strong> 프로필 사진 (Google에서 가져온 경우), 언어 기본 설정 및 현지 통화.</li>
+    </ul>
 
-소셜 기능 ("저축 서클" 및 공유 계정):
+    <h3>3.2. 금융 및 게임 데이터 (사용자 생성)</h3>
+    <ul>
+        <li><strong>거래:</strong> 수동으로 입력된 지출 및 수입 기록, 날짜, 카테고리 및 관련 메모.</li>
+        <li><strong>게이미피케이션 (스킬 트리):</strong> 진행 데이터, 잠금 해제된 레벨, 경험치(XP), 트로피 및 저축 목표 설정.</li>
+        <li><strong>채팅 및 커뮤니티:</strong> 그룹 채팅 또는 저축 서클에서 전송된 텍스트 메시지.</li>
+    </ul>
 
-공유 계정에 참여하는 경우, 해당 계정의 멤버는 기록된 지출 및 수입을 볼 수 있습니다.
+    <h3>3.3. 기술 데이터</h3>
+    <p>침해적 추적 없음: 당사는 추적 목적으로 IP 주소를 수집하지 않으며, 정확한 기기 모델이나 광고 식별자(IDFA/AAID)를 수집하지 않습니다.</p>
 
-**저축 서클(챌린지)**에 참여하는 경우, 다른 참가자는 귀하의 이름, 순위, 챌린지 기여도, 게임 내에서 획득한 트로피/페널티를 볼 수 있습니다.
+    <h2>4. 처리 목적</h2>
+    <p>당사는 다음과 같은 목적으로 귀하의 개인 데이터를 처리합니다.</p>
+    <ul>
+        <li><strong>서비스 제공:</strong> 계정 관리, 수동 금융 기록 저장, 가계부 방식을 통한 진행 상황 시각화.</li>
+    </ul>
+    
+    <h3>소셜 기능 ("저축 서클" 및 공유 계정):</h3>
+    <ul>
+        <li><strong>공유 계정</strong>에 참여하는 경우, 해당 계정의 멤버는 기록된 지출 및 수입을 볼 수 있습니다.</li>
+        <li><strong>저축 서클(챌린지)</strong>에 참여하는 경우, 다른 참가자는 귀하의 이름, 순위, 챌린지 기여도, 게임 내에서 획득한 트로피/페널티를 볼 수 있습니다.</li>
+    </ul>
 
-인공지능 (조언):
+    <h3>인공지능 (조언):</h3>
+    <p>AI를 사용하여 입력 데이터를 분석하고 개인화된 재무 팁을 제공하거나 채팅에서 질문에 답변합니다.</p>
+    <div class="disclaimer-box">
+        <strong>면책 조항:</strong> 조언은 교육 및 엔터테인먼트 목적으로 AI에 의해 생성됩니다. 이는 전문적인 재무 조언을 구성하지 않습니다.
+    </div>
 
-AI를 사용하여 입력 데이터를 분석하고 개인화된 재무 팁을 제공하거나 채팅에서 질문에 답변합니다.
+    <h3>유지 보수 및 커뮤니케이션:</h3>
+    <ul>
+        <li><strong>유지 보수 및 보안:</strong> 사기나 오류를 방지하기 위해 애플리케이션의 기술적 상태를 모니터링합니다.</li>
+        <li><strong>커뮤니케이션:</strong> 앱 내부 이벤트(예: "업적 잠금 해제", "채팅에 새 메시지")에 대한 푸시 알림 전송. <strong>당사는 상업적 또는 마케팅 이메일을 보내지 않습니다.</strong></li>
+    </ul>
 
-면책 조항: 조언은 교육 및 엔터테인먼트 목적으로 AI에 의해 생성됩니다. 이는 전문적인 재무 조언을 구성하지 않습니다.
+    <h2>5. 수신자 및 국제 전송</h2>
+    <p><strong>당사는 귀하의 데이터를 제3자에게 판매하거나 광고를 표시하지 않습니다.</strong></p>
+    <p>서비스 운영을 위해 당사는 최고 수준의 기술 인프라 제공업체를 사용합니다. 관리자가 스위스에 거주하고 글로벌 제공업체를 사용하므로, 귀하의 데이터는 엄격한 보안 보장 하에 국제적으로 전송될 수 있습니다.</p>
+    <ul>
+        <li><strong>Google Cloud / Firebase (Google LLC):</strong> 데이터베이스 제공업체(Firestore), 인증 및 클라우드 컴퓨팅 서비스(AI용 Cloud Run). Google은 표준 계약 조항(SCC)을 통해 GDPR 준수를 보장합니다.</li>
+        <li><strong>스위스-EU 적합성:</strong> 유럽 위원회는 스위스를 적절한 수준의 데이터 보호를 제공하는 국가로 인정하여 안전한 데이터 흐름을 허용합니다.</li>
+    </ul>
 
-유지 보수 및 보안: 사기나 오류를 방지하기 위해 애플리케이션의 기술적 상태를 모니터링합니다.
+    <h2>6. 데이터 보존</h2>
+    <p>당사는 귀하의 계정이 활성 상태로 유지되는 한 귀하의 개인 데이터를 보존합니다.</p>
+    <ul>
+        <li><strong>비활성으로 인한 삭제:</strong> 데이터 위생 및 개인정보 보호를 위해 <strong>6개월</strong> 동안 계정 활동이 감지되지 않으면, 당사는 귀하의 계정 및 모든 관련 데이터를 영구적으로 삭제할 권리를 보유합니다.</li>
+        <li><strong>자발적 삭제:</strong> 앱 내 프로필 설정에 있는 "계정 삭제" 버튼을 사용하여 언제든지 계정 및 모든 데이터의 즉시 삭제를 요청할 수 있습니다.</li>
+    </ul>
 
-커뮤니케이션: 앱 내부 이벤트(예: "업적 잠금 해제", "채팅에 새 메시지")에 대한 푸시 알림 전송. 당사는 상업적 또는 마케팅 이메일을 보내지 않습니다.
+    <h2>7. 보안</h2>
+    <p>당사는 기기와 서버 간의 통신을 보호하기 위해 전송 중 종단 간 암호화(E2EE)(HTTPS/TLS)를 사용합니다. 액세스 자격 증명은 인증 제공업체에 의해 안전하게 보호되고 관리됩니다.</p>
 
-5. 수신자 및 국제 전송
+    <h2>8. 귀하의 권리</h2>
+    <p>사용자로서 귀하는 자신의 데이터에 접근, 수정, 삭제("잊혀질 권리"), 처리 제한 및 데이터 이동성을 요청할 권리가 있습니다. 이러한 권리는 <a href="mailto:info@bancfy.com">info@bancfy.com</a>으로 서면으로 연락하거나 애플리케이션 인터페이스에서 직접 관리하여 무료로 행사할 수 있습니다.</p>
 
-당사는 귀하의 데이터를 제3자에게 판매하거나 광고를 표시하지 않습니다.
+    <h2>9. 우선 언어</h2>
+    <p>본 개인정보 처리방침은 원래 스페인어로 작성되었습니다. 글로벌 커뮤니티의 이해를 돕기 위해 다른 언어(영어, 독일어, 프랑스어, 한국어 등)로 번역될 수 있지만, 번역된 버전과 스페인어 버전 간에 불일치, 해석의 충돌 또는 법적 의심이 있는 경우, 해당 법률이 허용하는 범위 내에서 <strong>항상 스페인어 버전이 우선합니다</strong>.</p>
 
-서비스 운영을 위해 당사는 최고 수준의 기술 인프라 제공업체를 사용합니다. 관리자가 스위스에 거주하고 글로벌 제공업체를 사용하므로, 귀하의 데이터는 엄격한 보안 보장 하에 국제적으로 전송될 수 있습니다.
+    <h2>10. 정책 변경</h2>
+    <p>Bancfy는 법률 또는 판례의 새로운 발전 및 업계 관행에 적응하기 위해 본 정책을 변경할 권리를 보유합니다. 중대한 변경 사항은 시행 전에 애플리케이션 내에서 통지됩니다.</p>
 
-Google Cloud / Firebase (Google LLC): 데이터베이스 제공업체(Firestore), 인증 및 클라우드 컴퓨팅 서비스(AI용 Cloud Run). Google은 표준 계약 조항(SCC)을 통해 GDPR 준수를 보장합니다.
+    <div class="footer">
+        <span class="brand-signature">Bancfy - 당신의 금융 건강, 게임처럼 즐겁게.</span>
+        <p>&copy; 2025 Juan José García Manzano. All rights reserved.</p>
+    </div>
+</div>
 
-스위스-EU 적합성: 유럽 위원회는 스위스를 적절한 수준의 데이터 보호를 제공하는 국가로 인정하여 안전한 데이터 흐름을 허용합니다.
-
-6. 데이터 보존
-
-당사는 귀하의 계정이 활성 상태로 유지되는 한 귀하의 개인 데이터를 보존합니다.
-
-비활성으로 인한 삭제: 데이터 위생 및 개인정보 보호를 위해 6개월 동안 계정 활동이 감지되지 않으면, 당사는 귀하의 계정 및 모든 관련 데이터를 영구적으로 삭제할 권리를 보유합니다.
-
-자발적 삭제: 앱 내 프로필 설정에 있는 "계정 삭제" 버튼을 사용하여 언제든지 계정 및 모든 데이터의 즉시 삭제를 요청할 수 있습니다.
-
-7. 보안
-
-당사는 기기와 서버 간의 통신을 보호하기 위해 전송 중 종단 간 암호화(E2EE)(HTTPS/TLS)를 사용합니다. 액세스 자격 증명은 인증 제공업체에 의해 안전하게 보호되고 관리됩니다.
-
-8. 귀하의 권리
-
-사용자로서 귀하는 자신의 데이터에 접근, 수정, 삭제("잊혀질 권리"), 처리 제한 및 데이터 이동성을 요청할 권리가 있습니다. 이러한 권리는 info@bancfy.com으로 서면으로 연락하거나 애플리케이션 인터페이스에서 직접 관리하여 무료로 행사할 수 있습니다.
-
-9. 우선 언어
-
-본 개인정보 처리방침은 원래 스페인어로 작성되었습니다. 글로벌 커뮤니티의 이해를 돕기 위해 다른 언어(영어, 독일어, 프랑스어, 한국어 등)로 번역될 수 있지만, 번역된 버전과 스페인어 버전 간에 불일치, 해석의 충돌 또는 법적 의심이 있는 경우, 해당 법률이 허용하는 범위 내에서 항상 스페인어 버전이 우선합니다.
-
-10. 정책 변경
-
-Bancfy는 법률 또는 판례의 새로운 발전 및 업계 관행에 적응하기 위해 본 정책을 변경할 권리를 보유합니다. 중대한 변경 사항은 시행 전에 애플리케이션 내에서 통지됩니다.
+</body>
+</html>
