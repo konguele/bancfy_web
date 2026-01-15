@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Bancfy</title>
+    
+    <!-- Importar fuente Urbanist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos de banderas/globo -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Paleta de colores Bancfy */
+            --navy-blue: #0A192F;  /* Azul oscuro profundo */
+            --rich-gold: #D4AF37;  /* Oro rico metálico */
+            --light-gold: #F4E4BC; /* Oro muy claro para fondos */
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+            --white: #FFFFFF;
+            --bg-gray: #F3F4F6;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 25, 47, 0.08);
+            position: relative;
+        }
+
+        /* Language Selector Styles */
+        .lang-selector-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .lang-select {
+            padding: 8px 12px;
+            border: 1px solid var(--rich-gold);
+            border-radius: 6px;
+            background-color: var(--white);
+            color: var(--navy-blue);
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .lang-select:hover {
+            background-color: var(--light-gold);
+        }
+
+        /* Cabecera */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--light-gold);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--navy-blue);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .update-date {
+            color: var(--rich-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Tipografía y Secciones */
+        h2 {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--rich-gold);
+            padding-left: 15px;
+        }
+        
+        /* RTL Support for H2 border */
+        [dir="rtl"] h2 {
+            border-left: none;
+            border-right: 5px solid var(--rich-gold);
+            padding-left: 0;
+            padding-right: 15px;
+        }
+
+        h3 {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] ul {
+            padding-right: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        [dir="rtl"] ul li {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--rich-gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        [dir="rtl"] ul li::before {
+            margin-left: 0;
+            margin-right: -1em;
+        }
+
+        strong {
+            color: var(--navy-blue);
+            font-weight: 700;
+        }
+
+        /* Cajas especiales */
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.1); /* Gold con transparencia */
+            border: 1px solid var(--rich-gold);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .disclaimer-box {
+            background-color: #fee2e2; /* Reddish tone for warning/disclaimer */
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin: 15px 0;
+        }
+        
+        [dir="rtl"] .disclaimer-box {
+            border-left: none;
+            border-right: 4px solid #ef4444;
+        }
+
+        a {
+            color: var(--rich-gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--navy-blue);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .brand-signature {
+            font-weight: 700;
+            color: var(--navy-blue);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Animación de fade */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="lang-selector-container">
+        <select id="languageSelect" class="lang-select" onchange="changeLanguage(this.value)">
+            <option value="en" selected>🇺🇸 English</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="ca">ES-CT Català</option>
+            <option value="eu">ES-PV Euskera</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="it">🇮🇹 Italiano</option>
+            <option value="pt">🇵🇹 Português</option>
+            <option value="ja">🇯🇵 日本語</option>
+            <option value="ko">🇰🇷 한국어</option>
+            <option value="zh">🇨🇳 中文</option>
+            <option value="ar">🇦🇪 العربية</option>
+        </select>
+    </div>
+
+    <div id="content-area" class="fade-in">
+        <!-- Content will be injected via JS -->
+    </div>
+
+    <div class="footer">
+        <span id="brand-sig" class="brand-signature">Bancfy - Your financial health, gamified.</span>
+        <p id="copyright">&copy; 2025 Juan José García Manzano. All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+    // Database of translations for Terms & Conditions
+    const translations = {
+        es: {
+            title: "Términos y Condiciones de Uso",
+            date: "Última actualización: 22 de diciembre de 2025",
+            welcome: "Bienvenido a <strong>Bancfy</strong>.",
+            intro: "Al descargar, acceder o utilizar la aplicación móvil Bancfy (en adelante, la \"Aplicación\"), usted acepta estar legalmente vinculado por estos Términos y Condiciones. Si no está de acuerdo con alguno de estos términos, debe abstenerse de usar la Aplicación.",
+            
+            h1_title: "1. Información Legal del Titular",
+            h1_list: [
+                "<strong>Titular:</strong> Juan José García Manzano (en adelante, \"Bancfy\" o \"Nosotros\")",
+                "<strong>Domicilio:</strong> Suiza (Confederación Suiza)",
+                "<strong>Contacto:</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+
+            h2_title: "2. Naturaleza Educativa (Disclaimer Financiero)",
+            h2_box: "IMPORTANTE: Bancfy es una herramienta de gestión y educación. NO somos asesores financieros certificados.",
+            h2_text: "La aplicación proporciona herramientas basadas en el método Kakebo, gamificación e Inteligencia Artificial para ayudarle a organizar sus finanzas. Sin embargo:",
+            h2_list: [
+                "El contenido generado por nuestra IA es meramente informativo y educativo.",
+                "Bancfy <strong>NO garantiza</strong> resultados financieros específicos ni rentabilidad.",
+                "Usted es el único responsable de sus decisiones de inversión, ahorro y gasto. Bancfy no se hace responsable de pérdidas financieras derivadas del uso de la información proporcionada por la App."
+            ],
+
+            h3_title: "3. Suscripciones y Pagos (In-App Purchases)",
+            h3_intro: "Bancfy opera bajo un modelo \"Freemium\" con planes Free, Basic y Pro. La gestión de pagos se realiza exclusivamente a través de las tiendas de aplicaciones.",
+            
+            h3_1_title: "3.1. Procesamiento de Pagos",
+            h3_1_text: "Nosotros <strong>NO recopilamos ni almacenamos</strong> sus datos bancarios o de tarjetas de crédito. Todas las transacciones se procesan de forma segura a través de:",
+            h3_1_list: [
+                "<strong>Apple App Store</strong> (para dispositivos iOS).",
+                "<strong>Google Play Store</strong> (para dispositivos Android)."
+            ],
+
+            h3_2_title: "3.2. Renovación Automática",
+            h3_2_text: "Las suscripciones (mensuales o anuales) se renuevan automáticamente al final de cada periodo de facturación, a menos que desactive la renovación automática al menos <strong>24 horas antes</strong> de la fecha de renovación.",
+            
+            h3_3_title: "3.3. Cancelación",
+            h3_3_text: "Para cancelar su suscripción, debe hacerlo directamente desde la configuración de su cuenta de Apple ID o Google Play. Desinstalar la aplicación <strong>NO</strong> cancela su suscripción.",
+
+            h3_4_title: "3.4. Política de Reembolsos",
+            h3_4_disclaimer: "Dado que los pagos son procesados por Apple y Google, Bancfy NO tiene la capacidad técnica ni legal para emitir reembolsos directos. Cualquier solicitud de reembolso debe dirigirse al soporte de Apple o Google según sus propias políticas de devolución.",
+
+            h4_title: "4. Uso Aceptable y Prohibiciones",
+            h4_text: "Usted se compromete a utilizar la App con fines lícitos. Queda prohibido:",
+            h4_list: [
+                "Utilizar la App para actividades fraudulentas o ilegales.",
+                "Intentar acceder al código fuente, realizar ingeniería inversa o vulnerar la seguridad de la App.",
+                "Compartir cuentas de suscripción individual con terceros no autorizados."
+            ],
+
+            h5_title: "5. Propiedad Intelectual",
+            h5_text: "Todos los derechos de propiedad intelectual sobre el diseño, código fuente, logotipos (incluyendo el nombre \"Bancfy\"), gráficos y contenido de la App son propiedad exclusiva de Juan José García Manzano. Los datos introducidos por usted (sus gastos e ingresos) son de su propiedad.",
+
+            h6_title: "6. Limitación de Responsabilidad",
+            h6_text: "En la medida máxima permitida por la ley aplicable, Bancfy se proporciona \"tal cual\" y \"según disponibilidad\". No garantizamos que el servicio sea ininterrumpido o libre de errores. No seremos responsables de daños indirectos, incidentales o consecuentes derivados del uso de la App.",
+
+            h7_title: "7. Ley Aplicable y Jurisdicción",
+            h7_text: "Estos términos se rigen por las leyes de la <strong>Confederación Suiza</strong>. Cualquier disputa relacionada con estos términos se someterá a la jurisdicción exclusiva de los tribunales competentes en Suiza.",
+
+            sig: "Bancfy - Tu salud financiera, gamificada.",
+            copy: "&copy; 2025 Juan José García Manzano. Todos los derechos reservados."
+        },
+        en: {
+            title: "Terms and Conditions of Use",
+            date: "Last updated: December 22, 2025",
+            welcome: "Welcome to <strong>Bancfy</strong>.",
+            intro: "By downloading, accessing, or using the Bancfy mobile application (hereinafter, the \"App\"), you agree to be legally bound by these Terms and Conditions. If you do not agree with any of these terms, you must refrain from using the App.",
+            
+            h1_title: "1. Legal Information of the Owner",
+            h1_list: [
+                "<strong>Owner:</strong> Juan José García Manzano (hereinafter, \"Bancfy\" or \"We\")",
+                "<strong>Address:</strong> Switzerland (Swiss Confederation)",
+                "<strong>Contact:</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+
+            h2_title: "2. Educational Nature (Financial Disclaimer)",
+            h2_box: "IMPORTANT: Bancfy is a management and education tool. We are NOT certified financial advisors.",
+            h2_text: "The application provides tools based on the Kakebo method, gamification, and Artificial Intelligence to help you organize your finances. However:",
+            h2_list: [
+                "The content generated by our AI is for informational and educational purposes only.",
+                "Bancfy <strong>DOES NOT guarantee</strong> specific financial results or profitability.",
+                "You are solely responsible for your investment, savings, and spending decisions. Bancfy is not responsible for financial losses derived from the use of information provided by the App."
+            ],
+
+            h3_title: "3. Subscriptions and Payments (In-App Purchases)",
+            h3_intro: "Bancfy operates under a \"Freemium\" model with Free, Basic, and Pro plans. Payment management is performed exclusively through app stores.",
+            
+            h3_1_title: "3.1. Payment Processing",
+            h3_1_text: "We <strong>DO NOT collect or store</strong> your banking or credit card data. All transactions are securely processed through:",
+            h3_1_list: [
+                "<strong>Apple App Store</strong> (for iOS devices).",
+                "<strong>Google Play Store</strong> (for Android devices)."
+            ],
+
+            h3_2_title: "3.2. Automatic Renewal",
+            h3_2_text: "Subscriptions (monthly or annual) automatically renew at the end of each billing period unless you turn off auto-renew at least <strong>24 hours before</strong> the renewal date.",
+            
+            h3_3_title: "3.3. Cancellation",
+            h3_3_text: "To cancel your subscription, you must do so directly from your Apple ID or Google Play account settings. Uninstalling the app <strong>DOES NOT</strong> cancel your subscription.",
+
+            h3_4_title: "3.4. Refund Policy",
+            h3_4_disclaimer: "Since payments are processed by Apple and Google, Bancfy DOES NOT have the technical or legal capacity to issue direct refunds. Any refund request must be directed to Apple or Google support according to their own return policies.",
+
+            h4_title: "4. Acceptable Use and Prohibitions",
+            h4_text: "You agree to use the App for lawful purposes. It is prohibited to:",
+            h4_list: [
+                "Use the App for fraudulent or illegal activities.",
+                "Attempt to access the source code, reverse engineer, or breach the security of the App.",
+                "Share individual subscription accounts with unauthorized third parties."
+            ],
+
+            h5_title: "5. Intellectual Property",
+            h5_text: "All intellectual property rights regarding the design, source code, logos (including the name \"Bancfy\"), graphics, and content of the App are the exclusive property of Juan José García Manzano. The data entered by you (your expenses and income) belongs to you.",
+
+            h6_title: "6. Limitation of Liability",
+            h6_text: "To the maximum extent permitted by applicable law, Bancfy is provided \"as is\" and \"as available\". We do not guarantee that the service will be uninterrupted or error-free. We shall not be liable for indirect, incidental, or consequential damages arising from the use of the App.",
+
+            h7_title: "7. Governing Law and Jurisdiction",
+            h7_text: "These terms are governed by the laws of the <strong>Swiss Confederation</strong>. Any dispute related to these terms shall be submitted to the exclusive jurisdiction of the competent courts in Switzerland.",
+
+            sig: "Bancfy - Your financial health, gamified.",
+            copy: "&copy; 2025 Juan José García Manzano. All rights reserved."
+        },
+        ca: {
+            title: "Termes i Condicions d'Ús",
+            date: "Darrera actualització: 22 de desembre de 2025",
+            welcome: "Benvingut a <strong>Bancfy</strong>.",
+            intro: "En descarregar, accedir o utilitzar l'aplicació mòbil Bancfy (en endavant, l'\"Aplicació\"), acceptes estar legalment vinculat per aquests Termes i Condicions. Si no estàs d'acord amb algun d'aquests termes, has d'abstenir-te d'utilitzar l'Aplicació.",
+            h1_title: "1. Informació Legal del Titular",
+            h1_list: [
+                "<strong>Titular:</strong> Juan José García Manzano (en endavant, \"Bancfy\" o \"Nosaltres\")",
+                "<strong>Domicili:</strong> Suïssa (Confederació Suïssa)",
+                "<strong>Contacte:</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+            h2_title: "2. Naturalesa Educativa (Disclaimer Financer)",
+            h2_box: "IMPORTANT: Bancfy és una eina de gestió i educació. NO som assessors financers certificats.",
+            h2_text: "L'aplicació proporciona eines basades en el mètode Kakebo, gamificació i Intel·ligència Artificial per ajudar-te a organitzar les teves finances. No obstant això:",
+            h2_list: [
+                "El contingut generat per la nostra IA és merament informatiu i educatiu.",
+                "Bancfy <strong>NO garanteix</strong> resultats financers específics ni rendibilitat.",
+                "Ets l'únic responsable de les teves decisions d'inversió, estalvi i despesa. Bancfy no es fa responsable de pèrdues financeres derivades de l'ús de la informació proporcionada per l'App."
+            ],
+            h3_title: "3. Subscripcions i Pagaments (In-App Purchases)",
+            h3_intro: "Bancfy opera sota un model \"Freemium\" amb plans Free, Basic i Pro. La gestió de pagaments es realitza exclusivament a través de les botigues d'aplicacions.",
+            h3_1_title: "3.1. Processament de Pagaments",
+            h3_1_text: "Nosaltres <strong>NO recopilem ni emmagatzemem</strong> les teves dades bancàries o de targetes de crèdit. Totes les transaccions es processen de forma segura a través de:",
+            h3_1_list: [
+                "<strong>Apple App Store</strong> (per a dispositius iOS).",
+                "<strong>Google Play Store</strong> (per a dispositius Android)."
+            ],
+            h3_2_title: "3.2. Renovació Automàtica",
+            h3_2_text: "Les subscripcions (mensuals o anuals) es renoven automàticament al final de cada període de facturació, llevat que desactivis la renovació automàtica almenys <strong>24 hores abans</strong> de la data de renovació.",
+            h3_3_title: "3.3. Cancel·lació",
+            h3_3_text: "Per cancel·lar la teva subscripció, has de fer-ho directament des de la configuració del teu compte d'Apple ID o Google Play. Desinstal·lar l'aplicació <strong>NO</strong> cancel·la la teva subscripció.",
+            h3_4_title: "3.4. Política de Reemborsaments",
+            h3_4_disclaimer: "Atès que els pagaments són processats per Apple i Google, Bancfy NO té la capacitat tècnica ni legal per emetre reemborsaments directes. Qualsevol sol·licitud de reemborsament s'ha de dirigir al suport d'Apple o Google segons les seves pròpies polítiques de devolució.",
+            h4_title: "4. Ús Acceptable i Prohibicions",
+            h4_text: "Et compromets a utilitzar l'App amb fins lícits. Queda prohibit:",
+            h4_list: [
+                "Utilitzar l'App per a activitats fraudulentes o il·legals.",
+                "Intentar accedir al codi font, realitzar enginyeria inversa o vulnerar la seguretat de l'App.",
+                "Compartir comptes de subscripció individual amb tercers no autoritzats."
+            ],
+            h5_title: "5. Propietat Intel·lectual",
+            h5_text: "Tots els drets de propietat intel·lectual sobre el disseny, codi font, logotips (incloent-hi el nom \"Bancfy\"), gràfics i contingut de l'App són propietat exclusiva de Juan José García Manzano. Les dades introduïdes per tu (les teves despeses i ingressos) són de la teva propietat.",
+            h6_title: "6. Limitació de Responsabilitat",
+            h6_text: "En la mesura màxima permesa per la llei aplicable, Bancfy es proporciona \"tal qual\" i \"segons disponibilitat\". No garantim que el servei sigui ininterromput o lliure d'errors. No serem responsables de danys indirectes, incidentals o conseqüents derivats de l'ús de l'App.",
+            h7_title: "7. Llei Aplicable i Jurisdicció",
+            h7_text: "Aquests termes es regeixen per les lleis de la <strong>Confederació Suïssa</strong>. Qualsevol disputa relacionada amb aquests termes se sotmetrà a la jurisdicció exclusiva dels tribunals competents a Suïssa.",
+            sig: "Bancfy - La teva salut financera, gamificada.",
+            copy: "&copy; 2025 Juan José García Manzano. Tots els drets reservats."
+        },
+        eu: {
+            title: "Erabilera Baldintzak",
+            date: "Azken eguneratzea: 2025eko abenduaren 22a",
+            welcome: "Ongi etorri <strong>Bancfy</strong>ra.",
+            intro: "Bancfy mugikorrerako aplikazioa (aurrerantzean, \"Aplikazioa\") deskargatzean, atzitzean edo erabiltzean, Erabilera Baldintza hauen bidez legez lotuta egoteko konpromisoa hartzen duzu. Baldintza hauetakoren batekin ados ez bazaude, Aplikazioa erabiltzeari utzi behar diozu.",
+            h1_title: "1. Titularraren Lege Informazioa",
+            h1_list: [
+                "<strong>Titularra:</strong> Juan José García Manzano (aurrerantzean, \"Bancfy\" edo \"Gu\")",
+                "<strong>Helbidea:</strong> Suitza (Suitzako Konfederazioa)",
+                "<strong>Harremanetarako:</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+            h2_title: "2. Izaera Hezigarria (Finantza Oharra)",
+            h2_box: "GARRANTZITSUA: Bancfy kudeaketa eta hezkuntza tresna bat da. EZ gara finantza-aholkulari ziurtatuak.",
+            h2_text: "Aplikazioak Kakebo metodoan, gamifikazioan eta Adimen Artifizialean oinarritutako tresnak eskaintzen ditu zure finantzak antolatzen laguntzeko. Hala ere:",
+            h2_list: [
+                "Gure AI-ak sortutako edukia informazio eta hezkuntza helburuetarako soilik da.",
+                "Bancfy-k <strong>EZ ditu bermatzen</strong> finantza-emaitza zehatzak edo errentagarritasuna.",
+                "Zure inbertsio, aurrezki eta gastu erabakien erantzule bakarra zu zara. Bancfy ez da Aplikazioak emandako informazioa erabiltzearen ondoriozko finantza-galeren erantzule.",
+            ],
+            h3_title: "3. Harpidetzak eta Ordainketak (In-App Purchases)",
+            h3_intro: "Bancfy-k \"Freemium\" ereduarekin funtzionatzen du, Free, Basic eta Pro planekin. Ordainketen kudeaketa aplikazio-denden bidez soilik egiten da.",
+            h3_1_title: "3.1. Ordainketa Prozesamendua",
+            h3_1_text: "Guk <strong>EZ ditugu biltzen edo gordetzen</strong> zure banku-datuak edo kreditu-txartelak. Transakzio guztiak modu seguruan prozesatzen dira honako hauen bidez:",
+            h3_1_list: [
+                "<strong>Apple App Store</strong> (iOS gailuetarako).",
+                "<strong>Google Play Store</strong> (Android gailuetarako)."
+            ],
+            h3_2_title: "3.2. Berritze Automatikoa",
+            h3_2_text: "Harpidetzak (hilero edo urtero) automatikoki berritzen dira fakturazio-aldi bakoitzaren amaieran, berritze-data baino gutxienez <strong>24 ordu lehenago</strong> berritze automatikoa desaktibatzen ez baduzu.",
+            h3_3_title: "3.3. Ezeztapena",
+            h3_3_text: "Zure harpidetza bertan behera uzteko, zure Apple ID edo Google Play kontuaren ezarpenetatik zuzenean egin behar duzu. Aplikazioa desinstalatzeak <strong>EZ</strong> du zure harpidetza bertan behera uzten.",
+            h3_4_title: "3.4. Itzultze Politika",
+            h3_4_disclaimer: "Ordainketak Apple-k eta Google-k prozesatzen dituztenez, Bancfy-k EZ du gaitasun tekniko edo legalik zuzeneko itzultzeak egiteko. Itzultze-eskaera guztiak Apple edo Google-ren laguntza-zerbitzura bideratu behar dira, haien itzultze-politiken arabera.",
+            h4_title: "4. Erabilera Onargarria eta Debekuak",
+            h4_text: "Aplikazioa legezko helburuetarako erabiltzeko konpromisoa hartzen duzu. Debekatuta dago:",
+            h4_list: [
+                "Aplikazioa iruzurrezko edo legez kanpoko jardueretarako erabiltzea.",
+                "Iturburu-koderako sarbidea lortzen saiatzea, alderantzizko ingeniaritza egitea edo Aplikazioaren segurtasuna urratzea.",
+                "Harpidetza indibidualeko kontuak baimenik gabeko hirugarrenekin partekatzea."
+            ],
+            h5_title: "5. Jabetza Intelektuala",
+            h5_text: "Aplikazioaren diseinuari, iturburu-kodeari, logotipoei (\"Bancfy\" izena barne), grafikoei eta edukiari buruzko jabetza intelektualeko eskubide guztiak Juan José García Manzanoren jabetza esklusiboa dira. Zuk sartutako datuak (zure gastuak eta diru-sarrerak) zureak dira.",
+            h6_title: "6. Erantzukizunaren Mugaketa",
+            h6_text: "Lege aplikagarriak onartzen duen neurrian, Bancfy \"dagoen bezala\" eta \"erabilgarritasunaren arabera\" ematen da. Ez dugu bermatzen zerbitzua etengabea edo akatsik gabea izango denik. Ez gara Aplikazioa erabiltzearen ondoriozko zeharkako kalteen, ustekabekoen edo ondoriozkoen erantzule izango.",
+            h7_title: "7. Lege Aplikagarria eta Jurisdikzioa",
+            h7_text: "Baldintza hauek <strong>Suitzako Konfederazioko</strong> legeen arabera arautzen dira. Baldintza hauekin lotutako edozein gatazka Suitzako auzitegi eskudunen jurisdikzio esklusiboaren menpe egongo da.",
+            sig: "Bancfy - Zure finantza-osasuna, gamifikatua.",
+            copy: "&copy; 2025 Juan José García Manzano. Eskubide guztiak erreserbatuta."
+        },
+        de: {
+            title: "Allgemeine Geschäftsbedingungen",
+            date: "Letzte Aktualisierung: 22. Dezember 2025",
+            welcome: "Willkommen bei <strong>Bancfy</strong>.",
+            intro: "Durch das Herunterladen, den Zugriff auf oder die Nutzung der mobilen Anwendung Bancfy (im Folgenden die \"App\") erklären Sie sich damit einverstanden, rechtlich an diese Allgemeinen Geschäftsbedingungen gebunden zu sein. Wenn Sie mit einer dieser Bedingungen nicht einverstanden sind, müssen Sie die Nutzung der App unterlassen.",
+            h1_title: "1. Rechtliche Informationen des Inhabers",
+            h1_list: [
+                "<strong>Inhaber:</strong> Juan José García Manzano (im Folgenden \"Bancfy\" oder \"Wir\")",
+                "<strong>Adresse:</strong> Schweiz (Schweizerische Eidgenossenschaft)",
+                "<strong>Kontakt:</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+            h2_title: "2. Bildungscharakter (Finanzieller Haftungsausschluss)",
+            h2_box: "WICHTIG: Bancfy ist ein Verwaltungs- und Bildungstool. Wir sind KEINE zertifizierten Finanzberater.",
+            h2_text: "Die App bietet Tools basierend auf der Kakebo-Methode, Gamifizierung und künstlicher Intelligenz, um Ihnen bei der Organisation Ihrer Finanzen zu helfen. Jedoch:",
+            h2_list: [
+                "Der von unserer KI generierte Inhalt dient ausschließlich Informations- und Bildungszwecken.",
+                "Bancfy <strong>garantiert KEINE</strong> spezifischen finanziellen Ergebnisse oder Rentabilität.",
+                "Sie sind allein verantwortlich für Ihre Anlage-, Spar- und Ausgabenentscheidungen. Bancfy haftet nicht für finanzielle Verluste, die aus der Nutzung der von der App bereitgestellten Informationen resultieren."
+            ],
+            h3_title: "3. Abonnements und Zahlungen (In-App-Käufe)",
+            h3_intro: "Bancfy arbeitet nach einem \"Freemium\"-Modell mit Free-, Basic- und Pro-Plänen. Die Zahlungsabwicklung erfolgt ausschließlich über die App-Stores.",
+            h3_1_title: "3.1. Zahlungsabwicklung",
+            h3_1_text: "Wir <strong>sammeln oder speichern KEINE</strong> Ihrer Bank- oder Kreditkartendaten. Alle Transaktionen werden sicher verarbeitet über:",
+            h3_1_list: [
+                "<strong>Apple App Store</strong> (für iOS-Geräte).",
+                "<strong>Google Play Store</strong> (für Android-Geräte)."
+            ],
+            h3_2_title: "3.2. Automatische Verlängerung",
+            h3_2_text: "Abonnements (monatlich oder jährlich) verlängern sich automatisch am Ende jedes Abrechnungszeitraums, es sei denn, Sie deaktivieren die automatische Verlängerung mindestens <strong>24 Stunden vor</strong> dem Verlängerungsdatum.",
+            h3_3_title: "3.3. Kündigung",
+            h3_3_text: "Um Ihr Abonnement zu kündigen, müssen Sie dies direkt über Ihre Apple ID- oder Google Play-Kontoeinstellungen tun. Das Deinstallieren der App kündigt Ihr Abonnement <strong>NICHT</strong>.",
+            h3_4_title: "3.4. Rückerstattungsrichtlinie",
+            h3_4_disclaimer: "Da Zahlungen von Apple und Google verarbeitet werden, hat Bancfy NICHT die technische oder rechtliche Möglichkeit, direkte Rückerstattungen vorzunehmen. Jede Rückerstattungsanfrage muss gemäß deren eigenen Rückgaberichtlinien an den Support von Apple oder Google gerichtet werden.",
+            h4_title: "4. Zulässige Nutzung und Verbote",
+            h4_text: "Sie verpflichten sich, die App für rechtmäßige Zwecke zu nutzen. Es ist verboten:",
+            h4_list: [
+                "Die App für betrügerische oder illegale Aktivitäten zu nutzen.",
+                "Zu versuchen, auf den Quellcode zuzugreifen, Reverse Engineering durchzuführen oder die Sicherheit der App zu verletzen.",
+                "Individuelle Abonnementkonten mit unbefugten Dritten zu teilen."
+            ],
+            h5_title: "5. Geistiges Eigentum",
+            h5_text: "Alle geistigen Eigentumsrechte am Design, Quellcode, Logos (einschließlich des Namens \"Bancfy\"), Grafiken und Inhalten der App sind ausschließliches Eigentum von Juan José García Manzano. Die von Ihnen eingegebenen Daten (Ihre Ausgaben und Einnahmen) gehören Ihnen.",
+            h6_title: "6. Haftungsbeschränkung",
+            h6_text: "Soweit gesetzlich zulässig, wird Bancfy \"wie besehen\" und \"nach Verfügbarkeit\" bereitgestellt. Wir garantieren nicht, dass der Dienst unterbrechungsfrei oder fehlerfrei ist. Wir haften nicht für indirekte, zufällige oder Folgeschäden, die aus der Nutzung der App entstehen.",
+            h7_title: "7. Anwendbares Recht und Gerichtsstand",
+            h7_text: "Diese Bedingungen unterliegen den Gesetzen der <strong>Schweizerischen Eidgenossenschaft</strong>. Streitigkeiten im Zusammenhang mit diesen Bedingungen unterliegen der ausschließlichen Zuständigkeit der kompetenten Gerichte in der Schweiz.",
+            sig: "Bancfy - Deine finanzielle Gesundheit, gamifiziert.",
+            copy: "&copy; 2025 Juan José García Manzano. Alle Rechte vorbehalten."
+        },
+        fr: {
+            title: "Conditions Générales d'Utilisation",
+            date: "Dernière mise à jour : 22 décembre 2025",
+            welcome: "Bienvenue sur <strong>Bancfy</strong>.",
+            intro: "En téléchargeant, accédant ou utilisant l'application mobile Bancfy (ci-après, l'\"Application\"), vous acceptez d'être légalement lié par ces Conditions Générales. Si vous n'acceptez pas l'un de ces termes, vous devez vous abstenir d'utiliser l'Application.",
+            h1_title: "1. Informations Légales du Propriétaire",
+            h1_list: [
+                "<strong>Propriétaire :</strong> Juan José García Manzano (ci-après, \"Bancfy\" ou \"Nous\")",
+                "<strong>Adresse :</strong> Suisse (Confédération Suisse)",
+                "<strong>Contact :</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+            h2_title: "2. Nature Éducative (Avis Financier)",
+            h2_box: "IMPORTANT : Bancfy est un outil de gestion et d'éducation. Nous ne sommes PAS des conseillers financiers certifiés.",
+            h2_text: "L'application fournit des outils basés sur la méthode Kakebo, la gamification et l'Intelligence Artificielle pour vous aider à organiser vos finances. Cependant :",
+            h2_list: [
+                "Le contenu généré par notre IA est purement informatif et éducatif.",
+                "Bancfy <strong>NE garantit PAS</strong> de résultats financiers spécifiques ni de rentabilité.",
+                "Vous êtes seul responsable de vos décisions d'investissement, d'épargne et de dépenses. Bancfy n'est pas responsable des pertes financières découlant de l'utilisation des informations fournies par l'App."
+            ],
+            h3_title: "3. Abonnements et Paiements (Achats In-App)",
+            h3_intro: "Bancfy fonctionne selon un modèle \"Freemium\" avec des plans Free, Basic et Pro. La gestion des paiements est effectuée exclusivement via les magasins d'applications.",
+            h3_1_title: "3.1. Traitement des Paiements",
+            h3_1_text: "Nous <strong>NE collectons NI ne stockons</strong> vos données bancaires ou de carte de crédit. Toutes les transactions sont traitées de manière sécurisée via :",
+            h3_1_list: [
+                "<strong>Apple App Store</strong> (pour les appareils iOS).",
+                "<strong>Google Play Store</strong> (pour les appareils Android)."
+            ],
+            h3_2_title: "3.2. Renouvellement Automatique",
+            h3_2_text: "Les abonnements (mensuels ou annuels) se renouvellent automatiquement à la fin de chaque période de facturation, sauf si vous désactivez le renouvellement automatique au moins <strong>24 heures avant</strong> la date de renouvellement.",
+            h3_3_title: "3.3. Annulation",
+            h3_3_text: "Pour annuler votre abonnement, vous devez le faire directement depuis les paramètres de votre compte Apple ID ou Google Play. Désinstaller l'application <strong>N'ANNULE PAS</strong> votre abonnement.",
+            h3_4_title: "3.4. Politique de Remboursement",
+            h3_4_disclaimer: "Puisque les paiements sont traités par Apple et Google, Bancfy N'A PAS la capacité technique ou légale d'émettre des remboursements directs. Toute demande de remboursement doit être adressée au support d'Apple ou Google selon leurs propres politiques de retour.",
+            h4_title: "4. Utilisation Acceptable et Interdictions",
+            h4_text: "Vous vous engagez à utiliser l'App à des fins licites. Il est interdit de :",
+            h4_list: [
+                "Utiliser l'App pour des activités frauduleuses ou illégales.",
+                "Tenter d'accéder au code source, faire de l'ingénierie inverse ou violer la sécurité de l'App.",
+                "Partager des comptes d'abonnement individuel avec des tiers non autorisés."
+            ],
+            h5_title: "5. Propriété Intellectuelle",
+            h5_text: "Tous les droits de propriété intellectuelle sur la conception, le code source, les logos (y compris le nom \"Bancfy\"), les graphiques et le contenu de l'App sont la propriété exclusive de Juan José García Manzano. Les données saisies par vous (vos dépenses et revenus) vous appartiennent.",
+            h6_title: "6. Limitation de Responsabilité",
+            h6_text: "Dans la mesure maximale permise par la loi applicable, Bancfy est fourni \"tel quel\" et \"selon disponibilité\". Nous ne garantissons pas que le service sera ininterrompu ou exempt d'erreurs. Nous ne serons pas responsables des dommages indirects, accessoires ou consécutifs découlant de l'utilisation de l'App.",
+            h7_title: "7. Loi Applicable et Juridiction",
+            h7_text: "Ces conditions sont régies par les lois de la <strong>Confédération Suisse</strong>. Tout litige lié à ces conditions sera soumis à la compétence exclusive des tribunaux compétents en Suisse.",
+            sig: "Bancfy - Votre santé financière, gamifiée.",
+            copy: "&copy; 2025 Juan José García Manzano. Tous droits réservés."
+        },
+        it: {
+            title: "Termini e Condizioni d'Uso",
+            date: "Ultimo aggiornamento: 22 dicembre 2025",
+            welcome: "Benvenuto su <strong>Bancfy</strong>.",
+            intro: "Scaricando, accedendo o utilizzando l'applicazione mobile Bancfy (di seguito, l'\"App\"), accetti di essere legalmente vincolato da questi Termini e Condizioni. Se non sei d'accordo con uno qualsiasi di questi termini, devi astenerti dall'utilizzare l'App.",
+            h1_title: "1. Informazioni Legali del Titolare",
+            h1_list: [
+                "<strong>Titolare:</strong> Juan José García Manzano (di seguito, \"Bancfy\" o \"Noi\")",
+                "<strong>Indirizzo:</strong> Svizzera (Confederazione Svizzera)",
+                "<strong>Contatto:</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+            h2_title: "2. Natura Educativa (Disclaimer Finanziario)",
+            h2_box: "IMPORTANTE: Bancfy è uno strumento di gestione ed educazione. NON siamo consulenti finanziari certificati.",
+            h2_text: "L'applicazione fornisce strumenti basati sul metodo Kakebo, gamification e Intelligenza Artificiale per aiutarti a organizzare le tue finanze. Tuttavia:",
+            h2_list: [
+                "Il contenuto generato dalla nostra IA è puramente informativo ed educativo.",
+                "Bancfy <strong>NON garantisce</strong> risultati finanziari specifici né redditività.",
+                "Sei l'unico responsabile delle tue decisioni di investimento, risparmio e spesa. Bancfy non è responsabile per perdite finanziarie derivanti dall'uso delle informazioni fornite dall'App."
+            ],
+            h3_title: "3. Abbonamenti e Pagamenti (Acquisti In-App)",
+            h3_intro: "Bancfy opera secondo un modello \"Freemium\" con piani Free, Basic e Pro. La gestione dei pagamenti viene effettuata esclusivamente tramite gli store di applicazioni.",
+            h3_1_title: "3.1. Elaborazione dei Pagamenti",
+            h3_1_text: "Noi <strong>NON raccogliamo né memorizziamo</strong> i tuoi dati bancari o di carte di credito. Tutte le transazioni vengono elaborate in modo sicuro tramite:",
+            h3_1_list: [
+                "<strong>Apple App Store</strong> (per dispositivi iOS).",
+                "<strong>Google Play Store</strong> (per dispositivi Android)."
+            ],
+            h3_2_title: "3.2. Rinnovo Automatico",
+            h3_2_text: "Gli abbonamenti (mensili o annuali) si rinnovano automaticamente alla fine di ogni periodo di fatturazione, a meno che tu non disattivi il rinnovo automatico almeno <strong>24 ore prima</strong> della data di rinnovo.",
+            h3_3_title: "3.3. Cancellazione",
+            h3_3_text: "Per cancellare il tuo abbonamento, devi farlo direttamente dalle impostazioni del tuo account Apple ID o Google Play. Disinstallare l'applicazione <strong>NON</strong> cancella il tuo abbonamento.",
+            h3_4_title: "3.4. Politica di Rimborso",
+            h3_4_disclaimer: "Poiché i pagamenti sono elaborati da Apple e Google, Bancfy NON ha la capacità tecnica o legale di emettere rimborsi diretti. Qualsiasi richiesta di rimborso deve essere indirizzata al supporto di Apple o Google secondo le loro politiche di restituzione.",
+            h4_title: "4. Uso Accettabile e Divieti",
+            h4_text: "Ti impegni a utilizzare l'App per scopi leciti. È vietato:",
+            h4_list: [
+                "Utilizzare l'App per attività fraudolente o illegali.",
+                "Tentare di accedere al codice sorgente, effettuare ingegneria inversa o violare la sicurezza dell'App.",
+                "Condividere account di abbonamento individuale con terzi non autorizzati."
+            ],
+            h5_title: "5. Proprietà Intellettuale",
+            h5_text: "Tutti i diritti di proprietà intellettuale sul design, codice sorgente, loghi (incluso il nome \"Bancfy\"), grafiche e contenuti dell'App sono di proprietà esclusiva di Juan José García Manzano. I dati inseriti da te (le tue spese ed entrate) sono di tua proprietà.",
+            h6_title: "6. Limitazione di Responsabilità",
+            h6_text: "Nella misura massima consentita dalla legge applicabile, Bancfy viene fornito \"così com'è\" e \"secondo disponibilità\". Non garantiamo che il servizio sarà ininterrotto o privo di errori. Non saremo responsabili per danni indiretti, incidentali o consequenziali derivanti dall'uso dell'App.",
+            h7_title: "7. Legge Applicabile e Giurisdizione",
+            h7_text: "Questi termini sono regolati dalle leggi della <strong>Confederazione Svizzera</strong>. Qualsiasi controversia relativa a questi termini sarà sottoposta alla giurisdizione esclusiva dei tribunali competenti in Svizzera.",
+            sig: "Bancfy - La tua salute finanziaria, gamificata.",
+            copy: "&copy; 2025 Juan José García Manzano. Tutti i diritti riservati."
+        },
+        pt: {
+            title: "Termos e Condições de Uso",
+            date: "Última atualização: 22 de dezembro de 2025",
+            welcome: "Bem-vindo à <strong>Bancfy</strong>.",
+            intro: "Ao baixar, acessar ou usar o aplicativo móvel Bancfy (doravante, o \"Aplicativo\"), você concorda em estar legalmente vinculado por estes Termos e Condições. Se você não concordar com algum destes termos, deve abster-se de usar o Aplicativo.",
+            h1_title: "1. Informações Legais do Proprietário",
+            h1_list: [
+                "<strong>Proprietário:</strong> Juan José García Manzano (doravante, \"Bancfy\" ou \"Nós\")",
+                "<strong>Endereço:</strong> Suíça (Confederação Suíça)",
+                "<strong>Contato:</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+            h2_title: "2. Natureza Educacional (Aviso Financeiro)",
+            h2_box: "IMPORTANTE: Bancfy é uma ferramenta de gestão e educação. NÃO somos consultores financeiros certificados.",
+            h2_text: "O aplicativo fornece ferramentas baseadas no método Kakebo, gamificação e Inteligência Artificial para ajudá-lo a organizar suas finanças. No entanto:",
+            h2_list: [
+                "O conteúdo gerado por nossa IA é meramente informativo e educacional.",
+                "Bancfy <strong>NÃO garante</strong> resultados financeiros específicos nem rentabilidade.",
+                "Você é o único responsável por suas decisões de investimento, poupança e gastos. Bancfy não se responsabiliza por perdas financeiras decorrentes do uso das informações fornecidas pelo App."
+            ],
+            h3_title: "3. Assinaturas e Pagamentos (Compras no App)",
+            h3_intro: "Bancfy opera sob um modelo \"Freemium\" com planos Free, Basic e Pro. A gestão de pagamentos é realizada exclusivamente através das lojas de aplicativos.",
+            h3_1_title: "3.1. Processamento de Pagamentos",
+            h3_1_text: "Nós <strong>NÃO coletamos nem armazenamos</strong> seus dados bancários ou de cartões de crédito. Todas as transações são processadas de forma segura através de:",
+            h3_1_list: [
+                "<strong>Apple App Store</strong> (para dispositivos iOS).",
+                "<strong>Google Play Store</strong> (para dispositivos Android)."
+            ],
+            h3_2_title: "3.2. Renovação Automática",
+            h3_2_text: "As assinaturas (mensais ou anuais) são renovadas automaticamente no final de cada período de faturamento, a menos que você desative a renovação automática pelo menos <strong>24 horas antes</strong> da data de renovação.",
+            h3_3_title: "3.3. Cancelamento",
+            h3_3_text: "Para cancelar sua assinatura, você deve fazê-lo diretamente nas configurações de sua conta Apple ID ou Google Play. Desinstalar o aplicativo <strong>NÃO</strong> cancela sua assinatura.",
+            h3_4_title: "3.4. Política de Reembolso",
+            h3_4_disclaimer: "Como os pagamentos são processados pela Apple e Google, a Bancfy NÃO tem a capacidade técnica ou legal para emitir reembolsos diretos. Qualquer solicitação de reembolso deve ser dirigida ao suporte da Apple ou Google de acordo com suas próprias políticas de devolução.",
+            h4_title: "4. Uso Aceitável e Proibições",
+            h4_text: "Você se compromete a usar o App para fins lícitos. É proibido:",
+            h4_list: [
+                "Usar o App para atividades fraudulentas ou ilegais.",
+                "Tentar acessar o código-fonte, fazer engenharia reversa ou violar a segurança do App.",
+                "Compartilhar contas de assinatura individual com terceiros não autorizados."
+            ],
+            h5_title: "5. Propriedade Intelectual",
+            h5_text: "Todos os direitos de propriedade intelectual sobre o design, código-fonte, logotipos (incluindo o nome \"Bancfy\"), gráficos e conteúdo do App são propriedade exclusiva de Juan José García Manzano. Os dados inseridos por você (suas despesas e receitas) pertencem a você.",
+            h6_title: "6. Limitação de Responsabilidade",
+            h6_text: "Na extensão máxima permitida pela lei aplicável, Bancfy é fornecido \"como está\" e \"conforme disponibilidade\". Não garantimos que o serviço será ininterrupto ou livre de erros. Não seremos responsáveis por danos indiretos, incidentais ou consequentes decorrentes do uso do App.",
+            h7_title: "7. Lei Aplicável e Jurisdição",
+            h7_text: "Estes termos são regidos pelas leis da <strong>Confederação Suíça</strong>. Qualquer disputa relacionada a estes termos será submetida à jurisdição exclusiva dos tribunais competentes na Suíça.",
+            sig: "Bancfy - Sua saúde financeira, gamificada.",
+            copy: "&copy; 2025 Juan José García Manzano. Todos os direitos reservados."
+        },
+        ja: {
+            title: "利用規約",
+            date: "最終更新日：2025年12月22日",
+            welcome: "<strong>Bancfy</strong>へようこそ。",
+            intro: "Bancfyモバイルアプリケーション（以下「アプリ」）をダウンロード、アクセス、または使用することにより、これらの利用規約に法的に拘束されることに同意したことになります。これらの条件のいずれかに同意しない場合は、アプリの使用を控えてください。",
+            h1_title: "1. 所有者の法的情報",
+            h1_list: [
+                "<strong>所有者：</strong> Juan José García Manzano（以下「Bancfy」または「私たち」）",
+                "<strong>住所：</strong> スイス（スイス連邦）",
+                "<strong>連絡先：</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+            h2_title: "2. 教育的性質（財務免責事項）",
+            h2_box: "重要：Bancfyは管理および教育ツールです。私たちは認定されたファイナンシャルアドバイザーではありません。",
+            h2_text: "アプリは、家計簿（Kakebo）メソッド、ゲーミフィケーション、および人工知能に基づいたツールを提供し、財務の整理を支援します。ただし：",
+            h2_list: [
+                "私たちのAIによって生成されたコンテンツは、情報提供および教育目的のみです。",
+                "Bancfyは、特定の財務結果や収益性を<strong>保証しません</strong>。",
+                "投資、貯蓄、および支出の決定については、お客様が単独で責任を負います。Bancfyは、アプリによって提供された情報の使用に起因する金銭的損失について責任を負いません。"
+            ],
+            h3_title: "3. サブスクリプションと支払い（アプリ内購入）",
+            h3_intro: "Bancfyは、Free、Basic、Proプランを持つ「フリーミアム」モデルで運営されています。支払いの管理は、アプリストアを通じてのみ行われます。",
+            h3_1_title: "3.1. 支払い処理",
+            h3_1_text: "私たちは、お客様の銀行データやクレジットカードデータを<strong>収集または保存しません</strong>。すべての取引は、以下を通じて安全に処理されます：",
+            h3_1_list: [
+                "<strong>Apple App Store</strong>（iOSデバイス用）。",
+                "<strong>Google Play Store</strong>（Androidデバイス用）。"
+            ],
+            h3_2_title: "3.2. 自動更新",
+            h3_2_text: "サブスクリプション（月次または年次）は、更新日の少なくとも<strong>24時間前</strong>に自動更新をオフにしない限り、各請求期間の終了時に自動的に更新されます。",
+            h3_3_title: "3.3. キャンセル",
+            h3_3_text: "サブスクリプションをキャンセルするには、Apple IDまたはGoogle Playアカウントの設定から直接行う必要があります。アプリをアンインストールしても、サブスクリプションは<strong>キャンセルされません</strong>。",
+            h3_4_title: "3.4. 返金ポリシー",
+            h3_4_disclaimer: "支払いはAppleおよびGoogleによって処理されるため、Bancfyには直接返金を行う技術的または法的能力がありません。返金リクエストは、それぞれの返品ポリシーに従ってAppleまたはGoogleのサポートに送信する必要があります。",
+            h4_title: "4. 許容される使用と禁止事項",
+            h4_text: "お客様は、合法的な目的でアプリを使用することに同意します。以下は禁止されています：",
+            h4_list: [
+                "詐欺的または違法な活動のためにアプリを使用すること。",
+                "ソースコードへのアクセス、リバースエンジニアリング、またはアプリのセキュリティ侵害を試みること。",
+                "個人のサブスクリプションアカウントを許可されていない第三者と共有すること。"
+            ],
+            h5_title: "5. 知的財産",
+            h5_text: "アプリのデザイン、ソースコード、ロゴ（「Bancfy」という名前を含む）、グラフィック、およびコンテンツに関するすべての知的財産権は、Juan José García Manzanoの独占的な財産です。お客様が入力したデータ（支出と収入）は、お客様のものです。",
+            h6_title: "6. 責任の制限",
+            h6_text: "適用法で認められる最大限の範囲で、Bancfyは「現状有姿」および「提供可能な範囲」で提供されます。サービスが中断されないこと、またはエラーがないことを保証しません。アプリの使用に起因する間接的、偶発的、または結果的な損害について、私たちは責任を負いません。",
+            h7_title: "7. 準拠法および管轄",
+            h7_text: "これらの条件は、<strong>スイス連邦</strong>の法律に準拠します。これらの条件に関連する紛争は、スイスの管轄裁判所の専属管轄権に服するものとします。",
+            sig: "Bancfy - ゲーミフィケーションされた財務の健全性。",
+            copy: "&copy; 2025 Juan José García Manzano. All rights reserved."
+        },
+        ko: {
+            title: "이용 약관",
+            date: "최종 업데이트: 2025년 12월 22일",
+            welcome: "<strong>Bancfy</strong>에 오신 것을 환영합니다.",
+            intro: "Bancfy 모바일 애플리케이션(이하 \"앱\")을 다운로드, 액세스 또는 사용함으로써 귀하는 이 이용 약관에 법적으로 구속되는 데 동의하는 것입니다. 이 약관 중 하나라도 동의하지 않으면 앱 사용을 삼가야 합니다.",
+            h1_title: "1. 소유자의 법적 정보",
+            h1_list: [
+                "<strong>소유자:</strong> Juan José García Manzano(이하 \"Bancfy\" 또는 \"우리\")",
+                "<strong>주소:</strong> 스위스(스위스 연방)",
+                "<strong>연락처:</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+            h2_title: "2. 교육적 성격 (금융 면책 조항)",
+            h2_box: "중요: Bancfy는 관리 및 교육 도구입니다. 우리는 인증된 재정 고문이 아닙니다.",
+            h2_text: "이 애플리케이션은 가계부(Kakebo) 방식, 게이미피케이션 및 인공 지능을 기반으로 한 도구를 제공하여 재정을 정리하는 데 도움을 줍니다. 그러나:",
+            h2_list: [
+                "우리의 AI에 의해 생성된 콘텐츠는 정보 제공 및 교육 목적으로만 사용됩니다.",
+                "Bancfy는 특정 재정 결과나 수익성을 <strong>보장하지 않습니다</strong>.",
+                "투자, 저축 및 지출 결정에 대한 책임은 전적으로 귀하에게 있습니다. Bancfy는 앱에서 제공한 정보 사용으로 인한 재정적 손실에 대해 책임을 지지 않습니다."
+            ],
+            h3_title: "3. 구독 및 결제 (인앱 구매)",
+            h3_intro: "Bancfy는 Free, Basic 및 Pro 요금제가 있는 \"부분 유료화(Freemium)\" 모델로 운영됩니다. 결제 관리는 앱 스토어를 통해서만 독점적으로 수행됩니다.",
+            h3_1_title: "3.1. 결제 처리",
+            h3_1_text: "우리는 귀하의 은행 데이터나 신용 카드 정보를 <strong>수집하거나 저장하지 않습니다</strong>. 모든 거래는 다음을 통해 안전하게 처리됩니다:",
+            h3_1_list: [
+                "<strong>Apple App Store</strong> (iOS 기기용).",
+                "<strong>Google Play Store</strong> (Android 기기용)."
+            ],
+            h3_2_title: "3.2. 자동 갱신",
+            h3_2_text: "구독(월간 또는 연간)은 갱신 날짜 최소 <strong>24시간 전</strong>에 자동 갱신을 끄지 않는 한 각 청구 기간이 끝날 때 자동으로 갱신됩니다.",
+            h3_3_title: "3.3. 취소",
+            h3_3_text: "구독을 취소하려면 Apple ID 또는 Google Play 계정 설정에서 직접 취소해야 합니다. 앱을 삭제해도 구독이 <strong>취소되지 않습니다</strong>.",
+            h3_4_title: "3.4. 환불 정책",
+            h3_4_disclaimer: "결제는 Apple과 Google에서 처리하므로 Bancfy는 기술적 또는 법적으로 직접 환불을 할 수 있는 권한이 없습니다. 모든 환불 요청은 해당 반품 정책에 따라 Apple 또는 Google 지원팀으로 문의해야 합니다.",
+            h4_title: "4. 허용되는 사용 및 금지 사항",
+            h4_text: "귀하는 합법적인 목적으로 앱을 사용하는 데 동의합니다. 다음은 금지됩니다:",
+            h4_list: [
+                "사기 또는 불법 활동에 앱을 사용하는 행위.",
+                "소스 코드에 액세스하거나, 리버스 엔지니어링하거나, 앱 보안을 침해하려는 시도.",
+                "개인 구독 계정을 승인되지 않은 제3자와 공유하는 행위."
+            ],
+            h5_title: "5. 지적 재산권",
+            h5_text: "앱의 디자인, 소스 코드, 로고(\"Bancfy\" 이름 포함), 그래픽 및 콘텐츠에 대한 모든 지적 재산권은 Juan José García Manzano의 독점 자산입니다. 귀하가 입력한 데이터(지출 및 수입)는 귀하의 소유입니다.",
+            h6_title: "6. 책임의 제한",
+            h6_text: "관련 법률이 허용하는 최대 범위 내에서 Bancfy는 \"있는 그대로\", \"이용 가능한 대로\" 제공됩니다. 우리는 서비스가 중단되지 않거나 오류가 없음을 보장하지 않습니다. 우리는 앱 사용으로 인해 발생하는 간접적, 부수적 또는 결과적 손해에 대해 책임을 지지 않습니다.",
+            h7_title: "7. 준거법 및 관할권",
+            h7_text: "이 약관은 <strong>스위스 연방</strong>의 법률에 따라 규율됩니다. 이 약관과 관련된 모든 분쟁은 스위스 관할 법원의 전속 관할권에 따릅니다.",
+            sig: "Bancfy - 게임화된 금융 건강.",
+            copy: "&copy; 2025 Juan José García Manzano. All rights reserved."
+        },
+        zh: {
+            title: "使用条款和条件",
+            date: "最后更新：2025年12月22日",
+            welcome: "欢迎来到 <strong>Bancfy</strong>。",
+            intro: "下载、访问或使用 Bancfy 移动应用程序（以下简称“应用程序”），即表示您同意受这些条款和条件的法律约束。如果您不同意这些条款中的任何一项，您必须停止使用该应用程序。",
+            h1_title: "1. 所有者的法律信息",
+            h1_list: [
+                "<strong>所有者：</strong> Juan José García Manzano（以下简称“Bancfy”或“我们”）",
+                "<strong>地址：</strong> 瑞士（瑞士联邦）",
+                "<strong>联系方式：</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+            h2_title: "2. 教育性质（财务免责声明）",
+            h2_box: "重要提示：Bancfy 是一个管理和教育工具。我们不是经过认证的财务顾问。",
+            h2_text: "该应用程序提供基于家计簿（Kakebo）方法、游戏化和人工智能的工具，以帮助您整理财务。然而：",
+            h2_list: [
+                "我们的 AI 生成的内容仅供参考和教育目的。",
+                "Bancfy <strong>不保证</strong>特定的财务结果或盈利能力。",
+                "您对自己的投资、储蓄和支出决定负全责。Bancfy 不对因使用 App 提供的信息而导致的财务损失负责。"
+            ],
+            h3_title: "3. 订阅和付款（应用内购买）",
+            h3_intro: "Bancfy 在“免费增值”模式下运营，包含 Free、Basic 和 Pro 计划。付款管理仅通过应用商店进行。",
+            h3_1_title: "3.1. 付款处理",
+            h3_1_text: "我们<strong>不收集也不存储</strong>您的银行数据或信用卡信息。所有交易均通过以下方式安全处理：",
+            h3_1_list: [
+                "<strong>Apple App Store</strong>（适用于 iOS 设备）。",
+                "<strong>Google Play Store</strong>（适用于 Android 设备）。"
+            ],
+            h3_2_title: "3.2. 自动续订",
+            h3_2_text: "订阅（按月或按年）将在每个计费周期结束时自动续订，除非您在续订日期前至少 <strong>24 小时</strong> 关闭自动续订。",
+            h3_3_title: "3.3. 取消",
+            h3_3_text: "要取消订阅，您必须直接从您的 Apple ID 或 Google Play 账户设置中进行操作。卸载应用程序<strong>不会</strong>取消您的订阅。",
+            h3_4_title: "3.4. 退款政策",
+            h3_4_disclaimer: "由于付款由 Apple 和 Google 处理，Bancfy 没有技术或法律能力发出直接退款。任何退款请求必须根据其自己的退货政策直接发送给 Apple 或 Google 支持。",
+            h4_title: "4. 可接受的使用和禁止事项",
+            h4_text: "您承诺出于合法目的使用该应用程序。禁止：",
+            h4_list: [
+                "将应用程序用于欺诈或非法活动。",
+                "试图访问源代码、进行逆向工程或破坏应用程序的安全性。",
+                "与未经授权的第三方共享个人订阅账户。"
+            ],
+            h5_title: "5. 知识产权",
+            h5_text: "关于应用程序的设计、源代码、徽标（包括名称“Bancfy”）、图形和内容的所有知识产权均为 Juan José García Manzano 的专有财产。您输入的数据（您的支出和收入）属于您。",
+            h6_title: "6. 责任限制",
+            h6_text: "在适用法律允许的最大范围内，Bancfy 按“原样”和“可用”提供。我们不保证服务不会中断或没有错误。我们不对因使用应用程序而引起的间接、附带或后果性损害负责。",
+            h7_title: "7. 适用法律和管辖权",
+            h7_text: "这些条款受<strong>瑞士联邦</strong>法律管辖。与这些条款相关的任何争议均应提交给瑞士有管辖权的法院专属管辖。",
+            sig: "Bancfy - 您的财务健康，游戏化。",
+            copy: "&copy; 2025 Juan José García Manzano. All rights reserved."
+        },
+        ar: {
+            title: "شروط وأحكام الاستخدام",
+            date: "آخر تحديث: 22 ديسمبر 2025",
+            welcome: "مرحبًا بكم في <strong>Bancfy</strong>.",
+            intro: "من خلال تنزيل تطبيق Bancfy للهاتف المحمول (المشار إليه فيما يلي بـ \"التطبيق\") أو الوصول إليه أو استخدامه، فإنك توافق على الالتزام قانونًا بهذه الشروط والأحكام. إذا كنت لا توافق على أي من هذه الشروط، يجب عليك الامتناع عن استخدام التطبيق.",
+            h1_title: "1. المعلومات القانونية للمالك",
+            h1_list: [
+                "<strong>المالك:</strong> Juan José García Manzano (المشار إليه فيما يلي بـ \"Bancfy\" أو \"نحن\")",
+                "<strong>العنوان:</strong> سويسرا (الكونفدرالية السويسرية)",
+                "<strong>الاتصال:</strong> <a href='mailto:info@bancfy.com'>info@bancfy.com</a>"
+            ],
+            h2_title: "2. الطبيعة التعليمية (إخلاء المسؤولية المالية)",
+            h2_box: "هام: Bancfy هي أداة للإدارة والتعليم. نحن لسنا مستشارين ماليين معتمدين.",
+            h2_text: "يوفر التطبيق أدوات تعتمد على طريقة Kakebo، والتلعيب (Gamification)، والذكاء الاصطناعي لمساعدتك في تنظيم أموالك. ومع ذلك:",
+            h2_list: [
+                "المحتوى الذي تم إنشاؤه بواسطة الذكاء الاصطناعي الخاص بنا هو لأغراض إعلامية وتعليمية فقط.",
+                "Bancfy <strong>لا تضمن</strong> نتائج مالية محددة أو ربحية.",
+                "أنت المسؤول الوحيد عن قرارات الاستثمار والادخار والإنفاق الخاصة بك. Bancfy ليست مسؤولة عن الخسائر المالية الناتجة عن استخدام المعلومات المقدمة من قبل التطبيق."
+            ],
+            h3_title: "3. الاشتراكات والمدفوعات (عمليات الشراء داخل التطبيق)",
+            h3_intro: "يعمل Bancfy بموجب نموذج \"Freemium\" مع خطط Free و Basic و Pro. تتم إدارة المدفوعات حصريًا من خلال متاجر التطبيقات.",
+            h3_1_title: "3.1. معالجة المدفوعات",
+            h3_1_text: "نحن <strong>لا نجمع أو نخزن</strong> بياناتك المصرفية أو بطاقات الائتمان. تتم معالجة جميع المعاملات بشكل آمن من خلال:",
+            h3_1_list: [
+                "<strong>Apple App Store</strong> (لأجهزة iOS).",
+                "<strong>Google Play Store</strong> (لأجهزة Android)."
+            ],
+            h3_2_title: "3.2. التجديد التلقائي",
+            h3_2_text: "يتم تجديد الاشتراكات (شهرية أو سنوية) تلقائيًا في نهاية كل فترة فوترة، ما لم تقم بإيقاف التجديد التلقائي قبل <strong>24 ساعة على الأقل</strong> من تاريخ التجديد.",
+            h3_3_title: "3.3. الإلغاء",
+            h3_3_text: "لإلغاء اشتراكك، يجب عليك القيام بذلك مباشرة من إعدادات حساب Apple ID أو Google Play الخاص بك. إلغاء تثبيت التطبيق <strong>لا</strong> يلغي اشتراكك.",
+            h3_4_title: "3.4. سياسة الاسترداد",
+            h3_4_disclaimer: "نظرًا لأن المدفوعات تتم معالجتها بواسطة Apple و Google، فإن Bancfy ليس لديها القدرة التقنية أو القانونية لإصدار المبالغ المستردة المباشرة. يجب توجيه أي طلب استرداد إلى دعم Apple أو Google وفقًا لسياسات الإرجاع الخاصة بهم.",
+            h4_title: "4. الاستخدام المقبول والمحظورات",
+            h4_text: "أنت تتعهد باستخدام التطبيق لأغراض مشروعة. يُحظر:",
+            h4_list: [
+                "استخدام التطبيق في أنشطة احتيالية أو غير قانونية.",
+                "محاولة الوصول إلى التعليمات البرمجية المصدر، أو إجراء هندسة عكسية، أو انتهاك أمان التطبيق.",
+                "مشاركة حسابات الاشتراك الفردية مع أطراف ثالثة غير مصرح لها."
+            ],
+            h5_title: "5. الملكية الفكرية",
+            h5_text: "جميع حقوق الملكية الفكرية المتعلقة بالتصميم، والتعليمات البرمجية المصدر، والشعارات (بما في ذلك اسم \"Bancfy\")، والرسومات، ومحتوى التطبيق هي ملكية حصرية لـ Juan José García Manzano. البيانات التي تدخلها (نفقاتك ودخلك) هي ملك لك.",
+            h6_title: "6. حدود المسؤولية",
+            h6_text: "إلى أقصى حد يسمح به القانون المعمول به، يتم تقديم Bancfy \"كما هو\" و \"حسب التوفر\". لا نضمن أن الخدمة ستكون دون انقطاع أو خالية من الأخطاء. لن نكون مسؤولين عن الأضرار غير المباشرة أو العرضية أو التبعية الناتجة عن استخدام التطبيق.",
+            h7_title: "7. القانون الواجب التطبيق والاختصاص القضائي",
+            h7_text: "تخضع هذه الشروط لقوانين <strong>الكونفدرالية السويسرية</strong>. يخضع أي نزاع يتعلق بهذه الشروط للاختصاص القضائي الحصري للمحاكم المختصة في سويسرا.",
+            sig: "Bancfy - صحتك المالية، بأسلوب الألعاب.",
+            copy: "&copy; 2025 Juan José García Manzano. All rights reserved."
+        }
+    };
+
+    function renderContent(lang) {
+        const data = translations[lang];
+        const container = document.getElementById('content-area');
+        
+        // Handle RTL for Arabic
+        const mainContainer = document.querySelector('.container');
+        if (lang === 'ar') {
+            mainContainer.setAttribute('dir', 'rtl');
+        } else {
+            mainContainer.setAttribute('dir', 'ltr');
+        }
+
+        // Helper function for lists
+        const createList = (items) => {
+            if (!items) return '';
+            return `<ul>${items.map(item => `<li>${item}</li>`).join('')}</ul>`;
+        };
+
+        const html = `
+            <header>
+                <h1>${data.title}</h1>
+                <div class="update-date">${data.date}</div>
+            </header>
+
+            <p>${data.welcome}</p>
+            <p>${data.intro}</p>
+
+            <h2>${data.h1_title}</h2>
+            ${createList(data.h1_list)}
+
+            <h2>${data.h2_title}</h2>
+            <div class="highlight-box">
+                <p>${data.h2_box}</p>
+            </div>
+            <p>${data.h2_text}</p>
+            ${createList(data.h2_list)}
+
+            <h2>${data.h3_title}</h2>
+            <p>${data.h3_intro}</p>
+
+            <h3>${data.h3_1_title}</h3>
+            <p>${data.h3_1_text}</p>
+            ${createList(data.h3_1_list)}
+
+            <h3>${data.h3_2_title}</h3>
+            <p>${data.h3_2_text}</p>
+
+            <h3>${data.h3_3_title}</h3>
+            <p>${data.h3_3_text}</p>
+
+            <h3>${data.h3_4_title}</h3>
+             <div class="disclaimer-box">
+                ${data.h3_4_disclaimer}
+            </div>
+
+            <h2>${data.h4_title}</h2>
+            <p>${data.h4_text}</p>
+            ${createList(data.h4_list)}
+
+            <h2>${data.h5_title}</h2>
+            <p>${data.h5_text}</p>
+
+            <h2>${data.h6_title}</h2>
+            <p>${data.h6_text}</p>
+
+            <h2>${data.h7_title}</h2>
+            <p>${data.h7_text}</p>
+        `;
+
+        container.innerHTML = html;
+        
+        // Update Footer separately
+        document.getElementById('brand-sig').textContent = data.sig;
+        document.getElementById('copyright').innerHTML = data.copy;
+
+        // Re-trigger animation
+        container.classList.remove('fade-in');
+        void container.offsetWidth; // trigger reflow
+        container.classList.add('fade-in');
+    }
+
+    function changeLanguage(lang) {
+        renderContent(lang);
+    }
+
+    // Initialize in English (default) or Spanish if preferred
+    document.addEventListener('DOMContentLoaded', () => {
+        changeLanguage('en'); 
+    });
+
+</script>
+
+</body>
+</html>
